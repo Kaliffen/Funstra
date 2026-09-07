@@ -27,7 +27,8 @@ namespace Funstra
             Text(District.recruited?"G follow   H hold   R retreat   T aid\nE beside a downed person: stabilize":"Clinic: "+District.clinicStock+" doses / "+District.treatments+" treated\nJ history   L track Mara / clinic",50,665,345,48,15,quiet);
             if(!showMap&&screen==ScreenMode.Play)
             {
-                Text(District.shipmentOwner=="collector"&&!District.released?"BUYER ARRIVES 21:52 / DETAILS IN J":District.shipmentOwner=="buyer"?"MEDICINE MOVED TO NORTH QUAY / J":"",1190,272,382,44,15,CityArt.Amber);
+                if(District.shipmentOwner=="buyer"||District.shipmentOwner=="collector"&&!District.released)
+                {Panel(1190,260,382,59);Text(District.shipmentOwner=="buyer"?"MEDICINE AT NORTH QUAY / J":"BUYER ARRIVES 21:52 / DETAILS IN J",1206,276,354,40,14,CityArt.Amber);}
                 if(Vector3.Distance(Player.position,TallyPosition)<3)Text("P / PET TALLY    F / CLINIC REFUGE",458,677,693,30,16,medical,FontStyle.Bold,TextAnchor.MiddleCenter);
             }
             if(Cargo.Value>0)Text("Cargo $"+Cargo.Value+" / "+Cargo.Weight+" load: hold E at HOME to bank",457,716,693,30,15,cargoColor,FontStyle.Bold,TextAnchor.MiddleCenter);

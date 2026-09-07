@@ -10,7 +10,7 @@ New players begin with an origin introduction, a pistol, twelve rounds and two b
 
 Helping the clinic earns Neri's trust and a recruitable companion who can follow, hold, retreat and stabilize you. That partnership is this demo's first step in the power arc. Mara's original three jobs and repeatable purple cargo remain available to fund your decisions. Press **L** to switch guidance between the clinic and Mara.
 
-[Demo details and review guide](BED-AND-BANDAGE.md) · [Vision](VISION.md) · [World origin](WORLD.md) · [Validation](Evidence/VALIDATION.md)
+[Demo details and review guide](../../BED-AND-BANDAGE.md) · [Vision](../../VISION.md) · [World origin](../../WORLD.md) · [Validation](../../Evidence/VALIDATION.md)
 
 ## Controls
 

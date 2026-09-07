@@ -40,6 +40,7 @@ namespace Funstra
         IEnumerator Capture(string name)
         {
             if(!captureScreens)yield break;
+            yield return new WaitForSeconds(.2f);
             yield return new WaitForEndOfFrame();
             var capture=ScreenCapture.CaptureScreenshotAsTexture();
             float brightness=0;
@@ -176,12 +177,19 @@ namespace Funstra
                     Check(screen==ScreenMode.Perk,"Delivery offers upgrade");
                     if(j==0)yield return Capture("05-upgrade");
                     Check(State.ChoosePerk(j==0?2:1),"Permanent perk selected");Save();screen=ScreenMode.Play;
+                    if(j==0)
+                    {
+                        Check(State.completed==1,"First actual Mara delivery advances standing to RUNNER");
+                        yield return Capture("13-mara-standing-runner");
+                    }
                 }
             }
             Check(State.Finished&&State.cash==740,"Three jobs reach ending with $740");
             yield return Capture("07-ending");
             var loaded=RunState.Load(savePath);Check(loaded!=null&&loaded.Finished&&loaded.perks==State.perks,"Completed run persists and reloads");
             yield return CargoSteps();
+            Check(State.completed==3&&screen==ScreenMode.Play,"Completed and reloaded Mara arc retains CONNECTED standing in free roam");
+            yield return Capture("14-mara-standing-connected");
             // Exercise actual visibility, chase, obstacle occlusion, cooldown and arrest independently.
             State=new RunState();State.Accept();screen=ScreenMode.Play;smokeFreezeAgents=false;
             Teleport(new Vector3(12,0,-13));

@@ -1,10 +1,10 @@
 # Funstra development direction
 
-The [game vision](VISION.md) and [world origin](WORLD.md) were approved for implementation on 7 September 2026. The [approved implementation proposal](Docs/Archive/2026-09-07-approved-direction.md) and [original demo plan](Docs/Archive/2026-09-07-demo-design.md) remain as history.
+The [game vision](../../VISION.md) and [world origin](../../WORLD.md) were approved for implementation on 7 September 2026. The [approved implementation proposal](../../Docs/Archive/2026-09-07-approved-direction.md) and [original demo plan](../../Docs/Archive/2026-09-07-demo-design.md) remain as history.
 
 ## Current review candidate
 
-**Demo 02: A Bed & a Bandage, version 0.2.0.** See [the playable scope and review guide](BED-AND-BANDAGE.md) and [validation evidence](Evidence/VALIDATION.md).
+**Demo 02: A Bed & a Bandage, version 0.2.0.** See [the playable scope and review guide](../../BED-AND-BANDAGE.md) and [validation evidence](../../Evidence/VALIDATION.md).
 
 This demo implements the first transition in the intended power arc: you can gain a dependable partner by materially helping a person and their clinic. Payment, stealth, combat and sale affect one finite stock of medicine. An autonomous baseline changes supplies and ownership. Wounds, actor state, knowledge, relationships and goods persist. Existing campaign and cargo activities remain available.
 

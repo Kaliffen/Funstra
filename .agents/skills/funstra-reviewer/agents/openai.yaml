@@ -1,0 +1,4 @@
+interface:
+  display_name: "Funstra Reviewer"
+  short_description: "Review guided builds with the existing personas"
+  default_prompt: "Use $funstra-reviewer to run the four existing personas through guided gameplay in the supplied Funstra build, inspect screenshots and logs, file independent reviews and meeting notes, then hold the review conference."

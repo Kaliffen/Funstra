@@ -1,0 +1,4 @@
+interface:
+  display_name: "Astra — Funstra Creative Director"
+  short_description: "Lead ticketed demos, four-agent reviews and releases"
+  default_prompt: "Use $funstra-creative-director to complete one Funstra release cycle across turns as needed: plan tickets, build the demo, obtain four independent play reviews, gather feedback, fix and validate, publish to the website, then stop for my direction."

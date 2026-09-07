@@ -273,6 +273,12 @@ namespace Funstra
             for(int i=0;i<City.Buildings.Count;i++)
             {
                 bool cut=screen!=ScreenMode.Title && City.Buildings[i].IntersectRay(ray,out float distance) && distance<length-1;
+                if(DistrictEnabled&&Vector3.Distance(Player.position,DistrictState.Clinic)<6)
+                {
+                    Vector3 focusPoint=TallyPosition+Vector3.up*.4f;
+                    var clinicRay=new Ray(View.transform.position,(focusPoint-View.transform.position).normalized);
+                    if(City.Buildings[i].IntersectRay(clinicRay,out float clinicDistance)&&clinicDistance<Vector3.Distance(View.transform.position,focusPoint)-.5f)cut=true;
+                }
                 foreach(var r in City.BuildingRenderers[i]) r.enabled=!cut;
             }
         }

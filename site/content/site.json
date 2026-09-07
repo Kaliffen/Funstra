@@ -14,7 +14,7 @@
       "<strong>Free and MIT-licensed</strong>, source and all. Clone it, build it, take it apart.",
       "<strong>Built by AI agents</strong> against a written vision, design and world bible, with every build validated by an automated harness before it ships.",
       "<strong>Original work</strong> — procedural geometry and sound, no purchased assets, no external services required to play.",
-      "<strong>Honest about its reviews.</strong> A four-reviewer panel plays each build and the scores range from 4/10 to 7/10. Those verdicts are published unedited."
+      "<strong>Honest about its reviews.</strong> Four reviewer agents inspect guided runs of the actual build, screenshots, logs, the manual and source. Their verdicts are published unedited, with the limits of that method stated."
     ],
     "isNot": [
       "A finished sandbox campaign. The current demo is a <strong>single neighbourhood</strong> and roughly an hour of content.",
@@ -25,34 +25,118 @@
     ]
   },
   "panel": [
-    { "who": "Marcus Webb",  "lens": "Technical state, value",   "score": 7, "accent": "marcus" },
-    { "who": "Dag Møller",    "lens": "Systems rigor",           "score": 7, "accent": "dag" },
-    { "who": "Priya Raman",  "lens": "Emotional, thematic",     "score": 4, "accent": "priya" },
-    { "who": "Nell Okafor",  "lens": "Is this a nice hour",     "score": 7, "accent": "nell" }
+    {
+      "who": "Marcus Webb",
+      "lens": "Technical state, value",
+      "score": 8,
+      "accent": "marcus"
+    },
+    {
+      "who": "Dag Møller",
+      "lens": "Systems rigor",
+      "score": 8,
+      "accent": "dag"
+    },
+    {
+      "who": "Priya Raman",
+      "lens": "Emotional, thematic",
+      "score": 8,
+      "accent": "priya"
+    },
+    {
+      "who": "Nell Okafor",
+      "lens": "Is this a nice hour",
+      "score": 8,
+      "accent": "nell"
+    }
   ],
-  "panelNote": "Four reviewer agents, written to disagree, each playing the shipped executable rather than the design docs. The spread is the point.",
+  "panelNote": "Four reviewer agents each awarded Demo 03 8/10 for different reasons. These are guided build reviews, supported by logs, screenshots and source inspection, rather than exploratory human play or independent acceptance of later fixes.",
   "shots": [
-    { "file": "B02-origin.png",       "caption": "Origin introduction — you start as an expendable person" },
-    { "file": "B03-neri.png",         "caption": "Neri's curbside clinic, six doses short" },
-    { "file": "B05-combat.png",       "caption": "Combat: selection, line of sight, finite ammunition" },
-    { "file": "B06-tactics.png",      "caption": "Tactical pause — inspect, target, issue companion orders" },
-    { "file": "B07-partnership.png",  "caption": "A recruited partner who follows, holds, retreats and stabilises" },
-    { "file": "B04-district-map.png", "caption": "Old Port district map" }
+    {
+      "file": "C01-clinic-and-tally.png",
+      "caption": "Demo 03 — the clinic and Tally"
+    },
+    {
+      "file": "C03-neri-story.png",
+      "caption": "Demo 03 — Neri explains what the spare bed means"
+    },
+    {
+      "file": "C04-paid-medicine-response.png",
+      "caption": "Demo 03 — medicine obtained through payment gets its own response"
+    },
+    {
+      "file": "C06-refuge-management.png",
+      "caption": "Demo 03 — the shared refuge, clinic fund and care policy"
+    },
+    {
+      "file": "C07-policy-consequence.png",
+      "caption": "Demo 03 — the consequence of reserving medicine"
+    },
+    {
+      "file": "C12-traffic-after.png",
+      "caption": "Demo 03 — traffic moving through Old Port"
+    }
   ],
   "pipeline": [
-    { "tag": "Agent", "desc": "An agent implements a demo against VISION, DESIGN and WORLD, then runs the rules and runtime harness." },
-    { "tag": "Build", "desc": "<span class=\"mono\">Tools/Release.ps1</span> drives a batch-mode Unity build, verifies the executable and zips the portable package." },
-    { "tag": "Publish", "desc": "The same script opens a tagged GitHub Release and uploads the zip — one command, no console." },
-    { "tag": "Deploy", "desc": "Publishing the release fires a GitHub Actions workflow that regenerates this site from the live release list and deploys it to GitHub Pages." },
-    { "tag": "Live", "desc": "The download below is whatever the newest release is. Nobody edits this page by hand." }
+    {
+      "tag": "Agent",
+      "desc": "An agent implements a demo against VISION, DESIGN and WORLD, then runs the rules and runtime harness."
+    },
+    {
+      "tag": "Build",
+      "desc": "<span class=\"mono\">Tools/Release.ps1</span> drives a batch-mode Unity build, verifies the executable and zips the portable package."
+    },
+    {
+      "tag": "Publish",
+      "desc": "The same script opens a tagged GitHub Release and uploads the zip — one command, no console."
+    },
+    {
+      "tag": "Deploy",
+      "desc": "Publishing the release fires a GitHub Actions workflow that regenerates this site from the live release list and deploys it to GitHub Pages."
+    },
+    {
+      "tag": "Live",
+      "desc": "The download below is whatever the newest release is. Nobody edits this page by hand."
+    }
   ],
   "links": [
-    { "label": "Source",           "href": "https://github.com/Kaliffen/Funstra" },
-    { "label": "Review dossier",   "href": "dossier.html" },
-    { "label": "How it is made",   "href": "process.html" },
-    { "label": "Vision",           "href": "https://github.com/Kaliffen/Funstra/blob/main/VISION.md" },
-    { "label": "World",            "href": "https://github.com/Kaliffen/Funstra/blob/main/WORLD.md" },
-    { "label": "Demo guide",       "href": "https://github.com/Kaliffen/Funstra/blob/main/BED-AND-BANDAGE.md" },
-    { "label": "Validation",       "href": "https://github.com/Kaliffen/Funstra/blob/main/Evidence/VALIDATION.md" }
+    {
+      "label": "Source",
+      "href": "https://github.com/Kaliffen/Funstra"
+    },
+    {
+      "label": "Review dossier",
+      "href": "dossier.html"
+    },
+    {
+      "label": "How it is made",
+      "href": "process.html"
+    },
+    {
+      "label": "Vision",
+      "href": "https://github.com/Kaliffen/Funstra/blob/main/VISION.md"
+    },
+    {
+      "label": "World",
+      "href": "https://github.com/Kaliffen/Funstra/blob/main/WORLD.md"
+    },
+    {
+      "label": "Demo guide",
+      "href": "https://github.com/Kaliffen/Funstra/blob/main/KEEP-THE-LIGHTS-ON.md"
+    },
+    {
+      "label": "Validation",
+      "href": "https://github.com/Kaliffen/Funstra/blob/main/Evidence/VALIDATION.md"
+    }
+  ],
+  "panelBuild": "Demo 03 — Keep the Lights On (v0.3.0)",
+  "panelSummary": "All four reviewers: 8/10",
+  "dossierFile": "funstra-review-dossier-demo03.html",
+  "previousDossiers": [
+    {
+      "file": "funstra-review-dossier.html",
+      "output": "dossier-demo02.html",
+      "label": "Demo 02 dossier — original 4/10 to 7/10 verdicts"
+    }
   ]
 }

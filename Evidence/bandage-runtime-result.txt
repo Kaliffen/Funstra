@@ -1,4 +1,4 @@
-FAIL
+PASS
 PASS: All scenario locations are walkable
 PASS: Navigable route to (-27.00, 0.00, -12.00)
 PASS: Controller arrived beside interaction at (-27.00, 0.00, -12.00)
@@ -16,6 +16,64 @@ PASS: Controller arrived beside interaction at (-27.00, 0.00, -12.00)
 PASS: Clinic stock and trust unlock Neri partnership
 PASS: Navigable route to (-8.00, 0.00, -37.00)
 PASS: Controller arrived beside interaction at (-8.00, 0.00, -37.00)
-System.Exception: Neri failed to follow at (-6.08, 0.01, -31.21) walkable=True next=(-6.00, 0.00, -32.00) player=(-7.89, 0.03, -36.66)
-  at Funstra.FunstraGame+<BandageSteps>d__75.MoveNext () [0x00440] in <15081120141a47adb21deacaff3d0735>:0 
-  at Funstra.FunstraGame+<SmokeRun>d__206.MoveNext () [0x00114] in <15081120141a47adb21deacaff3d0735>:0 
+PASS: Companion navigates streets to follow player
+PASS: Nearby companion autonomously stabilizes bleeding with finite supplies
+PASS: Hold order stops companion movement
+PASS: Tactical pause stops world transactions and wounds
+PASS: Reload preserves companion, orders, stock and player position
+PASS: New save format preserves loose cargo across session endings
+PASS: Companion near home does not block cargo extraction
+PASS: Moving during extraction resets the hold without losing cargo
+PASS: Becoming wanted cancels an in-progress extraction
+PASS: Interrupted extraction can be retried and pays exactly once
+PASS: Actual pistol attack consumes ammo, wounds target and records witnessed offense
+PASS: Hostile guard fires through clear sight and causes bleeding
+PASS: Building blocks attack without consuming ammo
+PASS: Guard cannot shoot player through a building
+PASS: Empty-magazine guard strikes nearby visible companion rather than distant player
+PASS: Visible companion remains a valid melee target while player is out of sight
+PASS: Clearing immediate heat preserves collector memory
+PASS: Bandage stops bleeding without fully healing wounds
+PASS: Actual defeat produces recovery screen, debt and recoverable shipment
+PASS: Defeat returns player to a usable bed
+PASS: Penniless post-sale recovery remains available
+PASS: Actual E interaction stabilizes downed companion
+PASS: Complete runtime outcome sequence conserves all medicine
+PASS: Actual unobserved hold creates missing stock without identifying thief
+PASS: Reload retains stolen medicine and distinct witness knowledge
+PASS: Shared melee rules let residents be harmed and call police
+PASS: Resident wounds and reaction survive reload
+PASS: Live gunfight wounds player and incapacitates guard without scripted damage
+PASS: Three actual pistol shots spend three rounds
+PASS: Navigable route to (-28.00, 0.00, 3.00)
+PASS: Controller arrived beside interaction at (-28.00, 0.00, 4.00)
+PASS: Violence creates access to the same medicine and a lasting identified offense
+PASS: Reload preserves combat outcome, carried medicine and grievance
+PASS: Final scenario save remains valid
+PASS: Recycling bin blocks navigation at (-28.00, 0.00, -16.00)
+PASS: Embedded saved/spawn position resolves outside bin
+PASS: Recycling bin blocks navigation at (28.00, 0.00, -16.00)
+PASS: Embedded saved/spawn position resolves outside bin
+PASS: Recycling bin blocks navigation at (-28.00, 0.00, 10.00)
+PASS: Embedded saved/spawn position resolves outside bin
+PASS: Recycling bin blocks navigation at (29.00, 0.00, 10.00)
+PASS: Embedded saved/spawn position resolves outside bin
+PASS: Recycling bin blocks navigation at (-28.00, 0.00, 36.00)
+PASS: Embedded saved/spawn position resolves outside bin
+PASS: Recycling bin blocks navigation at (32.00, 0.00, 36.00)
+PASS: Embedded saved/spawn position resolves outside bin
+PASS: Real player controller cannot enter or step onto recycling bin
+PASS: Refuge opens from an earned partnership
+PASS: Purchased refuge changes the rendered street
+PASS: Refuge gives practical recovery without adding debt
+PASS: Exported player reload retains room, care policy and cat relationship
+PASS: Traffic car 0 completes sustained routes without intersection deadlock: 455.4762m at (-3.00, 0.00, 1.00)
+PASS: Traffic car 1 completes sustained routes without intersection deadlock: 451.6055m at (3.00, 0.00, 12.17)
+PASS: Traffic car 2 completes sustained routes without intersection deadlock: 448.5557m at (-8.43, 0.00, -40.00)
+PASS: Traffic car 3 completes sustained routes without intersection deadlock: 450.5623m at (42.50, 0.00, 12.00)
+PASS: Car brakes before pedestrian and preserves physical clearance
+PASS: Car resumes after pedestrian clears lane
+PASS: Moving car updates both route obstacle and physical collider
+PASS: Tactical/menu pause also freezes traffic
+PASS: Live companion routes around solid recycling bin without clipping
+PASS: Cat interaction records familiarity

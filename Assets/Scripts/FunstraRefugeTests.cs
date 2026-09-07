@@ -57,7 +57,7 @@ namespace Funstra
         }
         IEnumerator RefugeVisualSteps()
         {
-            State=new RunState();District.introSeen=true;screen=ScreenMode.Play;smokeFreezeAgents=true;freezeDistrictAI=true;Heat=0;
+            StartRun(false);District.introSeen=true;screen=ScreenMode.Play;smokeFreezeAgents=true;freezeDistrictAI=true;Heat=0;
             Teleport(DistrictState.Clinic);yield return new WaitForSeconds(.4f);yield return Capture("C01-clinic-and-tally");
             screen=ScreenMode.Clinic;yield return Capture("C02-neri-before");
             conversationIvo=false;screen=ScreenMode.Conversation;yield return Capture("C03-neri-story");

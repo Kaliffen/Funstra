@@ -1,0 +1,420 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keep the Lights On Dossier</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  :root{
+    --bg:#EFEAE0;
+    --surface:#FBF8F2;
+    --surface-2:#FFFFFF;
+    --ink:#1E2126;
+    --ink-dim:#5B6570;
+    --ink-faint:#8A9099;
+    --border:rgba(30,33,38,0.12);
+    --border-soft:rgba(30,33,38,0.07);
+    --accent-marcus:#B8791E;
+    --accent-dag:#2E8F6E;
+    --accent-priya:#7C5FB0;
+    --accent-nell:#B14C56;
+    --pass:#2E8F6E;
+    --tag-bg:rgba(30,33,38,0.06);
+    --shadow:0 1px 2px rgba(30,33,38,0.06), 0 8px 24px -12px rgba(30,33,38,0.18);
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#12181D;
+      --surface:#1B232B;
+      --surface-2:#212B33;
+      --ink:#EDEDE4;
+      --ink-dim:#A7B0B8;
+      --ink-faint:#727C85;
+      --border:rgba(237,237,228,0.12);
+      --border-soft:rgba(237,237,228,0.07);
+      --accent-marcus:#E3A857;
+      --accent-dag:#7FD3AE;
+      --accent-priya:#B79CE0;
+      --accent-nell:#E0919A;
+      --pass:#7FD3AE;
+      --tag-bg:rgba(237,237,228,0.08);
+      --shadow:0 1px 2px rgba(0,0,0,0.3), 0 12px 32px -16px rgba(0,0,0,0.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#12181D;
+    --surface:#1B232B;
+    --surface-2:#212B33;
+    --ink:#EDEDE4;
+    --ink-dim:#A7B0B8;
+    --ink-faint:#727C85;
+    --border:rgba(237,237,228,0.12);
+    --border-soft:rgba(237,237,228,0.07);
+    --accent-marcus:#E3A857;
+    --accent-dag:#7FD3AE;
+    --accent-priya:#B79CE0;
+    --accent-nell:#E0919A;
+    --pass:#7FD3AE;
+    --tag-bg:rgba(237,237,228,0.08);
+    --shadow:0 1px 2px rgba(0,0,0,0.3), 0 12px 32px -16px rgba(0,0,0,0.6);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--accent-dag); color:var(--surface); }
+
+  .wrap{ max-width:920px; margin:0 auto; padding:2.75rem 1.5rem 5rem; }
+
+  a{ color:inherit; }
+
+  h1,h2,h3,.label{ font-family:'Big Shoulders Display', 'Arial Narrow', sans-serif; text-wrap:balance; }
+  .mono{ font-family:'IBM Plex Mono', ui-monospace, Consolas, monospace; }
+  .num{ font-variant-numeric:tabular-nums; }
+
+  /* ---------- Masthead ---------- */
+  .masthead{
+    border:1px solid var(--border);
+    border-radius:4px;
+    background:var(--surface);
+    padding:1.6rem 1.8rem;
+    box-shadow:var(--shadow);
+  }
+  .masthead-top{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; flex-wrap:wrap;
+  }
+  .stamp{
+    font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--ink-faint); border:1px solid var(--border); border-radius:3px; padding:0.3rem 0.55rem;
+    white-space:nowrap;
+  }
+  h1{
+    font-size:clamp(2.1rem, 5vw, 2.9rem);
+    font-weight:800;
+    letter-spacing:0.01em;
+    text-transform:uppercase;
+    margin:0.5rem 0 0.15rem;
+    line-height:1.02;
+  }
+  .subtitle{
+    font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-dim);
+    font-size:1.05rem; max-width:54ch; margin:0.35rem 0 0;
+  }
+  .meta-row{
+    display:flex; flex-wrap:wrap; gap:0.5rem 1.6rem; margin-top:1.25rem; padding-top:1rem;
+    border-top:1px solid var(--border-soft);
+  }
+  .meta-item{ font-size:0.78rem; }
+  .meta-item .k{
+    display:block; font-family:'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:0.1em;
+    font-size:0.66rem; color:var(--ink-faint); margin-bottom:0.15rem;
+  }
+  .meta-item .v{ color:var(--ink); font-family:'IBM Plex Mono',monospace; font-size:0.82rem; }
+
+  /* ---------- Scorecard strip ---------- */
+  .scorecard{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
+    gap:0.9rem;
+    margin:1.9rem 0 0;
+  }
+  .score-tile{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-top:3px solid var(--tile-accent);
+    border-radius:4px;
+    padding:0.95rem 1rem 1rem;
+    box-shadow:var(--shadow);
+  }
+  .score-tile .who{
+    font-family:'Big Shoulders Display',sans-serif; font-weight:700; font-size:0.98rem;
+    text-transform:uppercase; letter-spacing:0.02em; margin:0 0 0.15rem;
+  }
+  .score-tile .build{
+    font-family:'IBM Plex Mono',monospace; font-size:0.66rem; color:var(--ink-faint);
+    text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.55rem;
+  }
+  .score-tile .score{
+    font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:2rem; color:var(--tile-accent);
+    line-height:1;
+  }
+  .score-tile .score sup{ font-size:0.9rem; color:var(--ink-faint); font-weight:400; margin-left:0.15rem;}
+  .score-tile .lens{ font-size:0.74rem; color:var(--ink-dim); margin-top:0.4rem; }
+  .score-tile .delta{ font-size:0.68rem; color:var(--pass); margin-top:0.25rem; font-family:'IBM Plex Mono',monospace; }
+
+  /* ---------- Section intro ---------- */
+  .lede{
+    margin-top:2.2rem; font-size:1.02rem; color:var(--ink-dim); max-width:68ch;
+  }
+
+  /* ---------- Dossier entries ---------- */
+  .dossier{ margin-top:2.6rem; display:flex; flex-direction:column; gap:1.6rem; }
+  .file{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-left:4px solid var(--file-accent);
+    border-radius:4px;
+    padding:1.5rem 1.7rem 1.7rem;
+    box-shadow:var(--shadow);
+  }
+  .file-head{
+    display:flex; justify-content:space-between; align-items:baseline; gap:1rem; flex-wrap:wrap;
+  }
+  .file-head h2{
+    font-size:1.5rem; font-weight:700; text-transform:uppercase; letter-spacing:0.015em; margin:0;
+    color:var(--file-accent);
+  }
+  .file-role{
+    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--ink-faint); margin-top:0.2rem;
+  }
+  .file-score{
+    font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:1.6rem; color:var(--file-accent); white-space:nowrap;
+  }
+  .file-score sup{ font-size:0.8rem; color:var(--ink-faint); font-weight:400; }
+
+  blockquote{
+    margin:1rem 0 1.1rem; padding:0 0 0 1rem; border-left:2px solid var(--file-accent);
+    font-style:italic; color:var(--ink); font-size:1.05rem;
+  }
+  .file p{ margin:0.7rem 0; color:var(--ink); }
+  .findings{ margin:0.9rem 0 0.4rem; padding:0; list-style:none; display:flex; flex-direction:column; gap:0.55rem; }
+  .findings li{
+    position:relative; padding-left:1.1rem; font-size:0.94rem; color:var(--ink-dim);
+  }
+  .findings li::before{
+    content:"—"; position:absolute; left:0; color:var(--file-accent);
+  }
+  .findings li strong{ color:var(--ink); font-weight:600; }
+
+  .cite{
+    margin-top:1.1rem; padding-top:0.8rem; border-top:1px solid var(--border-soft);
+    font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--ink-faint);
+    display:flex; flex-wrap:wrap; gap:0.3rem 1rem;
+  }
+  .cite b{ color:var(--ink-dim); font-weight:600; }
+
+  /* ---------- Cross-panel synthesis ---------- */
+  .synthesis{
+    margin-top:2.8rem; background:var(--surface); border:1px solid var(--border); border-radius:4px;
+    padding:1.6rem 1.8rem 1.8rem; box-shadow:var(--shadow);
+  }
+  .synthesis h2{
+    font-size:1.4rem; text-transform:uppercase; letter-spacing:0.02em; margin:0 0 0.3rem; font-weight:700;
+  }
+  .synthesis > p{ color:var(--ink-dim); font-size:0.95rem; max-width:66ch; margin:0 0 1.3rem; }
+
+  .items{ display:flex; flex-direction:column; gap:0; border-top:1px solid var(--border-soft); }
+  .item{
+    display:grid; grid-template-columns:6.5rem 1fr auto; gap:1rem; align-items:baseline;
+    padding:0.85rem 0; border-bottom:1px solid var(--border-soft);
+  }
+  .item .tag{
+    font-family:'IBM Plex Mono',monospace; font-size:0.62rem; letter-spacing:0.07em; text-transform:uppercase;
+    background:var(--tag-bg); color:var(--ink-dim); border-radius:3px; padding:0.22rem 0.5rem; width:fit-content;
+  }
+  .item .desc{ font-size:0.92rem; color:var(--ink); }
+  .item .who{
+    font-family:'IBM Plex Mono',monospace; font-size:0.68rem; color:var(--ink-faint); white-space:nowrap; text-align:right;
+  }
+
+  /* ---------- Verdict / footer ---------- */
+  .verdict{
+    margin-top:2.6rem; padding:1.5rem 1.8rem; border-radius:4px;
+    background:var(--surface-2); border:1px solid var(--border);
+    box-shadow:var(--shadow);
+  }
+  .verdict h2{ font-size:1.3rem; text-transform:uppercase; margin:0 0 0.6rem; font-weight:700; }
+  .verdict p{ color:var(--ink-dim); font-size:0.96rem; margin:0.5rem 0; max-width:70ch; }
+  .verdict p strong{ color:var(--ink); }
+
+  footer{
+    margin-top:2.6rem; padding-top:1.2rem; border-top:1px solid var(--border-soft);
+    font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--ink-faint);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;
+  }
+
+  @media (max-width:560px){
+    .item{ grid-template-columns:1fr; gap:0.35rem; }
+    .item .who{ text-align:left; }
+    .masthead{ padding:1.3rem 1.2rem; }
+    .file{ padding:1.25rem 1.2rem 1.4rem; }
+  }
+</style>
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="masthead-top">
+      <div>
+        <span class="stamp">Reviewer Panel · Internal · Follow-up</span>
+        <h1>Keep the Lights On Dossier</h1>
+        <p class="subtitle">A porch light, a refuge, and a cat you can finally touch — the panel's second pass, filed the morning after.</p>
+      </div>
+    </div>
+    <div class="meta-row">
+      <div class="meta-item"><span class="k">Filed</span><span class="v">2026-09-08</span></div>
+      <div class="meta-item"><span class="k">Build under review</span><span class="v">Demo 03 — Keep the Lights On (v0.3.0)</span></div>
+      <div class="meta-item"><span class="k">Panel</span><span class="v">Møller · Webb · Raman · Okafor</span></div>
+      <div class="meta-item"><span class="k">Method</span><span class="v">Hands-on harness playtest, real screens, real source</span></div>
+    </div>
+  </div>
+
+  <div class="scorecard">
+    <div class="score-tile" style="--tile-accent:var(--accent-dag)">
+      <div class="who">Dag Møller</div>
+      <div class="build mono">Demo 03</div>
+      <div class="score num">8<sup>/10</sup></div>
+      <div class="lens">Systems rigor</div>
+      <div class="delta">▲ from 7 on Demo 02</div>
+    </div>
+    <div class="score-tile" style="--tile-accent:var(--accent-marcus)">
+      <div class="who">Marcus Webb</div>
+      <div class="build mono">Demo 03</div>
+      <div class="score num">8<sup>/10</sup></div>
+      <div class="lens">Regression &amp; hardware</div>
+      <div class="delta">▲ from 7 on Demo 02</div>
+    </div>
+    <div class="score-tile" style="--tile-accent:var(--accent-priya)">
+      <div class="who">Priya Raman</div>
+      <div class="build mono">Demo 03</div>
+      <div class="score num">8<sup>/10</sup></div>
+      <div class="lens">Emotional, thematic</div>
+      <div class="delta">▲▲ from 4 on Demo 02</div>
+    </div>
+    <div class="score-tile" style="--tile-accent:var(--accent-nell)">
+      <div class="who">Nell Okafor</div>
+      <div class="build mono">Demo 03</div>
+      <div class="score num">8<sup>/10</sup></div>
+      <div class="lens">Is this a nice hour</div>
+      <div class="delta">▲ from 7 on Demo 02</div>
+    </div>
+  </div>
+
+  <p class="lede">All four passes ran the project's own harness against the real, shipped <span class="mono">KeepTheLightsOn</span> executable — not each other's notes, not the public dossier the build's own release note now cites back at this panel. Every reviewer landed on the same number this time. None of them landed on it for the same reason.</p>
+
+  <div class="dossier">
+
+    <div class="file" style="--file-accent:var(--accent-dag)">
+      <div class="file-head">
+        <div>
+          <h2>Dag Møller</h2>
+          <div class="file-role">The Systems Archivist — does the simulation hold up</div>
+        </div>
+        <div class="file-score">8<sup>/10</sup></div>
+      </div>
+      <blockquote>“The reserve-policy threshold is exactly where the document says it is — confirmed by reading the comparison operator, not an end-state screenshot.”</blockquote>
+      <p>Re-ran the twelve-dose conservation law with the new refuge fund and reserve-care split folded in — still closes across every checkpoint, now proven with the new transactions active rather than assumed to survive them. Went into <span class="mono">DistrictState.cs</span> line 72 directly to check the reserve threshold rather than trust the doc's word for it: treatment continues normally at stock 3+, refusal begins only at 2, exactly as claimed.</p>
+      <ul class="findings">
+        <li>Both Demo 02 legibility complaints he raised are genuinely fixed, not re-skinned: the history log now shows real distinct timestamps as time actually passes, and a fixed appointment time (<span class="mono">21:52</span>) now sits on the HUD.</li>
+        <li>Read <span class="mono">CityTraffic.cs</span> end to end looking for a hidden escape hatch behind the doc's disclosed limitation — found none. "A person can hold up a lane until they leave" is true because the code has no timeout, not a euphemism for a bug.</li>
+        <li>Docks the automated suite, not the game: the 26-assertion refuge test proves the threshold is <em>reached</em> correctly but never asserts the negative case — that treatment continues normally above it. Confirmed the negative case himself by reading the operator.</li>
+        <li>Flags an open question rather than a finding: the harness proves cars don't deadlock over a bounded run, but nothing proves the same holds over a much longer real session than the ~3,600-step harness covers.</li>
+      </ul>
+      <div class="cite"><span><b>Ran:</b> Test-Demo.ps1 -Mode Full/Visual -Visible</span><span><b>Also read:</b> RefugeRules.cs, DistrictState.cs, CityTraffic.cs</span><span><b>File:</b> reviewer-agents/dag-moller/*.md</span></div>
+    </div>
+
+    <div class="file" style="--file-accent:var(--accent-marcus)">
+      <div class="file-head">
+        <div>
+          <h2>Marcus Webb</h2>
+          <div class="file-role">The Consumer Advocate — technical state &amp; value</div>
+        </div>
+        <div class="file-score">8<sup>/10</sup></div>
+      </div>
+      <blockquote>“I almost filed the wrong verdict on this one. Read to the bottom before you assume I went soft.”</blockquote>
+      <p>First score above 7 across three builds. Ran a regression check nobody asked for — the original Hot Cargo campaign, in isolation, against the 0.3.0 exe carrying two more demos' worth of bolted-on systems. It came back exactly as clean as the first build he ever tested.</p>
+      <ul class="findings">
+        <li><strong>Nearly mis-flagged a bug, caught it himself:</strong> every screenshot shows <span class="mono">MARA / STANDING: NEW FACE</span> frozen — the same symptom shape as the dead <span class="mono">REPUTATION</span> stat he caught in Demo 02. Traced it to source before saying anything: different system, doesn't move in this review scenario, moves correctly when its own mechanic fires (verified with an independent Legacy-mode run).</li>
+        <li>The exact stat he flagged as broken last time — <span class="mono">IVO KNOWS YOUR FACE</span> — now clears correctly to <span class="mono">NO IDENTIFIED OFFENSE WITH IVO</span> after settlement, confirmed across two screenshots in the same session.</li>
+        <li>Hardware coverage: still RTX-4090-only, third build in a row, now carrying the heaviest simulated load yet (four traffic cars on top of everything from Demo 02). "Disclosure isn't the same as coverage."</li>
+        <li>Names his own near-miss as a documentation gap worth fixing: nothing in the 24-screen evidence set shows MARA/STANDING moving off NEW FACE, which could read as a regression to a reader who never opens the source.</li>
+      </ul>
+      <div class="cite"><span><b>Ran:</b> Test-Demo.ps1 -Mode Full/Visual/Legacy -Visible</span><span><b>Also read:</b> FunstraUI.cs, RunState.cs</span><span><b>File:</b> reviewer-agents/marcus-webb/*.md</span></div>
+    </div>
+
+    <div class="file" style="--file-accent:var(--accent-priya)">
+      <div class="file-head">
+        <div>
+          <h2>Priya Raman</h2>
+          <div class="file-role">The Feelings-First Critic — does it mean anything</div>
+        </div>
+        <div class="file-score">8<sup>/10</sup></div>
+      </div>
+      <blockquote>“I came in ready to write the same review with new nouns. I can't. The person I said wasn't in the build yet has arrived.”</blockquote>
+      <p>The biggest swing on the panel: 4 to 8. Went back into the dialogue source expecting to find the same convergent-line problem she flagged in Demo 02. Found the opposite — five distinct titled Ivo states and eleven distinct Neri states, each a full sentence keyed to a specific thing the player did.</p>
+      <ul class="findings">
+        <li>Neri's line about the bed — "I inherited the room and the debt. I kept the door open. I don't always know which part of that was a choice." — is exactly the interiority she asked for after Demo 02's one good sentence.</li>
+        <li>Her hardest Demo 02 complaint, named directly: pay, steal, or fight all converged on one flat line from Ivo. Now five distinct outcomes, including one that explicitly refuses to let money absolve violence: "It doesn't stand him back up."</li>
+        <li>The care-policy choice has real prose weight: reserving medicine causes Neri to lie to <strong>Edda</strong> — a named person from the game's very first line of dialogue, not an abstract stranger — and to say the lie belongs to both of them.</li>
+        <li>Stays honest about the ceiling: "a room with two names on the door" is still told in paused text panels, not shown. The porch light is still just a porch light.</li>
+      </ul>
+      <div class="cite"><span><b>Ran:</b> Test-Demo.ps1 -Mode Full/Visual -Visible</span><span><b>Also read:</b> RefugeState.cs, FunstraDistrictUI.cs</span><span><b>File:</b> reviewer-agents/priya-raman/*.md</span></div>
+    </div>
+
+    <div class="file" style="--file-accent:var(--accent-nell)">
+      <div class="file-head">
+        <div>
+          <h2>Nell Okafor</h2>
+          <div class="file-role">The Cosy Hours Player — is this a nice hour</div>
+        </div>
+        <div class="file-score">8<sup>/10</sup></div>
+      </div>
+      <blockquote>“I asked for one thing after the last demo, and they actually built it. I have real evidence for that this time, not 'I believe the paperwork.'”</blockquote>
+      <p>Her single open ask from Demo 02 — a cat she could actually touch — got answered, and she checked it herself instead of taking the design doc's word: a real P-key interaction, a real animation, a first-time line and a repeat line, proven to survive a save and reload in her own harness run.</p>
+      <ul class="findings">
+        <li><strong>Tally, closed for real:</strong> "Tally put his head into your hand... For a moment, nobody needs anything" — persisted through reload, confirmed by <span class="mono">Check(District.tallyPetted, "Cat interaction records familiarity")</span>.</li>
+        <li>Found the best "home" writing in the build wasn't the refuge panel at all: Neri's line about leaving her shoes under the bed for the first time landed harder for Nell than any mechanic did.</li>
+        <li>Flagged the reserve-medicine consequence as a real, if optional, sting — warns a player looking for a purely soft night that one specific button can make Neri say something that sits with you.</li>
+        <li>Gentle ding, against the team's own bar: refuge rest is mechanically kind but doesn't get the staged "moment" Demo 02's defeat screen already knew how to deliver.</li>
+      </ul>
+      <div class="cite"><span><b>Ran:</b> Test-Demo.ps1 -Mode Full/Visual -Visible</span><span><b>Also read:</b> FunstraRefuge.cs, RefugeState.cs</span><span><b>File:</b> reviewer-agents/nell-okafor/*.md</span></div>
+    </div>
+
+  </div>
+
+  <div class="synthesis">
+    <h2>Cross-panel findings</h2>
+    <p>What no single lens caught alone — the four together did. Ranked by who'd feel it first.</p>
+    <div class="items">
+      <div class="item"><span class="tag">Evidence gap</span><span class="desc"><strong>MARA/STANDING never shown moving</strong> off NEW FACE anywhere in the 24-screen set — a benign scenario-coverage gap that briefly looked like a recurrence of a real bug from Demo&nbsp;02.</span><span class="who">Marcus Webb</span></div>
+      <div class="item"><span class="tag">Test coverage</span><span class="desc">Reserve-policy threshold is correct at the source level, but the <strong>automated suite never asserts the negative case</strong> — that care continues normally above stock 2.</span><span class="who">Dag Møller</span></div>
+      <div class="item"><span class="tag">Writing</span><span class="desc">All three medicine-acquisition routes that once converged on one line from Ivo now produce <strong>five distinct, consequence-specific states</strong>.</span><span class="who">Priya Raman</span></div>
+      <div class="item"><span class="tag">Hardware</span><span class="desc"><strong>Untested below an RTX 4090</strong> for a third consecutive build, now carrying the heaviest simulated load yet.</span><span class="who">Marcus Webb</span></div>
+      <div class="item"><span class="tag">Scope</span><span class="desc">Refuge exterior change is honestly modest — <strong>a single porch light</strong>, exactly as the doc discloses, not oversold in the screenshots.</span><span class="who">Priya · Nell</span></div>
+      <div class="item"><span class="tag">Delivered</span><span class="desc">Tally the cat — Nell's one open ask from Demo&nbsp;02 — is now <strong>pettable, named on screen, and persists across a reload</strong>.</span><span class="who">Nell Okafor</span></div>
+    </div>
+  </div>
+
+  <div class="verdict">
+    <h2>Panel outcome</h2>
+    <p>Between demos, the earlier dossier went public on the project's own release page, alongside the build itself — the team's own release note for this build cites it directly: "its opinions informed this slice; its scores are not independent acceptance of this build." The panel noted that, decided it changed nothing about how any of them would score honestly, and went back into the build exactly as before — real harness, real source, real screenshots, no reviewer taking another's word for a claim they could check themselves.</p>
+    <p><strong>Every score moved up. Not one score moved for the same reason.</strong> Dag's ledger absorbed a second spend path without cracking; Marcus ran a three-generation regression check and confirmed a previously-flagged bug is actually fixed rather than hidden; Priya watched a convergent line become five distinct ones and the biggest swing on the panel, 4 to 8; Nell got the one specific thing she asked for, with a save file that proves it rather than a doc that promises it. Four different instruments, pointed at four different parts of the same build, all reading higher. That agreement is worth more than any one of the numbers alone.</p>
+  </div>
+
+  <div class="synthesis" id="cd-integration">
+    <h2>Creative Director disposition</h2>
+    <p>Demo 03 publication pass · 8 September 2026. The four original 8/10 verdicts above concern the reviewed candidate. This addendum records subsequent verification work, not new scores or human acceptance. <a href="https://github.com/Kaliffen/Funstra/issues/19">Release record #19</a>.</p>
+    <div class="items">
+      <div class="item"><span class="tag">Accepted</span><span class="desc">Add explicit stock-three treatment, stock-two refusal and reopened-care checks, including exact cash and medicine conservation. Capture Mara's RUNNER and CONNECTED standing after real campaign deliveries. <a href="https://github.com/Kaliffen/Funstra/issues/20">Evidence work #20</a>; final results and build identity are recorded there. <a href="https://github.com/Kaliffen/Funstra/blob/main/reviewer-agents/demo03-integration-replay.md">Targeted evidence replay</a> confirms both gaps are closed.</span><span class="who">Dag · Marcus</span></div>
+      <div class="item"><span class="tag">Deferred</span><span class="desc">Only the RTX 4090 machine is available. Low-end performance remains a target; physical validation will follow when hardware is available, without blocking this release. A capped run cannot establish minimum specs. <a href="https://github.com/Kaliffen/Funstra/issues/21">Hardware #21</a>.</span><span class="who">Marcus</span></div>
+      <div class="item"><span class="tag">Next slice</span><span class="desc">Make refuge recovery more visible and personal. Worth pursuing with the next coherent player-facing slice; no rushed interior or cutscene added to this release. <a href="https://github.com/Kaliffen/Funstra/issues/22">Refuge presentation #22</a>.</span><span class="who">Priya · Nell</span></div>
+      <div class="item"><span class="tag">Deferred</span><span class="desc">Long-session deliberate lane blockage alongside district events needs its own stress route. Current ambient yielding behavior is retained. <a href="https://github.com/Kaliffen/Funstra/issues/23">Traffic coverage #23</a>.</span><span class="who">Dag</span></div>
+    </div>
+    <p>Full original reviews: <a href="https://github.com/Kaliffen/Funstra/blob/main/reviewer-agents/dag-moller/playtest-review-keep-the-lights-on.md">Dag</a> · <a href="https://github.com/Kaliffen/Funstra/blob/main/reviewer-agents/marcus-webb/playtest-review-keep-the-lights-on.md">Marcus</a> · <a href="https://github.com/Kaliffen/Funstra/blob/main/reviewer-agents/priya-raman/playtest-review-keep-the-lights-on.md">Priya</a> · <a href="https://github.com/Kaliffen/Funstra/blob/main/reviewer-agents/nell-okafor/playtest-review-keep-the-lights-on.md">Nell</a>.</p>
+    <p>Final publication validation: 140 editor checks, 168 exported-player checks and 24 refreshed B/C frames, plus the RUNNER and CONNECTED captures. Gameplay assembly SHA-256: <span class="mono" style="overflow-wrap:anywhere">d2fa2af7ea929422c702ad82866d641893063acb55bebeb6c77d2d356aec47ea</span>. Browser preview was unavailable; site generation, HTML structure and links were checked.</p>
+    <p>Method: guided scripted gameplay, rendered frame and log inspection, with source/manual checks. Repeated routes support separate critical judgments, not exploratory play or wider hardware coverage.</p>
+  </div>
+
+  <footer>
+    <span>Compiled from reviewer-agents/*/playtest-review-keep-the-lights-on.md — hands-on harness runs, this session</span>
+    <span>Keep the Lights On Dossier</span>
+  </footer>
+
+</div>

@@ -37,7 +37,7 @@ The original jobs, cargo banking, fists/pistol combat, wounds, companion orders 
 - **Street quality:** four cars move, their wheels turn, junction access prevents conflicting arrivals, and they yield to pedestrians. Navigation replans around current vehicle footprints. Solid props share physics and navigation; collected props stop blocking routes.
 - **Tally:** visible name marker, a pet prompt near the clinic, a short reaching/tail response and a persistent first encounter in the journal.
 
-The dossier is a supplied review of harness runs and source/screens. Its opinions informed this slice; its scores are not independent acceptance of this build.
+The Demo 02 dossier informed this slice. The four Demo 03 guided-build reviews and their unchanged scores are collected in [the Demo 03 dossier](Docs/funstra-review-dossier-demo03.html), with a separate CD integration record. Publication adds reserve-boundary checks and actual Mara standing captures; the scores are not human acceptance or new reviews of that rebuilt artifact.
 
 ## Boundaries for reviewers
 

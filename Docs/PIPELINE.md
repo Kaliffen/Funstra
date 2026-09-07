@@ -94,3 +94,9 @@ requests build the site and check the output but never deploy.
 - Pages: **Settings → Pages → Source: GitHub Actions**.
 - No secrets. The workflows use the automatic `GITHUB_TOKEN`; `Tools/Release.ps1`
   uses the developer's `gh` login.
+
+## Demo 03 reviewed package
+
+`Tools/Package-Demo03.ps1` packages the already-tested Demo 03 player together with its guide, validation, build identity, standing captures and single review dossier. It refuses results older than the gameplay assembly. Publish this archive with `gh release create v0.3.0 Releases/Funstra-demo-03-windows.zip --target <verified-source-commit> --title "Keep the Lights On" --notes-file <prepared-notes-file> --latest` after pushing the verified source. This invokes the same release-check and Pages workflows without rebuilding or replacing the richer package with a player-only zip. Preserve earlier releases.
+
+`site/content/site.json` selects the current versioned dossier through `dossierFile`, and lists prior dossiers in `previousDossiers`. Demo 02 retains its original file; Demo 03 has `Docs/funstra-review-dossier-demo03.html`. Each demo owns one dossier; the site's `dossier.html` is the published copy of the selected one.

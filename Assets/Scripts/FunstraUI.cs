@@ -18,12 +18,24 @@ namespace Funstra
             for(int y=0;y<32;y++) for(int x=0;x<32;x++) disc.SetPixel(x,y,new Color(1,1,1,Mathf.Clamp01(16-Vector2.Distance(new Vector2(x+.5f,y+.5f),new Vector2(16,16)))));
             disc.Apply();
         }
+        void WarmFont()
+        {
+            const string glyphs=" !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\u2192\u2022\u2026\u2014\u2013\u2019\u2018\u201c\u201d";
+            // Keep the active atlas populated before IMGUI submits any text. Large
+            // headings only need bold capitals; avoid filling it with unused faces.
+            foreach(int size in new[]{12,14,16,18,20,24})
+                foreach(var style in new[]{FontStyle.Normal,FontStyle.Bold})uiFont.RequestCharactersInTexture(glyphs,size,style);
+            uiFont.RequestCharactersInTexture(glyphs,28,FontStyle.Bold);
+            uiFont.RequestCharactersInTexture("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 /&'?.:-",40,FontStyle.Bold);
+            uiFont.RequestCharactersInTexture("FUNSTRA",80,FontStyle.Bold);
+        }
         void Rect(float x,float y,float w,float h,Color c)
         { GUI.color=c; GUI.DrawTexture(new Rect(x,y,w,h),Texture2D.whiteTexture); GUI.color=Color.white; }
         void Dot(float x,float y,float r,Color c)
         { GUI.color=c; GUI.DrawTexture(new Rect(x-r,y-r,r*2,r*2),disc); GUI.color=Color.white; }
         void Text(string text,float x,float y,float w,float h,int size,Color c,FontStyle style=FontStyle.Normal,TextAnchor align=TextAnchor.UpperLeft)
         {
+            size=size>60?80:size>36?40:size>26?28:size>22?24:size>19?20:size>16?18:size>14?16:size>12?14:12;
             label.fontSize=size; label.normal.textColor=c; label.fontStyle=style; label.alignment=align;
             GUI.Label(new Rect(x,y,w,h),text,label);
         }
@@ -42,7 +54,7 @@ namespace Funstra
         }
         void OnGUI()
         {
-            InitUI(); GUI.matrix=Matrix4x4.TRS(Vector3.zero,Quaternion.identity,new Vector3(Screen.width/W,Screen.height/H,1));
+            InitUI();if(Event.current.type==EventType.Repaint)WarmFont(); GUI.matrix=Matrix4x4.TRS(Vector3.zero,Quaternion.identity,new Vector3(Screen.width/W,Screen.height/H,1));
             if(screen==ScreenMode.Title||screen==ScreenMode.ConfirmRestart) { DrawTitle(); if(screen==ScreenMode.ConfirmRestart) DrawRestart(); return; }
             DrawHUD();
             switch(screen)
@@ -87,7 +99,7 @@ namespace Funstra
             if(DistrictEnabled&&trackDistrict)chapter="A BED & A BANDAGE";
             Text(chapter,50,126,344,25,13,CityArt.Mint,FontStyle.Bold);
             string title=State.Finished?"DEBT SETTLED":!State.accepted?"MEET MARA":State.carrying?"BRING IT HOME":Jobs.All[State.completed].title;
-            if(DistrictEnabled&&trackDistrict)title=District.recruited?"NOT ALONE ANYMORE":District.Carrying?"WHO GETS THE DOSES?":"A CLINIC IN DEBT";
+            if(DistrictEnabled&&trackDistrict)title=District.refuge?"A DOOR WITH TWO NAMES":District.recruited?"NOT ALONE ANYMORE":District.Carrying?"WHO GETS THE DOSES?":"A CLINIC IN DEBT";
             Text(title,50,161,344,42,25,paper,FontStyle.Bold);
             string objective=State.Finished?"Run hot cargo. Bank your take at home.\nUpgrade your bag. Go back for more.":!State.accepted?"Talk to the fence at the pawn counter.":State.carrying?(Heat>0?"Lose the police. Break sight in an alley.":"Return the goods to Mara for payment."):"Take the "+Jobs.All[State.completed].item.ToLowerInvariant()+".\n"+Jobs.All[State.completed].district+"  /  HOLD E";
             if(DistrictEnabled&&trackDistrict)objective=MedicalObjective;

@@ -213,7 +213,9 @@ function renderPage(list) {
     )
     .join('\n');
 
-  return `<title>${esc(c.title)} — playable prototype</title>
+  return `<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(c.title)} — playable prototype</title>
 <meta name="description" content="${esc(c.tagline)}">
 <meta property="og:title" content="Funstra — playable prototype">
 <meta property="og:description" content="${esc(c.tagline)}">
@@ -264,11 +266,12 @@ ${shots}
 
   <div class="section" id="panel">
     <h2>What reviewers said</h2>
+    <p class="mono">${esc(c.panelBuild)}</p>
     <p class="lede">${esc(c.panelNote)}</p>
     <div class="scorecard">
 ${tiles}
     </div>
-    <p class="note">The 4/10 stays on the page. <a href="dossier.html">Read the full dossier →</a></p>
+    <p class="note"><a href="dossier.html">Read the ${esc(c.panelBuild)} dossier →</a>${c.previousDossiers.map((d) => `<br><a href="${esc(d.output)}">${esc(d.label)}</a>`).join('')}</p>
   </div>
 
   <div class="section" id="pipeline">
@@ -342,7 +345,9 @@ function renderProcess(latest) {
     )
     .join('\n');
 
-  return `<title>${esc(p.title)} — ${esc(content.title)}</title>
+  return `<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(p.title)} — ${esc(content.title)}</title>
 <meta name="description" content="${esc(p.tagline)}">
 <meta property="og:title" content="${esc(p.title)} — ${esc(content.title)}">
 <meta property="og:description" content="${esc(p.tagline)}">
@@ -400,7 +405,7 @@ ${artefacts}
       </div>
       <div class="item">
         <span class="tag mono">Reviews</span>
-        <span class="desc">Four verdicts on the shipped build, published unedited<span class="sub">scores 4/10 to 7/10</span></span>
+        <span class="desc">${esc(content.panelBuild)} — four verdicts, published unedited<span class="sub">${esc(content.panelSummary)}</span></span>
         <span class="who"><a href="dossier.html">dossier</a></span>
       </div>
     </div>
@@ -429,8 +434,11 @@ writeFileSync(join(dist, 'releases.json'), JSON.stringify(list, null, 2));
 writeFileSync(join(dist, '.nojekyll'), '');
 copyFileSync(join(siteDir, 'assets', 'styles.css'), join(dist, 'assets', 'styles.css'));
 
-const dossier = join(root, 'Docs', 'funstra-review-dossier.html');
-if (existsSync(dossier)) copyFileSync(dossier, join(dist, 'dossier.html'));
+// A demo owns one dossier; retain previous case files rather than overwriting history.
+copyFileSync(join(root, 'Docs', content.dossierFile), join(dist, 'dossier.html'));
+for (const dossier of content.previousDossiers) {
+  copyFileSync(join(root, 'Docs', dossier.file), join(dist, dossier.output));
+}
 
 let copied = 0;
 for (const shot of content.shots) {

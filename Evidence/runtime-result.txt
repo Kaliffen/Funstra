@@ -21,6 +21,7 @@ PASS: Controller arrived beside interaction at (-17.00, 0.00, -35.00)
 PASS: Delivery advances job 1
 PASS: Delivery offers upgrade
 PASS: Permanent perk selected
+PASS: First actual Mara delivery advances standing to RUNNER
 PASS: Navigable route to (-31.00, 0.00, 12.50)
 PASS: Controller arrived beside interaction at (-31.00, 0.00, 14.00)
 PASS: Actual hold interaction acquired job 2
@@ -29,7 +30,7 @@ PASS: Controller arrived beside interaction at (-17.00, 0.00, -35.00)
 PASS: Delivery advances job 2
 PASS: Delivery offers upgrade
 PASS: Permanent perk selected
-PASS: Navigable route to (29.00, 0.00, 38.00)
+PASS: Navigable route to (28.00, 0.00, 39.00)
 PASS: Controller arrived beside interaction at (29.00, 0.00, 39.00)
 PASS: Actual hold interaction acquired job 3
 PASS: Depot theft always triggers alarm
@@ -67,6 +68,7 @@ PASS: Extraction requires a sustained hold
 PASS: Releasing interaction resets extraction without banking
 PASS: Second extraction banks alarmed cargo after heat clears
 PASS: Reload preserves satchel and secured cash but clears loose cargo
+PASS: Completed and reloaded Mara arc retains CONNECTED standing in free roam
 PASS: Officer sees and pursues wanted player
 PASS: Building interrupts officer line of sight
 PASS: Unseen player does not update search location

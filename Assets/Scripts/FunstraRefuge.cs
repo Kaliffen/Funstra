@@ -45,7 +45,7 @@ namespace Funstra
                 DistrictAction("ADD $30 TO FUND",allowed&&State.cash>=30,395,501,395,()=>District.FundClinic(State));
                 DistrictAction("BUY 2 DOSES / FUND $30",allowed&&District.supplierStock>=2&&District.clinicMoney>=30,806,501,395,()=>District.BuyClinicReserve());
                 DistrictAction(District.reserveMedicine?"OPEN SHELF TO EVERYONE":"RESERVE LAST 2 FOR CREW",allowed,395,562,395,()=>District.SetClinicPolicy(!District.reserveMedicine));
-                DistrictAction("REST TO 80 / NO DEBT",allowed&&!District.bleeding&&!District.neri.bleeding&&(District.health<80||District.neri.health<80),806,562,395,()=>District.RefugeRest());
+                DistrictAction("REST TO 80 / NO DEBT",allowed&&!District.bleeding&&!District.neri.bleeding&&(District.health<80||District.neri.health<80&&Vector3.Distance(District.neri.position,DistrictState.Clinic)<=4),806,562,395,()=>District.RefugeRest());
                 Text("Public care uses 1 dose every 90s. Reserve policy stops it at 2.\nAutomatic supply: 2 doses / $30 every 4 minutes if shelf <2. No offline clock.",395,625,805,49,16,quiet);
             }
             DistrictAction("BACK TO NERI",true,395,702,805,()=>screen=ScreenMode.Clinic);

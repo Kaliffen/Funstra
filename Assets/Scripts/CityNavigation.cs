@@ -24,11 +24,11 @@ namespace Funstra
         {
             if (Mathf.Abs(p.x) > 46 || p.z < -44 || p.z > 44) return false;
             foreach (var b in Obstacles)
-                if (p.x > b.min.x - .55f && p.x < b.max.x + .55f && p.z > b.min.z - .55f && p.z < b.max.z + .55f) return false;
+                if (p.x > b.min.x - .5499f && p.x < b.max.x + .5499f && p.z > b.min.z - .5499f && p.z < b.max.z + .5499f) return false;
             foreach(var b in Props)
-                if(p.x>b.min.x-.55f&&p.x<b.max.x+.55f&&p.z>b.min.z-.55f&&p.z<b.max.z+.55f)return false;
+                if(p.x>b.min.x-.5499f&&p.x<b.max.x+.5499f&&p.z>b.min.z-.5499f&&p.z<b.max.z+.5499f)return false;
             if (traffic) foreach (var b in Traffic)
-                if (p.x > b.min.x-.55f && p.x < b.max.x+.55f && p.z > b.min.z-.55f && p.z < b.max.z+.55f) return false;
+                if (p.x > b.min.x-.5499f && p.x < b.max.x+.5499f && p.z > b.min.z-.5499f && p.z < b.max.z+.5499f) return false;
             return true;
         }
         public Vector3 SafePoint(Vector3 p)
@@ -45,6 +45,8 @@ namespace Funstra
             var ray = new Ray(from + Vector3.up, d.normalized);
             foreach (var b in Obstacles)
                 if (b.size.y > 1.4f && b.IntersectRay(ray, out float dist) && dist < d.magnitude) return false;
+            foreach(var b in Traffic)
+                if(b.IntersectRay(ray,out float dist)&&dist<d.magnitude)return false;
             return true;
         }
         public bool ClearWalk(Vector3 a, Vector3 b, bool traffic = true)
@@ -60,8 +62,8 @@ namespace Funstra
         {
             foreach(var b in bounds)
             {
-                var expanded=new Bounds(new Vector3(b.center.x,0,b.center.z),new Vector3(b.size.x+1.1f,2,b.size.z+1.1f));
-                if(expanded.IntersectRay(ray,out float distance)&&distance<=length)return true;
+                var expanded=new Bounds(new Vector3(b.center.x,0,b.center.z),new Vector3(b.size.x+1.0998f,2,b.size.z+1.0998f));
+                if(expanded.IntersectRay(ray,out float distance)&&distance<length-.0001f)return true;
             }
             return false;
         }

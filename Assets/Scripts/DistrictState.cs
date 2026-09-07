@@ -52,7 +52,7 @@ namespace Funstra
         public bool Carrying => shipmentOwner=="player" && shipmentUnits>0;
         public Vector3 ShipmentPosition => shipmentOwner=="buyer"?Buyer:Garage;
         public int TotalMedicine => clinicStock+supplierStock+marketStock+shipmentUnits+consumed;
-        public string ClinicStatus => clinicStock>0?"TREATING PATIENTS":"OUT OF MEDICINE";
+        public string ClinicStatus => clinicStock==0?"OUT OF MEDICINE":refuge&&reserveMedicine&&clinicStock<=2?"PUBLIC CARE PAUSED / CREW RESERVE":"TREATING PATIENTS";
         public int ReleasePrice => shipmentOwner=="buyer"?140:100;
         public void Record(string kind,string observer,string text)
         { incidents.Add(new DistrictIncident(clock,kind,observer,text)); if(incidents.Count>60)incidents.RemoveAt(0); }
