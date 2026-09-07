@@ -146,7 +146,7 @@ function renderArchive(older) {
     .map((r) => {
       const asset = r.assets[0];
       const link = asset
-        ? `<a href="${esc(asset.url)}">${bytes(asset.size)} zip</a>`
+        ? `<a href="${esc(asset.url)}">Download ${esc(r.tag)} · ${bytes(asset.size)} zip</a>`
         : `<a href="${esc(r.url)}">notes</a>`;
       return `      <div class="item">
         <span class="tag mono">${esc(r.tag)}</span>
@@ -237,7 +237,7 @@ function renderPage(list) {
   </div>
 
 ${renderDownload(latest)}
-${older.length ? '<p class="note"><a href="#archive">Previous versions — downloads and release notes ↓</a></p>' : ''}
+${older.length ? `<p class="note"><a href="${esc(older[0].url)}">Previous version — ${esc(older[0].tag)}</a> · <a href="#archive">All retained versions ↓</a></p>` : ''}
 
   <div class="section" id="honest">
     <h2>${esc(c.honesty.heading)}</h2>
