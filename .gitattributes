@@ -1,0 +1,22 @@
+* text=auto eol=lf
+
+*.cs        text diff=csharp
+*.md        text
+*.json      text
+*.yml       text
+*.css       text
+*.mjs       text
+*.ps1       text eol=crlf
+*.cmd       text eol=crlf
+
+# Unity serialized assets
+*.unity     text
+*.asset     text
+*.mat       text
+*.meta      text
+*.prefab    text
+
+*.png       binary
+*.zip       binary
+*.dll       binary
+*.exe       binary

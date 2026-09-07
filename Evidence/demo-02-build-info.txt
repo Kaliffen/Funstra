@@ -1,0 +1,3 @@
+Funstra Demo 02 / version 0.2.0
+Assembly-CSharp.dll SHA256: C240CFE2D22B0F6316997470601D287021CEFDE61DE25EC7CA4CD9B616DF4EEB
+107 rule assertions / 139 runtime assertions / 12 final visual captures

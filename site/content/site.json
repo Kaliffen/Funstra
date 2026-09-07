@@ -1,0 +1,57 @@
+{
+  "title": "Funstra",
+  "tagline": "An isometric sandbox RPG prototype about surviving a damaged port city — developed in the open, by agents, one playable demo at a time.",
+  "stamp": "Open source · Playable prototype",
+  "repo": "Kaliffen/Funstra",
+  "engine": "Unity 6000.4.0f1",
+  "platform": "Windows x64",
+  "license": "MIT",
+  "honesty": {
+    "heading": "Be clear about what this is",
+    "lede": "Funstra is a development project that publishes its work as playable builds. It is not a finished game, it is not for sale, and it is not trying to look further along than it is.",
+    "is": [
+      "A <strong>playable prototype</strong>. Each demo is a real Windows executable you can run for an hour, not a trailer or a wishlist page.",
+      "<strong>Free and MIT-licensed</strong>, source and all. Clone it, build it, take it apart.",
+      "<strong>Built by AI agents</strong> against a written vision, design and world bible, with every build validated by an automated harness before it ships.",
+      "<strong>Original work</strong> — procedural geometry and sound, no purchased assets, no external services required to play.",
+      "<strong>Honest about its reviews.</strong> A four-reviewer panel plays each build and the scores range from 4/10 to 7/10. Those verdicts are published unedited."
+    ],
+    "isNot": [
+      "A finished sandbox campaign. The current demo is a <strong>single neighbourhood</strong> and roughly an hour of content.",
+      "A commercial release. There is no store page, no price, no roadmap you have paid for.",
+      "Visually competitive. Geometry is deliberately primitive so the effort goes into <strong>systems and consequences</strong>.",
+      "A live world. Nothing simulates while the application is closed, and the economy is small on purpose.",
+      "Stable across versions. Saves may carry forward, but a demo can and does change underneath you."
+    ]
+  },
+  "panel": [
+    { "who": "Marcus Webb",  "lens": "Technical state, value",   "score": 7, "accent": "marcus" },
+    { "who": "Dag Møller",    "lens": "Systems rigor",           "score": 7, "accent": "dag" },
+    { "who": "Priya Raman",  "lens": "Emotional, thematic",     "score": 4, "accent": "priya" },
+    { "who": "Nell Okafor",  "lens": "Is this a nice hour",     "score": 7, "accent": "nell" }
+  ],
+  "panelNote": "Four reviewer agents, written to disagree, each playing the shipped executable rather than the design docs. The spread is the point.",
+  "shots": [
+    { "file": "B02-origin.png",       "caption": "Origin introduction — you start as an expendable person" },
+    { "file": "B03-neri.png",         "caption": "Neri's curbside clinic, six doses short" },
+    { "file": "B05-combat.png",       "caption": "Combat: selection, line of sight, finite ammunition" },
+    { "file": "B06-tactics.png",      "caption": "Tactical pause — inspect, target, issue companion orders" },
+    { "file": "B07-partnership.png",  "caption": "A recruited partner who follows, holds, retreats and stabilises" },
+    { "file": "B04-district-map.png", "caption": "Old Port district map" }
+  ],
+  "pipeline": [
+    { "tag": "Agent", "desc": "An agent implements a demo against VISION, DESIGN and WORLD, then runs the rules and runtime harness." },
+    { "tag": "Build", "desc": "<span class=\"mono\">Tools/Release.ps1</span> drives a batch-mode Unity build, verifies the executable and zips the portable package." },
+    { "tag": "Publish", "desc": "The same script opens a tagged GitHub Release and uploads the zip — one command, no console." },
+    { "tag": "Deploy", "desc": "Publishing the release fires a GitHub Actions workflow that regenerates this site from the live release list and deploys it to GitHub Pages." },
+    { "tag": "Live", "desc": "The download below is whatever the newest release is. Nobody edits this page by hand." }
+  ],
+  "links": [
+    { "label": "Source",           "href": "https://github.com/Kaliffen/Funstra" },
+    { "label": "Review dossier",   "href": "dossier.html" },
+    { "label": "Vision",           "href": "https://github.com/Kaliffen/Funstra/blob/main/VISION.md" },
+    { "label": "World",            "href": "https://github.com/Kaliffen/Funstra/blob/main/WORLD.md" },
+    { "label": "Demo guide",       "href": "https://github.com/Kaliffen/Funstra/blob/main/BED-AND-BANDAGE.md" },
+    { "label": "Validation",       "href": "https://github.com/Kaliffen/Funstra/blob/main/Evidence/VALIDATION.md" }
+  ]
+}

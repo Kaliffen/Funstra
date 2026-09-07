@@ -1,0 +1,76 @@
+name: Site
+
+# CI/CD for funstra.dev-on-Pages. The site is regenerated from the live
+# release list, so it redeploys on three signals:
+#   - a release is published (a new demo is out)
+#   - the site source changes on main
+#   - somebody asks for it (workflow_dispatch)
+#
+# Pull requests build the site but never deploy it.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - 'Docs/funstra-review-dossier.html'
+      - 'Evidence/*.png'
+      - '.github/workflows/site.yml'
+  pull_request:
+    paths:
+      - 'site/**'
+      - '.github/workflows/site.yml'
+  release:
+    types: [published, edited, deleted]
+  workflow_dispatch:
+  # Refresh download counts and catch anything that missed its trigger.
+  schedule:
+    - cron: '17 5 * * 1'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race; always finish the newest one.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate site from published releases
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node site/build.mjs
+
+      - name: Check the output
+        run: |
+          test -s site/dist/index.html || { echo "index.html missing or empty"; exit 1; }
+          test -s site/dist/releases.json || { echo "releases.json missing"; exit 1; }
+          grep -q '<title>' site/dist/index.html || { echo "no title tag"; exit 1; }
+          echo "Generated $(wc -c < site/dist/index.html) bytes from $(node -e "console.log(require('./site/dist/releases.json').length)") release(s)"
+
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+        with:
+          path: site/dist
+
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

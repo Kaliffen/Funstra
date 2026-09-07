@@ -1,0 +1,2 @@
+PASS
+PASS: Twelve non-black screens captured from Windows player

@@ -1,0 +1,14 @@
+/Library/
+/Temp/
+/Obj/
+/Logs/
+/UserSettings/
+/Build/
+/Releases/
+*.csproj
+*.sln
+*.slnx
+*.log
+/site/dist/
+/site/.cache/
+node_modules/

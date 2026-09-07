@@ -1,0 +1,21 @@
+FAIL
+PASS: All scenario locations are walkable
+PASS: Navigable route to (-27.00, 0.00, -12.00)
+PASS: Controller arrived beside interaction at (-27.00, 0.00, -12.00)
+PASS: Actual interaction opens Neri conversation
+PASS: Navigable route to (-26.00, 0.00, 11.00)
+PASS: Controller arrived beside interaction at (-26.00, 0.00, 11.00)
+PASS: Actual interaction opens collector terms
+PASS: Peaceful release pays collector
+PASS: Navigable route to (-28.00, 0.00, 3.00)
+PASS: Controller arrived beside interaction at (-28.00, 0.00, 4.00)
+PASS: Actual paid hold collects medicine without hostility
+PASS: Collected stock disappears from world rendering
+PASS: Navigable route to (-27.00, 0.00, -12.00)
+PASS: Controller arrived beside interaction at (-27.00, 0.00, -12.00)
+PASS: Clinic stock and trust unlock Neri partnership
+PASS: Navigable route to (-8.00, 0.00, -37.00)
+PASS: Controller arrived beside interaction at (-8.00, 0.00, -37.00)
+System.Exception: Neri failed to follow at (-6.08, 0.01, -31.21) walkable=True next=(-6.00, 0.00, -32.00) player=(-7.89, 0.03, -36.66)
+  at Funstra.FunstraGame+<BandageSteps>d__75.MoveNext () [0x00440] in <15081120141a47adb21deacaff3d0735>:0 
+  at Funstra.FunstraGame+<SmokeRun>d__206.MoveNext () [0x00114] in <15081120141a47adb21deacaff3d0735>:0 

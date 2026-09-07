@@ -1,0 +1,64 @@
+name: Release check
+
+# The Unity build runs on the developer's Windows machine (a batch-mode Unity
+# build needs a licensed editor, which the free runners do not have), so this
+# workflow is the gate on the other end: when a release is published it checks
+# that what arrived is actually playable-shaped before the site advertises it.
+
+on:
+  release:
+    types: [published, edited]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag to check'
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Inspect the published release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.release.tag_name || inputs.tag }}
+        run: |
+          set -euo pipefail
+          echo "Checking release $TAG"
+          gh release view "$TAG" --repo "$GITHUB_REPOSITORY" \
+            --json tagName,name,body,isDraft,assets > release.json
+
+          node - <<'JS'
+          const r = require('./release.json');
+          const fail = [];
+          const warn = [];
+
+          const zips = r.assets.filter(a => /\.zip$/i.test(a.name));
+          if (!zips.length) fail.push('no .zip asset attached — nothing for the site to link');
+
+          const win = zips.filter(a => /windows/i.test(a.name));
+          if (zips.length && !win.length) warn.push('no asset named *windows*.zip; the site labels downloads as Windows');
+
+          for (const a of zips) {
+            if (a.size < 1024 * 1024) fail.push(`${a.name} is ${a.size} bytes — that is not a Unity player`);
+            if (a.size > 1900 * 1024 * 1024) fail.push(`${a.name} exceeds the 2 GB release asset limit`);
+          }
+
+          if (!/^v?\d+\.\d+\.\d+/.test(r.tagName)) warn.push(`tag ${r.tagName} is not semver-shaped`);
+          if (!r.body || r.body.trim().length < 40) fail.push('release notes are missing or too short — they are the download blurb on the site');
+          if (!r.name || r.name === r.tagName) warn.push('release has no human title; the site will show the bare tag');
+
+          for (const w of warn) console.log(`::warning::${w}`);
+          for (const f of fail) console.log(`::error::${f}`);
+
+          console.log(`\n${r.name} (${r.tagName})`);
+          for (const a of r.assets) console.log(`  ${a.name}  ${(a.size / 1048576).toFixed(1)} MB`);
+
+          if (fail.length) process.exit(1);
+          console.log('\nRelease is fit to publish.');
+          JS

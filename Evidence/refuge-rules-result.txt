@@ -1,0 +1,1 @@
+PASS: 23 refuge, dialogue, schedule and prop route assertions
