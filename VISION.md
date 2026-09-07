@@ -1,6 +1,6 @@
 # Funstra: a city that can belong to someone else
 
-Creative foundation approved 7 September 2026; spatial direction revised by the CD on 8 September 2026 in response to owner feedback. The six-release proposal remains subject to owner review. This describes the intended game, not the capabilities of the current executable. Setting: [WORLD.md](WORLD.md). Development decisions: [DESIGN.md](DESIGN.md).
+Creative foundation approved 7 September 2026; spatial direction revised by the CD on 8 September 2026 in response to owner feedback. The owner approved the revised six-release direction, including combat priority, physical bullets, weapon variety and criminal relationships; playable acceptance remains separate. This describes the intended game, not the capabilities of the current executable. Setting: [WORLD.md](WORLD.md). Development decisions: [DESIGN.md](DESIGN.md).
 
 ## The promise
 
@@ -60,7 +60,7 @@ Treatment creates decisions and dependence. Ordinary upkeep can be delegated at 
 
 The intended model is direct movement of the selected character, real-time combat, tactical pause, character switching and small-crew orders. Pause allows inspection and orders without reflex pressure. Squadmates execute understandable instructions: move, cover, engage, retreat, stabilize and carry. Combat and free roam share the same world.
 
-Weapons, cover, sight, noise, ammunition, morale and wounds matter. Enemies can retreat, surrender, pursue an advantage or help their wounded. Gunfire can end a fight quickly while attracting witnesses and reinforcements. Melee, avoidance, negotiation and surrender remain useful. Difficulty comes from preparation and circumstances, not enormous health pools.
+Combat feel is a priority alongside usable geography. The owner references Escape from Duckov for satisfying movement, weight and feedback. All firearm damage uses simulated bullets traveling through space over time, never hitscan. Weapon families and models differ in handling, recoil recovery, projectile behavior, loading, report and tactical use, not merely damage. Heavy feedback must preserve responsive controls. Weapons, cover, sight, noise, ammunition, morale and wounds matter. Enemies coordinate holding, movement, search, covering fire, aid and retreat through information they can perceive or communicate. Finite resources and lost contact limit them. Bosses use the same combat rules; danger comes from capabilities and circumstances. Enemies can retreat, surrender, pursue an advantage or help their wounded. Gunfire can end a fight quickly while attracting witnesses and reinforcements. Melee, avoidance, negotiation and surrender remain useful. Difficulty comes from preparation and circumstances, not enormous health pools.
 
 Start with the player and one companion. Expand toward four controllable people after that works. Larger organizations delegate work instead of making every employee a tactical unit.
 
@@ -81,6 +81,12 @@ Crew members explain objections and give you a chance to respond. A principled m
 Factions need resources, people and access to execute plans. They respond to shortages, threats and opportunities, and negotiate when fighting is expensive. Residents are not one approval bar: protecting tenants may anger a landlord; exposing diverted goods may benefit creditors and victims for different reasons.
 
 Politics concerns actual conditions: debt enforcement, treatment access, work and who may use force. There is no universal morality score or mandatory revolutionary ending. What your organization does establishes its character.
+
+### Illegal weapons and criminal relationships
+
+Civilian guns are illegal without institutional authorization in Funstra. Acquiring one introduces dealers, favors, stolen stock and competing loyalties. Expensive ammunition makes a fight an economic decision, with nonviolent alternatives and a viable recovery path for a disarmed player. The arsenal should offer many genuinely different weapons over time; the first releases prove a few families well.
+
+Named bosses, helpful residents, dealers, lawyers and investigative agents belong to the same local network. A dangerous site is somebody's workplace or source of income. Trust and betrayal change real access, assistance, information and obligations. Investigators follow evidence rather than an omniscient criminality meter. A clinic and refuge support this dangerous life; service management is one possible ambition within the crime RPG.
 
 ### Economy, territory and evidence
 

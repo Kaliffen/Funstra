@@ -1,7 +1,7 @@
 # Funstra development plan — A Port That Needs You
 
-Creative Director proposal, 8 September 2026. [Epic #26](https://github.com/Kaliffen/Funstra/issues/26).
-**Planning complete is not implementation or product-owner acceptance.** This is the single maintained roadmap and spatial design contract. GitHub issues own execution status. [VISION.md](VISION.md) owns the game promise; [WORLD.md](WORLD.md) owns setting facts. Start at [README.md](README.md) for the published game and documentation map.
+Creative direction approved by the owner, 8 September 2026; revised to prioritize projectile combat, enemy groups and criminal relationships. [Epic #26](https://github.com/Kaliffen/Funstra/issues/26).
+**Direction approved; future gameplay is not implemented or accepted as a playable release.** This is the single maintained roadmap and spatial design contract. GitHub issues own execution status. [VISION.md](VISION.md) owns the game promise; [WORLD.md](WORLD.md) owns setting facts. Start at [README.md](README.md) for the published game and documentation map.
 
 ## The decision
 
@@ -14,7 +14,7 @@ The present executable is Demo 03, Keep the Lights On. It has a finite medical d
 | Input | CD disposition | Work |
 |---|---|---|
 | Owner/MVP feedback: good art, shallow and repetitive environment; needs scale and interactions | Accept. Spatial design becomes a core gameplay deliverable. Increasing ground area or prop count alone is insufficient. | Demo 04 and the spatial contract below |
-| Priya/Nell: the refuge matters in prose more than in the world | Accept. Make recovery, shared space and eventually patient visits visible. | Existing [#22](https://github.com/Kaliffen/Funstra/issues/22), Demos 04–05 |
+| Priya/Nell: the refuge matters in prose more than in the world | Accept. Make recovery, shared space and eventually patient visits visible. | Existing [#22](https://github.com/Kaliffen/Funstra/issues/22), Demo 07; interiors deferred behind combat |
 | Dag: finite economy is coherent, sustained traffic interaction remains uncertain | Keep the conserved rules, extend them to bounded imports and physical delivery; test obstruction before relying on travel for supply. | Existing [#23](https://github.com/Kaliffen/Funstra/issues/23), Demos 04–05 |
 | Marcus: coverage limits and weak hardware evidence | Profile growth on the available 4090. Record actual CPU/GPU/memory costs; do not invent low-end support. | Existing [#21](https://github.com/Kaliffen/Funstra/issues/21), every release |
 | Four Demo 03 scores of 8/10 | Preserve as guided-build judgments. They do not settle open-ended enjoyment or the long-term vision. | Every release has new identified-build reviews |
@@ -26,122 +26,157 @@ The [Demo 03 dossier](Docs/funstra-review-dossier-demo03.html) and original revi
 
 ## Long-term target and the Demo 09 proof
 
-**Become someone Old Port depends on.** The full game aspires to a damaged city where independently acting organizations need goods, labor, treatment and access; the player can survive outside them, join them or build one that can endure setbacks. The six-release arc proves this locally, before promising a citywide simulation.
+**Become someone Old Port depends on.** The full game aspires to a damaged city where independently acting organizations need goods, labor, treatment and access; the player can survive outside them, join them or build one that can endure setbacks. The six-release arc proves this locally through a criminal sandbox: dangerous outings, illegal weapons, credible enemy groups, dealers, bosses, helpful contacts, trust, betrayal and investigators. Medicine and shelter give that life consequences; running a clinic is one path, not the dominant game identity.
 
 By Demo 09, a player can begin dependent on shelter and a supplier, recruit two people, establish a staffed foothold and influence a dispute about the pump approach and relief access. At least three distinct connected subareas support the same resource and movement rules. Two local institutions respond to what they know and can afford.
 
-The acceptance scenario is 60–90 minutes, with no required Mara job acceptance. Compare cooperation, illicit appropriation and deliberate non-intervention from comparable starting states. These must leave different visible staffing, access and treatment outcomes. Lose a route or refuge and recover through surviving relationships. After a local settlement, continue for three service cycles under the new obligations. Also demonstrate a viable independent livelihood without owning a building.
+The acceptance scenario is 60–90 minutes, with no required Mara job acceptance. Compare cooperation, illicit appropriation/betrayal and deliberate non-intervention from comparable starting states, including weapon acquisition, a coordinated fight and the resulting investigation. These must leave different visible staffing, access and treatment outcomes. Lose a route or refuge and recover through surviving relationships. After a local settlement, continue for three service cycles under the new obligations. Also demonstrate a viable independent livelihood without owning a building.
 
-This is a proposed target for the product owner to judge. It is not a promise of six calendar weeks, a finished game, or a mandatory path from poverty to government.
+This is the approved direction; playable delivery remains for the product owner to judge. It is not a promise of six calendar weeks, a finished game, or a mandatory path from poverty to government.
 
 ## Six cumulative releases
 
-| Release | Player power | Depends on | Ticket |
-|---|---|---|---|
-| 04 — Streets Worth Knowing | I know this neighborhood well enough to use it. | Published Demo 03 | [#27](https://github.com/Kaliffen/Funstra/issues/27) |
-| 05 — Goods Have Somewhere to Go | I can keep a route working—or profit from its failure. | Demo 04 | [#28](https://github.com/Kaliffen/Funstra/issues/28) |
-| 06 — Nobody Gets Home Alone | People and practiced skills let us survive what I could not. | Demo 05 | [#29](https://github.com/Kaliffen/Funstra/issues/29) |
-| 07 — A Place of Our Own | Our work supports a place other people use. | Demo 06 | [#30](https://github.com/Kaliffen/Funstra/issues/30) |
-| 08 — The Price of Order | What we control changes what institutions can demand. | Demo 07 | [#31](https://github.com/Kaliffen/Funstra/issues/31) |
-| 09 — A Port That Needs You | The port negotiates with us, and we choose what to preserve. | Demo 08 | [#32](https://github.com/Kaliffen/Funstra/issues/32) |
+| Release | Player outcome | Ticket |
+|---|---|---|
+| 04 — Streets Worth Fighting For | Movement, aiming and a dangerous street encounter feel good before the game grows further. | [#27](https://github.com/Kaliffen/Funstra/issues/27) |
+| 05 — The Price of a Gun | Acquiring and firing an illegal weapon is a consequential choice involving other people. | [#28](https://github.com/Kaliffen/Funstra/issues/28) |
+| 06 — Nobody Gets Home Alone | A capable crew can take on a dangerous site and bring its people home. | [#29](https://github.com/Kaliffen/Funstra/issues/29) |
+| 07 — A Place of Our Own | We can rely on people, betray them, and risk losing something we built together. | [#30](https://github.com/Kaliffen/Funstra/issues/30) |
+| 08 — The Price of Order | Investigators and institutions react to what they can prove; relationships give us ways to respond. | [#31](https://github.com/Kaliffen/Funstra/issues/31) |
+| 09 — A Port That Needs You | A small criminal sandbox sustains combat, relationships and consequences after a local settlement. | [#32](https://github.com/Kaliffen/Funstra/issues/32) |
 
-The order is deliberate: space makes logistics meaningful; logistics gives the crew work; a working crew supports a foothold; institutions then have something real to contest. Demo 04 is ready for implementation scoping. Demos 05–09 are outcome plans whose details must respond to preceding evidence.
+Dependency order: physical feel and combat → illegal weapons and supply → crew and dangerous sites → trust and foothold → investigation → integrated criminal sandbox. Each release depends on the preceding tested foundation. Interiors are scheduled for Demo07; combat takes priority.
 
-### Demo 04 — Streets Worth Knowing
+### Demo 04 — Streets Worth Fighting For
 
-**Outcome:** I know this neighborhood well enough to use it.
+**Outcome:** Movement, aiming and a dangerous street encounter feel good before the game grows further.
 
-Recompose the existing Old Port around clinic court, market lane and service quay; add an adjoining working yard. Deliver a usable clinic/refuge room, a controllable yard gate, public and service entrances, shared collision/sight/navigation rules and contextual interaction cues. Move current activities to named locations with safe save migration. Existing #22 supplies the recovery moment; #23 covers prolonged blockage; #21 starts profiling.
+Recompose the clinic/market/quay loop with an adjoining yard, public and gated service approaches, readable cover and reliable camera/selection. Introduce simulated projectile combat for player and enemies: pistol and shotgun, finite magazines, interruptible reloads, distinct handling and impacts. A small enemy group can hold an approach, reposition under communicated knowledge and retreat when disadvantaged. Preserve existing clinic/cargo outcomes. #21 profiles the busy route; #23 tests obstruction. Interiors and #22 move to Demo07.
 
-**Acceptance:** Traverse two meaningfully different routes between clinic and quay: a public route exposed to observers and a service route dependent on gate access. Open/close the gate during a companion or resident journey; they reroute or explain waiting, never clip or teleport. Rest inside, interrupt safely, exit and reload with state intact. Demonstrate 20–30 minutes of play with before/after route screenshots and a legible normal HUD. Target 1.5–2 times baseline reachable walkable area, measured in the same navigation units; area alone cannot pass the release.
+**Acceptance:** Play the same encounter with pistol and shotgun: moving targets, close and longer sightlines, limited ammunition, gate changes and retreat. Shots travel over time and can miss or hit intervening geometry; damage never occurs merely because the trigger was pulled. Shotgun pellets remain separate projectiles. Enemies share observed information with a delay/range rule, lose track honestly, and do not all rush one position. Player and AI respect the same cover and reload/ammunition rules. Traverse two meaningfully different approaches. Record owner judgment of movement/aiming/feedback separately from test passes.
 
-**Validation:** Exported controller routes through every new doorway/corner, pursuit/sight and companion regressions, door-blocked recovery, old save relocation preserving original save, prolonged traffic obstruction and clearing. Profile identical old/new routes on the 4090; set measured expansion budgets before adding further blocks.
+**Validation:** Test swept projectile collision at low/high frame rates, thin/moving obstacles, near-muzzle obstruction, pause, pellet hits, single damage application, ammo/reload interruption and in-flight save/load policy. Inspect motion and audio, not just stills. Run group loss-of-contact, ally incapacity, blocked flank and retreat scenarios. Compare current/new traversal and frame-time profiles. Expand area only after the core street/fight feels convincing.
 
-**Limits:** No citywide expansion, general construction editor, procedural city generator, free driving or full daily-life simulation. Keep all existing clinic outcomes and cargo playable.
+**Limits:** Two firearms and one bounded small-group encounter; no interiors, arsenal catalogue, full faction AI or citywide rebuild. The 1.5–2x walkable-area ambition is secondary to feel and useful routes.
 
-**Stop/replan:** If the new bounds demand a wholesale engine rewrite, first prove one room, one street loop and one reversible gate with bounded data; revise scope before adding districts.
+**Stop/replan:** If the environment remains clunky or the guns feel interchangeable, refine the proof before increasing map/weapon count. If navigation expansion demands wholesale replacement, reduce to one loop and reversible gate.
 
-Execution and release checkpoint: [#27](https://github.com/Kaliffen/Funstra/issues/27).
+Execution: [#27](https://github.com/Kaliffen/Funstra/issues/27).
 
-### Demo 05 — Goods Have Somewhere to Go
+### Demo 05 — The Price of a Gun
 
-**Outcome:** I can keep a route working—or profit from its failure.
+**Outcome:** Acquiring and firing an illegal weapon is a consequential choice involving other people.
 
-Connect quay store, a named carrier and clinic through a renewable medical shipment. Import goods through an explicit priced, finite-per-arrival source, with owner, destination and travel state. Show one named patient's visit/treatment/refusal. Schedules describe work and need, not arbitrary wandering. Offer paid work, purchase, diversion and theft using the same goods. Begin replacing cargo bank-trigger restock with deliveries; clearly bound any remaining legacy exceptions.
+Introduce a named dealer and a first-gun situation with purchase, favor, theft and recovery from defeated enemies as distinct entry paths. Replace the default free pistol for new starts with an authored acquisition opportunity; preserve legitimate existing-save equipment. Guns are illegal without institutional authorization in the setting. Carrying openly, being searched or witnessed use can expose possession; concealed inventory is not omnisciently known. Ammo is expensive relative to ordinary work, sold from bounded stock. Add an SMG after the pistol/shotgun feel gate. Reuse physical delivery rules for one bounded weapons/ammunition route and medicine replenishment.
 
-**Acceptance:** Observe at least three replenishment cycles without accepting a quest. Delay the carrier at the gate; clinic stock and visible treatment respond. Escort, purchase or divert the same shipment and show who gains/loses. A blocked path produces waiting, rerouting or cancellation with known cause. Log imports, inventories, consumption and exports so conservation closes; no doubled stock after save/reload.
+**Acceptance:** Acquire a gun by two different paths without mandatory Mara job acceptance. Compare negotiation/avoidance, restrained shooting and wasteful fire on net earnings and recovery options. Observe at least three delivery cycles; delay/divert goods and show a dealer/clinic shortage. Exposed illegal possession triggers a local response; unseen concealed possession does not. Every imported, sold, loaded, fired and recovered round has an accounted source/destination. A penniless, disarmed player has a non-suicidal way to earn or acquire access again.
 
-**Validation:** Compare coarse/fine simulation steps, arrival and handoff reloads, interrupted carrier recovery, no-player baseline versus intervention, repeatability without money farming exploits; fresh rendered patient and delivery evidence.
+**Validation:** Inventory and money conservation with bounded imports; no duplicated weapon/ammo at pickup, delivery or reload saves. Existing-save migration retains gear; new-start route earns it. Test witness versus non-witness cases and confiscation/recovery. Compare SMG burst handling and ammunition costs with both Demo04 weapons.
 
-**Limits:** One supply chain, one carrier and one patient role initially. No full commodity market, hunger meters, offline catch-up or infinite free import faucet.
+**Limits:** One dealer, one explicit supply mechanism with two destinations, one local illegality response. Full investigations wait for Demo08. No free infinite restock on banking or mandatory ammo-grind loop.
 
-**Stop/replan:** If a physical actor becomes a deadlock dependency, make delayed/cancelled service readable and recoverable before multiplying schedules.
+**Stop/replan:** If combat becomes unaffordable to learn, adjust accessible practice/recovery and income costs rather than erase scarcity or force repeatable chores.
 
-Execution and release checkpoint: [#28](https://github.com/Kaliffen/Funstra/issues/28).
+Execution: [#28](https://github.com/Kaliffen/Funstra/issues/28).
 
 ### Demo 06 — Nobody Gets Home Alone
 
-**Outcome:** People and practiced skills let us survive what I could not.
+**Outcome:** A capable crew can take on a dangerous site and bring its people home.
 
-Player plus up to two persistent recruits: retain Neri's medical role and introduce one dockworker/mechanic with wages, ties and a reason to join. Add selected-character control, tactical pause orders, role-specific work, shared carried supplies, carry/rescue and combat retreat/surrender. Deliver a small useful progression set for medicine, mechanics and combat/stealth through consequential actions, with transparent limits against repetitive farming.
+Player plus two persistent recruits, including Neri and one dockworker/mechanic. Selected-character control, tactical pause orders, aid/carry/rescue and limited practical skill growth serve one dock operation. Introduce a named boss, a helpful local contact with their own stake, and guards with group roles. Add a rifle distinguished by sightline use, handling, recoil and report. Guards cover movement, investigate reports, aid an ally or retreat; leader loss changes coordination without magical knowledge.
 
-**Acceptance:** Run a dock operation solo, with Neri, and with both recruits; demonstrate different solutions rather than only damage increases. Give a medic hold/aid orders and a worker gate/access work while the player distracts a guard. Rescue a downed person through the new geometry, or retreat and arrange their recovery. Supplies, injuries, promised pay and an objection survive reload. Staying solo remains supported.
+**Acceptance:** Approach the same boss-controlled yard solo, with Neri and with the full crew; demonstrate stealth, bargaining and a coordinated fight with different costs. The boss uses the same damage/ammunition rules, with danger from people and position rather than a giant health pool. Interrupt enemy communication or remove their leader and observe a specific coordination change. Rescue or abandon an ally; their condition and remembered event survive reload. Compare rifle, SMG, shotgun and pistol on the same site.
 
-**Validation:** Controller and AI use identical doors/cover; ordered actions cancel and resume honestly; no remote healing or duplicate carried actors; defeat/recovery with each active character; pause and migration regressions.
+**Validation:** Control switching/order cancellation, companion and enemy pathing, resource costs, carrying an incapacitated actor, group retreat under obstruction, loss of leader/contact and failure recovery. Test ammo-cost and handling differences across four gun families in the exported player.
 
-**Limits:** Three controllable people total; no large squads, detailed limb model, permadeath overhaul or dozens of skills. Squad architecture must grow from proven current support behavior.
+**Limits:** Three controllable people, one authored dangerous site and boss, four gun families total at this stage. No large squads, extensive skill tree or forced boss kill.
 
-**Stop/replan:** If switching actors destabilizes saves/orders, ship no larger roster until player plus Neri passes all control and rescue routes.
+**Stop/replan:** If character switching/rescue is unstable, reduce encounter complexity until player plus Neri works. Prove one integrated operation before deepening every subsystem.
 
-Execution and release checkpoint: [#29](https://github.com/Kaliffen/Funstra/issues/29).
+Execution: [#29](https://github.com/Kaliffen/Funstra/issues/29).
 
 ### Demo 07 — A Place of Our Own
 
-**Outcome:** Our work supports a place other people use.
+**Outcome:** We can rely on people, betray them, and risk losing something we built together.
 
-Make the repaired refuge a staffed clinic/store foothold using existing supply, skills and recruits. Assign care, receiving and route work; wages, service income and supplies come from actual transactions. Allow a negotiated lease or coercive takeover with differing obligations. Make residents physically seek the service; denial and reliable care change individual willingness to help. Add a fallback shelter and a way to lose or relinquish the premises.
+Create a usable refuge/workplace interior and complete #22's visible recovery moment. Staff a bounded clinic/store or illicit receiving operation using existing supplies and crew. An authored joint operation establishes specific promises, divided proceeds and access privileges. The player can honor terms, conceal a diversion, expose an associate or change sides. NPC trust and suspicion follow known events; warnings and existing ties explain refusal or betrayal. A helpful contact and a criminal boss have interests beyond alignment labels.
 
-**Acceptance:** Operate three service cycles while the player is elsewhere; jobs consume real time/goods without simulating every decorative resident. Compare public service and crew reserve in visible visitors and cash. Fail a delivery/pay obligation, receive warning, then repair the relationship or lose access. Recover people and essential belongings through a fallback path. An independent worker can ignore ownership and earn a viable living.
+**Acceptance:** Compare keeping and breaking the same promise; show differences in access, willingness to help, proceeds and a later operation. A hidden betrayal has no immediate omniscient reaction; discovery changes the response. Run three staffed service/receiving cycles while absent. Enter, rest, interrupt and reload the refuge safely. Lose or relinquish the premises, then recover people and essentials through a fallback relationship. Staying independent remains viable.
 
-**Validation:** Autonomous job conservation, wages, shortages, absence, assignment cancellation, save/reload mid-job, loss/recovery without softlocks; compare owner and independent play economics.
+**Validation:** Knowledge provenance, promise/pay accounting, discovery timing and persistence, no reset through repeat dialogue. Interior camera/selection/doors, in-room injury recovery, staff work conservation, confiscation/access-loss and fallback shelter routes.
 
-**Limits:** One manageable premises, a few assignable jobs, no city builder, passive income button or universal neighborhood approval meter.
+**Limits:** One usable premises, one joint-operation betrayal situation and bounded jobs; no random treachery rolls, universal reputation score, base-building editor or every-building interiors.
 
-**Stop/replan:** If upkeep becomes compulsory minute-by-minute clicking, simplify delegation before adding new buildings or resource types.
+**Stop/replan:** If betrayal only flips a meter or upkeep becomes mandatory clicking, deepen the visible consequence and delegation before adding more people or buildings.
 
-Execution and release checkpoint: [#30](https://github.com/Kaliffen/Funstra/issues/30).
+Execution: [#30](https://github.com/Kaliffen/Funstra/issues/30).
 
 ### Demo 08 — The Price of Order
 
-**Outcome:** What we control changes what institutions can demand.
+**Outcome:** Investigators and institutions react to what they can prove; relationships give us ways to respond.
 
-Implement local Harbor Combine and Dock Mutual plans around the same route and services, with Compact enforcement as a bounded response. Plans require people, funds and known information. Add a visible checkpoint or work stoppage at the existing quay exit toward the pump approach; the approach itself opens in Demo 09, specific witness reports and delayed institutional response. Negotiate passage, share costs, expose a diversion, reroute, or use force. Define one authored dispute with several entry points.
+Introduce a named Compact investigative agent, the setting's federal-style investigator, and a named lawyer with clients and limits. Witness reports, discovered stock/equipment and communicated records create bounded case evidence, suspicion and identification as distinct states. Agents visit relevant sites, question contacts and seek corroboration. Harbor Combine and Dock Mutual make local resource-backed plans; enforcement can contest the existing quay exit. Legal representation, restitution, informants, negotiation and flight have distinct costs and limits.
 
-**Acceptance:** Run a no-player baseline and two interventions from the same initial state; show different checkpoint staffing/access and service outcomes. Unseen theft causes missing-stock investigation without naming the player. A witnessed attack consumes response resources and creates a specific grievance. Settling money does not silently erase injury or every faction's knowledge. A lost deal leaves an actionable alternative route or settlement.
+**Acceptance:** Compare unnoticed theft, a witnessed armed attack and a betrayed associate's report. Trace every investigator conclusion to obtainable evidence. No immediate omniscient search of the player's inventory. Show lawyer-assisted negotiated terms and a distinct non-legal recovery path; paying does not erase injuries or all witnesses' memories. Compare no-player baseline and two interventions in checkpoint staffing/access. No investigator/boss is invulnerable to protect a script.
 
-**Validation:** Knowledge provenance, bounded response resources, negotiation/violence consequences, blocked routes, actor incapacity, reload through plan transitions and fallback recovery.
+**Validation:** Evidence custody/provenance, report delivery and interruption, limited personnel/funds, case transitions under save/load, incapacity and lost informants. Test arrest/confiscation and actionable recovery if scoped; no prolonged helpless custody screen.
 
-**Limits:** Two active local faction planners, one limited enforcement response; no whole-city AI, elections, omniscient heat or endlessly spawning police.
+**Limits:** One investigator and lawyer, two local institutional plans and a bounded enforcement response. Pump approach beyond the quay opens in Demo09. No full legal simulator, real-world FBI or infinite reinforcement spawning.
 
-**Stop/replan:** If outcomes require scripted invulnerability or stock resets to preserve the story, revise the situation to accept changed world state.
+**Stop/replan:** If investigations are just a renamed heat meter or require omniscience, reduce evidence types and make one complete case legible first.
 
-Execution and release checkpoint: [#31](https://github.com/Kaliffen/Funstra/issues/31).
+Execution: [#31](https://github.com/Kaliffen/Funstra/issues/31).
 
 ### Demo 09 — A Port That Needs You
 
-**Outcome:** The port negotiates with us, and we choose what to preserve.
+**Outcome:** A small criminal sandbox sustains combat, relationships and consequences after a local settlement.
 
-Integrate the six-release systems around pump maintenance and a disputed relief contract. Extend the playable connection to a third distinct subarea at the pump approach. Existing imports, labor, treatment and access determine which local settlement is feasible. Author responses for service cooperation, illicit control and independent survival. Recognize a durable outcome while the sandbox continues under the resulting obligations.
+Integrate the expanded streets and pump approach, differentiated projectile arsenal, dealer supply, coordinated groups, crew, dangerous sites, boss, helpful contacts, lawyer and investigator around one contested relief/access settlement. Cooperative service, illicit control, betrayal and independent survival use the same resource, knowledge and combat rules. Add further weapon variants only when they change handling or tactical choices; the long-term arsenal extends beyond this four-family foundation.
 
-**Acceptance:** Complete a 60–90 minute continuous scenario with no required Mara job acceptance. Exercise cooperation, illicit appropriation and deliberate non-intervention from comparable starts; get distinct visible access, staffing and treatment outcomes. Lose a supply route or refuge and recover through surviving people. Prove at least three connected subareas, player plus two recruits, staffed foothold and two local institutional plans. Continue for three service cycles after settlement with no world reset. Demonstrate a viable independent path.
+**Acceptance:** Play a 60–90 minute scenario without mandatory Mara jobs. Compare cooperation, illicit appropriation/betrayal and non-intervention from comparable starts; visible staffing, access, relationships and investigations differ. Prove three connected subareas, player plus two recruits, a usable staffed foothold and two local institutions. Lose a weapon, route or refuge and recover through people. Continue three service/supply cycles after settlement without resetting the world. Demonstrate a viable independent livelihood and satisfying fights with four distinct gun families.
 
-**Validation:** End-to-end guided routes plus fresh four-lens reviews, machine-readable causal history, sustained simulation/performance profile, save migration and interrupted-session recovery. Gather owner/new-user unstructured impressions where available; guided reviews cannot certify open-ended enjoyment.
+**Validation:** Integrated guided routes for acquisition, combat/group behavior, trust/discovery, investigation and recovery, plus fresh four-lens reviews and one dossier. Inspect movement/audio/projectile feedback and long-session performance. Record owner/new-user judgment of actual feel separately from deterministic correctness.
 
-**Limits:** This is an Old Port sandbox milestone, not the finished city or game. No forced ending, mandatory faction victory, giant new map or unrelated feature expansion.
+**Limits:** An Old Port milestone, not a finished city; no mandatory faction victory, giant map, huge arsenal of stat reskins or forced ending.
 
-**Stop/replan:** If the integrated arc only works through quest flags or one optimal route, fix the shared dependency and defer spectacle rather than declare the sandbox complete.
+**Stop/replan:** If the loop only works through mission flags or the fighting still feels clunky, improve shared rules and encounter feel before declaring the arc achieved.
 
-Execution and release checkpoint: [#32](https://github.com/Kaliffen/Funstra/issues/32).
+Execution: [#32](https://github.com/Kaliffen/Funstra/issues/32).
+
+## Combat and criminal-life contract
+
+### Physical feel is an acceptance gate
+
+Escape from Duckov is the owner's reference for satisfying movement, weight and combat feedback, not a claim of feature parity or a requirement to copy its art. Input response, aim readability, movement around corners, muzzle direction, recoil/recovery, reload timing, sound and target reactions must form one coherent experience. Heavy does not mean sluggish controls. Camera kick/shake must preserve aim readability and have reduced-motion options.
+
+Demo04 must be enjoyable to walk and fight in before map expansion is counted as progress. Demonstrate moving, aiming, firing, missing, reloading under pressure, taking cover and retreating in an exported build. Compare both guns in the same encounter. Rendered motion and audio are required evidence for feedback; stills and assertion counts cannot prove feel. Owner acceptance of feel is separate from guided-review judgments.
+
+### Simulated bullets, no hitscan
+
+All firearm damage uses projectiles advancing through world space over simulation time. No instant target damage followed by a cosmetic tracer. Track origin, velocity, travel lifetime/range and ownership; shotgun pellets are individual projectiles. Use swept collision between previous/current positions to prevent tunneling through thin cover or fast-moving actors. A short segment collision query for the traveled step is allowed; an instant full-range hit at trigger time is not.
+
+Player and AI share projectile, obstruction, damage and ammunition rules. Aim indicators describe intended direction and obstruction, not guaranteed hits. Physical muzzle obstruction matters. Define pause, reload interruption and save/load of in-flight shots before shipping, preserving outcomes and preventing duplicated damage or ammunition. Bound/pool projectile and effect lifetimes; measure the busy case on the available machine. Penetration, ricochets, bullet drop and elaborate material simulation are later choices, not prerequisites to make the first guns satisfying.
+
+| Gun family | Distinct role to prove | Handling and cost | Planned introduction |
+|---|---|---|---|
+| Pistol | Portable, deliberate shots; vulnerable against coordinated groups | Fast readiness, readable recoil recovery, modest capacity | Demo04 |
+| Shotgun | Committed close-range burst with multiple physical pellets | Spread, strong report/impact, slower follow-up and reload vulnerability | Demo04 |
+| SMG | Short bursts and close-range pressure | Recoil accumulation, rapid magazine depletion, expensive sustained fire | Demo05 |
+| Rifle | Deliberate use of longer sightlines | Distinct projectile speed, report, handling/recovery and close-range tradeoffs | Demo06 |
+
+The long-term arsenal includes multiple models and further families, admitted for a different handling, loading, concealment or tactical choice. Four families are the first foundation, not the final gun count. Damage/color changes alone do not count as variety. Projectile speed differences must remain believable and legible; do not make every bullet a slow glowing ball to advertise the simulation.
+
+### Opponents fight as people in groups
+
+Start with a bounded group whose members can hold, reposition, investigate and retreat. Later add covering movement, aid and leader-dependent coordination. Group members act on personal observations and communicated reports with explicit delay/range, confidence and expiry. They do not know a hidden player's exact position. A blocked flank causes a new plan or explained wait; lost contact leads to search or disengagement. Finite ammunition, reload exposure, morale and injuries create exploitable weaknesses. Firing near an opponent may affect decisions only through a defined perceived-danger rule, not a magic debuff.
+
+A boss is dangerous because of position, equipment, allies and decisions, not inflated health or immunity. Important contacts can be incapacitated and operations must adapt. Sites have owners, valued goods, routine work, guard roles, entrances and escape/recovery paths; their encounters arise from those facts. Helpful people retain their own wants and limits.
+
+### Guns connect people and consequences
+
+Illegal weapons need an acquisition arc and ongoing access to ammunition. Money, favors, stolen stock and recovered gear offer different ways in. Scarcity should reward preparation, selective fire, melee, avoidance and negotiation while leaving an affordable recovery route. Tune prices against observed earnings and ammunition spent in representative fights, not arbitrary large numbers. No real-time restock timers or compulsory repetitive grind.
+
+Expose possession through observation, searches, reports or discovered evidence. Keep suspicion, identification, proof and immediate pursuit distinct. Trust rests on specific promises and events; the player can honor, hide, expose or betray. Discovery matters. Lawyers and investigators have actual clients, evidence, resources and limits. Legal help can change terms or challenge a case; it cannot buy a universal memory wipe.
 
 ## Spatial design contract
 
@@ -178,7 +213,7 @@ Demo 04 proves the court/market/quay loop and connected yard. Demo 09 reaches th
 - A door or gate declares who may open it, whether sight and shots pass, whether it is locked, and how player/NPC pathfinding responds. Demonstrate the same rule with the controller and an autonomous actor.
 - Cover comes from geometry and sight, with bins retained as useful objects. Move away from a special green-object exception as shared cover is proven. Visual cover must not promise protection that combat ignores.
 - Loading areas connect stored goods to work and onward travel. A carrier cannot invisibly deliver through a closed gate. Delays need readable causes and recovery; routes must not depend on permanent NPC invulnerability.
-- Rooms have a gameplay purpose: rest, care, storage or negotiation. Begin with the refuge; no requirement to open every façade. Cutaways, selection and interaction reach must remain legible at normal camera height.
+- Rooms have a gameplay purpose: rest, care, storage or negotiation. Begin with the refuge in Demo07; no requirement to open every façade or gate Demo04 on interiors. Cutaways, selection and interaction reach must remain legible at normal camera height.
 - Use irregular plot shapes, courtyards, narrow and broad passages, worn thresholds, loading equipment and visible repairs to distinguish places. Waterlines and pump hardware explain the world through material history.
 - Vertical silhouettes can enrich the port immediately; traversable stairs, roofs and layered navigation wait for a bounded proof. Do not imply climbable scenery before traversal supports it.
 - No empty acreage requirement. Initial 1.5–2× reachable-area target and eventual three subareas are subordinate to decisions, route timings and performance. Measure actual reachable space, not decorative water or inaccessible buildings.
@@ -208,7 +243,7 @@ Every panel gets a no-player baseline, a successful intervention and a failure/r
 
 Owner acceptance stays separate. At each published demo, compare the stated player outcome against evidence and user feedback, revise later tickets as needed, then stop for direction. This planning request does not start six autonomous build cycles.
 
-Keep future detail in these six release tickets until its prerequisites are proven. Before Demo 04 implementation, split its map/access foundation from its inhabited refuge/readability work, reusing #21–23 for their existing concerns. Do not reopen completed Demo 03 fixes. If three attempts revisit the same blocker without new evidence, bring the concrete tradeoff to the owner.
+Keep future detail in these six release tickets until its prerequisites are proven. Before Demo 04 implementation, scope the traversable combat site, projectile/weapon feel and coordinated enemy proof, reusing #21 and #23 for profiling/obstruction and keeping #22 scheduled for Demo07. Do not reopen completed Demo 03 fixes. If three attempts revisit the same blocker without new evidence, bring the concrete tradeoff to the owner.
 
 ## Documentation ownership
 

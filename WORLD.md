@@ -80,3 +80,13 @@ The coming local dispute concerns who bears the cost of keeping this access open
 Preserve warmth: workers share meals, tenants improvise repairs, Tally finds occupied rooms. Mark flood heights on walls and old civic ownership on reused machinery. Put history in usable places and ordinary work before adding another explanatory speech.
 
 These are setting connections for the next arc, not actors or districts already implemented in Demo 03. Spatial dimensions, release order and system gates belong in DESIGN.md.
+
+## Weapons, the bureau and the people between
+
+The Compact reserves armed force to authorized institutions and their licensed contractors. Civilian possession outside that authorization is illegal. Enforcement is uneven: a creditor's guard can carry openly where a dockworker risks confiscation. Ammunition passes through controlled imports, guarded stores and illicit dealers. Access depends on money, trust, debts and diverted shipments.
+
+The Compact's investigative bureau follows offenses that cross local precincts or threaten its contracts: Funstra's counterpart to federal investigators, not the real-world FBI. Its agents need witnesses, records and cooperation. Local officers, employers and neighbors may help them, obstruct them or exploit their attention.
+
+Lawyers navigate the Compact's overlapping contracts and enforcement powers. They have clients, fees and loyalties; representation can negotiate terms or challenge evidence without erasing an injury or an offended person's memory. Dealers, bosses and helpful contacts likewise depend on specific people and places. Betrayal can deliver profit or protection, but only discovered facts can inform another person's response.
+
+These approved setting commitments guide the next arc. Named characters and cases are authored within their release scope in DESIGN.md; none is claimed as implemented in Demo03.
