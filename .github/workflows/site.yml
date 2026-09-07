@@ -55,6 +55,8 @@ jobs:
       - name: Check the output
         run: |
           test -s site/dist/index.html || { echo "index.html missing or empty"; exit 1; }
+          test -s site/dist/process.html || { echo "process.html missing or empty"; exit 1; }
+          grep -q 'href="process.html"' site/dist/index.html || { echo "index does not link the process page"; exit 1; }
           test -s site/dist/releases.json || { echo "releases.json missing"; exit 1; }
           grep -q '<title>' site/dist/index.html || { echo "no title tag"; exit 1; }
           echo "Generated $(wc -c < site/dist/index.html) bytes from $(node -e "console.log(require('./site/dist/releases.json').length)") release(s)"

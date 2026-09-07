@@ -49,6 +49,7 @@
   "links": [
     { "label": "Source",           "href": "https://github.com/Kaliffen/Funstra" },
     { "label": "Review dossier",   "href": "dossier.html" },
+    { "label": "How it is made",   "href": "process.html" },
     { "label": "Vision",           "href": "https://github.com/Kaliffen/Funstra/blob/main/VISION.md" },
     { "label": "World",            "href": "https://github.com/Kaliffen/Funstra/blob/main/WORLD.md" },
     { "label": "Demo guide",       "href": "https://github.com/Kaliffen/Funstra/blob/main/BED-AND-BANDAGE.md" },

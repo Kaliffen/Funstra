@@ -1,0 +1,79 @@
+{
+  "title": "How Funstra is made",
+  "stamp": "Development process · One loop per demo",
+  "tagline": "One creative director agent, four reviewer agents, and a pipeline that publishes whatever survives. This is the whole loop, in the order it actually runs.",
+  "lede": "Funstra is not written in one pass and reviewed afterwards. Each demo is a full turn around a three-phase loop: the director builds, the panel plays and tears it apart, the director integrates what was worth integrating. Only then does a release reach the website. The loop then starts again on the next demo.",
+  "meta": [
+    ["Loop", "One demo per turn"],
+    ["Agents", "1 director · 4 reviewers"],
+    ["Trigger", "A finished demo"],
+    ["Human input", "Direction only"],
+    ["Output", "A published release"]
+  ],
+  "phases": [
+    {
+      "n": "01",
+      "accent": "dag",
+      "who": "Creative Director",
+      "title": "The director takes a turn at the game",
+      "kicker": "Ends when a demo builds and passes the harness",
+      "body": "The creative director agent owns the turn end to end. It reads <span class=\"mono\">VISION</span>, <span class=\"mono\">DESIGN</span> and <span class=\"mono\">WORLD</span>, decides what the next demo is for, and is free to work however it gets there.",
+      "points": [
+        "<strong>It may employ subagents.</strong> Implementation, art passes, harness work and investigation can each be handed to a subagent working to a written brief.",
+        "<strong>It plans the issues and the demo release</strong> — what ships in this turn, what is explicitly out of scope, and what the panel is being asked to judge.",
+        "<strong>It can also just do the work.</strong> Delegation is a tool, not a rule; small turns are often faster written directly.",
+        "<strong>The turn ends at a real executable.</strong> Nothing goes to review until the rules harness and the runtime harness both pass on a built player."
+      ]
+    },
+    {
+      "n": "02",
+      "accent": "priya",
+      "who": "Four reviewer agents",
+      "title": "The demo goes to the panel",
+      "kicker": "Triggered once the demo is done · all four run",
+      "body": "Four reviewer agents trigger on the finished demo. They play the shipped executable, not the design documents, and they are written to disagree — the spread between them is the signal, not a defect to be tuned away.",
+      "points": [
+        "<strong>Each files a full review</strong> against its own beat, with a score, and it is published unedited. The 4/10 stays on the site next to the 7s.",
+        "<strong>They keep memory between demos</strong>, so a note ignored in one turn comes back sharper in the next.",
+        "<strong>They contradict each other on purpose.</strong> Systems rigour against emotional payoff, technical state against ambition, depth against a nice first hour."
+      ]
+    },
+    {
+      "n": "03",
+      "accent": "marcus",
+      "who": "Creative Director",
+      "title": "Integration, then the final release",
+      "kicker": "Closes the turn · publishes to the website",
+      "body": "The director reads all four reviews and decides what they change. This is a judgement step, not a checklist: bugs are not optional, but taste notes are weighed against the vision and some are declined on the record.",
+      "points": [
+        "<strong>Bugs get fixed.</strong> Anything the panel hit that breaks the build, the rules or the fiction is repaired before release.",
+        "<strong>Feedback deemed worthy gets integrated</strong> — the notes that make the demo more of what it is trying to be, not merely more agreeable.",
+        "<strong>The rest is answered, not silently dropped.</strong> Declined feedback is recorded with a reason and often shows up as a later demo's premise.",
+        "<strong>A final release ships.</strong> One command builds, verifies, zips, hashes and publishes it, and the site regenerates itself from the release list."
+      ]
+    }
+  ],
+  "loopNote": "Publishing closes the turn and opens the next one. The director picks up the declined notes, the panel's open complaints and the next slice of the vision, and phase 01 begins again.",
+  "reviewers": [
+    { "who": "Marcus Webb", "archetype": "The Consumer Advocate", "lens": "Technical state, bugs, value", "range": "4–8, capped by technical state", "accent": "marcus" },
+    { "who": "Dag Møller", "archetype": "The Systems Archivist", "lens": "Depth, systems, simulation honesty", "range": "6–8", "accent": "dag" },
+    { "who": "Priya Raman", "archetype": "The Feelings-First Critic", "lens": "Theme, character, emotional payoff", "range": "3–10", "accent": "priya" },
+    { "who": "Nell Okafor", "archetype": "The Cosy Hours Player", "lens": "Comfort, routine, a nice evening", "range": "6–10", "accent": "nell" }
+  ],
+  "reviewersNote": "Each profile is a written file in the repo — background, what they care about, blind spots, voice and scoring behaviour. They are versioned alongside the game, so a reviewer's standards can be audited against what they said last time.",
+  "artefacts": [
+    { "tag": "Brief", "desc": "A written demo premise: what this turn is for, and what is out of scope.", "who": "phase 01" },
+    { "tag": "Build", "desc": "A Windows player built in batch mode and validated by the rules and runtime harnesses.", "who": "phase 01" },
+    { "tag": "Reviews", "desc": "Four independent playtest reviews with scores, committed unedited to <span class=\"mono\">reviewer-agents/</span>.", "who": "phase 02" },
+    { "tag": "Memory", "desc": "Per-reviewer meeting memory carried into the next demo's review.", "who": "phase 02" },
+    { "tag": "Fixes", "desc": "Bug repairs and the integrated share of the feedback, with declines recorded.", "who": "phase 03" },
+    { "tag": "Release", "desc": "A tagged GitHub Release with notes and a SHA-256, which redeploys this site automatically.", "who": "phase 03" }
+  ],
+  "links": [
+    { "label": "← Back to the game", "href": "index.html" },
+    { "label": "Review dossier", "href": "dossier.html" },
+    { "label": "Reviewer profiles", "href": "https://github.com/Kaliffen/Funstra/tree/main/reviewer-agents" },
+    { "label": "Vision", "href": "https://github.com/Kaliffen/Funstra/blob/main/VISION.md" },
+    { "label": "Source", "href": "https://github.com/Kaliffen/Funstra" }
+  ]
+}

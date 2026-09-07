@@ -22,6 +22,7 @@ const cache = join(siteDir, '.cache', 'releases.json');
 const offline = process.argv.includes('--offline');
 
 const content = JSON.parse(readFileSync(join(siteDir, 'content', 'site.json'), 'utf8'));
+const process_content = JSON.parse(readFileSync(join(siteDir, 'content', 'process.json'), 'utf8'));
 const repo = process.env.GITHUB_REPOSITORY || content.repo;
 
 /* ---------------------------------------------------------------- helpers */
@@ -276,11 +277,138 @@ ${tiles}
     <div class="items">
 ${steps}
     </div>
+    <p class="note">That is the delivery half. The agents that write and review the demo run their own loop before it — <a href="process.html">how Funstra is made →</a></p>
   </div>
 
   <footer>
     <span>Funstra · ${esc(c.license)} · <a href="https://github.com/${esc(repo)}">github.com/${esc(repo)}</a></span>
     <span>Page generated ${new Date().toISOString().slice(0, 10)} from ${list.length} published release${list.length === 1 ? '' : 's'}</span>
+  </footer>
+
+</div>
+`;
+}
+
+
+/* ---------------------------------------------------------- process page */
+
+function renderProcess(latest) {
+  const p = process_content;
+  const li = (items) => items.map((t) => `<li>${t}</li>`).join('\n          ');
+
+  const meta = p.meta
+    .map(([k, v]) => `<div class="meta-item"><span class="k">${esc(k)}</span><span class="v">${esc(v)}</span></div>`)
+    .join('\n      ');
+
+  const nav = p.links.map((l) => `<a href="${esc(l.href)}">${esc(l.label)}</a>`).join('\n      ');
+
+  const phases = p.phases
+    .map(
+      (ph, i) => `      <div class="phase" style="--phase-accent:var(--accent-${esc(ph.accent)})">
+        <div class="phase-head">
+          <span class="phase-n mono num">${esc(ph.n)}</span>
+          <div class="phase-titles">
+            <span class="phase-who mono">${esc(ph.who)}</span>
+            <h3>${esc(ph.title)}</h3>
+            <span class="phase-kicker mono">${esc(ph.kicker)}</span>
+          </div>
+        </div>
+        <p class="phase-body">${ph.body}</p>
+        <ul class="findings">
+          ${li(ph.points)}
+        </ul>
+      </div>${i < p.phases.length - 1 ? '\n      <div class="arrow" aria-hidden="true"></div>' : ''}`
+    )
+    .join('\n');
+
+  const reviewers = p.reviewers
+    .map(
+      (r) => `      <div class="score-tile" style="--tile-accent:var(--accent-${esc(r.accent)})">
+        <div class="who">${esc(r.who)}</div>
+        <div class="arch">${esc(r.archetype)}</div>
+        <div class="lens">${esc(r.lens)}</div>
+        <div class="range mono">Typical ${esc(r.range)}</div>
+      </div>`
+    )
+    .join('\n');
+
+  const artefacts = p.artefacts
+    .map(
+      (a) => `      <div class="item">
+        <span class="tag mono">${esc(a.tag)}</span>
+        <span class="desc">${a.desc}</span>
+        <span class="who">${esc(a.who)}</span>
+      </div>`
+    )
+    .join('\n');
+
+  return `<title>${esc(p.title)} — ${esc(content.title)}</title>
+<meta name="description" content="${esc(p.tagline)}">
+<meta property="og:title" content="${esc(p.title)} — ${esc(content.title)}">
+<meta property="og:description" content="${esc(p.tagline)}">
+<link rel="stylesheet" href="assets/styles.css">
+
+<div class="wrap">
+
+  <div class="masthead">
+    <span class="stamp">${esc(p.stamp)}</span>
+    <h1>${esc(p.title)}</h1>
+    <p class="subtitle">${esc(p.tagline)}</p>
+    <div class="meta-row">
+      ${meta}
+    </div>
+    <div class="navlinks">
+      ${nav}
+    </div>
+  </div>
+
+  <div class="section" id="loop">
+    <h2>The loop</h2>
+    <p class="lede">${esc(p.lede)}</p>
+    <div class="loop">
+${phases}
+    </div>
+    <div class="loopback">
+      <span class="mono">↻ back to 01</span>
+      <p>${esc(p.loopNote)}</p>
+    </div>
+  </div>
+
+  <div class="section" id="panel">
+    <h2>The panel</h2>
+    <p class="lede">${esc(p.reviewersNote)}</p>
+    <div class="scorecard">
+${reviewers}
+    </div>
+  </div>
+
+  <div class="section" id="artefacts">
+    <h2>What each turn leaves behind</h2>
+    <p class="lede">Every phase commits something readable to the repository, so a finished demo can be traced back through its reviews to the brief that asked for it.</p>
+    <div class="items">
+${artefacts}
+    </div>
+  </div>
+
+  <div class="section" id="current">
+    <h2>Where the loop is now</h2>
+    <div class="items">
+      <div class="item">
+        <span class="tag mono">Latest</span>
+        <span class="desc">${latest ? `${esc(latest.name)}<span class="sub">published ${day(latest.published_at)}</span>` : 'No published release yet'}</span>
+        <span class="who">${latest ? `<a href="index.html#download">download</a>` : '—'}</span>
+      </div>
+      <div class="item">
+        <span class="tag mono">Reviews</span>
+        <span class="desc">Four verdicts on the shipped build, published unedited<span class="sub">scores 4/10 to 7/10</span></span>
+        <span class="who"><a href="dossier.html">dossier</a></span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>${esc(content.title)} · ${esc(content.license)} · <a href="https://github.com/${esc(repo)}">github.com/${esc(repo)}</a></span>
+    <span>Page generated ${new Date().toISOString().slice(0, 10)}</span>
   </footer>
 
 </div>
@@ -296,6 +424,7 @@ mkdirSync(join(dist, 'assets'), { recursive: true });
 mkdirSync(join(dist, 'shots'), { recursive: true });
 
 writeFileSync(join(dist, 'index.html'), renderPage(list));
+writeFileSync(join(dist, 'process.html'), renderProcess(list[0]));
 writeFileSync(join(dist, 'releases.json'), JSON.stringify(list, null, 2));
 writeFileSync(join(dist, '.nojekyll'), '');
 copyFileSync(join(siteDir, 'assets', 'styles.css'), join(dist, 'assets', 'styles.css'));
@@ -310,5 +439,5 @@ for (const shot of content.shots) {
   else console.warn(`! missing screenshot: Evidence/${shot.file}`);
 }
 
-console.log(`built site/dist — ${list.length} release(s), ${copied} screenshot(s)`);
+console.log(`built site/dist — ${list.length} release(s), ${copied} screenshot(s), 2 pages`);
 if (!list.length) console.log('  (no releases found; the download card will invite the first one)');
