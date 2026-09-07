@@ -34,7 +34,7 @@ Default panel operation is one agent per persona, scheduled sequentially when us
 
 ## Judge what was actually shown
 
-Keep the review about the player experience. Technical inspection supports the verdict rather than replacing it with an assertion-count report. Relate observations to decisions, consequences, readability, people, pacing and the persona's priorities. Compare previous concerns only when the old and new evidence supports the comparison.
+Read the assigned release gates in [DESIGN.md](../../../DESIGN.md), the single development plan, without treating future systems as implemented. For environment slices, inspect traversed routes, alternate access, player/NPC agreement on obstacles, visible activity and changed return visits. A staged menu or larger footprint alone does not establish a better map. Keep the review about the player experience. Technical inspection supports the verdict rather than replacing it with an assertion-count report. Relate observations to decisions, consequences, readability, people, pacing and the persona's priorities. Compare previous concerns only when the old and new evidence supports the comparison.
 
 Maintain a small evidence ledger, with each material finding linked to a run/log/frame or source location and one of these bases:
 
@@ -50,7 +50,7 @@ For an important uncertainty, replay the smallest existing route that can resolv
 
 ## File the verdict and continuity
 
-Save local records next to the existing persona, under `reviewer-agents/<persona-slug>/`, following current naming conventions. Use a new build/revision suffix when a filename already holds a completed review. Preserve the original full review and score; corrections and changed verdicts belong in a dated addendum or separate replay review.
+Use the README documentation map; do not create another roadmap or process document. Preserve historical records and put current findings in the assigned review issue/artifact. Save local records next to the existing persona, under `reviewer-agents/<persona-slug>/`, following current naming conventions. Use a new build/revision suffix when a filename already holds a completed review. Preserve the original full review and score; corrections and changed verdicts belong in a dated addendum or separate replay review.
 
 A full review contains:
 

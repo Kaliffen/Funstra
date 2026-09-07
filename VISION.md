@@ -1,6 +1,6 @@
 # Funstra: a city that can belong to someone else
 
-Creative direction, 7 September 2026. Approved as the development direction on 7 September 2026. This describes the intended game, not the capabilities of the current executable. Setting: [WORLD.md](WORLD.md). Development decisions: [DESIGN.md](DESIGN.md).
+Creative foundation approved 7 September 2026; spatial direction revised by the CD on 8 September 2026 in response to owner feedback. The six-release proposal remains subject to owner review. This describes the intended game, not the capabilities of the current executable. Setting: [WORLD.md](WORLD.md). Development decisions: [DESIGN.md](DESIGN.md).
 
 ## The promise
 
@@ -106,13 +106,13 @@ You steal the medicine, but your companion is shot. A dockworker sees your face.
 
 Later, operating the clinic yourself turns the same rules into organizational play: staff, supply, protection, wages and the obligations of being needed. This connects survival to power.
 
-This is a design target, not present functionality. The next proof is deliberately smaller.
+This is a design target, not present functionality. [DESIGN.md](DESIGN.md) defines six cumulative releases to prove it in Old Port.
 
 ## Boundaries and feature admission
 
-Keep the city compact until a familiar street can change meaning over repeated visits. Defer driving, multiplayer, huge procedural maps, citywide elections, detailed industrial chains and large tactical squads. Author a small strange world well before generating more of it.
+Build an expandable, authored city from distinct connected neighborhoods. A familiar street changes meaning as access, work and ownership change; new ground must introduce useful route choices and dependencies. Preserve the warm stylized art while making interiors, thresholds, sightlines and street activity serve gameplay. Expand beyond the prototype footprint through proven connections. Defer driving, multiplayer, huge procedural maps, citywide elections, detailed industrial chains and large tactical squads.
 
 A feature must answer: What decision does it add? Which existing state does it consume or change? How can the player understand the consequence? What happens on failure? Can it support several situations?
 
-Near-term success is a player telling a specific story about a person, a decision and its aftermath. The next build must establish the first rung of the power arc and the beginnings of a relationship. It does not need another set of deliveries.
+Success is a player telling a specific story about a person, a decision and its aftermath. The next arc carries the existing partnership into a working neighborhood, a capable crew and a contested institution. Staying independent remains a supported life. Release scope and acceptance live in DESIGN.md and GitHub issues.
 

@@ -1,6 +1,6 @@
 # The city of Funstra
 
-World direction, approved 7 September 2026. Companion to [VISION.md](VISION.md). Names and history below are new creative decisions for review, not established content in the demo.
+World foundation approved 7 September 2026; geography developed by the CD on 8 September 2026. Companion to [VISION.md](VISION.md). This is setting intent; [DESIGN.md](DESIGN.md) distinguishes the published build from future implementation.
 
 ## Before the debt
 
@@ -40,7 +40,7 @@ The tone is maritime industrial decay, resourceful neighborhood life and institu
 | College of Repair | Clinics, knowledge and treatment contracts | Medical access and its independence | Care is its purpose; proprietary treatments keep it funded. |
 | Street organizations | Personal loyalty, fences, businesses and force | Survival, expansion or ownership | A crew can defend a street and gradually become another collector. |
 
-This is setting vocabulary. The next prototype needs a few local representatives with functioning dependencies, not five complete faction simulations.
+This is setting vocabulary. Develop local representatives with functioning dependencies before attempting five complete faction simulations.
 
 ## Old Port and Mara
 
@@ -50,7 +50,7 @@ Mara runs Pawn & Co. and finds work outside the licensed labor offices. She keep
 
 You recently lost an employer-backed work permit. Mara advanced money for a bed and helped keep that loss out of the local registry. You owe her, but she did not save a prophesied hero: she backed someone who looked useful. This explains the existing favors without making them destiny.
 
-Eventually, character creation should offer former occupations and ties. The common opening is precarity in Old Port; it prescribes neither politics nor eventual organization. Retain one background for the next proof so its consequences can be authored properly.
+Eventually, character creation should offer former occupations and ties. The common opening is precarity in Old Port; it prescribes neither politics nor eventual organization. The present opening retains one background; expand origins when occupations create distinct playable choices.
 
 The courier bag, Vico's lockbox and depot ledger can connect to relief contracts and diverted goods. Their contents need not all be righteous contraband. Preserve the enjoyable route-and-escape pacing, then make choosing a recipient consequential. These consequences do not already exist in the demo.
 
@@ -66,3 +66,17 @@ The courier bag, Vico's lockbox and depot ledger can connect to relief contracts
 
 Encounter these facts through a denied permit, an unusual body, an empty shelf or a request. Reading history must never be required to understand an immediate decision.
 
+
+## The shape of Old Port
+
+The old shoreline was a working edge before it became a defense line. Market lane grew on the dry approach to the quay; later sheds and bonded yards interrupted older public passages. Clinic court occupies converted relief rooms behind that lane. Its shared entrance explains why care, shelter and neighbors meet in one small place.
+
+Goods move between the quay's landing stores, the bonded yard and inland customers. Public streets are visible and socially legible. Service passages are shorter but cross someone's workplace or locked boundary. Access is a relationship as well as a distance.
+
+Beyond the quay, the pump approach carries workers and repair supplies along the raised flood defenses. The Harbor Combine wants dependable passage and control of relief contracts. Dock Mutual wants its crews and residents to retain access and bargaining power. Neither can keep the works running without labor, supplies and local cooperation. The College's clinic treats those workers; Mara makes a living in the gaps between official arrangements.
+
+The coming local dispute concerns who bears the cost of keeping this access open, and who may exclude others once it is repaired. A player may support a shared service, extract tolls, exploit diverted supplies or make a modest living around the dispute. No chosen-person role is needed.
+
+Preserve warmth: workers share meals, tenants improvise repairs, Tally finds occupied rooms. Mark flood heights on walls and old civic ownership on reused machinery. Put history in usable places and ordinary work before adding another explanatory speech.
+
+These are setting connections for the next arc, not actors or districts already implemented in Demo 03. Spatial dimensions, release order and system gates belong in DESIGN.md.

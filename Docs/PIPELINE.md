@@ -1,6 +1,10 @@
 # The Funstra pipeline
 
-How a finished demo becomes a download on the website, and what runs where.
+The operational reference for building and publishing. [README](../README.md#read-and-work) owns the documentation map; [DESIGN](../DESIGN.md) owns release scope. The [CD skill](../.agents/skills/funstra-creative-director/SKILL.md) and [reviewer skill](../.agents/skills/funstra-reviewer/SKILL.md) own agent instructions; `site/content/process.json` is the maintained public process summary.
+
+The supervised loop is ticketed planning → identified tested candidate → four guided actual-build reviews → one dossier → CD integration/replay → publication verification → stop for owner direction. Human acceptance is recorded separately. A planning-only task ends at docs/tickets. Future release plans are not permission to execute every cycle automatically.
+
+Before packaging, use Evidence/VALIDATION.md and the selected release's runner instructions for test commands and save isolation. A package completeness check does not replace gameplay validation, and the post-publication release-check workflow cannot establish that a game is playable.
 
 ## The cycle
 
@@ -35,8 +39,7 @@ A batch-mode Unity build needs an activated editor licence. GitHub's free runner
 have neither, and putting a Unity serial into repository secrets on a public repo
 is not something worth doing for a hobby prototype. So the build runs on the
 machine that already has the editor, and CI takes over the moment the artifact
-exists. `release-check.yml` is the gate that keeps a bad local build from being
-advertised.
+exists. `release-check.yml` checks release structure after publication. Local candidate validation and review must establish playability before publishing.
 
 If this ever needs to move into CI, the route is GameCI's `game-ci/unity-builder`
 with `UNITY_LICENSE`, `UNITY_EMAIL` and `UNITY_PASSWORD` as secrets, and the local
@@ -45,14 +48,15 @@ script becomes a thin `workflow_dispatch` trigger.
 ## Releasing
 
 ```powershell
-# The normal case: build, package, publish, prune.
-pwsh Tools/Release.ps1 -Name "A Bed & a Bandage" -NotesFile BED-AND-BANDAGE.md
+# Publish an already-tested player; verify packaged identity before release.
+# Use a release-specific packaging path when guides/evidence are required.
+pwsh Tools/Release.ps1 -SkipBuild -Name "<reviewed release title>" -NotesFile "<prepared notes file>" -BuildDir "<tested build directory>"
 
 # Rehearse without publishing.
 pwsh Tools/Release.ps1 -DryRun
 
-# Package a build that already exists.
-pwsh Tools/Release.ps1 -SkipBuild -Name "Hot Cargo"
+# Inspect retained releases without deleting anything.
+node Tools/Prune-Releases.mjs --dry-run
 ```
 
 The version comes from `bundleVersion` in `ProjectSettings.asset` unless you pass
@@ -69,7 +73,7 @@ The owner-approved policy is exactly the latest **five published releases**, or 
 
 The local release command and every non-PR Site deployment enforce GitHub retention, including releases published directly with `gh`. Older release records and attached assets are deleted; source tags, local builds, saves and review dossiers remain. Cleanup verifies the retained set and fails deployment if it cannot establish the required result. `-Keep 5` remains accepted; other values are rejected under this policy.
 
-The current download plus up to four **Previous versions** entries appear on the site, with direct downloads and release notes. `releases.json` contains the same retained set. The download section links directly to that history. Use `node Tools/Prune-Releases.mjs --dry-run` to inspect cleanup without writes.
+The current download plus up to four **Previous versions** entries appear on the site, with direct downloads and release notes. `releases.json` contains the same retained set. The download section links directly to the previous release and separately to the retained archive. Use `node Tools/Prune-Releases.mjs --dry-run` to inspect cleanup without writes.
 
 ## The website
 

@@ -18,7 +18,7 @@
     ],
     [
       "Human input",
-      "Direction only"
+      "Direction and acceptance"
     ],
     [
       "Output",
@@ -32,12 +32,13 @@
       "who": "Creative Director",
       "title": "The director takes a turn at the game",
       "kicker": "Ends when a demo builds and passes the harness",
-      "body": "The creative director agent owns the turn end to end. It reads <span class=\"mono\">VISION</span>, <span class=\"mono\">DESIGN</span> and <span class=\"mono\">WORLD</span>, decides what the next demo is for, and is free to work however it gets there.",
+      "body": "The director reads the documentation map in README, the game promise in VISION, the setting in WORLD and the single development plan in DESIGN. GitHub issues own execution status. A planning-only request ends with docs and tickets; a development cycle delivers the next coherent playable release.",
       "points": [
         "<strong>It may employ subagents.</strong> Implementation, art passes, harness work and investigation can each be handed to a subagent working to a written brief.",
         "<strong>It plans the issues and the demo release</strong> — what ships in this turn, what is explicitly out of scope, and what the panel is being asked to judge.",
         "<strong>It can also just do the work.</strong> Delegation is a tool, not a rule; small turns are often faster written directly.",
-        "<strong>The turn ends at a real executable.</strong> Nothing goes to review until the rules harness and the runtime harness both pass on a built player."
+        "<strong>The turn ends at a real executable.</strong> Nothing goes to review until the rules harness and the runtime harness both pass on a built player.",
+        "<strong>Space is gameplay.</strong> New neighborhoods need distinct routes, useful thresholds, visible work and shared player/NPC interaction rules. The six-release arc in DESIGN is future intent, reviewed after each demo."
       ]
     },
     {
@@ -69,7 +70,7 @@
       ]
     }
   ],
-  "loopNote": "Publishing closes this cycle. The director reports the release and remaining tickets, then stops for the product owner to continue or change direction. GitHub and the website retain the latest five published demos (all available while fewer than five exist). Previous versions remain linked on the download page; older release assets are removed, while source tags and review records remain.",
+  "loopNote": "Publishing closes this cycle. The director reports the release and remaining tickets, then stops for the product owner to continue or change direction. GitHub and the website retain the latest five published demos (all available while fewer than five exist). Previous versions remain linked on the download page; older release assets are removed, while source tags and review records remain. Maintain one document per subject: do not create parallel roadmaps. Historical guides, validation and review records retain their build identity. Owner acceptance is separate from panel scores and publication.",
   "reviewers": [
     {
       "who": "Marcus Webb",

@@ -19,7 +19,7 @@
     "isNot": [
       "A finished sandbox campaign. The current demo is a <strong>single neighbourhood</strong> and roughly an hour of content.",
       "A commercial release. There is no store page, no price, no roadmap you have paid for.",
-      "Visually competitive. Geometry is deliberately primitive so the effort goes into <strong>systems and consequences</strong>.",
+      "A finished environment. The stylized art is intentional; useful spaces, richer interactions and an expandable map are the next development priority.",
       "A live world. Nothing simulates while the application is closed, and the economy is small on purpose.",
       "Stable across versions. Saves may carry forward, but a demo can and does change underneath you."
     ]
@@ -115,6 +115,10 @@
     {
       "label": "Vision",
       "href": "https://github.com/Kaliffen/Funstra/blob/main/VISION.md"
+    },
+    {
+      "label": "Six-release plan",
+      "href": "https://github.com/Kaliffen/Funstra/blob/main/DESIGN.md"
     },
     {
       "label": "World",
