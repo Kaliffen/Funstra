@@ -69,7 +69,7 @@
       ]
     }
   ],
-  "loopNote": "Publishing closes this cycle. The director reports the release and remaining tickets, then stops for the product owner to continue or change direction.",
+  "loopNote": "Publishing closes this cycle. The director reports the release and remaining tickets, then stops for the product owner to continue or change direction. GitHub and the website retain the latest five published demos (all available while fewer than five exist). Previous versions remain linked on the download page; older release assets are removed, while source tags and review records remain.",
   "reviewers": [
     {
       "who": "Marcus Webb",

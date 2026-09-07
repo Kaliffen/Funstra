@@ -13,12 +13,16 @@ on:
     branches: [main]
     paths:
       - 'site/**'
+      - 'Tools/*Releases.mjs'
+      - 'Tools/release-policy*.mjs'
       - 'Docs/funstra-review-dossier*.html'
       - 'Evidence/*.png'
       - '.github/workflows/site.yml'
   pull_request:
     paths:
       - 'site/**'
+      - 'Tools/*Releases.mjs'
+      - 'Tools/release-policy*.mjs'
       - '.github/workflows/site.yml'
   release:
     types: [published, edited, deleted]
@@ -28,7 +32,7 @@ on:
     - cron: '17 5 * * 1'
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -47,10 +51,22 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Test release retention policy
+        run: node --test Tools/release-policy.test.mjs
+
+      - name: Keep the latest five published demos
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node Tools/Prune-Releases.mjs
+
       - name: Generate site from published releases
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: node site/build.mjs
+
+      - name: Verify previous-version links and retained list
+        run: node site/verify.mjs
 
       - name: Check the output
         run: |

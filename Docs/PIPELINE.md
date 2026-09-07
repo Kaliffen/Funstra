@@ -65,10 +65,11 @@ The script refuses to publish when `Funstra.exe`, `UnityPlayer.dll` or
 
 ### Keeping only the newest releases
 
-`-Keep 5` (the default) deletes older releases and their tags after a successful
-publish, so autopublishing does not accumulate dozens of 38 MB archives. Pass
-`-Keep 0` to disable pruning. The site lists whatever survives; the "Earlier
-builds" section shrinks with it.
+The owner-approved policy is exactly the latest **five published releases**, or all available releases while fewer than five exist. Sort by publication date, including published prereleases and excluding drafts. `Tools/release-policy.mjs` supplies the same selection to the site and `Tools/Prune-Releases.mjs`.
+
+The local release command and every non-PR Site deployment enforce GitHub retention, including releases published directly with `gh`. Older release records and attached assets are deleted; source tags, local builds, saves and review dossiers remain. Cleanup verifies the retained set and fails deployment if it cannot establish the required result. `-Keep 5` remains accepted; other values are rejected under this policy.
+
+The current download plus up to four **Previous versions** entries appear on the site, with direct downloads and release notes. `releases.json` contains the same retained set. The download section links directly to that history. Use `node Tools/Prune-Releases.mjs --dry-run` to inspect cleanup without writes.
 
 ## The website
 
@@ -97,6 +98,6 @@ requests build the site and check the output but never deploy.
 
 ## Demo 03 reviewed package
 
-`Tools/Package-Demo03.ps1` packages the already-tested Demo 03 player together with its guide, validation, build identity, standing captures and single review dossier. It refuses results older than the gameplay assembly. Publish this archive with `gh release create v0.3.0 Releases/Funstra-demo-03-windows.zip --target <verified-source-commit> --title "Keep the Lights On" --notes-file <prepared-notes-file> --latest` after pushing the verified source. This invokes the same release-check and Pages workflows without rebuilding or replacing the richer package with a player-only zip. Preserve earlier releases.
+`Tools/Package-Demo03.ps1` packages the already-tested Demo 03 player together with its guide, validation, build identity, standing captures and single review dossier. It refuses results older than the gameplay assembly. Publish this archive with `gh release create v0.3.0 Releases/Funstra-demo-03-windows.zip --target <verified-source-commit> --title "Keep the Lights On" --notes-file <prepared-notes-file> --latest` after pushing the verified source. This invokes the same release-check and Pages workflows without rebuilding or replacing the richer package with a player-only zip. The Site workflow applies the five-release retention policy.
 
 `site/content/site.json` selects the current versioned dossier through `dossierFile`, and lists prior dossiers in `previousDossiers`. Demo 02 retains its original file; Demo 03 has `Docs/funstra-review-dossier-demo03.html`. Each demo owns one dossier; the site's `dossier.html` is the published copy of the selected one.

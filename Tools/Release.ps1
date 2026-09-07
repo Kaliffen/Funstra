@@ -31,8 +31,8 @@ param(
     # Build folder under Build/ to package. Defaults to the newest one with a player in it.
     [string]$BuildDir,
 
-    # How many releases to keep on GitHub. Older ones (and their tags) are deleted.
-    [int]$Keep = 5,
+    # Fixed owner policy; retained for compatibility with existing -Keep 5 calls.
+    [ValidateSet(5)][int]$Keep = 5,
 
     # Package and publish whatever is already in Build/.
     [switch]$SkipBuild,
@@ -173,20 +173,9 @@ if ($LASTEXITCODE -eq 0 -and $existing) {
 
 # ------------------------------------------------------------------ 7. prune
 
-if ($Keep -gt 0) {
-    Step "Pruning to the newest $Keep releases"
-    $all = & gh release list --limit 100 --json tagName, createdAt |
-        ConvertFrom-Json |
-        Sort-Object { [datetime]$_.createdAt } -Descending
-    $stale = $all | Select-Object -Skip $Keep
-    if (-not $stale) {
-        Note "$($all.Count) release(s) on GitHub; nothing to prune."
-    }
-    foreach ($old in $stale) {
-        Note "Deleting $($old.tagName)"
-        & gh release delete $old.tagName --yes --cleanup-tag
-    }
-}
+Step 'Retaining the newest five published releases'
+& node (Join-Path $PSScriptRoot 'Prune-Releases.mjs')
+if ($LASTEXITCODE -ne 0) { throw 'Release retention failed; inspect GitHub before declaring publication complete.' }
 
 Step 'Done'
 Note "The Site workflow is now regenerating the download page."

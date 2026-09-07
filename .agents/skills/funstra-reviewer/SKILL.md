@@ -81,3 +81,8 @@ Use the existing case-file format in [Demo 03's dossier](../../../Docs/funstra-r
 Include the four attributed scores and verdicts, faithful summaries linked to full unedited reviews, concrete strengths and concerns, conference agreements and disagreements, evidence links and coverage limits. Keep confirmed bugs, suspected issues and creative suggestions distinct. Include a CD disposition section with accepted/deferred/declined feedback and ticket links; leave decisions pending until the CD actually makes them. Preserve review-build identity when later fixes or replays target a different candidate.
 
 Open the finished HTML in a browser and inspect its rendered layout, navigation and evidence/review links before handing it over. Provide a clickable local file link and attach it to the release/review ticket. The site configuration selects the current demo dossier for publication as `dossier.html`; the CD's authorized publication stage must verify the published dossier matches the intended review cycle. Creating a local dossier does not itself publish it.
+
+
+## Release history contract
+
+The owner-approved policy keeps the latest five published demos on GitHub and the website, or all while fewer than five exist. The CD/publication workflow removes older release records and assets; source tags and per-demo review dossiers remain. When reviewing the release handoff, check that Previous versions links to the retained downloads and release notes. Preserve historical reviews even after their binary expires from public retention; identify unavailable builds honestly rather than silently substituting the latest. A review-only invocation does not itself run cleanup or publish.

@@ -14,6 +14,7 @@
 import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync, rmSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { retainedReleases } from '../Tools/release-policy.mjs';
 
 const siteDir = dirname(fileURLToPath(import.meta.url));
 const root = resolve(siteDir, '..');
@@ -150,15 +151,15 @@ function renderArchive(older) {
       return `      <div class="item">
         <span class="tag mono">${esc(r.tag)}</span>
         <span class="desc">${esc(r.name)}<span class="sub">${day(r.published_at)}</span></span>
-        <span class="who">${link}</span>
+        <span class="who">${link} · <a href="${esc(r.url)}">Release notes</a></span>
       </div>`;
     })
     .join('\n');
 
   return `
   <div class="section" id="archive">
-    <h2>Earlier builds</h2>
-    <p class="lede">Previous demos stay downloadable. They are snapshots of the project at that date, not supported versions.</p>
+    <h2>Previous versions</h2>
+    <p class="lede">We keep the latest five published demos, or all of them while fewer than five exist. Download an earlier version below; these are snapshots, not supported versions.</p>
     <div class="items">
 ${rows}
     </div>
@@ -236,6 +237,7 @@ function renderPage(list) {
   </div>
 
 ${renderDownload(latest)}
+${older.length ? '<p class="note"><a href="#archive">Previous versions — downloads and release notes ↓</a></p>' : ''}
 
   <div class="section" id="honest">
     <h2>${esc(c.honesty.heading)}</h2>
@@ -282,6 +284,8 @@ ${steps}
     </div>
     <p class="note">That is the delivery half. The agents that write and review the demo run their own loop before it — <a href="process.html">how Funstra is made →</a></p>
   </div>
+
+${renderArchive(older)}
 
   <footer>
     <span>Funstra · ${esc(c.license)} · <a href="https://github.com/${esc(repo)}">github.com/${esc(repo)}</a></span>
@@ -422,7 +426,7 @@ ${artefacts}
 
 /* ------------------------------------------------------------------- build */
 
-const list = await releases();
+const list = retainedReleases(await releases());
 
 rmSync(dist, { recursive: true, force: true });
 mkdirSync(join(dist, 'assets'), { recursive: true });
