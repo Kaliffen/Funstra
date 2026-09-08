@@ -42,6 +42,16 @@ public static class DistrictRules
         violence.district.Defeat(violence,false);
         check(!violence.district.Carrying&&violence.district.shipmentOwner=="collector"&&violence.district.debt==40&&violence.district.health==45,"Solo defeat returns stock and leaves recoverable wounds and debt");
         check(violence.district.TotalMedicine==12,"Confiscation conserves medicine");
+        check(violence.district.RecoveryDetails.Contains("Lost medicine:")&&violence.district.RecoveryDetails.Contains("behind Vico's")&&!violence.district.RecoveryDetails.Contains("Ivo still knows"),"Recovery identifies actual confiscated medicine without inventing a settled offense");
+        var streetDefeat=new RunState();streetDefeat.district.Defeat(streetDefeat,false);
+        check(streetDefeat.district.RecoverySummary.Contains("$40")&&streetDefeat.district.RecoveryDetails.Contains("no cash or carried goods")&&!streetDefeat.district.RecoveryDetails.Contains("medicine")&&!streetDefeat.district.RecoveryDetails.Contains("Ivo"),"Fresh street defeat reports its care debt without inventing medicine loss or collector history");
+        var loadedRecovery=JsonUtility.FromJson<RunState>(JsonUtility.ToJson(streetDefeat));
+        check(loadedRecovery.district.RecoverySummary==streetDefeat.district.RecoverySummary&&loadedRecovery.district.RecoveryDetails==streetDefeat.district.RecoveryDetails,"Actual defeat summary and losses survive serialization");
+        var ladenDefeat=new RunState{cash=17,carrying=true};ladenDefeat.district.TakeShipment(true);ladenDefeat.district.clock=DistrictState.SaleTime+1;
+        ladenDefeat.district.Defeat(ladenDefeat,true,110);
+        check(ladenDefeat.district.RecoverySummary.StartsWith("Neri")&&ladenDefeat.district.debt==0&&ladenDefeat.district.RecoveryDetails.Contains("Lost $17 cash")&&ladenDefeat.district.RecoveryDetails.Contains("cargo worth $110")&&ladenDefeat.district.RecoveryDetails.Contains("Mara's job item")&&ladenDefeat.district.RecoveryDetails.Contains("buyer holds it at the north quay")&&ladenDefeat.district.RecoveryDetails.Contains("Ivo still knows"),"Loaded rescue reports exact cash, cargo, job and medicine losses and the real surviving offense");
+        ladenDefeat.carrying=false;ladenDefeat.district.Defeat(ladenDefeat,false);
+        check(!ladenDefeat.district.RecoveryDetails.Contains("Lost $17")&&!ladenDefeat.district.RecoveryDetails.Contains("cargo worth")&&!ladenDefeat.district.RecoveryDetails.Contains("job item")&&!ladenDefeat.district.RecoveryDetails.Contains("Lost medicine"),"A later defeat replaces the previous loss snapshot");
         var poor=new RunState();poor.district.Tick(2000);poor.district.health=20;poor.district.bleeding=true;
         check(poor.district.RestOnCredit()&&poor.district.health==80&&!poor.district.bleeding&&poor.district.debt==40,"Penniless solo recovery works after shipment sale and supply depletion");
         check(!poor.district.RestOnCredit(),"Healthy player cannot accumulate meaningless recovery debt");

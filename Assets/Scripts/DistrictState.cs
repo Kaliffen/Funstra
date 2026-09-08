@@ -44,6 +44,9 @@ namespace Funstra
         public bool metNeri;
         public int cargoTakenMask;
         public bool savedJobCarrying;
+        public string recoverySummary="", recoveryDetails="";
+        public string RecoverySummary => recoverySummary;
+        public string RecoveryDetails => recoveryDetails;
         public Vector3 guardLastSeen;
         public float guardSawAt;
         public DistrictActor neri=new DistrictActor("neri","NERI",Clinic) { bandages=3 };
@@ -159,13 +162,24 @@ namespace Funstra
             if(health>=80&&!bleeding)return false;
             debt+=40;health=Mathf.Max(80,health);bleeding=false;Record("debt","player","A rented bed and emergency care cost $40 on credit. You can work it off.");return true;
         }
-        public void Defeat(RunState run,bool rescued)
+        public void Defeat(RunState run,bool rescued,int lostCargoValue=0)
         {
+            bool lostMedicine=Carrying, lostJob=run.carrying;
             int stolen=Mathf.Min(30,run.cash);run.cash-=stolen;collectorMoney+=stolen;
             if(Carrying) { shipmentOwner=clock>=SaleTime?"buyer":"collector";released=false;Record("confiscated","rook","Rook recovered the medicine. It can still be obtained from its owner."); }
             health=rescued?60:45;bleeding=false;hostile=false;
             if(!rescued)debt+=40;
-            Record("defeat",rescued?"neri":"player",rescued?"Neri got you home alive. Lost up to $30 and unbanked goods.":"Left wounded. An emergency bed added $40 debt; lost up to $30 and unbanked goods.");
+            recoverySummary=rescued?"Neri dragged you out. You have someone to come home with.":"You woke in an emergency bed. $40 has been added to your debt.";
+            var losses=new List<string>();
+            if(stolen>0)losses.Add("Lost $"+stolen+" cash.");
+            if(lostCargoValue>0)losses.Add("Lost unbanked cargo worth $"+lostCargoValue+". It can be collected again.");
+            if(lostJob)losses.Add("Mara's job item was lost. Return to its pickup to try again.");
+            if(lostMedicine)losses.Add("Lost medicine: "+(shipmentOwner=="buyer"?"the buyer holds it at the north quay.":"it is back behind Vico's. It can still be recovered."));
+            if(losses.Count==0)losses.Add("You lost no cash or carried goods.");
+            if(identified)losses.Add("Ivo still knows your face. Defeat does not settle that offense.");
+            losses.Add("Recorded incidents, equipment and completed work remain.");
+            recoveryDetails=string.Join("\n",losses);
+            Record("defeat",rescued?"neri":"player",(rescued?"Neri got you home.":"Emergency care added $40 debt.")+" Cash lost: $"+stolen+"; cargo lost: $"+lostCargoValue+"."+(lostJob?" Mara's job item was lost.":""));
         }
         public bool Valid()
         {

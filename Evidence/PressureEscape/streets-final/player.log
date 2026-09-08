@@ -1,0 +1,189 @@
+Mono path[0] = '~/repos/Funstra/Build/PressureEscape/Funstra_Data/Managed'
+Mono config path = '~/repos/Funstra/Build/PressureEscape/MonoBleedingEdge/etc'
+CodeReloadManager initialized
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Initialize engine version: 6000.4.0f1 (8cf496087c8f)
+[Subsystems] Discovering subsystems at path ~/repos/Funstra/Build/PressureEscape/Funstra_Data/UnitySubsystems
+[D3D12 Device Filter] Vendor Name: NVIDIA
+[D3D12 Device Filter] Device Name: NVIDIA GeForce RTX 4090
+[D3D12 Device Filter] Driver Version: 32.0.15.9597
+[D3D12 Device Filter] Feature Level: 12.2
+[D3D12 Device Filter] Graphics Memory: 24138 MB
+[D3D12 Device Filter] Processor Count: 32
+[D3D12 Device Filter] Device Type: Discrete
+GfxDevice: creating device client; kGfxThreadingModeClientWorkerJobs
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4090 (ID=0x2684)
+    Vendor:   NVIDIA
+    VRAM:     24138 MB
+    Driver:   32.0.15.9597
+Begin MonoManager ReloadAssembly
+- Finished resetting the current domain, in  0.001 seconds
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+<RI> Initializing input.
+<RI> Input initialized.
+UnloadTime: 0.382100 ms
+CHECK: Streets runner uses isolated save and normal Old Port simulation
+CHECK: All scenario locations are walkable
+CHECK: Navigable route to (-27.00, 0.00, -12.00)
+CHECK: Controller arrived beside interaction at (-27.00, 0.00, -12.00)
+CHECK: Actual interaction opens Neri conversation
+CHECK: Navigable route to (-26.00, 0.00, 11.00)
+CHECK: Controller arrived beside interaction at (-26.00, 0.00, 11.00)
+CHECK: Actual interaction opens collector terms
+CHECK: Peaceful release pays collector
+CHECK: Navigable route to (-28.00, 0.00, 3.00)
+CHECK: Controller arrived beside interaction at (-28.00, 0.00, 4.00)
+CHECK: Actual paid hold collects medicine without hostility
+CHECK: Collected stock disappears from world rendering
+CHECK: Navigable route to (-27.00, 0.00, -12.00)
+CHECK: Controller arrived beside interaction at (-27.00, 0.00, -12.00)
+CHECK: Clinic stock and trust unlock Neri partnership
+CHECK: Navigable route to (-11.00, 0.00, -48.00)
+CHECK: Controller arrived beside interaction at (-11.00, 0.00, -48.00)
+CHECK: Companion navigates streets to follow player
+CHECK: Nearby companion autonomously stabilizes bleeding with finite supplies
+CHECK: Hold order stops companion movement
+CHECK: Tactical pause stops world transactions and wounds
+CHECK: Reload preserves companion, orders, stock and player position
+CHECK: New save format preserves loose cargo across session endings
+CHECK: Companion near home does not block cargo extraction
+CHECK: Moving during extraction resets the hold without losing cargo
+CHECK: Becoming wanted cancels an in-progress extraction
+CHECK: Interrupted extraction can be retried and pays exactly once
+CHECK: Pistol trigger spends a round without instant damage
+CHECK: Traveling pistol round wounds target and records witnessed offense
+CHECK: Guard trigger also has no instant damage
+CHECK: Guard projectile travels through clear sight and causes bleeding
+CHECK: Firing toward a building spends a physical round
+CHECK: Building stops the traveling round before the guard
+CHECK: Guard cannot shoot player through a building
+CHECK: Melee fixture places guard and companion on clear walkable ground
+CHECK: Empty-magazine guard strikes nearby visible companion rather than distant player
+CHECK: Visible companion remains a valid melee target while player is out of sight
+CHECK: Medicine case separates two walkable positions within melee range
+CHECK: Guard cannot strike nearby companion through physical medicine case
+CHECK: Clearing immediate heat preserves collector memory
+CHECK: Bandage stops bleeding without fully healing wounds
+CHECK: Actual defeat produces recovery screen, debt and recoverable shipment
+CHECK: Defeat returns player to a usable bed
+CHECK: Penniless post-sale recovery remains available
+CHECK: Actual E interaction stabilizes downed companion
+CHECK: Complete runtime outcome sequence conserves all medicine
+CHECK: Actual unobserved hold creates missing stock without identifying thief
+CHECK: Reload retains stolen medicine and distinct witness knowledge
+CHECK: Shared melee rules let residents be harmed and call police
+CHECK: Resident wounds and reaction survive reload
+CHECK: Live confrontation uses the clear route beside physical medicine cover
+CHECK: Live gunfight wounds player and incapacitates guard without scripted damage
+CHECK: Three actual pistol shots spend three rounds
+CHECK: Navigable route to (-28.00, 0.00, 3.00)
+CHECK: Controller arrived beside interaction at (-28.00, 0.00, 4.00)
+CHECK: Violence creates access to the same medicine and a lasting identified offense
+CHECK: Reload preserves combat outcome, carried medicine and grievance
+CHECK: Final scenario save remains valid
+CHECK: Recycling bin blocks navigation at (-37.50, 0.00, -26.00)
+CHECK: Embedded saved/spawn position resolves outside bin
+CHECK: Recycling bin blocks navigation at (28.00, 0.00, -16.00)
+CHECK: Embedded saved/spawn position resolves outside bin
+CHECK: Recycling bin blocks navigation at (-28.00, 0.00, 10.00)
+CHECK: Embedded saved/spawn position resolves outside bin
+CHECK: Recycling bin blocks navigation at (29.00, 0.00, 10.00)
+CHECK: Embedded saved/spawn position resolves outside bin
+CHECK: Recycling bin blocks navigation at (-28.00, 0.00, 36.00)
+CHECK: Embedded saved/spawn position resolves outside bin
+CHECK: Recycling bin blocks navigation at (32.00, 0.00, 36.00)
+CHECK: Embedded saved/spawn position resolves outside bin
+CHECK: Real player controller cannot enter or step onto recycling bin
+CHECK: Refuge opens from an earned partnership
+CHECK: Purchased refuge changes the rendered street
+CHECK: Refuge gives practical recovery without adding debt
+CHECK: Exported player reload retains room, care policy and cat relationship
+CHECK: Traffic car 0 completes sustained routes without intersection deadlock: 455.3264m at (3.00, 0.00, -16.33)
+CHECK: Traffic car 1 completes sustained routes without intersection deadlock: 451.4256m at (-3.00, 0.00, 3.15)
+CHECK: Traffic car 2 completes sustained routes without intersection deadlock: 455.9399m at (-8.67, 0.00, -40.00)
+CHECK: Traffic car 3 completes sustained routes without intersection deadlock: 437.1012m at (29.07, 0.00, 12.00)
+CHECK: Car brakes before pedestrian and preserves physical clearance
+CHECK: Car resumes after pedestrian clears lane
+CHECK: Moving car updates both route obstacle and physical collider
+CHECK: Tactical/menu pause also freezes traffic
+CHECK: Live companion routes around solid recycling bin without clipping
+CHECK: Cat interaction records familiarity
+CHECK: Traffic regression runs only in an isolated smoke save
+CHECK: Traffic regression requires enabled campaign district simulation
+CHECK: Traffic regression uses the four actual Old Port cars
+CHECK: Actual Update traffic approaches then yields to player occupying its lane
+CHECK: World clock progresses while actual Update traffic waits
+CHECK: Pause freezes both waiting traffic and district time
+CHECK: Three accelerated minutes preserve district elapsed time during traffic blockage
+CHECK: Clinic transactions continue and medicine stays conserved while a road is blocked
+CHECK: Sustained waiting car keeps matching physical and navigation obstruction
+CHECK: Waiting physical collider and navigation footprint share position
+CHECK: Car resumes normal travel after sustained blocker leaves without reset
+CHECK: Traffic recovery preserves valid district transactions and inventory
+CHECK: Resumed car collider follows updated navigation footprint
+CHECK: Isolated save retains elapsed district outcome after traffic obstruction
+CHECK: Navigable route to (-17.00, 0.00, -35.00)
+CHECK: Controller arrived beside interaction at (-17.00, 0.00, -35.00)
+CHECK: Navigable route to (-7.00, 0.00, -13.00)
+CHECK: Controller arrived beside interaction at (-7.00, 0.00, -13.00)
+CHECK: Navigable route to (8.00, 0.00, 13.00)
+CHECK: Controller arrived beside interaction at (8.00, 0.00, 13.00)
+CHECK: Navigable route to (8.00, 0.00, 39.00)
+CHECK: Controller arrived beside interaction at (8.00, 0.00, 39.00)
+CHECK: Navigable route to (30.00, 0.00, 39.00)
+CHECK: Controller arrived beside interaction at (30.00, 0.00, 39.00)
+CHECK: Public quay approach reaches yard while service gate remains closed
+CHECK: Navigable route to (8.00, 0.00, 39.00)
+CHECK: Controller arrived beside interaction at (8.00, 0.00, 39.00)
+CHECK: Navigable route to (8.00, 0.00, 13.00)
+CHECK: Controller arrived beside interaction at (8.00, 0.00, 13.00)
+CHECK: Navigable route to (30.00, 0.00, 23.00)
+CHECK: Controller arrived beside interaction at (30.00, 0.00, 23.00)
+CHECK: Closed normal-campaign gate prevents direct service passage
+CHECK: Normal-campaign service gate can be opened safely
+CHECK: Navigable route to (30.00, 0.00, 37.00)
+CHECK: Controller arrived beside interaction at (30.00, 0.00, 37.00)
+CHECK: Production controller traverses open service approach into actual yard
+CHECK: Normal campaign binds its three persistent yard guards
+CHECK: Quay fixture has actual clear sight to persistent yard guard
+CHECK: Campaign pistol spends ammo and creates a traveling projectile before damage
+CHECK: Campaign in-flight bullet exists before save
+CHECK: Campaign reload preserves in-flight projectile position/count
+CHECK: Reload preserves player and yard guard magazines without free refills
+CHECK: Reload restores open physical gate and persisted gate state
+CHECK: Reloaded campaign bullet arrives once and spends itself
+CHECK: Second reload does not repeat damage, pay a reward or farm ammunition
+CHECK: Campaign shotgun launches separately simulated pellets
+CHECK: Shotgun produces a distinct multi-pellet hit on same actual quay sightline
+CHECK: Clear campaign gate closes after route
+CHECK: Final reload preserves yard casualties/ammo and closed gate without respawning rewards
+CHECK: Integrated yard campaign state remains valid after weapon and gate round trips
+YARD LIVE: elapsed=0.00 shots=0 projectiles=0 playerHP=100.00 order=Hold directSight=False geometricSight=True contactAge=0.00 guardAmmo=18 magazine=6 player=(13.00, 0.12, 39.00) guard=(21.00, 0.00, 39.00)
+YARD LIVE: elapsed=0.52 shots=1 projectiles=1 playerHP=100.00 order=Cover approach directSight=True geometricSight=True contactAge=0.00 guardAmmo=17 magazine=5 player=(13.00, 0.03, 39.00) guard=(21.00, 0.00, 39.00)
+YARD LIVE: elapsed=1.02 shots=1 projectiles=1 playerHP=100.00 order=Cover approach directSight=True geometricSight=True contactAge=0.00 guardAmmo=17 magazine=5 player=(13.00, 0.03, 39.00) guard=(21.00, 0.00, 39.00)
+YARD LIVE: elapsed=1.52 shots=1 projectiles=0 playerHP=100.00 order=Cover approach directSight=True geometricSight=True contactAge=0.00 guardAmmo=17 magazine=5 player=(13.00, 0.03, 39.00) guard=(21.00, 0.00, 39.00)
+YARD LIVE: elapsed=2.05 shots=2 projectiles=1 playerHP=100.00 order=Cover approach directSight=True geometricSight=True contactAge=0.00 guardAmmo=16 magazine=4 player=(13.00, 0.03, 39.00) guard=(21.00, 0.00, 39.00)
+YARD LIVE: elapsed=2.58 shots=2 projectiles=0 playerHP=100.00 order=Cover approach directSight=True geometricSight=True contactAge=0.00 guardAmmo=16 magazine=4 player=(13.00, 0.03, 39.00) guard=(21.00, 0.00, 39.00)
+YARD LIVE: elapsed=3.08 shots=3 projectiles=1 playerHP=100.00 order=Cover approach directSight=True geometricSight=True contactAge=0.00 guardAmmo=15 magazine=3 player=(13.00, 0.03, 39.00) guard=(21.00, 0.00, 39.00)
+CHECK: Live normal-yard watchman actually fires during bounded acquisition window
+CHECK: Live normal-yard enemy Update fires traveling shots that wound player under actual frame timing
+CHECK: Navigable route to (8.00, 0.00, 39.00)
+CHECK: Controller arrived beside interaction at (8.00, 0.00, 39.00)
+CHECK: Navigable route to (8.00, 0.00, 13.00)
+CHECK: Controller arrived beside interaction at (8.00, 0.00, 13.00)
+CHECK: Controller can withdraw from live yard onto the public route
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+CodeReloadManager destroyed

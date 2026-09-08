@@ -1,6 +1,6 @@
 {
   "title": "Funstra",
-  "tagline": "An isometric sandbox crime RPG about surviving a damaged port city. Police Response adds armed pursuit and truck reinforcements to the expanding Old Port prototype.",
+  "tagline": "An isometric sandbox crime RPG about surviving a damaged port city. Pressure and Escape develops the nine-officer pursuit: watch your ammunition, break contact and find a way home.",
   "stamp": "Open source · Playable prototype",
   "repo": "Kaliffen/Funstra",
   "engine": "Unity 6000.4.0f1",
@@ -19,7 +19,7 @@
     "isNot": [
       "A finished sandbox campaign. This increment has <strong>nine police maximum, pistols and two response trucks</strong>; rifle squads and the 30-plus soldier/grenade tier remain planned.",
       "A commercial release. There is no store page, no price, no roadmap you have paid for.",
-      "A fully tested maximum-pressure battle. Guided checks prove finite reinforcement logistics and a separate live return-fire exchange; sustained collective nine-officer difficulty remains a follow-up.",
+      "A human difficulty or minimum-spec certification. Guided evidence separates an extended-durability stress fixture from ordinary-health prepared exposure and escape; the method and remaining limits accompany the results.",
       "A live world. Nothing simulates while the application is closed, and the economy is small on purpose.",
       "Stable across versions. Saves may carry forward, but a demo can and does change underneath you."
     ]
@@ -28,45 +28,45 @@
     {
       "who": "Marcus Webb",
       "lens": "Technical state, value",
-      "score": 7,
+      "score": 8,
       "accent": "marcus"
     },
     {
       "who": "Dag Møller",
       "lens": "Systems rigor",
-      "score": 7,
+      "score": 8,
       "accent": "dag"
     },
     {
       "who": "Priya Raman",
       "lens": "Emotional, thematic",
-      "score": 7,
+      "score": 8,
       "accent": "priya"
     },
     {
       "who": "Nell Okafor",
       "lens": "Is this a nice hour",
-      "score": 7,
+      "score": 8,
       "accent": "nell"
     }
   ],
-  "panelNote": "Four independent reviewer agents each scored Police Response 7/10. Each ran the same identified executable, passed 35 focused checks and inspected four fresh captures plus logs. Their guided reviews do not establish human difficulty, sustained nine-officer pressure or minimum-spec performance.",
+  "panelNote": "Four independent reviewer agents each ran the full guided Pressure route in the same build and inspected nine fresh captures, complete logs and profiles. All scored this increment 8/10. These are guided build judgments; human gameplay acceptance remains separate.",
   "shots": [
     {
-      "file": "PoliceResponse/police-final/P01-trucks-arriving.png",
-      "caption": "Police Response � a truck physically enters Old Port (guided capture)"
+      "file": "PressureEscape/pressure-final/E02-paused-contact-ammunition.png",
+      "caption": "Tactical pause with weapon, magazine and reserve visible in a prepared police encounter"
     },
     {
-      "file": "PoliceResponse/police-final/P02-response-deployed.png",
-      "caption": "Two trucks and deployed officers; eight living after a staged casualty"
+      "file": "PressureEscape/pressure-final/E03-actual-defeat-recovery.png",
+      "caption": "Recovery after exposed defeat reports the actual losses from that encounter"
     },
     {
-      "file": "PoliceResponse/police-final/P03-live-return-fire.png",
-      "caption": "Live patrol return fire wounds the exposed player"
+      "file": "PressureEscape/pressure-final/E04-search-map-ammunition.png",
+      "caption": "Change streets and break contact; inspect the map while keeping ammunition visible"
     },
     {
-      "file": "PoliceResponse/police-final/P04-recovery.png",
-      "caption": "Recoverable defeat: emergency care, 45 health and $40 debt"
+      "file": "PressureEscape/pressure-final/E06-homeward-return.png",
+      "caption": "The guided escape route ends with a return to the clinic"
     }
   ],
   "pipeline": [
@@ -118,21 +118,26 @@
     },
     {
       "label": "Demo guide",
-      "href": "https://github.com/Kaliffen/Funstra/blob/main/POLICE-RESPONSE.md"
+      "href": "https://github.com/Kaliffen/Funstra/blob/main/PRESSURE-AND-ESCAPE.md"
     },
     {
       "label": "Validation",
       "href": "https://github.com/Kaliffen/Funstra/blob/main/Evidence/VALIDATION.md"
     }
   ],
-  "panelBuild": "Police Response (v0.4.1)",
-  "panelSummary": "All four reviewers: 7/10",
-  "dossierFile": "funstra-review-dossier-police-response.html",
+  "panelBuild": "Pressure and Escape (v0.4.2)",
+  "panelSummary": "Four independent guided reviews · 8/10 from each reviewer",
+  "dossierFile": "funstra-review-dossier-pressure-escape.html",
   "previousDossiers": [
+    {
+      "file": "funstra-review-dossier-police-response.html",
+      "output": "dossier-police-response.html",
+      "label": "Police Response dossier — v0.4.1"
+    },
     {
       "file": "funstra-review-dossier-demo03.html",
       "output": "dossier-demo03.html",
-      "label": "Demo 03 dossier � Keep the Lights On"
+      "label": "Demo 03 dossier — Keep the Lights On"
     },
     {
       "file": "funstra-review-dossier.html",
@@ -140,5 +145,5 @@
       "label": "Demo 02 dossier — original 4/10 to 7/10 verdicts"
     }
   ],
-  "releaseVersion": "v0.4.1"
+  "releaseVersion": "v0.4.2"
 }

@@ -94,9 +94,11 @@ namespace Funstra
         }
         void DrawCombatOverlay()
         {
-            Panel(605,110,410,68);
-            Text(CombatWeaponName+" / "+CombatAmmoText,625,124,370,26,18,CityArt.Amber,FontStyle.Bold,TextAnchor.MiddleCenter);
-            Text(CombatReloadRemaining>0?"RELOADING / "+CombatReloadRemaining.ToString("0.0")+"s":weapon==1?"Aim / LMB strike":"LMB fire / R reload / 1 2 3 switch",625,152,370,22,14,quiet,FontStyle.Normal,TextAnchor.MiddleCenter);
+            // Campaign maps and tactical instructions start below this persistent readout.
+            float top=FoundationMode?110:24;
+            Panel(605,top,410,68);
+            Text(CombatWeaponName+" / "+CombatAmmoText,625,top+14,370,26,18,CityArt.Amber,FontStyle.Bold,TextAnchor.MiddleCenter);
+            Text(CombatReloadRemaining>0?"RELOADING / "+CombatReloadRemaining.ToString("0.0")+"s":weapon==1?"Aim / LMB strike":"LMB fire / R reload / 1 2 3 switch",625,top+42,370,22,14,quiet,FontStyle.Normal,TextAnchor.MiddleCenter);
             if(Active&&weapon!=1&&!showMap)
             {
                 float x=Input.mousePosition.x/Screen.width*W,y=(1-Input.mousePosition.y/Screen.height)*H;

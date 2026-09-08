@@ -17,9 +17,9 @@ namespace Funstra
             Text(DistrictEnabled&&trackDistrict?"YOUR NEXT MOVE":State.Finished?"MARA / DEBT SETTLED":"MARA / JOB "+(State.completed+1),43,753,327,25,14,CityArt.Mint,FontStyle.Bold);
             string objective=DistrictEnabled&&trackDistrict?MedicalObjective:State.Finished?"Find a livelihood in Old Port.":State.carrying?"Bring the goods back to Mara.":State.accepted?Jobs.All[State.completed].title:"Visit Mara at the pawn shop.";
             Text(objective,43,784,327,66,16,quiet);
-            if(showMap)DrawMap(new Rect(420,135,760,630),true);
+            if(showMap)DrawMap(new Rect(420,280,760,540),true);
             if(!showMap)DrawWorldMarkers();
-            if(toastTime>0){Panel(420,195,760,57);Text(toast,440,205,720,42,16,paper,FontStyle.Normal,TextAnchor.MiddleCenter);}
+            if(toastTime>0){Panel(420,210,760,57);Text(toast,440,220,720,42,16,paper,FontStyle.Normal,TextAnchor.MiddleCenter);}
             if(!string.IsNullOrEmpty(prompt)&&Active&&!showMap)
             {
                 Panel(430,760,740,63);Text(prompt,447,772,706,42,18,paper,FontStyle.Bold,TextAnchor.MiddleCenter);

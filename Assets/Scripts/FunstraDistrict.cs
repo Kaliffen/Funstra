@@ -14,7 +14,6 @@ namespace Funstra
 
         int weapon=2, selectedActor;
         float medicineProgress, attackCooldown, guardCooldown, aidCooldown, autosaveTime, defeatGrace;
-        string districtMessage="";
         readonly Color medical=CityArt.Hex("7CDEEB");
         readonly List<Vector3> neriPath=new List<Vector3>(), guardPath=new List<Vector3>();
         float neriRepath,guardRepath;
@@ -232,9 +231,9 @@ namespace Funstra
         void DistrictDefeat()
         {
             bool rescued=District.recruited&&District.neri.health>0&&Vector3.Distance(District.neri.position,Player.position)<12;
-            District.Defeat(State,rescued);Cargo.Lose();RefreshCargoArt();State.carrying=false;Heat=arrestProgress=0;ResetPolice();
+            District.Defeat(State,rescued,Cargo.Value);Cargo.Lose();RefreshCargoArt();State.carrying=false;Heat=arrestProgress=0;ResetPolice();
             Teleport(Jobs.Home);District.neri.position=District.recruited&&District.neri.health>0?Jobs.Home+Vector3.left*2:District.neri.position;
-            defeatGrace=20;District.guard.position=new Vector3(-28,0,8);guardPath.Clear();districtMessage=rescued?"Neri dragged you out. You have someone to come home with.":"You woke in an emergency bed. $40 has been added to your debt.";
+            defeatGrace=20;District.guard.position=new Vector3(-28,0,8);guardPath.Clear();
             screen=ScreenMode.Recovery;Save();SyncDistrictArt();
         }
         void DistrictCheckpoint()

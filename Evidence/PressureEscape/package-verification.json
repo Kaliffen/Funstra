@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-09-08T08:07:00.641242+00:00",
+  "version": "0.4.2",
+  "archive": "Releases\\Funstra-pressure-escape-0.4.2-windows.zip",
+  "bytes": 85785917,
+  "sha256": "A3C95AF446306F139C78ECC0EEACBB1014829ADD65B1F1F08618F61F476EC6FB",
+  "assemblySha256": "BD9CA29F2787A9F2546E10CA88650142DF7E80D0E8D22743C7B88AB9F99BB776",
+  "playerFilesVerifiedByteForByte": 145,
+  "extractedTo": "~\\repos\\Funstra\\Build\\PressureEscapePortable-bba819abf08246da86fecf2032f4299a",
+  "portableRun": {
+    "exitCode": 0,
+    "mode": "Pressure",
+    "checks": 41,
+    "captures": 9,
+    "fullLogInspected": true,
+    "evidence": "Evidence/PressureEscape/portable-check"
+  },
+  "method": "Every player file in the archive and extracted folder matched the reviewed build byte-for-byte. Full muted Pressure route passed in extracted location. No rebuild or archive replacement."
+}

@@ -1,0 +1,9 @@
+FAIL
+PASS: Pressure route uses isolated normal campaign and forced mute
+METHOD: extended durability stress, then separate ordinary-health exposure and controller escape; no human input/feel claim. Production Update advances all combat and arrivals.
+MEASURED: shooters=6 reloaders=4 frames=3000 p95ms=33.3362 finalAmmo=116
+PASS: Normal live dispatch delivers all six reinforcements while combat and traffic run
+System.Exception: Every one of the nine officers fires through the live combat loop
+  at Funstra.FunstraGame.Check (System.Boolean value, System.String message) [0x00003] in <585cd868aa2746ee8d73c96cda57f700>:0 
+  at Funstra.FunstraGame+<PressureSteps>d__338.MoveNext () [0x0055b] in <585cd868aa2746ee8d73c96cda57f700>:0 
+  at Funstra.FunstraGame+<SmokeRun>d__363.MoveNext () [0x00190] in <585cd868aa2746ee8d73c96cda57f700>:0 

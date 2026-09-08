@@ -1,0 +1,46 @@
+PASS
+PASS: Pressure route uses isolated normal campaign and forced mute
+METHOD: extended durability stress, then separate ordinary-health exposure and controller escape; no human input/feel claim. Production Update advances all combat and arrivals.
+PASS: Actual witnessed player projectiles injure a resident and request both reinforcement trucks
+MEASURED: shooters=9 reloaders=8 frames=2250 p95ms=33.341 finalAmmo=22
+PASS: Normal live dispatch delivers all six reinforcements while combat and traffic run
+PASS: Every one of the nine officers fires through the live combat loop
+PASS: Sustained collective fire includes real finite-magazine reloads from at least six officers
+PASS: Collective projectile fire deals more than a normal player's full health in stress fixture
+PASS: At least three officers exhaust ammunition; all nine conserve their finite supply without replenishment
+PASS: Only this muted Funstra player runs during pressure measurement
+PASS: Tactical pause freezes full roster, damage and search while ammunition stays inspectable
+PASS: Exposed normal-health player is defeated by live nine-officer fire
+PASS: Actual defeat provides recovery and clears immediate reinforcements
+PASS: Fresh street defeat describes actual losses without inventing a medical shipment
+PASS: Navigable route to (45.00, 0.00, -13.00)
+PASS: Controller arrived beside interaction at (45.00, 0.00, -13.00)
+PASS: Navigable route to (45.00, 0.00, -39.00)
+PASS: Controller arrived beside interaction at (45.00, 0.00, -39.00)
+PASS: Navigable route to (8.00, 0.00, -39.00)
+PASS: Controller arrived beside interaction at (8.00, 0.00, -39.00)
+PASS: Ordinary-health player withdraws around two corners using the production controller
+PASS: Escape save/reload preserves the full responding roster
+PASS: Navigable route to (-45.00, 0.00, -39.00)
+PASS: Controller arrived beside interaction at (-45.00, 0.00, -39.00)
+PASS: Navigable route to (-45.00, 0.00, -13.00)
+PASS: Controller arrived beside interaction at (-45.00, 0.00, -13.00)
+ESCAPE: health=100 heat=0 screen=Play status=
+PASS: Lost-contact search is readable and does not refresh coordinates without an officer sighting
+PASS: Unseen controller escape ends pursuit under normal health and arrest rules
+PASS: Navigable route to (-27.00, 0.00, -12.00)
+PASS: Controller arrived beside interaction at (-27.00, 0.00, -12.00)
+PASS: Return to clinic leaves a valid persisted campaign
+METHOD: crowded doors and officer passing use controlled actor placement and explicit production steps on real city geometry; these are isolated movement fixtures, not the live pressure/escape route.
+PASS: Crowded-door fixture finds clear real road and two walkable side exits
+PASS: Both occupied side doors keep the crew aboard without overlap or remote spawn
+PASS: Clearing only the alternate side deploys exactly one waiting officer
+PASS: Waiting officer emerges at the genuinely clear opposite door on walkable ground
+PASS: Deployment preserves the blocking person and valid finite roster
+PASS: Passing fixture finds a clear real street with room beside a stationary colleague
+PASS: Passing officer stays on shared walkable ground throughout movement
+PASS: Blocked officer steps sideways and progresses beyond the stationary colleague
+PASS: Passing keeps person separation without pushing the stationary colleague
+PASS: Empty-ammunition pursuit remains mobile without minting rounds
+PASS: Laden defeat reports each actual carried loss and preserves its recorded context
+PASS: Laden defeat still conserves a valid campaign

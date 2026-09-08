@@ -1,0 +1,1 @@
+PASS: 1910 spatial route, gate and sight assertions

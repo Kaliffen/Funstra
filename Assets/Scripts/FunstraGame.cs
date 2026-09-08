@@ -46,7 +46,8 @@ namespace Funstra
             ReadFoundationArguments();
             muteTests=Array.IndexOf(Environment.GetCommandLineArgs(),"--mute-tests")>=0;mute=muteTests;
             if(muteTests)AudioListener.volume=0;
-            policeTest=Array.IndexOf(Environment.GetCommandLineArgs(),"--police-test")>=0;
+            pressureTest=Array.IndexOf(Environment.GetCommandLineArgs(),"--pressure-test")>=0;
+            policeTest=pressureTest||Array.IndexOf(Environment.GetCommandLineArgs(),"--police-test")>=0;
             Application.targetFrameRate = 60; QualitySettings.vSyncCount = 1;
             if(Array.IndexOf(Environment.GetCommandLineArgs(),"--30fps")>=0) { Application.targetFrameRate=30;QualitySettings.vSyncCount=0; }
             visualCheck = Array.IndexOf(Environment.GetCommandLineArgs(), "--visual-check") >= 0;
@@ -124,6 +125,7 @@ namespace Funstra
             }
             if(DistrictEnabled&&Input.GetKeyDown(KeyCode.J))
             { if(screen==ScreenMode.Play) { Save();screen=ScreenMode.Journal; }else if(screen==ScreenMode.Journal)screen=ScreenMode.Play; }
+            if((screen==ScreenMode.Play||screen==ScreenMode.Tactics)&&Input.GetKeyDown(KeyCode.Tab))showMap=!showMap;
             if(!Active)
             {
                 if(screen==ScreenMode.Tactics)
@@ -131,7 +133,6 @@ namespace Funstra
                 Stealing = false;medicineProgress=0; ResetCargoInteraction(); return;
             }
             float dt = Mathf.Min(Time.deltaTime,.05f); Elapsed += dt; toastTime -= dt;
-            if(Input.GetKeyDown(KeyCode.Tab)) showMap = !showMap;
             if(Input.mouseScrollDelta.y != 0) cameraSize = Mathf.Clamp(cameraSize-Input.mouseScrollDelta.y*1.5f,14,29);
             City.RefreshProps();City.StepTraffic(this,dt);
             UpdatePlayer(dt);
@@ -143,12 +144,12 @@ namespace Funstra
             {
                 if(Police.identifiedGunman)Heat=Police.searchRemaining;
                 else if(!seen) Heat = Mathf.Max(0,Heat-dt*(Hidden ? 2.2f : 1));
-                if(Heat == 0) Notify("Heat cleared. Mara will buy the goods.");
+                if(Heat == 0) Notify(DistrictEnabled?"Immediate pursuit has ended. Recorded incidents remain.":"Heat cleared. Mara will buy the goods.");
             }
             bool nearOfficer = false;
             foreach(var a in Agents) if(Heat>0 && a.Police && a.Pursuing && a.SeesPlayer && Vector3.Distance(a.Position,Player.position)<1.65f) nearOfficer = true;
             arrestProgress = Mathf.Clamp01(arrestProgress + (nearOfficer ? dt*.85f : -dt*1.5f));
-            if(arrestProgress >= 1) Busted();
+            if(arrestProgress >= 1 && !pressureDurabilityFixture) Busted();
             UpdateInteraction(dt);
             for(int i=0;i<City.Targets.Count;i++)
             {

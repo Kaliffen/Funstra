@@ -72,7 +72,7 @@ namespace Funstra
         void DrawTitle()
         {
             Rect(0,0,615,H,new Color(ink.r,ink.g,ink.b,.97f)); Rect(615,0,3,H,CityArt.Mint);
-            Text(Application.version=="0.4.1"?"POLICE RESPONSE / PLAYABLE SLICE":"STREETS WORTH FIGHTING FOR / DEMO 04",62,66,500,40,16,CityArt.Mint,FontStyle.Bold);
+            Text(Application.version=="0.4.2"?"PRESSURE AND ESCAPE / PLAYABLE SLICE":Application.version=="0.4.1"?"POLICE RESPONSE / PLAYABLE SLICE":"STREETS WORTH FIGHTING FOR / DEMO 04",62,66,500,40,16,CityArt.Mint,FontStyle.Bold);
             Text("FUNSTRA",54,145,540,115,86,paper,FontStyle.Bold);
             Rect(62,280,65,4,CityArt.Mint);
             Text("One person.\nA city of debts.\nA place to keep.",62,318,475,185,42,paper,FontStyle.Bold);
@@ -84,7 +84,7 @@ namespace Funstra
                 if(Button("START A NEW NIGHT",62,716,488,52))screen=ScreenMode.ConfirmRestart;
             }
             else if(Button("ENTER OLD PORT",62,654,488,66,true))StartRun(false);
-            Text(Application.version=="0.4.1"?"0.4.1     /     POLICE RESPONSE CANDIDATE":"DEMO 04     /     FOUNDATION CANDIDATE",62,822,430,30,14,quiet);
+            Text(Application.version=="0.4.2"?"0.4.2     /     PRESSURE AND ESCAPE":Application.version=="0.4.1"?"0.4.1     /     POLICE RESPONSE CANDIDATE":"DEMO 04     /     FOUNDATION CANDIDATE",62,822,430,30,14,quiet);
             if(Button("QUIT",450,810,100,44))Application.Quit();
             Panel(1146,60,390,109); Dot(1180,97,5,CityArt.Mint);
             Text("OLD PORT, FUNSTRA",1200,82,300,30,20,paper,FontStyle.Bold);
@@ -113,10 +113,10 @@ namespace Funstra
             Text("CASH",1212,37,105,22,12,quiet,FontStyle.Bold); Text("$"+State.cash,1210,56,122,34,25,paper,FontStyle.Bold);
             Text("MARA / STANDING",1381,37,175,22,12,quiet,FontStyle.Bold); Text(State.completed==0?"NEW FACE":State.completed==1?"RUNNER":State.completed==2?"TRUSTED":"CONNECTED",1381,59,180,30,19,CityArt.Mint,FontStyle.Bold);
             Panel(1250,108,322,86);
-            Text(Heat>0?"WANTED / "+(Elapsed-lastSight<.5f?"IN SIGHT":"SEARCHING"):Hidden?"HIDDEN":"KEEP A LOW PROFILE",1271,124,280,32,17,Heat>0?CityArt.Red:CityArt.Mint,FontStyle.Bold);
+            Text(Police.Searching?PoliceStatus:Heat>0?"WANTED / "+(Elapsed-lastSight<.5f?"IN SIGHT":"SEARCHING"):Hidden?"HIDDEN":"KEEP A LOW PROFILE",1271,124,280,32,17,Heat>0?CityArt.Red:CityArt.Mint,FontStyle.Bold);
             Rect(1272,167,277,5,CityArt.Hex("344754")); Rect(1272,167,277*(Heat/12),5,CityArt.Red);
             if(Heat>0)Text("Break sight. Hold CTRL by a green bin to hide.",1190,204,382,60,15,paper);
-            DrawMap(showMap?new Rect(464,130,672,630):new Rect(1312,612,260,260),showMap);
+            DrawMap(showMap?new Rect(420,280,760,540):new Rect(1312,612,260,260),showMap);
             Panel(28,758,327,114);
             Text(Sneaking?"SNEAKING":sprinting?"SPRINTING":"ON FOOT",48,775,285,25,14,CityArt.Mint,FontStyle.Bold);
             Rect(49,810,285,5,CityArt.Hex("344754")); Rect(49,810,285*(Stamina/(State.HasPerk(1)?135:100)),5,CityArt.Mint);
@@ -125,8 +125,8 @@ namespace Funstra
             DrawWorldMarkers();
             if(toastTime>0)
             {
-                Panel(458,28,693,64); Rect(458,28,4,64,CityArt.Amber);
-                Text(toast,479,40,650,45,17,paper,FontStyle.Normal,TextAnchor.MiddleLeft);
+                Panel(458,210,693,64); Rect(458,210,4,64,CityArt.Amber);
+                Text(toast,479,222,650,45,17,paper,FontStyle.Normal,TextAnchor.MiddleLeft);
             }
             if(!string.IsNullOrEmpty(prompt)&&screen==ScreenMode.Play&&!showMap)
             {

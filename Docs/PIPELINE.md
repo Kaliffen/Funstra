@@ -12,10 +12,12 @@ Before packaging, use Evidence/VALIDATION.md and the selected release's runner i
   agent finishes a demo
           │
           ▼
-  Tools/Release.ps1  ──── local, Windows, licensed Unity editor
-          │  builds the player, verifies it, zips it,
-          │  writes notes, publishes a GitHub Release,
-          │  prunes to the newest 5 releases
+  selected Tools/Package-*.ps1 ──── local, existing reviewed player
+          │  verifies the exact assembly, evidence and dossier,
+          │  packages without rebuilding
+          ▼
+  verify extracted archive, push matching source
+          │  gh release create uploads that exact ZIP
           ▼
   GitHub Release published
           │
@@ -48,24 +50,20 @@ script becomes a thin `workflow_dispatch` trigger.
 ## Releasing
 
 ```powershell
-# Publish an already-tested player; verify packaged identity before release.
-# Use a release-specific packaging path when guides/evidence are required.
-pwsh Tools/Release.ps1 -SkipBuild -Name "<reviewed release title>" -NotesFile "<prepared notes file>" -BuildDir "<tested build directory>"
+# Validate the current reviewed player without creating an archive.
+pwsh Tools/Package-PressureEscape.ps1 -ExpectedAssemblySha256 <reviewed-assembly-sha256> -ValidateOnly
 
-# Rehearse without publishing.
-pwsh Tools/Release.ps1 -DryRun
+# Create its review package without rebuilding. Extract and test it before upload.
+pwsh Tools/Package-PressureEscape.ps1 -ExpectedAssemblySha256 <reviewed-assembly-sha256>
+
+# After review integration and source push, upload the exact verified archive.
+gh release create v0.4.2 Releases/Funstra-pressure-escape-0.4.2-windows.zip --target <pushed-source-commit> --title "Pressure and Escape" --notes-file Docs/release-notes-pressure-escape-0.4.2.md --latest
 
 # Inspect retained releases without deleting anything.
 node Tools/Prune-Releases.mjs --dry-run
 ```
 
-The version comes from `bundleVersion` in `ProjectSettings.asset` unless you pass
-`-Version`. The tag is `v<version>`. Release notes are the prose above the first
-`##` heading of `-NotesFile`, plus the download instructions, size and SHA-256.
-
-The script refuses to publish when `Funstra.exe`, `UnityPlayer.dll` or
-`Funstra_Data` are missing, when the player is implausibly small, or when
-`Evidence/build-result.txt` does not say `Succeeded`.
+Use the version and source commit belonging to the reviewed executable. Write complete release notes before publication, including coverage limits and the verified archive's size and SHA-256. The selected packager checks player files, successful build evidence, matching runtime/reviewer identities and required documents; it does not publish or replace the build. The generic `Tools/Release.ps1` remains available for other release flows, but must not rebuild or repackage an already-reviewed archive.
 
 ### Keeping only the newest releases
 
@@ -111,3 +109,11 @@ requests build the site and check the output but never deploy.
 `Tools/Package-PoliceResponse.ps1` validates and packages the existing v0.4.1 player, its three core runtime routes and four guided reviewer records. The extracted package has its own runtime receipt under `Evidence/PoliceResponse/portable-check`. Publish the already-verified `Releases/Funstra-police-response-0.4.1-windows.zip` with `gh release create v0.4.1 <archive> --target <pushed-source-commit> --title "Police Response" --notes-file Docs/release-notes-police-response-0.4.1.md --latest`. Do not invoke the generic repackaging path on this reviewed archive.
 
 The site generator relocates the selected and previous dossiers with their locally linked evidence. It rewrites only published HTML, preserving original dossiers and reviewer records. `node site/test-build.mjs` tests relocation and containment; `node site/verify.mjs` checks generated local targets alongside release retention and previous-version links.
+
+## Pressure and Escape reviewed package
+
+`Tools/Package-PressureEscape.ps1` packages the existing `Build/PressureEscape` v0.4.2 player. It requires the same assembly SHA-256 in the Pressure, Police, Streets and Legacy core routes under `Evidence/PressureEscape/{pressure,police,streets,legacy}-final`, the sustained `pressure-profile.json`, all four `review-*` Pressure runs and each reviewer's `pressure-escape*.md` records. It includes `PRESSURE-AND-ESCAPE.md`, the single `Docs/funstra-review-dossier-pressure-escape.html`, validation, credits and linked review artifacts. Pending review records or missing final evidence are packaging blockers, not placeholder release content.
+
+After the integrated candidate and four-reviewer dossier are complete, validate and package with the commands above. Extract the ZIP to a separate directory, check its assembly against the reviewed hash and run the Pressure route using `-PlayerPath <extracted-folder>/Funstra.exe -EvidenceRoot Evidence/PressureEscape/portable-check`. Record the extracted receipt and ZIP hash before uploading that exact ZIP with `gh release create`. Preserve the approved v0.4.1 archive and dossier.
+
+Finalize `site/content/site.json` with actual panel verdicts, the selected dossier and `releaseVersion: v0.4.2` before building the site. While review is pending, its prepared content must not be deployed. Build and inspect the completed site only after the final dossier exists; `node site/verify.mjs` rejects a newest release that differs from the advertised version. After publication, verify the live index, dossier, evidence links, retained releases and downloaded archive hash. A successful workflow alone does not complete those public checks.

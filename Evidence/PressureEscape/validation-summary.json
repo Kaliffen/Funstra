@@ -1,0 +1,130 @@
+{
+  "phase": "reviewed archive and portable route verified; publication pending",
+  "version": "0.4.2",
+  "checkedAt": "2026-09-08T08:03:27.646358+00:00",
+  "assemblySha256": "BD9CA29F2787A9F2546E10CA88650142DF7E80D0E8D22743C7B88AB9F99BB776",
+  "executableSha256": "97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3",
+  "buildResult": "Succeeded\nErrors: 0\nWarnings: 0\nBytes: 92852232\nDuration: 00:00:03.2850744",
+  "routes": {
+    "pressure": {
+      "result": "PASS",
+      "checks": 41,
+      "captures": 9,
+      "identity": {
+        "testedAt": "2026-09-08T07:32:23.4383521Z",
+        "mode": "Pressure",
+        "executable": "~\\repos\\Funstra\\Build\\PressureEscape\\Funstra.exe",
+        "assemblySha256": "BD9CA29F2787A9F2546E10CA88650142DF7E80D0E8D22743C7B88AB9F99BB776",
+        "method": "Guided exported player; direct setups and controller travel identified in result."
+      },
+      "evidence": "Evidence/PressureEscape/pressure-final/pressure-runtime-result.txt",
+      "fullLogInspected": true
+    },
+    "police": {
+      "result": "PASS",
+      "checks": 35,
+      "captures": 4,
+      "identity": {
+        "testedAt": "2026-09-08T07:35:16.6850070Z",
+        "mode": "Police",
+        "executable": "~\\repos\\Funstra\\Build\\PressureEscape\\Funstra.exe",
+        "assemblySha256": "BD9CA29F2787A9F2546E10CA88650142DF7E80D0E8D22743C7B88AB9F99BB776",
+        "method": "Guided exported player; direct setups and controller travel identified in result."
+      },
+      "evidence": "Evidence/PressureEscape/police-final/police-runtime-result.txt",
+      "fullLogInspected": true
+    },
+    "streets": {
+      "result": "PASS",
+      "checks": 143,
+      "captures": 4,
+      "identity": {
+        "testedAt": "2026-09-08T07:35:24.6595845Z",
+        "mode": "Streets",
+        "executable": "~\\repos\\Funstra\\Build\\PressureEscape\\Funstra.exe",
+        "assemblySha256": "BD9CA29F2787A9F2546E10CA88650142DF7E80D0E8D22743C7B88AB9F99BB776",
+        "method": "Guided exported player; direct setups and controller travel identified in result."
+      },
+      "evidence": "Evidence/PressureEscape/streets-final/streets-runtime-result.txt",
+      "fullLogInspected": true
+    },
+    "legacy": {
+      "result": "PASS",
+      "checks": 90,
+      "captures": 10,
+      "identity": {
+        "testedAt": "2026-09-08T07:37:46.3085215Z",
+        "mode": "Legacy",
+        "executable": "~\\repos\\Funstra\\Build\\PressureEscape\\Funstra.exe",
+        "assemblySha256": "BD9CA29F2787A9F2546E10CA88650142DF7E80D0E8D22743C7B88AB9F99BB776",
+        "method": "Guided exported player; direct setups and controller travel identified in result."
+      },
+      "evidence": "Evidence/PressureEscape/legacy-final/runtime-result.txt",
+      "fullLogInspected": true
+    }
+  },
+  "method": "Guided exported build. 75s extended-durability stress is separate from ordinary-health prepared exposure/escape and direct-step crowding fixtures. No human-play or minimum-spec claim.",
+  "reviews": {
+    "marcus": {
+      "phase": "complete",
+      "score": 8,
+      "checks": 41,
+      "captures": 9,
+      "evidence": "Evidence/PressureEscape/review-marcus",
+      "review": "reviewer-agents/marcus-webb/pressure-escape-review.md"
+    },
+    "dag": {
+      "phase": "complete",
+      "score": 8,
+      "checks": 41,
+      "captures": 9,
+      "evidence": "Evidence/PressureEscape/review-dag",
+      "review": "reviewer-agents/dag-moller/pressure-escape-review.md"
+    },
+    "priya": {
+      "phase": "complete",
+      "score": 8,
+      "checks": 41,
+      "captures": 9,
+      "evidence": "Evidence/PressureEscape/review-priya",
+      "review": "reviewer-agents/priya-raman/pressure-escape-review.md"
+    },
+    "nell": {
+      "phase": "complete",
+      "score": 8,
+      "checks": 41,
+      "captures": 9,
+      "evidence": "Evidence/PressureEscape/review-nell",
+      "review": "reviewer-agents/nell-okafor/pressure-escape-review.md"
+    }
+  },
+  "profile": "Evidence/PressureEscape/pressure-final/pressure-profile.json",
+  "editorChecks": {
+    "core": 75,
+    "district": 37,
+    "refuge": 33,
+    "spatial": 1910,
+    "clinic": 72,
+    "squad": 39,
+    "combat": 25,
+    "police": 22
+  },
+  "editorTotal": 2213,
+  "coreRuntimeTotal": 309,
+  "focusedReplay": {
+    "mode": "PressureReplay",
+    "evidence": "Evidence/PressureEscape/encounter-third",
+    "identity": {
+      "testedAt": "2026-09-08T07:30:49.2747767Z",
+      "mode": "PressureReplay",
+      "executable": "~\\repos\\Funstra\\Build\\PressureEscape\\Funstra.exe",
+      "assemblySha256": "BD9CA29F2787A9F2546E10CA88650142DF7E80D0E8D22743C7B88AB9F99BB776",
+      "method": "Guided exported player; direct setups and controller travel identified in result."
+    },
+    "method": "Shared CD-focused replay using an earlier real-deployment input snapshot, then current-build ordinary-health encounters. Bandage branch observed; escape ended at 81.68149 health. Not a replacement for full Pressure validation."
+  },
+  "dossier": "Docs/funstra-review-dossier-pressure-escape.html",
+  "humanAcceptance": "pending separately",
+  "postPanelGameplayChanges": false,
+  "packageVerification": "Evidence/PressureEscape/package-verification.json"
+}

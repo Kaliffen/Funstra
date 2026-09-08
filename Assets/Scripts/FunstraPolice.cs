@@ -15,17 +15,19 @@ namespace Funstra
     {
         public bool identifiedGunman;
         public int harm;
-        public float searchRemaining;
+        public float searchRemaining, contactRemaining;
         public Vector3 lastKnown;
         public string observer="";
         public PoliceDispatch[] trucks={new PoliceDispatch(),new PoliceDispatch()};
         public List<DistrictActor> officers=new List<DistrictActor>();
         public bool Searching=>searchRemaining>0;
+        public const float ContactLifetime=.5f;
+        public bool HasContact=>identifiedGunman&&contactRemaining>0;
         static bool Finite(float v)=>!float.IsNaN(v)&&!float.IsInfinity(v);
         static bool Point(Vector3 v)=>Finite(v.x)&&Finite(v.y)&&Finite(v.z)&&Mathf.Abs(v.x)<=80&&Mathf.Abs(v.z)<=80;
         public bool Valid()
         {
-            if(harm<0||harm>100||!Finite(searchRemaining)||searchRemaining<0||searchRemaining>45.01f||!Point(lastKnown)||trucks==null||trucks.Length!=2||officers==null||officers.Count>6)return false;
+            if(harm<0||harm>100||!Finite(searchRemaining)||searchRemaining<0||searchRemaining>45.01f||!Finite(contactRemaining)||contactRemaining<0||contactRemaining>ContactLifetime||contactRemaining>searchRemaining||contactRemaining>0&&!identifiedGunman||!Point(lastKnown)||trucks==null||trucks.Length!=2||officers==null||officers.Count>6)return false;
             int delivered=0;var ids=new HashSet<string>();
             for(int i=0;i<2;i++)
             {
@@ -41,15 +43,16 @@ namespace Funstra
         { if(identifiedGunman)return;lastKnown=point;searchRemaining=12;observer="gunshot heard"; }
         public void Violence(Vector3 point,int severity,string witness)
         {
-            identifiedGunman=true;lastKnown=point;observer=witness;harm=Mathf.Clamp(harm+Mathf.Max(0,severity),0,100);searchRemaining=45;
+            identifiedGunman=true;lastKnown=point;observer=witness;harm=Mathf.Clamp(harm+Mathf.Max(0,severity),0,100);searchRemaining=45;contactRemaining=ContactLifetime;
             for(int i=0;i<2;i++)if(harm>=(i+1)*2&&!trucks[i].requested)
             {trucks[i].requested=true;trucks[i].delay=4+i*5;trucks[i].position=new Vector3(i==0?3:-3,0,i==0?-64:64);trucks[i].destination=new Vector3(i==0?3:-3,0,Mathf.Clamp(point.z,-28,28));}
         }
-        public void Sight(Vector3 point){if(identifiedGunman){lastKnown=point;searchRemaining=45;}}
+        public void Sight(Vector3 point){if(identifiedGunman){lastKnown=point;searchRemaining=45;contactRemaining=ContactLifetime;}}
         public void Step(float dt)
         {
             if(dt<=0||float.IsNaN(dt)||float.IsInfinity(dt))return;
             searchRemaining=Mathf.Max(0,searchRemaining-dt);
+            contactRemaining=Mathf.Max(0,contactRemaining-dt);
             if(searchRemaining==0){identifiedGunman=false;harm=0;}
         }
     }
@@ -60,7 +63,7 @@ namespace Funstra
         public int PoliceOfficerCount=>Agents.FindAll(a=>a.Police&&a.Record!=null&&a.Record.health>0).Count;
         public int PoliceReinforcementCount=>Police.officers.Count;
         public int PoliceTruckCount=>Array.FindAll(policeTrucks,t=>t!=null).Length;
-        public string PoliceStatus=>Police.identifiedGunman?"ARMED RESPONSE / "+PoliceOfficerCount+" OFFICERS":Police.Searching?"GUNSHOT / AREA SEARCH":"";
+        public string PoliceStatus=>Police.identifiedGunman?(Police.HasContact?"CONTACT / ":"SEARCH / ")+PoliceOfficerCount+" OFFICERS":Police.Searching?"GUNSHOT / AREA SEARCH":"";
         public void ReportPoliceNoise(Vector3 point)
         {
             if(FoundationMode||!DistrictEnabled)return;
@@ -176,9 +179,14 @@ namespace Funstra
                 }
                 if(d.arrived&&d.deployed<3)
                 {
-                    // Officers step from the side doors; occupied exits delay deployment.
+                    // Try both physical side doors. If both are occupied, keep this
+                    // officer aboard rather than pushing a person aside or finding a remote spawn.
                     Vector3 exit=d.position+new Vector3(i==0?2.1f:-2.1f,0,(d.deployed-1)*1.4f);
-                    if(!OfficerExitClear(exit))continue;
+                    if(!OfficerExitClear(exit))
+                    {
+                        exit=d.position+new Vector3(i==0?-2.1f:2.1f,0,(d.deployed-1)*1.4f);
+                        if(!OfficerExitClear(exit))continue;
+                    }
                     var record=new DistrictActor("response-"+i+"-"+d.deployed,"RESPONSE OFFICER "+(i*3+d.deployed+1),exit){ammo=18};
                     Police.officers.Add(record);d.deployed++;CreateResponseOfficer(record);
                 }

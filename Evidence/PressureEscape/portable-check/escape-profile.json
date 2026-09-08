@@ -1,0 +1,2500 @@
+{
+    "method": "Normal-health controller escape and live search after reload.",
+    "gpu": "",
+    "cpu": "",
+    "width": 0,
+    "height": 0,
+    "frameCap": 0,
+    "frames": 0,
+    "processes": 0,
+    "p50": 0.0,
+    "p95": 0.0,
+    "max": 0.0,
+    "allocatedBytes": 0,
+    "samples": [
+        {
+            "seconds": 14.212929725646973,
+            "health": 100.0,
+            "officers": 9,
+            "shots": 160,
+            "coverHits": 20,
+            "totalAmmo": 162,
+            "player": {
+                "x": -44.99504470825195,
+                "y": 0.03499995172023773,
+                "z": -13.37895393371582
+            },
+            "lastKnown": {
+                "x": 35.0002555847168,
+                "y": 0.03499995917081833,
+                "z": -13.0
+            },
+            "status": "SEARCH / 9 OFFICERS",
+            "roster": [
+                {
+                    "id": "citizen-0",
+                    "position": {
+                        "x": 32.675514221191409,
+                        "y": 0.0,
+                        "z": -13.378518104553223
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-1",
+                    "position": {
+                        "x": 35.75545883178711,
+                        "y": 0.0,
+                        "z": -11.491952896118164
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-2",
+                    "position": {
+                        "x": 33.866455078125,
+                        "y": 0.0,
+                        "z": -15.51154613494873
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-0",
+                    "position": {
+                        "x": 35.01701354980469,
+                        "y": 0.0,
+                        "z": -12.95494270324707
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 0,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-1",
+                    "position": {
+                        "x": 36.34465789794922,
+                        "y": 0.0,
+                        "z": -13.217772483825684
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-2",
+                    "position": {
+                        "x": 32.99066925048828,
+                        "y": 0.0,
+                        "z": -12.196366310119629
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-0",
+                    "position": {
+                        "x": 33.652366638183597,
+                        "y": 0.0,
+                        "z": -13.958264350891114
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-1",
+                    "position": {
+                        "x": 34.90143585205078,
+                        "y": 0.0,
+                        "z": -14.819404602050782
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-2",
+                    "position": {
+                        "x": 34.105960845947269,
+                        "y": 0.0,
+                        "z": -13.097127914428711
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                }
+            ]
+        },
+        {
+            "seconds": 15.246305465698243,
+            "health": 100.0,
+            "officers": 9,
+            "shots": 160,
+            "coverHits": 20,
+            "totalAmmo": 162,
+            "player": {
+                "x": -44.99504470825195,
+                "y": 0.03499989211559296,
+                "z": -13.37895393371582
+            },
+            "lastKnown": {
+                "x": 35.0002555847168,
+                "y": 0.03499995917081833,
+                "z": -13.0
+            },
+            "status": "SEARCH / 9 OFFICERS",
+            "roster": [
+                {
+                    "id": "citizen-0",
+                    "position": {
+                        "x": 33.98678970336914,
+                        "y": 0.0,
+                        "z": -13.91600513458252
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-1",
+                    "position": {
+                        "x": 34.2436408996582,
+                        "y": 0.0,
+                        "z": -11.982916831970215
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-2",
+                    "position": {
+                        "x": 36.38446044921875,
+                        "y": 0.0,
+                        "z": -14.533831596374512
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-0",
+                    "position": {
+                        "x": 35.752593994140628,
+                        "y": 0.0,
+                        "z": -12.268233299255371
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-1",
+                    "position": {
+                        "x": 35.07184600830078,
+                        "y": 0.0,
+                        "z": -13.121044158935547
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-2",
+                    "position": {
+                        "x": 32.99066925048828,
+                        "y": 0.0,
+                        "z": -12.196366310119629
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-0",
+                    "position": {
+                        "x": 33.61887741088867,
+                        "y": 0.0,
+                        "z": -14.704668998718262
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-1",
+                    "position": {
+                        "x": 35.02775955200195,
+                        "y": 0.0,
+                        "z": -14.6578369140625
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-2",
+                    "position": {
+                        "x": 35.18806838989258,
+                        "y": 0.0,
+                        "z": -11.7083101272583
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                }
+            ]
+        },
+        {
+            "seconds": 16.246309280395509,
+            "health": 100.0,
+            "officers": 9,
+            "shots": 160,
+            "coverHits": 20,
+            "totalAmmo": 162,
+            "player": {
+                "x": -44.99504470825195,
+                "y": 0.03499989211559296,
+                "z": -13.37895393371582
+            },
+            "lastKnown": {
+                "x": 35.0002555847168,
+                "y": 0.03499995917081833,
+                "z": -13.0
+            },
+            "status": "SEARCH / 9 OFFICERS",
+            "roster": [
+                {
+                    "id": "citizen-0",
+                    "position": {
+                        "x": 36.65580749511719,
+                        "y": 0.0,
+                        "z": -13.17642879486084
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-1",
+                    "position": {
+                        "x": 35.62916564941406,
+                        "y": 0.0,
+                        "z": -12.463603019714356
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-2",
+                    "position": {
+                        "x": 35.80480194091797,
+                        "y": 0.0,
+                        "z": -14.590971946716309
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 6,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-0",
+                    "position": {
+                        "x": 36.29497146606445,
+                        "y": 0.0,
+                        "z": -11.719319343566895
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-1",
+                    "position": {
+                        "x": 34.16438674926758,
+                        "y": 0.0,
+                        "z": -11.954066276550293
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-2",
+                    "position": {
+                        "x": 32.99066925048828,
+                        "y": 0.0,
+                        "z": -12.196366310119629
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-0",
+                    "position": {
+                        "x": 34.18216323852539,
+                        "y": 0.0,
+                        "z": -13.852429389953614
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-1",
+                    "position": {
+                        "x": 36.953975677490237,
+                        "y": 0.0,
+                        "z": -14.076911926269532
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 6,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-2",
+                    "position": {
+                        "x": 35.540645599365237,
+                        "y": 0.0,
+                        "z": -11.037283897399903
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                }
+            ]
+        },
+        {
+            "seconds": 17.246320724487306,
+            "health": 100.0,
+            "officers": 9,
+            "shots": 160,
+            "coverHits": 20,
+            "totalAmmo": 162,
+            "player": {
+                "x": -44.99504470825195,
+                "y": 0.03499989211559296,
+                "z": -13.37895393371582
+            },
+            "lastKnown": {
+                "x": 35.0002555847168,
+                "y": 0.03499995917081833,
+                "z": -13.0
+            },
+            "status": "SEARCH / 9 OFFICERS",
+            "roster": [
+                {
+                    "id": "citizen-0",
+                    "position": {
+                        "x": 35.90846252441406,
+                        "y": 0.0,
+                        "z": -14.34247875213623
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 6,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-1",
+                    "position": {
+                        "x": 35.526676177978519,
+                        "y": 0.0,
+                        "z": -13.165145874023438
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-2",
+                    "position": {
+                        "x": 37.20388412475586,
+                        "y": 0.0,
+                        "z": -14.182657241821289
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-0",
+                    "position": {
+                        "x": 35.6089973449707,
+                        "y": 0.0,
+                        "z": -11.983481407165528
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-1",
+                    "position": {
+                        "x": 34.707969665527347,
+                        "y": 0.0,
+                        "z": -12.846857070922852
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-2",
+                    "position": {
+                        "x": 35.21068572998047,
+                        "y": 0.0,
+                        "z": -13.95280933380127
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 5,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-0",
+                    "position": {
+                        "x": 35.80118942260742,
+                        "y": 0.0,
+                        "z": -15.341511726379395
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-1",
+                    "position": {
+                        "x": 37.03738021850586,
+                        "y": 0.0,
+                        "z": -12.659889221191407
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-2",
+                    "position": {
+                        "x": 33.47944641113281,
+                        "y": 0.0,
+                        "z": -11.95757007598877
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                }
+            ]
+        },
+        {
+            "seconds": 18.279661178588868,
+            "health": 100.0,
+            "officers": 9,
+            "shots": 160,
+            "coverHits": 20,
+            "totalAmmo": 162,
+            "player": {
+                "x": -44.99504470825195,
+                "y": 0.03499989211559296,
+                "z": -13.37895393371582
+            },
+            "lastKnown": {
+                "x": 35.0002555847168,
+                "y": 0.03499995917081833,
+                "z": -13.0
+            },
+            "status": "SEARCH / 9 OFFICERS",
+            "roster": [
+                {
+                    "id": "citizen-0",
+                    "position": {
+                        "x": 35.05204772949219,
+                        "y": 0.0,
+                        "z": -14.226239204406739
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-1",
+                    "position": {
+                        "x": 35.11161804199219,
+                        "y": 0.0,
+                        "z": -13.03493595123291
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 0,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-2",
+                    "position": {
+                        "x": 36.81365203857422,
+                        "y": 0.0,
+                        "z": -13.692001342773438
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 5,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-0",
+                    "position": {
+                        "x": 37.71153259277344,
+                        "y": 0.0,
+                        "z": -12.634764671325684
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-1",
+                    "position": {
+                        "x": 35.148033142089847,
+                        "y": 0.0,
+                        "z": -15.366927146911621
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-2",
+                    "position": {
+                        "x": 34.21955108642578,
+                        "y": 0.0,
+                        "z": -14.171703338623047
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-0",
+                    "position": {
+                        "x": 36.695560455322269,
+                        "y": 0.0,
+                        "z": -14.825217247009278
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-1",
+                    "position": {
+                        "x": 35.83449935913086,
+                        "y": 0.0,
+                        "z": -12.717653274536133
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-2",
+                    "position": {
+                        "x": 34.29862594604492,
+                        "y": 0.0,
+                        "z": -13.165692329406739
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                }
+            ]
+        },
+        {
+            "seconds": 19.27983856201172,
+            "health": 100.0,
+            "officers": 9,
+            "shots": 160,
+            "coverHits": 20,
+            "totalAmmo": 162,
+            "player": {
+                "x": -44.99504470825195,
+                "y": 0.03499989211559296,
+                "z": -13.37895393371582
+            },
+            "lastKnown": {
+                "x": 35.0002555847168,
+                "y": 0.03499995917081833,
+                "z": -13.0
+            },
+            "status": "SEARCH / 9 OFFICERS",
+            "roster": [
+                {
+                    "id": "citizen-0",
+                    "position": {
+                        "x": 34.92483901977539,
+                        "y": 0.0,
+                        "z": -13.174975395202637
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-1",
+                    "position": {
+                        "x": 34.51530075073242,
+                        "y": 0.0,
+                        "z": -11.610525131225586
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-2",
+                    "position": {
+                        "x": 35.07386779785156,
+                        "y": 0.0,
+                        "z": -14.330991744995118
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-0",
+                    "position": {
+                        "x": 35.738380432128909,
+                        "y": 0.0,
+                        "z": -13.193198204040528
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-1",
+                    "position": {
+                        "x": 33.67823028564453,
+                        "y": 0.0,
+                        "z": -14.327607154846192
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 5,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-2",
+                    "position": {
+                        "x": 31.878082275390626,
+                        "y": 0.0,
+                        "z": -13.990425109863282
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 4,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-0",
+                    "position": {
+                        "x": 36.56626510620117,
+                        "y": 0.0,
+                        "z": -12.683650016784668
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-1",
+                    "position": {
+                        "x": 35.58301544189453,
+                        "y": 0.0,
+                        "z": -12.419211387634278
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-2",
+                    "position": {
+                        "x": 33.6732177734375,
+                        "y": 0.0,
+                        "z": -13.519734382629395
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                }
+            ]
+        },
+        {
+            "seconds": 20.313243865966798,
+            "health": 100.0,
+            "officers": 9,
+            "shots": 160,
+            "coverHits": 20,
+            "totalAmmo": 162,
+            "player": {
+                "x": -44.99504470825195,
+                "y": 0.03499989211559296,
+                "z": -13.37895393371582
+            },
+            "lastKnown": {
+                "x": 35.0002555847168,
+                "y": 0.03499995917081833,
+                "z": -13.0
+            },
+            "status": "SEARCH / 9 OFFICERS",
+            "roster": [
+                {
+                    "id": "citizen-0",
+                    "position": {
+                        "x": 34.13395690917969,
+                        "y": 0.0,
+                        "z": -12.804967880249024
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-1",
+                    "position": {
+                        "x": 34.75429916381836,
+                        "y": 0.0,
+                        "z": -12.295294761657715
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-2",
+                    "position": {
+                        "x": 33.944923400878909,
+                        "y": 0.0,
+                        "z": -14.946554183959961
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-0",
+                    "position": {
+                        "x": 34.927791595458987,
+                        "y": 0.0,
+                        "z": -13.905982971191407
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 6,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-1",
+                    "position": {
+                        "x": 33.92864227294922,
+                        "y": 0.0,
+                        "z": -13.627080917358399
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-2",
+                    "position": {
+                        "x": 32.79307556152344,
+                        "y": 0.0,
+                        "z": -13.464370727539063
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-0",
+                    "position": {
+                        "x": 35.580875396728519,
+                        "y": 0.0,
+                        "z": -12.100234031677246
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-1",
+                    "position": {
+                        "x": 37.23075866699219,
+                        "y": 0.0,
+                        "z": -13.558025360107422
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-2",
+                    "position": {
+                        "x": 36.5715217590332,
+                        "y": 0.0,
+                        "z": -14.096569061279297
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                }
+            ]
+        },
+        {
+            "seconds": 21.313251495361329,
+            "health": 100.0,
+            "officers": 9,
+            "shots": 160,
+            "coverHits": 20,
+            "totalAmmo": 162,
+            "player": {
+                "x": -44.99504470825195,
+                "y": 0.03499989211559296,
+                "z": -13.37895393371582
+            },
+            "lastKnown": {
+                "x": 35.0002555847168,
+                "y": 0.03499995917081833,
+                "z": -13.0
+            },
+            "status": "SEARCH / 9 OFFICERS",
+            "roster": [
+                {
+                    "id": "citizen-0",
+                    "position": {
+                        "x": 35.11366653442383,
+                        "y": 0.0,
+                        "z": -12.478175163269043
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-1",
+                    "position": {
+                        "x": 36.56071472167969,
+                        "y": 0.0,
+                        "z": -11.835333824157715
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-2",
+                    "position": {
+                        "x": 35.216941833496097,
+                        "y": 0.0,
+                        "z": -14.884018898010254
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-0",
+                    "position": {
+                        "x": 34.53019332885742,
+                        "y": 0.0,
+                        "z": -14.266852378845215
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-1",
+                    "position": {
+                        "x": 33.554386138916019,
+                        "y": 0.0,
+                        "z": -14.904027938842774
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-2",
+                    "position": {
+                        "x": 34.286842346191409,
+                        "y": 0.0,
+                        "z": -12.112874984741211
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-0",
+                    "position": {
+                        "x": 35.19162368774414,
+                        "y": 0.0,
+                        "z": -13.591657638549805
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-1",
+                    "position": {
+                        "x": 36.955848693847659,
+                        "y": 0.0,
+                        "z": -13.7468843460083
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-2",
+                    "position": {
+                        "x": 35.874942779541019,
+                        "y": 0.0,
+                        "z": -13.990102767944336
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                }
+            ]
+        },
+        {
+            "seconds": 22.313308715820314,
+            "health": 100.0,
+            "officers": 9,
+            "shots": 160,
+            "coverHits": 20,
+            "totalAmmo": 162,
+            "player": {
+                "x": -44.99504470825195,
+                "y": 0.03499989211559296,
+                "z": -13.37895393371582
+            },
+            "lastKnown": {
+                "x": 35.0002555847168,
+                "y": 0.03499995917081833,
+                "z": -13.0
+            },
+            "status": "SEARCH / 9 OFFICERS",
+            "roster": [
+                {
+                    "id": "citizen-0",
+                    "position": {
+                        "x": 35.595497131347659,
+                        "y": 0.0,
+                        "z": -12.29745864868164
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-1",
+                    "position": {
+                        "x": 36.69071578979492,
+                        "y": 0.0,
+                        "z": -11.758077621459961
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-2",
+                    "position": {
+                        "x": 34.556297302246097,
+                        "y": 0.0,
+                        "z": -13.751791000366211
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 6,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-0",
+                    "position": {
+                        "x": 33.70502471923828,
+                        "y": 0.0,
+                        "z": -13.431344985961914
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-1",
+                    "position": {
+                        "x": 34.41240310668945,
+                        "y": 0.0,
+                        "z": -15.529107093811036
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-2",
+                    "position": {
+                        "x": 34.79681396484375,
+                        "y": 0.0,
+                        "z": -11.904583930969239
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 7,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-0",
+                    "position": {
+                        "x": 35.02118682861328,
+                        "y": 0.0,
+                        "z": -13.012760162353516
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 0,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-1",
+                    "position": {
+                        "x": 36.54536437988281,
+                        "y": 0.0,
+                        "z": -12.557706832885743
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-2",
+                    "position": {
+                        "x": 35.49922561645508,
+                        "y": 0.0,
+                        "z": -13.982446670532227
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 6,
+                    "reload": 0.0,
+                    "health": 100.0
+                }
+            ]
+        },
+        {
+            "seconds": 23.346675872802736,
+            "health": 100.0,
+            "officers": 9,
+            "shots": 160,
+            "coverHits": 20,
+            "totalAmmo": 162,
+            "player": {
+                "x": -44.99504470825195,
+                "y": 0.03499989211559296,
+                "z": -13.37895393371582
+            },
+            "lastKnown": {
+                "x": 35.0002555847168,
+                "y": 0.03499995917081833,
+                "z": -13.0
+            },
+            "status": "SEARCH / 9 OFFICERS",
+            "roster": [
+                {
+                    "id": "citizen-0",
+                    "position": {
+                        "x": 36.61042022705078,
+                        "y": 0.0,
+                        "z": -13.855517387390137
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-1",
+                    "position": {
+                        "x": 35.218055725097659,
+                        "y": 0.0,
+                        "z": -12.073996543884278
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-2",
+                    "position": {
+                        "x": 33.656307220458987,
+                        "y": 0.0,
+                        "z": -13.025117874145508
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 5,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-0",
+                    "position": {
+                        "x": 34.43229293823242,
+                        "y": 0.0,
+                        "z": -15.247418403625489
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-1",
+                    "position": {
+                        "x": 34.902015686035159,
+                        "y": 0.0,
+                        "z": -14.260085105895996
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-2",
+                    "position": {
+                        "x": 34.99554443359375,
+                        "y": 0.0,
+                        "z": -12.919439315795899
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 0,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-0",
+                    "position": {
+                        "x": 34.01830291748047,
+                        "y": 0.0,
+                        "z": -13.766792297363282
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 5,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-1",
+                    "position": {
+                        "x": 37.22281265258789,
+                        "y": 0.0,
+                        "z": -13.253020286560059
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-2",
+                    "position": {
+                        "x": 35.80678939819336,
+                        "y": 0.0,
+                        "z": -14.203063011169434
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                }
+            ]
+        },
+        {
+            "seconds": 24.38006019592285,
+            "health": 100.0,
+            "officers": 9,
+            "shots": 160,
+            "coverHits": 20,
+            "totalAmmo": 162,
+            "player": {
+                "x": -44.99504470825195,
+                "y": 0.03499989211559296,
+                "z": -13.37895393371582
+            },
+            "lastKnown": {
+                "x": 35.0002555847168,
+                "y": 0.03499995917081833,
+                "z": -13.0
+            },
+            "status": "SEARCH / 9 OFFICERS",
+            "roster": [
+                {
+                    "id": "citizen-0",
+                    "position": {
+                        "x": 35.6967887878418,
+                        "y": 0.0,
+                        "z": -14.78612995147705
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-1",
+                    "position": {
+                        "x": 34.84294509887695,
+                        "y": 0.0,
+                        "z": -10.965059280395508
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-2",
+                    "position": {
+                        "x": 33.78677749633789,
+                        "y": 0.0,
+                        "z": -12.394996643066407
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-0",
+                    "position": {
+                        "x": 34.79637145996094,
+                        "y": 0.0,
+                        "z": -13.909036636352539
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-1",
+                    "position": {
+                        "x": 33.8114128112793,
+                        "y": 0.0,
+                        "z": -13.18235969543457
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 5,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-2",
+                    "position": {
+                        "x": 35.217796325683597,
+                        "y": 0.0,
+                        "z": -12.228715896606446
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 5,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-0",
+                    "position": {
+                        "x": 33.03014373779297,
+                        "y": 0.0,
+                        "z": -14.347721099853516
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-1",
+                    "position": {
+                        "x": 35.94257736206055,
+                        "y": 0.0,
+                        "z": -12.961336135864258
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-2",
+                    "position": {
+                        "x": 35.17992401123047,
+                        "y": 0.0,
+                        "z": -13.224265098571778
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                }
+            ]
+        },
+        {
+            "seconds": 25.38027572631836,
+            "health": 100.0,
+            "officers": 9,
+            "shots": 160,
+            "coverHits": 20,
+            "totalAmmo": 162,
+            "player": {
+                "x": -44.99504470825195,
+                "y": 0.03499989211559296,
+                "z": -13.37895393371582
+            },
+            "lastKnown": {
+                "x": 35.0002555847168,
+                "y": 0.03499995917081833,
+                "z": -13.0
+            },
+            "status": "SEARCH / 9 OFFICERS",
+            "roster": [
+                {
+                    "id": "citizen-0",
+                    "position": {
+                        "x": 35.55697250366211,
+                        "y": 0.0,
+                        "z": -14.666650772094727
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-1",
+                    "position": {
+                        "x": 34.67655944824219,
+                        "y": 0.0,
+                        "z": -11.511147499084473
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-2",
+                    "position": {
+                        "x": 35.89419937133789,
+                        "y": 0.0,
+                        "z": -11.949585914611817
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-0",
+                    "position": {
+                        "x": 34.19927215576172,
+                        "y": 0.0,
+                        "z": -14.645578384399414
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 4,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-1",
+                    "position": {
+                        "x": 33.126708984375,
+                        "y": 0.0,
+                        "z": -14.576179504394532
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-2",
+                    "position": {
+                        "x": 35.350128173828128,
+                        "y": 0.0,
+                        "z": -13.70319938659668
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-0",
+                    "position": {
+                        "x": 33.819332122802737,
+                        "y": 0.0,
+                        "z": -13.770263671875
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-1",
+                    "position": {
+                        "x": 36.83806610107422,
+                        "y": 0.0,
+                        "z": -13.531304359436036
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-2",
+                    "position": {
+                        "x": 36.809207916259769,
+                        "y": 0.0,
+                        "z": -14.55529499053955
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                }
+            ]
+        },
+        {
+            "seconds": 26.41362190246582,
+            "health": 100.0,
+            "officers": 9,
+            "shots": 160,
+            "coverHits": 20,
+            "totalAmmo": 162,
+            "player": {
+                "x": -44.99504470825195,
+                "y": 0.03499989211559296,
+                "z": -13.37895393371582
+            },
+            "lastKnown": {
+                "x": 35.0002555847168,
+                "y": 0.03499995917081833,
+                "z": -13.0
+            },
+            "status": "SEARCH / 9 OFFICERS",
+            "roster": [
+                {
+                    "id": "citizen-0",
+                    "position": {
+                        "x": 36.800350189208987,
+                        "y": 0.0,
+                        "z": -14.544024467468262
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-1",
+                    "position": {
+                        "x": 36.11912536621094,
+                        "y": 0.0,
+                        "z": -10.776498794555664
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-2",
+                    "position": {
+                        "x": 36.62610626220703,
+                        "y": 0.0,
+                        "z": -13.391423225402832
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-0",
+                    "position": {
+                        "x": 33.34730911254883,
+                        "y": 0.0,
+                        "z": -13.588737487792969
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-1",
+                    "position": {
+                        "x": 34.50572967529297,
+                        "y": 0.0,
+                        "z": -12.988151550292969
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-2",
+                    "position": {
+                        "x": 35.0052375793457,
+                        "y": 0.0,
+                        "z": -14.707231521606446
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-0",
+                    "position": {
+                        "x": 35.307403564453128,
+                        "y": 0.0,
+                        "z": -11.916954040527344
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 6,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-1",
+                    "position": {
+                        "x": 36.412635803222659,
+                        "y": 0.0,
+                        "z": -11.902215003967286
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-2",
+                    "position": {
+                        "x": 35.32512283325195,
+                        "y": 0.0,
+                        "z": -13.06518840789795
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                }
+            ]
+        },
+        {
+            "seconds": 27.446990966796876,
+            "health": 100.0,
+            "officers": 9,
+            "shots": 160,
+            "coverHits": 20,
+            "totalAmmo": 162,
+            "player": {
+                "x": -44.99504470825195,
+                "y": 0.03499989211559296,
+                "z": -13.37895393371582
+            },
+            "lastKnown": {
+                "x": 35.0002555847168,
+                "y": 0.03499995917081833,
+                "z": -13.0
+            },
+            "status": "SEARCH / 9 OFFICERS",
+            "roster": [
+                {
+                    "id": "citizen-0",
+                    "position": {
+                        "x": 34.652976989746097,
+                        "y": 0.0,
+                        "z": -12.83459186553955
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 5,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-1",
+                    "position": {
+                        "x": 33.649959564208987,
+                        "y": 0.0,
+                        "z": -11.528868675231934
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-2",
+                    "position": {
+                        "x": 35.71485900878906,
+                        "y": 0.0,
+                        "z": -12.191842079162598
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-0",
+                    "position": {
+                        "x": 33.79246139526367,
+                        "y": 0.0,
+                        "z": -14.50159740447998
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-1",
+                    "position": {
+                        "x": 34.878231048583987,
+                        "y": 0.0,
+                        "z": -11.889222145080567
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 6,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-2",
+                    "position": {
+                        "x": 34.977882385253909,
+                        "y": 0.0,
+                        "z": -13.808578491210938
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-0",
+                    "position": {
+                        "x": 36.686832427978519,
+                        "y": 0.0,
+                        "z": -12.061893463134766
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-1",
+                    "position": {
+                        "x": 35.7728157043457,
+                        "y": 0.0,
+                        "z": -12.999512672424317
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-2",
+                    "position": {
+                        "x": 32.427059173583987,
+                        "y": 0.0,
+                        "z": -13.920868873596192
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                }
+            ]
+        },
+        {
+            "seconds": 28.480335235595704,
+            "health": 100.0,
+            "officers": 9,
+            "shots": 160,
+            "coverHits": 20,
+            "totalAmmo": 162,
+            "player": {
+                "x": -44.99504470825195,
+                "y": 0.03499989211559296,
+                "z": -13.37895393371582
+            },
+            "lastKnown": {
+                "x": 35.0002555847168,
+                "y": 0.03499995917081833,
+                "z": -13.0
+            },
+            "status": "SEARCH / 9 OFFICERS",
+            "roster": [
+                {
+                    "id": "citizen-0",
+                    "position": {
+                        "x": 33.59834289550781,
+                        "y": 0.0,
+                        "z": -13.878262519836426
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-1",
+                    "position": {
+                        "x": 34.28681945800781,
+                        "y": 0.0,
+                        "z": -11.905389785766602
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-2",
+                    "position": {
+                        "x": 35.74603271484375,
+                        "y": 0.0,
+                        "z": -11.679984092712403
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-0",
+                    "position": {
+                        "x": 35.814266204833987,
+                        "y": 0.0,
+                        "z": -13.466485977172852
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-1",
+                    "position": {
+                        "x": 35.1193962097168,
+                        "y": 0.0,
+                        "z": -12.805980682373047
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-2",
+                    "position": {
+                        "x": 35.02019119262695,
+                        "y": 0.0,
+                        "z": -13.646852493286133
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-0",
+                    "position": {
+                        "x": 36.5684814453125,
+                        "y": 0.0,
+                        "z": -12.018798828125
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 5,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-1",
+                    "position": {
+                        "x": 34.275753021240237,
+                        "y": 0.0,
+                        "z": -13.260300636291504
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-2",
+                    "position": {
+                        "x": 33.36180114746094,
+                        "y": 0.0,
+                        "z": -14.802783012390137
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                }
+            ]
+        },
+        {
+            "seconds": 29.480466842651368,
+            "health": 100.0,
+            "officers": 9,
+            "shots": 160,
+            "coverHits": 20,
+            "totalAmmo": 162,
+            "player": {
+                "x": -44.99504470825195,
+                "y": 0.03499989211559296,
+                "z": -13.37895393371582
+            },
+            "lastKnown": {
+                "x": 35.0002555847168,
+                "y": 0.03499995917081833,
+                "z": -13.0
+            },
+            "status": "SEARCH / 9 OFFICERS",
+            "roster": [
+                {
+                    "id": "citizen-0",
+                    "position": {
+                        "x": 33.0386962890625,
+                        "y": 0.0,
+                        "z": -13.362835884094239
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-1",
+                    "position": {
+                        "x": 33.26448440551758,
+                        "y": 0.0,
+                        "z": -12.205351829528809
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-2",
+                    "position": {
+                        "x": 34.132232666015628,
+                        "y": 0.0,
+                        "z": -11.498936653137207
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-0",
+                    "position": {
+                        "x": 34.85902786254883,
+                        "y": 0.0,
+                        "z": -13.730167388916016
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 6,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-1",
+                    "position": {
+                        "x": 35.224639892578128,
+                        "y": 0.0,
+                        "z": -11.526410102844239
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 4,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-2",
+                    "position": {
+                        "x": 34.05704116821289,
+                        "y": 0.0,
+                        "z": -14.814634323120118
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-0",
+                    "position": {
+                        "x": 36.47376251220703,
+                        "y": 0.0,
+                        "z": -14.466327667236329
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-1",
+                    "position": {
+                        "x": 34.41154479980469,
+                        "y": 0.0,
+                        "z": -13.067439079284668
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-2",
+                    "position": {
+                        "x": 35.92153549194336,
+                        "y": 0.0,
+                        "z": -15.080802917480469
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                }
+            ]
+        },
+        {
+            "seconds": 30.513809204101564,
+            "health": 100.0,
+            "officers": 9,
+            "shots": 160,
+            "coverHits": 20,
+            "totalAmmo": 162,
+            "player": {
+                "x": -44.99504470825195,
+                "y": 0.03499989211559296,
+                "z": -13.37895393371582
+            },
+            "lastKnown": {
+                "x": 35.0002555847168,
+                "y": 0.03499995917081833,
+                "z": -13.0
+            },
+            "status": "SEARCH / 9 OFFICERS",
+            "roster": [
+                {
+                    "id": "citizen-0",
+                    "position": {
+                        "x": 34.976646423339847,
+                        "y": 0.0,
+                        "z": -11.649335861206055
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 6,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-1",
+                    "position": {
+                        "x": 34.35791015625,
+                        "y": 0.0,
+                        "z": -14.683378219604493
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-2",
+                    "position": {
+                        "x": 36.02548599243164,
+                        "y": 0.0,
+                        "z": -11.57927131652832
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-0",
+                    "position": {
+                        "x": 35.04220962524414,
+                        "y": 0.0,
+                        "z": -13.112786293029786
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 0,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-1",
+                    "position": {
+                        "x": 35.936744689941409,
+                        "y": 0.0,
+                        "z": -13.584136009216309
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-2",
+                    "position": {
+                        "x": 33.079376220703128,
+                        "y": 0.0,
+                        "z": -14.92937183380127
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-0",
+                    "position": {
+                        "x": 37.18018341064453,
+                        "y": 0.0,
+                        "z": -13.271257400512696
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-1",
+                    "position": {
+                        "x": 34.588470458984378,
+                        "y": 0.0,
+                        "z": -13.787681579589844
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 6,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-2",
+                    "position": {
+                        "x": 35.864498138427737,
+                        "y": 0.0,
+                        "z": -14.4927339553833
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                }
+            ]
+        },
+        {
+            "seconds": 31.513837814331056,
+            "health": 100.0,
+            "officers": 9,
+            "shots": 160,
+            "coverHits": 20,
+            "totalAmmo": 162,
+            "player": {
+                "x": -44.99504470825195,
+                "y": 0.03499989211559296,
+                "z": -13.37895393371582
+            },
+            "lastKnown": {
+                "x": 35.0002555847168,
+                "y": 0.03499995917081833,
+                "z": -13.0
+            },
+            "status": "SEARCH / 9 OFFICERS",
+            "roster": [
+                {
+                    "id": "citizen-0",
+                    "position": {
+                        "x": 34.81982421875,
+                        "y": 0.0,
+                        "z": -11.885390281677246
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-1",
+                    "position": {
+                        "x": 35.0955696105957,
+                        "y": 0.0,
+                        "z": -14.247042655944825
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 7,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "citizen-2",
+                    "position": {
+                        "x": 35.764591217041019,
+                        "y": 0.0,
+                        "z": -12.500581741333008
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-0",
+                    "position": {
+                        "x": 34.16305923461914,
+                        "y": 0.0,
+                        "z": -12.605520248413086
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-1",
+                    "position": {
+                        "x": 36.18206787109375,
+                        "y": 0.0,
+                        "z": -15.556979179382325
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-0-2",
+                    "position": {
+                        "x": 34.315528869628909,
+                        "y": 0.0,
+                        "z": -13.681436538696289
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-0",
+                    "position": {
+                        "x": 37.283016204833987,
+                        "y": 0.0,
+                        "z": -12.662956237792969
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 6,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-1",
+                    "position": {
+                        "x": 34.938133239746097,
+                        "y": 0.0,
+                        "z": -13.043960571289063
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 0,
+                    "reload": 0.0,
+                    "health": 100.0
+                },
+                {
+                    "id": "response-1-2",
+                    "position": {
+                        "x": 35.62353515625,
+                        "y": 0.0,
+                        "z": -13.48870849609375
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "pathPoints": 1,
+                    "reload": 0.0,
+                    "health": 100.0
+                }
+            ]
+        }
+    ]
+}

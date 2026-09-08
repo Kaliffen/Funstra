@@ -10,7 +10,10 @@ public static class FunstraBuild
 {
     [MenuItem("Funstra/Build playable Windows demo")]
     public static void Build()
-    { BuildPolice(); }
+    { BuildPressure(); }
+    [MenuItem("Funstra/Build pressure and escape candidate")]
+    public static void BuildPressure()
+    { BuildPlayer("PressureEscape", "0.4.2"); }
     [MenuItem("Funstra/Build police response candidate")]
     public static void BuildPolice()
     { BuildPlayer("PoliceResponse", "0.4.1"); }

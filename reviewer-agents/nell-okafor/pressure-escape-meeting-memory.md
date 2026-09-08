@@ -1,0 +1,15 @@
+# Nell — Pressure and Escape 0.4.2 continuity, 8 September 2026
+
+Independent [full review](pressure-escape-review.md): **8/10**, up from [Police Response 0.4.1's 7/10](police-response-review.md). This records a guided scripted build review, not human free play or an invented conference. Historical scores and records are preserved. No other current review was read before choosing the verdict.
+
+Expectation carried forward: make it clear when hiding works, clear away the empty pause furniture, preserve an understandable loss boundary, and actually show a route home after danger.
+
+Learned: CONTACT becomes SEARCH, and escape ends with an explicit message that immediate pursuit is over while incidents remain. Ammunition, pause instructions and notifications fit separately; the unused crew grid is absent. Exposed ordinary-health play reached actual defeat; early controller withdrawal saved/reloaded, waited out pursuit at 100 health, and returned into the visible clinic. The fresh recovery lists no invented goods; the separate loaded-loss fixture itemizes real losses and recovery directions. Those changes justify this increment's higher score.
+
+Evidence: [review-nell](../../Evidence/PressureEscape/review-nell/) is my fresh full Pressure route, no ReplaySnapshot. Started 07:55:23.0007436 UTC; completed by 07:57:42.7378477 UTC; exit 0, 41 passing checks. Inspected all nine fresh PNGs and the full log through shutdown. DLL `BD9CA29F2787A9F2546E10CA88650142DF7E80D0E8D22743C7B88AB9F99BB776`, EXE `97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3`, source HEAD `18415af855cf79c38743b71ab778fefd125eb86a` plus dirty implementation. Same pinned player throughout; no archive reviewed.
+
+Keep methods separate: the 75-second stress fixture has 10,000 health and no arrest, actual projectile-triggered dispatch, nine shooters and eight reloaders. It reaches nine living officers; one officer is dead by its last sample. Ordinary-health defeat/escape use prepared starting lines and restored roster resources. Crowding/passing and laden defeat use controlled explicit setups. The guide and source identify those limits. This pass did not require a bandage, demonstrate delayed/wounded escape, audition audio, assess human input feel/enjoyment, or verify low-end hardware. A capped RTX 4090/i9-14900KF profile is recorded, not minimum-spec acceptance. Save/reload occurred in-process.
+
+Remaining: E04's Ivo/collector map label overlaps the garage label (minor confirmed UI issue). Clinic return is physical and visible, but no post-pursuit conversation or treatment is shown. I would replay a less perfectly timed wounded escape and its ordinary next step at the clinic. Those are coverage/creative requests, not evidence that the successful route is broken.
+
+Bad-day note: the boundaries now make a tense outing easier to choose; provoking nine police still suits an evening when I want tension. Do not turn this score into a claim of a long cosy session, pet/refuge regression coverage, or a month of attachment. No new publication, owner acceptance, issue disposition or gameplay change is authorized by this review.

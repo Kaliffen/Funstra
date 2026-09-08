@@ -1,0 +1,7 @@
+{
+  "testedAt": "2026-09-08T07:41:48.7482276Z",
+  "mode": "Pressure",
+  "executable": "~\\repos\\Funstra\\Build\\PressureEscape\\Funstra.exe",
+  "assemblySha256": "BD9CA29F2787A9F2546E10CA88650142DF7E80D0E8D22743C7B88AB9F99BB776",
+  "method": "Guided exported player; direct setups and controller travel identified in result."
+}

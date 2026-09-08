@@ -1,0 +1,19 @@
+FAIL
+METHOD: focused encounter replay from an earlier real deployment; this is not a full stress pass.
+PASS: Tactical pause freezes full roster, damage and search while ammunition stays inspectable
+PASS: Exposed normal-health player is defeated by live nine-officer fire
+PASS: Actual defeat provides recovery and clears immediate reinforcements
+PASS: Fresh street defeat describes actual losses without inventing a medical shipment
+PASS: Navigable route to (45.00, 0.00, -13.00)
+PASS: Controller arrived beside interaction at (45.00, 0.00, -13.00)
+PASS: Navigable route to (45.00, 0.00, -39.00)
+PASS: Controller arrived beside interaction at (45.00, 0.00, -39.00)
+PASS: Navigable route to (8.00, 0.00, -39.00)
+PASS: Controller arrived beside interaction at (8.00, 0.00, -39.00)
+PASS: Ordinary-health player withdraws around two corners using the production controller
+PASS: Escape uses a carried bandage to stop actual bleeding
+PASS: Escape save/reload preserves the full responding roster
+PASS: Navigable route to (-7.00, 0.00, -39.00)
+System.Exception: Movement blocked at (-7.82, 0.03, -39.32) toward (-7.00, 0.00, -39.00)
+  at Funstra.FunstraGame+<Travel>d__372.MoveNext () [0x00120] in <36f84ce91d57435eaf290d161b4a6651>:0 
+  at Funstra.FunstraGame+<SmokeRun>d__365.MoveNext () [0x00190] in <36f84ce91d57435eaf290d161b4a6651>:0 

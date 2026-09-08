@@ -92,15 +92,21 @@ namespace Funstra
                     Panel(458,108,693,89);Rect(458,108,4,89,medical);
                     Text("TACTICAL PAUSE / TIME IS STOPPED",478,122,650,28,18,medical,FontStyle.Bold);
                     Text("RMB select. Scroll inspect. Resume to attack. Buildings block shots.",478,158,650,30,16,paper);
-                    Panel(1190,280,382,318);
-                    Text("CREW ORDERS",1210,300,340,30,22,medical,FontStyle.Bold);
-                    Text(District.recruited?"Neri: "+Mathf.CeilToInt(District.neri.health)+" HP / "+District.neri.bandages+" dressings":"No companion yet. Help Neri's clinic.",1210,341,340,38,16,quiet);
-                    string[] orders={"Follow","Hold","Retreat","Aid"};
-                    for(int i=0;i<4;i++) { string order=orders[i];DistrictAction(order.ToUpperInvariant(),District.recruited,1208+i%2*177,390+i/2*60,163,()=>OrderNeri(order)); }
-                    DistrictAction("RESUME / SPACE",true,1208,530,340,()=>screen=ScreenMode.Play);break;
+                    if(District.recruited)
+                    {
+                        Panel(1190,280,382,318);
+                        Text("CREW ORDERS",1210,300,340,30,22,medical,FontStyle.Bold);
+                        Text("Neri: "+Mathf.CeilToInt(District.neri.health)+" HP / "+District.neri.bandages+" dressings",1210,341,340,38,16,quiet);
+                        string[] orders={"Follow","Hold","Retreat","Aid"};
+                        for(int i=0;i<4;i++) { string order=orders[i];DistrictAction(order.ToUpperInvariant(),true,1208+i%2*177,390+i/2*60,163,()=>OrderNeri(order)); }
+                        DistrictAction("RESUME / SPACE",true,1208,530,340,()=>screen=ScreenMode.Play);
+                    }
+                    else DistrictAction("RESUME / SPACE",true,1208,280,340,()=>screen=ScreenMode.Play);
+                    break;
                 case ScreenMode.Recovery:
-                    DistrictPanel("DEFEAT / YOUR STORY CONTINUES","STILL BREATHING",districtMessage);
-                    Text("Health "+Mathf.CeilToInt(District.health)+" / 100   |   Debt $"+District.debt+"\nThe lost medical shipment remains with its owner. Ivo's memory survives a defeat. Your existing story progress and equipment remain.",395,417,805,120,23,paper);
+                    DistrictPanel("DEFEAT / YOUR STORY CONTINUES","STILL BREATHING",District.RecoverySummary);
+                    Text("HEALTH "+Mathf.CeilToInt(District.health)+" / 100   |   DEBT $"+District.debt,395,407,805,30,20,medical,FontStyle.Bold);
+                    Text(District.RecoveryDetails,395,451,805,195,19,paper);
                     DistrictAction("GET BACK ON YOUR FEET",true,395,680,805,()=>screen=ScreenMode.Play);break;
                 case ScreenMode.MedicineSale:
                     DistrictPanel("MARA / ANOTHER KIND OF CHOICE","SIX DOSES. $160.","I can move those. Neri can't pay you this much. You need to decide what having that clinic open is worth to you.");
@@ -157,7 +163,7 @@ namespace Funstra
         }
         void DrawDistrictPause()
         {
-            DistrictPanel("PAUSED / DEMO 04","A MOMENT TO BREATHE","The world pauses here. F5 saves where you stand, including wounds, carried goods and crew. Autosave runs every ten seconds. Quitting also saves.");
+            DistrictPanel("PAUSED / "+Application.version,"A MOMENT TO BREATHE","The world pauses here. F5 saves where you stand, including wounds, carried goods and crew. Autosave runs every ten seconds. Quitting also saves.");
             Text("WASD / arrows   Move       SHIFT sprint       CTRL sneak\nMouse aim / LMB fire   1 fists   2 pistol   3 shotgun   R reload\nSPACE tactical pause   G follow   H hold   SHIFT+R retreat   T aid\nE interact / hold to take   F home supplies   TAB map\nJ history   L track story   P pet Tally   F at clinic: refuge",395,410,805,170,20,paper);
             DistrictAction("RESUME",true,395,605,395,()=>screen=ScreenMode.Play);
             DistrictAction("SOUND / "+(mute?"OFF":"ON"),true,806,605,395,()=>mute=!mute);
