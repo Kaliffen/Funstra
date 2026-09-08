@@ -7,13 +7,13 @@ namespace Funstra
     public sealed partial class FunstraGame
     {
         bool bandageTest, bandageVisual, trackDistrict=true;
-        public bool DistrictEnabled => !Smoke||bandageTest||bandageVisual;
+        public bool DistrictEnabled => !Smoke||bandageTest||bandageVisual||policeTest;
         public DistrictState District => State.district;
         Transform neriBody, guardBody, collectorBody, catTail;
         GameObject medicineProp, medicineRing, pistol;
-        LineRenderer shotLine;
+
         int weapon=2, selectedActor;
-        float medicineProgress, attackCooldown, guardCooldown, aidCooldown, autosaveTime, shotTime, defeatGrace;
+        float medicineProgress, attackCooldown, guardCooldown, aidCooldown, autosaveTime, defeatGrace;
         string districtMessage="";
         readonly Color medical=CityArt.Hex("7CDEEB");
         readonly List<Vector3> neriPath=new List<Vector3>(), guardPath=new List<Vector3>();
@@ -28,11 +28,6 @@ namespace Funstra
             City.Box("Medical cross",new Vector3(0,1.1f,-.51f),new Vector3(.32f,.09f,.02f),medical,neriBody,false,true);
             City.Box("Medical cross",new Vector3(0,1.1f,-.51f),new Vector3(.09f,.32f,.02f),medical,neriBody,false,true);
             City.Box("Rook carbine",new Vector3(.39f,.9f,.35f),new Vector3(.13f,.16f,.85f),CityArt.Hex("27303C"),guardBody);
-            City.Ring("Clinic",DistrictState.Clinic,2.7f,medical);
-            City.Solid("Clinic supplies counter",DistrictState.Clinic+new Vector3(-1.5f,.65f,0),new Vector3(.8f,1.3f,2.2f),CityArt.Hex("3A6569"));
-            City.Box("Clinic awning",DistrictState.Clinic+new Vector3(-1.5f,2.9f,0),new Vector3(2,.12f,3.3f),medical);
-            City.Sign("REPAIR",DistrictState.Clinic+new Vector3(-1.5f,3.3f,0),medical,.15f);
-            City.Solid("Camp bed",DistrictState.Clinic+new Vector3(0,.35f,-3.5f),new Vector3(1.1f,.45f,2.2f),CityArt.Hex("BFBBA0"));
             var cat=new GameObject("Tally / clinic cat").transform;cat.position=DistrictState.Clinic+new Vector3(1.6f,0,-1.8f);
             City.Shape("Sleeping cat",PrimitiveType.Sphere,new Vector3(0,.23f,0),new Vector3(.6f,.4f,.8f),CityArt.Hex("C49464"),cat);
             City.Shape("Cat head",PrimitiveType.Sphere,new Vector3(0,.38f,.35f),new Vector3(.39f,.35f,.35f),CityArt.Hex("D7B184"),cat);
@@ -43,9 +38,6 @@ namespace Funstra
             City.Box("Case stripe",new Vector3(0,0,-.51f),new Vector3(.65f,.15f,.03f),Color.white,medicineProp.transform,false,true);
             medicineRing=City.Ring("Impounded medical stock",DistrictState.Garage,1.6f,medical);
             pistol=City.Box("Player pistol",new Vector3(.43f,.95f,.3f),new Vector3(.12f,.15f,.45f),CityArt.Hex("303848"),figure);
-            var tracer=new GameObject("Shot tracer");shotLine=tracer.AddComponent<LineRenderer>();
-            shotLine.sharedMaterial=new Material(Shader.Find("Sprites/Default"));shotLine.positionCount=2;shotLine.startWidth=.055f;shotLine.endWidth=.015f;
-            shotLine.startColor=CityArt.Amber;shotLine.endColor=Color.white;shotLine.enabled=false;
             BuildRefugeArt();City.RefreshProps();City.Nav.Bake();
             AttachCitizens();
             if(!DistrictEnabled) { neriBody.gameObject.SetActive(false);guardBody.gameObject.SetActive(false);collectorBody.gameObject.SetActive(false);medicineProp.SetActive(false);medicineRing.SetActive(false);pistol.SetActive(false); }
@@ -57,7 +49,7 @@ namespace Funstra
             District.neri.position=City.Nav.SafePoint(District.neri.position);
             District.guard.position=City.Nav.SafePoint(District.guard.position);
             District.collector.position=City.Nav.SafePoint(District.collector.position);
-            AttachCitizens();SyncDistrictArt();
+            AttachCitizens();InitializeCombat();SyncDistrictArt();
         }
         void AttachCitizens()
         {
@@ -65,6 +57,7 @@ namespace Funstra
             if(District.citizens==null)District.citizens=new List<DistrictActor>();
             for(int i=0;i<Agents.Count;i++)
             {
+                if(Agents[i].Reinforcement)continue;
                 string id="citizen-"+i;
                 var record=District.citizens.Find(c=>c.id==id);
                 if(record==null) { record=new DistrictActor(id,Agents[i].Police?"OFFICER "+(i+1):"RESIDENT "+(i-2),Agents[i].Position);District.citizens.Add(record); }
@@ -79,7 +72,8 @@ namespace Funstra
             bool available=District.shipmentUnits>0&&(District.shipmentOwner=="collector"||District.shipmentOwner=="buyer");
             medicineProp.SetActive(available);medicineRing.SetActive(available);
             medicineProp.transform.position=District.ShipmentPosition+Vector3.up*.6f;medicineRing.transform.position=District.ShipmentPosition;
-            pistol.SetActive(weapon==2);SyncRefugeArt();City.RefreshProps();
+            pistol.SetActive(weapon!=1);
+            pistol.transform.localScale=weapon==3?new Vector3(.14f,.17f,.85f):new Vector3(.12f,.15f,.45f);SyncRefugeArt();City.RefreshProps();
         }
         void PoseActor(Transform body,DistrictActor actor)
         { body.localScale=actor.health<=0?new Vector3(1.7f,.22f,1):Vector3.one; }
@@ -95,23 +89,21 @@ namespace Funstra
         void UpdateDistrict(float dt)
         {
             District.Tick(dt);defeatGrace=Mathf.Max(0,defeatGrace-dt);
-            attackCooldown-=dt;guardCooldown-=dt;aidCooldown-=dt;autosaveTime-=dt;
-            if(shotTime>0) { shotTime-=dt;shotLine.enabled=shotTime>0; }
+            guardCooldown-=dt;aidCooldown-=dt;autosaveTime-=dt;
             catTail.localRotation=Quaternion.Euler(0,25+Mathf.Sin(District.clock*.8f)*12,0);
             if(District.bleeding)District.health=Mathf.Max(0,District.health-dt*.65f);
             if(District.neri.bleeding)District.neri.health=Mathf.Max(0,District.neri.health-dt*.35f);
-            if(Input.GetKeyDown(KeyCode.Alpha1))weapon=1;
-            if(Input.GetKeyDown(KeyCode.Alpha2))weapon=2;
+            UpdateCombatInput();
             if(Input.GetKeyDown(KeyCode.B)) { if(District.BandagePlayer()) { Save();Notify("Bandaged. Bleeding stopped. Clinic rest heals serious wounds."); } else Notify("No dressing needed, or no bandages. Home stocks bandages for $12."); }
             if(Input.GetKeyDown(KeyCode.G))OrderNeri("Follow");
             if(Input.GetKeyDown(KeyCode.H))OrderNeri("Hold");
-            if(Input.GetKeyDown(KeyCode.R))OrderNeri("Retreat");
+            if(Input.GetKeyDown(KeyCode.R)&&(Input.GetKey(KeyCode.LeftShift)||Input.GetKey(KeyCode.RightShift)))OrderNeri("Retreat");
             if(Input.GetKeyDown(KeyCode.T))OrderNeri("Aid");
             if(Input.GetKeyDown(KeyCode.L))trackDistrict=!trackDistrict;
             UpdateRefugeInteraction();
             SelectDistrictTarget();
-            if(Input.GetMouseButton(0)&&!showMap&&Input.mousePosition.x/Screen.width>.27f&&Input.mousePosition.x/Screen.width<.74f&&Input.mousePosition.y/Screen.height>.18f&&Input.mousePosition.y/Screen.height<.85f)AttackSelected();
             if(!freezeDistrictAI) { UpdateGuard(dt);UpdateNeri(dt); }
+            StepCombat(dt);
             if(District.health<=0)DistrictDefeat();
             SyncDistrictArt();
             if(autosaveTime<=0) { Save();autosaveTime=10; }
@@ -130,28 +122,12 @@ namespace Funstra
         }
         bool AttackSelected()
         {
-            var target=TargetActor;if(target==null||target.health<=0||attackCooldown>0)return false;
-            float distance=Vector3.Distance(Player.position,target.position);
-            if(distance>(weapon==1?2.8f:18)||!City.Nav.Sight(Player.position,target.position)) { Notify("No clear shot. Close distance or move around cover.");attackCooldown=.5f;return false; }
-            if(weapon==2&&District.ammo<=0) { Notify("Pistol empty. Switch to fists with 1, retreat, or buy ammo at home.");attackCooldown=.5f;return false; }
-            if(weapon==2)District.ammo--;
-            attackCooldown=weapon==1?.7f:.65f;
-            Vector3 heading=target.position-Player.position;heading.y=0;if(heading.sqrMagnitude>.01f)figure.rotation=Quaternion.LookRotation(heading);
-            target.health=Mathf.Max(0,target.health-(weapon==1?18:28));
-            if(weapon==2)Trace(Player.position,target.position);
-            Sound(weapon==2?alertSound:stepSound);
-            if(target==District.neri)
-            { District.trust=-3;District.recruited=false;District.neri.bleeding=weapon==2;District.Record("betrayal","neri","You attacked Neri. The partnership is broken."); }
-            bool seen=target==District.guard||target==District.collector||MedicalWitness();
-            if(seen)District.Identify("An attack was witnessed and reported to Ivo.");
-            if(selectedActor>=4)
-            { target.order="Flee";District.Record("assault",target.id,"You attacked "+target.name+". The victim called for police.");RaiseAlarm("Assault reported. Police are responding.",Player.position);PoseActor(TargetBody,target); }
-            if(weapon==2)RaiseAlarm("Gunfire reported. Break sight. Ivo's grievance will outlast the chase.",Player.position);
-            if(target.health==0) { District.Record("incapacitated",target.id,target.name+" is incapacitated. Their inventory and relationships remain.");Notify(target.name+" down. You can withdraw or help them with E and a bandage."); }
-            Save();return true;
+            var target=TargetActor;if(target==null||target.health<=0)return false;
+            if(weapon!=1)return FirePlayerAt(target.position+Vector3.up*1.1f);
+            if(attackCooldown>0)return false;
+            if(Vector3.Distance(Player.position,target.position)>2.8f||!City.Nav.Sight(Player.position,target.position))return false;
+            attackCooldown=.7f;ApplyCombatHit(target,TargetBody,18,"player",false);Sound(stepSound);return true;
         }
-        void Trace(Vector3 from,Vector3 to)
-        { shotLine.SetPosition(0,from+Vector3.up*1.2f);shotLine.SetPosition(1,to+Vector3.up);shotLine.enabled=true;shotTime=.1f; }
         void WalkActor(DistrictActor actor,Transform body,Vector3 target,float speed,float dt,List<Vector3> path,ref float repath)
         {
             repath-=dt;
@@ -168,7 +144,7 @@ namespace Funstra
         }
         void UpdateGuard(float dt)
         {
-            var guard=District.guard;if(guard.health<=0)return;
+            var guard=District.guard;StepActorWeapon(guard,dt);if(guard.health<=0)return;
             bool sees=ActorSees(guard,guardBody,Player.position,14);
             if(sees) { District.guardLastSeen=Player.position;District.guardSawAt=District.clock; }
             if(defeatGrace<=0&&District.identified&&sees&&Vector3.Distance(Player.position,guard.position)<8)District.hostile=true;
@@ -184,9 +160,7 @@ namespace Funstra
                     guardBody.LookAt(new Vector3(target.x,guardBody.position.y,target.z));
                     if(guardCooldown<=0)
                     {
-                        guardCooldown=1.9f;guard.ammo--;Trace(guard.position,target);Sound(alertSound);
-                        if(neriTarget) { District.neri.health=Mathf.Max(0,District.neri.health-13);District.neri.bleeding=true; }
-                        else { District.health=Mathf.Max(0,District.health-13);District.bleeding=true;Notify("Hit! B bandage. SPACE pauses. Retreat behind a building."); }
+                        if(FireActorAt(guard,guardBody,target,2))guardCooldown=1.9f;
                     }
                 }
                 else if(guard.ammo==0&&(sees||neriTarget)&&distance<2.6f)
@@ -221,7 +195,7 @@ namespace Funstra
             var casualties=new List<DistrictActor>{District.neri,District.guard,District.collector};casualties.AddRange(District.citizens);
             foreach(var actor in casualties)
             {
-                if(actor.health>0||Vector3.Distance(Player.position,actor.position)>2.6f)continue;
+                if(actor.health>0||Vector3.Distance(Player.position,actor.position)>2.6f||!CanReachPerson(actor.position))continue;
                 prompt="E / STABILIZE "+actor.name+"  /  1 BANDAGE";
                 if(pressed&&District.bandages>0)
                 {
@@ -233,9 +207,9 @@ namespace Funstra
             }
             bool busySpot=Vector3.Distance(Player.position,Jobs.Home)<3||Vector3.Distance(Player.position,Jobs.Mara)<3.2f||Vector3.Distance(Player.position,District.ShipmentPosition)<2.5f;
             foreach(var site in CargoRun.Sites)if(Vector3.Distance(Player.position,site.position)<2.6f)busySpot=true;
-            if(!busySpot&&Vector3.Distance(Player.position,District.neri.position)<2.9f&&District.neri.health>0)
+            if(!busySpot&&Vector3.Distance(Player.position,District.neri.position)<2.9f&&District.neri.health>0&&CanReachPerson(District.neri.position))
             { prompt="E / NERI  /  CLINIC & CREW";if(pressed) { District.metNeri=true;screen=ScreenMode.Clinic;Save(); }return true; }
-            if(Vector3.Distance(Player.position,District.collector.position)<2.8f&&District.collector.health>0)
+            if(Vector3.Distance(Player.position,District.collector.position)<2.8f&&District.collector.health>0&&CanReachPerson(District.collector.position))
             { prompt="E / IVO  /  RELEASE PAPERS & RESTITUTION";if(pressed) { screen=ScreenMode.Collector;Save(); }return true; }
             if((District.shipmentOwner=="collector"||District.shipmentOwner=="buyer")&&District.shipmentUnits>0&&Vector3.Distance(Player.position,District.ShipmentPosition)<2.4f)
             {

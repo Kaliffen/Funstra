@@ -1,0 +1,84 @@
+FAIL
+PASS: Streets runner uses isolated save and normal Old Port simulation
+PASS: All scenario locations are walkable
+PASS: Navigable route to (-27.00, 0.00, -12.00)
+PASS: Controller arrived beside interaction at (-27.00, 0.00, -12.00)
+PASS: Actual interaction opens Neri conversation
+PASS: Navigable route to (-26.00, 0.00, 11.00)
+PASS: Controller arrived beside interaction at (-26.00, 0.00, 11.00)
+PASS: Actual interaction opens collector terms
+PASS: Peaceful release pays collector
+PASS: Navigable route to (-28.00, 0.00, 3.00)
+PASS: Controller arrived beside interaction at (-28.00, 0.00, 4.00)
+PASS: Actual paid hold collects medicine without hostility
+PASS: Collected stock disappears from world rendering
+PASS: Navigable route to (-27.00, 0.00, -12.00)
+PASS: Controller arrived beside interaction at (-27.00, 0.00, -12.00)
+PASS: Clinic stock and trust unlock Neri partnership
+PASS: Navigable route to (-11.00, 0.00, -48.00)
+PASS: Controller arrived beside interaction at (-11.00, 0.00, -48.00)
+PASS: Companion navigates streets to follow player
+PASS: Nearby companion autonomously stabilizes bleeding with finite supplies
+PASS: Hold order stops companion movement
+PASS: Tactical pause stops world transactions and wounds
+PASS: Reload preserves companion, orders, stock and player position
+PASS: New save format preserves loose cargo across session endings
+PASS: Companion near home does not block cargo extraction
+PASS: Moving during extraction resets the hold without losing cargo
+PASS: Becoming wanted cancels an in-progress extraction
+PASS: Interrupted extraction can be retried and pays exactly once
+PASS: Pistol trigger spends a round without instant damage
+PASS: Traveling pistol round wounds target and records witnessed offense
+PASS: Guard trigger also has no instant damage
+PASS: Guard projectile travels through clear sight and causes bleeding
+PASS: Firing toward a building spends a physical round
+PASS: Building stops the traveling round before the guard
+PASS: Guard cannot shoot player through a building
+PASS: Melee fixture places guard and companion on clear walkable ground
+PASS: Empty-magazine guard strikes nearby visible companion rather than distant player
+PASS: Visible companion remains a valid melee target while player is out of sight
+PASS: Medicine case separates two walkable positions within melee range
+PASS: Guard cannot strike nearby companion through physical medicine case
+PASS: Clearing immediate heat preserves collector memory
+PASS: Bandage stops bleeding without fully healing wounds
+PASS: Actual defeat produces recovery screen, debt and recoverable shipment
+PASS: Defeat returns player to a usable bed
+PASS: Penniless post-sale recovery remains available
+PASS: Actual E interaction stabilizes downed companion
+PASS: Complete runtime outcome sequence conserves all medicine
+PASS: Actual unobserved hold creates missing stock without identifying thief
+PASS: Reload retains stolen medicine and distinct witness knowledge
+PASS: Shared melee rules let residents be harmed and call police
+PASS: Resident wounds and reaction survive reload
+PASS: Live confrontation uses the clear route beside physical medicine cover
+PASS: Live gunfight wounds player and incapacitates guard without scripted damage
+PASS: Three actual pistol shots spend three rounds
+PASS: Navigable route to (-28.00, 0.00, 3.00)
+PASS: Controller arrived beside interaction at (-28.00, 0.00, 4.00)
+PASS: Violence creates access to the same medicine and a lasting identified offense
+PASS: Reload preserves combat outcome, carried medicine and grievance
+PASS: Final scenario save remains valid
+PASS: Recycling bin blocks navigation at (-37.50, 0.00, -26.00)
+PASS: Embedded saved/spawn position resolves outside bin
+PASS: Recycling bin blocks navigation at (28.00, 0.00, -16.00)
+PASS: Embedded saved/spawn position resolves outside bin
+PASS: Recycling bin blocks navigation at (-28.00, 0.00, 10.00)
+PASS: Embedded saved/spawn position resolves outside bin
+PASS: Recycling bin blocks navigation at (29.00, 0.00, 10.00)
+PASS: Embedded saved/spawn position resolves outside bin
+PASS: Recycling bin blocks navigation at (-28.00, 0.00, 36.00)
+PASS: Embedded saved/spawn position resolves outside bin
+PASS: Recycling bin blocks navigation at (32.00, 0.00, 36.00)
+PASS: Embedded saved/spawn position resolves outside bin
+PASS: Real player controller cannot enter or step onto recycling bin
+PASS: Refuge opens from an earned partnership
+PASS: Purchased refuge changes the rendered street
+PASS: Refuge gives practical recovery without adding debt
+PASS: Exported player reload retains room, care policy and cat relationship
+PASS: Traffic car 0 completes sustained routes without intersection deadlock: 455.3266m at (3.00, 0.00, -14.30)
+PASS: Traffic car 1 completes sustained routes without intersection deadlock: 455.4438m at (-3.00, 0.00, -3.05)
+PASS: Traffic car 2 completes sustained routes without intersection deadlock: 455.9427m at (-6.65, 0.00, -40.00)
+System.Exception: Traffic car 3 completes sustained routes without intersection deadlock: 5.700016m at (-27.69, 0.00, 12.00)
+  at Funstra.FunstraGame.Check (System.Boolean value, System.String message) [0x00003] in <ff1cc74e40fd408cae785d4e193fd177>:0 
+  at Funstra.FunstraGame+<RefugeSteps>d__347.MoveNext () [0x004fa] in <ff1cc74e40fd408cae785d4e193fd177>:0 
+  at Funstra.FunstraGame+<SmokeRun>d__355.MoveNext () [0x00171] in <ff1cc74e40fd408cae785d4e193fd177>:0 

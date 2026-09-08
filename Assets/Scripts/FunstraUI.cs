@@ -55,8 +55,10 @@ namespace Funstra
         void OnGUI()
         {
             InitUI();if(Event.current.type==EventType.Repaint)WarmFont(); GUI.matrix=Matrix4x4.TRS(Vector3.zero,Quaternion.identity,new Vector3(Screen.width/W,Screen.height/H,1));
+            if(FoundationMode) { DrawFoundation();return; }
             if(screen==ScreenMode.Title||screen==ScreenMode.ConfirmRestart) { DrawTitle(); if(screen==ScreenMode.ConfirmRestart) DrawRestart(); return; }
             DrawHUD();
+            if(DistrictEnabled) {DrawCombatOverlay();DrawYardStatus();}
             switch(screen)
             {
                 case ScreenMode.Talk: DrawTalk(); break;
@@ -70,11 +72,11 @@ namespace Funstra
         void DrawTitle()
         {
             Rect(0,0,615,H,new Color(ink.r,ink.g,ink.b,.97f)); Rect(615,0,3,H,CityArt.Mint);
-            Text("KEEP THE LIGHTS ON / SANDBOX RPG DEMO",62,66,500,40,16,CityArt.Mint,FontStyle.Bold);
+            Text(Application.version=="0.4.1"?"POLICE RESPONSE / PLAYABLE SLICE":"STREETS WORTH FIGHTING FOR / DEMO 04",62,66,500,40,16,CityArt.Mint,FontStyle.Bold);
             Text("FUNSTRA",54,145,540,115,86,paper,FontStyle.Bold);
             Rect(62,280,65,4,CityArt.Mint);
             Text("One person.\nA city of debts.\nA place to keep.",62,318,475,185,42,paper,FontStyle.Bold);
-            Text("Earn a partner. Repair a refuge. Decide who gets the last dose. The street keeps moving.",64,526,450,88,21,quiet);
+            Text("Find an approach. Watch your ammunition. Get home with someone worth trusting.",64,526,450,88,21,quiet);
             var saved=LoadCurrentRun();
             if(saved!=null)
             {
@@ -82,15 +84,17 @@ namespace Funstra
                 if(Button("START A NEW NIGHT",62,716,488,52))screen=ScreenMode.ConfirmRestart;
             }
             else if(Button("ENTER OLD PORT",62,654,488,66,true))StartRun(false);
-            Text("DEMO 03     /     KEEP THE LIGHTS ON",62,822,430,30,14,quiet);
+            Text(Application.version=="0.4.1"?"0.4.1     /     POLICE RESPONSE CANDIDATE":"DEMO 04     /     FOUNDATION CANDIDATE",62,822,430,30,14,quiet);
             if(Button("QUIT",450,810,100,44))Application.Quit();
             Panel(1146,60,390,109); Dot(1180,97,5,CityArt.Mint);
             Text("OLD PORT, FUNSTRA",1200,82,300,30,20,paper,FontStyle.Bold);
             Text("21:40  /  BUSINESS AFTER HOURS",1171,125,335,25,14,quiet);
             Text("SURVIVE THE CITY.   CHOOSE YOUR PEOPLE.   BUILD YOUR POWER.",710,805,800,44,17,paper,FontStyle.Bold,TextAnchor.MiddleCenter);
+            DrawFoundationSelector();
         }
         void DrawHUD()
         {
+            if(compactHUD) {DrawCompactHUD();return;}
             Panel(28,24,389,70); Rect(28,24,5,70,CityArt.Mint);
             Text("FUNSTRA",50,36,200,45,30,paper,FontStyle.Bold);
             Text(DistrictEnabled?"PORT / "+PortClock:"OLD PORT / 21:40",247,51,150,25,13,quiet);
@@ -151,7 +155,7 @@ namespace Funstra
             Rect(50,418,344*Mathf.Clamp01((float)Cargo.Weight/State.CargoCapacity),5,cargoColor);
             Text(Cargo.Value>0?"Get home. Lose heat. HOLD E to bank.":"TAB: find lilac cargo. F at home: upgrades.",50,439,344,29,15,Cargo.Value>0?CityArt.Mint:quiet);
         }
-        Vector2 MapPoint(Vector3 p,Rect r) => new Vector2(r.x+((p.x+49)/98)*r.width,r.y+((49-p.z)/98)*r.height);
+        Vector2 MapPoint(Vector3 p,Rect r) => new Vector2(r.x+(p.x-City.Nav.Min.x)/(City.Nav.Max.x-City.Nav.Min.x)*r.width,r.y+(City.Nav.Max.y-p.z)/(City.Nav.Max.y-City.Nav.Min.y)*r.height);
         void MapBox(Bounds b,Rect r,Color c)
         {
             var top=MapPoint(new Vector3(b.min.x,0,b.max.z),r);var bottom=MapPoint(new Vector3(b.max.x,0,b.min.z),r);
@@ -164,6 +168,7 @@ namespace Funstra
             Rect r=new Rect(outer.x+16,outer.y+45,outer.width-32,outer.height-65);
             Rect(r.x,r.y,r.width,r.height,CityArt.Hex("273C49"));
             foreach(var b in City.Buildings)MapBox(b,r,CityArt.Hex("6C7982"));
+            if(!FoundationMode)MapBox(City.ClinicFloorBounds,r,medical);
             foreach(var h in City.Hides) { var p=MapPoint(h,r);Dot(p.x,p.y,expanded?5:2,CityArt.Mint); }
             var mara=MapPoint(Jobs.Mara,r);Dot(mara.x,mara.y,expanded?8:5,CityArt.Mint);
             var home=MapPoint(Jobs.Home,r);float homeSize=expanded?12:7;

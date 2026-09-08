@@ -30,8 +30,19 @@ namespace Funstra
             o.transform.SetParent(parent == null ? root : parent, false);
             o.transform.localPosition = pos; o.transform.localScale = scale;
             o.GetComponent<Renderer>().sharedMaterial = Mat(color, glow);
+            if(parent==null && scale.y<.3f && ((scale.x>4 && scale.z>3)||name=="Street / district grid") && name!="Harbor water")
+            {
+                bool paving=name.Contains("stone")||name.Contains("cobbles")||name.Contains("footway")||name.Contains("promenade")||name.Contains("paving")||name.Contains("lane")||name.Contains("courtyard");
+                string surfaceKey="surface/"+ColorUtility.ToHtmlStringRGB(color)+paving;
+                if(!materials.TryGetValue(surfaceKey,out var surface))
+                {
+                    surface=new Material(Resources.Load<Shader>("Architecture/PortSurface"));
+                    surface.color=color;surface.SetFloat("_Paving",paving?1:0);materials[surfaceKey]=surface;
+                }
+                o.GetComponent<Renderer>().sharedMaterial=surface;
+            }
             var col = o.GetComponent<Collider>();
-            if (!solid) { col.enabled = false; Object.Destroy(col); }
+            if (!solid) { col.enabled = false; if(Application.isPlaying)Object.Destroy(col);else Object.DestroyImmediate(col); }
             else o.layer = 8;
             return o;
         }
@@ -87,39 +98,50 @@ namespace Funstra
         {
             Resources.LoadAll<Material>("Rendering");
             root = new GameObject("FUNSTRA / Old Port").transform;
-            Box("Foundation", new Vector3(0, -.8f, 0), new Vector3(103, 1.2f, 105), Hex("263548"), null, true);
-            Box("Paving", new Vector3(0, -.13f, 0), new Vector3(96, .22f, 96), Hex("68727D"), null, true);
-            Box("Canal", new Vector3(0, -.05f, 52), new Vector3(125, .1f, 12), Hex("234F67"));
-            for (int i = 0; i < 50; i++) Box("Water shimmer", new Vector3(-60 + (i * 7.7f % 120), .02f, 48 + (i % 5) * 1.7f), new Vector3(2.7f, .02f, .08f), Hex("5B8190"));
-            Box("High street", new Vector3(0, .005f, 0), new Vector3(10, .08f, 95), Hex("303B4D"));
-            foreach (float z in new[] { -39f, -13f, 13f, 39f })
+            Box("District ground",new Vector3(0,-.7f,0),new Vector3(164,1.2f,148),Hex("354552"),null,true);
+            Box("Worn district stone",new Vector3(0,-.13f,0),new Vector3(160,.22f,144),Hex("777E7B"),null,true);
+            Box("Harbor water",new Vector3(0,-.06f,78),new Vector3(180,.1f,16),Hex("28536A"));
+            for(int i=0;i<55;i++)Box("Harbor reflection",new Vector3(-84+(i*7.7f%168),.01f,72+(i%5)*2),new Vector3(3.5f,.02f,.08f),Hex("658998"));
+            BuildStreetGrid();
+            for(int z=-61;z<=61;z+=7)Box("High street dash",new Vector3(0,.075f,z),new Vector3(.16f,.01f,2.5f),Hex("B1AD98"));
+            foreach(float z in new[]{-40f,12f,39f})for(int x=-4;x<=4;x+=2)
+                Box("Pedestrian crossing",new Vector3(x,.095f,z+4.8f),new Vector3(1,.01f,2),Hex("C5BBA5"));
+
+            Architecture("retail",new Vector3(-18,0,-27),10,8,8);BuildingSign("MARA / PAWN & CO.",new Vector3(-18,3,-31.1f),Amber,.22f);
+            Architecture("garage",new Vector3(-18,0,1),12,12,6);BuildingSign("VICO / REPAIRS",new Vector3(-18,3,-5.1f),Amber,.24f);
+            Architecture("retail",new Vector3(-58,0,-20),16,20,11,-90);
+            Architecture("rowhouse",new Vector3(-59,0,1),22,11,10,180);
+            Architecture("church",new Vector3(-59,0,28),21,9,30);
+            Architecture("loft",new Vector3(-60,0,55),18,14,19);
+            Architecture("market",new Vector3(-31,0,27),14,14,9);BuildingSign("DOCK MUTUAL / MARKET HALL",new Vector3(-31,3,19.8f),Amber,.20f);
+            Architecture("garage",new Vector3(-29,0,55),22,14,9);
+            // Residential fronts share a street; offset plots leave courts and back passages.
+            Architecture("rowhouse",new Vector3(-60,0,-55),22,11,9,180);
+            Architecture("rowhouse",new Vector3(-31,0,-58),22,12,10,180);
+            var homeTerrace=Architecture("rowhouse",new Vector3(-11,0,-55),12,10,9,180);
+            Box("Home doorway",new Vector3(0,1.1f,-5.04f),new Vector3(1.1f,2.2f,.1f),Hex("365655"),homeTerrace.transform);
+            BuildingSign("YOUR ROOM / UPSTAIRS",new Vector3(-11,2.6f,-49.8f),Mint,.18f);
+            Architecture("rowhouse",new Vector3(19,0,-57),22,12,10,180);
+            Architecture("rowhouse",new Vector3(47,0,-55),22,11,9,180);
+            Architecture("garage",new Vector3(69,0,-57),10,12,6);
+            Architecture("retail",new Vector3(18,0,-26),16,16,10);BuildingSign("ARCADIA",new Vector3(18,3,-34.2f),Amber,.3f);
+            Architecture("retail",new Vector3(37,0,-27),14,12,9,-90);
+            Architecture("loft",new Vector3(65,0,-26.5f),14,22,20,90);
+            Architecture("loft",new Vector3(19,0,0),18,16,18);BuildingSign("HOTEL LUNA",new Vector3(19,3,-8.2f),Amber,.24f);
+            Architecture("garage",new Vector3(38,0,0),16,10,7,-90);
+            Architecture("market",new Vector3(64,0,-.5f),13,22,10,90);
+            Architecture("garage",new Vector3(17,0,23),14,10,7);BuildingSign("NORTH DOCK",new Vector3(17,3,17.8f),Amber,.24f);
+            Architecture("garage",new Vector3(39,0,25),8,14,7);
+            Architecture("garage",new Vector3(63,0,28),18,10,8);
+            Architecture("loft",new Vector3(57,0,52),24,16,18);
+            Architecture("garage",new Vector3(19,0,56),18,12,8);
+            foreach(Vector3 p in new[]{new Vector3(-73,0,-31),new Vector3(-45,0,-51),new Vector3(-49,0,49),new Vector3(75,0,-47),new Vector3(71,0,45)})Tree(p);
+            for(int z=-55;z<=57;z+=22){Lamp(new Vector3(-6.7f,0,z));Lamp(new Vector3(6.7f,0,z+6));}
+            foreach(Vector3 p in new[]{new Vector3(-39,0,-30),new Vector3(-39,0,5),new Vector3(-48,0,34),new Vector3(-27,0,38),new Vector3(43.7f,0,-5),new Vector3(52,0,33),new Vector3(35,0,62)})Lamp(p);
+            foreach(Vector3 p in new[]{new Vector3(-37.5f,0,-26),new Vector3(28,0,-16),new Vector3(-28,0,10),new Vector3(29,0,10),new Vector3(-28,0,36),new Vector3(32,0,36)})
             {
-                Box("Cross street", new Vector3(0, .01f, z), new Vector3(94, .08f, 8), Hex("303B4D"));
-                for (int x = -42; x <= 42; x += 7) if (Mathf.Abs(x) > 5) Box("Road dash", new Vector3(x, .062f, z), new Vector3(2.7f, .018f, .14f), Hex("A5A395"));
-                for (int x = -4; x <= 4; x += 2) { Box("Crosswalk", new Vector3(x, .07f, z + 4.8f), new Vector3(1, .02f, 2), Hex("C3BBA6")); Box("Crosswalk", new Vector3(x, .07f, z - 4.8f), new Vector3(1, .02f, 2), Hex("C3BBA6")); }
-            }
-            for (int z = -32; z <= 32; z += 6) Box("Center dash", new Vector3(0, .062f, z), new Vector3(.16f, .018f, 2.5f), Hex("A5A395"));
-            // Each block has a gap between buildings and a rear escape alley.
-            Building(-17, -25, 15, 16, 6.7f, "PAWN & CO.", Hex("507C78"));
-            Building(-36, -25, 13, 15, 8.2f, "ROOMS", Hex("BA7869"));
-            Building(17, -25, 15, 16, 7.5f, "ARCADIA", Hex("766787"));
-            Building(36, -25, 13, 16, 5.1f, "NOODLE BAR", Hex("B9926E"));
-            Building(-18, 0, 16, 16, 5.4f, "VICO'S", Hex("64828C"));
-            Building(-37, 0, 12, 16, 4.2f, "AUTO PARTS", Hex("BD8265"));
-            Building(18, 0, 16, 16, 7.9f, "HOTEL LUNA", Hex("AC797D"));
-            Building(37, 0, 12, 16, 6.2f, "LAUNDRY", Hex("689590"));
-            Building(-18, 26, 16, 16, 6, "THE ANCHOR", Hex("BB986E"));
-            Building(-37, 26, 12, 16, 8.4f, "PORT HOUSE", Hex("697C91"));
-            Building(19, 26, 18, 16, 5.2f, "NORTH DOCK", Hex("68858C"));
-            Building(39, 26, 10, 16, 6.5f, "STORAGE", Hex("8C7D82"));
-            foreach (float x in new[] { -46f, 46f }) for (int z = -32; z <= 32; z += 16) Tree(new Vector3(x, 0, z));
-            for (int z = -32; z <= 34; z += 22) { Lamp(new Vector3(-6.7f, 0, z)); Lamp(new Vector3(6.7f, 0, z + 6)); }
-            for (int x = -38; x <= 38; x += 19) { Lamp(new Vector3(x, 0, -44)); Lamp(new Vector3(x, 0, 44)); }
-            foreach (Vector3 p in new[] { new Vector3(-28,0,-16), new Vector3(28,0,-16), new Vector3(-28,0,10), new Vector3(29,0,10), new Vector3(-28,0,36), new Vector3(32,0,36) })
-            {
-                Hides.Add(p); Solid("Hide / recycling bins", p + new Vector3(0,.65f,0), new Vector3(1.8f,1.43f,1.1f), Hex("2F6B5E"));
-                Box("Bin lid", p + new Vector3(0,1.34f,0), new Vector3(1.8f,.13f,1.1f), Hex("73A48B"));
-                Ring("Safe cover", p, 1.6f, Mint);
+                Hides.Add(p);Solid("Recycling / solid cover",p+new Vector3(0,.65f,0),new Vector3(1.8f,1.43f,1.1f),Hex("2F6B5E"));
+                Box("Bin lid",p+new Vector3(0,1.34f,0),new Vector3(1.8f,.13f,1.1f),Hex("73A48B"));
             }
             Car(new Vector3(3,0,-24), Hex("DDBB74"), false);
             Car(new Vector3(-3,0,24), Hex("406879"), true);
@@ -138,12 +160,14 @@ namespace Funstra
             for (int i = -1; i <= 1; i += 2) Box("Awning pole", Jobs.Mara + new Vector3(i*1.8f,1.4f,1.3f), new Vector3(.1f,2.8f,.1f), Hex("D8C6AB"));
             Human("Mara", Jobs.Mara + new Vector3(0,0,.1f), Hex("DD9576"));
             Ring("Mara's marker", Jobs.Mara, 2.2f, Mint);
-            Sign("MARA / FENCE", Jobs.Mara + new Vector3(0,3.4f,1.2f), Mint, .26f);
-            for (int x = -46; x <= 46; x += 4) { Box("Quay bollard", new Vector3(x,.6f,46), new Vector3(.32f,1.2f,.32f), Hex("27374A")); }
-            Solid("West boundary", new Vector3(-49,1,0), new Vector3(2,2,98), Hex("475461"));
-            Solid("East boundary", new Vector3(49,1,0), new Vector3(2,2,98), Hex("475461"));
-            Solid("North boundary", new Vector3(0,.5f,47), new Vector3(98,1,1), Hex("4F626C"));
-            Solid("South boundary", new Vector3(0,1,-47), new Vector3(98,2,2), Hex("475461"));
+            Sign("MARA / FENCE", Jobs.Mara + new Vector3(0,3.4f,1.2f), Mint, .13f);
+            for(int x=-76;x<=76;x+=8)Solid("Quay bollard",new Vector3(x,.6f,68.5f),new Vector3(.4f,1.2f,.4f),Hex("27374A"));
+            Solid("West district edge",new Vector3(-80,1,0),new Vector3(2,2,144),Hex("4B5B62"));
+            Solid("East district edge",new Vector3(80,1,0),new Vector3(2,2,144),Hex("4B5B62"));
+            Solid("Harbor seawall",new Vector3(0,.5f,70),new Vector3(160,1,1),Hex("556B72"));
+            Solid("South district edge",new Vector3(0,1,-70),new Vector3(160,2,2),Hex("4B5B62"));
+            BuildSpatialIdentity();
+            BuildClinic();
             RefreshProps();Nav.Bake();
         }
         void Building(float x, float z, float w, float d, float h, string sign, Color c)

@@ -12,6 +12,7 @@ namespace Funstra
         public bool bleeding;
         public int bandages;
         public int ammo=18;
+        public WeaponState combat=new WeaponState();
         public DistrictActor(string id,string name,Vector3 position) { this.id=id;this.name=name;this.position=position; }
     }
     [Serializable] public sealed class DistrictIncident
@@ -36,6 +37,7 @@ namespace Funstra
         public string shipmentOwner="collector";
         public int shipmentUnits=6;
         public Vector3 playerPosition=Jobs.Home;
+        public PoliceResponse police=new PoliceResponse();
         public float savedHeat;
         public Vector3 savedLastSeen;
         public bool hasPosition;
@@ -167,7 +169,9 @@ namespace Funstra
         }
         public bool Valid()
         {
-            return !float.IsNaN(clock)&&!float.IsInfinity(clock)&&clock>=0&&clock<10000000&&health>=0&&health<=100&&
+            if(police==null)police=new PoliceResponse();
+            if(!police.Valid())return false;
+            return CombatValid()&&!float.IsNaN(clock)&&!float.IsInfinity(clock)&&clock>=0&&clock<10000000&&health>=0&&health<=100&&
                 refusedPatients>=0&&clinicContributions>=0&&nextPatient>0&&nextSupply>0&&nextInspection>0&&bandages>=0&&ammo>=0&&debt>=0&&
                 clinicStock>=0&&supplierStock>=0&&marketStock>=0&&shipmentUnits>=0&&consumed>=0&&TotalMedicine==12&&
                 (shipmentOwner=="collector"||shipmentOwner=="buyer"||shipmentOwner=="player"||shipmentOwner=="clinic"||shipmentOwner=="market")&&

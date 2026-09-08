@@ -1,0 +1,87 @@
+{
+  "auditedAt": "2026-09-08T00:49:09.7648278Z",
+  "assemblySha256": "0E487EF0DA5202C4F644BE0FF990543FA541101A6CFD71700CCD783B73E7C835",
+  "editorChecks": 2186,
+  "routes": [
+    {
+      "route": "Foundation 1",
+      "status": "PASS",
+      "checks": 23,
+      "freshPngs": 26,
+      "testedAt": "2026-09-08T00:34:46.5888078Z",
+      "result": "Evidence/Foundation/level-1/foundation-1-result.txt",
+      "identity": "Evidence/Foundation/level-1/build-identity.json"
+    },
+    {
+      "route": "Foundation 2",
+      "status": "PASS",
+      "checks": 28,
+      "freshPngs": 15,
+      "testedAt": "2026-09-08T00:35:07.7483617Z",
+      "result": "Evidence/Foundation/level-2/foundation-2-result.txt",
+      "identity": "Evidence/Foundation/level-2/build-identity.json"
+    },
+    {
+      "route": "Foundation 3",
+      "status": "PASS",
+      "checks": 14,
+      "freshPngs": 27,
+      "testedAt": "2026-09-08T00:35:19.2512433Z",
+      "result": "Evidence/Foundation/level-3/foundation-3-result.txt",
+      "identity": "Evidence/Foundation/level-3/build-identity.json"
+    },
+    {
+      "route": "Foundation 4",
+      "status": "PASS",
+      "checks": 18,
+      "freshPngs": 14,
+      "testedAt": "2026-09-08T00:35:35.8790439Z",
+      "result": "Evidence/Foundation/level-4/foundation-4-result.txt",
+      "identity": "Evidence/Foundation/level-4/build-identity.json"
+    },
+    {
+      "route": "Environment",
+      "status": "PASS",
+      "checks": 40,
+      "freshPngs": 33,
+      "testedAt": "2026-09-08T00:35:55.9820520Z",
+      "result": "Evidence/Demo04/environment/environment-runtime-result.txt",
+      "identity": "Evidence/Demo04/environment/build-identity.json"
+    },
+    {
+      "route": "Streets",
+      "status": "PASS",
+      "checks": 143,
+      "freshPngs": 4,
+      "testedAt": "2026-09-08T00:41:55.6336718Z",
+      "result": "Evidence/Demo04/streets/streets-runtime-result.txt",
+      "identity": "Evidence/Demo04/streets/build-identity.json"
+    },
+    {
+      "route": "Legacy",
+      "status": "PASS",
+      "checks": 90,
+      "freshPngs": 10,
+      "testedAt": "2026-09-08T00:44:27.0822824Z",
+      "result": "Evidence/Demo04/legacy/runtime-result.txt",
+      "identity": "Evidence/Demo04/legacy/build-identity.json"
+    },
+    {
+      "route": "Visual",
+      "status": "PASS",
+      "checks": 2,
+      "freshPngs": 24,
+      "testedAt": "2026-09-08T00:48:18.0949264Z",
+      "result": "Evidence/Demo04/visual/bandage-visual-result.txt",
+      "identity": "Evidence/Demo04/visual/build-identity.json"
+    }
+  ],
+  "ownerAcceptance": "Pending",
+  "panel": "Not started; owner-directed hold",
+  "published": false,
+  "limits": [
+    "Guided scripted routes and sampled screenshots, not exploratory or human play.",
+    "Streets profile observed a stray older Funstra process, subsequently stopped.",
+    "Audio identity/load checked; tests muted by owner request. No listening approval."
+  ]
+}

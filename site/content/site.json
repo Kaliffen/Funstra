@@ -1,6 +1,6 @@
 {
   "title": "Funstra",
-  "tagline": "An isometric sandbox RPG prototype about surviving a damaged port city — developed in the open, by agents, one playable demo at a time.",
+  "tagline": "An isometric sandbox crime RPG about surviving a damaged port city. Police Response adds armed pursuit and truck reinforcements to the expanding Old Port prototype.",
   "stamp": "Open source · Playable prototype",
   "repo": "Kaliffen/Funstra",
   "engine": "Unity 6000.4.0f1",
@@ -11,15 +11,15 @@
     "lede": "Funstra is a development project that publishes its work as playable builds. It is not a finished game, it is not for sale, and it is not trying to look further along than it is.",
     "is": [
       "A <strong>playable prototype</strong>. Each demo is a real Windows executable you can run for an hour, not a trailer or a wishlist page.",
-      "<strong>Free and MIT-licensed</strong>, source and all. Clone it, build it, take it apart.",
+      "<strong>Free to play, with MIT-licensed game code.</strong> Asset provenance and sound licenses are recorded in the repository credits.",
       "<strong>Built by AI agents</strong> against a written vision, design and world bible, with every build validated by an automated harness before it ships.",
-      "<strong>Original work</strong> — procedural geometry and sound, no purchased assets, no external services required to play.",
+      "<strong>A stylized Old Port</strong> with authored streets, an enterable clinic, owner-supplied architectural prototypes and credited CC0 sound recordings. No external services are required to play.",
       "<strong>Honest about its reviews.</strong> Four reviewer agents inspect guided runs of the actual build, screenshots, logs, the manual and source. Their verdicts are published unedited, with the limits of that method stated."
     ],
     "isNot": [
-      "A finished sandbox campaign. The current demo is a <strong>single neighbourhood</strong> and roughly an hour of content.",
+      "A finished sandbox campaign. This increment has <strong>nine police maximum, pistols and two response trucks</strong>; rifle squads and the 30-plus soldier/grenade tier remain planned.",
       "A commercial release. There is no store page, no price, no roadmap you have paid for.",
-      "A finished environment. The stylized art is intentional; useful spaces, richer interactions and an expandable map are the next development priority.",
+      "A fully tested maximum-pressure battle. Guided checks prove finite reinforcement logistics and a separate live return-fire exchange; sustained collective nine-officer difficulty remains a follow-up.",
       "A live world. Nothing simulates while the application is closed, and the economy is small on purpose.",
       "Stable across versions. Saves may carry forward, but a demo can and does change underneath you."
     ]
@@ -28,53 +28,45 @@
     {
       "who": "Marcus Webb",
       "lens": "Technical state, value",
-      "score": 8,
+      "score": 7,
       "accent": "marcus"
     },
     {
       "who": "Dag Møller",
       "lens": "Systems rigor",
-      "score": 8,
+      "score": 7,
       "accent": "dag"
     },
     {
       "who": "Priya Raman",
       "lens": "Emotional, thematic",
-      "score": 8,
+      "score": 7,
       "accent": "priya"
     },
     {
       "who": "Nell Okafor",
       "lens": "Is this a nice hour",
-      "score": 8,
+      "score": 7,
       "accent": "nell"
     }
   ],
-  "panelNote": "Four reviewer agents each awarded Demo 03 8/10 for different reasons. These are guided build reviews, supported by logs, screenshots and source inspection, rather than exploratory human play or independent acceptance of later fixes.",
+  "panelNote": "Four independent reviewer agents each scored Police Response 7/10. Each ran the same identified executable, passed 35 focused checks and inspected four fresh captures plus logs. Their guided reviews do not establish human difficulty, sustained nine-officer pressure or minimum-spec performance.",
   "shots": [
     {
-      "file": "C01-clinic-and-tally.png",
-      "caption": "Demo 03 — the clinic and Tally"
+      "file": "PoliceResponse/police-final/P01-trucks-arriving.png",
+      "caption": "Police Response � a truck physically enters Old Port (guided capture)"
     },
     {
-      "file": "C03-neri-story.png",
-      "caption": "Demo 03 — Neri explains what the spare bed means"
+      "file": "PoliceResponse/police-final/P02-response-deployed.png",
+      "caption": "Two trucks and deployed officers; eight living after a staged casualty"
     },
     {
-      "file": "C04-paid-medicine-response.png",
-      "caption": "Demo 03 — medicine obtained through payment gets its own response"
+      "file": "PoliceResponse/police-final/P03-live-return-fire.png",
+      "caption": "Live patrol return fire wounds the exposed player"
     },
     {
-      "file": "C06-refuge-management.png",
-      "caption": "Demo 03 — the shared refuge, clinic fund and care policy"
-    },
-    {
-      "file": "C07-policy-consequence.png",
-      "caption": "Demo 03 — the consequence of reserving medicine"
-    },
-    {
-      "file": "C12-traffic-after.png",
-      "caption": "Demo 03 — traffic moving through Old Port"
+      "file": "PoliceResponse/police-final/P04-recovery.png",
+      "caption": "Recoverable defeat: emergency care, 45 health and $40 debt"
     }
   ],
   "pipeline": [
@@ -84,11 +76,11 @@
     },
     {
       "tag": "Build",
-      "desc": "<span class=\"mono\">Tools/Release.ps1</span> drives a batch-mode Unity build, verifies the executable and zips the portable package."
+      "desc": "The release-specific packaging script verifies the tested player, reviews and evidence, then creates a portable ZIP without rebuilding."
     },
     {
       "tag": "Publish",
-      "desc": "The same script opens a tagged GitHub Release and uploads the zip — one command, no console."
+      "desc": "The verified archive is uploaded to a tagged GitHub Release with notes and its SHA-256."
     },
     {
       "tag": "Deploy",
@@ -126,17 +118,22 @@
     },
     {
       "label": "Demo guide",
-      "href": "https://github.com/Kaliffen/Funstra/blob/main/KEEP-THE-LIGHTS-ON.md"
+      "href": "https://github.com/Kaliffen/Funstra/blob/main/POLICE-RESPONSE.md"
     },
     {
       "label": "Validation",
       "href": "https://github.com/Kaliffen/Funstra/blob/main/Evidence/VALIDATION.md"
     }
   ],
-  "panelBuild": "Demo 03 — Keep the Lights On (v0.3.0)",
-  "panelSummary": "All four reviewers: 8/10",
-  "dossierFile": "funstra-review-dossier-demo03.html",
+  "panelBuild": "Police Response (v0.4.1)",
+  "panelSummary": "All four reviewers: 7/10",
+  "dossierFile": "funstra-review-dossier-police-response.html",
   "previousDossiers": [
+    {
+      "file": "funstra-review-dossier-demo03.html",
+      "output": "dossier-demo03.html",
+      "label": "Demo 03 dossier � Keep the Lights On"
+    },
     {
       "file": "funstra-review-dossier.html",
       "output": "dossier-demo02.html",

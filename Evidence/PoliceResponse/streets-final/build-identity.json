@@ -1,0 +1,7 @@
+{
+  "testedAt": "2026-09-08T01:16:39.3398101Z",
+  "mode": "Streets",
+  "executable": "Build/PoliceResponse/Funstra.exe",
+  "assemblySha256": "3CBCA4699C37181628C9167712F394FBAB2F125E1E1845AE069A51C2EC0A8BBC",
+  "method": "Guided exported player; direct setups and controller travel identified in result."
+}

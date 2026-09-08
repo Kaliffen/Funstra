@@ -1,0 +1,101 @@
+{
+  "version": "0.4.1",
+  "status": "Validated and independently reviewed local candidate",
+  "editorChecks": 2201,
+  "coreRuntimeChecks": 268,
+  "routes": [
+    {
+      "route": "police-final",
+      "checks": 35,
+      "screens": 4,
+      "testedAt": "2026-09-08T01:16:16.2597541Z",
+      "mode": "Police",
+      "executable": "~\\repos\\Funstra\\Build\\PoliceResponse\\Funstra.exe",
+      "assemblySha256": "3CBCA4699C37181628C9167712F394FBAB2F125E1E1845AE069A51C2EC0A8BBC",
+      "method": "Guided exported player; direct setups and controller travel identified in result."
+    },
+    {
+      "route": "streets-final",
+      "checks": 143,
+      "screens": 4,
+      "testedAt": "2026-09-08T01:16:39.3398101Z",
+      "mode": "Streets",
+      "executable": "Build/PoliceResponse/Funstra.exe",
+      "assemblySha256": "3CBCA4699C37181628C9167712F394FBAB2F125E1E1845AE069A51C2EC0A8BBC",
+      "method": "Guided exported player; direct setups and controller travel identified in result."
+    },
+    {
+      "route": "legacy-final",
+      "checks": 90,
+      "screens": 10,
+      "testedAt": "2026-09-08T01:19:09.2651599Z",
+      "mode": "Legacy",
+      "executable": "Build/PoliceResponse/Funstra.exe",
+      "assemblySha256": "3CBCA4699C37181628C9167712F394FBAB2F125E1E1845AE069A51C2EC0A8BBC",
+      "method": "Guided exported player; direct setups and controller travel identified in result."
+    }
+  ],
+  "limits": [
+    "Fixtures plus live controller/AI segments, not human free play",
+    "Police logistics omit combat; live return-fire fixture proves one officer",
+    "No collective nine-officer pressure or future32soldier claim",
+    "Muted tests; no sound audition",
+    "RTX4090 only"
+  ],
+  "reviews": [
+    {
+      "reviewer": "dag",
+      "score": "7/10",
+      "checks": 35,
+      "screens": 4,
+      "identity": {
+        "testedAt": "2026-09-08T01:24:05.7400894Z",
+        "mode": "Police",
+        "executable": "~\\repos\\Funstra\\Build\\PoliceResponse\\Funstra.exe",
+        "assemblySha256": "3CBCA4699C37181628C9167712F394FBAB2F125E1E1845AE069A51C2EC0A8BBC",
+        "method": "Guided exported player; direct setups and controller travel identified in result."
+      }
+    },
+    {
+      "reviewer": "priya",
+      "score": "7/10",
+      "checks": 35,
+      "screens": 4,
+      "identity": {
+        "testedAt": "2026-09-08T01:23:36.1913073Z",
+        "mode": "Police",
+        "executable": "~\\repos\\Funstra\\Build\\PoliceResponse\\Funstra.exe",
+        "assemblySha256": "3CBCA4699C37181628C9167712F394FBAB2F125E1E1845AE069A51C2EC0A8BBC",
+        "method": "Guided exported player; direct setups and controller travel identified in result."
+      }
+    },
+    {
+      "reviewer": "marcus",
+      "score": "7/10",
+      "checks": 35,
+      "screens": 4,
+      "identity": {
+        "testedAt": "2026-09-08T01:23:08.0290144Z",
+        "mode": "Police",
+        "executable": "~\\repos\\Funstra\\Build\\PoliceResponse\\Funstra.exe",
+        "assemblySha256": "3CBCA4699C37181628C9167712F394FBAB2F125E1E1845AE069A51C2EC0A8BBC",
+        "method": "Guided exported player; direct setups and controller travel identified in result."
+      }
+    },
+    {
+      "reviewer": "nell",
+      "score": "7/10",
+      "checks": 35,
+      "screens": 4,
+      "identity": {
+        "testedAt": "2026-09-08T01:26:29.1229940Z",
+        "mode": "Police",
+        "executable": "~\\repos\\Funstra\\Build\\PoliceResponse\\Funstra.exe",
+        "assemblySha256": "3CBCA4699C37181628C9167712F394FBAB2F125E1E1845AE069A51C2EC0A8BBC",
+        "method": "Guided exported player; direct setups and controller travel identified in result."
+      }
+    }
+  ],
+  "dossier": "Docs/funstra-review-dossier-police-response.html",
+  "renderedDossier": "Evidence/PoliceResponse/dossier-render.png"
+}

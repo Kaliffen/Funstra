@@ -10,21 +10,21 @@ namespace Funstra
         string ClockAt(float time) => ((1300+(int)(time/60))/60%24).ToString("00")+":"+((1300+(int)(time/60))%60).ToString("00")+":"+((int)time%60).ToString("00");
         string PortClock => ClockAt(District.clock).Substring(0,5);
         string ShipmentSchedule => District.shipmentOwner=="collector"&&!District.released?"BUYER DUE IN "+TimeLeft(DistrictState.SaleTime-District.clock):District.shipmentOwner=="buyer"?"BUYER HOLDS THE STOCK AT THE NORTH QUAY":District.shipmentOwner=="collector"?"RELEASED STOCK WAITS BEHIND VICO'S":"YOU CHANGED THE SHIPMENT'S DESTINATION";
-        string MedicalObjective => District.refuge?"Your shared refuge is open. F at REPAIR: fund, stock and care policy.":District.recruited?"A room of your own: $120 at REPAIR. Ask Neri about the spare room.":District.Carrying?"Neri needs these six doses. Mara offers $160. The choice is yours.":District.shipmentUnits==0?"Your choice changed the clinic. Visit Neri and inspect the consequences.":"Meet Neri at REPAIR. Medicine is held in Vico's alley. TAB shows the places.";
+        string MedicalObjective => District.refuge?"Your shared refuge is open. F at the clinic: fund, stock and care policy.":District.recruited?"A room of your own: $120 at the clinic. Ask Neri about the spare room.":District.Carrying?"Neri needs these six doses. Mara offers $160. The choice is yours.":District.shipmentUnits==0?"Your choice changed the clinic. Visit Neri and inspect the consequences.":"Meet Neri at MUTUAL CLINIC. Medicine is held in Vico's alley. TAB shows the places.";
         void DrawDistrictVitals()
         {
             Panel(28,295,389,259);Rect(28,295,4,259,medical);
             Text("YOU / "+(District.bleeding?"BLEEDING":"STABLE"),50,312,340,26,14,District.bleeding?CityArt.Red:medical,FontStyle.Bold);
             Text(Mathf.CeilToInt(District.health)+" / 100",50,343,200,35,27,paper,FontStyle.Bold);
-            Text(weapon==2?"PISTOL / "+District.ammo:"FISTS / MELEE",233,353,160,25,15,CityArt.Amber,FontStyle.Bold,TextAnchor.UpperRight);
+            Text(CombatWeaponName,233,353,160,25,15,CityArt.Amber,FontStyle.Bold,TextAnchor.UpperRight);
             Rect(50,391,344,6,CityArt.Hex("344754"));Rect(50,391,344*District.health/100,6,District.bleeding?CityArt.Red:medical);
             Text("BANDAGES "+District.bandages+"   /   "+(Cargo.Weight>=5?"HEAVY: SPEED -20%":"DEBT $"+District.debt),50,410,345,26,15,Cargo.Weight>=5?CityArt.Amber:quiet);
-            Text("RMB select person   LMB attack\n1 fists   2 pistol   B bandage   SPACE pause",50,450,345,55,15,paper);
+            Text("Mouse aim   LMB fire / melee\n1 fists   2 pistol   3 shotgun   R reload",50,450,345,55,15,paper);
             Text(District.identified?"IVO KNOWS YOUR FACE / $60 restitution":"NO IDENTIFIED OFFENSE WITH IVO",50,516,345,26,12,District.identified?CityArt.Red:quiet,FontStyle.Bold);
             Panel(28,567,389,170);
             Text(District.recruited?"NERI / "+District.neri.order.ToUpperInvariant():"A PLACE BESIDE YOU",50,583,345,26,14,medical,FontStyle.Bold);
             Text(District.recruited?Mathf.CeilToInt(District.neri.health)+" HP   /   "+District.neri.bandages+" dressings":District.trust<0?"Neri remembers being hurt.":"Help the clinic. Earn a partnership.",50,619,345,34,20,paper,FontStyle.Bold);
-            Text(District.recruited?"G follow   H hold   R retreat   T aid\nE beside a downed person: stabilize":"Clinic: "+District.clinicStock+" doses / "+District.treatments+" treated\nJ history   L track Mara / clinic",50,665,345,48,15,quiet);
+            Text(District.recruited?"G follow   H hold   SHIFT+R retreat   T aid\nE beside a downed person: stabilize":"Clinic: "+District.clinicStock+" doses / "+District.treatments+" treated\nJ history   L track Mara / clinic",50,665,345,48,15,quiet);
             if(!showMap&&screen==ScreenMode.Play)
             {
                 if(District.shipmentOwner=="buyer"||District.shipmentOwner=="collector"&&!District.released)
@@ -48,7 +48,7 @@ namespace Funstra
         {
             if(!DistrictEnabled)return;
             Vector3[] positions={DistrictState.Clinic,District.ShipmentPosition,District.collector.position,District.neri.position};
-            string[] names={"REPAIR / CLINIC","MEDICINE","IVO / COLLECTOR",District.recruited?"NERI / CREW":"NERI"};
+            string[] names={"MUTUAL CLINIC","MEDICINE","IVO / COLLECTOR",District.recruited?"NERI / CREW":"NERI"};
             for(int i=0;i<positions.Length;i++)
             {
                 if(i==1&&(District.shipmentUnits==0||District.Carrying))continue;
@@ -82,7 +82,7 @@ namespace Funstra
                     DistrictPanel("OLD PORT / THE SALT YEARS NEVER ENDED","KEEP THE LIGHTS ON","The city rebuilt itself on emergency credit. Now debt buys people's homes, work and bodies. You lost your work permit. Mara bought you one more night.");
                     Text("Neri's clinic needs medicine held by a collector. You can pay, steal, fight, or leave it alone. Nobody is waiting for you to accept a quest.",395,409,805,90,22,paper);
                     Text("You carry a pistol, 12 rounds and 2 bandages. You are vulnerable.\nSPACE pauses tactics. TAB maps the district. J records what changes.\nMara's jobs and purple cargo can earn money for a peaceful approach.",395,521,805,94,19,quiet);
-                    DistrictAction("STEP INTO OLD PORT",true,395,680,805,()=>{District.introSeen=true;screen=ScreenMode.Play;Notify("Find Neri at the cyan REPAIR circle. TAB opens your map.");});break;
+                    DistrictAction("STEP INTO OLD PORT",true,395,680,805,()=>{District.introSeen=true;screen=ScreenMode.Play;Notify("Find Neri inside MUTUAL CLINIC. TAB opens your map.");});break;
                 case ScreenMode.Refuge: DrawRefuge();break;
                 case ScreenMode.Conversation: DrawConversation();break;
                 case ScreenMode.Clinic: DrawClinic();break;
@@ -157,8 +157,8 @@ namespace Funstra
         }
         void DrawDistrictPause()
         {
-            DistrictPanel("PAUSED / DEMO 03","A MOMENT TO BREATHE","The world pauses here. F5 saves where you stand, including wounds, carried goods and crew. Autosave runs every ten seconds. Quitting also saves.");
-            Text("WASD / arrows   Move       SHIFT sprint       CTRL sneak\nRMB select a person   LMB attack   1 fists   2 pistol   B bandage\nSPACE tactical pause   G follow   H hold   R retreat   T aid\nE interact / hold to take   F home supplies   TAB map\nJ history   L track story   P pet Tally   F at clinic: refuge",395,410,805,170,20,paper);
+            DistrictPanel("PAUSED / DEMO 04","A MOMENT TO BREATHE","The world pauses here. F5 saves where you stand, including wounds, carried goods and crew. Autosave runs every ten seconds. Quitting also saves.");
+            Text("WASD / arrows   Move       SHIFT sprint       CTRL sneak\nMouse aim / LMB fire   1 fists   2 pistol   3 shotgun   R reload\nSPACE tactical pause   G follow   H hold   SHIFT+R retreat   T aid\nE interact / hold to take   F home supplies   TAB map\nJ history   L track story   P pet Tally   F at clinic: refuge",395,410,805,170,20,paper);
             DistrictAction("RESUME",true,395,605,395,()=>screen=ScreenMode.Play);
             DistrictAction("SOUND / "+(mute?"OFF":"ON"),true,806,605,395,()=>mute=!mute);
             DistrictAction("SAVE & MAIN MENU",true,395,680,395,()=>{Save();screen=ScreenMode.Title;});

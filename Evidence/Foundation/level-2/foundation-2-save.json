@@ -1,0 +1,278 @@
+{
+    "version": 2,
+    "district": {
+        "clock": 0.0,
+        "nextPatient": 90.0,
+        "nextSupply": 240.0,
+        "nextInspection": 30.0,
+        "health": 100.0,
+        "bleeding": false,
+        "introSeen": true,
+        "recruited": false,
+        "identified": false,
+        "shortageKnown": false,
+        "discovered": false,
+        "released": false,
+        "hostile": false,
+        "bandages": 8,
+        "ammo": 67,
+        "trust": 0,
+        "debt": 0,
+        "treatments": 0,
+        "consumed": 0,
+        "clinicStock": 2,
+        "supplierStock": 4,
+        "marketStock": 0,
+        "clinicMoney": 20,
+        "supplierMoney": 0,
+        "collectorMoney": 0,
+        "buyerMoney": 200,
+        "patientMoney": 200,
+        "marketMoney": 1000,
+        "shipmentOwner": "collector",
+        "shipmentUnits": 6,
+        "playerPosition": {
+            "x": -11.0,
+            "y": 0.0,
+            "z": -48.0
+        },
+        "savedHeat": 0.0,
+        "savedLastSeen": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        "hasPosition": false,
+        "metNeri": false,
+        "cargoTakenMask": 0,
+        "savedJobCarrying": false,
+        "guardLastSeen": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        "guardSawAt": 0.0,
+        "neri": {
+            "id": "neri",
+            "name": "NERI",
+            "order": "Hold",
+            "position": {
+                "x": -27.0,
+                "y": 0.0,
+                "z": -12.0
+            },
+            "health": 100.0,
+            "bleeding": false,
+            "bandages": 3,
+            "ammo": 18,
+            "combat": {
+                "kind": 2,
+                "magazine": 0,
+                "reloadRemaining": 0.0,
+                "cooldown": 0.0,
+                "initialized": false
+            }
+        },
+        "guard": {
+            "id": "rook",
+            "name": "ROOK",
+            "order": "Hold",
+            "position": {
+                "x": -28.0,
+                "y": 0.0,
+                "z": 8.0
+            },
+            "health": 80.0,
+            "bleeding": false,
+            "bandages": 0,
+            "ammo": 18,
+            "combat": {
+                "kind": 2,
+                "magazine": 0,
+                "reloadRemaining": 0.0,
+                "cooldown": 0.0,
+                "initialized": false
+            }
+        },
+        "collector": {
+            "id": "ivo",
+            "name": "IVO",
+            "order": "Hold",
+            "position": {
+                "x": -26.0,
+                "y": 0.0,
+                "z": 11.0
+            },
+            "health": 70.0,
+            "bleeding": false,
+            "bandages": 0,
+            "ammo": 18,
+            "combat": {
+                "kind": 2,
+                "magazine": 0,
+                "reloadRemaining": 0.0,
+                "cooldown": 0.0,
+                "initialized": false
+            }
+        },
+        "incidents": [],
+        "citizens": [],
+        "yardGateClosed": true,
+        "squad": {
+            "initialized": true,
+            "clock": 0.0,
+            "members": [
+                {
+                    "actor": {
+                        "id": "yard-0",
+                        "name": "MOVING TARGET 1",
+                        "order": "Hold",
+                        "position": {
+                            "x": -12.0,
+                            "y": 0.0,
+                            "z": 7.0
+                        },
+                        "health": 100.0,
+                        "bleeding": true,
+                        "bandages": 0,
+                        "ammo": 0,
+                        "combat": {
+                            "kind": 2,
+                            "magazine": 0,
+                            "reloadRemaining": 0.0,
+                            "cooldown": 0.0,
+                            "initialized": true
+                        }
+                    },
+                    "role": 0,
+                    "home": {
+                        "x": -12.0,
+                        "y": 0.0,
+                        "z": 7.0
+                    },
+                    "retreat": {
+                        "x": -17.0,
+                        "y": 0.0,
+                        "z": 16.0
+                    },
+                    "lastContact": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "observedAt": -100.0,
+                    "nextReport": 0.0,
+                    "reportDue": -1.0,
+                    "reportObservedAt": 0.0,
+                    "nextShot": 0.0,
+                    "reportPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "withdrawing": false,
+                    "gun": 2
+                },
+                {
+                    "actor": {
+                        "id": "yard-1",
+                        "name": "MOVING TARGET 2",
+                        "order": "Hold",
+                        "position": {
+                            "x": 2.0000007152557375,
+                            "y": 0.0,
+                            "z": 14.0
+                        },
+                        "health": 80.0,
+                        "bleeding": false,
+                        "bandages": 0,
+                        "ammo": 0,
+                        "combat": {
+                            "kind": 3,
+                            "magazine": 0,
+                            "reloadRemaining": 0.0,
+                            "cooldown": 0.0,
+                            "initialized": true
+                        }
+                    },
+                    "role": 1,
+                    "home": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 14.0
+                    },
+                    "retreat": {
+                        "x": 17.0,
+                        "y": 0.0,
+                        "z": 16.0
+                    },
+                    "lastContact": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "observedAt": -100.0,
+                    "nextReport": 0.0,
+                    "reportDue": -1.0,
+                    "reportObservedAt": 0.0,
+                    "nextShot": 0.0,
+                    "reportPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "withdrawing": false,
+                    "gun": 3
+                }
+            ]
+        },
+        "pistolWeapon": {
+            "kind": 2,
+            "magazine": 5,
+            "reloadRemaining": 0.0,
+            "cooldown": 0.46000000834465029,
+            "initialized": true
+        },
+        "shotgunWeapon": {
+            "kind": 3,
+            "magazine": 1,
+            "reloadRemaining": 0.0,
+            "cooldown": 0.0,
+            "initialized": true
+        },
+        "shotgunAmmo": 29,
+        "equippedWeapon": 2,
+        "projectiles": [
+            {
+                "position": {
+                    "x": -12.0,
+                    "y": 1.2200000286102296,
+                    "z": -0.5
+                },
+                "velocity": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 48.0
+                },
+                "remaining": 36.0,
+                "damage": 28.0,
+                "owner": "player",
+                "kind": 2
+            }
+        ],
+        "refuge": false,
+        "reserveMedicine": false,
+        "tallyPetted": false,
+        "neriStoryHeard": false,
+        "refusedPatients": 0,
+        "clinicContributions": 0
+    },
+    "completed": 0,
+    "cash": 0,
+    "arrests": 0,
+    "perks": 0,
+    "accepted": false,
+    "satchel": false,
+    "cargoRuns": 0,
+    "cargoEarnings": 0
+}

@@ -1,0 +1,74 @@
+Mono path[0] = '~/repos/Funstra/Build/PoliceResponsePortable-dbd33f4a1586455a85ae66a28fb8c0b3/Funstra_Data/Managed'
+Mono config path = '~/repos/Funstra/Build/PoliceResponsePortable-dbd33f4a1586455a85ae66a28fb8c0b3/MonoBleedingEdge/etc'
+CodeReloadManager initialized
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Initialize engine version: 6000.4.0f1 (8cf496087c8f)
+[Subsystems] Discovering subsystems at path ~/repos/Funstra/Build/PoliceResponsePortable-dbd33f4a1586455a85ae66a28fb8c0b3/Funstra_Data/UnitySubsystems
+[D3D12 Device Filter] Vendor Name: NVIDIA
+[D3D12 Device Filter] Device Name: NVIDIA GeForce RTX 4090
+[D3D12 Device Filter] Driver Version: 32.0.15.9597
+[D3D12 Device Filter] Feature Level: 12.2
+[D3D12 Device Filter] Graphics Memory: 24138 MB
+[D3D12 Device Filter] Processor Count: 32
+[D3D12 Device Filter] Device Type: Discrete
+GfxDevice: creating device client; kGfxThreadingModeClientWorkerJobs
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4090 (ID=0x2684)
+    Vendor:   NVIDIA
+    VRAM:     24138 MB
+    Driver:   32.0.15.9597
+Begin MonoManager ReloadAssembly
+- Finished resetting the current domain, in  0.001 seconds
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+<RI> Initializing input.
+<RI> Input initialized.
+UnloadTime: 0.408800 ms
+CHECK: Police route uses isolated normal Old Port campaign
+CHECK: Test audio is forced muted before gameplay
+CHECK: Fresh campaign starts with three patrols and no reinforcements
+CHECK: Gunshot sound prompts area investigation without identifying a hidden shooter
+CHECK: Noise search retains reported position rather than reading hidden player's new position
+CHECK: Witnessed serious harm identifies attacker and requests first truck only
+CHECK: Every living patrol responds to shared gunman report
+CHECK: Tactical pause freezes search and dispatch clocks in actual Update
+CHECK: Unseen relocated player does not update shared gunman coordinates
+CHECK: Continued harm requests the second bounded truck
+CHECK: Save/load retains severity and both dispatch requests
+CHECK: Loading a requested truck does not teleport its crew into town
+CHECK: Response trucks enter visibly and move along the road before deployment
+CHECK: Two physical arrivals deliver six finite officers for nine-police maximum
+CHECK: Both truck records account for three deployed people
+CHECK: Deployed response-0-0 occupies walkable ground
+CHECK: Deployed response-0-1 occupies walkable ground
+CHECK: Deployed response-0-2 occupies walkable ground
+CHECK: Deployed response-1-0 occupies walkable ground
+CHECK: Deployed response-1-1 occupies walkable ground
+CHECK: Deployed response-1-2 occupies walkable ground
+CHECK: Reload reconstructs exact crew/trucks and preserves casualty without duplicate spawn
+CHECK: Reinforcement wounds and finite magazine survive reload
+CHECK: Further violence cannot farm additional trucks or personnel beyond slice cap
+CHECK: A full period without fresh observations expires armed search
+CHECK: Unidentified noise cannot activate a pending truck from an expired violent incident
+CHECK: Actual player trigger creates projectile before civilian damage
+CHECK: Actual projectile wounds an attackable resident and witnesses identify gunman
+CHECK: Live patrol Update spends ammunition and real return-fire projectiles wound exposed player
+CHECK: Pause freezes live return fire and projectile damage
+CHECK: Officer with exhausted ammunition resumes movement instead of holding an empty firing position
+CHECK: Defeat clears immediate response and gives playable recovery
+CHECK: Recovery saves base patrol positions where their bodies were reset
+CHECK: Recovery retains recorded incident consequences
+CHECK: Campaign state remains valid after response, reload and recovery
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+CodeReloadManager destroyed

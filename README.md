@@ -2,17 +2,19 @@
 
 An isometric sandbox crime RPG about surviving a damaged port city and becoming someone it depends on.
 
-**Published game: Demo 03 â€” Keep the Lights On, v0.3.0.** Windows x64, Unity 6000.4.0f1. The six-release plan is future work, not functionality in this download.
+**Current release: Police Response, v0.4.1.** Windows x64, Unity 6000.4.0f1. This is the first enforcement tier after the owner-approved Demo04, before the remaining Demo05 acquisition and supply work.
 
 ## Play
 
-[Download and previous versions](https://kaliffen.github.io/Funstra/) Â· [GitHub release](https://github.com/Kaliffen/Funstra/releases/tag/v0.3.0)
+[Download and previous versions](https://kaliffen.github.io/Funstra/) · [Release notes](https://github.com/Kaliffen/Funstra/releases/tag/v0.4.1) · [Review dossier](https://kaliffen.github.io/Funstra/dossier.html)
 
-Locally run `Play.cmd` or `Build/KeepTheLightsOn/Funstra.exe`. Extract all of `Releases/Funstra-demo-03-windows.zip` before running its executable alongside the data folder and DLLs.
+Locally run `Play.cmd` or `Build/PoliceResponse/Funstra.exe`. Extract all of `Releases/Funstra-police-response-0.4.1-windows.zip` before launching its executable alongside the data folder and DLLs.
 
-Start at Neri's cyan REPAIR clinic. Acquire medicine by payment, theft or force; earn a medical partner, repair a shared refuge and decide whom its limited supplies protect. Mara's jobs and cargo remain available. The clinic is represented outside; enterable rooms and a working supply network are planned.
+A witnessed attack alerts the patrols to the reported gunman. Police return real projectile fire and arrive in two trucks, with six additional officers for a maximum of nine. Break sight and leave the search area; pause, wounds, ammunition, casualties and recoverable defeat remain part of the same campaign. The expanded Old Port, enterable clinic, pistol/shotgun combat and four prepared foundation levels are included. Rifle squads and 30-plus soldiers with grenades remain future slices.
 
-WASD moves, E interacts, Space pauses tactically, Tab opens the map, J the journal, F the nearby refuge and Escape pauses. See the [Demo 03 guide and review route](KEEP-THE-LIGHTS-ON.md) and its linked [Demo 02 controls/system reference](BED-AND-BANDAGE.md). Normal saves use `lights-progress.json` under `%USERPROFILE%/AppData/LocalLow/Funstra/Funstra`; earlier demo saves are preserved on import.
+WASD moves, Shift sprints, Ctrl sneaks, mouse aims, left mouse fires, 1/2/3 selects fists/pistol/shotgun, R reloads, B bandages, E interacts, Space pauses and Tab opens the map. See the [current guide](POLICE-RESPONSE.md), [four independent reviews](Docs/funstra-review-dossier-police-response.html) and [validation](Evidence/VALIDATION.md). Automated tests stay muted. Normal saves use `streets-progress.json` under `%USERPROFILE%/AppData/LocalLow/Funstra/Funstra`; earlier saves are preserved on import.
+
+The original approved Demo04 remains locally in `Build/StreetsWorthFightingFor`. [Demo03's guide](KEEP-THE-LIGHTS-ON.md) and [dossier](Docs/funstra-review-dossier-demo03.html) describe the previous published version.
 
 ## Read and work
 
@@ -24,7 +26,7 @@ WASD moves, E interacts, Space pauses tactically, Tab opens the map, J the journ
 | What is planned, underway or accepted? | [Epic #26](https://github.com/Kaliffen/Funstra/issues/26) and its release issues |
 | How do we build, review and publish? | [Docs/PIPELINE.md](Docs/PIPELINE.md), with linked CD/reviewer skills |
 | What did the current build prove? | [Evidence/VALIDATION.md](Evidence/VALIDATION.md) |
-| What did reviewers conclude? | [Demo 03 dossier](Docs/funstra-review-dossier-demo03.html) and [reviewer records](reviewer-agents/README.md) |
+| What did reviewers conclude? | [Police Response dossier](Docs/funstra-review-dossier-police-response.html) and [reviewer records](reviewer-agents/README.md) |
 | Where are older documents? | [Archive index](Docs/Archive/README.md) |
 
 Update these owners instead of adding parallel roadmaps or status documents. Versioned guides and reviews are historical build records, not current planning instructions. Original reviews and scores remain intact.
@@ -41,4 +43,4 @@ An active Unity license is required. Read [validation commands and save-isolatio
 
 The only available test GPU is an RTX 4090. Low-end compatibility is a target, not a verified minimum specification. No offline simulation, driving, large squads or citywide faction management is implemented in Demo 03.
 
-MIT licensed. Original procedural geometry and sound; no external services required to play.
+Game code is MIT licensed. Asset and audio provenance: [CREDITS.md](CREDITS.md). No external services are required to play.

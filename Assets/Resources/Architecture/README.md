@@ -1,0 +1,15 @@
+# Old Port architectural kit
+
+These six meshes were copied from the owner's `gta-pt/Assets/SourceCity` project for [Funstra #37](https://github.com/Kaliffen/Funstra/issues/37). That project's README records extraction from `Northstar/blender/characters/gta6.blend`; its `Tools/export_city.py` converts Blender coordinates to Unity and reverses winding. The `.bytes` files here are unchanged copies. [provenance.json](provenance.json) records their SHA-256 hashes, triangle counts and original material colors. No third-party ownership or license is inferred beyond the owner's instruction to reuse this project.
+
+The extracted source contains reusable baked prototypes. Using these assets does not require importing the other project's complete city generator or modifying the Blender source. Selected types are rowhouse terrace, retail block, brick loft, market hall, parking garage and church. The church retains its nave and tower/spire geometry. The kit totals 13,976 triangles before reuse.
+
+`CityArchitecture.cs` reads each type once, normalizes the mesh to a unit ground-aligned box and caches it. Each placed exterior shares that mesh and a single vertex-color Standard material. A modest warm masonry tint preserves the original material distinctions. No individual window GameObjects or per-building material instances are created. The shader is explicitly loaded from Resources so it remains available in exported players.
+
+Local width/depth/height include projecting architectural details; rotation follows placement. A single simplified exterior box serves physics and navigation, and the renderer registers with the existing camera cutaway system. These are **opaque exterior buildings**, not enterable interiors. The clinic and refuge require separately authored wall/door layouts.
+
+Keep proportions credible. Source terrace dimensions are 42.56 × 16.3 × 18.2 high; retail 35.4 × 24.2 × 18.5; loft 33.9 × 24.75 × 39.75; hall 49.4 × 32.1 × 20.5; church 37.5 × 15.9 × 54.6 including its tower. A terrace around 20 wide and 8–9 high retains useful floor proportions; the loft needs a taller landmark placement. The church's spire should remain tall rather than compressing the entire model to a one-storey height. Placement and final rendered inspection determine suitability; triangle counts alone do not prove visual quality or low-end performance.
+
+The current short garage placements use a small authored workshop mesh instead of squashing the parking deck prototype. Shutters, clerestory glazing and pitched roofs retain one-storey proportions; meshes are cached by dimensions and use the same shared material. Shop signboards belong to their facade's cutaway group.
+
+The restrained dusk pass uses cooler ambient light, a warm directional sun and existing unshadowed local lamps. `PortArchitecture` adds subtle base weathering and selected warm glazing; `PortSurface` adds derivative-filtered pavement joints and broad wear without texture samples. These are material/lighting changes, not a post-processing package or a low-end performance certification.

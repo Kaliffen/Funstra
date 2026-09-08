@@ -54,6 +54,9 @@ jobs:
       - name: Test release retention policy
         run: node --test Tools/release-policy.test.mjs
 
+      - name: Test dossier publication and evidence links
+        run: node site/test-build.mjs
+
       - name: Keep the latest five published demos
         if: github.event_name != 'pull_request'
         env:

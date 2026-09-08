@@ -1,0 +1,18 @@
+PASS
+METHOD: exported player; explicit fixture setup; production controller, weapons, projectiles and squad; scripted frame sequence, not exploratory human input.
+PASS: Isolated prepared test level is active
+PASS: Fresh test equipment is available without spending campaign money
+PASS: Exported player loads distinct recorded firearm clips and four footstep variants
+PASS: No placeholder ambience drone loops in the exported player
+PASS: Three prepared coordinated enemies exist
+SETUP: player placed in first guard's observable approach; subsequent AI uses live production sight and reports.
+PASS: At least one guard observes the player
+PASS: Squad retains recent contact
+PASS: Distant hidden player is not directly tracked
+PASS: Breaking contact does not update remembered player position
+PASS: All unrefreshed contact expires
+SETUP: two guards incapacitated and remaining guard wounded to exercise recovery behavior.
+PASS: Wounded last survivor chooses retreat
+PASS: Retreat moves through shared navigation toward refuge
+PASS: Incapacitated allies stop acting
+PASS: Rendered captures and motion frames written; visual quality requires inspection

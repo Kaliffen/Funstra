@@ -1,0 +1,7 @@
+{
+  "testedAt": "2026-09-08T01:12:09.4407457Z",
+  "mode": "Police",
+  "executable": "~\\repos\\Funstra\\Build\\PoliceResponse\\Funstra.exe",
+  "assemblySha256": "86A48E953E52F0B188B02C48CD33BDD59991067E613749234117E7EE7C3C247C",
+  "method": "Guided exported player; direct setups and controller travel identified in result."
+}

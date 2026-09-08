@@ -11,8 +11,8 @@
 // GITHUB_TOKEN lifts the anonymous API rate limit but is not required for a
 // public repo.
 
-import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync, rmSync } from 'node:fs';
-import { dirname, join, resolve } from 'node:path';
+import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync, rmSync, realpathSync, statSync } from 'node:fs';
+import { dirname, join, resolve, relative, isAbsolute, sep, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { retainedReleases } from '../Tools/release-policy.mjs';
 
@@ -29,6 +29,47 @@ const repo = process.env.GITHUB_REPOSITORY || content.repo;
 /* ---------------------------------------------------------------- helpers */
 
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+function contained(base, path) {
+  const rel = relative(base, path);
+  if (rel === '..' || rel.startsWith(`..${sep}`) || isAbsolute(rel)) {
+    throw new Error(`Site dependency escapes ${base}: ${path}`);
+  }
+  return path;
+}
+
+// Dossiers live in Docs but are published at the site root. Preserve their
+// local evidence tree and rewrite only the published HTML, never the originals.
+const publishedFiles = new Map();
+function publishFile(source, destination) {
+  source = contained(root, resolve(source));
+  contained(realpathSync(root), realpathSync(source)); // reject escaping symlinks too
+  destination = contained(dist, resolve(destination));
+  if (!statSync(source).isFile()) throw new Error(`Expected a dossier file: ${source}`);
+  if (publishedFiles.has(destination)) {
+    if (publishedFiles.get(destination) !== source) throw new Error(`Conflicting site dependency: ${destination}`);
+    return;
+  }
+  publishedFiles.set(destination, source); // break cycles between linked HTML files
+  mkdirSync(dirname(destination), { recursive: true });
+  if (!/\.html?$/i.test(extname(source))) {
+    copyFileSync(source, destination);
+    return;
+  }
+  const html = readFileSync(source, 'utf8').replace(/\b(href|src)(\s*=\s*)(["'])(.*?)\3/gi, (match, attr, equals, quote, url) => {
+    if (!url || /^(?:#|\/\/|[a-z][a-z0-9+.-]*:)/i.test(url)) return match;
+    const [, path, suffix] = /^([^?#]*)(.*)$/.exec(url);
+    if (!path) return match;
+    const decoded = decodeURIComponent(path.replace(/&amp;/g, '&'));
+    if (decoded.startsWith('/') || decoded.includes('\\')) throw new Error(`Unsupported absolute dossier URL: ${url}`);
+    const dependency = contained(root, resolve(dirname(source), decoded));
+    const output = contained(dist, resolve(dist, relative(root, dependency)));
+    publishFile(dependency, output);
+    const rewritten = relative(dirname(destination), output).split(sep).map(encodeURIComponent).join('/');
+    return `${attr}${equals}${quote}${rewritten}${suffix}${quote}`;
+  });
+  writeFileSync(destination, html);
+}
 
 const bytes = (n) => {
   if (!Number.isFinite(n) || n <= 0) return 'unknown size';
@@ -439,15 +480,15 @@ writeFileSync(join(dist, '.nojekyll'), '');
 copyFileSync(join(siteDir, 'assets', 'styles.css'), join(dist, 'assets', 'styles.css'));
 
 // A demo owns one dossier; retain previous case files rather than overwriting history.
-copyFileSync(join(root, 'Docs', content.dossierFile), join(dist, 'dossier.html'));
+publishFile(join(root, 'Docs', content.dossierFile), join(dist, 'dossier.html'));
 for (const dossier of content.previousDossiers) {
-  copyFileSync(join(root, 'Docs', dossier.file), join(dist, dossier.output));
+  publishFile(join(root, 'Docs', dossier.file), join(dist, dossier.output));
 }
 
 let copied = 0;
 for (const shot of content.shots) {
-  const from = join(root, 'Evidence', shot.file);
-  if (existsSync(from)) { copyFileSync(from, join(dist, 'shots', shot.file)); copied++; }
+  const from = contained(join(root, 'Evidence'), resolve(root, 'Evidence', shot.file));
+  if (existsSync(from)) { publishFile(from, contained(join(dist, 'shots'), resolve(dist, 'shots', shot.file))); copied++; }
   else console.warn(`! missing screenshot: Evidence/${shot.file}`);
 }
 

@@ -1,0 +1,34 @@
+PASS
+PASS: Police route uses isolated normal Old Port campaign
+PASS: Test audio is forced muted before gameplay
+PASS: Fresh campaign starts with three patrols and no reinforcements
+METHOD: controlled reports and explicit simulation steps test dispatch, knowledge and persistence. Final firefight uses actual Update/AI/projectiles. No human free-play claim.
+PASS: Gunshot sound prompts area investigation without identifying a hidden shooter
+PASS: Noise search retains reported position rather than reading hidden player's new position
+PASS: Witnessed serious harm identifies attacker and requests first truck only
+PASS: Every living patrol responds to shared gunman report
+PASS: Tactical pause freezes search and dispatch clocks in actual Update
+PASS: Unseen relocated player does not update shared gunman coordinates
+PASS: Continued harm requests the second bounded truck
+PASS: Save/load retains severity and both dispatch requests
+PASS: Loading a requested truck does not teleport its crew into town
+PASS: Response trucks enter visibly and move along the road before deployment
+PASS: Two physical arrivals deliver six finite officers for nine-police maximum
+PASS: Both truck records account for three deployed people
+PASS: Deployed response-0-0 occupies walkable ground
+PASS: Deployed response-0-1 occupies walkable ground
+PASS: Deployed response-0-2 occupies walkable ground
+PASS: Deployed response-1-0 occupies walkable ground
+PASS: Deployed response-1-1 occupies walkable ground
+PASS: Deployed response-1-2 occupies walkable ground
+PASS: Reload reconstructs exact crew/trucks and preserves casualty without duplicate spawn
+PASS: Reinforcement wounds and finite magazine survive reload
+PASS: Further violence cannot farm additional trucks or personnel beyond slice cap
+PASS: A full period without fresh observations expires armed search
+PASS: Actual player trigger creates projectile before civilian damage
+PASS: Actual projectile wounds an attackable resident and witnesses identify gunman
+PASS: Live patrol Update spends ammunition and real return-fire projectiles wound exposed player
+PASS: Pause freezes live return fire and projectile damage
+PASS: Defeat clears immediate response and gives playable recovery
+PASS: Recovery retains recorded incident consequences
+PASS: Campaign state remains valid after response, reload and recovery

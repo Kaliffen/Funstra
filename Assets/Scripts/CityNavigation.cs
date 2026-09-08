@@ -6,8 +6,17 @@ namespace Funstra
     // A small fixed grid is shared by patrols, witnesses and the runtime traversal checks.
     public sealed class CityNavigation
     {
-        public const int Side = 49;
+        public const int Side = 81;
         public const float Step = 2f;
+        const float GridOrigin=(Side-1)*Step*.5f;
+        public Vector2 Min {get;private set;}=new Vector2(-78,-68);
+        public Vector2 Max {get;private set;}=new Vector2(78,68);
+        public void SetBounds(Vector2 min,Vector2 max)
+        {
+            Min=new Vector2(Mathf.Clamp(min.x,-78,78),Mathf.Clamp(min.y,-78,78));
+            Max=new Vector2(Mathf.Clamp(max.x,Min.x,78),Mathf.Clamp(max.y,Min.y,78));
+            Bake();
+        }
         public readonly List<Bounds> Obstacles = new List<Bounds>();
         public readonly List<Bounds> Props = new List<Bounds>();
         public readonly List<Bounds> Traffic = new List<Bounds>();
@@ -22,7 +31,7 @@ namespace Funstra
         }
         public bool Walkable(Vector3 p, bool traffic = true)
         {
-            if (Mathf.Abs(p.x) > 46 || p.z < -44 || p.z > 44) return false;
+            if (p.x<Min.x||p.x>Max.x||p.z<Min.y||p.z>Max.y) return false;
             foreach (var b in Obstacles)
                 if (p.x > b.min.x - .5499f && p.x < b.max.x + .5499f && p.z > b.min.z - .5499f && p.z < b.max.z + .5499f) return false;
             foreach(var b in Props)
@@ -35,19 +44,23 @@ namespace Funstra
         {
             if(Walkable(p))return p;
             Vector3 best=Vector3.zero;float distance=float.MaxValue;
-            for(int z=-88;z<=88;z++)for(int x=-92;x<=92;x++)
+            for(int z=Mathf.CeilToInt(Min.y*2);z<=Mathf.FloorToInt(Max.y*2);z++)for(int x=Mathf.CeilToInt(Min.x*2);x<=Mathf.FloorToInt(Max.x*2);x++)
             { var q=new Vector3(x*.5f,0,z*.5f);float d=(q-p).sqrMagnitude;if(d<distance&&Walkable(q)) {best=q;distance=d;} }
             return best;
         }
         public bool Sight(Vector3 from, Vector3 to)
         {
-            Vector3 d = to - from;
-            var ray = new Ray(from + Vector3.up, d.normalized);
-            foreach (var b in Obstacles)
-                if (b.size.y > 1.4f && b.IntersectRay(ray, out float dist) && dist < d.magnitude) return false;
-            foreach(var b in Traffic)
-                if(b.IntersectRay(ray,out float dist)&&dist<d.magnitude)return false;
-            return true;
+            Vector3 start=from+Vector3.up, end=to+Vector3.up;
+            Vector3 d=end-start;
+            if(d.sqrMagnitude<.000001f)return true;
+            var ray=new Ray(start,d.normalized);
+            return !Occludes(Obstacles,ray,d.magnitude)&&!Occludes(Props,ray,d.magnitude)&&!Occludes(Traffic,ray,d.magnitude);
+        }
+        static bool Occludes(List<Bounds> bounds,Ray ray,float length)
+        {
+            foreach(var b in bounds)
+                if(b.Contains(ray.origin)||(b.IntersectRay(ray,out float distance)&&distance<length))return true;
+            return false;
         }
         public bool ClearWalk(Vector3 a, Vector3 b, bool traffic = true)
         {
@@ -67,8 +80,8 @@ namespace Funstra
             }
             return false;
         }
-        int Index(Vector3 p) => Mathf.Clamp(Mathf.RoundToInt((p.z + 48) / Step), 0, Side - 1) * Side + Mathf.Clamp(Mathf.RoundToInt((p.x + 48) / Step), 0, Side - 1);
-        Vector3 Point(int i) => new Vector3((i % Side) * Step - 48, 0, (i / Side) * Step - 48);
+        int Index(Vector3 p) => Mathf.Clamp(Mathf.RoundToInt((p.z + GridOrigin) / Step), 0, Side - 1) * Side + Mathf.Clamp(Mathf.RoundToInt((p.x + GridOrigin) / Step), 0, Side - 1);
+        Vector3 Point(int i) => new Vector3((i % Side) * Step - GridOrigin, 0, (i / Side) * Step - GridOrigin);
         int Nearest(Vector3 p)
         {
             int at = Index(p);

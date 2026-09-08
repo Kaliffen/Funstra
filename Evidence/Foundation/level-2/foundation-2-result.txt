@@ -1,0 +1,31 @@
+PASS
+METHOD: exported player; explicit fixture setup; production controller, weapons, projectiles and squad; scripted frame sequence, not exploratory human input.
+PASS: Isolated prepared test level is active
+PASS: Fresh test equipment is available without spending campaign money
+PASS: Exported player loads distinct recorded firearm clips and four footstep variants
+PASS: No placeholder ambience drone loops in the exported player
+PASS: Two passive moving targets are prepared
+PASS: Prepared target moves in the actual player
+PASS: Pistol trigger consumes a loaded round
+PASS: Trigger creates traveling projectile without immediate target damage
+PASS: Traveling pistol round damages target once
+PASS: Consumed projectile cannot damage a second time
+PASS: Shotgun creates seven independent traveling pellets
+PASS: Shotgun pellets reach target after travel
+SETUP: placed fresh target behind thin plate; restored health explicitly for obstruction checks.
+PASS: Shot toward thin plate fired
+PASS: Thin cover intercepts projectile before target
+PASS: Near-muzzle test fired
+PASS: Near-muzzle obstruction cannot be bypassed by spawn position
+PASS: Moving-cover fixture fired
+PASS: Moving cover swept across shot intercepts it between snapshots
+PASS: Empty magazine begins reload with finite reserve
+PASS: Production paused screen freezes reload while real frames render
+PASS: Weapon switch interrupts reload without creating ammunition
+PASS: Interrupted reload can restart
+PASS: Completed reload transfers existing reserve into magazine
+PASS: In-flight save fixture fired
+PASS: Isolated in-flight state saves
+PASS: Reload retains paid-for in-flight shot
+PASS: Restored in-flight shot resolves once
+PASS: Rendered captures and motion frames written; visual quality requires inspection

@@ -1,0 +1,21 @@
+PASS
+METHOD: exported player; explicit fixture setup; production controller, weapons, projectiles and squad; scripted frame sequence, not exploratory human input.
+PASS: Isolated prepared test level is active
+PASS: Fresh test equipment is available without spending campaign money
+PASS: Exported player loads distinct recorded firearm clips and four footstep variants
+PASS: No placeholder ambience drone loops in the exported player
+PASS: Controller route exists to (-20.00, 0.00, -12.00)
+PASS: Production character controller arrived at (-20.00, 0.00, -12.00)
+PASS: Controller route exists to (-20.00, 0.00, 8.00)
+PASS: Production character controller arrived at (-20.00, 0.00, 8.00)
+PASS: Public approach can be traversed to first contact
+PASS: Controller route exists to (-20.00, 0.00, -18.00)
+PASS: Production character controller arrived at (-20.00, 0.00, -18.00)
+PASS: Player withdraws from live encounter through public route
+SETUP: reset health and placed at service gate for second approach comparison.
+PASS: Service route begins gated
+PASS: Service gate opens alternate route
+PASS: Controller route exists to (18.75, 0.00, 1.00)
+PASS: Production character controller arrived at (18.75, 0.00, 1.00)
+PASS: Both weapon families used in same live encounter
+PASS: Rendered captures and motion frames written; visual quality requires inspection

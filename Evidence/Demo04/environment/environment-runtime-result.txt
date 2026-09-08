@@ -1,0 +1,41 @@
+PASS
+PASS: Environment walkthrough uses isolated normal campaign
+PASS: Navigable route to (-17.00, 0.00, -35.00)
+PASS: Controller arrived beside interaction at (-17.00, 0.00, -35.00)
+PASS: Navigable route to (-27.00, 0.00, -26.00)
+PASS: Controller arrived beside interaction at (-27.00, 0.00, -26.00)
+PASS: Clinic approached from public market court
+PASS: Navigable route to (-27.00, 0.00, -20.00)
+PASS: Controller arrived beside interaction at (-27.00, 0.00, -20.00)
+PASS: Navigable route to (-27.00, 0.00, -12.00)
+PASS: Controller arrived beside interaction at (-27.00, 0.00, -12.00)
+PASS: Walk through actual doorway reaches Neri inside treatment room
+PASS: Neri's service opens inside the actual clinic
+PASS: Navigable route to (-34.00, 0.00, -14.00)
+PASS: Controller arrived beside interaction at (-34.00, 0.00, -14.00)
+PASS: Medicine store is connected to treatment room without teleport
+PASS: Navigable route to (-18.00, 0.00, -12.00)
+PASS: Controller arrived beside interaction at (-18.00, 0.00, -12.00)
+PASS: Second clinic doorway leads onto back lane
+PASS: Navigable route to (-43.00, 0.00, 13.00)
+PASS: Controller arrived beside interaction at (-43.00, 0.00, 13.00)
+PASS: Navigable route to (-59.00, 0.00, 17.00)
+PASS: Controller arrived beside interaction at (-59.00, 0.00, 17.00)
+PASS: Navigable route to (-45.00, 0.00, 38.00)
+PASS: Controller arrived beside interaction at (-45.00, 0.00, 38.00)
+PASS: Navigable route to (-28.00, 0.00, 39.00)
+PASS: Controller arrived beside interaction at (-28.00, 0.00, 39.00)
+PASS: Navigable route to (8.00, 0.00, 39.00)
+PASS: Controller arrived beside interaction at (8.00, 0.00, 39.00)
+PASS: Navigable route to (8.00, 0.00, 13.00)
+PASS: Controller arrived beside interaction at (8.00, 0.00, 13.00)
+PASS: Navigable route to (50.00, 0.00, 14.00)
+PASS: Controller arrived beside interaction at (50.00, 0.00, 14.00)
+PASS: Navigable route to (50.00, 0.00, -40.00)
+PASS: Controller arrived beside interaction at (50.00, 0.00, -40.00)
+PASS: Navigable route to (34.00, 0.00, -46.00)
+PASS: Controller arrived beside interaction at (34.00, 0.00, -46.00)
+PASS: Expanded district is traversable beyond old map bounds
+PASS: Navigable route to (-11.00, 0.00, -48.00)
+PASS: Controller arrived beside interaction at (-11.00, 0.00, -48.00)
+PASS: Environment walkthrough preserves valid campaign state

@@ -12,3 +12,5 @@
 /site/dist/
 /site/.cache/
 node_modules/
+
+/Tools/.cache/

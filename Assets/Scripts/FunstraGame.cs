@@ -27,11 +27,13 @@ namespace Funstra
         CharacterController controller;
         Transform figure;
         GameObject playerRing;
-        float theftProgress, arrestProgress, playerPhase, lastSight, toastTime, stepTime, cameraSize = 20;
+        float theftProgress, arrestProgress, playerPhase, lastSight, toastTime, stepTime, cameraSize = 17;
         string toast = "", prompt = "";
-        bool mute, showMap, sprinting;
+        bool muteTests;
+        bool mute, showMap, sprinting, sprintExhausted;
+        readonly List<float> buildingRevealUntil = new List<float>();
         string savePath;
-        AudioSource audioSource, ambience;
+        AudioSource audioSource;
         AudioClip pickupSound, alertSound, cashSound, stepSound;
         Vector3 cameraVelocity;
         Vector3 cameraOffset = new Vector3(19, 32, -23);
@@ -41,16 +43,23 @@ namespace Funstra
 
         void Awake()
         {
+            ReadFoundationArguments();
+            muteTests=Array.IndexOf(Environment.GetCommandLineArgs(),"--mute-tests")>=0;mute=muteTests;
+            if(muteTests)AudioListener.volume=0;
+            policeTest=Array.IndexOf(Environment.GetCommandLineArgs(),"--police-test")>=0;
             Application.targetFrameRate = 60; QualitySettings.vSyncCount = 1;
             if(Array.IndexOf(Environment.GetCommandLineArgs(),"--30fps")>=0) { Application.targetFrameRate=30;QualitySettings.vSyncCount=0; }
             visualCheck = Array.IndexOf(Environment.GetCommandLineArgs(), "--visual-check") >= 0;
-            bandageTest = Array.IndexOf(Environment.GetCommandLineArgs(), "--bandage-test") >= 0;
+            streetsTest = Array.IndexOf(Environment.GetCommandLineArgs(), "--streets-test") >= 0;
+            environmentTest = Array.IndexOf(Environment.GetCommandLineArgs(), "--environment-test") >= 0;
+            bandageTest = streetsTest||environmentTest||Array.IndexOf(Environment.GetCommandLineArgs(), "--bandage-test") >= 0;
             bandageVisual = Array.IndexOf(Environment.GetCommandLineArgs(), "--bandage-visual") >= 0;
             captureScreens = visualCheck || Array.IndexOf(Environment.GetCommandLineArgs(), "--capture-screens") >= 0;
-            Smoke = visualCheck || bandageTest || bandageVisual || Array.IndexOf(Environment.GetCommandLineArgs(), "--smoke-test") >= 0;
+            Smoke = policeTest || visualCheck || bandageTest || bandageVisual || Array.IndexOf(Environment.GetCommandLineArgs(), "--smoke-test") >= 0;
             captureScreens |= bandageVisual;
             savePath = Path.Combine(Application.persistentDataPath, bandageTest||bandageVisual?"bandage-smoke.json":Smoke ? "smoke-save.json" : "lights-progress.json");
-            City = new CityArt(); City.Build(); BuildCargoArt();
+            if(!Smoke)savePath=Path.Combine(Application.persistentDataPath,"streets-progress.json");
+            City = new CityArt(); if(FoundationMode)City.BuildTestLevel(foundationLevel);else {City.Build();BuildCargoArt();}
             SetupLighting();
             var player = new GameObject("Player"); Player = player.transform; Player.position = Jobs.Home + Vector3.up*.15f;
             controller = player.AddComponent<CharacterController>(); controller.height = 1.85f; controller.radius = .38f; controller.center = Vector3.up*.95f; controller.stepOffset = .3f;
@@ -60,17 +69,20 @@ namespace Funstra
             View.orthographic = true; View.orthographicSize = cameraSize; View.nearClipPlane = .1f; View.farClipPlane = 250;
             View.backgroundColor = CityArt.Hex("222D43"); View.clearFlags = CameraClearFlags.SolidColor;
             cam.AddComponent<AudioListener>(); SnapCamera();
-            SpawnAgents(); SetupAudio(); BuildDistrict();
+            if(!FoundationMode)SpawnAgents(); SetupAudio();
+            if(FoundationMode)pistol=City.Box("Player firearm",new Vector3(.43f,.95f,.3f),new Vector3(.12f,.15f,.45f),CityArt.Hex("303848"),figure);
+            else BuildDistrict();
             screen = ScreenMode.Title;
+            if(FoundationMode) {StartFoundation();if(Array.IndexOf(Environment.GetCommandLineArgs(),"--foundation-test")>=0)StartCoroutine(FoundationRun());}
             if (Smoke) StartCoroutine(SmokeRun());
         }
         void SetupLighting()
         {
             RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Trilight;
-            RenderSettings.ambientSkyColor = CityArt.Hex("9EA7C8"); RenderSettings.ambientEquatorColor = CityArt.Hex("8793A9"); RenderSettings.ambientGroundColor = CityArt.Hex("4C536F");
+            RenderSettings.ambientSkyColor = CityArt.Hex("687D9A"); RenderSettings.ambientEquatorColor = CityArt.Hex("4F6078"); RenderSettings.ambientGroundColor = CityArt.Hex("303648");
             RenderSettings.fog = true; RenderSettings.fogColor = CityArt.Hex("53637C"); RenderSettings.fogMode = FogMode.Linear; RenderSettings.fogStartDistance = 75; RenderSettings.fogEndDistance = 180;
-            var sun = new GameObject("Late evening sun").AddComponent<Light>(); sun.type = LightType.Directional; sun.color = CityArt.Hex("FFD4B4"); sun.intensity = 1.1f;
-            sun.transform.rotation = Quaternion.Euler(40,-35,0); sun.shadows = LightShadows.Soft; sun.shadowStrength = .7f;
+            var sun = new GameObject("Late evening sun").AddComponent<Light>(); sun.type = LightType.Directional; sun.color = CityArt.Hex("FFD0A0"); sun.intensity = .95f;
+            sun.transform.rotation = Quaternion.Euler(32,-35,0); sun.shadows = LightShadows.Soft; sun.shadowStrength = .82f;
             QualitySettings.shadowDistance = 100; QualitySettings.shadows = ShadowQuality.All; QualitySettings.shadowResolution = ShadowResolution.High; QualitySettings.antiAliasing = 4; QualitySettings.pixelLightCount = 4;
         }
         void SpawnAgents()
@@ -88,12 +100,15 @@ namespace Funstra
         {
             var a = new TownAgent { Police = police, Route = route, Phase = Agents.Count*.73f };
             a.Body = City.Human(police ? "Patrol officer" : "Resident", route[0], police ? CityArt.Hex("577FC4") : CityArt.Hex(new[]{"CC947C","B8AD83","9A7D9F","D1B992"}[Agents.Count%4]),police);
+            if(police)City.Box("Police pistol",new Vector3(.4f,.95f,.3f),new Vector3(.12f,.15f,.45f),CityArt.Hex("303848"),a.Body);
             a.Body.rotation = Quaternion.LookRotation(route[1]-route[0]); Agents.Add(a);
         }
         void Update()
         {
+            if(FoundationMode) { UpdateFoundation();return; }
+            if(Input.GetKeyDown(KeyCode.F2))compactHUD=!compactHUD;
             if (Input.GetKeyDown(KeyCode.F11)) Screen.fullScreen = !Screen.fullScreen;
-            if (Input.GetKeyDown(KeyCode.M)) mute = !mute;
+            if (!muteTests && Input.GetKeyDown(KeyCode.M)) mute = !mute;
             AudioListener.volume = mute ? 0 : .65f;
             if(DistrictEnabled&&Input.GetKeyDown(KeyCode.F5)&&screen!=ScreenMode.Title) { Save();Notify("Saved here, including wounds, witnesses, crew and carried goods."); }
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -120,16 +135,18 @@ namespace Funstra
             if(Input.mouseScrollDelta.y != 0) cameraSize = Mathf.Clamp(cameraSize-Input.mouseScrollDelta.y*1.5f,14,29);
             City.RefreshProps();City.StepTraffic(this,dt);
             UpdatePlayer(dt);
-            if(DistrictEnabled) { UpdateDistrict(dt);if(!Active)return; }
+            if(DistrictEnabled) { UpdateDistrict(dt);if(!Active)return; UpdateYard(dt); }
+            StepPoliceResponse(dt);
             bool seen = false;
             foreach(var a in Agents) { if(!smokeFreezeAgents)a.Step(this,dt); if(a.Police && a.SeesPlayer && a.Pursuing) seen = true; }
             if(Heat > 0)
             {
-                if(!seen) Heat = Mathf.Max(0,Heat-dt*(Hidden ? 2.2f : 1));
+                if(Police.identifiedGunman)Heat=Police.searchRemaining;
+                else if(!seen) Heat = Mathf.Max(0,Heat-dt*(Hidden ? 2.2f : 1));
                 if(Heat == 0) Notify("Heat cleared. Mara will buy the goods.");
             }
             bool nearOfficer = false;
-            foreach(var a in Agents) if(a.Police && a.Pursuing && a.SeesPlayer && Vector3.Distance(a.Position,Player.position)<1.65f) nearOfficer = true;
+            foreach(var a in Agents) if(Heat>0 && a.Police && a.Pursuing && a.SeesPlayer && Vector3.Distance(a.Position,Player.position)<1.65f) nearOfficer = true;
             arrestProgress = Mathf.Clamp01(arrestProgress + (nearOfficer ? dt*.85f : -dt*1.5f));
             if(arrestProgress >= 1) Busted();
             UpdateInteraction(dt);
@@ -154,17 +171,20 @@ namespace Funstra
             movement.y=0;
             Sneaking = Input.GetKey(KeyCode.LeftControl)||Input.GetKey(KeyCode.C);
             float capacity = State.HasPerk(1) ? 135 : 100;
-            sprinting = !Sneaking && movement.sqrMagnitude>.01f && (Input.GetKey(KeyCode.LeftShift)||autoMove.HasValue) && Stamina>2;
+            // Exhaustion must not alternate run/walk speed every other frame at two stamina.
+            if(Stamina<=2)sprintExhausted=true;
+            if(Stamina>=capacity)sprintExhausted=false;
+            sprinting = !sprintExhausted && !Sneaking && movement.sqrMagnitude>.01f && (Input.GetKey(KeyCode.LeftShift)||autoMove.HasValue) && Stamina>2;
             Stamina = Mathf.Clamp(Stamina + dt*(sprinting ? -19 : 15),0,capacity);
             float speed = Sneaking ? (State.HasPerk(0)?3.1f:2.3f) : sprinting ? (State.HasPerk(1)?8.4f:7) : 4.2f;
             speed *= Cargo.SpeedMultiplier;
             if(DistrictEnabled) speed *= (District.health<40?.8f:1)*(District.Carrying?.9f:1);
             controller.Move((movement*speed+Vector3.down*8)*dt);
-            var p=Player.position; p.x=Mathf.Clamp(p.x,-46.5f,46.5f); p.z=Mathf.Clamp(p.z,-44.5f,44.5f); Player.position=p;
+            var p=Player.position; p.x=Mathf.Clamp(p.x,City.Nav.Min.x,City.Nav.Max.x); p.z=Mathf.Clamp(p.z,City.Nav.Min.y,City.Nav.Max.y); Player.position=p;
             if(movement.sqrMagnitude>.01f) figure.rotation = Quaternion.Slerp(figure.rotation,Quaternion.LookRotation(movement),dt*14);
             playerPhase += dt*(Sneaking?.65f:1.1f); CityArt.Animate(figure,playerPhase,movement.magnitude*speed);
             figure.localScale = new Vector3(1,Sneaking?.8f:1,1);
-            if(movement.sqrMagnitude>.01f && (stepTime-=dt)<=0) { audioSource.PlayOneShot(stepSound,Sneaking?.13f:.27f); stepTime=sprinting?.25f:.4f; }
+            if(movement.sqrMagnitude>.01f && (stepTime-=dt)<=0) { PlayFootstep(Sneaking?.13f:.27f); stepTime=sprinting?.25f:.4f; }
             Hidden = false;
             if(Sneaking && !Stealing && Elapsed-lastSight>1.2f)
                 foreach(var h in City.Hides) if(Vector3.Distance(Player.position,h)<2.5f) Hidden=true;
@@ -205,19 +225,20 @@ namespace Funstra
         public void ReportSight(Vector3 position)
         {
             if(Heat<=0) { Sound(alertSound); Notify("Spotted! Break line of sight in the alleys."); }
-            Heat=12; lastSight=Elapsed; LastSeen=position;
+            Heat=Police.identifiedGunman?45:12; lastSight=Elapsed; LastSeen=position;Police.Sight(position);
         }
         public void RaiseAlarm(string message,Vector3 position)
-        { Heat=12; LastSeen=position; lastSight=Elapsed; Sound(alertSound); Notify(message); }
+        { bool newlyWanted=Heat<=0;Heat=12; LastSeen=position; lastSight=Elapsed;if(newlyWanted)Sound(alertSound); Notify(message); }
         void Busted()
         {
             if(DistrictEnabled&&District.Carrying) { District.shipmentOwner=District.clock>=DistrictState.SaleTime?"buyer":"collector";District.released=false;District.Record("confiscated","police","Police returned the medical shipment to its owner. It remains recoverable."); }
             State.Arrest(); Cargo.Lose(); RefreshCargoArt(); ResetCargoInteraction(); Heat=arrestProgress=theftProgress=0; Stealing=false;
             Teleport(Jobs.Home); ResetPolice(); Save(); Notify("Busted. Goods confiscated; up to $40 fined. The job is still available."); Sound(alertSound);
         }
-        void ResetPolice()
+        void ResetPolice(bool clearResponse=true)
         {
-            foreach(var a in Agents) if(a.Police) { a.Body.position=a.Route[0]; a.Pursuing=a.SeesPlayer=false; a.Suspicion=0; a.Path.Clear(); a.Repath=0; a.Stop=0; }
+            if(clearResponse)ResetPoliceResponse();else ClearPoliceRuntime();
+            foreach(var a in Agents) if(a.Police) { a.Body.position=a.Route[0]; if(a.Record!=null)a.Record.position=a.Body.position; a.Pursuing=a.SeesPlayer=false; a.Suspicion=a.FireDelay=0; a.Path.Clear(); a.Repath=0; a.Stop=0; }
         }
         public void Teleport(Vector3 p) { controller.enabled=false; Player.position=City.Nav.SafePoint(p)+Vector3.up*.12f; controller.enabled=true; SnapCamera(); }
         void Talk()
@@ -232,8 +253,9 @@ namespace Funstra
         void StartRun(bool resume)
         {
             State=resume?LoadCurrentRun()??new RunState():new RunState();
+            City.SetServiceGate(District.yardGateClosed,null);
             Cargo.Lose(); RefreshCargoArt(); ResetCargoInteraction();
-            Heat=Elapsed=theftProgress=arrestProgress=0; Stamina=100; Hidden=Stealing=false; Teleport(Jobs.Home); ResetPolice();
+            Heat=Elapsed=theftProgress=arrestProgress=0; Stamina=100; Hidden=Stealing=false; Teleport(Jobs.Home); ResetPolice(false);
             screen=State.NeedsPerk?ScreenMode.Perk:ScreenMode.Play;
             if(DistrictEnabled)
             {
@@ -244,20 +266,22 @@ namespace Funstra
                 }
                 if(resume&&District.hasPosition) { Teleport(District.playerPosition);Heat=District.savedHeat;LastSeen=District.savedLastSeen; }
                 ResetDistrictRuntime();
+                InitializeYard();
+                InitializePoliceResponse();
                 if(!District.introSeen)screen=ScreenMode.Intro;
             }
             Notify(DistrictEnabled?"Neri's clinic is marked cyan. TAB map / J history / L switches tracked story.":State.accepted?"Your job is waiting. Check the amber marker.":"Meet Mara at the mint circle. Press E to talk.");
             if(!resume) Save();
         }
-        void Save() { DistrictCheckpoint();if(!State.Save(savePath)) Notify("Progress could not be saved. This run can still continue."); }
+        void Save() { if(FoundationMode)return; DistrictCheckpoint();if(!State.Save(savePath)) Notify("Progress could not be saved. This run can still continue."); }
         RunState LoadCurrentRun()
         {
             if(File.Exists(savePath))return RunState.Load(savePath);
             if(Smoke)return null;
-            return RunState.Load(Path.Combine(Application.persistentDataPath,"district-progress.json"))??RunState.Load(Path.Combine(Application.persistentDataPath,"progress.json"));
+            return RunState.Load(Path.Combine(Application.persistentDataPath,"lights-progress.json"))??RunState.Load(Path.Combine(Application.persistentDataPath,"district-progress.json"))??RunState.Load(Path.Combine(Application.persistentDataPath,"progress.json"));
         }
         void Notify(string message) { toast=message; toastTime=6; }
-        void SnapCamera() { if(!View)return; View.transform.position=Player.position+cameraOffset; View.transform.LookAt(Player.position+Vector3.up); }
+        void SnapCamera() { if(!View)return; cameraVelocity=Vector3.zero;View.transform.position=Player.position+cameraOffset; View.transform.LookAt(Player.position+Vector3.up); }
         void LateUpdate()
         {
             if(!View)return;
@@ -270,6 +294,7 @@ namespace Funstra
             // Cut away a building only when it actually obscures the player's upper body.
             var ray=new Ray(View.transform.position,(Player.position+Vector3.up-View.transform.position).normalized);
             float length=Vector3.Distance(View.transform.position,Player.position+Vector3.up);
+            while(buildingRevealUntil.Count<City.Buildings.Count)buildingRevealUntil.Add(0);
             for(int i=0;i<City.Buildings.Count;i++)
             {
                 bool cut=screen!=ScreenMode.Title && City.Buildings[i].IntersectRay(ray,out float distance) && distance<length-1;
@@ -279,25 +304,18 @@ namespace Funstra
                     var clinicRay=new Ray(View.transform.position,(focusPoint-View.transform.position).normalized);
                     if(City.Buildings[i].IntersectRay(clinicRay,out float clinicDistance)&&clinicDistance<Vector3.Distance(View.transform.position,focusPoint)-.5f)cut=true;
                 }
-                foreach(var r in City.BuildingRenderers[i]) r.enabled=!cut;
+                // Keep a revealed facade out briefly after the ray clears its edge. Small
+                // controller/camera changes should not flash the whole building on and off.
+                if(cut)buildingRevealUntil[i]=Time.unscaledTime+.18f;
+                bool revealed=cut || (screen!=ScreenMode.Title&&Time.unscaledTime<buildingRevealUntil[i]);
+                foreach(var r in City.BuildingRenderers[i]) r.enabled=!revealed;
             }
+            if(!FoundationMode)City.UpdateClinicCutaway(View,Player.position);
         }
         void SetupAudio()
         {
             audioSource=gameObject.AddComponent<AudioSource>(); audioSource.spatialBlend=0;
-            pickupSound=Tone(660,.19f,.18f,990); alertSound=Tone(280,.42f,.15f,470); cashSound=Tone(523,.55f,.16f,1046); stepSound=Tone(72,.055f,.12f,48);
-            ambience=gameObject.AddComponent<AudioSource>(); ambience.loop=true; ambience.volume=.17f; ambience.clip=Tone(110,8,.08f,110); ambience.Play();
-        }
-        AudioClip Tone(float hz,float seconds,float volume,float end)
-        {
-            const int rate=22050; var samples=new float[(int)(rate*seconds)]; double phase=0;
-            for(int i=0;i<samples.Length;i++)
-            {
-                float t=(float)i/samples.Length; phase+=2*Math.PI*Mathf.Lerp(hz,end,t)/rate;
-                float envelope=Mathf.Min(t*35,1)*Mathf.Min((1-t)*8,1);
-                samples[i]=(float)(Math.Sin(phase)+.23*Math.Sin(phase*.5))*volume*envelope;
-            }
-            var clip=AudioClip.Create("Funstra synth",samples.Length,1,rate,false); clip.SetData(samples,0); return clip;
+            LoadPortAudio();
         }
         void Sound(AudioClip clip) { audioSource.PlayOneShot(clip); }
     }

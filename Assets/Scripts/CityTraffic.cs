@@ -16,6 +16,7 @@ namespace Funstra
     public sealed partial class CityArt
     {
         public readonly List<StreetCar> Cars=new List<StreetCar>();
+        public readonly List<Collider> ResponseTrafficObstacles=new List<Collider>();
         void RegisterTraffic(Transform body,Vector3 p,float angle)
         {
             Vector3[] route=angle==0
@@ -39,6 +40,7 @@ namespace Funstra
         }
         public void AdvanceTraffic(float dt,List<Vector3> people)
         {
+            ResponseTrafficObstacles.RemoveAll(c=>!c);
             for(int i=0;i<Cars.Count;i++)
             {
                 var car=Cars[i];Vector3 p=car.body.position;
@@ -64,6 +66,8 @@ namespace Funstra
                 foreach(var person in people)
                     if(clearance.Contains(new Vector3(person.x,.8f,person.z))||ahead.Contains(new Vector3(person.x,.8f,person.z))) {blocked=true;break;}
                 for(int j=0;j<Cars.Count&&!blocked;j++)if(j!=i&&clearance.Intersects(Nav.Traffic[j]))blocked=true;
+                foreach(var obstacle in ResponseTrafficObstacles)
+                    if(obstacle&&obstacle.enabled&&obstacle.gameObject.activeInHierarchy&&clearance.Intersects(obstacle.bounds))blocked=true;
                 car.yielding=blocked;
                 if(!blocked) {car.body.position=next;car.body.rotation=Quaternion.LookRotation(direction);Nav.Traffic[i]=future;
                     foreach(Transform part in car.body)if(part.name=="Wheel")part.Rotate(Vector3.up,Vector3.Distance(p,next)*160,Space.Self); }

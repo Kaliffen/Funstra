@@ -1,0 +1,3 @@
+PASS
+PASS: Twelve new demo screens captured without black rendering
+PASS: Twelve Demo 03 review screens rendered

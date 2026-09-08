@@ -101,7 +101,7 @@ namespace Funstra
     }
     public static class Jobs
     {
-        public static readonly Vector3 Home = new Vector3(-8, 0, -37);
+        public static readonly Vector3 Home = new Vector3(-11, 0, -48);
         public static readonly Vector3 Mara = new Vector3(-17, 0, -35);
         public static readonly Job[] All = {
             new Job("BORROWED TIME", "Courier bag", "THE ARCADE", new Vector3(32, 0, -12), 120, 1.4f,

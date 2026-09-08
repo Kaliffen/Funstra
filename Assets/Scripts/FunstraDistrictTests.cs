@@ -53,17 +53,31 @@ namespace Funstra
             freezeDistrictAI=true;State=new RunState();District.introSeen=true;screen=ScreenMode.Play;ResetDistrictRuntime();smokeFreezeAgents=true;
             Teleport(new Vector3(-28,0,-5));District.guard.position=new Vector3(-28,0,2);SyncDistrictArt();selectedActor=1;weapon=2;
             int bullets=District.ammo;float hp=District.guard.health;attackCooldown=0;
-            Check(AttackSelected()&&District.ammo==bullets-1&&District.guard.health<hp&&District.identified,"Actual pistol attack consumes ammo, wounds target and records witnessed offense");
+            Check(AttackSelected()&&District.ammo==bullets-1&&District.guard.health==hp,"Pistol trigger spends a round without instant damage");
+            yield return new WaitForSeconds(.3f);
+            Check(District.guard.health<hp&&District.identified,"Traveling pistol round wounds target and records witnessed offense");
             guardBody.LookAt(Player.position);defeatGrace=0;guardCooldown=0;float playerHP=District.health;UpdateGuard(.03f);
-            Check(District.health<playerHP&&District.bleeding,"Hostile guard fires through clear sight and causes bleeding");
+            Check(District.health==playerHP,"Guard trigger also has no instant damage");
+            yield return new WaitForSeconds(.3f);
+            Check(District.health<playerHP&&District.bleeding,"Guard projectile travels through clear sight and causes bleeding");
             Teleport(new Vector3(-18,0,-12));District.guard.position=new Vector3(-18,0,12);SyncDistrictArt();attackCooldown=0;bullets=District.ammo;
-            Check(!AttackSelected()&&District.ammo==bullets,"Building blocks attack without consuming ammo");
+            District.pistolWeapon.cooldown=0;hp=District.guard.health;
+            Check(AttackSelected()&&District.ammo==bullets-1,"Firing toward a building spends a physical round");
+            yield return new WaitForSeconds(.7f);
+            Check(District.guard.health==hp,"Building stops the traveling round before the guard");
             playerHP=District.health;guardCooldown=0;UpdateGuard(.03f);Check(District.health==playerHP,"Guard cannot shoot player through a building");
-            Teleport(new Vector3(-28,0,-4));District.guard.position=new Vector3(-28,0,4);District.neri.position=new Vector3(-28,0,3);District.recruited=true;District.guard.ammo=0;District.hostile=true;
-            SyncDistrictArt();guardBody.LookAt(Player.position);guardCooldown=0;playerHP=District.health;float neriHP=District.neri.health;UpdateGuard(.03f);
+            // Both actors stand south of the physical medicine case; neither is embedded in the prop.
+            Teleport(new Vector3(-28,0,-4));District.guard.position=new Vector3(-28,0,2);District.neri.position=new Vector3(-28,0,1);District.recruited=true;District.guard.ammo=0;District.hostile=true;
+            SyncDistrictArt();guardBody.LookAt(Player.position);
+            Check(City.Nav.Walkable(District.guard.position)&&City.Nav.Walkable(District.neri.position)&&City.Nav.Sight(District.guard.position,District.neri.position),"Melee fixture places guard and companion on clear walkable ground");
+            guardCooldown=0;playerHP=District.health;float neriHP=District.neri.health;UpdateGuard(.03f);
             Check(District.health==playerHP&&District.neri.health==neriHP-8,"Empty-magazine guard strikes nearby visible companion rather than distant player");
             Teleport(new Vector3(-18,0,-12));guardCooldown=0;neriHP=District.neri.health;UpdateGuard(.03f);
             Check(District.health==playerHP&&District.neri.health==neriHP-8,"Visible companion remains a valid melee target while player is out of sight");
+            District.guard.position=new Vector3(-28,0,2.8f);District.neri.position=new Vector3(-28,0,5.2f);SyncDistrictArt();guardBody.LookAt(neriBody.position);
+            Check(City.Nav.Walkable(District.guard.position)&&City.Nav.Walkable(District.neri.position)&&!City.Nav.Sight(District.guard.position,District.neri.position),"Medicine case separates two walkable positions within melee range");
+            guardCooldown=0;neriHP=District.neri.health;UpdateGuard(.03f);
+            Check(District.neri.health==neriHP,"Guard cannot strike nearby companion through physical medicine case");
             District.recruited=false;District.neri.position=DistrictState.Clinic;District.guard.ammo=18;
             Heat=0;District.hostile=false;Check(District.identified,"Clearing immediate heat preserves collector memory");
             District.health=40;District.bleeding=true;Check(District.BandagePlayer()&&!District.bleeding&&District.health==52,"Bandage stops bleeding without fully healing wounds");
@@ -90,7 +104,9 @@ namespace Funstra
             Check(Agents[3].Record.health==wound&&Agents[3].Record.order=="Flee","Resident wounds and reaction survive reload");
             // Live local confrontation: guard AI and character controller run together.
             State=new RunState();District.introSeen=true;screen=ScreenMode.Play;ResetDistrictRuntime();freezeDistrictAI=false;smokeFreezeAgents=true;
-            Teleport(new Vector3(-28,0,-2));District.guard.position=new Vector3(-28,0,8);SyncDistrictArt();guardBody.LookAt(Player.position);
+            // Use the clear side of the alley; the medicine case now correctly stops bullets on its centerline.
+            Teleport(new Vector3(-29.5f,0,-2));District.guard.position=new Vector3(-29.5f,0,8);SyncDistrictArt();guardBody.LookAt(Player.position);
+            Check(City.Nav.Walkable(District.guard.position)&&City.Nav.Sight(Player.position,District.guard.position),"Live confrontation uses the clear route beside physical medicine cover");
             selectedActor=1;weapon=2;defeatGrace=0;deadline=Time.realtimeSinceStartup+8;
             while(District.guard.health>0)
             {

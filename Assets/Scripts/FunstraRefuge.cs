@@ -5,23 +5,27 @@ namespace Funstra
     public sealed partial class FunstraGame
     {
         GameObject refugeSign,refugeLamp;
+        Renderer tallyName;
         bool conversationIvo;
         float petTime;
         static readonly Vector3 TallyPosition=DistrictState.Clinic+new Vector3(1.6f,0,-1.8f);
         void BuildRefugeArt()
         {
-            refugeSign=City.Box("Shared refuge / repaired door",DistrictState.Clinic+new Vector3(-2.6f,1.5f,-3.6f),new Vector3(.18f,2.5f,1.25f),medical);
-            refugeLamp=City.Box("Shared refuge / porch light",DistrictState.Clinic+new Vector3(-2.4f,2.7f,-3.6f),new Vector3(.25f,.3f,.45f),CityArt.Amber,null,false,true);
+            refugeSign=City.Box("Shared refuge / restored nameplate",City.ClinicSouthDoor+new Vector3(-2.6f,2,-.28f),new Vector3(1.6f,.45f,.09f),medical);
+            refugeLamp=City.Box("Shared refuge / porch light",City.ClinicSouthDoor+new Vector3(-2.4f,2.7f,-.3f),new Vector3(.25f,.3f,.45f),CityArt.Amber,null,false,true);
             City.Sign("TALLY",TallyPosition+Vector3.up*1.1f,CityArt.Amber,.09f);
+            tallyName=City.Root.Find("TALLY").GetComponent<Renderer>();
         }
         void SyncRefugeArt()
-        { refugeSign.SetActive(District.refuge);refugeLamp.SetActive(District.CanUseRefuge); }
+        { refugeSign.SetActive(District.refuge);refugeLamp.SetActive(District.CanUseRefuge);if(tallyName)tallyName.enabled=Player&&InsideClinic; }
         void UpdateRefugeInteraction()
         {
             if(petTime>0) { petTime-=Time.deltaTime;figure.Find("Right arm").localRotation=Quaternion.Euler(-65+Mathf.Sin(petTime*10)*12,0,0);catTail.localRotation=Quaternion.Euler(0,65+Mathf.Sin(petTime*12)*15,0); }
-            if(Vector3.Distance(Player.position,TallyPosition)<3&&Input.GetKeyDown(KeyCode.P))PetTally();
-            if(Vector3.Distance(Player.position,DistrictState.Clinic)<4&&Input.GetKeyDown(KeyCode.F))screen=ScreenMode.Refuge;
+            if(Vector3.Distance(Player.position,TallyPosition)<3&&CanReachPerson(TallyPosition)&&Input.GetKeyDown(KeyCode.P))PetTally();
+            if(Vector3.Distance(Player.position,DistrictState.Clinic)<4&&InsideClinic&&Input.GetKeyDown(KeyCode.F))screen=ScreenMode.Refuge;
         }
+        bool InsideClinic => City.ClinicFloorBounds.Contains(new Vector3(Player.position.x,City.ClinicFloorBounds.center.y,Player.position.z));
+        bool CanReachPerson(Vector3 point) => !Physics.Linecast(Player.position+Vector3.up*1.6f,point+Vector3.up*1.6f,1<<8,QueryTriggerInteraction.Ignore);
         void PetTally()
         {
             if(!District.tallyPetted)District.Record("tally","neri","Tally put his head into your hand. Neri: He only does that to people who sit still long enough.");

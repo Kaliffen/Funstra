@@ -1,2 +1,2 @@
 @echo off
-start "Funstra Demo 03" "%~dp0Build\KeepTheLightsOn\Funstra.exe"
+start "Funstra Police Response" "%~dp0Build\PoliceResponse\Funstra.exe"

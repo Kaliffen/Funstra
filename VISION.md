@@ -116,7 +116,7 @@ This is a design target, not present functionality. [DESIGN.md](DESIGN.md) defin
 
 ## Boundaries and feature admission
 
-Build an expandable, authored city from distinct connected neighborhoods. A familiar street changes meaning as access, work and ownership change; new ground must introduce useful route choices and dependencies. Preserve the warm stylized art while making interiors, thresholds, sightlines and street activity serve gameplay. Expand beyond the prototype footprint through proven connections. Defer driving, multiplayer, huge procedural maps, citywide elections, detailed industrial chains and large tactical squads.
+Build an expandable, authored city from distinct connected neighborhoods. A familiar street changes meaning as access, work and ownership change; new ground must introduce useful route choices and dependencies. Preserve the warm stylized palette and characters while replacing repetitive box scenery with credible architecture, authored back alleys, courtyards and working sites. The owner has pulled a usable clinic interior into Demo04 because places must exist physically before their service menus can establish immersion. Interiors, thresholds, sightlines and street activity serve gameplay. Expand beyond the prototype footprint through proven connections. Defer driving, multiplayer, huge procedural maps, citywide elections, detailed industrial chains and large tactical squads.
 
 A feature must answer: What decision does it add? Which existing state does it consume or change? How can the player understand the consequence? What happens on failure? Can it support several situations?
 

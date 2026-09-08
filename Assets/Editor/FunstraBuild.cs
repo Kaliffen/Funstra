@@ -10,10 +10,20 @@ public static class FunstraBuild
 {
     [MenuItem("Funstra/Build playable Windows demo")]
     public static void Build()
+    { BuildPolice(); }
+    [MenuItem("Funstra/Build police response candidate")]
+    public static void BuildPolice()
+    { BuildPlayer("PoliceResponse", "0.4.1"); }
+    static void BuildPlayer(string folder, string version)
     {
         VerifyRules();
         DistrictRules.Verify();
         RefugeRules.Verify();
+        SpatialRules.Verify();
+        ClinicRules.Verify();
+        CombatSquadRules.Verify();
+        CombatRules.Verify();
+        PoliceRules.Verify();
         // Runtime-created geometry still needs explicit build-time shader references.
         Directory.CreateDirectory("Assets/Resources/Rendering");
         EnsureMaterial("Standard", "Surface", false);
@@ -24,7 +34,7 @@ public static class FunstraBuild
         Directory.CreateDirectory("Assets/Scenes");
         EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(),"Assets/Scenes/OldPort.unity");
         PlayerSettings.companyName="Funstra";PlayerSettings.productName="Funstra";
-        PlayerSettings.bundleVersion="0.3.0";
+        PlayerSettings.bundleVersion=version;
         PlayerSettings.defaultScreenWidth=1600;PlayerSettings.defaultScreenHeight=900;
         PlayerSettings.fullScreenMode=FullScreenMode.Windowed;PlayerSettings.resizableWindow=true;
         PlayerSettings.runInBackground=true;PlayerSettings.colorSpace=ColorSpace.Linear;
@@ -32,9 +42,9 @@ public static class FunstraBuild
         PlayerSettings.SetApiCompatibilityLevel(UnityEditor.Build.NamedBuildTarget.Standalone,ApiCompatibilityLevel.NET_Standard);
         PlayerSettings.SetUseDefaultGraphicsAPIs(BuildTarget.StandaloneWindows64,false);
         PlayerSettings.SetGraphicsAPIs(BuildTarget.StandaloneWindows64,new[]{UnityEngine.Rendering.GraphicsDeviceType.Direct3D11});
-        AssetDatabase.SaveAssets();Directory.CreateDirectory("Build/KeepTheLightsOn");
+        AssetDatabase.SaveAssets();Directory.CreateDirectory("Build/"+folder);
         var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions {
-            scenes=new[]{"Assets/Scenes/OldPort.unity"},locationPathName="Build/KeepTheLightsOn/Funstra.exe",
+            scenes=new[]{"Assets/Scenes/OldPort.unity"},locationPathName="Build/"+folder+"/Funstra.exe",
             target=BuildTarget.StandaloneWindows64,options=BuildOptions.None
         });
         Directory.CreateDirectory("Evidence");

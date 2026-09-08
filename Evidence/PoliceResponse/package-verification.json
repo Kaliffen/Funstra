@@ -1,0 +1,11 @@
+{
+  "version": "0.4.1",
+  "package": "~\\repos\\Funstra\\Releases\\Funstra-police-response-0.4.1-windows.zip",
+  "bytes": 58467470,
+  "sha256": "6D51E3803E9FBC7C7E76134A94D02922B3390B4BA1B2DB7FCCBE18F40B3122FB",
+  "assemblySha256": "3CBCA4699C37181628C9167712F394FBAB2F125E1E1845AE069A51C2EC0A8BBC",
+  "portableRun": "Evidence/PoliceResponse/portable-check",
+  "portableChecks": 35,
+  "method": "Extracted archive, launched its executable muted, fresh runtime PASS and matching DLL identity",
+  "verifiedAt": "2026-09-08T01:34:48.1223590Z"
+}

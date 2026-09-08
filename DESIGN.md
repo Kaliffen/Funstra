@@ -36,6 +36,17 @@ This is the approved direction; playable delivery remains for the product owner 
 
 ## Six cumulative releases
 
+Owner approved the integrated Demo04 candidate on 8 September 2026 and requested an escalating response to attacks on residents. Civilians remain attackable. Immediate enforcement follows reported sightings of the gunman; breaking sight creates a search, not hidden-position tracking. The next playable increment is [#39](https://github.com/Kaliffen/Funstra/issues/39), **Police response**, before the remaining Demo05 acquisition/supply work.
+
+The escalation is cumulative:
+
+- **Next increment / Demo05 foundation:** all living patrols share reported contact, return finite projectile pistol fire after identified violence, and receive two visible truck deliveries of three officers (nine police maximum). Search, casualties, dispatch progress, pause and recovery must work before scaling up.
+- **Demo06:** introduce rifle-equipped police response squads alongside the rifle and group coordination work. Trucks carry actual finite personnel; covering fire and flanking use communicated sightings. This extends the enemy response while the controllable crew remains three people.
+- **Demo08:** sustained extreme violence can bring Compact army trucks and **at least 30 soldiers simultaneously at maximum pressure** (initial bounded target: 32), with rifles and physical grenades. Coordinating squads cover, flank and force movement; the player should be overwhelmed by sustained exposure. Grenades have visible travel, fuse warnings, cover/obstruction and shared damage rules. Deployment, firing, navigation and frame time must be verified at full strength. No infinite personnel spawning or tracking a concealed player through walls.
+- **Demo09:** integrate the full escalation with witnesses, investigations, relationships and post-defeat recovery. Escaping immediate pursuit does not erase provable violence.
+
+These are approved design targets, not claims of implemented army, rifles or grenades. Demo04 owner approval is separate from its outstanding panel/publication work.
+
 | Release | Player outcome | Ticket |
 |---|---|---|
 | 04 — Streets Worth Fighting For | Movement, aiming and a dangerous street encounter feel good before the game grows further. | [#27](https://github.com/Kaliffen/Funstra/issues/27) |
@@ -51,15 +62,19 @@ Dependency order: physical feel and combat → illegal weapons and supply → cr
 
 **Outcome:** Movement, aiming and a dangerous street encounter feel good before the game grows further.
 
-Recompose the clinic/market/quay loop with an adjoining yard, public and gated service approaches, readable cover and reliable camera/selection. Introduce simulated projectile combat for player and enemies: pistol and shotgun, finite magazines, interruptible reloads, distinct handling and impacts. A small enemy group can hold an approach, reposition under communicated knowledge and retreat when disadvantaged. Preserve existing clinic/cargo outcomes. #21 profiles the busy route; #23 tests obstruction. Interiors and #22 move to Demo07.
+Recompose the clinic/market/quay loop with an adjoining yard, public and gated service approaches, readable cover and reliable camera/selection. Introduce simulated projectile combat for player and enemies: pistol and shotgun, finite magazines, interruptible reloads, distinct handling and impacts. A small enemy group can hold an approach, reposition under communicated knowledge and retreat when disadvantaged. Preserve existing clinic/cargo outcomes. #21 profiles the busy route; #23 tests obstruction. The owner inserted #37, **Old Port, a Place**, before this demo can go to review: a radical authored environment redesign, expanded streets/back alleys/courtyards, adapted architectural meshes from the supplied gta-pt project, a church landmark and a usable clinic interior. The clinic must be inside a believable building, with entry, treatment space and a street relationship. Broader property interiors and #22 remain Demo07.
 
 **Acceptance:** Play the same encounter with pistol and shotgun: moving targets, close and longer sightlines, limited ammunition, gate changes and retreat. Shots travel over time and can miss or hit intervening geometry; damage never occurs merely because the trigger was pulled. Shotgun pellets remain separate projectiles. Enemies share observed information with a delay/range rule, lose track honestly, and do not all rush one position. Player and AI respect the same cover and reload/ammunition rules. Traverse two meaningfully different approaches. Record owner judgment of movement/aiming/feedback separately from test passes.
 
 **Validation:** Test swept projectile collision at low/high frame rates, thin/moving obstacles, near-muzzle obstruction, pause, pellet hits, single damage application, ammo/reload interruption and in-flight save/load policy. Inspect motion and audio, not just stills. Run group loss-of-contact, ally incapacity, blocked flank and retreat scenarios. Compare current/new traversal and frame-time profiles. Expand area only after the core street/fight feels convincing.
 
-**Limits:** Two firearms and one bounded small-group encounter; no interiors, arsenal catalogue, full faction AI or citywide rebuild. The 1.5–2x walkable-area ambition is secondary to feel and useful routes.
+**Limits:** Two firearms, one bounded small-group encounter and one functional clinic interior. The inserted environment slice may radically replace the repetitive prototype layout and expand its footprint; no arsenal catalogue, full faction AI or infinite city. Scale serves distinct streets, forecourts, housing, a church, a market and a working quay. Supplied low-rise meshes retain warm stylization and get shared rendering/collision; importing more assets alone is insufficient.
 
 **Stop/replan:** If the environment remains clunky or the guns feel interchangeable, refine the proof before increasing map/weapon count. If navigation expansion demands wholesale replacement, reduce to one loop and reversible gate.
+
+The owner also requested restrained Unity lighting/material improvements within #37: warmer dusk light against cooler shade, readable local lamps, differentiated pavement and masonry, and physical signage. Favor shared economical materials and visible improvements in the exported player; avoid a rendering overhaul or effects that obscure combat.
+
+Owner acceptance also requires four selectable, resettable prepared test levels after implementation: movement/obstacles, weapon handling, enemy coordination and a combined encounter. These use production systems with isolated state; normal Old Port play remains part of acceptance. Implementation: #33–36, with the owner-directed environment blocker #37. **No demo review or publication until the integrated environment slice is complete and tested.**
 
 Execution: [#27](https://github.com/Kaliffen/Funstra/issues/27).
 
@@ -89,7 +104,7 @@ Player plus two persistent recruits, including Neri and one dockworker/mechanic.
 
 **Validation:** Control switching/order cancellation, companion and enemy pathing, resource costs, carrying an incapacitated actor, group retreat under obstruction, loss of leader/contact and failure recovery. Test ammo-cost and handling differences across four gun families in the exported player.
 
-**Limits:** Three controllable people, one authored dangerous site and boss, four gun families total at this stage. No large squads, extensive skill tree or forced boss kill.
+**Limits:** Three controllable people, one authored dangerous site and boss, four gun families total at this stage, plus bounded truck-borne rifle response squads. The 30+ army response belongs to Demo08; no extensive skill tree or forced boss kill.
 
 **Stop/replan:** If character switching/rescue is unstable, reduce encounter complexity until player plus Neri works. Prove one integrated operation before deepening every subsystem.
 

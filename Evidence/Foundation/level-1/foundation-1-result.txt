@@ -1,0 +1,29 @@
+PASS
+METHOD: exported player; explicit fixture setup; production controller, weapons, projectiles and squad; scripted frame sequence, not exploratory human input.
+PASS: Isolated prepared test level is active
+PASS: Fresh test equipment is available without spending campaign money
+PASS: Exported player loads distinct recorded firearm clips and four footstep variants
+PASS: No placeholder ambience drone loops in the exported player
+SETUP: held-sprint autoMove fixture starts near exhaustion on the open center lane; real controller displacement is measured each 30 Hz step.
+PASS: Teleport clears camera smoothing momentum and snaps to the new position
+PASS: Actual controller crosses from running to exhausted walking
+PASS: Held sprint walks through the full stamina recovery period without early restart
+PASS: Actual controller resumes sustained running only after the stamina bar fills
+PASS: Exhaustion recovery produces exactly one walk transition and one sprint restart
+PASS: Recovery fixture advances through the clear lane without sideways controller jitter
+MEASURED: sprint recovery speed transitions=2, longest walk=197 frames, longest run=15 frames; full displacement trace F01-sprint-recovery.csv.
+PASS: Controller route exists to (0.00, 0.00, -9.00)
+PASS: Production character controller arrived at (0.00, 0.00, -9.00)
+SETUP: placed beside corner wall to press into its collider.
+PASS: Controller cannot cross the solid corner wall
+PASS: Closed gate stops actual controller movement
+PASS: Service gate opens
+PASS: Controller route exists to (6.50, 0.00, 2.00)
+PASS: Production character controller arrived at (6.50, 0.00, 2.00)
+PASS: Gate refuses to close on player occupying opening
+PASS: Controller route exists to (6.50, 0.00, 9.00)
+PASS: Production character controller arrived at (6.50, 0.00, 9.00)
+PASS: Gate closes after opening clears
+METHOD: close gate front/back stills and camera-motion frames inspect both jamb/wall joins; production gate geometry, staged camera angles.
+PASS: Solid bin prevents entering or walking through it
+PASS: Rendered captures and motion frames written; visual quality requires inspection
