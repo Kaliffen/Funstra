@@ -47,12 +47,12 @@
       "who": "Four reviewer agents",
       "title": "The demo goes to the panel",
       "kicker": "Triggered once the demo is done · all four run",
-      "body": "Four reviewer agents review the finished demo through guided runs of its actual executable, screenshots and logs, with the manual and source available for inspection. Each brings a distinct lens; disagreement is allowed, never manufactured.",
+      "body": "Four reviewer agents assess the current game and the committed demo through guided runs of its actual executable, screenshots and logs, with the manual and source available for inspection. Each reports Game now, Slice delivery and Evidence coverage separately. Fixed category weights preserve distinct priorities; agreement and disagreement are both allowed, never manufactured.",
       "points": [
-        "<strong>Each files a full review</strong> against its own beat, with a score, preserved unedited. Reviews distinguish observed build behaviour from source inspection and inference; guided runs are not exploratory play.",
+        "<strong>Each files a numerical ledger.</strong> Game now rates current quality and completeness; Slice delivery measures weighted release commitments. Missing outcomes lose explicit points, with caps for unavailable core experiences and unrecoverable progress loss. Evidence coverage identifies what was actually resolved; guided runs are not exploratory play.",
         "<strong>One dossier per demo</strong> brings together the four reviews, their conference and the director’s disposition. Follow-up fixes and replays update that same case file; earlier demos keep their original dossiers.",
-        "<strong>They keep memory between demos</strong>, so an open concern can be re-examined against the next build.",
-        "<strong>They judge independently.</strong> Systems rigour, emotional payoff, technical state and a nice first hour can lead to different verdicts or the same score for different reasons."
+        "<strong>Progress stays auditable.</strong> Reviews show comparable category changes, major remaining shortcomings and evidence limits. Historical reviews and scores remain unedited; the new rubric starts a separately labelled baseline.",
+        "<strong>They judge independently across the full 0–10 scale.</strong> No default 7, target 8 or persona floor. A passing small slice does not establish a complete game, and calling a missing experience future work does not restore its points."
       ]
     },
     {
@@ -76,32 +76,32 @@
       "who": "Marcus Webb",
       "archetype": "The Consumer Advocate",
       "lens": "Technical state, bugs, value",
-      "range": "4–8, capped by technical state",
+      "range": "0–10 · weighted game + slice",
       "accent": "marcus"
     },
     {
       "who": "Dag Møller",
       "archetype": "The Systems Archivist",
       "lens": "Depth, systems, simulation honesty",
-      "range": "6–8",
+      "range": "0–10 · weighted game + slice",
       "accent": "dag"
     },
     {
       "who": "Priya Raman",
       "archetype": "The Feelings-First Critic",
       "lens": "Theme, character, emotional payoff",
-      "range": "3–10",
+      "range": "0–10 · weighted game + slice",
       "accent": "priya"
     },
     {
       "who": "Nell Okafor",
       "archetype": "The Cosy Hours Player",
       "lens": "Comfort, routine, a nice evening",
-      "range": "6–10",
+      "range": "0–10 · weighted game + slice",
       "accent": "nell"
     }
   ],
-  "reviewersNote": "Each profile is a written file in the repo — background, what they care about, blind spots, voice and scoring behaviour. They are versioned alongside the game, so a reviewer's standards can be audited against what they said last time.",
+  "reviewersNote": "Evaluation protocol v2 and the fixed weights live in reviewer-agents/README.md. The five game categories are systems, people, control and comfort, craft and reliability, and sustained play. Each profile weights them differently. Reviews publish credit, deductions, caps and uncertainty instead of treating a clean harness run as an 8. Original reviews retain their original scoring context.",
   "artefacts": [
     {
       "tag": "Brief",
@@ -115,7 +115,7 @@
     },
     {
       "tag": "Reviews",
-      "desc": "Four independent playtest reviews with scores, committed unedited to <span class=\"mono\">reviewer-agents/</span>.",
+      "desc": "Four independent guided reviews with separate game and slice ratings, numerical ledgers and evidence coverage, preserved unedited in <span class=\"mono\">reviewer-agents/</span>.",
       "who": "phase 02"
     },
     {

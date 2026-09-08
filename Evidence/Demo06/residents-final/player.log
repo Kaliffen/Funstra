@@ -1,0 +1,67 @@
+Mono path[0] = '~/repos/Funstra/Build/NobodyGetsHomeAlone/Funstra_Data/Managed'
+Mono config path = '~/repos/Funstra/Build/NobodyGetsHomeAlone/MonoBleedingEdge/etc'
+CodeReloadManager initialized
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Initialize engine version: 6000.4.0f1 (8cf496087c8f)
+[Subsystems] Discovering subsystems at path ~/repos/Funstra/Build/NobodyGetsHomeAlone/Funstra_Data/UnitySubsystems
+[D3D12 Device Filter] Vendor Name: NVIDIA
+[D3D12 Device Filter] Device Name: NVIDIA GeForce RTX 4090
+[D3D12 Device Filter] Driver Version: 32.0.15.9597
+[D3D12 Device Filter] Feature Level: 12.2
+[D3D12 Device Filter] Graphics Memory: 24138 MB
+[D3D12 Device Filter] Processor Count: 32
+[D3D12 Device Filter] Device Type: Discrete
+GfxDevice: creating device client; kGfxThreadingModeClientWorkerJobs
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4090 (ID=0x2684)
+    Vendor:   NVIDIA
+    VRAM:     24138 MB
+    Driver:   32.0.15.9597
+Begin MonoManager ReloadAssembly
+- Finished resetting the current domain, in  0.001 seconds
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+<RI> Initializing input.
+<RI> Input initialized.
+UnloadTime: 1.181400 ms
+CHECK: Isolated resident campaign and forced mute
+CHECK: MILA has a persistent persona and no invented weapon
+CHECK: ELIAS has a persistent persona and no invented weapon
+CHECK: RUTH has a persistent persona and no invented weapon
+CHECK: JONAS has a persistent persona and no invented weapon
+CHECK: ADA has a persistent persona and no invented weapon
+CHECK: BRUNO has a persistent persona and no invented weapon
+CHECK: LENA has a persistent persona and no invented weapon
+CHECK: OMAR has a persistent persona and no invented weapon
+CHECK: Eight existing residents gain named conduct; no added crowd
+CHECK: Resident leaves routine pause and moves in normal Update
+CHECK: Helper can actually see the prepared attacker and neighbor
+CHECK: Self-preserving neighbor sees the same incident
+CHECK: Hearing a shot causes shelter seeking without identity
+CHECK: Actual shared combat hit leaves personally witnessed casualty memory
+CHECK: Self-preserving observer chooses safety over returning to help
+CHECK: Careful helper intends to return for the same neighbor
+CHECK: Threatened helper physically leaves the incident using shared navigation
+CHECK: Helper does not spend a dressing during perceived danger
+CHECK: Helper returns after quiet and spends exactly one personal dressing
+CHECK: Aid changes the actual wounded neighbor's health and bleeding
+CHECK: Self-preserving observer did not perform the helper's action
+CHECK: Repeated need cannot conjure a second personal dressing
+CHECK: Memory and consumed dressing survive actual save/reload
+CHECK: Remembered player aid survives save/reload
+CHECK: Remembered help changes later approach behavior
+CHECK: Distant unobserved violence grants no player identity
+CHECK: Resident state remains valid alongside medicine, weapons and police
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+CodeReloadManager destroyed

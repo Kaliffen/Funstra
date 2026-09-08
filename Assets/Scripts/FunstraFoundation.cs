@@ -38,7 +38,7 @@ namespace Funstra
             State=new RunState();District.introSeen=true;District.ammo=72;District.bandages=8;
             foreach(var o in City.Targets)o.SetActive(false);
             foreach(var o in cargoProps)o.SetActive(false);
-            District.shotgunAmmo=30;InitializeCombat();
+            District.shotgunAmmo=30;District.smgAmmo=54;InitializeCombat();
             Teleport(City.TestSpawn);cameraSize=16;SelectCombatWeapon(2);Stamina=100;
             screen=ScreenMode.Play;InitializeYard();
         }
@@ -72,7 +72,7 @@ namespace Funstra
             Text("F1 checklist   F6 reset   SPACE pause   ESC menu",44,78,530,24,14,quiet);
             Panel(24,120,280,94);
             Text("HEALTH "+Mathf.CeilToInt(District.health)+" / 100",42,136,244,28,20,District.bleeding?CityArt.Red:CityArt.Mint,FontStyle.Bold);
-            Text("1 fists   2 pistol   3 shotgun",42,172,244,28,14,quiet);
+            Text("1 fists  2 pistol  3 shotgun  4 SMG",42,172,244,28,14,quiet);
             if(foundationHelp)
             {
                 Panel(24,230,310,220);Text(FoundationBriefs[foundationLevel],44,250,270,184,18,paper);
@@ -98,7 +98,7 @@ namespace Funstra
             float top=FoundationMode?110:24;
             Panel(605,top,410,68);
             Text(CombatWeaponName+" / "+CombatAmmoText,625,top+14,370,26,18,CityArt.Amber,FontStyle.Bold,TextAnchor.MiddleCenter);
-            Text(CombatReloadRemaining>0?"RELOADING / "+CombatReloadRemaining.ToString("0.0")+"s":weapon==1?"Aim / LMB strike":"LMB fire / R reload / 1 2 3 switch",625,top+42,370,22,14,quiet,FontStyle.Normal,TextAnchor.MiddleCenter);
+            Text(CombatReloadRemaining>0?"RELOADING / "+CombatReloadRemaining.ToString("0.0")+"s":weapon==1?"Aim / LMB strike":CrewEnabled?"LMB fire / R reload / 1–5 switch":"LMB fire / R reload / 1 2 3 4 switch",625,top+42,370,22,14,quiet,FontStyle.Normal,TextAnchor.MiddleCenter);
             if(Active&&weapon!=1&&!showMap)
             {
                 float x=Input.mousePosition.x/Screen.width*W,y=(1-Input.mousePosition.y/Screen.height)*H;

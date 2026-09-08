@@ -7,7 +7,7 @@ namespace Funstra
     public sealed partial class FunstraGame
     {
         bool bandageTest, bandageVisual, trackDistrict=true;
-        public bool DistrictEnabled => !Smoke||bandageTest||bandageVisual||policeTest;
+        public bool DistrictEnabled => !Smoke||bandageTest||bandageVisual||policeTest||armsTest||residentsTest||crewTest;
         public DistrictState District => State.district;
         Transform neriBody, guardBody, collectorBody, catTail;
         GameObject medicineProp, medicineRing, pistol;
@@ -60,6 +60,7 @@ namespace Funstra
                 string id="citizen-"+i;
                 var record=District.citizens.Find(c=>c.id==id);
                 if(record==null) { record=new DistrictActor(id,Agents[i].Police?"OFFICER "+(i+1):"RESIDENT "+(i-2),Agents[i].Position);District.citizens.Add(record); }
+                if(!Agents[i].Police&&ResidentsEnabled)ResidentCatalog.Attach(record,i-3);
                 record.position=City.Nav.SafePoint(record.position);Agents[i].Record=record;Agents[i].Body.position=record.position;PoseActor(Agents[i].Body,record);
             }
         }
@@ -72,7 +73,7 @@ namespace Funstra
             medicineProp.SetActive(available);medicineRing.SetActive(available);
             medicineProp.transform.position=District.ShipmentPosition+Vector3.up*.6f;medicineRing.transform.position=District.ShipmentPosition;
             pistol.SetActive(weapon!=1);
-            pistol.transform.localScale=weapon==3?new Vector3(.14f,.17f,.85f):new Vector3(.12f,.15f,.45f);SyncRefugeArt();City.RefreshProps();
+            pistol.transform.localScale=CombatWeaponScale;SyncRefugeArt();City.RefreshProps();
         }
         void PoseActor(Transform body,DistrictActor actor)
         { body.localScale=actor.health<=0?new Vector3(1.7f,.22f,1):Vector3.one; }
@@ -93,15 +94,16 @@ namespace Funstra
             if(District.bleeding)District.health=Mathf.Max(0,District.health-dt*.65f);
             if(District.neri.bleeding)District.neri.health=Mathf.Max(0,District.neri.health-dt*.35f);
             UpdateCombatInput();
-            if(Input.GetKeyDown(KeyCode.B)) { if(District.BandagePlayer()) { Save();Notify("Bandaged. Bleeding stopped. Clinic rest heals serious wounds."); } else Notify("No dressing needed, or no bandages. Home stocks bandages for $12."); }
-            if(Input.GetKeyDown(KeyCode.G))OrderNeri("Follow");
-            if(Input.GetKeyDown(KeyCode.H))OrderNeri("Hold");
+            if(Input.GetKeyDown(KeyCode.B)) { if(CrewEnabled){BeginCrewAid(ControlledCrewId,ControlledCrewId);}else if(District.BandagePlayer()) { Save();Notify("Bandaged. Bleeding stopped. Clinic rest heals serious wounds."); } else Notify("No dressing needed, or no bandages. Home stocks bandages for $12."); }
+            if(!CrewEnabled&&Input.GetKeyDown(KeyCode.G))OrderNeri("Follow");
+            if(!CrewEnabled&&Input.GetKeyDown(KeyCode.H))OrderNeri("Hold");
             if(Input.GetKeyDown(KeyCode.R)&&(Input.GetKey(KeyCode.LeftShift)||Input.GetKey(KeyCode.RightShift)))OrderNeri("Retreat");
-            if(Input.GetKeyDown(KeyCode.T))OrderNeri("Aid");
+            if(!CrewEnabled&&Input.GetKeyDown(KeyCode.T))OrderNeri("Aid");
             if(Input.GetKeyDown(KeyCode.L))trackDistrict=!trackDistrict;
             UpdateRefugeInteraction();
             SelectDistrictTarget();
-            if(!freezeDistrictAI) { UpdateGuard(dt);UpdateNeri(dt); }
+            if(!freezeDistrictAI) { UpdateGuard(dt);if(!CrewEnabled)UpdateNeri(dt); }
+            StepCrew(dt);
             StepCombat(dt);
             if(District.health<=0)DistrictDefeat();
             SyncDistrictArt();
@@ -186,7 +188,7 @@ namespace Funstra
             }
         }
         void OrderNeri(string order)
-        { if(!District.recruited) { Notify("Earn Neri's trust at the clinic to form a partnership.");return; } District.neri.order=order;neriRepath=0;Save();Notify("Neri: "+order+"."); }
+        { if(!District.recruited) { Notify("Earn Neri's trust at the clinic to form a partnership.");return; } if(CrewEnabled){if(order=="Aid")BeginCrewAid("neri",ControlledCrewId);else OrderCrew("neri",order);return;} District.neri.order=order;neriRepath=0;Save();Notify("Neri: "+order+"."); }
         bool UpdateMedicalInteraction(float dt,bool pressed,bool held)
         {
             if(!DistrictEnabled)return false;
@@ -195,10 +197,13 @@ namespace Funstra
             foreach(var actor in casualties)
             {
                 if(actor.health>0||Vector3.Distance(Player.position,actor.position)>2.6f||!CanReachPerson(actor.position))continue;
+                if(CrewEnabled&&IsCrewId(actor.id))
+                {prompt="E / STABILIZE "+actor.name+" / 3s / 1 DRESSING";if(pressed)BeginCrewAid("player",actor.id);return true;}
                 prompt="E / STABILIZE "+actor.name+"  /  1 BANDAGE";
                 if(pressed&&District.bandages>0)
                 {
                     if(actor==District.neri)District.AidNeri();else { District.bandages--;actor.health=30;actor.bleeding=false;District.Record("aid",actor.id,"You helped "+actor.name+" back to their feet."); }
+                    ResidentRememberAid(actor,"player");
                     Save();Notify(actor.name+" stabilized.");
                     foreach(var agent in Agents)if(agent.Record==actor)PoseActor(agent.Body,actor);
                 }
@@ -230,6 +235,8 @@ namespace Funstra
         }
         void DistrictDefeat()
         {
+            if(CrewDefeatHandled())return;
+            ClearCrewRecoveryLinks();
             bool rescued=District.recruited&&District.neri.health>0&&Vector3.Distance(District.neri.position,Player.position)<12;
             District.Defeat(State,rescued,Cargo.Value);Cargo.Lose();RefreshCargoArt();State.carrying=false;Heat=arrestProgress=0;ResetPolice();
             Teleport(Jobs.Home);District.neri.position=District.recruited&&District.neri.health>0?Jobs.Home+Vector3.left*2:District.neri.position;

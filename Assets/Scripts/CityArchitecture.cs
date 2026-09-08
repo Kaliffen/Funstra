@@ -80,7 +80,7 @@ namespace Funstra
             float textSize = Mathf.Min(size * .58f, .14f);
             float boardWidth = Mathf.Max(2, text.Length * textSize * 2.05f);
             Box("Painted shop sign / " + text, local + Vector3.forward * .065f,
-                new Vector3(boardWidth, .68f, .1f), Hex("30494C"), parent);
+                new Vector3(boardWidth, .68f, .1f), Hex("253635"), parent);
             Sign(text, local, color, textSize, parent);
             BuildingRenderers[architectureBuildingIndices[nearest]] = parent.GetComponentsInChildren<Renderer>();
         }
@@ -91,8 +91,8 @@ namespace Funstra
             if (architectureMeshes.TryGetValue(key, out var found) && found) return found;
             var vertices = new List<Vector3>(); var normals = new List<Vector3>();
             var colors = new List<Color32>(); var indices = new List<int>();
-            var masonry = Hex("AC9B7E"); var trim = Hex("CFBE9D");
-            var roof = Hex("4E686A"); var metal = Hex("677E7D"); var glass = Hex("233F49");
+            var masonry = Hex("81857B"); var trim = Hex("AEB0A0");
+            var roof = Hex("293638"); var metal = Hex("4A5A56"); var glass = Hex("17282E");glass.a=0;
             void Quad(Vector3 a, Vector3 b, Vector3 c, Vector3 d, Color color)
             {
                 int offset = vertices.Count; var normal = Vector3.Cross(b-a,c-a).normalized;
@@ -132,6 +132,14 @@ namespace Funstra
             for(float y=.4f;y<doorHeight;y+=.48f)
                 Block(new Vector3(0,y,-z+.16f),new Vector3(doorWidth,.035f,.03f),roof);
             Block(new Vector3(0,doorHeight+.10f,-z+.05f),new Vector3(doorWidth+.35f,.2f,.16f),trim);
+            // Repairs remain within the existing facade silhouette and have no added collision.
+            Block(new Vector3(doorWidth*.19f,.62f,-z+.135f),new Vector3(doorWidth*.34f,.67f,.035f),Hex("615347"));
+            for(int side=-1;side<=1;side+=2)
+            {
+                Block(new Vector3(side*(x-.46f),eave*.48f,-z-.025f),new Vector3(.09f,eave*.93f,.09f),Hex("354542"));
+                for(float y=.65f;y<eave-.3f;y+=1.4f)
+                    Block(new Vector3(side*(x-.46f),y,-z-.08f),new Vector3(.22f,.08f,.035f),Hex("73604B"));
+            }
             // Roof slopes and gable ends give industrial buildings a useful distinct silhouette.
             Quad(new Vector3(-x,eave,-z),new Vector3(-x,eave,z),new Vector3(0,height,z),new Vector3(0,height,-z),roof);
             Quad(new Vector3(0,height,-z),new Vector3(0,height,z),new Vector3(x,eave,z),new Vector3(x,eave,-z),roof);
@@ -176,9 +184,16 @@ namespace Funstra
                     vertices[i] = new Vector3(reader.ReadSingle(), reader.ReadSingle(), reader.ReadSingle());
                     normals[i] = new Vector3(reader.ReadSingle(), reader.ReadSingle(), reader.ReadSingle());
                     var c = new Color(reader.ReadSingle(), reader.ReadSingle(), reader.ReadSingle(), reader.ReadSingle());
-                    // Retain authored material separation; warm/lighten masonry for the existing dusk palette.
-                    bool glass = Mathf.Max(c.r, Mathf.Max(c.g, c.b)) < .18f;
-                    if (!glass) c = Color.Lerp(c, new Color(.70f, .61f, .48f, 1), .16f);
+                    // Preserve the source's distinct masonry, stone, wood, metal and glazing slots.
+                    // Alpha is an opaque material tag: only blue-black glass can emit room light.
+                    float brightest=Mathf.Max(c.r,Mathf.Max(c.g,c.b));
+                    bool glass=brightest<.18f&&c.b-c.r>.035f;
+                    if(glass){c=Hex("142328");c.a=0;}
+                    else if(brightest<.2f)c=Hex("252D2F");
+                    else if(c.g>c.r*1.25f)c=Hex("465E55");
+                    else if(c.r>c.g*1.45f)c=brightest>.5f?Hex("665442"):Hex("56534C");
+                    else if(brightest>.68f)c=Hex("B8BDB0");
+                    else c=Hex("465156");
                     colors[i] = c;
                     triangles[i] = i;
                     if (i == 0) bounds = new Bounds(vertices[i], Vector3.zero); else bounds.Encapsulate(vertices[i]);

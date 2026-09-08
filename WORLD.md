@@ -77,7 +77,7 @@ Beyond the quay, the pump approach carries workers and repair supplies along the
 
 The coming local dispute concerns who bears the cost of keeping this access open, and who may exclude others once it is repaired. A player may support a shared service, extract tolls, exploit diverted supplies or make a modest living around the dispute. No chosen-person role is needed.
 
-Preserve warmth: workers share meals, tenants improvise repairs, Tally finds occupied rooms. Mark flood heights on walls and old civic ownership on reused machinery. Put history in usable places and ordinary work before adding another explanatory speech.
+Warmth survives in pockets: workers share meals, tenants improvise repairs, Tally finds occupied rooms. Streets carry soot, salt bloom, rust runoff and patched civic lettering; refuge light makes inhabited thresholds visible against the darker port. Mark flood heights on walls and old civic ownership on reused machinery. Put history in usable places and ordinary work before adding another explanatory speech. A resident's choice to hide, watch, report or risk a scarce dressing should tell us more than a personality label. They remember what they actually encountered; a stranger's unseen act does not become common knowledge.
 
 These are setting connections for the next arc, not actors or districts already implemented in Demo 03. Spatial dimensions, release order and system gates belong in DESIGN.md.
 

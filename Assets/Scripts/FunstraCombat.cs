@@ -27,8 +27,9 @@ namespace Funstra
         public int CombatHitCount {get;private set;}
         public int CombatCoverHitCount {get;private set;}
         public string CombatWeaponName=>weapon==1?"FISTS":WeaponSpec.For(weapon).name;
-        public WeaponState CurrentWeapon=>weapon==3?District.shotgunWeapon:District.pistolWeapon;
-        public int CombatTotalAmmo=>weapon==3?District.shotgunAmmo:District.ammo;
+        public WeaponState CurrentWeapon=>District.GunState(weapon);
+        public int CombatTotalAmmo=>District.ArmsAmmo(weapon);
+        public Vector3 CombatWeaponScale=>weapon==5?new Vector3(.13f,.17f,1.1f):weapon==4?new Vector3(.2f,.2f,.65f):weapon==3?new Vector3(.14f,.17f,.85f):new Vector3(.12f,.15f,.45f);
         public string CombatAmmoText=>weapon==1?"MELEE":CurrentWeapon.magazine+" / "+(CombatTotalAmmo-CurrentWeapon.magazine)+" reserve";
         public float CombatReloadRemaining=>weapon==1?0:CurrentWeapon.reloadRemaining;
         public int ActiveProjectileCount=>District.projectiles.Count;
@@ -78,9 +79,10 @@ namespace Funstra
         }
         public void SelectCombatWeapon(int kind)
         {
-            if(kind<1||kind>3||kind==weapon)return;
-            District.pistolWeapon.CancelReload();District.shotgunWeapon.CancelReload();weapon=District.equippedWeapon=kind;recoil=0;
-            if(pistol){pistol.SetActive(weapon!=1);pistol.transform.localScale=weapon==3?new Vector3(.14f,.17f,.85f):new Vector3(.12f,.15f,.45f);}
+            if(kind<1||kind>5||kind==weapon)return;
+            if(!FoundationMode&&District.arms!=null&&!District.arms.Owns(kind)){Notify("You do not own that weapon. Visit the dealer or recover one.");return;}
+            District.pistolWeapon.CancelReload();District.shotgunWeapon.CancelReload();District.smgWeapon.CancelReload();District.rifleWeapon.CancelReload();weapon=District.equippedWeapon=kind;recoil=0;
+            if(pistol){pistol.SetActive(weapon!=1);pistol.transform.localScale=CombatWeaponScale;}
         }
         public bool ReloadPlayer()
         {
@@ -91,17 +93,21 @@ namespace Funstra
         }
         public void UpdateCombatInput()
         {
+            if(CrewEnabled&&ControlledCrewId!="player"){UpdateCrewCombatInput();return;}
             // Guided runs drive combat APIs explicitly; desktop input must not alter their evidence.
             if(Smoke) { if(aimLine)aimLine.enabled=false; return; }
             if(Input.GetKeyDown(KeyCode.Alpha1))SelectCombatWeapon(1);
             if(Input.GetKeyDown(KeyCode.Alpha2))SelectCombatWeapon(2);
             if(Input.GetKeyDown(KeyCode.Alpha3))SelectCombatWeapon(3);
+            if(Input.GetKeyDown(KeyCode.Alpha4))SelectCombatWeapon(4);
+            if(Input.GetKeyDown(KeyCode.Alpha5))SelectCombatWeapon(5);
             if(Input.GetKeyDown(KeyCode.R)&&!Input.GetKey(KeyCode.LeftShift)&&!Input.GetKey(KeyCode.RightShift))ReloadPlayer();
             Ray ray=View.ScreenPointToRay(Input.mousePosition);var plane=new Plane(Vector3.up,Vector3.up*1.1f);
             if(plane.Raycast(ray,out float distance))combatAim=ray.GetPoint(distance);
             bool pointerInWorld=!showMap&&Input.mousePosition.x/Screen.width>.27f&&Input.mousePosition.x/Screen.width<.74f&&Input.mousePosition.y/Screen.height>.18f&&Input.mousePosition.y/Screen.height<.85f;
             if(compactHUD)pointerInWorld=!showMap&&Input.mousePosition.y/Screen.height>.18f&&Input.mousePosition.y/Screen.height<.85f;
             if(FoundationMode)pointerInWorld=!showMap&&Input.mousePosition.y/Screen.height>.17f;
+            pointerInWorld&=!CrewPointerBlocked(Input.mousePosition);
             if(pointerInWorld&&weapon!=1)
             {
                 Vector3 heading=combatAim-(Player.position+Vector3.up*1.1f);heading.y=0;
@@ -137,16 +143,18 @@ namespace Funstra
         public bool FirePlayerAt(Vector3 target)
         {
             if(weapon==1||District.health<=0)return false;
+            if(!FoundationMode&&District.arms!=null&&!District.arms.Owns(weapon))return false;
             District.InitializeWeapons();var state=CurrentWeapon;int total=CombatTotalAmmo;
             if(District.projectiles.Count+WeaponSpec.For(weapon).pellets>128)return false;
             if(!state.Fire(ref total))
             {if(state.magazine==0&&state.reloadRemaining==0&&state.cooldown==0){Notify(total>0?"Magazine empty. R reload / 1 fists / retreat.":"Out of ammunition. Switch weapon or retreat.");state.cooldown=.35f;}return false;}
-            if(weapon==3)District.shotgunAmmo=total;else District.ammo=total;
+            District.SetGunAmmo(weapon,total);
             Vector3 from=Player.position+Vector3.up*1.1f;target.y=from.y;
             Vector3 heading=target-from;if(heading.sqrMagnitude>.001f)figure.rotation=Quaternion.LookRotation(heading);
-            SpawnShot("player",from,target,weapon,recoil);recoil=Mathf.Min(3,recoil+(weapon==3?2.4f:.7f));
+            SpawnShot("player",from,target,weapon,recoil);recoil=Mathf.Min(weapon==4?9:3,recoil+(weapon==4?1.2f:weapon==3?2.4f:weapon==5?2:.7f));
             if(!FoundationMode)
             {
+                District.arms?.RecordFired(weapon);
                 Hidden=false;ReportPoliceNoise(Player.position);
                 string witness=ViolenceWitness();if(witness!=null)ReportPoliceViolence(Player.position,0,witness);
             }
@@ -165,10 +173,17 @@ namespace Funstra
             if(District.projectiles.Count+WeaponSpec.For(gun).pellets>128||!actor.combat.Fire(ref actor.ammo))return false;
             Vector3 from=actor.position+Vector3.up*1.1f;target.y=from.y;Vector3 heading=target-from;
             if(body&&heading.sqrMagnitude>.001f)body.rotation=Quaternion.LookRotation(heading);
-            SpawnShot(actor.id,from,target,gun,0);return true;
+            SpawnShot(actor.id,from,target,gun,0);
+            if(CrewEnabled&&IsCrewId(actor.id))
+            {
+                District.arms?.RecordFired(gun);ReportPoliceNoise(actor.position);
+                string observer=ViolenceWitness(null,actor.position);if(observer!=null)ReportPoliceViolence(actor.position,0,observer);
+            }
+            return true;
         }
         void SpawnShot(string owner,Vector3 from,Vector3 target,int gun,float kick)
         {
+            ResidentGunshot(from,owner);
             var spec=WeaponSpec.For(gun);Vector3 heading=(target-from).normalized;if(heading.sqrMagnitude<.1f)heading=Vector3.forward;
             // Do not put the projectile on the far side of close cover when the muzzle protrudes.
             Vector3 muzzle=from+heading*.5f;Physics.SyncTransforms();
@@ -180,7 +195,7 @@ namespace Funstra
             foreach(var obstacle in knownCombatObstacles)if(obstacle&&obstacle.enabled&&obstacle.gameObject.activeInHierarchy)birthObstacles[obstacle]=obstacle.bounds;
             for(int i=0;i<spec.pellets;i++)
             {
-                float angle=spec.pellets==1?kick*Mathf.Sin(CombatShotCount*2.4f):(i-(spec.pellets-1)*.5f)*spec.spread/(spec.pellets-1);
+                float angle=spec.pellets==1?(kick+(gun>=4?spec.spread:0))*Mathf.Sin(CombatShotCount*2.4f):(i-(spec.pellets-1)*.5f)*spec.spread/(spec.pellets-1);
                 var velocity=Quaternion.Euler(0,angle,0)*heading*spec.speed;
                 District.projectiles.Add(new CombatProjectile{position=muzzle,velocity=velocity,remaining=spec.range,damage=spec.damage,owner=owner,kind=gun,birthPositions=birthPositions,birthObstacles=birthObstacles});
             }
@@ -189,10 +204,11 @@ namespace Funstra
         public void StepCombat(float dt)
         {
             if(dt<=0)return;attackCooldown=Mathf.Max(0,attackCooldown-dt);District.InitializeWeapons();
-            float oldReload=CurrentWeapon.reloadRemaining;District.pistolWeapon.Step(dt,District.ammo);District.shotgunWeapon.Step(dt,District.shotgunAmmo);
+            float oldReload=CurrentWeapon.reloadRemaining;District.pistolWeapon.Step(dt,District.ammo);District.shotgunWeapon.Step(dt,District.shotgunAmmo);District.smgWeapon.Step(dt,District.smgAmmo);
+            District.rifleWeapon.Step(dt,District.rifleAmmo);
             if(oldReload>0&&CurrentWeapon.reloadRemaining==0)PlayReloadFinished();
-            recoil=Mathf.MoveTowards(recoil,0,dt*4);impactClock+=dt;
-            if(pistol){pistol.transform.localPosition=new Vector3(.43f,.95f,.3f-recoil*.05f);pistol.transform.localRotation=Quaternion.Euler(-recoil*9,0,0);}
+            recoil=Mathf.MoveTowards(recoil,0,dt*(weapon==4?2:weapon==5?2.4f:4));impactClock+=dt;
+            if(pistol){float visibleKick=Mathf.Min(3,recoil);pistol.transform.localPosition=new Vector3(.43f,.95f,.3f-visibleKick*.05f);pistol.transform.localRotation=Quaternion.Euler(-visibleKick*9,0,0);}
             RefreshCombatTargets();RefreshCombatObstacles();
             // Sweeps cover the actual traveled segment and relative actor/cover motion across this update.
             for(int i=District.projectiles.Count-1;i>=0;i--)
@@ -221,8 +237,8 @@ namespace Funstra
                 {
                     Vector3 at=Vector3.Lerp(from,to,best);Impact(at,cover);
                     if(cover){CombatCoverHitCount++;LastCombatImpact="Cover stopped a round";}
-                    else if(playerHit){District.health=Mathf.Max(0,District.health-p.damage);District.bleeding=true;CurrentWeapon.CancelReload();CombatHitCount++;LastCombatImpact="Player hit";Notify("Hit! B bandage / SPACE pause / break sight.");}
-                    else if(victim!=null)ApplyCombatHit(victim.actor,victim.body,p.damage,p.owner,true);
+                    else if(playerHit){District.health=Mathf.Max(0,District.health-p.damage);District.bleeding=true;CurrentWeapon.CancelReload();CombatHitCount++;RecordProjectileHit(p.owner,"player",p.kind,p.damage);LastCombatImpact="Player hit";Notify("Hit! B bandage / SPACE pause / break sight.");}
+                    else if(victim!=null){RecordProjectileHit(p.owner,victim.actor.id,p.kind,p.damage);ApplyCombatHit(victim.actor,victim.body,p.damage,p.owner,true);}
                     District.projectiles.RemoveAt(i);
                 }
                 else {p.position=to;p.remaining-=travel;p.birthPositions=null;p.birthObstacles=null;if(p.remaining<=.0001f)District.projectiles.RemoveAt(i);}
@@ -235,12 +251,16 @@ namespace Funstra
         void ApplyCombatHit(DistrictActor target,Transform body,float damage,string owner,bool bullet)
         {
             if(target.health<=0)return;
-            string policeWitness=owner=="player"&&!FoundationMode&&DistrictEnabled?ViolenceWitness(target.health>damage?target:null):null;
+            InterruptCrewAid(target.id);
+            Vector3 source=owner=="player"?Player.position:combatTargets.Find(t=>t.actor.id==owner)?.actor.position??body.position;
+            bool crewAttack=owner=="player"||CrewEnabled&&IsCrewId(owner);
+            string policeWitness=crewAttack&&!FoundationMode&&DistrictEnabled?ViolenceWitness(target.health>damage?target:null,source):null;
             target.health=Mathf.Max(0,target.health-damage);if(bullet)target.bleeding=true;
             target.combat?.CancelReload();PoseActor(body,target);CombatHitCount++;LastCombatImpact=target.name+" hit";CombatActorHit?.Invoke(target,owner);
-            if(owner=="player"&&!FoundationMode)
+            ResidentViolence(target,source,owner);
+            if(crewAttack&&!FoundationMode)
             {
-                if(policeWitness!=null)ReportPoliceViolence(Player.position,target.health<=0?3:1,policeWitness);
+                if(policeWitness!=null)ReportPoliceViolence(source,target.health<=0?3:1,policeWitness);
                 if(target==District.neri){District.trust=-3;District.recruited=false;District.Record("betrayal","neri","You attacked Neri. The partnership is broken.");}
                 if(target==District.guard||target==District.collector||MedicalWitness())District.Identify("An attack was witnessed and reported to Ivo.");
                 if(District.citizens.Contains(target)){target.order="Flee";District.Record("assault",target.id,"You attacked "+target.name+"."+(policeWitness!=null?" The attack was reported.":" The attacker was not identified."));}

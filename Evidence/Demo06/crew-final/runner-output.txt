@@ -1,0 +1,155 @@
+PASS
+PASS: Traffic fixture stages Rell outside the existing vehicle footprint
+PASS: Actual street traffic yields to Rell's physical body
+PASS: Congestion fixture begins with two physically walkable origins
+METHOD: crowding regression preserves the ninth-run pair's relative positions/grid alignment, translated four metres west to avoid the fresh traffic car. Original failure traffic positions were not recorded, so this is a controlled connector/crowding fixture, not an exact scene replay. Shared StepCrew advances at 1/30s while town movement and calendar are held; no collision/walkability override. A separate actual StepTraffic fixture requires braking for Rell alone.
+PASS: Simultaneous crew orders clear a shared grid connector and reach both destinations
+PASS: Crew movement regression preserves physical separation without passing through a partner
+PASS: Crew roster and K button block world-fire input in compact HUD
+PASS: Open street pointer remains available for combat input
+PASS: Open crew panel blocks combat input
+PASS: Choosing a crew destination cannot also fire a weapon
+PASS: Resume shortcut clears the stopped-time overlay and pending destination
+PASS: K opens crew panel and stops time
+PASS: K closes crew panel and resumes consistently
+PASS: Two arrest contacts preserve the existing target instead of resetting progress each frame
+PASS: New arrest selects one deterministic eligible actor
+PASS: Arrest changes target only when previous contact is absent
+PASS: No contact leaves the arrest timer free to decay
+PASS: Living protagonist can explicitly surrender despite a living partner
+PASS: Downed protagonist continues through a living recruited partner
+METHOD: crew UI regression checks call shared pointer guards, resume actions and arrest selection directly; no synthetic desktop input or human input-feel claim.
+PASS: Crew route uses fresh isolated muted exported campaign
+PASS: Paid route begins genuinely solo
+METHOD: solo paid route uses production controller, live yard, finite $100 cash fixture, actual held pickup, and reached menu-equivalent payment. Citizens and companion movement held; traffic/calendar continue. No earned-income or human-play claim.
+PASS: Crew route exists for player to (8.00, 0.00, 13.00)
+PASS: Actual selected controller arrived: player at (8.00, 0.00, 13.00)
+PASS: Crew route exists for player to (8.00, 0.00, 39.00)
+PASS: Actual selected controller arrived: player at (8.00, 0.00, 39.00)
+PASS: Crew route exists for player to (16.00, 0.00, 39.00)
+PASS: Actual selected controller arrived: player at (16.00, 0.00, 39.00)
+PASS: Live Vale's public counter is reachable before trespass engagement
+PASS: Reached public counter opens actual release dialogue
+PASS: Reached payment moves finite $90 to live Vale
+PASS: Crew route exists for player to (30.00, 0.00, 43.00)
+PASS: Actual selected controller arrived: player at (30.00, 0.00, 43.00)
+PASS: Actual held pickup gives the sole component to the solo collector
+PASS: Paid passage remains nonviolent with the live yard squad
+PASS: Crew route exists for player to (48.00, 0.00, 39.00)
+PASS: Actual selected controller arrived: player at (48.00, 0.00, 39.00)
+PASS: Crew route exists for player to (61.00, 0.00, 18.50)
+PASS: Actual selected controller arrived: player at (61.00, 0.00, 18.50)
+PASS: Controller returns actual component and earns Rell partnership
+METHOD: identity/rescue fixtures stage locations and wounds while paused. Neri is recruited via the actual finite shipment donation/trust APIs, without claiming controller medicine acquisition. Equipment is bought with explicit $500 fixture cash. Aid uses accelerated .05-second production steps; carry uses actual selected-controller movement around the clinic wall.
+PASS: Neri fixture transfers finite six-dose shipment and earns existing clinic partnership
+PASS: All three persistent actors can be selected
+PASS: Selection leaves independent positions, wounds, ammunition and magazines in place
+PASS: Transfer fixture obtains one stocked pistol and finite rounds
+PASS: Loose purchase starts timed reload
+PASS: Transfer moves the actual gun object, magazine and all rounds into Rell custody
+PASS: Repeated gun handoff cannot clone equipment
+PASS: Dressing handoff conserves actual personal inventory
+PASS: Select armed Rell for the staged shared projectile sightline
+PASS: Rell fires the shared finite pistol across a checked clear sightline
+PASS: Projectile owner is firing actor and one round is spent before impact
+PASS: Control switches away while Rell's projectile is in flight
+PASS: Actual reload preserves selected Neri, Rell gun custody, spent round and projectile owner/position
+PASS: Reloaded Rell projectile hits Vale once with owner/victim receipt after control switch
+PASS: Real crew projectile damage revokes paid yard passage
+PASS: Neri begins three-second field aid beside the actual wounded player
+PASS: Moving helper interrupts aid and retains dressing
+PASS: Stationary helper can restart interrupted aid
+PASS: New helper damage interrupts aid without spending dressing
+PASS: Quiet nearby aid can restart after damage
+PASS: Completed timed aid spends one dressing, stops actual bleeding and earns one practice
+METHOD: self-aid regression then runs 3.5 seconds of normal Update with actual ongoing Neri bleeding; damage interruption above uses a production combat hit, not bleed attrition.
+PASS: Bleeding Neri is directly controlled for self-aid regression
+PASS: Bleeding helper can begin timed self-aid
+PASS: Normal Update self-aid completes through bleed attrition and spends one dressing
+PASS: Protagonist control resumes before explicit downed-player fixture
+PASS: Downed protagonist remains down while living Neri takes control and prevents solo recovery teleport
+PASS: Carry fixture's direct route is obstructed by the clinic east wall
+PASS: Neri physically lifts nearby downed protagonist
+PASS: Crew route exists for neri to (-27.00, 0.00, -12.00)
+PASS: Actual selected controller arrived: neri at (-27.00, 0.00, -12.00)
+PASS: Actual Neri controller carried protagonist around wall and through clinic doorway
+PASS: Physical clinic admission spends one existing dose and restores carried protagonist
+PASS: Rescued protagonist remembers who physically returned them
+PASS: Actual save/reload preserves rescue, survivor health and finite clinic cost
+PASS: Sheltered Neri explicitly records leaving downed Rell behind exactly once
+PASS: Abandonment and actual downed body location survive reload without respawn
+PASS: Crew rescue/abandonment campaign preserves integrated state invariants
+METHOD: total-wipe regression explicitly downs the recovered protagonist, lifts them using real carry API, then downs the carrier and invokes production defeat. This is a failure-state fixture, not a claimed combat encounter.
+PASS: Total-wipe fixture begins with a real carrier link
+PASS: No living recruited actor remains in total-wipe fixture
+PASS: Total defeat clears stale carry/aid links before protagonist emergency recovery
+PASS: Reloaded total-wipe survivor remains playable without stale carrier ownership
+METHOD: separate fresh solo nonviolent preparation route; real controller reaches Rell and his auxiliary pump, then actual autoInteract holds E for twelve real simulation seconds. Accepting work uses the same dialogue state action. No repair completion or recruitment state is injected.
+PASS: Crew route exists for player to (61.00, 0.00, 18.50)
+PASS: Actual selected controller arrived: player at (61.00, 0.00, 18.50)
+PASS: Fresh solo controller reaches Rell's actual workshop dialogue
+PASS: Reached dialogue accepts concrete finite-gasket repair
+PASS: Crew route exists for player to (65.00, 0.00, 20.00)
+PASS: Actual selected controller arrived: player at (65.00, 0.00, 20.00)
+PASS: Nonviolent solo repair uses last gasket and recruits Rell while main impeller remains in yard
+PASS: Completed real held repair drains visible workshop and awards practical learning once
+PASS: Actual reload retains independent repair partnership and finite unrecovered main pump
+PASS: Repaired workshop campaign remains integrated-valid
+PASS: Crew opposition runs in an isolated muted crew-enabled player
+METHOD: Guided exported-player fixtures, not human input. Starting positions, finite ammunition and guard casualty/report setup are explicitly staged. Live Update advances rifle officers, projectiles, ordinary 100 HP damage, controller retreat, moving firing lanes and guard field aid. No durability, arrest or ammunition-refill override. Four-family trigger/reload checks are staged production API actions. This bounded route does not claim the nine-officer stress/deployment coverage of the separate Police/Pressure suites.
+PASS: Staged PISTOL uses the production trigger
+PASS: Staged PISTOL spends one cartridge for its real projectile count
+PASS: Staged PISTOL cannot double-spend during the same-frame cooldown
+PASS: Staged PISTOL preserves the real owner, kind and projectile speed
+PASS: Staged PISTOL starts its own committed reload
+PASS: Live Update completes PISTOL reload without creating reserve ammunition
+PASS: Staged SHOTGUN uses the production trigger
+PASS: Staged SHOTGUN spends one cartridge for its real projectile count
+PASS: Staged SHOTGUN cannot double-spend during the same-frame cooldown
+PASS: Staged SHOTGUN preserves the real owner, kind and projectile speed
+PASS: Staged SHOTGUN starts its own committed reload
+PASS: Live Update completes SHOTGUN reload without creating reserve ammunition
+PASS: Staged SMG uses the production trigger
+PASS: Staged SMG spends one cartridge for its real projectile count
+PASS: Staged SMG cannot double-spend during the same-frame cooldown
+PASS: Staged SMG preserves the real owner, kind and projectile speed
+PASS: Staged SMG starts its own committed reload
+PASS: Live Update completes SMG reload without creating reserve ammunition
+PASS: Staged RIFLE uses the production trigger
+PASS: Staged RIFLE spends one cartridge for its real projectile count
+PASS: Staged RIFLE cannot double-spend during the same-frame cooldown
+PASS: Staged RIFLE preserves the real owner, kind and projectile speed
+PASS: Staged RIFLE starts its own committed reload
+PASS: Live Update completes RIFLE reload without creating reserve ammunition
+PASS: Prepared rifle officer stands on shared walkable street
+PASS: Delayed retreat has a real visible firing approach and walkable escape street
+PASS: Delayed rifle retreat starts at 100 HP with ordinary arrest rules
+PASS: Live rifle officer spends a round and produces an immutable player-hit receipt
+PASS: Delayed retreat finds nearby reachable real cover without approaching the shooter
+ROUTE: nearest occluded corner (32.00, 0.00, -17.00) / shared-navigation distance 5.7m from (28.00, 0.03, -13.00)
+PASS: Navigable route to (32.00, 0.00, -17.00)
+PASS: Controller arrived beside interaction at (32.00, 0.00, -17.00)
+PASS: Wounded ordinary-health protagonist survives delayed controller withdrawal around the corner
+PASS: Rifle pressure preserves its finite three-round starting kit during retreat
+PASS: The retreat ends behind real occluding geometry
+PASS: Player begins actual timed self-aid after reaching cover
+AID OUTCOME: simulation=2.744s wall=2.755s remaining=0 patient= dressings=2 receipts=2
+AID OUTCOME: post-retreat direct-hit interruption; healthBefore=68.94213 healthAfter=37.15852 newHitDamage=30 newOfficerHit=True
+PASS: Post-retreat timed aid records completed finite treatment or verified direct-hit interruption without healing or dressing loss
+PASS: Prepared rifle officer stands on shared walkable street
+PASS: Navigable route to (24.00, 0.00, -13.00)
+PASS: Controller arrived beside interaction at (24.00, 0.00, -13.00)
+PASS: Depleted officer withdraws on shared walkable ground while the protagonist approaches
+PASS: Depleted rifle officer neither refills ammunition nor fires a free shot
+PASS: Prepared rifle officer stands on shared walkable street
+PASS: Prepared rifle officer stands on shared walkable street
+PASS: Live rifle formation opens a blocked lane through officer movement while retaining walkability and separation
+PASS: Both moving-lane officers spend only their single issued round
+PASS: Moving firing lane preserves both distinct rifle owners and the actual struck crew identity
+PASS: Officers clear the friendly firing lane without shooting one another or requiring extra player durability
+PASS: Live leader loss cancels a surviving guard's already pending report
+PASS: Live guard starts timed physical aid before consuming its finite dressing
+PASS: Live guard completes one dressing and restores only 25 health to the casualty
+PASS: Recovered leader withdraws and cannot restore the lost report network
+COVERAGE: bounded live rifle pressure, delayed ordinary-health controller retreat, depleted movement, moving-lane owner/victim receipts, four staged gun families and live guard report/aid. Full nine-officer dispatch/stress remains separate Police/Pressure evidence.
+COVERAGE LIMIT: no organically earned cash, full hostile crew assault victory, or autonomous unseen theft victory is claimed by this route. Pure dock rules cover finite alternate custody; opposition suites separately exercise live report/fire/retreat behavior.

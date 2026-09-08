@@ -8,6 +8,7 @@ namespace Funstra
         AudioClip[] concreteSteps;
         AudioClip bodyImpactReport, reloadFinishReport, shotgunActionReport;
         AudioSource footstepSource;
+        AudioSource rifleReportSource;
         int footstepIndex;
         float nextImpactAudio;
 
@@ -31,6 +32,14 @@ namespace Funstra
             impactReport=PortClip("impact-cover");bodyImpactReport=PortClip("impact-body");
             reloadReport=PortClip("reload-start");reloadFinishReport=PortClip("reload-finish");
             shotgunActionReport=PortClip("shotgun-action");
+            if(!rifleReportSource)
+            {
+                rifleReportSource=gameObject.AddComponent<AudioSource>();
+                rifleReportSource.playOnAwake=false;rifleReportSource.spatialBlend=0;
+                // A separate pitched recorded report gives the rifle a sharper crack
+                // without changing pitch on concurrently playing pistol or impact sounds.
+                rifleReportSource.pitch=1.3f;
+            }
         }
         void PlayFootstep(float volume)
         {
@@ -44,6 +53,7 @@ namespace Funstra
         {
             if (!audioSource) return;
             float distance=Player?Vector3.Distance(Player.position,position):0;
+            if(gun==5&&rifleReportSource){rifleReportSource.PlayOneShot(shotgunReport,.85f/(1+distance*.045f));return;}
             audioSource.PlayOneShot(gun==3?shotgunReport:pistolReport,1/(1+distance*.055f));
         }
         void PlayImpactAudio(Vector3 position,bool cover)

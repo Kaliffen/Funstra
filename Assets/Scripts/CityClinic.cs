@@ -24,10 +24,13 @@ namespace Funstra
             clinicRoot = new GameObject("MUTUAL CLINIC - treatment and stores").transform;
             clinicRoot.SetParent(root, false);
             ClinicFloorBounds = new Bounds(new Vector3(-29.5f, 1.9f, -14), new Vector3(17, 4.2f, 16));
-            var plaster = Hex("C7B991"); var basecoat = Hex("558681"); var timber = Hex("5C5147");
-            Box("Clinic tiled foundation", new Vector3(-29.5f,.035f,-14),new Vector3(17,.08f,16),Hex("C5B99E"),clinicRoot);
+            var plaster = Hex("AFB2A3"); var basecoat = Hex("45685C"); var timber = Hex("514C40");
+            Box("Clinic tiled foundation", new Vector3(-29.5f,.035f,-14),new Vector3(17,.08f,16),Hex("747A70"),clinicRoot);
             for(int x=-37;x<-21;x+=2) for(int z=-21;z<-6;z+=2)
-                Box("Worn terrazzo tile",new Vector3(x,.081f,z),new Vector3(1.94f,.012f,1.94f),Hex((x+z)%4==0?"B5AA94":"C1B59D"),clinicRoot);
+            {
+                var tile=Box("Worn terrazzo tile",new Vector3(x,.081f,z),new Vector3(1.94f,.012f,1.94f),Hex((x+z)%4==0?"92998A":"A3A797"),clinicRoot);
+                tile.GetComponent<Renderer>().sharedMaterial=WeatheredMat(Hex((x+z)%4==0?"92998A":"A3A797"),.35f);
+            }
             // Walls are separate from roof and trim: visibility never alters physics or navigation.
             ClinicWall("West store wall",new Vector3(-38,2.1f,-14),new Vector3(.36f,4.2f,16),plaster,clinicWest);
             ClinicWall("North treatment wall",new Vector3(-29.5f,2.1f,-6),new Vector3(17,4.2f,.36f),plaster,clinicNorth);
@@ -40,8 +43,8 @@ namespace Funstra
             ClinicWall("Store partition south",new Vector3(-32,1.6f,-19.3f),new Vector3(.24f,3.2f,5.4f),basecoat,clinicWest);
             ClinicDoor(ClinicSouthDoor,false,timber); ClinicDoor(ClinicEastDoor,true,timber);
             // Shallow, step-free entrance apron; no raised collider threshold.
-            Box("Clinic entrance stone apron",new Vector3(-27,.085f,-23.05f),new Vector3(4,.08f,2.1f),Hex("B9AD95"),clinicRoot);
-            Box("Clinic receiving apron",new Vector3(-20,.085f,-12),new Vector3(2,.08f,3.8f),Hex("B9AD95"),clinicRoot);
+            Box("Clinic entrance stone apron",new Vector3(-27,.085f,-23.05f),new Vector3(4,.08f,2.1f),Hex("A2AA99"),clinicRoot);
+            Box("Clinic receiving apron",new Vector3(-20,.085f,-12),new Vector3(2,.08f,3.8f),Hex("A2AA99"),clinicRoot);
             ClinicWindow(new Vector3(-34,2.25f,-22.21f),false,clinicSouth);
             ClinicWindow(new Vector3(-23.4f,2.25f,-22.21f),false,clinicSouth);
             ClinicWindow(new Vector3(-20.79f,2.25f,-17.5f),true,clinicEast);
@@ -52,21 +55,24 @@ namespace Funstra
             Box("Enamel cross arms",new Vector3(-31.5f,2.55f,-22.26f),new Vector3(.7f,.2f,.08f),Mint,clinicRoot,false,true);
             ClinicRoomLabel("TREATMENT",new Vector3(-26,2.7f,-6.25f),3.3f,.075f);
             ClinicRoomLabel("MEDICAL STORES",new Vector3(-35,2.7f,-6.25f),4.1f,.065f);
+            ClinicLamp(new Vector3(-29.15f,2.8f,-22.37f),clinicSouth);
+            ClinicLamp(new Vector3(-25.5f,2.8f,-6.4f),clinicNorth);
             // Purpose-built furniture: open frames, shaped upholstery, shelf boards and stored supplies.
             ClinicTreatmentFurniture();
             ClinicBench(new Vector3(-24.2f,0,-20.2f));
             ClinicShelf(new Vector3(-35,0,-7));
             ClinicShelf(new Vector3(-36.9f,0,-20));
             ClinicWashstand(new Vector3(-23,0,-7.2f));
-            var roof=ClinicPrism("Clinic pitched standing-seam roof",new Vector3(-29.5f,4.15f,-14),18.1f,17.1f,1.45f,Hex("4F6666"));
+            var roof=ClinicPrism("Clinic pitched standing-seam roof",new Vector3(-29.5f,4.15f,-14),18.1f,17.1f,1.45f,Hex("344440"));
+            roof.GetComponent<Renderer>().sharedMaterial=WeatheredMat(Hex("344440"),.8f);
             roof.layer=8; roof.AddComponent<MeshCollider>().sharedMesh=roof.GetComponent<MeshFilter>().sharedMesh;
             clinicRoof.Add(roof.GetComponent<Renderer>());
             for(int i=0;i<10;i++)
             {
                 float x=-38.5f+i*2;
-                var seam=Box("Roof seam",new Vector3(x,4.94f,-18.25f),new Vector3(.045f,.045f,8.75f),Hex("74847B"),clinicRoot);
+                var seam=Box("Roof seam",new Vector3(x,4.94f,-18.25f),new Vector3(.045f,.045f,8.75f),Hex("65766B"),clinicRoot);
                 seam.transform.localRotation=Quaternion.Euler(-9.63f,0,0);clinicRoof.Add(seam.GetComponent<Renderer>());
-                seam=Box("Roof seam",new Vector3(x,4.94f,-9.75f),new Vector3(.045f,.045f,8.75f),Hex("74847B"),clinicRoot);
+                seam=Box("Roof seam",new Vector3(x,4.94f,-9.75f),new Vector3(.045f,.045f,8.75f),Hex("65766B"),clinicRoot);
                 seam.transform.localRotation=Quaternion.Euler(9.63f,0,0);clinicRoof.Add(seam.GetComponent<Renderer>());
             }
         }
@@ -83,8 +89,21 @@ namespace Funstra
         void ClinicWall(string name,Vector3 p,Vector3 size,Color color,List<Renderer> cut)
         {
             var wall=Box(name,p,size,color,clinicRoot,true); Nav.Obstacles.Add(new Bounds(p,size)); cut.Add(wall.GetComponent<Renderer>());
-            var skirt=Box(name+" painted lower course",new Vector3(p.x,.5f,p.z),new Vector3(size.x+.015f,1,size.z+.015f),Hex("648D83"),clinicRoot);
+            wall.GetComponent<Renderer>().sharedMaterial=WeatheredMat(color,.6f);
+            var skirt=Box(name+" painted lower course",new Vector3(p.x,.5f,p.z),new Vector3(size.x+.015f,1,size.z+.015f),Hex("527364"),clinicRoot);
+            skirt.GetComponent<Renderer>().sharedMaterial=WeatheredMat(Hex("527364"),.85f);
             cut.Add(skirt.GetComponent<Renderer>());
+        }
+        void ClinicLamp(Vector3 at,List<Renderer> cut)
+        {
+            var back=Box("Repaired clinic lamp / iron backplate",at+Vector3.forward*.13f,new Vector3(.39f,.64f,.08f),Hex("3A443D"),clinicRoot);
+            cut.Add(back.GetComponent<Renderer>());
+            var glass=Box("Clinic lamp / warm frosted glass",at,new Vector3(.25f,.42f,.22f),Hex("EDCF99"),clinicRoot,false,true);
+            cut.Add(glass.GetComponent<Renderer>());
+            foreach(float x in new[]{-.16f,.16f})
+                cut.Add(Box("Clinic lamp cage",at+new Vector3(x,0,-.14f),new Vector3(.035f,.54f,.035f),Hex("50534A"),clinicRoot).GetComponent<Renderer>());
+            var light=new GameObject("Clinic / a light kept burning").AddComponent<Light>();light.transform.SetParent(clinicRoot,false);light.transform.localPosition=at+Vector3.back*.38f;
+            light.type=LightType.Point;light.color=Hex("FFD29C");light.range=6;light.intensity=2.7f;light.shadows=LightShadows.None;
         }
         void ClinicDoor(Vector3 at,bool east,Color c)
         {
@@ -92,12 +111,13 @@ namespace Funstra
                 Box("Door jamb",at+new Vector3(east?0:side*1.7f,1.45f,east?side*1.7f:0),new Vector3(east?.48f:.16f,2.9f,east?.16f:.48f),c,clinicRoot);
             Box("Door lintel",at+Vector3.up*3,new Vector3(east?.48f:3.56f,.24f,east?3.56f:.48f),c,clinicRoot);
             // Above-door masonry is collision geometry too, but does not obstruct floor navigation.
-            var over=Box("Doorway upper masonry",at+Vector3.up*3.68f,new Vector3(east?.36f:3.2f,.98f,east?3.2f:.36f),Hex("C7B991"),clinicRoot,true);
+            var over=Box("Doorway upper masonry",at+Vector3.up*3.68f,new Vector3(east?.36f:3.2f,.98f,east?3.2f:.36f),Hex("AFB2A3"),clinicRoot,true);
+            over.GetComponent<Renderer>().sharedMaterial=WeatheredMat(Hex("AFB2A3"),.6f);
             (east?clinicEast:clinicSouth).Add(over.GetComponent<Renderer>());
         }
         void ClinicWindow(Vector3 at,bool east,List<Renderer> cut)
         {
-            var glass=Box("Deep blue window panes",at,new Vector3(east?.05f:1.9f,1.25f,east?1.9f:.05f),Hex("41666F"),clinicRoot);cut.Add(glass.GetComponent<Renderer>());
+            var glass=Box("Deep blue window panes",at,new Vector3(east?.05f:1.9f,1.25f,east?1.9f:.05f),Hex("263C3D"),clinicRoot);cut.Add(glass.GetComponent<Renderer>());
             for(int side=-1;side<=1;side+=2)
             {
                 var frame=Box("Window timber upright",at+new Vector3(east?.035f:side*1.02f,0,east?side*1.02f:-.035f),new Vector3(east?.14f:.12f,1.5f,east?.12f:.14f),Hex("EEE1BC"),clinicRoot);cut.Add(frame.GetComponent<Renderer>());

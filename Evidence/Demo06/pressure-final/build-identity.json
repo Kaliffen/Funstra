@@ -1,0 +1,7 @@
+{
+  "testedAt": "2026-09-08T12:30:26.2815293Z",
+  "mode": "Pressure",
+  "executable": "~\\repos\\Funstra\\Build\\NobodyGetsHomeAlone\\Funstra.exe",
+  "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+  "method": "Guided exported player; direct setups and controller travel identified in result."
+}

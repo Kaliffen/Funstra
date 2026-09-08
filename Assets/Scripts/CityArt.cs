@@ -24,6 +24,14 @@ namespace Funstra
             if (glow) { m.EnableKeyword("_EMISSION"); m.SetColor("_EmissionColor", c * .75f); }
             materials[key] = m; return m;
         }
+        public Material WeatheredMat(Color c,float exposure=.5f)
+        {
+            string key="weathered/"+ColorUtility.ToHtmlStringRGBA(c)+"/"+exposure;
+            if(materials.TryGetValue(key,out var found))return found;
+            var material=new Material(Resources.Load<Shader>("Architecture/PortArchitecture")){name="Old Port / exposed paint and saltstone"};
+            material.color=c;material.SetFloat("_VertexColor",0);material.SetFloat("_Weathering",exposure);
+            materials[key]=material;return material;
+        }
         public GameObject Shape(string name, PrimitiveType type, Vector3 pos, Vector3 scale, Color color, Transform parent = null, bool solid = false, bool glow = false)
         {
             var o = GameObject.CreatePrimitive(type); o.name = name;
@@ -65,17 +73,23 @@ namespace Funstra
         public Transform Human(string name, Vector3 p, Color coat, bool officer = false)
         {
             var o = new GameObject(name); o.transform.SetParent(root); o.transform.position = p;
+            // Keep role colors identifiable while replacing toy-like clean blocks with work clothes.
+            coat=Color.Lerp(coat,new Color(coat.grayscale,coat.grayscale,coat.grayscale,1),.23f);
             var skin = Hex(officer ? "C69678" : "D6AC91");
             Box("Coat", new Vector3(0, 1.08f, 0), new Vector3(.64f, .72f, .37f), coat, o.transform);
+            Box("Heavy coat hem",new Vector3(0,.78f,-.01f),new Vector3(.68f,.19f,.41f),Color.Lerp(coat,Hex("222A2B"),.24f),o.transform);
+            Box("Turned coat collar",new Vector3(0,1.43f,-.035f),new Vector3(.4f,.12f,.36f),Color.Lerp(coat,Hex("B5B9A9"),.3f),o.transform);
+            Box("Coat fastening",new Vector3(0,1.12f,.191f),new Vector3(.025f,.43f,.016f),Hex("353B38"),o.transform);
             Shape("Head", PrimitiveType.Sphere, new Vector3(0, 1.7f, 0), new Vector3(.44f, .48f, .43f), skin, o.transform);
             Box("Hair", new Vector3(0, 1.89f, -.03f), new Vector3(.45f, .15f, .4f), Hex("222633"), o.transform);
             for (int side = -1; side <= 1; side += 2)
             {
                 var leg = new GameObject(side == -1 ? "Left leg" : "Right leg"); leg.transform.SetParent(o.transform, false); leg.transform.localPosition = new Vector3(side * .18f, .77f, 0);
-                Box("Trouser", new Vector3(0, -.3f, 0), new Vector3(.23f, .6f, .27f), Hex("252D41"), leg.transform);
-                Box("Shoe", new Vector3(0, -.69f, .075f), new Vector3(.25f, .16f, .42f), Hex("141B27"), leg.transform);
+                Box("Trouser", new Vector3(0, -.3f, 0), new Vector3(.23f, .6f, .27f), Hex("2B3232"), leg.transform);
+                Box("Shoe", new Vector3(0, -.69f, .075f), new Vector3(.25f, .16f, .42f), Hex("171D1F"), leg.transform);
                 var arm = new GameObject(side == -1 ? "Left arm" : "Right arm"); arm.transform.SetParent(o.transform, false); arm.transform.localPosition = new Vector3(side * .43f, 1.37f, 0);
                 Box("Sleeve", new Vector3(0, -.25f, 0), new Vector3(.2f, .52f, .24f), coat, arm.transform);
+                Box("Repaired elbow",new Vector3(0,-.3f,-.128f),new Vector3(.15f,.18f,.025f),Color.Lerp(coat,Hex("777566"),.5f),arm.transform);
                 Box("Hand", new Vector3(0, -.53f, 0), new Vector3(.18f, .16f, .2f), skin, arm.transform);
             }
             if (officer)
@@ -98,10 +112,10 @@ namespace Funstra
         {
             Resources.LoadAll<Material>("Rendering");
             root = new GameObject("FUNSTRA / Old Port").transform;
-            Box("District ground",new Vector3(0,-.7f,0),new Vector3(164,1.2f,148),Hex("354552"),null,true);
-            Box("Worn district stone",new Vector3(0,-.13f,0),new Vector3(160,.22f,144),Hex("777E7B"),null,true);
-            Box("Harbor water",new Vector3(0,-.06f,78),new Vector3(180,.1f,16),Hex("28536A"));
-            for(int i=0;i<55;i++)Box("Harbor reflection",new Vector3(-84+(i*7.7f%168),.01f,72+(i%5)*2),new Vector3(3.5f,.02f,.08f),Hex("658998"));
+            Box("District ground",new Vector3(0,-.7f,0),new Vector3(164,1.2f,148),Hex("303B3D"),null,true);
+            Box("Worn district stone",new Vector3(0,-.13f,0),new Vector3(160,.22f,144),Hex("717975"),null,true);
+            Box("Harbor water",new Vector3(0,-.06f,78),new Vector3(180,.1f,16),Hex("1B343D"));
+            for(int i=0;i<55;i++)Box("Harbor reflection",new Vector3(-84+(i*7.7f%168),.01f,72+(i%5)*2),new Vector3(3.5f,.02f,.08f),Hex("526F76"));
             BuildStreetGrid();
             for(int z=-61;z<=61;z+=7)Box("High street dash",new Vector3(0,.075f,z),new Vector3(.16f,.01f,2.5f),Hex("B1AD98"));
             foreach(float z in new[]{-40f,12f,39f})for(int x=-4;x<=4;x+=2)
@@ -140,8 +154,8 @@ namespace Funstra
             foreach(Vector3 p in new[]{new Vector3(-39,0,-30),new Vector3(-39,0,5),new Vector3(-48,0,34),new Vector3(-27,0,38),new Vector3(43.7f,0,-5),new Vector3(52,0,33),new Vector3(35,0,62)})Lamp(p);
             foreach(Vector3 p in new[]{new Vector3(-37.5f,0,-26),new Vector3(28,0,-16),new Vector3(-28,0,10),new Vector3(29,0,10),new Vector3(-28,0,36),new Vector3(32,0,36)})
             {
-                Hides.Add(p);Solid("Recycling / solid cover",p+new Vector3(0,.65f,0),new Vector3(1.8f,1.43f,1.1f),Hex("2F6B5E"));
-                Box("Bin lid",p+new Vector3(0,1.34f,0),new Vector3(1.8f,.13f,1.1f),Hex("73A48B"));
+                Hides.Add(p);Solid("Recycling / solid cover",p+new Vector3(0,.65f,0),new Vector3(1.8f,1.43f,1.1f),Hex("35554B"));
+                Box("Bin lid",p+new Vector3(0,1.34f,0),new Vector3(1.8f,.13f,1.1f),Hex("6A8271"));
             }
             Car(new Vector3(3,0,-24), Hex("DDBB74"), false);
             Car(new Vector3(-3,0,24), Hex("406879"), true);
@@ -156,7 +170,7 @@ namespace Funstra
             }
             // Mara's curbside stall leaves space for approaching from the street.
             Solid("Pawn stall", Jobs.Mara + new Vector3(0,.65f,1.4f), new Vector3(3.2f,1.3f,.9f), Hex("394C59"));
-            Box("Striped awning", Jobs.Mara + new Vector3(0,2.8f,1.3f), new Vector3(4,.18f,2.8f), Mint);
+            Box("Striped awning", Jobs.Mara + new Vector3(0,2.8f,1.3f), new Vector3(4,.18f,2.8f), Hex("496B5C"));
             for (int i = -1; i <= 1; i += 2) Box("Awning pole", Jobs.Mara + new Vector3(i*1.8f,1.4f,1.3f), new Vector3(.1f,2.8f,.1f), Hex("D8C6AB"));
             Human("Mara", Jobs.Mara + new Vector3(0,0,.1f), Hex("DD9576"));
             Ring("Mara's marker", Jobs.Mara, 2.2f, Mint);
@@ -205,16 +219,17 @@ namespace Funstra
         void Tree(Vector3 p)
         {
             Shape("Trunk", PrimitiveType.Cylinder, p + Vector3.up*1.1f, new Vector3(.3f,1.1f,.3f), Hex("71675C"));
-            Shape("Tree crown", PrimitiveType.Sphere, p + Vector3.up*3.1f, new Vector3(3.3f,3.8f,3.1f), Hex("477F73"));
+            Shape("Tree crown", PrimitiveType.Sphere, p + Vector3.up*3.1f, new Vector3(3.3f,3.8f,3.1f), Hex("3B554B"));
             Solid("Planter", p + Vector3.up*.15f, new Vector3(2.5f,.3f,2.5f), Hex("939084"));
         }
         void Lamp(Vector3 p)
         {
             Nav.Obstacles.Add(new Bounds(p+Vector3.up*2.1f,new Vector3(.2f,4.2f,.2f)));
             Shape("Streetlight pole", PrimitiveType.Cylinder, p + Vector3.up*2.1f, new Vector3(.13f,2.1f,.13f), Hex("2B3846"),null,true);
-            Box("Streetlight", p + Vector3.up*4.3f, new Vector3(.9f,.22f,.6f), Amber, null, false, true);
-            var l = new GameObject("Warm pool").AddComponent<Light>(); l.transform.SetParent(root); l.transform.position = p + Vector3.up*3.5f;
-            l.type = LightType.Point; l.color = Hex("FFD099"); l.range = 8; l.intensity = 1.4f; l.shadows = LightShadows.None;
+            bool warm=Mathf.Abs(p.x)>20&&p.z<6;
+            Box("Streetlight", p + Vector3.up*4.3f, new Vector3(.9f,.22f,.6f), Hex(warm?"DCB77D":"A8BDBC"), null, false, true);
+            var l = new GameObject(warm?"Old tungsten lamp":"Harbor street lamp").AddComponent<Light>(); l.transform.SetParent(root); l.transform.position = p + Vector3.up*3.5f;
+            l.type = LightType.Point; l.color = Hex(warm?"FFD09A":"B1CDD1"); l.range = 7; l.intensity = warm?1.7f:1.05f; l.shadows = LightShadows.None;
         }
         void Car(Vector3 p, Color c, bool police, float angle = 0)
         {

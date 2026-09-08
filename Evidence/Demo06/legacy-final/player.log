@@ -1,0 +1,129 @@
+Mono path[0] = '~/repos/Funstra/Build/NobodyGetsHomeAlone/Funstra_Data/Managed'
+Mono config path = '~/repos/Funstra/Build/NobodyGetsHomeAlone/MonoBleedingEdge/etc'
+CodeReloadManager initialized
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Initialize engine version: 6000.4.0f1 (8cf496087c8f)
+[Subsystems] Discovering subsystems at path ~/repos/Funstra/Build/NobodyGetsHomeAlone/Funstra_Data/UnitySubsystems
+[D3D12 Device Filter] Vendor Name: NVIDIA
+[D3D12 Device Filter] Device Name: NVIDIA GeForce RTX 4090
+[D3D12 Device Filter] Driver Version: 32.0.15.9597
+[D3D12 Device Filter] Feature Level: 12.2
+[D3D12 Device Filter] Graphics Memory: 24138 MB
+[D3D12 Device Filter] Processor Count: 32
+[D3D12 Device Filter] Device Type: Discrete
+GfxDevice: creating device client; kGfxThreadingModeClientWorkerJobs
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4090 (ID=0x2684)
+    Vendor:   NVIDIA
+    VRAM:     24138 MB
+    Driver:   32.0.15.9597
+Begin MonoManager ReloadAssembly
+- Finished resetting the current domain, in  0.001 seconds
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+<RI> Initializing input.
+<RI> Input initialized.
+UnloadTime: 0.456200 ms
+CHECK: Agent starts on walkable street: Patrol officer
+CHECK: Agent starts on walkable street: Patrol officer
+CHECK: Agent starts on walkable street: Patrol officer
+CHECK: Agent starts on walkable street: Resident
+CHECK: Agent starts on walkable street: Resident
+CHECK: Agent starts on walkable street: Resident
+CHECK: Agent starts on walkable street: Resident
+CHECK: Agent starts on walkable street: Resident
+CHECK: Agent starts on walkable street: Resident
+CHECK: Agent starts on walkable street: Resident
+CHECK: Agent starts on walkable street: Resident
+CHECK: Navigable route to (-17.00, 0.00, -35.00)
+CHECK: Controller arrived beside interaction at (-17.00, 0.00, -35.00)
+CHECK: Mara dialogue opens in interaction range
+CHECK: Navigable route to (32.00, 0.00, -13.50)
+CHECK: Controller arrived beside interaction at (32.00, 0.00, -12.00)
+CHECK: Actual hold interaction acquired job 1
+CHECK: Navigable route to (-17.00, 0.00, -35.00)
+CHECK: Controller arrived beside interaction at (-17.00, 0.00, -35.00)
+CHECK: Delivery advances job 1
+CHECK: Delivery offers upgrade
+CHECK: Permanent perk selected
+CHECK: First actual Mara delivery advances standing to RUNNER
+CHECK: Navigable route to (-31.00, 0.00, 13.00)
+CHECK: Controller arrived beside interaction at (-31.00, 0.00, 14.00)
+CHECK: Actual hold interaction acquired job 2
+CHECK: Navigable route to (-17.00, 0.00, -35.00)
+CHECK: Controller arrived beside interaction at (-17.00, 0.00, -35.00)
+CHECK: Delivery advances job 2
+CHECK: Delivery offers upgrade
+CHECK: Permanent perk selected
+CHECK: Navigable route to (28.00, 0.00, 39.00)
+CHECK: Controller arrived beside interaction at (29.00, 0.00, 39.00)
+CHECK: Actual hold interaction acquired job 3
+CHECK: Depot theft always triggers alarm
+CHECK: Wanted player cannot deliver goods
+CHECK: Navigable route to (-17.00, 0.00, -35.00)
+CHECK: Controller arrived beside interaction at (-17.00, 0.00, -35.00)
+CHECK: Delivery advances job 3
+CHECK: Three jobs reach ending with $740
+CHECK: Completed run persists and reloads
+CHECK: Completed campaign continues into free roam
+CHECK: New cargo run starts with empty six-slot bag
+CHECK: Navigable route to (40.00, 0.00, -12.50)
+CHECK: Controller arrived beside interaction at (40.00, 0.00, -11.00)
+CHECK: Actual hold interaction collected cargo site 0
+CHECK: Navigable route to (-40.50, 0.00, 15.00)
+CHECK: Controller arrived beside interaction at (-39.00, 0.00, 15.00)
+CHECK: Actual hold interaction collected cargo site 1
+CHECK: Two cargo sites add $170 and five weight to bag
+CHECK: Loaded cargo reduces movement speed
+CHECK: Cargo capacity refuses oversized pickup without changing bag
+CHECK: Navigable route to (-11.00, 0.00, -48.00)
+CHECK: Controller arrived beside interaction at (-11.00, 0.00, -48.00)
+CHECK: Actual extraction banks cargo once and clears bag
+CHECK: Banked cargo and successful run persist
+CHECK: Cool player opens safehouse management
+CHECK: Satchel purchase costs $180 and expands bag to nine
+CHECK: Purchased satchel cannot charge player again
+CHECK: Navigable route to (39.00, 0.00, 36.50)
+CHECK: Controller arrived beside interaction at (39.00, 0.00, 38.00)
+CHECK: Actual hold interaction collected cargo site 2
+CHECK: Alarmed cargo pickup creates heat
+CHECK: Heat blocks safehouse extraction
+CHECK: Heat blocks opening safehouse
+CHECK: Extraction requires a sustained hold
+CHECK: Releasing interaction resets extraction without banking
+CHECK: Second extraction banks alarmed cargo after heat clears
+CHECK: Reload preserves satchel and secured cash but clears loose cargo
+CHECK: Completed and reloaded Mara arc retains CONNECTED standing in free roam
+CHECK: Officer sees and pursues wanted player
+CHECK: Building interrupts officer line of sight
+CHECK: Unseen player does not update search location
+CHECK: Unseen heat expires
+CHECK: Arrest check begins with loose cargo
+CHECK: Arrest fines cash, removes goods and preserves retryable job
+CHECK: Actual arrest confiscates loose cargo
+CHECK: Arrest returns player to safehouse
+CHECK: Pause freezes simulation
+CHECK: Town agent walks its route: Patrol officer
+CHECK: Town agent walks its route: Patrol officer
+CHECK: Town agent walks its route: Patrol officer
+CHECK: Town agent walks its route: Resident
+CHECK: Town agent walks its route: Resident
+CHECK: Town agent walks its route: Resident
+CHECK: Town agent walks its route: Resident
+CHECK: Town agent walks its route: Resident
+CHECK: Town agent walks its route: Resident
+CHECK: Town agent walks its route: Resident
+CHECK: Town agent walks its route: Resident
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+CodeReloadManager destroyed

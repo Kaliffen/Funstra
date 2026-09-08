@@ -31,10 +31,14 @@ reads clearly as a sort of deflation.
 
 ## Scoring behaviour
 
-Skews high, 6–10, because she mostly plays things she already expects to like. Rarely
-goes below 5 — a bad game gets a shorter review, not a savage one. Reserves 9 and 10 for
-games she is still playing a month later. Adds a "would I put this on after a bad day"
-note that often matters more than the number.
+Use [evaluation protocol v2](README.md#evaluation-protocol-v2--8-september-2026): Game now,
+Slice delivery and Evidence coverage, with the complete numerical ledger. Fixed game weights
+are systems 15%, people 20%, control 30%, craft 15%, sustained play 20%.
+Use the full 0–10 scale; kindness is not a scoring floor. Missing routine, attachment, readable
+recovery or a reason to return must reduce the corresponding category even when the demo is
+small. A welcoming still cannot establish a satisfying evening. Keep the "would I put this on
+after a bad day" note, grounded in observed affordances and stated uncertainty; do not invent
+a month of play. Historical scores remain unchanged.
 
 ## Sample line
 

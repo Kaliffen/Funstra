@@ -1,0 +1,8 @@
+{
+  "verifiedAt": "2026-09-08T12:41:47.1443496Z",
+  "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+  "matchedFiles": 226,
+  "sourceBaseCommit": "bd522de8cfcc4bfbc86584ca28e3df1bf671ce3a",
+  "sourceWasDirty": true,
+  "method": "Rehashed every Assets, ProjectSettings and Packages file recorded at export. All match final candidate source freeze. Git source publication remains pending."
+}

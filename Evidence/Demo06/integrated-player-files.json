@@ -1,0 +1,587 @@
+{
+  "schemaVersion": 1,
+  "assemblySha256": "0F599165F989EFB88B610219CF5E31CE9DF617A486FC7DE26FE800A4A521AE29",
+  "executableSha256": "97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3",
+  "files": [
+    {
+      "path": "D3D12/D3D12Core.dll",
+      "sha256": "625BD40005B1C3708695D5256ECF230D278E6B8EDBA5A88AF70F3D91324F3052"
+    },
+    {
+      "path": "dstorage.dll",
+      "sha256": "CAE65787F61514BEC6F012F44546E68B19E39D8854A9AB52AF813370D44B272A"
+    },
+    {
+      "path": "dstoragecore.dll",
+      "sha256": "CF85B19A92A8276F8BACA0DB9BBCD60735BAD50768DEB303D310E84D5F4FDD11"
+    },
+    {
+      "path": "Funstra_Data/app.info",
+      "sha256": "1868B9F5E4DF64EA2B81AA2FCD7DCB180F748BF3195ABB1740FAD323E4C4973D"
+    },
+    {
+      "path": "Funstra_Data/boot.config",
+      "sha256": "FA3AB9BDEBB11A5B969AE31C070B01EA1A4DF96C960675A4E94CEEE931D86EAA"
+    },
+    {
+      "path": "Funstra_Data/globalgamemanagers",
+      "sha256": "3373CE9BA5D79A763A3BE9E2DC557012117671BC539B4DEB389BA632775B49E9"
+    },
+    {
+      "path": "Funstra_Data/globalgamemanagers.assets",
+      "sha256": "BE8291A99BF75090D82E2523735BF66393A0CC1D6F90557472D8E08E6ECD34CD"
+    },
+    {
+      "path": "Funstra_Data/globalgamemanagers.assets.resS",
+      "sha256": "39DD38FCD8DD95D41D6D55FE16A448D29FE2C31D9A162C825C24C6D99A893D7A"
+    },
+    {
+      "path": "Funstra_Data/level0",
+      "sha256": "6122273E84A7D7C06BB62C29F2306DC156BB8FCF960CD311A581432AE8D7CF20"
+    },
+    {
+      "path": "Funstra_Data/Managed/Assembly-CSharp.dll",
+      "sha256": "0F599165F989EFB88B610219CF5E31CE9DF617A486FC7DE26FE800A4A521AE29"
+    },
+    {
+      "path": "Funstra_Data/Managed/Mono.Security.dll",
+      "sha256": "9838776992DC44EBE2AFF2E9EC52C292024F5464542897AA5D29429A921437B9"
+    },
+    {
+      "path": "Funstra_Data/Managed/mscorlib.dll",
+      "sha256": "EAF6B07FD716403E8FEDC054BDD1650142D1DC95D34C01D9485DE97B5A0DD84B"
+    },
+    {
+      "path": "Funstra_Data/Managed/netstandard.dll",
+      "sha256": "6AE62E082DC494A2433984177F60CA4DB5FAE69B1F360A8B33754172B310B8C5"
+    },
+    {
+      "path": "Funstra_Data/Managed/System.ComponentModel.Composition.dll",
+      "sha256": "A30FDDE214493B540A5A169AA1729FF494D46F519D9C9A036746967C0845E764"
+    },
+    {
+      "path": "Funstra_Data/Managed/System.Configuration.dll",
+      "sha256": "223A6629BB9DEBB0327082DA3E525860E734F231274D0F6BB83A164DF778B779"
+    },
+    {
+      "path": "Funstra_Data/Managed/System.Core.dll",
+      "sha256": "DB725196B862D96BEEFB95BBB6693F892A12DC401B5C044660D13789E45C255D"
+    },
+    {
+      "path": "Funstra_Data/Managed/System.Data.DataSetExtensions.dll",
+      "sha256": "1D6F66F38CABD57B3D099804593CE5144E22921871DFDF0D6487A4BC725B9C8B"
+    },
+    {
+      "path": "Funstra_Data/Managed/System.Data.dll",
+      "sha256": "F1E0909723A04B1B8BA3630593893E1A4683B391349B79697B8958D7E897A68F"
+    },
+    {
+      "path": "Funstra_Data/Managed/System.dll",
+      "sha256": "C3C900393EFFD00A0D36F1DFD317FFE0F19744AAD0C3D9C0B10E5F4D5A00BDD7"
+    },
+    {
+      "path": "Funstra_Data/Managed/System.Drawing.dll",
+      "sha256": "630AEBA7B15DE154E6FAF86270EAAF6921AB2B5E9DD2273382E3A0DF8ED918AD"
+    },
+    {
+      "path": "Funstra_Data/Managed/System.EnterpriseServices.dll",
+      "sha256": "E0BD4C9AA95B3264E2BC5C43404637447DE098829BE95D5364A50C286651EDE1"
+    },
+    {
+      "path": "Funstra_Data/Managed/System.IO.Compression.dll",
+      "sha256": "11877B20D2C14BB0EB208F3E20F102DDD3C78B8C5D18EDCEA935DD5960E48449"
+    },
+    {
+      "path": "Funstra_Data/Managed/System.IO.Compression.FileSystem.dll",
+      "sha256": "738C6EA02BB89C69473F8E128F077CB6F7D62B04E7928E0E244EA7A991E65853"
+    },
+    {
+      "path": "Funstra_Data/Managed/System.Net.Http.dll",
+      "sha256": "31DD2EC15094027CB78457421633E24F8272A5D83792BD02F5C483339FDC948A"
+    },
+    {
+      "path": "Funstra_Data/Managed/System.Numerics.dll",
+      "sha256": "5AC2ED1D8235E6E27A7527FC159A852B1391854E35589746276377847228EB62"
+    },
+    {
+      "path": "Funstra_Data/Managed/System.Runtime.Serialization.dll",
+      "sha256": "5B7219B02B2724941F532F6806CC6402B7B413BE0161F8994364EBB80B045330"
+    },
+    {
+      "path": "Funstra_Data/Managed/System.Security.dll",
+      "sha256": "A51236ACA52E7F43A5D236667AEEE4C29B74F05E70ED4E66F23BD01F1219471D"
+    },
+    {
+      "path": "Funstra_Data/Managed/System.ServiceModel.Internals.dll",
+      "sha256": "10362190426D7F2FEB552223EBCEC5DEA0FB33C2EC2E4B512832DDBAD2D3FBEA"
+    },
+    {
+      "path": "Funstra_Data/Managed/System.Transactions.dll",
+      "sha256": "8A962B8B8A99A111BD765D090CF27605F0E84911354D7B272CD2EF484BD117C7"
+    },
+    {
+      "path": "Funstra_Data/Managed/System.Xml.dll",
+      "sha256": "22362D813E444A18592EC32A56731DD4265362BC8B2C2AAB76A1816F2D7D679E"
+    },
+    {
+      "path": "Funstra_Data/Managed/System.Xml.Linq.dll",
+      "sha256": "EEE68BC1879F7A5007752AA31DB5640A6EC8F5F18AECD40C92D38989758F795B"
+    },
+    {
+      "path": "Funstra_Data/Managed/Unity.Scripting.dll",
+      "sha256": "D9F107D6714F062CC2DF5DD9E0C8BC7E1187D51193F96D119E0CB03082166AC3"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.AccessibilityModule.dll",
+      "sha256": "CFA33B614E34C8556CEF15C5B19E0C5C0D31B7E398A84A049523B4F8F4E696E3"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.AdaptivePerformanceModule.dll",
+      "sha256": "CB000913DDCEE43BCA4BB77C5A278FAC16FB727D0862DCCDEB3E9FFF55E34725"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.AIModule.dll",
+      "sha256": "0076BEF08DFE454A7CB5D97765F5CDC367C85CA58F897074D54CDAA9E953DF05"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.AMDModule.dll",
+      "sha256": "581C99114E5EA9E46FD15FFC769FFB25DB1250D710FD220F836088CCD5BA8B55"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.AndroidJNIModule.dll",
+      "sha256": "7D36FB1B2093CB4959F5463DBDB4F23668FE9E2E8FF469713FB7BE5F9E1D9ECF"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.AnimationModule.dll",
+      "sha256": "C5469F3190A410EF884B5C53A984A13BEFF9F90BAAEA88370F9474F63BF2165F"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.ARModule.dll",
+      "sha256": "F0CF1338FE3E6874247478136223DE6F0B74C342A0444D45D1A702468712B5DF"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.AssetBundleModule.dll",
+      "sha256": "2E0C63667FF5B6F63E71CFC881D4DBF1EC19C2623A4349942E94D87505261312"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.AudioModule.dll",
+      "sha256": "E5ADA1E123D701CC8F8FEA9C8B596AE582CA08E2A9884078A55AF545CEEB2F2D"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.ClothModule.dll",
+      "sha256": "06B800CE5AAD6C66CD4BACAA2089B239B2F96F78C7A1FF6F0C1E22647A5F3194"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.ClusterInputModule.dll",
+      "sha256": "3A0C1B4F1CFF8E27D2E36C7EA51E95DEB2A0718FEE6A465E826A2FDA86BC58EB"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.ClusterRendererModule.dll",
+      "sha256": "AED45565BE0A52DABBB78535894703F7D771C561C5B7E4CC493F839B0A951380"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.ContentLoadModule.dll",
+      "sha256": "C7EA1686F271006A7169B26EF0E7FE2E343E0109EEDF30B2799EC10EEAA4F86F"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.CoreModule.dll",
+      "sha256": "CAA37CDC80522410287DA35C5B7E5081582ABB481B11B064936EFBF9E1D48496"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.CrashReportingModule.dll",
+      "sha256": "C2A3FFD09AF0FB91D4B349CEA2EBD4D5EEBFD32E8AD26FE02720E679BB5597CC"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.DirectorModule.dll",
+      "sha256": "704480317C689D2D622F416270998663E356DE04D2635FA894A0CE1CF0182780"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.dll",
+      "sha256": "C1EF39A6AB66550F224A2E99D8701D165A466A387DDAA7154D1D23768C93B6BA"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.DSPGraphModule.dll",
+      "sha256": "D8FD8DF858385B23D83CBA97F012A64934B6A5229C75672231BFB3108CB90FA1"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.GameCenterModule.dll",
+      "sha256": "ED6201BDDE3891CD2C531ED1C9F16E938F6147CB335AF6C7F40B6E47537916D7"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.GIModule.dll",
+      "sha256": "88F130095F2DF7EB4F8029BA4C378F783D22CA6F737AD450122806E9107FB125"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.GraphicsStateCollectionSerializerModule.dll",
+      "sha256": "2FDE300493A84ECEA731573E0E31D1738257FA927A8054D616B4287E48C2B592"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.GridModule.dll",
+      "sha256": "D7BF11F654C0DEED78B014FD05422E8B7CBA598C3B1014D2403BEAB59CD95714"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.HierarchyCoreModule.dll",
+      "sha256": "38489237FEBEAD7BE186ACA9148729F37AB6C30C35AEDA3E747F08A3894F0FBD"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.HierarchyModule.dll",
+      "sha256": "67839F333546171ECE2F439966BE6EFF740AAB9568E396D815B58ED0BA224E95"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.HotReloadModule.dll",
+      "sha256": "DB382274FF893A2E67968BB01FACD04D6C0C658AF4BC20466EB0A5C5B135C093"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.IdentifiersModule.dll",
+      "sha256": "EAE787DB0596AEC327C7F6608079831D28FF92A66D0A85A0CF31E24CC5ACDE0D"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.ImageConversionModule.dll",
+      "sha256": "59A3358E07F042058FC00A84BB33F243CF896C9D9E081AF3BD194BEDA666B996"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.IMGUIModule.dll",
+      "sha256": "81AF9A0B6704DAC504E8623F26BEB091AC1A76E02EDC2627FEC1BCB8162F4FE8"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.InputForUIModule.dll",
+      "sha256": "3657D3500F9D653FDE21CAEA6EF0B21CB16605E0D5ADD23F755C32F8DD220EC3"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.InputLegacyModule.dll",
+      "sha256": "4F4A7757F49CF8971BD73C22AE1780757C7D5DF0FD3B44E05E3E03ECA0782146"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.InputModule.dll",
+      "sha256": "793C777FF8DED0925FAF15E81A9C0D65128669088B0AE27365F89150B95F9A55"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.InsightsModule.dll",
+      "sha256": "59A92F51D26CB094305F7BDD158C6F4E0E4D7E64F6646736E653B5854717A852"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.JSONSerializeModule.dll",
+      "sha256": "6C3DB5154FF68D4BC58B83A0F779E5B9B1E5DF851ED4F307D61D52B9519562B9"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.LocalizationModule.dll",
+      "sha256": "E833812903286AF3A7BD81766690564CE938244B3C27EBE2453474DD9364DEBF"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.MarshallingModule.dll",
+      "sha256": "AD6A286A40E3CE300E8D3F9BA941DA5EF243DD2EFF1B549A6DEA1E331594C9A8"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.MultiplayerModule.dll",
+      "sha256": "B9D63637D51212BF365F1023E4633847F27F40A5092BF18027CCAC403B04EA01"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.NVIDIAModule.dll",
+      "sha256": "C2CC66714F12DBE5F23DF242A4AAA31AEEE9F3337101B41F643DA438A556F94B"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.ParticleSystemModule.dll",
+      "sha256": "3959DB7C579A8EEE00222032D7EE4DF0A3D8CAD5F8D9367706135C3F48117FCF"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.PerformanceReportingModule.dll",
+      "sha256": "473759EC42B83C22FA9CCDA62867F4D243DA06AF51EAB5E417AFABDD2DFCD055"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.Physics2DModule.dll",
+      "sha256": "75D4E481BA01376410BDA1F3C2C58A36AAD9EC705C08C5665C87EA478701CAED"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.PhysicsBackendPhysXModule.dll",
+      "sha256": "DFFD6510493C124BE47E147825D64D3459981AAA0908E7BCB2A58975CF2728EA"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.PhysicsModule.dll",
+      "sha256": "A30AFA173F209C31BD92D329B0C7E40B992CDACE5BB0547D13B10DF41BC44B40"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.PropertiesModule.dll",
+      "sha256": "6D7765D6F78E9DF92FCEEF14C8411EDA6A246C1C63A70C152FD9E7B13151472A"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.RenderAs2DModule.dll",
+      "sha256": "0AA0443105A8A16AD360638A6C32532CEFC1DB749C9B9E3307F16ABDF8F67FEB"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll",
+      "sha256": "846EC9096BC66AB4D5D6C2D7147F812C468504BF7AB3E9723C1A76602FCDB29D"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.ScreenCaptureModule.dll",
+      "sha256": "F2F6428E937EA960A1C8871C34F44AAC1F283BD6B9496A885528CE18E266B1B8"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.ScriptingModule.dll",
+      "sha256": "30A98AB3A1E238E8F06DE02DAE5169625E404E2622455BA7D6EAC1BF3F50DE35"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.ShaderVariantAnalyticsModule.dll",
+      "sha256": "997D7227ED1A1B204126A25018F34EF57B2237FE5C4C969DFB1ECB25A210D848"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.SharedInternalsModule.dll",
+      "sha256": "A08AAB3430F9163F5C6EFF2425F0C77B8623511B8364947B6C32CF8366D6C273"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.SpriteMaskModule.dll",
+      "sha256": "AB443A4767FB75A14431FF2CC1FC34C55C43979FF317C8600042902EB79A6441"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.SpriteShapeModule.dll",
+      "sha256": "45F13A293F3AAF8313B9881006316195A58940C94CA2D59DB767F21EED64D7D2"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.StreamingModule.dll",
+      "sha256": "BEC471247CE5136F22E29F8242CD3C34F75D8C76011EB7AA76D97297A7116151"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.SubstanceModule.dll",
+      "sha256": "A694F01782DC42DDD50CBE646A0421739E25A6291FE83D541159238DE928F749"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.SubsystemsModule.dll",
+      "sha256": "D357AF6C13F4D550D7E13143C68E9B3E2E7A82295C2C1B9E359648B7E9616288"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.TerrainModule.dll",
+      "sha256": "FCB203267D96049074ABD81961F7D8813932D8E0D61FB47D92D4CE0A6E3DB31C"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.TerrainPhysicsModule.dll",
+      "sha256": "024C28C900777E127DC2682055EDE0925E4A35BC84FE22BA18B863DC44BA56CF"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll",
+      "sha256": "BA28C6E6F0F21ED06DC3867911C05F98C780B940F308BAA679F1F8F89A9CB6FD"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll",
+      "sha256": "BE74A05ECFEEADF38A2567429481FFE7C023073ED9D887344AB272AF1B85DE8E"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.TextRenderingModule.dll",
+      "sha256": "AE69A3CE4F5DD5468D6EF38CBDEC2E5A3E8029F9CBEAABE8CDF0639B6763BA77"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.TilemapModule.dll",
+      "sha256": "B313A6F34BBF32C2C9EF1C5AC4B522E1522C65FD475874200FAAF0ADEAC62911"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.TLSModule.dll",
+      "sha256": "F7184D7459B2A038D57192BF9F52E31162F49A0281C42111D4CE7D0A2DBE409D"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.UIElementsModule.dll",
+      "sha256": "5286D048AF6992EBE68184EFE0C8F5CB5A8B8851F31889D2C46B711776A33705"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.UIModule.dll",
+      "sha256": "4DC1C9F3E73FBE2119EC9B74FB92B846968C925E50E3346C24E434A49F437C46"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.UmbraModule.dll",
+      "sha256": "B22DE3C4DD8CF33D6AF6226FE5F5CA59789439FCE1F2D8538124D2BA140B1A64"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll",
+      "sha256": "3476CAD7AA5B1C6CE3634CB04AFFFD06FE9C2593806D0FA1C8B051D1CAE2D7DB"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.UnityAnalyticsModule.dll",
+      "sha256": "6E61864B8CAEDA39843C7507E63E06DA358B11F70CB402B5EB71876CE4F6D0CC"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.UnityConnectModule.dll",
+      "sha256": "B72DC356AFA52083488D6B9BD167A8A8A9A3CA070E58B83A05AECB4AF59C4502"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.UnityConsentModule.dll",
+      "sha256": "C68DA4011BC29B7F2E80B269E1747688DE33C422B15A9BD7A2AB8D9784029C50"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.UnityCurlModule.dll",
+      "sha256": "F8EFE2D685D08F5AC9548F7402A2E17D37275211A835ACC039A0A4C71D33F487"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll",
+      "sha256": "F4F2B7111966AC7C3E4F03CECAC6B3DACC9C0F4E136BC6510144A0C4994876C2"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll",
+      "sha256": "FF7612B680DFC5CA6C60E98AFC0B9BD8734FC5F48AE843A7DE2274124D1470BF"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.UnityWebRequestModule.dll",
+      "sha256": "42327AE173AE2120166774C6924A89093022B91F7A430660F2C10CD41CDB24CF"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll",
+      "sha256": "492BC76DB860C69B6E0B416C336F7DB3727FB28C6A572C72997E6516B442D98B"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll",
+      "sha256": "D8D01D6190CC5130631E743FD249B2F6191D69E06A4CF8E348CBE98FF787E483"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.VectorGraphicsModule.dll",
+      "sha256": "B04428AC2475642BAA5F6BD56314A55878C7AAF7ED0F0352F31BE1961A7B642F"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.VehiclesModule.dll",
+      "sha256": "68A02875705C0FAE742CF1127F096A436A5225768853E0C9349EC56EC468BF1C"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.VFXModule.dll",
+      "sha256": "636EBDD331F4F98EEDB8DBF0A9D7660F16DAE243DDCF4BAFFA2BC35255C2D72F"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.VideoModule.dll",
+      "sha256": "27FD8B1914A34EEE6D27466DBE2BFFF3AFCCD5DC85C208407D75FE648D8EE901"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.VirtualTexturingModule.dll",
+      "sha256": "D70A32B883D35EC26D5F182017D2D1CB06D1119B820D1E392794F30B7A03D0B2"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.VRModule.dll",
+      "sha256": "EEF6E767AB93C24FDA005D1D96AF56AACD32B3764B9FEE5500B2FA2452002C30"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.WindModule.dll",
+      "sha256": "1FE67E7A5F34BAD9B66ABD37BAC59788A2DA0ECB390B78E1FDFDF89EB0902978"
+    },
+    {
+      "path": "Funstra_Data/Managed/UnityEngine.XRModule.dll",
+      "sha256": "A7F257F94458B6A6D76C65647AFB17D373E64CF1C85BCB121F3B333BE82AE0F4"
+    },
+    {
+      "path": "Funstra_Data/resources.assets",
+      "sha256": "995CACE74E5BD86AEFCCF964A5E55784824FCB357DB5207FBDAD319E06B162FB"
+    },
+    {
+      "path": "Funstra_Data/resources.resource",
+      "sha256": "BDC8E987E90D10FC21008D856BECE5F46F37B06A045943A94DE2606CF3AC2C0A"
+    },
+    {
+      "path": "Funstra_Data/Resources/unity default resources",
+      "sha256": "4B18D5BF85C9499FC9974905D861E664A7CE7C2EC9577283CC456D2BFD0F1CCA"
+    },
+    {
+      "path": "Funstra_Data/Resources/unity_builtin_extra",
+      "sha256": "7D765D17832094565662505C39AB413F19FB8B6F5E5ED29E3D7A2E3B37207447"
+    },
+    {
+      "path": "Funstra_Data/RuntimeInitializeOnLoads.json",
+      "sha256": "6A33C1EFD5944FEB0CB1E012E26B30C3F43FEC918E5643E72AB945A9C504FF13"
+    },
+    {
+      "path": "Funstra_Data/ScriptingAssemblies.json",
+      "sha256": "8E54F60173E48C953B3F638EDE737029E0B9C3F80CDE3CB3EC72A990C489B6F6"
+    },
+    {
+      "path": "Funstra_Data/sharedassets0.assets",
+      "sha256": "1DB49D9929E51DD14CAA78456EE34353944D2FF144AB7E9DA34A1B18CF81C56A"
+    },
+    {
+      "path": "Funstra_Data/sharedassets0.assets.resS",
+      "sha256": "87A4847EADE1DE49F6AAC782A74B9929ACBDB3C0F8B36D7750474215F1880479"
+    },
+    {
+      "path": "Funstra.exe",
+      "sha256": "97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3"
+    },
+    {
+      "path": "MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll",
+      "sha256": "2256C82119AC2BB9FDDF722407687ACEEE51272EA211EA83C3B7E687DE18BEAE"
+    },
+    {
+      "path": "MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll",
+      "sha256": "47AEE3A918E73B6A4A4699F6ED9FEB36A992B922E6935165659E7960B9B800C1"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser",
+      "sha256": "8A1082057AC5681DCD4E9C227ED7FB8EB42AC1618963B5DE3B65739DD77E2741"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx",
+      "sha256": "751861040B69EA63A3827507B7C8DA9C7F549DC181C1C8AF4B7CA78CC97D710A"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/2.0/machine.config",
+      "sha256": "E91782A27FA39FC6C1D6EE8B08529F5D35052310D0006034B878EB04B8F2AF30"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/2.0/settings.map",
+      "sha256": "49C6160F9D54AF4270A3B4E997FC4A8301F79B9E2070118FA46DDBCBBC44F9A2"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/2.0/web.config",
+      "sha256": "CF2B54339E069B9E42F7D6795EECBF562C50C1011F4CA8F65F578FE52D97FF92"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser",
+      "sha256": "8A1082057AC5681DCD4E9C227ED7FB8EB42AC1618963B5DE3B65739DD77E2741"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx",
+      "sha256": "751861040B69EA63A3827507B7C8DA9C7F549DC181C1C8AF4B7CA78CC97D710A"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.0/machine.config",
+      "sha256": "E60AEC2C5115D65B3ACB3C55EA21576DBD770F579166C017125571E46AE560ED"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.0/settings.map",
+      "sha256": "CE1DB1AD8A9512073164E3ECCDC193F7EDA036E1A9733CAEC4635DE21B2865C8"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.0/web.config",
+      "sha256": "E38BB8CC68FE5B4EDECDFD288D094B9E8CED7629039B2A347682ABA0D8BD7492"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser",
+      "sha256": "8A1082057AC5681DCD4E9C227ED7FB8EB42AC1618963B5DE3B65739DD77E2741"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx",
+      "sha256": "751861040B69EA63A3827507B7C8DA9C7F549DC181C1C8AF4B7CA78CC97D710A"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.5/machine.config",
+      "sha256": "EE950004B576FB28DC85F4B0435ED04BF96612DE2E8B53BE84D07AFE85A0DE6C"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.5/settings.map",
+      "sha256": "CE1DB1AD8A9512073164E3ECCDC193F7EDA036E1A9733CAEC4635DE21B2865C8"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.5/web.config",
+      "sha256": "C4CBDDD4FD9347B58CC5A72B36DC4BA1AD2BB699E65869D05CD3FB9865F0D824"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/browscap.ini",
+      "sha256": "4DDD50F31FB968F30BEDEFC253A46DC3F2890192D05CDAA9E0A64A056EEE807E"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/config",
+      "sha256": "5776169973A26A387B8B3E5C0F2301A7AB9A6DD7C7D3EFA22A96ABC47FBF8662"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/mconfig/config.xml",
+      "sha256": "0C56E34C69124510FA8C19E7B4C2CA6C1C4FF460AE19F798DD0CA035809E396D"
+    },
+    {
+      "path": "UnityCrashHandler64.exe",
+      "sha256": "DC2B7BF05A53B347CCE8F4E84EE4BEE87D8C64419E6959D0DC7CA2DF4EF8B23C"
+    },
+    {
+      "path": "UnityPlayer.dll",
+      "sha256": "32C07A8D79FDE9AF851231851BEF97AA73E253A75C084585C452DBF1B466BDB0"
+    }
+  ]
+}

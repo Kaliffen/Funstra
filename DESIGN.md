@@ -5,9 +5,11 @@ Creative direction approved by the owner, 8 September 2026; revised to prioritiz
 
 ## The decision
 
-Preserve the warm, stylized isometric art. Rebuild Old Port as a place with useful spaces, owners, entrances, work and competing routes. Expand it in connected, distinct pieces. The player should learn a street, exploit its opportunities, depend on its people and eventually decide what it becomes.
+Preserve readable, stylized isometric forms while following the owner's 8 September darker direction: soot, saltstone, rust, severe light and scarce warm refuge. Rebuild Old Port as a place with useful spaces, owners, entrances, work and competing routes. Expand it in connected, distinct pieces. The player should learn a street, judge people through their conduct, exploit its opportunities, depend on its people and eventually decide what it becomes.
 
-The published executable is Pressure and Escape 0.4.2, following Police Response and the owner-approved Demo04. It includes the finite medical dispute, a support companion, clinic interiors, reactive dialogue, ambient traffic, legacy jobs/cargo and a bounded nine-officer response with two reinforcement trucks. Collective pistol fire, readable CONTACT/SEARCH and ammunition, early escape and contextual recovery are implemented and reviewed. It does not have a renewable physical supply chain, controllable squads or faction planning. Published evidence is in [Evidence/VALIDATION.md](Evidence/VALIDATION.md); play instructions are in [PRESSURE-AND-ESCAPE.md](PRESSURE-AND-ESCAPE.md). [#40](https://github.com/Kaliffen/Funstra/issues/40) records the completed release cycle and separate pending human acceptance. No future capability below is claimed for the published build.
+**Identity bridge ([#41](https://github.com/Kaliffen/Funstra/issues/41)):** Demo06 includes named residents' perceived danger, distinct priorities, finite aid and remembered encounters using shared movement and resource rules. The visual pass follows the updated VISION direction; older warm-palette notes below describe prior accepted work. Owner visual acceptance remains separate. The bridge supports the crew operation.
+
+Current release work is Nobody Gets Home Alone 0.6.0, following Pressure and Escape 0.4.2 and the local Demo05 acquisition/supply bridge. It adds three selectable people, finite equipment and aid, physical rescue, remembered abandonment, one contested dock component, an auxiliary repair partnership and finite rifle opposition. Four original guided reviews score Game now 5.3–5.7/10. Their deductions expose the remaining gap between working mechanisms and a sustained life in the port. [#42](https://github.com/Kaliffen/Funstra/issues/42) tracks useful practice, [#43](https://github.com/Kaliffen/Funstra/issues/43) partner equipment clarity and an ordinary crew livelihood route, and [#30](https://github.com/Kaliffen/Funstra/issues/30) lasting commitments and a foothold. [Validation and delivery receipts](Evidence/VALIDATION.md), [play manual](NOBODY-GETS-HOME-ALONE.md) and [dossier](Docs/funstra-review-dossier-demo06.html) identify actual evidence and publication; human acceptance is separate. Future capabilities below are not claimed implemented.
 
 ## What the feedback changes
 
@@ -92,6 +94,8 @@ Introduce a named dealer and a first-gun situation with purchase, favor, theft a
 
 **Stop/replan:** If combat becomes unaffordable to learn, adjust accessible practice/recovery and income costs rather than erase scarcity or force repeatable chores.
 
+Local Demo05 candidate now implements the acquisition/supply scope: Sella in Market Court, a clinic-paper favor, purchase/theft/downed-actor recovery, three finite walking-courier consignments, physical ammunition and medicine custody, observed possession/confiscation, and a shared-projectile SMG. Normal saves migrate to a separate Demo05 file. This is a local demo checkpoint; independent panel review, publication and owner acceptance remain separate. See [the playable route](THE-PRICE-OF-A-GUN.md).
+
 Execution: [#28](https://github.com/Kaliffen/Funstra/issues/28).
 
 ### Demo 06 — Nobody Gets Home Alone
@@ -103,6 +107,8 @@ Player plus two persistent recruits, including Neri and one dockworker/mechanic.
 **Acceptance:** Approach the same boss-controlled yard solo, with Neri and with the full crew; demonstrate stealth, bargaining and a coordinated fight with different costs. The boss uses the same damage/ammunition rules, with danger from people and position rather than a giant health pool. Interrupt enemy communication or remove their leader and observe a specific coordination change. Rescue or abandon an ally; their condition and remembered event survive reload. Compare rifle, SMG, shotgun and pistol on the same site.
 
 **Validation:** Control switching/order cancellation, companion and enemy pathing, resource costs, carrying an incapacitated actor, group retreat under obstruction, loss of leader/contact and failure recovery. Test ammo-cost and handling differences across four gun families in the exported player.
+
+**Owner clarification, 8 September:** casualties, failed assaults and people left without rescue are valid world outcomes. Do not tune enemies or require a perfect three-person return to satisfy automation. A combat validation passes when actual orders, damage, finite custody, survivor control and persisted consequences are coherent; its report must separately say whether the operation succeeded, someone withdrew or the crew was defeated. Technical failures such as blocked movement or lost state still fail validation. Demonstrate rescue as an available choice, not an obligation or survival guarantee.
 
 **Limits:** Three controllable people, one authored dangerous site and boss, four gun families total at this stage, plus bounded truck-borne rifle response squads. The 30+ army response belongs to Demo08; no extensive skill tree or forced boss kill.
 

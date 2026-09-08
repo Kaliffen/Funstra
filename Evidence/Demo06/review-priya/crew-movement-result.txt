@@ -1,0 +1,6 @@
+Steps: 172
+Neri: (-9.95, 0.00, 47.40)
+Rell: (-11.90, 0.00, 47.41)
+Minimum separation: 0.8819147
+neri walkable=True path=(-10.00, 0.00, 48.00) next=(-9.96, 0.00, 47.55) ground=True body=True
+rell walkable=True path=(-12.00, 0.00, 48.00) next=(-11.92, 0.00, 47.56) ground=True body=True

@@ -36,6 +36,7 @@ namespace Funstra
             foreach(var a in game.Agents)pedestrians.Add(a.Position);
             if(game.DistrictEnabled)
             { pedestrians.Add(game.District.neri.position);pedestrians.Add(game.District.guard.position);pedestrians.Add(game.District.collector.position); }
+            if(game.CrewEnabled&&game.District.crew!=null)pedestrians.Add(game.District.crew.rell.position);
             AdvanceTraffic(dt,pedestrians);
         }
         public void AdvanceTraffic(float dt,List<Vector3> people)

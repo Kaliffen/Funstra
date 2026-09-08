@@ -1,0 +1,52 @@
+PASS
+PASS: Pressure route uses isolated normal campaign and forced mute
+METHOD: extended durability stress, then separate ordinary-health exposure and controller escape; no human input/feel claim. Production Update advances all combat and arrivals.
+METHOD: crew-pressure uses the production rifle response: three base patrols plus six rifle reinforcements delivered by the existing two trucks. The triggering player kit is one pistol/twelve rounds. Exposure/escape reset each delivered officer to ordinary health and eighteen finite rounds while retaining weapon kind. No ammunition is supplied during an encounter.
+PASS: Actual witnessed player projectiles injure a resident and request both reinforcement trucks
+MEASURED: shooters=9 reloaders=9 frames=2203 p95ms=33.6016 finalAmmo=0
+PASS: Normal live dispatch delivers all six reinforcements while combat and traffic run
+PASS: The existing two trucks account for exactly six rifle reinforcements under the nine-officer ceiling
+PASS: Live dispatched rifle reinforcement produces immutable owner/player-hit evidence
+MEASURED: distinct rifle reinforcement owners with actual player-hit receipts=5; firing and reloading by all officers are separately counted from finite ammunition.
+PASS: Every one of the nine officers fires through the live combat loop
+PASS: Sustained collective fire includes real finite-magazine reloads from at least six officers
+PASS: Collective projectile fire deals more than a normal player's full health in stress fixture
+PASS: At least three officers exhaust ammunition; all nine conserve their finite supply without replenishment
+PASS: Only this muted Funstra player runs during pressure measurement
+PASS: Prepared crew encounter retains all six real reinforcement rifles and supplies eighteen finite rounds per officer
+PASS: Tactical pause freezes full roster, damage and search while ammunition stays inspectable
+PASS: Exposed normal-health player is defeated by live nine-officer fire
+PASS: Actual defeat provides recovery and clears immediate reinforcements
+PASS: Fresh street defeat describes actual losses without inventing a medical shipment
+PASS: Prepared crew encounter retains all six real reinforcement rifles and supplies eighteen finite rounds per officer
+ROUTE: fixed crew escape32,-17 ->28,-22 ->28,-36 ->8,-39; real controller follows the bin corner and Arcadia rear alley.
+PASS: Fixed crew escape waypoint is on shared walkable ground: (32.00, 0.00, -17.00)
+PASS: Navigable route to (32.00, 0.00, -17.00)
+PASS: Controller arrived beside interaction at (32.00, 0.00, -17.00)
+PASS: Fixed crew escape waypoint is on shared walkable ground: (28.00, 0.00, -22.00)
+PASS: Navigable route to (28.00, 0.00, -22.00)
+PASS: Controller arrived beside interaction at (28.00, 0.00, -22.00)
+PASS: Fixed crew escape waypoint is on shared walkable ground: (28.00, 0.00, -36.00)
+PASS: Navigable route to (28.00, 0.00, -36.00)
+PASS: Controller arrived beside interaction at (28.00, 0.00, -36.00)
+PASS: Fixed crew escape waypoint is on shared walkable ground: (8.00, 0.00, -39.00)
+PASS: Navigable route to (8.00, 0.00, -39.00)
+PASS: Controller arrived beside interaction at (8.00, 0.00, -39.00)
+PASS: Fixed rear-alley escape reaches real shelter behind Arcadia
+PASS: Ordinary-health rifle escape reaches real Arcadia shelter and ends any treatment through production behavior
+PASS: Ordinary-health player withdraws through real streets and cover using the production controller
+PASS: Escape save/reload preserves the full responding roster
+PASS: Navigable route to (-45.00, 0.00, -39.00)
+PASS: Controller arrived beside interaction at (-45.00, 0.00, -39.00)
+PASS: Navigable route to (-45.00, 0.00, -13.00)
+PASS: Controller arrived beside interaction at (-45.00, 0.00, -13.00)
+ESCAPE: health=100 heat=0 screen=Play status=
+PASS: Lost-contact search is readable and does not refresh coordinates without an officer sighting
+PASS: Unseen controller escape ends pursuit under normal health and arrest rules
+PASS: Navigable route to (-27.00, 0.00, -12.00)
+PASS: Controller arrived beside interaction at (-27.00, 0.00, -12.00)
+PASS: Return to clinic leaves a valid persisted campaign
+COVERAGE: legacy crowded-door/empty-officer-advance appendix remains in the non-crew Pressure route. Crew exhaustion intentionally withdraws; its separate guided opposition route measures depleted withdrawal and moving rifle lanes.
+METHOD: laden recovery presentation starts from an explicitly prepared casualty and real carried loss transactions; this is not a second combat defeat.
+PASS: Laden defeat reports each actual carried loss and preserves its recorded context
+PASS: Laden defeat still conserves a valid campaign

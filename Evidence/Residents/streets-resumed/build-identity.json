@@ -1,0 +1,7 @@
+{
+  "testedAt": "2026-09-08T09:58:50.6331029Z",
+  "mode": "Streets",
+  "executable": "~\\repos\\Funstra\\Build\\OldPortUnderPressure\\Funstra.exe",
+  "assemblySha256": "637D6E3571CD273CB99BACFF103885D17207E229BC28D958EC860B3FE17741BC",
+  "method": "Guided exported player; direct setups and controller travel identified in result."
+}

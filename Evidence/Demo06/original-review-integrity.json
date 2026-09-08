@@ -1,0 +1,38 @@
+{
+  "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+  "frozenAt": "2026-09-08T12:58:38.3524170Z",
+  "files": [
+    {
+      "path": "reviewer-agents/dag-moller/demo06.md",
+      "sha256": "084DA0EC3F1A9047B74AAB209CB892F27B4AA64A5CD6A4C54DF1B0D5010B5B3F"
+    },
+    {
+      "path": "reviewer-agents/dag-moller/demo06-meeting.md",
+      "sha256": "723B8501BFD53DF8CDF66824518218BBE531FA4A92DA56D198507439DB40A275"
+    },
+    {
+      "path": "reviewer-agents/priya-raman/demo06.md",
+      "sha256": "4C10A4FB4DB27D88E7085540173A800E27F789D25F446F4E1ACDD2CAE5DECF9B"
+    },
+    {
+      "path": "reviewer-agents/priya-raman/demo06-meeting.md",
+      "sha256": "72188A6274C4C9012238AE546CB76CFA60AC760AB9F0C09D498353B83392E9B5"
+    },
+    {
+      "path": "reviewer-agents/marcus-webb/demo06.md",
+      "sha256": "F2458E5EAE203D83027E3CB3AE16C7F004C66A6C8F7626A8CB16BA484977057C"
+    },
+    {
+      "path": "reviewer-agents/marcus-webb/demo06-meeting.md",
+      "sha256": "4407C6313E504BE4E0F70D3626CC4D27E0CB958391D4AF5CCF8FCD8EEB562F42"
+    },
+    {
+      "path": "reviewer-agents/nell-okafor/demo06.md",
+      "sha256": "72B59297DD5630E5EB9AD4024FB9E8836878EED3B0E3C9F0551E51FE65E313BC"
+    },
+    {
+      "path": "reviewer-agents/nell-okafor/demo06-meeting.md",
+      "sha256": "3718429D5C1F14F6204616A6DF66088D350E0B8158BC66CCB7F52C693173C11C"
+    }
+  ]
+}

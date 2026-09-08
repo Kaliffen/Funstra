@@ -1,0 +1,12 @@
+{
+  "testedAt": "2026-09-08T09:57:57.1974767Z",
+  "endedAt": "2026-09-08T09:58:40.8754586Z",
+  "elapsedSeconds": 43.6779819,
+  "mode": "Arms",
+  "executable": "~\\repos\\Funstra\\Build\\OldPortUnderPressure\\Funstra.exe",
+  "executableSha256": "97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3",
+  "assemblySha256": "637D6E3571CD273CB99BACFF103885D17207E229BC28D958EC860B3FE17741BC",
+  "playerExitCode": 0,
+  "failure": null,
+  "method": "Muted guided exported player. Controller acquisition and explicitly stepped supply/combat fixtures are identified in the runtime result."
+}

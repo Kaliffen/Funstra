@@ -10,14 +10,26 @@ public static class FunstraBuild
 {
     [MenuItem("Funstra/Build playable Windows demo")]
     public static void Build()
-    { BuildPressure(); }
+    { BuildCrew(); }
+    [MenuItem("Funstra/Build The Price of a Gun candidate")]
+    public static void BuildArms()
+    { BuildPlayer("PriceOfAGun", "0.5.0"); }
+    [MenuItem("Funstra/Build Old Port under pressure candidate")]
+    public static void BuildResidents()
+    { BuildPlayer("OldPortUnderPressure", "0.5.1"); }
+    [MenuItem("Funstra/Build Nobody Gets Home Alone candidate")]
+    public static void BuildCrew()
+    { BuildPlayer("NobodyGetsHomeAlone", "0.6.0"); }
     [MenuItem("Funstra/Build pressure and escape candidate")]
     public static void BuildPressure()
     { BuildPlayer("PressureEscape", "0.4.2"); }
     [MenuItem("Funstra/Build police response candidate")]
     public static void BuildPolice()
     { BuildPlayer("PoliceResponse", "0.4.1"); }
-    static void BuildPlayer(string folder, string version)
+    [MenuItem("Funstra/Build local debug player")]
+    public static void BuildLocalDebug()
+    { BuildPlayer("LocalDebug", "0.4.2", true); }
+    static void BuildPlayer(string folder, string version, bool development=false)
     {
         VerifyRules();
         DistrictRules.Verify();
@@ -27,6 +39,10 @@ public static class FunstraBuild
         CombatSquadRules.Verify();
         CombatRules.Verify();
         PoliceRules.Verify();
+        ArmsRules.Verify();
+        ResidentRules.Verify();
+        CrewOppositionRules.Verify();
+        DockOperationRules.Verify();
         // Runtime-created geometry still needs explicit build-time shader references.
         Directory.CreateDirectory("Assets/Resources/Rendering");
         EnsureMaterial("Standard", "Surface", false);
@@ -48,7 +64,7 @@ public static class FunstraBuild
         AssetDatabase.SaveAssets();Directory.CreateDirectory("Build/"+folder);
         var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions {
             scenes=new[]{"Assets/Scenes/OldPort.unity"},locationPathName="Build/"+folder+"/Funstra.exe",
-            target=BuildTarget.StandaloneWindows64,options=BuildOptions.None
+            target=BuildTarget.StandaloneWindows64,options=development?BuildOptions.Development:BuildOptions.None
         });
         Directory.CreateDirectory("Evidence");
         File.WriteAllText("Evidence/build-result.txt",report.summary.result+"\nErrors: "+report.summary.totalErrors+"\nWarnings: "+report.summary.totalWarnings+"\nBytes: "+report.summary.totalSize+"\nDuration: "+report.summary.totalTime);

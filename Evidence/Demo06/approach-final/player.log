@@ -1,0 +1,152 @@
+Mono path[0] = '~/repos/Funstra/Build/NobodyGetsHomeAlone/Funstra_Data/Managed'
+Mono config path = '~/repos/Funstra/Build/NobodyGetsHomeAlone/MonoBleedingEdge/etc'
+CodeReloadManager initialized
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Initialize engine version: 6000.4.0f1 (8cf496087c8f)
+[Subsystems] Discovering subsystems at path ~/repos/Funstra/Build/NobodyGetsHomeAlone/Funstra_Data/UnitySubsystems
+[D3D12 Device Filter] Vendor Name: NVIDIA
+[D3D12 Device Filter] Device Name: NVIDIA GeForce RTX 4090
+[D3D12 Device Filter] Driver Version: 32.0.15.9597
+[D3D12 Device Filter] Feature Level: 12.2
+[D3D12 Device Filter] Graphics Memory: 24138 MB
+[D3D12 Device Filter] Processor Count: 32
+[D3D12 Device Filter] Device Type: Discrete
+GfxDevice: creating device client; kGfxThreadingModeClientWorkerJobs
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4090 (ID=0x2684)
+    Vendor:   NVIDIA
+    VRAM:     24138 MB
+    Driver:   32.0.15.9597
+Begin MonoManager ReloadAssembly
+- Finished resetting the current domain, in  0.001 seconds
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+<RI> Initializing input.
+<RI> Input initialized.
+UnloadTime: 0.441800 ms
+CHECK: Independent crew-approach runner is enabled and muted
+CHECK: Fresh live yard has three ordinary guards and ordinary protagonist health
+CHECK: Crew route exists for player to (-8.00, 0.00, 12.00)
+CHECK: Actual selected controller arrived: player at (-8.00, 0.00, 12.00)
+CHECK: Crew route exists for player to (-8.00, 0.00, 48.00)
+CHECK: Actual selected controller arrived: player at (-8.00, 0.00, 48.00)
+CHECK: Crew route exists for player to (30.00, 0.00, 48.00)
+CHECK: Actual selected controller arrived: player at (30.00, 0.00, 48.00)
+CHECK: Crew route exists for player to (30.00, 0.00, 43.00)
+CHECK: Actual selected controller arrived: player at (30.00, 0.00, 43.00)
+CHECK: North loading bay provides a real unseen pickup position for solo
+CHECK: Actual held pickup gives sole component to player
+CHECK: Unpaid solo pickup remains unobserved through actual hold duration
+CHECK: Crew route exists for player to (30.00, 0.00, 48.00)
+CHECK: Actual selected controller arrived: player at (30.00, 0.00, 48.00)
+CHECK: Crew route exists for player to (-8.00, 0.00, 48.00)
+CHECK: Actual selected controller arrived: player at (-8.00, 0.00, 48.00)
+CHECK: Crew route exists for player to (-8.00, 0.00, 12.00)
+CHECK: Actual selected controller arrived: player at (-8.00, 0.00, 12.00)
+CHECK: Crew route exists for player to (52.00, 0.00, 12.00)
+CHECK: Actual selected controller arrived: player at (52.00, 0.00, 12.00)
+CHECK: Crew route exists for player to (61.00, 0.00, 18.50)
+CHECK: Actual selected controller arrived: player at (61.00, 0.00, 18.50)
+CHECK: Unobserved solo extraction provokes no yard gunfire or collector injury
+CHECK: Unseen solo controller returns the same component to live Rell
+CHECK: Unseen solo outcome persists without component respawn
+CHECK: Fresh live yard has three ordinary guards and ordinary protagonist health
+CHECK: Neri pair fixture earns existing partnership through finite donation
+CHECK: Neri receives actual west-spine movement order outside rifle range
+CHECK: Crew route exists for player to (-8.00, 0.00, 12.00)
+CHECK: Actual selected controller arrived: player at (-8.00, 0.00, 12.00)
+CHECK: Crew route exists for player to (-8.00, 0.00, 48.00)
+CHECK: Actual selected controller arrived: player at (-8.00, 0.00, 48.00)
+CHECK: Crew route exists for player to (-8.00, 0.00, 45.00)
+CHECK: Actual selected controller arrived: player at (-8.00, 0.00, 45.00)
+CHECK: Crew route exists for player to (-12.00, 0.00, 45.00)
+CHECK: Actual selected controller arrived: player at (-12.00, 0.00, 45.00)
+CHECK: Neri takes actual control while protagonist holds north street
+CHECK: Crew route exists for neri to (30.00, 0.00, 48.00)
+CHECK: Actual selected controller arrived: neri at (30.00, 0.00, 48.00)
+CHECK: Crew route exists for neri to (30.00, 0.00, 43.00)
+CHECK: Actual selected controller arrived: neri at (30.00, 0.00, 43.00)
+CHECK: North loading bay provides a real unseen pickup position for neri-pair
+CHECK: Actual held pickup gives sole component to neri
+CHECK: Unpaid neri-pair pickup remains unobserved through actual hold duration
+CHECK: Crew route exists for neri to (30.00, 0.00, 48.00)
+CHECK: Actual selected controller arrived: neri at (30.00, 0.00, 48.00)
+CHECK: Crew route exists for neri to (-8.00, 0.00, 48.00)
+CHECK: Actual selected controller arrived: neri at (-8.00, 0.00, 48.00)
+CHECK: Crew route exists for neri to (-8.00, 0.00, 12.00)
+CHECK: Actual selected controller arrived: neri at (-8.00, 0.00, 12.00)
+CHECK: Crew route exists for neri to (52.00, 0.00, 12.00)
+CHECK: Actual selected controller arrived: neri at (52.00, 0.00, 12.00)
+CHECK: Crew route exists for neri to (61.00, 0.00, 18.50)
+CHECK: Actual selected controller arrived: neri at (61.00, 0.00, 18.50)
+CHECK: Unobserved neri-pair extraction provokes no yard gunfire or collector injury
+CHECK: Neri's completed controller journey did not move the held protagonist
+CHECK: Unseen neri-pair controller returns the same component to live Rell
+CHECK: Unseen neri-pair outcome persists without component respawn
+CHECK: Fresh live yard has three ordinary guards and ordinary protagonist health
+CHECK: Full-crew fixture recruits Neri via finite clinic donation
+CHECK: Finite dealer sells one rifle for Rell
+CHECK: Finite dealer sells rifle packet 1
+CHECK: Finite dealer sells rifle packet 2
+CHECK: Finite dealer sells rifle packet 3
+CHECK: Finite dealer sells rifle packet 4
+CHECK: Rifle begins production magazine load
+CHECK: Finite dealer sells one SMG for protagonist
+CHECK: Finite dealer sells SMG packet 1
+CHECK: Finite dealer sells SMG packet 2
+CHECK: Finite dealer sells SMG packet 3
+CHECK: Finite dealer sells SMG packet 4
+CHECK: SMG begins production magazine load
+CHECK: Crew route exists for player to (61.00, 0.00, 18.50)
+CHECK: Actual selected controller arrived: player at (61.00, 0.00, 18.50)
+CHECK: Reached handoff transfers purchased rifle and twenty rounds to Rell
+CHECK: Crew route exists for player to (52.00, 0.00, 12.00)
+CHECK: Actual selected controller arrived: player at (52.00, 0.00, 12.00)
+CHECK: Crew route exists for player to (-8.00, 0.00, 12.00)
+CHECK: Actual selected controller arrived: player at (-8.00, 0.00, 12.00)
+CHECK: Crew route exists for player to (-8.00, 0.00, 48.00)
+CHECK: Actual selected controller arrived: player at (-8.00, 0.00, 48.00)
+CHECK: Outer regroup allows actual yard sighting memory to expire without clearing it
+CHECK: Crew route exists for player to (30.00, 0.00, 48.00)
+CHECK: Actual selected controller arrived: player at (30.00, 0.00, 48.00)
+CHECK: Crew receives separated north approach lanes through real Move orders
+CHECK: Crew route exists for player to (30.00, 0.00, 49.00)
+CHECK: Actual selected controller arrived: player at (30.00, 0.00, 49.00)
+CHECK: Crew route exists for player to (18.00, 0.00, 49.00)
+CHECK: Actual selected controller arrived: player at (18.00, 0.00, 49.00)
+CHECK: Protagonist reached independent left firing lane with clear geometry past both partners
+CHECK: Both armed partners receive actual coordinated Engage orders
+CHECK: All three crew members actually spent their own finite ammunition in coordinated fight
+CHECK: Owner/victim receipts prove protagonist and partner projectiles hit actual yard opponents
+CHECK: Actual projectile hits establish hostile yard outcome
+CHECK: Crew route exists for player to (30.00, 0.00, 49.00)
+CHECK: Actual selected controller arrived: player at (30.00, 0.00, 49.00)
+CHECK: Crew route exists for player to (30.00, 0.00, 43.00)
+CHECK: Actual selected controller arrived: player at (30.00, 0.00, 43.00)
+CHECK: East withdrawal waypoint is physically navigable: (44.00, 0.00, 42.00)
+CHECK: Crew route exists for player to (44.00, 0.00, 42.00)
+CHECK: Actual selected controller arrived: player at (44.00, 0.00, 42.00)
+CHECK: East withdrawal waypoint is physically navigable: (52.00, 0.00, 40.00)
+CHECK: Crew route exists for player to (52.00, 0.00, 40.00)
+CHECK: Actual selected controller arrived: player at (52.00, 0.00, 40.00)
+CHECK: East withdrawal waypoint is physically navigable: (52.00, 0.00, 20.00)
+CHECK: Crew route exists for player to (52.00, 0.00, 20.00)
+CHECK: Actual selected controller arrived: player at (52.00, 0.00, 20.00)
+CHECK: Crew route exists for player to (61.00, 0.00, 18.50)
+CHECK: Actual selected controller arrived: player at (61.00, 0.00, 18.50)
+CHECK: Full-crew combat outcome reached a real terminal location or emergency recovery
+CHECK: Full-crew combat outcome preserves integrated finite-state invariants
+CHECK: Full-crew combat outcome reload verified: identities, custody, wounds and remaining ammunition
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+CodeReloadManager destroyed

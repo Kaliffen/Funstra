@@ -1,0 +1,44 @@
+PASS: Demo06 thirteenth export editor validation
+Assembly SHA256: 442A8FD11DD93105429BF8ADFCEE5225F79369D89159D071807433AAA4CAA73D
+Built at: 2026-09-08T12:14:50.0794202Z
+Candidate source manifest: Evidence/Demo06/candidate-source.json
+Local source log: Evidence/demo06-build-thirteenth.log
+METHOD: Sanitized check counts and build result only. Licensing, account, environment and full editor stack logs are not copied.
+METHOD: Counts are assertions, including generated spatial cases; they are not counts of gameplay scenarios. Result-file timestamps match this successful BuildCrew invocation.
+
+General: 75
+District: 37
+Refuge: 33
+Spatial: 1910
+Clinic: 72
+Combat squad: 39
+Combat: 36
+Police: 22
+Arms: 70
+Resident: 29
+Crew opposition: 31
+Dock operation: 23
+TOTAL EDITOR ASSERTIONS: 2377
+
+Sources:
+Evidence/rules-result.txt | 2026-09-08T12:14:46.759404+00:00 | PASS: 75 rule, persistence and navigation checks
+Evidence/district-rules-result.txt | 2026-09-08T12:14:46.786082+00:00 | PASS: 37 district simulation, conservation, recovery and migration assertions
+Evidence/refuge-rules-result.txt | 2026-09-08T12:14:46.793632+00:00 | PASS: 33 refuge, dialogue, schedule and prop route assertions
+Evidence/spatial-rules-result.txt | 2026-09-08T12:14:47.208098+00:00 | PASS: 1910 spatial route, gate and sight assertions
+Evidence/clinic-rules-result.txt | 2026-09-08T12:14:47.248025+00:00 | PASS: 72 clinic route, collision and cutaway assertions
+Evidence/police-rules-result.txt | 2026-09-08T12:14:47.273408+00:00 | PASS: 22 police knowledge, dispatch and persistence checks
+Evidence/arms-rules-result.txt | 2026-09-08T12:14:47.305122+00:00 | PASS: 70 acquisition, custody, supply and migration checks
+Evidence/resident-rules-result.txt | 2026-09-08T12:14:47.306634+00:00 | PASS: 29 resident identity, perception, finite aid and persistence checks
+Build log | Combat squad rules: 39 checks passed.
+Build log | 36 lines beginning COMBAT PASS /
+Build log | 31 lines beginning OPPOSITION PASS /
+Build log | DOCK_OPERATION_RULES_PASS checks=23
+
+Build result:
+Succeeded
+Errors: 0
+Warnings: 0
+Bytes: 93088672
+Duration: 00:00:03.1431907
+
+Runtime routes, rendered review, package and publication are separate. This file does not assert completion of any pending runtime route.

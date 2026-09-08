@@ -1,0 +1,281 @@
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nobody Gets Home Alone — Demo06 review dossier</title><style>
+  :root{
+    --bg:#EFEAE0;
+    --surface:#FBF8F2;
+    --surface-2:#FFFFFF;
+    --ink:#1E2126;
+    --ink-dim:#5B6570;
+    --ink-faint:#8A9099;
+    --border:rgba(30,33,38,0.12);
+    --border-soft:rgba(30,33,38,0.07);
+    --accent-marcus:#B8791E;
+    --accent-dag:#2E8F6E;
+    --accent-priya:#7C5FB0;
+    --accent-nell:#B14C56;
+    --pass:#2E8F6E;
+    --tag-bg:rgba(30,33,38,0.06);
+    --shadow:0 1px 2px rgba(30,33,38,0.06), 0 8px 24px -12px rgba(30,33,38,0.18);
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#12181D;
+      --surface:#1B232B;
+      --surface-2:#212B33;
+      --ink:#EDEDE4;
+      --ink-dim:#A7B0B8;
+      --ink-faint:#727C85;
+      --border:rgba(237,237,228,0.12);
+      --border-soft:rgba(237,237,228,0.07);
+      --accent-marcus:#E3A857;
+      --accent-dag:#7FD3AE;
+      --accent-priya:#B79CE0;
+      --accent-nell:#E0919A;
+      --pass:#7FD3AE;
+      --tag-bg:rgba(237,237,228,0.08);
+      --shadow:0 1px 2px rgba(0,0,0,0.3), 0 12px 32px -16px rgba(0,0,0,0.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#12181D;
+    --surface:#1B232B;
+    --surface-2:#212B33;
+    --ink:#EDEDE4;
+    --ink-dim:#A7B0B8;
+    --ink-faint:#727C85;
+    --border:rgba(237,237,228,0.12);
+    --border-soft:rgba(237,237,228,0.07);
+    --accent-marcus:#E3A857;
+    --accent-dag:#7FD3AE;
+    --accent-priya:#B79CE0;
+    --accent-nell:#E0919A;
+    --pass:#7FD3AE;
+    --tag-bg:rgba(237,237,228,0.08);
+    --shadow:0 1px 2px rgba(0,0,0,0.3), 0 12px 32px -16px rgba(0,0,0,0.6);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--accent-dag); color:var(--surface); }
+
+  .wrap{ max-width:920px; margin:0 auto; padding:2.75rem 1.5rem 5rem; }
+
+  a{ color:inherit; }
+
+  h1,h2,h3,.label{ font-family:'Big Shoulders Display', 'Arial Narrow', sans-serif; text-wrap:balance; }
+  .mono{ font-family:'IBM Plex Mono', ui-monospace, Consolas, monospace; }
+  .num{ font-variant-numeric:tabular-nums; }
+
+  /* ---------- Masthead ---------- */
+  .masthead{
+    border:1px solid var(--border);
+    border-radius:4px;
+    background:var(--surface);
+    padding:1.6rem 1.8rem;
+    box-shadow:var(--shadow);
+  }
+  .masthead-top{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; flex-wrap:wrap;
+  }
+  .stamp{
+    font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--ink-faint); border:1px solid var(--border); border-radius:3px; padding:0.3rem 0.55rem;
+    white-space:nowrap;
+  }
+  h1{
+    font-size:clamp(2.1rem, 5vw, 2.9rem);
+    font-weight:800;
+    letter-spacing:0.01em;
+    text-transform:uppercase;
+    margin:0.5rem 0 0.15rem;
+    line-height:1.02;
+  }
+  .subtitle{
+    font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-dim);
+    font-size:1.05rem; max-width:54ch; margin:0.35rem 0 0;
+  }
+  .meta-row{
+    display:flex; flex-wrap:wrap; gap:0.5rem 1.6rem; margin-top:1.25rem; padding-top:1rem;
+    border-top:1px solid var(--border-soft);
+  }
+  .meta-item{ font-size:0.78rem; }
+  .meta-item .k{
+    display:block; font-family:'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:0.1em;
+    font-size:0.66rem; color:var(--ink-faint); margin-bottom:0.15rem;
+  }
+  .meta-item .v{ color:var(--ink); font-family:'IBM Plex Mono',monospace; font-size:0.82rem; }
+
+  /* ---------- Scorecard strip ---------- */
+  .scorecard{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
+    gap:0.9rem;
+    margin:1.9rem 0 0;
+  }
+  .score-tile{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-top:3px solid var(--tile-accent);
+    border-radius:4px;
+    padding:0.95rem 1rem 1rem;
+    box-shadow:var(--shadow);
+  }
+  .score-tile .who{
+    font-family:'Big Shoulders Display',sans-serif; font-weight:700; font-size:0.98rem;
+    text-transform:uppercase; letter-spacing:0.02em; margin:0 0 0.15rem;
+  }
+  .score-tile .build{
+    font-family:'IBM Plex Mono',monospace; font-size:0.66rem; color:var(--ink-faint);
+    text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.55rem;
+  }
+  .score-tile .score{
+    font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:2rem; color:var(--tile-accent);
+    line-height:1;
+  }
+  .score-tile .score sup{ font-size:0.9rem; color:var(--ink-faint); font-weight:400; margin-left:0.15rem;}
+  .score-tile .lens{ font-size:0.74rem; color:var(--ink-dim); margin-top:0.4rem; }
+  .score-tile .delta{ font-size:0.68rem; color:var(--pass); margin-top:0.25rem; font-family:'IBM Plex Mono',monospace; }
+
+  /* ---------- Section intro ---------- */
+  .lede{
+    margin-top:2.2rem; font-size:1.02rem; color:var(--ink-dim); max-width:68ch;
+  }
+
+  /* ---------- Dossier entries ---------- */
+  .dossier{ margin-top:2.6rem; display:flex; flex-direction:column; gap:1.6rem; }
+  .file{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-left:4px solid var(--file-accent);
+    border-radius:4px;
+    padding:1.5rem 1.7rem 1.7rem;
+    box-shadow:var(--shadow);
+  }
+  .file-head{
+    display:flex; justify-content:space-between; align-items:baseline; gap:1rem; flex-wrap:wrap;
+  }
+  .file-head h2{
+    font-size:1.5rem; font-weight:700; text-transform:uppercase; letter-spacing:0.015em; margin:0;
+    color:var(--file-accent);
+  }
+  .file-role{
+    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--ink-faint); margin-top:0.2rem;
+  }
+  .file-score{
+    font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:1.6rem; color:var(--file-accent); white-space:nowrap;
+  }
+  .file-score sup{ font-size:0.8rem; color:var(--ink-faint); font-weight:400; }
+
+  blockquote{
+    margin:1rem 0 1.1rem; padding:0 0 0 1rem; border-left:2px solid var(--file-accent);
+    font-style:italic; color:var(--ink); font-size:1.05rem;
+  }
+  .file p{ margin:0.7rem 0; color:var(--ink); }
+  .findings{ margin:0.9rem 0 0.4rem; padding:0; list-style:none; display:flex; flex-direction:column; gap:0.55rem; }
+  .findings li{
+    position:relative; padding-left:1.1rem; font-size:0.94rem; color:var(--ink-dim);
+  }
+  .findings li::before{
+    content:"—"; position:absolute; left:0; color:var(--file-accent);
+  }
+  .findings li strong{ color:var(--ink); font-weight:600; }
+
+  .cite{
+    margin-top:1.1rem; padding-top:0.8rem; border-top:1px solid var(--border-soft);
+    font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--ink-faint);
+    display:flex; flex-wrap:wrap; gap:0.3rem 1rem;
+  }
+  .cite b{ color:var(--ink-dim); font-weight:600; }
+
+  /* ---------- Cross-panel synthesis ---------- */
+  .synthesis{
+    margin-top:2.8rem; background:var(--surface); border:1px solid var(--border); border-radius:4px;
+    padding:1.6rem 1.8rem 1.8rem; box-shadow:var(--shadow);
+  }
+  .synthesis h2{
+    font-size:1.4rem; text-transform:uppercase; letter-spacing:0.02em; margin:0 0 0.3rem; font-weight:700;
+  }
+  .synthesis > p{ color:var(--ink-dim); font-size:0.95rem; max-width:66ch; margin:0 0 1.3rem; }
+
+  .items{ display:flex; flex-direction:column; gap:0; border-top:1px solid var(--border-soft); }
+  .item{
+    display:grid; grid-template-columns:6.5rem 1fr auto; gap:1rem; align-items:baseline;
+    padding:0.85rem 0; border-bottom:1px solid var(--border-soft);
+  }
+  .item .tag{
+    font-family:'IBM Plex Mono',monospace; font-size:0.62rem; letter-spacing:0.07em; text-transform:uppercase;
+    background:var(--tag-bg); color:var(--ink-dim); border-radius:3px; padding:0.22rem 0.5rem; width:fit-content;
+  }
+  .item .desc{ font-size:0.92rem; color:var(--ink); }
+  .item .who{
+    font-family:'IBM Plex Mono',monospace; font-size:0.68rem; color:var(--ink-faint); white-space:nowrap; text-align:right;
+  }
+
+  /* ---------- Verdict / footer ---------- */
+  .verdict{
+    margin-top:2.6rem; padding:1.5rem 1.8rem; border-radius:4px;
+    background:var(--surface-2); border:1px solid var(--border);
+    box-shadow:var(--shadow);
+  }
+  .verdict h2{ font-size:1.3rem; text-transform:uppercase; margin:0 0 0.6rem; font-weight:700; }
+  .verdict p{ color:var(--ink-dim); font-size:0.96rem; margin:0.5rem 0; max-width:70ch; }
+  .verdict p strong{ color:var(--ink); }
+
+  footer{
+    margin-top:2.6rem; padding-top:1.2rem; border-top:1px solid var(--border-soft);
+    font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--ink-faint);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;
+  }
+
+  @media (max-width:560px){
+    .item{ grid-template-columns:1fr; gap:0.35rem; }
+    .item .who{ text-align:left; }
+    .masthead{ padding:1.3rem 1.2rem; }
+    .file{ padding:1.25rem 1.2rem 1.4rem; }
+  }
+
+.wrap{max-width:1120px}.case-nav{display:flex;gap:.6rem 1.2rem;flex-wrap:wrap;margin:1.5rem 0;font:.78rem ui-monospace,Consolas,monospace}.case-nav a{padding:.3rem 0;text-underline-offset:.3em}a:hover{color:var(--accent-dag)}.hash{font:.7rem/1.6 ui-monospace,Consolas,monospace;overflow-wrap:anywhere}.status{padding:.7rem 1rem;border-left:3px solid #B8791E;background:var(--tag-bg);font-size:.88rem}.metric-label{font:.63rem ui-monospace,Consolas,monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-dim);display:block;margin:.7rem 0 .25rem}.slice-score{font:600 1.25rem ui-monospace,Consolas,monospace}.evidence-score{font:.86rem ui-monospace,Consolas,monospace;color:var(--ink-dim)}section{scroll-margin-top:1rem}h3{font-size:1.05rem;margin:1.2rem 0 .5rem}.section-kicker{font:.68rem ui-monospace,Consolas,monospace;text-transform:uppercase;letter-spacing:.09em;color:var(--ink-faint)}.table-scroll{overflow-x:auto;margin:1rem 0}table{width:100%;border-collapse:collapse;font-size:.84rem}th{text-align:left;font-family:Arial,sans-serif;font-size:.73rem}td,th{padding:.65rem .55rem;border-bottom:1px solid var(--border);vertical-align:top}td.num{white-space:nowrap}thead{background:var(--tag-bg)}.small{font-size:.82rem;color:var(--ink-dim)}.scoreline{font:.85rem/1.7 ui-monospace,Consolas,monospace}details{margin:1rem 0}summary{cursor:pointer;font-family:Arial,sans-serif;font-size:.85rem;font-weight:bold;padding:.5rem 0}.gallery{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:1.2rem}figure{margin:0;border:1px solid var(--border);background:var(--surface)}figure img{width:100%;height:auto;display:block}figcaption{font-size:.79rem;padding:.8rem 1rem;color:var(--ink-dim)}.dialogue{border-top:1px solid var(--border);padding:.9rem 0;display:grid;grid-template-columns:7rem 1fr;gap:1rem}.dialogue b{font:700 .8rem Arial,sans-serif;color:var(--speaker)}.dialogue p{margin:0;font-size:.95rem}.conference-note{font-style:italic;color:var(--ink-dim)}.delivery{border-top:4px solid #B8791E}.build-pair{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}.build-pair h3{margin-top:0}@media(max-width:700px){.gallery,.build-pair{grid-template-columns:1fr}.dialogue{grid-template-columns:1fr;gap:.3rem}.wrap{padding:1.1rem .8rem 3rem}.file,.synthesis,.masthead,.verdict{padding:1.15rem}.scorecard{grid-template-columns:1fr 1fr}.stamp{white-space:normal}}@media print{body{background:white;color:black}.wrap{max-width:none;padding:0}.file,.synthesis,.masthead,.verdict{box-shadow:none;break-inside:avoid}a{color:inherit}.case-nav{display:none}}
+</style></head><body><main class="wrap">
+<header class="masthead"><div class="masthead-top"><div><span class="stamp">Funstra case file · Demo 06 · Original panel A</span><h1>Nobody Gets<br>Home Alone</h1><p class="subtitle">A crew can bring a body home. What happens between its people on the next outing is still the larger question.</p></div><span class="stamp">8 September 2026</span></div><div class="meta-row"><div class="meta-item"><span class="k">Method</span><span class="v">Four independent guided build reviews</span></div><div class="meta-item"><span class="k">Rubric</span><span class="v">v2 · New baseline</span></div><div class="meta-item"><span class="k">Status</span><span class="v">Portable checked · publication pending</span></div></div></header><nav class="case-nav" aria-label="Dossier sections"><a href="#verdicts">Original verdicts</a><a href="#ledger">Slice ledger</a><a href="#evidence">Evidence</a><a href="#conference">Conference</a><a href="#dispositions">CD dispositions</a><a href="#integration-delivery">Integration & delivery</a></nav><p class="status">All four original reviews and meeting notes are filed. Their scores remain the original provisional verdicts on A. B’s three affected routes now pass; reviewer addenda and delivery are separate. No later score upgrade, publication or product-owner acceptance is presumed.</p><section id="verdicts" aria-label="Original reviewer scorecards"><div class="scorecard">
+<a class="score-tile" style="--tile-accent:var(--accent-dag);text-decoration:none" href="#dag"><div class="who">Dag Møller</div><div class="build mono">Original assembly A</div><span class="metric-label">Game now</span><div class="score num">5.4<sup>/10</sup></div><span class="metric-label">Slice delivery · provisional</span><div class="slice-score num">8.5–9.8<small>/10</small></div><span class="metric-label">Evidence</span><div class="evidence-score">89%</div><div class="lens">Systems, economy &amp; agency</div></a>
+<a class="score-tile" style="--tile-accent:var(--accent-priya);text-decoration:none" href="#priya"><div class="who">Priya Raman</div><div class="build mono">Original assembly A</div><span class="metric-label">Game now</span><div class="score num">5.4<sup>/10</sup></div><span class="metric-label">Slice delivery · provisional</span><div class="slice-score num">8.7–10.0<small>/10</small></div><span class="metric-label">Evidence</span><div class="evidence-score">89%</div><div class="lens">People, theme &amp; consequence</div></a>
+<a class="score-tile" style="--tile-accent:var(--accent-marcus);text-decoration:none" href="#marcus"><div class="who">Marcus Webb</div><div class="build mono">Original assembly A</div><span class="metric-label">Game now</span><div class="score num">5.7<sup>/10</sup></div><span class="metric-label">Slice delivery · provisional</span><div class="slice-score num">8.7–9.8<small>/10</small></div><span class="metric-label">Evidence</span><div class="evidence-score">89%</div><div class="lens">Controls, recovery &amp; reliability</div></a>
+<a class="score-tile" style="--tile-accent:var(--accent-nell);text-decoration:none" href="#nell"><div class="who">Nell Okafor</div><div class="build mono">Original assembly A</div><span class="metric-label">Game now</span><div class="score num">5.3<sup>/10</sup></div><span class="metric-label">Slice delivery · provisional</span><div class="slice-score num">8.3–9.6<small>/10</small></div><span class="metric-label">Evidence</span><div class="evidence-score">89%</div><div class="lens">Clarity, routine &amp; attachment</div></a>
+</div><p class="lede"><strong>Strong delivery of a bounded crew outing; a still limited whole game.</strong> Game now and Slice delivery answer different questions. No panel average or single favorable score replaces them. These first v2 reviews establish a new baseline; historical 8/10 increment scores are not numerically comparable.</p><div class="dossier">
+<article id="dag" class="file" style="--file-accent:var(--accent-dag)"><div class="file-head"><div><h2>Dag Møller</h2><div class="file-role">Systems, economy &amp; agency</div></div><div class="file-score">G 5.4<sup>/10</sup></div></div><p class="scoreline">Game now 5.4/10 · Slice 8.5–9.8/10 provisional · Evidence 89%</p><p>The expedition obeys real ownership and conservation rules. What it builds afterward remains thin: practice does not improve a capability, rescue memories rarely change later commitments, and the main operation ends after one component.</p><ul class="findings"><li><strong>Credited:</strong> He credits the single impeller, finite spent rounds, physical clinic admission and saved abandonment. Neri’s unseen route demonstrates independent control, but mostly substitutes the collector while the protagonist waits.</li><li><strong>Largest G deficits:</strong> Systems 1.400: one-off choices and inert learning. Breadth 1.200: few changed purposes on later outings. People 0.750: remembered events seldom alter commitments.</li><li><strong>Distinct judgment:</strong> Learning receives 0.75 attainment: the medical practice award is not visible in the crew panel. Missing capability also constrains Game now; it is not a second subtraction within either score.</li></ul><details><summary>Original Game now arithmetic and score limits</summary><div class="table-scroll"><table><thead><tr><th>Category</th><th>Weight %</th><th>Score /10</th><th>Contribution</th><th>Deficit</th></tr></thead><tbody><tr><td>Systems and agency</td><td>35%</td><td>6.0</td><td>2.100</td><td>1.400</td></tr><tr><td>People and consequences</td><td>15%</td><td>5.0</td><td>0.750</td><td>0.750</td></tr><tr><td>Control, clarity and comfort</td><td>15%</td><td>6.0</td><td>0.900</td><td>0.600</td></tr><tr><td>Craft and reliability</td><td>15%</td><td>5.5</td><td>0.825</td><td>0.675</td></tr><tr><td>Breadth and sustained play</td><td>20%</td><td>4.0</td><td>0.800</td><td>1.200</td></tr></tbody></table></div><p class="small">G raw 5.375 → 5.4. S raw 8.5000–9.8125 → 8.5–9.8. Confirmed S shortfall: 0.1875 points; additional unresolved S loss: 0–1.3125. No global launch, core-failure or unrecoverable-progress-loss cap binds. Dag, Priya and Nell retain the narrow-example breadth score of 4; Marcus judges connected breadth at 4.5. Nothing here revises those judgments.</p></details><div class="cite"><a href="../reviewer-agents/dag-moller/demo06.md">Full unedited review</a><a href="../reviewer-agents/dag-moller/demo06-meeting.md">Original meeting notes</a><a href="../Evidence/Demo06/review-dag/crew-runtime-result.txt">Own 141-assertion result</a><a href="../Evidence/Demo06/review-dag/build-identity.json">Own run identity</a><a href="../Evidence/Demo06/review-dag/player.log">Complete player log</a></div></article>
+<article id="priya" class="file" style="--file-accent:var(--accent-priya)"><div class="file-head"><div><h2>Priya Raman</h2><div class="file-role">People, theme &amp; consequence</div></div><div class="file-score">G 5.4<sup>/10</sup></div></div><p class="scoreline">Game now 5.4/10 · Slice 8.7–10.0/10 provisional · Evidence 89%</p><p>A carried body and a consumed clinic dose make return credible. Rell has a material reason to join, and useful work can recruit him before a fight. The record still remembers more fully than the relationship answers.</p><ul class="findings"><li><strong>Credited:</strong> She distinguishes Ruth’s finite aid to Elias from the separate player-help recognition hook. That preserves real resident behavior without inventing a continuous player rescue and reunion.</li><li><strong>Largest G deficits:</strong> People 1.750: little later negotiation or changed loyalty. Breadth 0.900: few evolving purposes after finite problems end. Craft 0.800: generic people and aftermath carried heavily by panels.</li><li><strong>Distinct judgment:</strong> Learning receives 1.00 attainment: completed work awards the committed partnership/practice results. Rudimentary growth still limits Game now. This is a substantive difference from the other three, not an arithmetic correction.</li></ul><details><summary>Original Game now arithmetic and score limits</summary><div class="table-scroll"><table><thead><tr><th>Category</th><th>Weight %</th><th>Score /10</th><th>Contribution</th><th>Deficit</th></tr></thead><tbody><tr><td>Systems and agency</td><td>15</td><td>5.5</td><td>0.825</td><td>0.675</td></tr><tr><td>People and consequences</td><td>35</td><td>5.0</td><td>1.750</td><td>1.750</td></tr><tr><td>Control, clarity and comfort</td><td>15</td><td>6.5</td><td>0.975</td><td>0.525</td></tr><tr><td>Craft and reliability</td><td>20</td><td>6.0</td><td>1.200</td><td>0.800</td></tr><tr><td>Breadth and sustained play</td><td>15</td><td>4.0</td><td>0.600</td><td>0.900</td></tr></tbody></table></div><p class="small">G raw 5.350 → 5.4. S raw 8.6875–10.0000 → 8.7–10.0. Confirmed S shortfall: 0 points; additional unresolved S loss: 0–1.3125. No global launch, core-failure or unrecoverable-progress-loss cap binds. Dag, Priya and Nell retain the narrow-example breadth score of 4; Marcus judges connected breadth at 4.5. Nothing here revises those judgments.</p></details><div class="cite"><a href="../reviewer-agents/priya-raman/demo06.md">Full unedited review</a><a href="../reviewer-agents/priya-raman/demo06-meeting.md">Original meeting notes</a><a href="../Evidence/Demo06/review-priya/crew-runtime-result.txt">Own 141-assertion result</a><a href="../Evidence/Demo06/review-priya/build-identity.json">Own run identity</a><a href="../Evidence/Demo06/review-priya/player.log">Complete player log</a></div></article>
+<article id="marcus" class="file" style="--file-accent:var(--accent-marcus)"><div class="file-head"><div><h2>Marcus Webb</h2><div class="file-role">Controls, recovery &amp; reliability</div></div><div class="file-score">G 5.7<sup>/10</sup></div></div><p class="scoreline">Game now 5.7/10 · Slice 8.7–9.8/10 provisional · Evidence 89%</p><p>The local crime-and-recovery loop works in the exercised build. Separate bodies keep their property, rescue has a physical trip and cost, and a pursuer can interrupt treatment. Clean execution does not supply sustained progression.</p><ul class="findings"><li><strong>Credited:</strong> He reads dedicated ammunition arrays rather than mistaking the holstered protagonist’s zero generic ammo line for exhaustion. Earlier navigation failure was not reproduced on A; the passing final fixtures remain bounded evidence.</li><li><strong>Largest G deficits:</strong> Craft 1.225: repeated forms, dense labels and text defects. Breadth 1.100: insufficient varied reasons for another outing. Control 0.800: large overlays and poor unavailable-action/service-switch feedback.</li><li><strong>Distinct judgment:</strong> Learning receives 0.75. His original release-delivery lower bound is 0.50, versus 0.25 for the others; it remains provisional. Hardware credit is confined to the measured workstation, not the persona’s fictional biography.</li></ul><details><summary>Original Game now arithmetic and score limits</summary><div class="table-scroll"><table><thead><tr><th>Category</th><th>Weight %</th><th>Score /10</th><th>Contribution</th><th>Deficit</th></tr></thead><tbody><tr><td>Systems and agency</td><td>15</td><td>5.5</td><td>0.825</td><td>0.675</td></tr><tr><td>People and consequences</td><td>10</td><td>5.0</td><td>0.500</td><td>0.500</td></tr><tr><td>Control, clarity and comfort</td><td>20</td><td>6.0</td><td>1.200</td><td>0.800</td></tr><tr><td>Craft and reliability</td><td>35</td><td>6.5</td><td>2.275</td><td>1.225</td></tr><tr><td>Breadth and sustained play</td><td>20</td><td>4.5</td><td>0.900</td><td>1.100</td></tr></tbody></table></div><p class="small">G raw 5.700 → 5.7. S raw 8.6875–9.8125 → 8.7–9.8. Confirmed S shortfall: 0.1875 points; additional unresolved S loss: 0–1.1250. No global launch, core-failure or unrecoverable-progress-loss cap binds. Dag, Priya and Nell retain the narrow-example breadth score of 4; Marcus judges connected breadth at 4.5. Nothing here revises those judgments.</p></details><div class="cite"><a href="../reviewer-agents/marcus-webb/demo06.md">Full unedited review</a><a href="../reviewer-agents/marcus-webb/demo06-meeting.md">Original meeting notes</a><a href="../Evidence/Demo06/review-marcus/crew-runtime-result.txt">Own 141-assertion result</a><a href="../Evidence/Demo06/review-marcus/build-identity.json">Own run identity</a><a href="../Evidence/Demo06/review-marcus/player.log">Complete player log</a></div></article>
+<article id="nell" class="file" style="--file-accent:var(--accent-nell)"><div class="file-head"><div><h2>Nell Okafor</h2><div class="file-role">Clarity, routine &amp; attachment</div></div><div class="file-score">G 5.3<sup>/10</sup></div></div><p class="scoreline">Game now 5.3/10 · Slice 8.3–9.6/10 provisional · Evidence 89%</p><p>Pause and explicit losses make the rules easier to trust. A careful paid trip or repair can be approachable, but the game does not yet offer the sustained routine and attachment she wants for an evening. This is not a request for safer combat.</p><ul class="findings"><li><strong>Credited:</strong> She credits carried admission, the clinic threshold, saved abandonment and a repaired workshop. The large uniform action grid and nearby resident panel can compete with the moment of return.</li><li><strong>Largest G deficits:</strong> Breadth 1.200: the return does not sustain another evening. Control 1.200: excessive menu and service-switch work. People 1.000: recorded events seldom develop into a later encounter.</li><li><strong>Distinct judgment:</strong> Learning receives 0.75 and the resident/darker visual bridge 0.75. Repeated pale blocks only partly realize the promised material identity. The other three grant the bridge 1.00; this remains a rendered judgment, not a runtime bug.</li></ul><details><summary>Original Game now arithmetic and score limits</summary><div class="table-scroll"><table><thead><tr><th>Category</th><th>Weight %</th><th>Score /10</th><th>Contribution</th><th>Deficit</th></tr></thead><tbody><tr><td>Systems and agency</td><td>15</td><td>5.5</td><td>0.825</td><td>0.675</td></tr><tr><td>People and consequences</td><td>20</td><td>5.0</td><td>1.000</td><td>1.000</td></tr><tr><td>Control, clarity and comfort</td><td>30</td><td>6.0</td><td>1.800</td><td>1.200</td></tr><tr><td>Craft and reliability</td><td>15</td><td>6.0</td><td>0.900</td><td>0.600</td></tr><tr><td>Breadth and sustained play</td><td>20</td><td>4.0</td><td>0.800</td><td>1.200</td></tr></tbody></table></div><p class="small">G raw 5.325 → 5.3. S raw 8.3125–9.6250 → 8.3–9.6. Confirmed S shortfall: 0.3750 points; additional unresolved S loss: 0–1.3125. No global launch, core-failure or unrecoverable-progress-loss cap binds. Dag, Priya and Nell retain the narrow-example breadth score of 4; Marcus judges connected breadth at 4.5. Nothing here revises those judgments.</p></details><div class="cite"><a href="../reviewer-agents/nell-okafor/demo06.md">Full unedited review</a><a href="../reviewer-agents/nell-okafor/demo06-meeting.md">Original meeting notes</a><a href="../Evidence/Demo06/review-nell/crew-runtime-result.txt">Own 141-assertion result</a><a href="../Evidence/Demo06/review-nell/build-identity.json">Own run identity</a><a href="../Evidence/Demo06/review-nell/player.log">Complete player log</a></div></article>
+</div></section><section id="ledger" class="synthesis"><span class="section-kicker">The same commitments, different judgments</span><h2>What the provisional slice ranges contain</h2><p>All reviewers keep the <a href="../Evidence/Demo06/review-outcomes.json">frozen weight-40 ledger</a>. Attainment is separate from evidence: a verified interruption can resolve evidence without completing treatment. Pending publication is neither a demonstrated failure nor a completed release.</p><div class="table-scroll"><table><thead><tr><th>Committed outcome</th><th>Weight</th><th>Dag a</th><th>Priya a</th><th>Marcus a</th><th>Nell a</th><th>Each e</th></tr></thead><tbody>
+<tr><td>Three stable selectable people</td><td>5</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>One component / three approaches</td><td>5</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>Rescue or remembered abandonment</td><td>5</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>Dangerous coordinated yard</td><td>5</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>Finite rifle pursuit</td><td>5</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>Partnership / practice from work</td><td>3</td><td>0.75</td><td>1</td><td>0.75</td><td>0.75</td><td>1</td></tr>
+<tr><td>Livelihood / supply with crew</td><td>3</td><td>0.75–1</td><td>0.75–1</td><td>0.75–1</td><td>0.75–1</td><td>0.5</td></tr>
+<tr><td>Resident / darker visual bridge</td><td>3</td><td>1</td><td>1</td><td>1</td><td>0.75</td><td>1</td></tr>
+<tr><td>Corrected release reaches users</td><td>3</td><td>0.25–1</td><td>0.25–1</td><td>0.50–1</td><td>0.25–1</td><td>0.5</td></tr>
+<tr><td>Numerical panel / dossier delivered</td><td>3</td><td>0.25–1</td><td>0.25–1</td><td>0.25–1</td><td>0.25–1</td><td>0.5</td></tr>
+</tbody></table></div><p class="small">Original arithmetic: S = 10 × Σ(w × a) / 40. Lost points = 10 × w × (1 − a) / 40. For every critic E = 35.5/40 = 88.75%, displayed 89%. Original panel/delivery bounds reflect each filing cutoff; this local dossier does not silently raise an original score. Future replay judgments belong in dated addenda.</p><p><strong>Common unresolved claim:</strong> older jobs, couriers and services work in their legacy smoke modes, but those modes disable crew. Prepared kit purchases and an actual crew operation do not establish an ordinary earned-income, resupply and crew campaign in continuous co-presence. This is an evidence gap, not a confirmed broken livelihood.</p></section>
+<section id="evidence" class="synthesis"><span class="section-kicker">Observed play / prepared state / measured limits</span><h2>The evidence under the verdicts</h2><div class="build-pair"><div><h3>A · Original review build</h3><p class="hash">3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3</p><p class="small">v0.6.0 · Fourteenth export · Frozen dirty source based on bd522de8cfcc4bfbc86584ca28e3df1bf671ce3a. The commit alone does not identify the binary.</p></div><div><h3>B · Presentation integration</h3><p class="hash">0F599165F989EFB88B610219CF5E31CE9DF617A486FC7DE26FE800A4A521AE29</p><p class="small">Three accepted display expressions change in game code. B’s affected-route and rendered-addendum evidence remains separate from the A full reviews.</p></div></div><p><strong>A: 2,377 editor assertions; 701 assertions and 72 captures across eight shared final routes.</strong> Each critic independently ran the same full Crew route: <strong>141 assertions / 17 captures each</strong>, four additional serialized runs. These are independent critiques, not four new gameplay paths or human playtests.</p><p><a href="../Evidence/Demo06/validation-summary.json">A validation summary</a> · <a href="../Evidence/Demo06/candidate-source.json">Original source freeze</a> · <a href="../Evidence/Demo06/editor-checks.txt">Sanitized editor record</a> · <a href="../Evidence/Demo06/final-batch.json">Eight-route batch</a> · <a href="../Evidence/Demo06/cd-visual-inspection.md">Limited CD still inspection</a></p><div class="table-scroll"><table><thead><tr><th>Shared A route</th><th>Assertions / PNGs</th><th>What it establishes; important limit</th></tr></thead><tbody><tr><td><a href="../Evidence/Demo06/crew-final/crew-runtime-result.txt">Crew</a></td><td class="num">141 / 17</td><td>Paid collection, independent custody, aid/carry/admission, abandonment, repair and opposition. Explicit cash, wounds, recruitment and some accelerated production steps.</td></tr><tr><td><a href="../Evidence/Demo06/approach-final/crew-runtime-result.txt">Approach</a></td><td class="num">113 / 8</td><td>Actual unseen solo and Neri return, then live finite three-gun assault. Recruitment and $800 are staged; no organically earned loadout claim.</td></tr><tr><td><a href="../Evidence/Demo06/pressure-final/pressure-runtime-result.txt">Pressure</a></td><td class="num">43 / 7</td><td>Crew/rifle enabled. 75-second load, separate ordinary-health exposure and actual controller escape; distinct methods below.</td></tr><tr><td><a href="../Evidence/Demo06/arms-final/arms-runtime-result.txt">Arms</a></td><td class="num">108 / 15</td><td>Controller dealer favor and finite supply/custody; staged transactions and accelerated couriers. Crew disabled.</td></tr><tr><td><a href="../Evidence/Demo06/residents-final/residents-runtime-result.txt">Residents</a></td><td class="num">28 / 7</td><td>Routine motion, prepared violence, stepped finite neighbor aid and separate recognition hook. Crew disabled.</td></tr><tr><td><a href="../Evidence/Demo06/streets-final/streets-runtime-result.txt">Streets</a></td><td class="num">143 / 4</td><td>Medicine/refuge/cargo/traffic and public/service routes; mixed fixtures, traversal with yard AI held. Crew disabled.</td></tr><tr><td><a href="../Evidence/Demo06/police-final/police-runtime-result.txt">Police</a></td><td class="num">35 / 4</td><td>Controlled dispatch/knowledge tests and live return fire. Crew disabled.</td></tr><tr><td><a href="../Evidence/Demo06/legacy-final/runtime-result.txt">Legacy</a></td><td class="num">90 / 10</td><td>Mara jobs, cargo, standing and free roam under older smoke contracts. Crew disabled.</td></tr></tbody></table></div><p>The <a href="../Evidence/Demo06/approach-final/crew-combat-outcome.json">actual A assault</a> returned the component with protagonist 41.53655 HP and Neri/Rell 100 HP; nobody was incapacitated in that attempt. Remaining ammunition was 38 SMG / 11 pistol / 15 rifle rounds. Do not invent casualties, or mistake the holstered player’s zero generic ammo row for an empty SMG. Its raw reload coordinates allow only the existing uncarried protagonist’s upward 0–0.1201-unit resume clearance; other state and positions remain exact.</p><p>Core self-aid completes during normal Update. In all four independent late rifle encounters, another attributed hit interrupts post-retreat aid at roughly 2.73–2.74 seconds: both dressings remain, no healing or practice is granted, and aid ends idle. The shared pressure escape ends at 100 HP without needing treatment. These are different observations, not interchangeable proof of a wounded escape.</p><p><strong>Hardware:</strong> i9-14900KF / RTX 4090, D3D11, 1280×720, 30 FPS cap. Shared pressure: 2,203 frames; p50 33.334 ms, p95 33.602 ms, maximum 138.108 ms; endpoint Unity allocation 113,754,082 bytes. <a href="../Evidence/Demo06/pressure-final/pressure-profile.json">Raw profile</a>. The 75-second load gives the protagonist 10,000 HP and disables arrest. Separate exposure/escape start at ordinary 100 HP with finite kits and normal arrest. The long interval is measured; its cause is unresolved. No lower-tier hardware, uncapped throughput, human input feel, listening or long-session enjoyment was established.</p><div class="gallery"><figure><a href="../Evidence/Demo06/review-nell/C05b-physical-carry.png"><img src="../Evidence/Demo06/review-nell/C05b-physical-carry.png" alt="A · Physical carry, prepared casualty" loading="lazy" width="1280" height="720"></a><figcaption><strong>A · Physical carry, prepared casualty.</strong> Nell’s actual controller journey carries the staged downed protagonist around the clinic wall. The still shows presentation; the route and receipts establish travel and cost.</figcaption></figure><figure><a href="../Evidence/Demo06/review-priya/C06b-clinic-admission.png"><img src="../Evidence/Demo06/review-priya/C06b-clinic-admission.png" alt="A · The clinic return" loading="lazy" width="1280" height="720"></a><figcaption><strong>A · The clinic return.</strong> Priya’s arrival accompanies finite admission and remembered rescue. It does not turn a prepared injury into an improvised rescue during the assault.</figcaption></figure><figure><a href="../Evidence/Demo06/review-dag/C07-remembered-abandonment.png"><img src="../Evidence/Demo06/review-dag/C07-remembered-abandonment.png" alt="A · Left behind, still recorded" loading="lazy" width="1280" height="720"></a><figcaption><strong>A · Left behind, still recorded.</strong> Dag’s explicit abandonment fixture retains Rell’s incapacitation, position and memory through reload. It does not demonstrate irreversible death or later loyalty behavior.</figcaption></figure><figure><a href="../Evidence/Demo06/review-marcus/C00-title.png"><img src="../Evidence/Demo06/review-marcus/C00-title.png" alt="A · A real, small presentation defect" loading="lazy" width="1280" height="720"></a><figcaption><strong>A · A real, small presentation defect.</strong> Marcus’s title has Demo06 branding above a stale Demo04 footer. This is the original evidence; the corrected B screen belongs to the separate replay below.</figcaption></figure></div><p class="small">Untouched exported captures link to full resolution. Original reviews list the own/shared frames each critic opened. Stills support specific readability judgments, not continuous animation or a complete causal sequence.</p></section><section id="conference" class="synthesis"><span class="section-kicker">Review conference · one consolidated case file</span><h2>The body comes home. Does the relationship follow?</h2><p class="conference-note">Editorially role-played discussion grounded in the four filed originals and meeting notes. These are attributed paraphrases, not a recording or new verdicts. CD lines reflect the actual integration dispositions; no owner approval is invented.</p><div class="dialogue" style="--speaker:var(--accent-dag)"><b>Dag</b><p>Three people retain three sets of property. A body takes the same corner as its carrier, and admission uses an existing dose. My 5.4 is about what the expedition builds afterward. Practice does not yet change a capability.</p></div><div class="dialogue" style="--speaker:var(--accent-priya)"><b>Priya</b><p>I share that concern, but gave the work outcome full slice credit: the promised repair, partnership and awards happen. My 5.4 still loses most on people. A person can remember the rescue without asking anything different of you later.</p></div><div class="dialogue" style="--speaker:var(--accent-dag)"><b>Dag</b><p>That is our real difference. I gave practice 0.75 because the medical award itself is not visible when I inspect the person. We do not need to reconcile that by rewriting our ledgers.</p></div><div class="dialogue" style="--speaker:var(--accent-nell)"><b>Nell</b><p>And my darker bridge is 0.75. The clinic’s light helps; repeated pale blocks tell me less about this working society than the panels do. That is a visual judgment, not a claim that resident aid failed. A careful repair seems approachable after a bad day. The attached evening is still missing.</p></div><div class="dialogue" style="--speaker:var(--accent-marcus)"><b>Marcus</b><p>My 5.7 separates clean exercised behavior from unfinished presentation. Fix those three strings and examine the new screens. Do not say the 4090 proves midrange performance, or call the 138 ms maximum a diagnosed recurring hitch. Neither inference is supported.</p></div><div class="dialogue" style="--speaker:var(--accent-priya)"><b>Priya</b><p>The next question is what the survivor does later. Leaving someone behind need not be forgiven or reversed. Rell’s material stake earns his presence now; I want a later decision shaped by who came back.</p></div><div class="dialogue" style="--speaker:var(--accent-nell)"><b>Nell</b><p>Nothing in that comfort concern requires a safe yard or compulsory rescue. I want the loss and next action to be understandable. The uniform action grid and older services’ protagonist-only boundary are the immediate friction.</p></div><div class="dialogue" style="--speaker:var(--accent-dag)"><b>Astra · CD</b><p>Keep the danger and original verdicts. Integrate the three proved display corrections, then verify affected routes and screens on B. Track practice, partner kit/context and an ordinary earned-income crew session separately. Lasting relationships and the next outing remain future work. No difficulty reduction was requested by this panel.</p></div><h3>What is agreed, and what stays open</h3><ul class="findings"><li><strong>Agreement:</strong> finite custody, physical rescue, distinct controllers and ordinary live opposition work under the stated methods. Game now remains 5.3–5.7 because repeated agency, relationships and sustained routine are limited.</li><li><strong>Disagreement:</strong> Priya’s practice attainment is 1.00; the others assign 0.75. Nell’s darker bridge is 0.75; the others assign 1.00. Marcus’s original release lower bound is 0.50 rather than 0.25. No consensus score replaces them.</li><li><strong>Useful next observations:</strong> ordinary crew-enabled income-to-kit/resupply; later behavior after saved rescue versus abandonment; readable learning with a meaningful consequence. Repeating an unchanged route cannot establish human difficulty or another evening’s attachment.</li></ul><p class="status">Owner direction permits casualties, death, failed operations and leaving people unrescued. The <a href="../Evidence/Demo06/review-outcomes.json">recorded amendment</a> preserves all weights and rejects mandatory clean survival. Current zero health means incapacitation, with persistent abandonment and existing emergency recovery. No permadeath expansion or difficulty nerf is inferred.</p></section>
+
+<section id="dispositions" class="synthesis"><span class="section-kicker">Creative Director dispositions</span><h2>Accepted correction. Preserved criticism.</h2><p>The panel does not become a new feature brief by implication. These dispositions separate completed presentation work from future design and acceptance decisions; the critics’ original numbers remain intact.</p><div class="table-scroll"><table><thead><tr><th>Disposition</th><th>Concrete next state</th><th>Record</th></tr></thead><tbody>
+<tr><td><strong>Accepted / integrated</strong></td><td>Fix the malformed bullet, Mara’s dash and stale title footer. B’s full affected routes pass; Marcus and Priya’s scoped rendered replays confirm the corrected strings. This changes no gameplay score.</td><td><a href="https://github.com/Kaliffen/Funstra/issues/29">#29 · Demo06 delivery</a></td></tr>
+<tr><td><strong>Future design</strong></td><td>Make practice visible and give learning a meaningful consequence. Retain Priya’s full committed-slice credit alongside the three 0.75 judgments; do not manufacture consensus.</td><td><a href="https://github.com/Kaliffen/Funstra/issues/42">#42 · Practice</a></td></tr>
+<tr><td><strong>Future usability / evidence</strong></td><td>Clarify whose kit, ammunition and action context is shown; make unavailable actions and protagonist-only legacy services legible. Exercise ordinary earned income, resupply and crew presence together.</td><td><a href="https://github.com/Kaliffen/Funstra/issues/43">#43 · Partner context and co-presence</a></td></tr>
+<tr><td><strong>Future world behavior</strong></td><td>Let rescue, abandonment and shared work affect later decisions and another outing. Recorded memories already exist; lasting relationship behavior is not claimed complete.</td><td><a href="https://github.com/Kaliffen/Funstra/issues/30">#30 · Relationships</a></td></tr>
+<tr><td><strong>Human acceptance open</strong></td><td>Develop the material identity of this working city. Nell’s 0.75 art attainment and the others’ 1.00 remain separate judgments. Agent still inspection is not the owner’s visual acceptance.</td><td><a href="https://github.com/Kaliffen/Funstra/issues/41">#41 · Visual identity</a></td></tr>
+<tr><td><strong>Measurement gap</strong></td><td>Obtain representative hardware and longer-session evidence. The observed 4090 result does not establish lower-tier performance or diagnose the cause of the maximum frame interval.</td><td><a href="https://github.com/Kaliffen/Funstra/issues/21">#21 · Hardware coverage</a></td></tr>
+</tbody></table></div><p><strong>Not adopted:</strong> compulsory survival, softer opposition or an inferred permadeath redesign. A costly withdrawal or loss can satisfy a technical persistence check while failing the operation. The observed final assault happened to return successfully; the owner’s tolerance for loss is not evidence that a death occurred.</p></section>
+<section id="integration-delivery" class="synthesis"><span class="section-kicker">Final integration / prepublication checkpoint</span><h2>A reviewed in full. B checked where changed.</h2><p><strong>B: 266 assertions / 31 captures, all three affected routes PASS.</strong> Fresh full <a href="../Evidence/Demo06/integration-crew/crew-runtime-result.txt">Crew 141 / 17</a>, <a href="../Evidence/Demo06/integration-police/police-runtime-result.txt">Police 35 / 4</a> and <a href="../Evidence/Demo06/integration-legacy/runtime-result.txt">Legacy 90 / 10</a> runs supplement A’s eight routes and four original reviews. The other five routes were not rerun on B.</p><p><a href="../reviewer-agents/marcus-webb/demo06-replay.md">Marcus’s B replay addendum</a> and <a href="../reviewer-agents/priya-raman/demo06-replay.md">Priya’s B replay addendum</a> inspect shared fresh guided rendered evidence, including the corrected title, bullet and Mara line. They are scoped integration reviews, not two additional independent player launches or fresh whole-game verdicts. Both retain their original scores.</p><p><a href="../Evidence/Demo06/integration-source.json">B source/build identity</a> · <a href="../Evidence/Demo06/integration-validation.json">Integration receipt</a> · <a href="../Evidence/Demo06/integration-editor-checks.txt">B sanitized editor checks</a> · <a href="../Evidence/Demo06/integration-batch.json">B route batch</a> · <a href="../Evidence/Demo06/ui-replacements.json">Exact three-expression specification</a> · <a href="../Evidence/Demo06/review-source/FunstraUI.cs">Preserved original A UI source</a></p><h3>Why the scoped comparison is defensible</h3><p>Of 226 source inputs, 224 are unchanged. The UI file must match exactly the three specified display replacements. Unity also regenerated editor object IDs in <code>Assets/Scenes/OldPort.unity</code>; the old A YAML was not preserved, so byte-exact scene-source equality is not claimed. Instead, the complete preserved A/B player inventories have identical paths and hashes for all 145 files except the proved assembly change and a <code>boot.config</code> build-GUID-only difference. Compiled scenes and all other runtime assets are identical.</p><p class="small">Identical compiled <code>level0</code> SHA-256: <span class="hash">6122273E84A7D7C06BB62C29F2306DC156BB8FCF960CD311A581432AE8D7CF20</span></p><p><a href="../Evidence/Demo06/reviewed-player-files.json">A player inventory</a> · <a href="../Evidence/Demo06/integrated-player-files.json">B player inventory</a> · <a href="../Evidence/Demo06/review-source/boot.config">A boot configuration</a> · <a href="../Evidence/Demo06/integration-source/boot.config">B boot configuration</a>. The <a href="../Evidence/Demo06/integration-source-files.zip">exact B source snapshot</a> preserves all 226 raw build inputs under the <a href="../Evidence/Demo06/source-snapshot.json">snapshot receipt</a>. Configured Git newline normalization is checked separately; the frozen input hashes are not replaced by normalized working-tree hashes.</p>
+<p class="small"><a href="../Evidence/Demo06/committed-source-verification.json">Staged source verification</a>: 140 inputs match raw bytes; 86 differ solely by configured Git newline normalization, with zero other differences. The exact 226 raw inputs remain in the source snapshot. <a href="../Evidence/Demo06/dossier-render-check.md">Dossier render check</a>: desktop, narrow viewport and a static disposition preview were inspected; navigation targets and local references were checked.</p><!-- ROOT DELIVERY UPDATE POINT: append only verified package, extraction and publication receipts below; preserve original A judgments and B affected-coverage limits. -->
+<div class="status" id="delivery-receipt"><strong>Portable verified; publication pending.</strong> All 496 extracted files match the archive. The extracted B player passed a fresh full Crew route: 141 assertions and17 captures. <a href="../Evidence/Demo06/package-verification.json">Package receipt</a> · <a href="../Evidence/Demo06/portable-verification.json">Extraction and runtime receipt</a>. Archive:177810627 bytes; SHA-256 <span class="hash">462F4D42B90242ED735A95FBCA21597E1976D15F5A8C116BD7F30362B7C29A48</span>. The embedded archive dossier is the earlier packaging snapshot; this online/source dossier carries later delivery receipts. Public release, website and retention verification are still pending. Owner gameplay and visual acceptance remain separate.</div></section>
+<footer class="footer"><p>FUNSTRA · Demo06 / Nobody Gets Home Alone · Review case file</p><p><a href="../NOBODY-GETS-HOME-ALONE.md">Player manual</a> · <a href="../reviewer-agents/README.md">Review protocol</a> · <a href="#verdicts">Return to the verdicts</a></p><p class="small">Original reviews and meeting notes remain unedited. A scores, B presentation integration and eventual delivery are distinct records.</p></footer></main></body></html>

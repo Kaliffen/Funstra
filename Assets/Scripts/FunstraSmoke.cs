@@ -10,7 +10,7 @@ namespace Funstra
     {
         bool smokeFreezeAgents;
         bool visualCheck, captureScreens;
-        bool streetsTest, policeTest, pressureTest;
+        bool streetsTest, policeTest, pressureTest, armsTest;
         string evidencePath;
         IEnumerator SmokeRun()
         {
@@ -18,8 +18,8 @@ namespace Funstra
             string[] args=Environment.GetCommandLineArgs();
             for(int i=0;i<args.Length-1;i++)if(args[i]=="--evidence")evidencePath=args[i+1];
             Directory.CreateDirectory(evidencePath);
-            string resultName=pressureTest?"pressure-runtime-result.txt":policeTest?"police-runtime-result.txt":environmentTest?"environment-runtime-result.txt":streetsTest?"streets-runtime-result.txt":bandageVisual?"bandage-visual-result.txt":bandageTest?"bandage-runtime-result.txt":visualCheck?"visual-result.txt":"runtime-result.txt";
-            var stack=new Stack<IEnumerator>();stack.Push(pressureTest?PressureSteps():policeTest?PoliceSteps():environmentTest?EnvironmentSteps():streetsTest?StreetsSteps():bandageVisual?BandageVisualSteps():bandageTest?BandageSteps():visualCheck?VisualSteps():SmokeSteps());
+            string resultName=crewTest?"crew-runtime-result.txt":residentsTest?"residents-runtime-result.txt":armsTest?"arms-runtime-result.txt":pressureTest?"pressure-runtime-result.txt":policeTest?"police-runtime-result.txt":environmentTest?"environment-runtime-result.txt":streetsTest?"streets-runtime-result.txt":bandageVisual?"bandage-visual-result.txt":bandageTest?"bandage-runtime-result.txt":visualCheck?"visual-result.txt":"runtime-result.txt";
+            var stack=new Stack<IEnumerator>();stack.Push(Array.IndexOf(args,"--crew-approach")>=0?CrewApproachSteps():Array.IndexOf(args,"--crew-opposition")>=0?CrewOppositionSteps():crewTest?CrewSteps():residentsTest?ResidentsSteps():armsTest?ArmsSteps():pressureTest?PressureSteps():policeTest?PoliceSteps():environmentTest?EnvironmentSteps():streetsTest?StreetsSteps():bandageVisual?BandageVisualSteps():bandageTest?BandageSteps():visualCheck?VisualSteps():SmokeSteps());
             while(stack.Count>0)
             {
                 bool next=false;object current=null;string error=null;

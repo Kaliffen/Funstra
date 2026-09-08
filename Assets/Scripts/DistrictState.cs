@@ -9,7 +9,8 @@ namespace Funstra
         public string id, name, order = "Hold";
         public Vector3 position;
         public float health = 100;
-        public bool bleeding;
+        public bool bleeding, looted, weaponRecoverable;
+        public ResidentPersona resident;
         public int bandages;
         public int ammo=18;
         public WeaponState combat=new WeaponState();
@@ -56,7 +57,7 @@ namespace Funstra
         public List<DistrictActor> citizens=new List<DistrictActor>();
         public bool Carrying => shipmentOwner=="player" && shipmentUnits>0;
         public Vector3 ShipmentPosition => shipmentOwner=="buyer"?Buyer:Garage;
-        public int TotalMedicine => clinicStock+supplierStock+marketStock+shipmentUnits+consumed;
+        public int TotalMedicine => clinicStock+supplierStock+marketStock+shipmentUnits+consumed+(armsVersion==0||arms==null?0:arms.divertedMedicine+(arms.medicineInTransit?2:0));
         public string ClinicStatus => clinicStock==0?"OUT OF MEDICINE":refuge&&reserveMedicine&&clinicStock<=2?"PUBLIC CARE PAUSED / CREW RESERVE":"TREATING PATIENTS";
         public int ReleasePrice => shipmentOwner=="buyer"?140:100;
         public void Record(string kind,string observer,string text)
@@ -184,10 +185,10 @@ namespace Funstra
         public bool Valid()
         {
             if(police==null)police=new PoliceResponse();
-            if(!police.Valid())return false;
-            return CombatValid()&&!float.IsNaN(clock)&&!float.IsInfinity(clock)&&clock>=0&&clock<10000000&&health>=0&&health<=100&&
+            if(!police.Valid()||armsVersion<0||armsVersion>1||armsVersion==1&&(arms==null||!ArmsRuntimeValid()||!arms.Valid()))return false;
+            return DockValidation()&&CrewValid()&&ResidentsValidation()&&CombatValid()&&!float.IsNaN(clock)&&!float.IsInfinity(clock)&&clock>=0&&clock<10000000&&health>=0&&health<=100&&
                 refusedPatients>=0&&clinicContributions>=0&&nextPatient>0&&nextSupply>0&&nextInspection>0&&bandages>=0&&ammo>=0&&debt>=0&&
-                clinicStock>=0&&supplierStock>=0&&marketStock>=0&&shipmentUnits>=0&&consumed>=0&&TotalMedicine==12&&
+                clinicStock>=0&&supplierStock>=0&&marketStock>=0&&shipmentUnits>=0&&consumed>=0&&TotalMedicine==12+(armsVersion==0||arms==null?0:arms.importedMedicine)&&
                 (shipmentOwner=="collector"||shipmentOwner=="buyer"||shipmentOwner=="player"||shipmentOwner=="clinic"||shipmentOwner=="market")&&
                 clinicMoney>=0&&supplierMoney>=0&&collectorMoney>=0&&buyerMoney>=0&&patientMoney>=0&&marketMoney>=0&&
                 neri!=null&&guard!=null&&collector!=null&&incidents!=null&&neri.health>=0&&neri.health<=100&&guard.health>=0&&guard.health<=100&&collector.health>=0&&collector.health<=100;

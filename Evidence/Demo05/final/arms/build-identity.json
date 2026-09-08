@@ -1,0 +1,12 @@
+{
+  "testedAt": "2026-09-08T09:05:19.4804730Z",
+  "endedAt": "2026-09-08T09:06:02.1947469Z",
+  "elapsedSeconds": 42.7142739,
+  "mode": "Arms",
+  "executable": "~\\repos\\Funstra\\Build\\PriceOfAGun\\Funstra.exe",
+  "executableSha256": "97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3",
+  "assemblySha256": "B1F9C4DDEC4004268248415C6EB1BE4FACA6562C6A3D744A78452131FEA5C8D0",
+  "playerExitCode": 0,
+  "failure": null,
+  "method": "Muted guided exported player. Controller acquisition and explicitly stepped supply/combat fixtures are identified in the runtime result."
+}

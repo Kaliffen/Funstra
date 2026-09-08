@@ -1,0 +1,180 @@
+Mono path[0] = '~/repos/Funstra/Build/NobodyGetsHomeAlone/Funstra_Data/Managed'
+Mono config path = '~/repos/Funstra/Build/NobodyGetsHomeAlone/MonoBleedingEdge/etc'
+CodeReloadManager initialized
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Initialize engine version: 6000.4.0f1 (8cf496087c8f)
+[Subsystems] Discovering subsystems at path ~/repos/Funstra/Build/NobodyGetsHomeAlone/Funstra_Data/UnitySubsystems
+[D3D12 Device Filter] Vendor Name: NVIDIA
+[D3D12 Device Filter] Device Name: NVIDIA GeForce RTX 4090
+[D3D12 Device Filter] Driver Version: 32.0.15.9597
+[D3D12 Device Filter] Feature Level: 12.2
+[D3D12 Device Filter] Graphics Memory: 24138 MB
+[D3D12 Device Filter] Processor Count: 32
+[D3D12 Device Filter] Device Type: Discrete
+GfxDevice: creating device client; kGfxThreadingModeClientWorkerJobs
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4090 (ID=0x2684)
+    Vendor:   NVIDIA
+    VRAM:     24138 MB
+    Driver:   32.0.15.9597
+Begin MonoManager ReloadAssembly
+- Finished resetting the current domain, in  0.001 seconds
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+<RI> Initializing input.
+<RI> Input initialized.
+UnloadTime: 0.970200 ms
+CHECK: Traffic fixture stages Rell outside the existing vehicle footprint
+CHECK: Actual street traffic yields to Rell's physical body
+CHECK: Congestion fixture begins with two physically walkable origins
+CHECK: Simultaneous crew orders clear a shared grid connector and reach both destinations
+CHECK: Crew movement regression preserves physical separation without passing through a partner
+CHECK: Crew roster and K button block world-fire input in compact HUD
+CHECK: Open street pointer remains available for combat input
+CHECK: Open crew panel blocks combat input
+CHECK: Choosing a crew destination cannot also fire a weapon
+CHECK: Resume shortcut clears the stopped-time overlay and pending destination
+CHECK: K opens crew panel and stops time
+CHECK: K closes crew panel and resumes consistently
+CHECK: Two arrest contacts preserve the existing target instead of resetting progress each frame
+CHECK: New arrest selects one deterministic eligible actor
+CHECK: Arrest changes target only when previous contact is absent
+CHECK: No contact leaves the arrest timer free to decay
+CHECK: Living protagonist can explicitly surrender despite a living partner
+CHECK: Downed protagonist continues through a living recruited partner
+CHECK: Crew route uses fresh isolated muted exported campaign
+CHECK: Paid route begins genuinely solo
+CHECK: Crew route exists for player to (8.00, 0.00, 13.00)
+CHECK: Actual selected controller arrived: player at (8.00, 0.00, 13.00)
+CHECK: Crew route exists for player to (8.00, 0.00, 39.00)
+CHECK: Actual selected controller arrived: player at (8.00, 0.00, 39.00)
+CHECK: Crew route exists for player to (16.00, 0.00, 39.00)
+CHECK: Actual selected controller arrived: player at (16.00, 0.00, 39.00)
+CHECK: Live Vale's public counter is reachable before trespass engagement
+CHECK: Reached public counter opens actual release dialogue
+CHECK: Reached payment moves finite $90 to live Vale
+CHECK: Crew route exists for player to (30.00, 0.00, 43.00)
+CHECK: Actual selected controller arrived: player at (30.00, 0.00, 43.00)
+CHECK: Actual held pickup gives the sole component to the solo collector
+CHECK: Paid passage remains nonviolent with the live yard squad
+CHECK: Crew route exists for player to (48.00, 0.00, 39.00)
+CHECK: Actual selected controller arrived: player at (48.00, 0.00, 39.00)
+CHECK: Crew route exists for player to (61.00, 0.00, 18.50)
+CHECK: Actual selected controller arrived: player at (61.00, 0.00, 18.50)
+CHECK: Controller returns actual component and earns Rell partnership
+CHECK: Neri fixture transfers finite six-dose shipment and earns existing clinic partnership
+CHECK: All three persistent actors can be selected
+CHECK: Selection leaves independent positions, wounds, ammunition and magazines in place
+CHECK: Transfer fixture obtains one stocked pistol and finite rounds
+CHECK: Loose purchase starts timed reload
+CHECK: Transfer moves the actual gun object, magazine and all rounds into Rell custody
+CHECK: Repeated gun handoff cannot clone equipment
+CHECK: Dressing handoff conserves actual personal inventory
+CHECK: Select armed Rell for the staged shared projectile sightline
+CHECK: Rell fires the shared finite pistol across a checked clear sightline
+CHECK: Projectile owner is firing actor and one round is spent before impact
+CHECK: Control switches away while Rell's projectile is in flight
+CHECK: Actual reload preserves selected Neri, Rell gun custody, spent round and projectile owner/position
+CHECK: Reloaded Rell projectile hits Vale once with owner/victim receipt after control switch
+CHECK: Real crew projectile damage revokes paid yard passage
+CHECK: Neri begins three-second field aid beside the actual wounded player
+CHECK: Moving helper interrupts aid and retains dressing
+CHECK: Stationary helper can restart interrupted aid
+CHECK: New helper damage interrupts aid without spending dressing
+CHECK: Quiet nearby aid can restart after damage
+CHECK: Completed timed aid spends one dressing, stops actual bleeding and earns one practice
+CHECK: Bleeding Neri is directly controlled for self-aid regression
+CHECK: Bleeding helper can begin timed self-aid
+CHECK: Normal Update self-aid completes through bleed attrition and spends one dressing
+CHECK: Protagonist control resumes before explicit downed-player fixture
+CHECK: Downed protagonist remains down while living Neri takes control and prevents solo recovery teleport
+CHECK: Carry fixture's direct route is obstructed by the clinic east wall
+CHECK: Neri physically lifts nearby downed protagonist
+CHECK: Crew route exists for neri to (-27.00, 0.00, -12.00)
+CHECK: Actual selected controller arrived: neri at (-27.00, 0.00, -12.00)
+CHECK: Actual Neri controller carried protagonist around wall and through clinic doorway
+CHECK: Physical clinic admission spends one existing dose and restores carried protagonist
+CHECK: Rescued protagonist remembers who physically returned them
+CHECK: Actual save/reload preserves rescue, survivor health and finite clinic cost
+CHECK: Sheltered Neri explicitly records leaving downed Rell behind exactly once
+CHECK: Abandonment and actual downed body location survive reload without respawn
+CHECK: Crew rescue/abandonment campaign preserves integrated state invariants
+CHECK: Total-wipe fixture begins with a real carrier link
+CHECK: No living recruited actor remains in total-wipe fixture
+CHECK: Total defeat clears stale carry/aid links before protagonist emergency recovery
+CHECK: Reloaded total-wipe survivor remains playable without stale carrier ownership
+CHECK: Crew route exists for player to (61.00, 0.00, 18.50)
+CHECK: Actual selected controller arrived: player at (61.00, 0.00, 18.50)
+CHECK: Fresh solo controller reaches Rell's actual workshop dialogue
+CHECK: Reached dialogue accepts concrete finite-gasket repair
+CHECK: Crew route exists for player to (65.00, 0.00, 20.00)
+CHECK: Actual selected controller arrived: player at (65.00, 0.00, 20.00)
+CHECK: Nonviolent solo repair uses last gasket and recruits Rell while main impeller remains in yard
+CHECK: Completed real held repair drains visible workshop and awards practical learning once
+CHECK: Actual reload retains independent repair partnership and finite unrecovered main pump
+CHECK: Repaired workshop campaign remains integrated-valid
+CHECK: Crew opposition runs in an isolated muted crew-enabled player
+CHECK: Staged PISTOL uses the production trigger
+CHECK: Staged PISTOL spends one cartridge for its real projectile count
+CHECK: Staged PISTOL cannot double-spend during the same-frame cooldown
+CHECK: Staged PISTOL preserves the real owner, kind and projectile speed
+CHECK: Staged PISTOL starts its own committed reload
+CHECK: Live Update completes PISTOL reload without creating reserve ammunition
+CHECK: Staged SHOTGUN uses the production trigger
+CHECK: Staged SHOTGUN spends one cartridge for its real projectile count
+CHECK: Staged SHOTGUN cannot double-spend during the same-frame cooldown
+CHECK: Staged SHOTGUN preserves the real owner, kind and projectile speed
+CHECK: Staged SHOTGUN starts its own committed reload
+CHECK: Live Update completes SHOTGUN reload without creating reserve ammunition
+CHECK: Staged SMG uses the production trigger
+CHECK: Staged SMG spends one cartridge for its real projectile count
+CHECK: Staged SMG cannot double-spend during the same-frame cooldown
+CHECK: Staged SMG preserves the real owner, kind and projectile speed
+CHECK: Staged SMG starts its own committed reload
+CHECK: Live Update completes SMG reload without creating reserve ammunition
+CHECK: Staged RIFLE uses the production trigger
+CHECK: Staged RIFLE spends one cartridge for its real projectile count
+CHECK: Staged RIFLE cannot double-spend during the same-frame cooldown
+CHECK: Staged RIFLE preserves the real owner, kind and projectile speed
+CHECK: Staged RIFLE starts its own committed reload
+CHECK: Live Update completes RIFLE reload without creating reserve ammunition
+CHECK: Prepared rifle officer stands on shared walkable street
+CHECK: Delayed retreat has a real visible firing approach and walkable escape street
+CHECK: Delayed rifle retreat starts at 100 HP with ordinary arrest rules
+CHECK: Live rifle officer spends a round and produces an immutable player-hit receipt
+CHECK: Delayed retreat finds nearby reachable real cover without approaching the shooter
+CHECK: Navigable route to (32.00, 0.00, -17.00)
+CHECK: Controller arrived beside interaction at (32.00, 0.00, -17.00)
+CHECK: Wounded ordinary-health protagonist survives delayed controller withdrawal around the corner
+CHECK: Rifle pressure preserves its finite three-round starting kit during retreat
+CHECK: The retreat ends behind real occluding geometry
+CHECK: Player begins actual timed self-aid after reaching cover
+CHECK: Post-retreat timed aid records completed finite treatment or verified direct-hit interruption without healing or dressing loss
+CHECK: Prepared rifle officer stands on shared walkable street
+CHECK: Navigable route to (24.00, 0.00, -13.00)
+CHECK: Controller arrived beside interaction at (24.00, 0.00, -13.00)
+CHECK: Depleted officer withdraws on shared walkable ground while the protagonist approaches
+CHECK: Depleted rifle officer neither refills ammunition nor fires a free shot
+CHECK: Prepared rifle officer stands on shared walkable street
+CHECK: Prepared rifle officer stands on shared walkable street
+CHECK: Live rifle formation opens a blocked lane through officer movement while retaining walkability and separation
+CHECK: Both moving-lane officers spend only their single issued round
+CHECK: Moving firing lane preserves both distinct rifle owners and the actual struck crew identity
+CHECK: Officers clear the friendly firing lane without shooting one another or requiring extra player durability
+CHECK: Live leader loss cancels a surviving guard's already pending report
+CHECK: Live guard starts timed physical aid before consuming its finite dressing
+CHECK: Live guard completes one dressing and restores only 25 health to the casualty
+CHECK: Recovered leader withdraws and cannot restore the lost report network
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+CodeReloadManager destroyed

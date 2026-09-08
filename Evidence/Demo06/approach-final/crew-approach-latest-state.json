@@ -1,0 +1,2157 @@
+{
+    "version": 2,
+    "district": {
+        "arms": {
+            "ownedMask": 16,
+            "dealerMoney": 680,
+            "dealerTrust": 1,
+            "favorStage": 0,
+            "supplyCycle": 2,
+            "importedMedicine": 4,
+            "divertedMedicine": 0,
+            "dealerStolen": false,
+            "dealerHostile": false,
+            "goodwillRewarded": true,
+            "armsInTransit": false,
+            "medicineInTransit": false,
+            "favorReceipt": false,
+            "gunStock": [
+                0,
+                0,
+                2,
+                1,
+                0,
+                0
+            ],
+            "ammoStock": [
+                0,
+                0,
+                60,
+                12,
+                48,
+                10
+            ],
+            "sourceAmmo": [
+                0,
+                0,
+                12,
+                2,
+                24,
+                0
+            ],
+            "sourceMedicine": 2,
+            "spent": [
+                0,
+                0,
+                7,
+                0,
+                10,
+                5
+            ],
+            "confiscated": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "recovered": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        "armsVersion": 1,
+        "crewArmsVersion": 1,
+        "crewVersion": 1,
+        "crew": {
+            "version": 1,
+            "mechanicsPractice": 0,
+            "selectedId": "player",
+            "rellRecruited": true,
+            "rell": {
+                "id": "rell",
+                "name": "RELL",
+                "order": "Hold",
+                "position": {
+                    "x": 57.32426834106445,
+                    "y": 0.0,
+                    "z": 18.717641830444337
+                },
+                "health": 100.0,
+                "bleeding": false,
+                "looted": false,
+                "weaponRecoverable": false,
+                "resident": {
+                    "version": 0,
+                    "disposition": 0,
+                    "routineStop": 0,
+                    "dressingsUsed": 0,
+                    "occupation": "",
+                    "buddyId": "",
+                    "action": "On the way",
+                    "reason": "",
+                    "memory": "",
+                    "casualtyId": "",
+                    "offenderId": "",
+                    "witnessedPlayer": false,
+                    "helpedByPlayer": false,
+                    "abandonedNeighbor": false,
+                    "dangerRemaining": 0.0,
+                    "pauseRemaining": 0.0,
+                    "watchRemaining": 0.0,
+                    "threatPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "casualtyPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "refuge": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "hasRefuge": false
+                },
+                "bandages": 1,
+                "ammo": 15,
+                "combat": {
+                    "kind": 5,
+                    "magazine": 5,
+                    "reloadRemaining": 0.0,
+                    "cooldown": 0.0,
+                    "initialized": true
+                }
+            },
+            "members": [
+                {
+                    "id": "player",
+                    "order": "Hold",
+                    "patient": "",
+                    "carrying": "",
+                    "memory": "PLAYER stayed and used a dressing on me.",
+                    "destination": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "aidOrigin": {
+                        "x": 51.97648239135742,
+                        "y": 0.03499995917081833,
+                        "z": 20.369888305664064
+                    },
+                    "aidRemaining": 0.0,
+                    "aidHealth": 31.488618850708009,
+                    "stamina": 100.0,
+                    "medicinePractice": 1,
+                    "rescuedCount": 0,
+                    "abandonedCount": 0,
+                    "abandoned": false,
+                    "armed": false,
+                    "holstered": true
+                },
+                {
+                    "id": "neri",
+                    "order": "Follow",
+                    "patient": "",
+                    "carrying": "",
+                    "memory": "",
+                    "destination": {
+                        "x": 26.0,
+                        "y": 0.0,
+                        "z": 47.0
+                    },
+                    "aidOrigin": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "aidRemaining": 0.0,
+                    "aidHealth": 0.0,
+                    "stamina": 100.0,
+                    "medicinePractice": 0,
+                    "rescuedCount": 0,
+                    "abandonedCount": 0,
+                    "abandoned": false,
+                    "armed": true,
+                    "holstered": true
+                },
+                {
+                    "id": "rell",
+                    "order": "Move",
+                    "patient": "",
+                    "carrying": "",
+                    "memory": "Prepared full-crew approach fixture; recruitment staged.",
+                    "destination": {
+                        "x": 62.5,
+                        "y": 0.0,
+                        "z": 20.0
+                    },
+                    "aidOrigin": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "aidRemaining": 0.0,
+                    "aidHealth": 0.0,
+                    "stamina": 100.0,
+                    "medicinePractice": 0,
+                    "rescuedCount": 0,
+                    "abandonedCount": 0,
+                    "abandoned": false,
+                    "armed": true,
+                    "holstered": true
+                }
+            ]
+        },
+        "clock": 97.7789535522461,
+        "nextPatient": 180.0,
+        "nextSupply": 240.0,
+        "nextInspection": 120.0,
+        "health": 41.53655242919922,
+        "bleeding": false,
+        "introSeen": true,
+        "recruited": true,
+        "identified": false,
+        "shortageKnown": false,
+        "discovered": true,
+        "released": false,
+        "hostile": false,
+        "bandages": 1,
+        "ammo": 0,
+        "trust": 4,
+        "debt": 0,
+        "treatments": 1,
+        "consumed": 1,
+        "clinicStock": 11,
+        "supplierStock": 4,
+        "marketStock": 0,
+        "clinicMoney": 28,
+        "supplierMoney": 0,
+        "collectorMoney": 0,
+        "buyerMoney": 200,
+        "patientMoney": 192,
+        "marketMoney": 1000,
+        "shipmentOwner": "clinic",
+        "shipmentUnits": 0,
+        "playerPosition": {
+            "x": 60.690704345703128,
+            "y": 0.15499995648860932,
+            "z": 18.46839714050293
+        },
+        "police": {
+            "identifiedGunman": true,
+            "crewVersion": 1,
+            "harm": 18,
+            "searchRemaining": 23.91100311279297,
+            "contactRemaining": 0.0,
+            "lastKnown": {
+                "x": 22.40335464477539,
+                "y": 0.03499995917081833,
+                "z": 48.99387741088867
+            },
+            "observer": "citizen-2",
+            "trucks": [
+                {
+                    "requested": true,
+                    "entered": true,
+                    "arrived": true,
+                    "deployed": 3,
+                    "delay": 0.0,
+                    "blockedTime": 4.003561496734619,
+                    "position": {
+                        "x": 3.0,
+                        "y": 0.0,
+                        "z": -1.6037284135818482
+                    },
+                    "destination": {
+                        "x": 3.0,
+                        "y": 0.0,
+                        "z": 28.0
+                    }
+                },
+                {
+                    "requested": true,
+                    "entered": true,
+                    "arrived": true,
+                    "deployed": 3,
+                    "delay": 0.0,
+                    "blockedTime": 0.0,
+                    "position": {
+                        "x": -3.0,
+                        "y": 0.0,
+                        "z": 28.0
+                    },
+                    "destination": {
+                        "x": -3.0,
+                        "y": 0.0,
+                        "z": 28.0
+                    }
+                }
+            ],
+            "officers": [
+                {
+                    "id": "response-1-0",
+                    "name": "RESPONSE OFFICER 4",
+                    "order": "Hold",
+                    "position": {
+                        "x": 20.654630661010743,
+                        "y": 0.0,
+                        "z": 48.02671813964844
+                    },
+                    "health": 100.0,
+                    "bleeding": false,
+                    "looted": false,
+                    "weaponRecoverable": true,
+                    "resident": {
+                        "version": 0,
+                        "disposition": 0,
+                        "routineStop": 0,
+                        "dressingsUsed": 0,
+                        "occupation": "",
+                        "buddyId": "",
+                        "action": "On the way",
+                        "reason": "",
+                        "memory": "",
+                        "casualtyId": "",
+                        "offenderId": "",
+                        "witnessedPlayer": false,
+                        "helpedByPlayer": false,
+                        "abandonedNeighbor": false,
+                        "dangerRemaining": 0.0,
+                        "pauseRemaining": 0.0,
+                        "watchRemaining": 0.0,
+                        "threatPosition": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "casualtyPosition": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "refuge": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "hasRefuge": false
+                    },
+                    "bandages": 0,
+                    "ammo": 18,
+                    "combat": {
+                        "kind": 5,
+                        "magazine": 5,
+                        "reloadRemaining": 0.0,
+                        "cooldown": 0.0,
+                        "initialized": true
+                    }
+                },
+                {
+                    "id": "response-1-1",
+                    "name": "RESPONSE OFFICER 5",
+                    "order": "Hold",
+                    "position": {
+                        "x": 20.79864501953125,
+                        "y": 0.0,
+                        "z": 48.85719680786133
+                    },
+                    "health": 100.0,
+                    "bleeding": false,
+                    "looted": false,
+                    "weaponRecoverable": true,
+                    "resident": {
+                        "version": 0,
+                        "disposition": 0,
+                        "routineStop": 0,
+                        "dressingsUsed": 0,
+                        "occupation": "",
+                        "buddyId": "",
+                        "action": "On the way",
+                        "reason": "",
+                        "memory": "",
+                        "casualtyId": "",
+                        "offenderId": "",
+                        "witnessedPlayer": false,
+                        "helpedByPlayer": false,
+                        "abandonedNeighbor": false,
+                        "dangerRemaining": 0.0,
+                        "pauseRemaining": 0.0,
+                        "watchRemaining": 0.0,
+                        "threatPosition": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "casualtyPosition": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "refuge": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "hasRefuge": false
+                    },
+                    "bandages": 0,
+                    "ammo": 18,
+                    "combat": {
+                        "kind": 5,
+                        "magazine": 5,
+                        "reloadRemaining": 0.0,
+                        "cooldown": 0.0,
+                        "initialized": true
+                    }
+                },
+                {
+                    "id": "response-1-2",
+                    "name": "RESPONSE OFFICER 6",
+                    "order": "Hold",
+                    "position": {
+                        "x": 22.627239227294923,
+                        "y": 0.0,
+                        "z": 46.53341293334961
+                    },
+                    "health": 100.0,
+                    "bleeding": false,
+                    "looted": false,
+                    "weaponRecoverable": true,
+                    "resident": {
+                        "version": 0,
+                        "disposition": 0,
+                        "routineStop": 0,
+                        "dressingsUsed": 0,
+                        "occupation": "",
+                        "buddyId": "",
+                        "action": "On the way",
+                        "reason": "",
+                        "memory": "",
+                        "casualtyId": "",
+                        "offenderId": "",
+                        "witnessedPlayer": false,
+                        "helpedByPlayer": false,
+                        "abandonedNeighbor": false,
+                        "dangerRemaining": 0.0,
+                        "pauseRemaining": 0.0,
+                        "watchRemaining": 0.0,
+                        "threatPosition": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "casualtyPosition": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "refuge": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "hasRefuge": false
+                    },
+                    "bandages": 0,
+                    "ammo": 18,
+                    "combat": {
+                        "kind": 5,
+                        "magazine": 5,
+                        "reloadRemaining": 0.0,
+                        "cooldown": 0.0,
+                        "initialized": true
+                    }
+                },
+                {
+                    "id": "response-0-0",
+                    "name": "RESPONSE OFFICER 1",
+                    "order": "Hold",
+                    "position": {
+                        "x": 6.805217266082764,
+                        "y": 0.0,
+                        "z": 14.759356498718262
+                    },
+                    "health": 100.0,
+                    "bleeding": false,
+                    "looted": false,
+                    "weaponRecoverable": true,
+                    "resident": {
+                        "version": 0,
+                        "disposition": 0,
+                        "routineStop": 0,
+                        "dressingsUsed": 0,
+                        "occupation": "",
+                        "buddyId": "",
+                        "action": "On the way",
+                        "reason": "",
+                        "memory": "",
+                        "casualtyId": "",
+                        "offenderId": "",
+                        "witnessedPlayer": false,
+                        "helpedByPlayer": false,
+                        "abandonedNeighbor": false,
+                        "dangerRemaining": 0.0,
+                        "pauseRemaining": 0.0,
+                        "watchRemaining": 0.0,
+                        "threatPosition": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "casualtyPosition": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "refuge": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "hasRefuge": false
+                    },
+                    "bandages": 0,
+                    "ammo": 18,
+                    "combat": {
+                        "kind": 5,
+                        "magazine": 5,
+                        "reloadRemaining": 0.0,
+                        "cooldown": 0.0,
+                        "initialized": true
+                    }
+                },
+                {
+                    "id": "response-0-1",
+                    "name": "RESPONSE OFFICER 2",
+                    "order": "Hold",
+                    "position": {
+                        "x": 7.649284362792969,
+                        "y": 0.0,
+                        "z": 16.416685104370118
+                    },
+                    "health": 100.0,
+                    "bleeding": false,
+                    "looted": false,
+                    "weaponRecoverable": true,
+                    "resident": {
+                        "version": 0,
+                        "disposition": 0,
+                        "routineStop": 0,
+                        "dressingsUsed": 0,
+                        "occupation": "",
+                        "buddyId": "",
+                        "action": "On the way",
+                        "reason": "",
+                        "memory": "",
+                        "casualtyId": "",
+                        "offenderId": "",
+                        "witnessedPlayer": false,
+                        "helpedByPlayer": false,
+                        "abandonedNeighbor": false,
+                        "dangerRemaining": 0.0,
+                        "pauseRemaining": 0.0,
+                        "watchRemaining": 0.0,
+                        "threatPosition": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "casualtyPosition": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "refuge": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "hasRefuge": false
+                    },
+                    "bandages": 0,
+                    "ammo": 18,
+                    "combat": {
+                        "kind": 5,
+                        "magazine": 5,
+                        "reloadRemaining": 0.0,
+                        "cooldown": 0.0,
+                        "initialized": true
+                    }
+                },
+                {
+                    "id": "response-0-2",
+                    "name": "RESPONSE OFFICER 3",
+                    "order": "Hold",
+                    "position": {
+                        "x": 7.89371919631958,
+                        "y": 0.0,
+                        "z": 18.188827514648439
+                    },
+                    "health": 100.0,
+                    "bleeding": false,
+                    "looted": false,
+                    "weaponRecoverable": true,
+                    "resident": {
+                        "version": 0,
+                        "disposition": 0,
+                        "routineStop": 0,
+                        "dressingsUsed": 0,
+                        "occupation": "",
+                        "buddyId": "",
+                        "action": "On the way",
+                        "reason": "",
+                        "memory": "",
+                        "casualtyId": "",
+                        "offenderId": "",
+                        "witnessedPlayer": false,
+                        "helpedByPlayer": false,
+                        "abandonedNeighbor": false,
+                        "dangerRemaining": 0.0,
+                        "pauseRemaining": 0.0,
+                        "watchRemaining": 0.0,
+                        "threatPosition": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "casualtyPosition": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "refuge": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "hasRefuge": false
+                    },
+                    "bandages": 0,
+                    "ammo": 18,
+                    "combat": {
+                        "kind": 5,
+                        "magazine": 5,
+                        "reloadRemaining": 0.0,
+                        "cooldown": 0.0,
+                        "initialized": true
+                    }
+                }
+            ]
+        },
+        "savedHeat": 23.91100311279297,
+        "savedLastSeen": {
+            "x": 22.40335464477539,
+            "y": 0.03499995917081833,
+            "z": 48.99387741088867
+        },
+        "hasPosition": true,
+        "metNeri": true,
+        "cargoTakenMask": 0,
+        "savedJobCarrying": false,
+        "recoverySummary": "",
+        "recoveryDetails": "",
+        "guardLastSeen": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        "guardSawAt": 0.0,
+        "neri": {
+            "id": "neri",
+            "name": "NERI",
+            "order": "Follow",
+            "position": {
+                "x": 56.02656173706055,
+                "y": 0.0,
+                "z": 18.165468215942384
+            },
+            "health": 100.0,
+            "bleeding": false,
+            "looted": false,
+            "weaponRecoverable": false,
+            "resident": {
+                "version": 0,
+                "disposition": 0,
+                "routineStop": 0,
+                "dressingsUsed": 0,
+                "occupation": "",
+                "buddyId": "",
+                "action": "On the way",
+                "reason": "",
+                "memory": "",
+                "casualtyId": "",
+                "offenderId": "",
+                "witnessedPlayer": false,
+                "helpedByPlayer": false,
+                "abandonedNeighbor": false,
+                "dangerRemaining": 0.0,
+                "pauseRemaining": 0.0,
+                "watchRemaining": 0.0,
+                "threatPosition": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "casualtyPosition": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "refuge": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "hasRefuge": false
+            },
+            "bandages": 3,
+            "ammo": 11,
+            "combat": {
+                "kind": 2,
+                "magazine": 5,
+                "reloadRemaining": 0.0,
+                "cooldown": 0.0,
+                "initialized": true
+            }
+        },
+        "guard": {
+            "id": "rook",
+            "name": "ROOK",
+            "order": "Hold",
+            "position": {
+                "x": -28.0,
+                "y": 0.0,
+                "z": 8.292815208435059
+            },
+            "health": 80.0,
+            "bleeding": false,
+            "looted": false,
+            "weaponRecoverable": true,
+            "resident": {
+                "version": 0,
+                "disposition": 0,
+                "routineStop": 0,
+                "dressingsUsed": 0,
+                "occupation": "",
+                "buddyId": "",
+                "action": "On the way",
+                "reason": "",
+                "memory": "",
+                "casualtyId": "",
+                "offenderId": "",
+                "witnessedPlayer": false,
+                "helpedByPlayer": false,
+                "abandonedNeighbor": false,
+                "dangerRemaining": 0.0,
+                "pauseRemaining": 0.0,
+                "watchRemaining": 0.0,
+                "threatPosition": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "casualtyPosition": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "refuge": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "hasRefuge": false
+            },
+            "bandages": 0,
+            "ammo": 18,
+            "combat": {
+                "kind": 2,
+                "magazine": 6,
+                "reloadRemaining": 0.0,
+                "cooldown": 0.0,
+                "initialized": true
+            }
+        },
+        "collector": {
+            "id": "ivo",
+            "name": "IVO",
+            "order": "Hold",
+            "position": {
+                "x": -26.0,
+                "y": 0.0,
+                "z": 11.0
+            },
+            "health": 70.0,
+            "bleeding": false,
+            "looted": false,
+            "weaponRecoverable": false,
+            "resident": {
+                "version": 0,
+                "disposition": 0,
+                "routineStop": 0,
+                "dressingsUsed": 0,
+                "occupation": "",
+                "buddyId": "",
+                "action": "On the way",
+                "reason": "",
+                "memory": "",
+                "casualtyId": "",
+                "offenderId": "",
+                "witnessedPlayer": false,
+                "helpedByPlayer": false,
+                "abandonedNeighbor": false,
+                "dangerRemaining": 0.0,
+                "pauseRemaining": 0.0,
+                "watchRemaining": 0.0,
+                "threatPosition": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "casualtyPosition": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "refuge": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "hasRefuge": false
+            },
+            "bandages": 0,
+            "ammo": 18,
+            "combat": {
+                "kind": 2,
+                "magazine": 0,
+                "reloadRemaining": 0.0,
+                "cooldown": 0.0,
+                "initialized": false
+            }
+        },
+        "incidents": [
+            {
+                "time": 0.0,
+                "kind": "pickup",
+                "observer": "player",
+                "text": "Took the impounded medicine. Six doses are in your bag."
+            },
+            {
+                "time": 0.0,
+                "kind": "donation",
+                "observer": "neri",
+                "text": "You supplied the clinic. Neri offers a bed, treatment and a place beside you."
+            },
+            {
+                "time": 0.0,
+                "kind": "partnership",
+                "observer": "neri",
+                "text": "Neri joined you. Keep each other alive. G follow / H hold / R retreat / T aid."
+            },
+            {
+                "time": 0.0,
+                "kind": "arms purchase",
+                "observer": "sella",
+                "text": "Bought an illegal RIFLE for $220. Ammunition is sold separately."
+            },
+            {
+                "time": 0.0,
+                "kind": "ammo purchase",
+                "observer": "sella",
+                "text": "Bought 5 RIFLE rounds for $25 from Sella's finite stock."
+            },
+            {
+                "time": 0.0,
+                "kind": "ammo purchase",
+                "observer": "sella",
+                "text": "Bought 5 RIFLE rounds for $25 from Sella's finite stock."
+            },
+            {
+                "time": 0.0,
+                "kind": "ammo purchase",
+                "observer": "sella",
+                "text": "Bought 5 RIFLE rounds for $25 from Sella's finite stock."
+            },
+            {
+                "time": 0.0,
+                "kind": "ammo purchase",
+                "observer": "sella",
+                "text": "Bought 5 RIFLE rounds for $25 from Sella's finite stock."
+            },
+            {
+                "time": 0.0,
+                "kind": "arms purchase",
+                "observer": "sella",
+                "text": "Bought an illegal SMG for $240. Ammunition is sold separately."
+            },
+            {
+                "time": 0.0,
+                "kind": "ammo purchase",
+                "observer": "sella",
+                "text": "Bought 12 SMG rounds for $30 from Sella's finite stock."
+            },
+            {
+                "time": 0.0,
+                "kind": "ammo purchase",
+                "observer": "sella",
+                "text": "Bought 12 SMG rounds for $30 from Sella's finite stock."
+            },
+            {
+                "time": 0.0,
+                "kind": "ammo purchase",
+                "observer": "sella",
+                "text": "Bought 12 SMG rounds for $30 from Sella's finite stock."
+            },
+            {
+                "time": 0.0,
+                "kind": "ammo purchase",
+                "observer": "sella",
+                "text": "Bought 12 SMG rounds for $30 from Sella's finite stock."
+            },
+            {
+                "time": 8.014595985412598,
+                "kind": "supply dispatch",
+                "observer": "supplier",
+                "text": "Consignment 1 / 3 left the finite depot: 12 pistol, 2 shotgun and 24 SMG rounds for Sella; two doses for the clinic."
+            },
+            {
+                "time": 17.4172420501709,
+                "kind": "supply delivered",
+                "observer": "sella",
+                "text": "Sella received the courier's ammunition. Her shop stock has increased."
+            },
+            {
+                "time": 26.785097122192384,
+                "kind": "supply delivered",
+                "observer": "neri",
+                "text": "The courier delivered two doses to the clinic. The first completed medicine delivery earns goodwill once."
+            },
+            {
+                "time": 30.0,
+                "kind": "missing",
+                "observer": "ivo",
+                "text": "Ivo's stock count finds the shipment missing. No thief identified unless witnessed."
+            },
+            {
+                "time": 72.7266845703125,
+                "kind": "resident alarm",
+                "observer": "citizen-5",
+                "text": "RUTH heard a shot and sought shelter without identifying a shooter."
+            },
+            {
+                "time": 72.82669067382813,
+                "kind": "yard attacked",
+                "observer": "rell",
+                "text": "Vale's people saw their crew attacked. Release papers no longer buy safe passage."
+            },
+            {
+                "time": 73.4100570678711,
+                "kind": "incapacitated",
+                "observer": "yard-0",
+                "text": "VALE / WATCH is incapacitated. Their inventory and relationships remain."
+            },
+            {
+                "time": 73.91007995605469,
+                "kind": "incapacitated",
+                "observer": "yard-1",
+                "text": "OSS / RUNNER is incapacitated. Their inventory and relationships remain."
+            },
+            {
+                "time": 74.07688903808594,
+                "kind": "assault",
+                "observer": "citizen-5",
+                "text": "You attacked RUTH. The attack was reported."
+            },
+            {
+                "time": 74.47689056396485,
+                "kind": "assault",
+                "observer": "citizen-2",
+                "text": "You attacked OFFICER 3. The attack was reported."
+            },
+            {
+                "time": 74.92727661132813,
+                "kind": "assault",
+                "observer": "citizen-2",
+                "text": "You attacked OFFICER 3. The attack was reported."
+            },
+            {
+                "time": 75.42737579345703,
+                "kind": "assault",
+                "observer": "citizen-2",
+                "text": "You attacked OFFICER 3. The attack was reported."
+            },
+            {
+                "time": 76.10646057128906,
+                "kind": "incapacitated",
+                "observer": "yard-2",
+                "text": "LEN / REAR GUARD is incapacitated. Their inventory and relationships remain."
+            },
+            {
+                "time": 77.1284408569336,
+                "kind": "assault",
+                "observer": "citizen-2",
+                "text": "You attacked OFFICER 3. The attacker was not identified."
+            },
+            {
+                "time": 77.1284408569336,
+                "kind": "incapacitated",
+                "observer": "citizen-2",
+                "text": "OFFICER 3 is incapacitated. Their inventory and relationships remain."
+            },
+            {
+                "time": 77.1284408569336,
+                "kind": "supply dispatch",
+                "observer": "supplier",
+                "text": "Consignment 2 / 3 left the finite depot: 12 pistol, 2 shotgun and 24 SMG rounds for Sella; two doses for the clinic."
+            },
+            {
+                "time": 86.44050598144531,
+                "kind": "supply delivered",
+                "observer": "sella",
+                "text": "Sella received the courier's ammunition. Her shop stock has increased."
+            },
+            {
+                "time": 95.31121063232422,
+                "kind": "crew aid",
+                "observer": "player",
+                "text": "PLAYER stayed and used a dressing on me."
+            },
+            {
+                "time": 95.37788391113281,
+                "kind": "supply delivered",
+                "observer": "neri",
+                "text": "The courier delivered two doses to the clinic. The first completed medicine delivery earns goodwill once."
+            },
+            {
+                "time": 97.7789535522461,
+                "kind": "pump returned",
+                "observer": "player",
+                "text": "Rell fitted the impeller. His workshop can drain the dock cellars again."
+            }
+        ],
+        "citizens": [
+            {
+                "id": "citizen-0",
+                "name": "OFFICER 1",
+                "order": "Hold",
+                "position": {
+                    "x": 21.841341018676759,
+                    "y": 0.0,
+                    "z": 47.32582092285156
+                },
+                "health": 100.0,
+                "bleeding": false,
+                "looted": false,
+                "weaponRecoverable": true,
+                "resident": {
+                    "version": 0,
+                    "disposition": 0,
+                    "routineStop": 0,
+                    "dressingsUsed": 0,
+                    "occupation": "",
+                    "buddyId": "",
+                    "action": "On the way",
+                    "reason": "",
+                    "memory": "",
+                    "casualtyId": "",
+                    "offenderId": "",
+                    "witnessedPlayer": false,
+                    "helpedByPlayer": false,
+                    "abandonedNeighbor": false,
+                    "dangerRemaining": 0.0,
+                    "pauseRemaining": 0.0,
+                    "watchRemaining": 0.0,
+                    "threatPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "casualtyPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "refuge": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "hasRefuge": false
+                },
+                "bandages": 0,
+                "ammo": 18,
+                "combat": {
+                    "kind": 2,
+                    "magazine": 6,
+                    "reloadRemaining": 0.0,
+                    "cooldown": 0.0,
+                    "initialized": true
+                }
+            },
+            {
+                "id": "citizen-1",
+                "name": "OFFICER 2",
+                "order": "Hold",
+                "position": {
+                    "x": 23.840089797973634,
+                    "y": 0.0,
+                    "z": 48.088130950927737
+                },
+                "health": 100.0,
+                "bleeding": false,
+                "looted": false,
+                "weaponRecoverable": true,
+                "resident": {
+                    "version": 0,
+                    "disposition": 0,
+                    "routineStop": 0,
+                    "dressingsUsed": 0,
+                    "occupation": "",
+                    "buddyId": "",
+                    "action": "On the way",
+                    "reason": "",
+                    "memory": "",
+                    "casualtyId": "",
+                    "offenderId": "",
+                    "witnessedPlayer": false,
+                    "helpedByPlayer": false,
+                    "abandonedNeighbor": false,
+                    "dangerRemaining": 0.0,
+                    "pauseRemaining": 0.0,
+                    "watchRemaining": 0.0,
+                    "threatPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "casualtyPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "refuge": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "hasRefuge": false
+                },
+                "bandages": 0,
+                "ammo": 18,
+                "combat": {
+                    "kind": 2,
+                    "magazine": 6,
+                    "reloadRemaining": 0.0,
+                    "cooldown": 0.0,
+                    "initialized": true
+                }
+            },
+            {
+                "id": "citizen-2",
+                "name": "OFFICER 3",
+                "order": "Flee",
+                "position": {
+                    "x": 8.216056823730469,
+                    "y": 0.0,
+                    "z": 32.6801643371582
+                },
+                "health": 0.0,
+                "bleeding": true,
+                "looted": false,
+                "weaponRecoverable": true,
+                "resident": {
+                    "version": 0,
+                    "disposition": 0,
+                    "routineStop": 0,
+                    "dressingsUsed": 0,
+                    "occupation": "",
+                    "buddyId": "",
+                    "action": "On the way",
+                    "reason": "",
+                    "memory": "",
+                    "casualtyId": "",
+                    "offenderId": "",
+                    "witnessedPlayer": false,
+                    "helpedByPlayer": false,
+                    "abandonedNeighbor": false,
+                    "dangerRemaining": 0.0,
+                    "pauseRemaining": 0.0,
+                    "watchRemaining": 0.0,
+                    "threatPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "casualtyPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "refuge": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "hasRefuge": false
+                },
+                "bandages": 0,
+                "ammo": 16,
+                "combat": {
+                    "kind": 2,
+                    "magazine": 4,
+                    "reloadRemaining": 0.0,
+                    "cooldown": 0.0,
+                    "initialized": true
+                }
+            },
+            {
+                "id": "citizen-3",
+                "name": "MILA",
+                "order": "Hold",
+                "position": {
+                    "x": 17.867456436157228,
+                    "y": 0.0,
+                    "z": -17.119138717651368
+                },
+                "health": 100.0,
+                "bleeding": false,
+                "looted": false,
+                "weaponRecoverable": false,
+                "resident": {
+                    "version": 1,
+                    "disposition": 1,
+                    "routineStop": 3,
+                    "dressingsUsed": 0,
+                    "occupation": "net mender",
+                    "buddyId": "citizen-4",
+                    "action": "On the evening round",
+                    "reason": "Heading toward home after the evening round.",
+                    "memory": "",
+                    "casualtyId": "",
+                    "offenderId": "",
+                    "witnessedPlayer": false,
+                    "helpedByPlayer": false,
+                    "abandonedNeighbor": false,
+                    "dangerRemaining": 0.0,
+                    "pauseRemaining": 0.0,
+                    "watchRemaining": 0.0,
+                    "threatPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "casualtyPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "refuge": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "hasRefuge": false
+                },
+                "bandages": 1,
+                "ammo": 0,
+                "combat": {
+                    "kind": 2,
+                    "magazine": 0,
+                    "reloadRemaining": 0.0,
+                    "cooldown": 0.0,
+                    "initialized": false
+                }
+            },
+            {
+                "id": "citizen-4",
+                "name": "ELIAS",
+                "order": "Hold",
+                "position": {
+                    "x": -23.120777130126954,
+                    "y": 0.0,
+                    "z": 8.499776840209961
+                },
+                "health": 100.0,
+                "bleeding": false,
+                "looted": false,
+                "weaponRecoverable": false,
+                "resident": {
+                    "version": 1,
+                    "disposition": 3,
+                    "routineStop": 3,
+                    "dressingsUsed": 0,
+                    "occupation": "dock porter",
+                    "buddyId": "citizen-3",
+                    "action": "On the evening round",
+                    "reason": "Heading toward home after the evening round.",
+                    "memory": "",
+                    "casualtyId": "",
+                    "offenderId": "",
+                    "witnessedPlayer": false,
+                    "helpedByPlayer": false,
+                    "abandonedNeighbor": false,
+                    "dangerRemaining": 0.0,
+                    "pauseRemaining": 0.0,
+                    "watchRemaining": 0.0,
+                    "threatPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "casualtyPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "refuge": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "hasRefuge": false
+                },
+                "bandages": 0,
+                "ammo": 0,
+                "combat": {
+                    "kind": 2,
+                    "magazine": 0,
+                    "reloadRemaining": 0.0,
+                    "cooldown": 0.0,
+                    "initialized": false
+                }
+            },
+            {
+                "id": "citizen-5",
+                "name": "RUTH",
+                "order": "Flee",
+                "position": {
+                    "x": 32.67727279663086,
+                    "y": 0.0,
+                    "z": 16.000036239624025
+                },
+                "health": 85.0,
+                "bleeding": true,
+                "looted": false,
+                "weaponRecoverable": false,
+                "resident": {
+                    "version": 1,
+                    "disposition": 0,
+                    "routineStop": 3,
+                    "dressingsUsed": 0,
+                    "occupation": "night cleaner",
+                    "buddyId": "citizen-6",
+                    "action": "On the evening round",
+                    "reason": "Heading toward home after the evening round.",
+                    "memory": "",
+                    "casualtyId": "",
+                    "offenderId": "",
+                    "witnessedPlayer": false,
+                    "helpedByPlayer": false,
+                    "abandonedNeighbor": false,
+                    "dangerRemaining": 0.0,
+                    "pauseRemaining": 0.0,
+                    "watchRemaining": 0.0,
+                    "threatPosition": {
+                        "x": 25.428508758544923,
+                        "y": 1.100000023841858,
+                        "z": 47.00707244873047
+                    },
+                    "casualtyPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "refuge": {
+                        "x": 45.0,
+                        "y": 0.0,
+                        "z": 16.0
+                    },
+                    "hasRefuge": false
+                },
+                "bandages": 1,
+                "ammo": 0,
+                "combat": {
+                    "kind": 2,
+                    "magazine": 0,
+                    "reloadRemaining": 0.0,
+                    "cooldown": 0.0,
+                    "initialized": false
+                }
+            },
+            {
+                "id": "citizen-6",
+                "name": "JONAS",
+                "order": "Hold",
+                "position": {
+                    "x": -28.00008773803711,
+                    "y": 0.0,
+                    "z": -18.81928062438965
+                },
+                "health": 100.0,
+                "bleeding": false,
+                "looted": false,
+                "weaponRecoverable": false,
+                "resident": {
+                    "version": 1,
+                    "disposition": 2,
+                    "routineStop": 3,
+                    "dressingsUsed": 0,
+                    "occupation": "fish seller",
+                    "buddyId": "citizen-5",
+                    "action": "On the evening round",
+                    "reason": "Heading toward home after the evening round.",
+                    "memory": "",
+                    "casualtyId": "",
+                    "offenderId": "",
+                    "witnessedPlayer": false,
+                    "helpedByPlayer": false,
+                    "abandonedNeighbor": false,
+                    "dangerRemaining": 0.0,
+                    "pauseRemaining": 0.0,
+                    "watchRemaining": 0.0,
+                    "threatPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "casualtyPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "refuge": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "hasRefuge": false
+                },
+                "bandages": 0,
+                "ammo": 0,
+                "combat": {
+                    "kind": 2,
+                    "magazine": 0,
+                    "reloadRemaining": 0.0,
+                    "cooldown": 0.0,
+                    "initialized": false
+                }
+            },
+            {
+                "id": "citizen-7",
+                "name": "ADA",
+                "order": "Hold",
+                "position": {
+                    "x": 12.962282180786133,
+                    "y": 0.0,
+                    "z": 9.686135292053223
+                },
+                "health": 100.0,
+                "bleeding": false,
+                "looted": false,
+                "weaponRecoverable": false,
+                "resident": {
+                    "version": 1,
+                    "disposition": 0,
+                    "routineStop": 3,
+                    "dressingsUsed": 0,
+                    "occupation": "retired nurse",
+                    "buddyId": "citizen-8",
+                    "action": "On the evening round",
+                    "reason": "Heading toward home after the evening round.",
+                    "memory": "",
+                    "casualtyId": "",
+                    "offenderId": "",
+                    "witnessedPlayer": false,
+                    "helpedByPlayer": false,
+                    "abandonedNeighbor": false,
+                    "dangerRemaining": 0.0,
+                    "pauseRemaining": 0.0,
+                    "watchRemaining": 0.0,
+                    "threatPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "casualtyPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "refuge": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "hasRefuge": false
+                },
+                "bandages": 1,
+                "ammo": 0,
+                "combat": {
+                    "kind": 2,
+                    "magazine": 0,
+                    "reloadRemaining": 0.0,
+                    "cooldown": 0.0,
+                    "initialized": false
+                }
+            },
+            {
+                "id": "citizen-8",
+                "name": "BRUNO",
+                "order": "Hold",
+                "position": {
+                    "x": -8.284662246704102,
+                    "y": 0.0,
+                    "z": 34.98796844482422
+                },
+                "health": 100.0,
+                "bleeding": false,
+                "looted": false,
+                "weaponRecoverable": false,
+                "resident": {
+                    "version": 1,
+                    "disposition": 3,
+                    "routineStop": 3,
+                    "dressingsUsed": 0,
+                    "occupation": "warehouse clerk",
+                    "buddyId": "citizen-7",
+                    "action": "On the evening round",
+                    "reason": "Heading toward home after the evening round.",
+                    "memory": "",
+                    "casualtyId": "",
+                    "offenderId": "",
+                    "witnessedPlayer": false,
+                    "helpedByPlayer": false,
+                    "abandonedNeighbor": false,
+                    "dangerRemaining": 0.0,
+                    "pauseRemaining": 0.0,
+                    "watchRemaining": 0.0,
+                    "threatPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "casualtyPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "refuge": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "hasRefuge": false
+                },
+                "bandages": 0,
+                "ammo": 0,
+                "combat": {
+                    "kind": 2,
+                    "magazine": 0,
+                    "reloadRemaining": 0.0,
+                    "cooldown": 0.0,
+                    "initialized": false
+                }
+            },
+            {
+                "id": "citizen-9",
+                "name": "LENA",
+                "order": "Hold",
+                "position": {
+                    "x": 11.537272453308106,
+                    "y": 0.0,
+                    "z": -17.092981338500978
+                },
+                "health": 100.0,
+                "bleeding": false,
+                "looted": false,
+                "weaponRecoverable": false,
+                "resident": {
+                    "version": 1,
+                    "disposition": 1,
+                    "routineStop": 3,
+                    "dressingsUsed": 0,
+                    "occupation": "baker",
+                    "buddyId": "citizen-10",
+                    "action": "On the evening round",
+                    "reason": "Heading toward home after the evening round.",
+                    "memory": "",
+                    "casualtyId": "",
+                    "offenderId": "",
+                    "witnessedPlayer": false,
+                    "helpedByPlayer": false,
+                    "abandonedNeighbor": false,
+                    "dangerRemaining": 0.0,
+                    "pauseRemaining": 0.0,
+                    "watchRemaining": 0.0,
+                    "threatPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "casualtyPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "refuge": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "hasRefuge": false
+                },
+                "bandages": 1,
+                "ammo": 0,
+                "combat": {
+                    "kind": 2,
+                    "magazine": 0,
+                    "reloadRemaining": 0.0,
+                    "cooldown": 0.0,
+                    "initialized": false
+                }
+            },
+            {
+                "id": "citizen-10",
+                "name": "OMAR",
+                "order": "Hold",
+                "position": {
+                    "x": -28.507658004760743,
+                    "y": 0.0,
+                    "z": 8.888744354248047
+                },
+                "health": 100.0,
+                "bleeding": false,
+                "looted": false,
+                "weaponRecoverable": false,
+                "resident": {
+                    "version": 1,
+                    "disposition": 2,
+                    "routineStop": 3,
+                    "dressingsUsed": 0,
+                    "occupation": "cab dispatcher",
+                    "buddyId": "citizen-9",
+                    "action": "On the evening round",
+                    "reason": "Heading toward home after the evening round.",
+                    "memory": "",
+                    "casualtyId": "",
+                    "offenderId": "",
+                    "witnessedPlayer": false,
+                    "helpedByPlayer": false,
+                    "abandonedNeighbor": false,
+                    "dangerRemaining": 0.0,
+                    "pauseRemaining": 0.0,
+                    "watchRemaining": 0.0,
+                    "threatPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "casualtyPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "refuge": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "hasRefuge": false
+                },
+                "bandages": 0,
+                "ammo": 0,
+                "combat": {
+                    "kind": 2,
+                    "magazine": 0,
+                    "reloadRemaining": 0.0,
+                    "cooldown": 0.0,
+                    "initialized": false
+                }
+            }
+        ],
+        "dockVersion": 1,
+        "dock": {
+            "componentOwner": "rell-workshop",
+            "metRell": false,
+            "released": false,
+            "yardHostile": true,
+            "yardAttacked": true,
+            "theftWitnessed": false,
+            "stakeResolved": true,
+            "repairAccepted": false,
+            "auxiliaryRepaired": false,
+            "repairPracticeAwarded": false,
+            "valeMoney": 0,
+            "gasketStock": 1,
+            "gasketsUsed": 0,
+            "repairProgress": 0.0,
+            "repairWorker": "",
+            "acquisition": "fight",
+            "approach": "public quay"
+        },
+        "sella": {
+            "id": "sella",
+            "name": "SELLA",
+            "order": "Hold",
+            "position": {
+                "x": -35.0,
+                "y": 0.0,
+                "z": -27.0
+            },
+            "health": 100.0,
+            "bleeding": false,
+            "looted": false,
+            "weaponRecoverable": false,
+            "resident": {
+                "version": 0,
+                "disposition": 0,
+                "routineStop": 0,
+                "dressingsUsed": 0,
+                "occupation": "",
+                "buddyId": "",
+                "action": "On the way",
+                "reason": "",
+                "memory": "",
+                "casualtyId": "",
+                "offenderId": "",
+                "witnessedPlayer": false,
+                "helpedByPlayer": false,
+                "abandonedNeighbor": false,
+                "dangerRemaining": 0.0,
+                "pauseRemaining": 0.0,
+                "watchRemaining": 0.0,
+                "threatPosition": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "casualtyPosition": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "refuge": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "hasRefuge": false
+            },
+            "bandages": 0,
+            "ammo": 0,
+            "combat": {
+                "kind": 2,
+                "magazine": 0,
+                "reloadRemaining": 0.0,
+                "cooldown": 0.0,
+                "initialized": true
+            }
+        },
+        "supplyCourier": {
+            "id": "tomas",
+            "name": "TOMAS / SUPPLY",
+            "order": "Hold",
+            "position": {
+                "x": -24.00066566467285,
+                "y": 0.0,
+                "z": -16.48099708557129
+            },
+            "health": 100.0,
+            "bleeding": false,
+            "looted": false,
+            "weaponRecoverable": false,
+            "resident": {
+                "version": 0,
+                "disposition": 0,
+                "routineStop": 0,
+                "dressingsUsed": 0,
+                "occupation": "",
+                "buddyId": "",
+                "action": "On the way",
+                "reason": "",
+                "memory": "",
+                "casualtyId": "",
+                "offenderId": "",
+                "witnessedPlayer": false,
+                "helpedByPlayer": false,
+                "abandonedNeighbor": false,
+                "dangerRemaining": 0.0,
+                "pauseRemaining": 0.0,
+                "watchRemaining": 0.0,
+                "threatPosition": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "casualtyPosition": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "refuge": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "hasRefuge": false
+            },
+            "bandages": 0,
+            "ammo": 0,
+            "combat": {
+                "kind": 2,
+                "magazine": 0,
+                "reloadRemaining": 0.0,
+                "cooldown": 0.0,
+                "initialized": true
+            }
+        },
+        "supplyStage": 3,
+        "supplyWait": 0.0,
+        "yardGateClosed": true,
+        "squad": {
+            "initialized": true,
+            "crewVersion": 1,
+            "leaderLost": true,
+            "clock": 97.7789535522461,
+            "members": [
+                {
+                    "actor": {
+                        "id": "yard-0",
+                        "name": "VALE / WATCH",
+                        "order": "Return to post",
+                        "position": {
+                            "x": 21.0,
+                            "y": 0.0,
+                            "z": 39.0
+                        },
+                        "health": 0.0,
+                        "bleeding": true,
+                        "looted": false,
+                        "weaponRecoverable": true,
+                        "resident": {
+                            "version": 0,
+                            "disposition": 0,
+                            "routineStop": 0,
+                            "dressingsUsed": 0,
+                            "occupation": "",
+                            "buddyId": "",
+                            "action": "On the way",
+                            "reason": "",
+                            "memory": "",
+                            "casualtyId": "",
+                            "offenderId": "",
+                            "witnessedPlayer": false,
+                            "helpedByPlayer": false,
+                            "abandonedNeighbor": false,
+                            "dangerRemaining": 0.0,
+                            "pauseRemaining": 0.0,
+                            "watchRemaining": 0.0,
+                            "threatPosition": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "casualtyPosition": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "refuge": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "hasRefuge": false
+                        },
+                        "bandages": 0,
+                        "ammo": 18,
+                        "combat": {
+                            "kind": 5,
+                            "magazine": 5,
+                            "reloadRemaining": 0.0,
+                            "cooldown": 0.0,
+                            "initialized": true
+                        }
+                    },
+                    "role": 0,
+                    "home": {
+                        "x": 21.0,
+                        "y": 0.0,
+                        "z": 39.0
+                    },
+                    "retreat": {
+                        "x": 17.0,
+                        "y": 0.0,
+                        "z": 43.0
+                    },
+                    "lastContact": {
+                        "x": -6.720030784606934,
+                        "y": 0.0,
+                        "z": 37.56833267211914
+                    },
+                    "observedAt": 44.65434646606445,
+                    "nextReport": 74.61005401611328,
+                    "reportDue": -1.0,
+                    "reportObservedAt": 44.5210075378418,
+                    "nextShot": 0.0,
+                    "reportPosition": {
+                        "x": -6.540055751800537,
+                        "y": 0.0,
+                        "z": 36.99593734741211
+                    },
+                    "withdrawing": false,
+                    "gun": 5,
+                    "dressings": 1,
+                    "dressingsUsed": 0,
+                    "aidTarget": "",
+                    "aidProgress": 0.0,
+                    "aidHealth": 0.0
+                },
+                {
+                    "actor": {
+                        "id": "yard-1",
+                        "name": "OSS / RUNNER",
+                        "order": "Return to post",
+                        "position": {
+                            "x": 33.0,
+                            "y": 0.0,
+                            "z": 38.0
+                        },
+                        "health": 0.0,
+                        "bleeding": true,
+                        "looted": false,
+                        "weaponRecoverable": true,
+                        "resident": {
+                            "version": 0,
+                            "disposition": 0,
+                            "routineStop": 0,
+                            "dressingsUsed": 0,
+                            "occupation": "",
+                            "buddyId": "",
+                            "action": "On the way",
+                            "reason": "",
+                            "memory": "",
+                            "casualtyId": "",
+                            "offenderId": "",
+                            "witnessedPlayer": false,
+                            "helpedByPlayer": false,
+                            "abandonedNeighbor": false,
+                            "dangerRemaining": 0.0,
+                            "pauseRemaining": 0.0,
+                            "watchRemaining": 0.0,
+                            "threatPosition": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "casualtyPosition": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "refuge": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "hasRefuge": false
+                        },
+                        "bandages": 0,
+                        "ammo": 18,
+                        "combat": {
+                            "kind": 3,
+                            "magazine": 2,
+                            "reloadRemaining": 0.0,
+                            "cooldown": 0.0,
+                            "initialized": true
+                        }
+                    },
+                    "role": 1,
+                    "home": {
+                        "x": 33.0,
+                        "y": 0.0,
+                        "z": 38.0
+                    },
+                    "retreat": {
+                        "x": 34.0,
+                        "y": 0.0,
+                        "z": 42.0
+                    },
+                    "lastContact": {
+                        "x": -6.540055751800537,
+                        "y": 0.0,
+                        "z": 36.99593734741211
+                    },
+                    "observedAt": 44.5210075378418,
+                    "nextReport": 74.61005401611328,
+                    "reportDue": -1.0,
+                    "reportObservedAt": 0.0,
+                    "nextShot": 0.0,
+                    "reportPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "withdrawing": false,
+                    "gun": 3,
+                    "dressings": 1,
+                    "dressingsUsed": 0,
+                    "aidTarget": "",
+                    "aidProgress": 0.0,
+                    "aidHealth": 0.0
+                },
+                {
+                    "actor": {
+                        "id": "yard-2",
+                        "name": "LEN / REAR GUARD",
+                        "order": "Return to post",
+                        "position": {
+                            "x": 42.0,
+                            "y": 0.0,
+                            "z": 41.0
+                        },
+                        "health": 0.0,
+                        "bleeding": true,
+                        "looted": false,
+                        "weaponRecoverable": true,
+                        "resident": {
+                            "version": 0,
+                            "disposition": 0,
+                            "routineStop": 0,
+                            "dressingsUsed": 0,
+                            "occupation": "",
+                            "buddyId": "",
+                            "action": "On the way",
+                            "reason": "",
+                            "memory": "",
+                            "casualtyId": "",
+                            "offenderId": "",
+                            "witnessedPlayer": false,
+                            "helpedByPlayer": false,
+                            "abandonedNeighbor": false,
+                            "dangerRemaining": 0.0,
+                            "pauseRemaining": 0.0,
+                            "watchRemaining": 0.0,
+                            "threatPosition": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "casualtyPosition": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "refuge": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "hasRefuge": false
+                        },
+                        "bandages": 0,
+                        "ammo": 18,
+                        "combat": {
+                            "kind": 5,
+                            "magazine": 5,
+                            "reloadRemaining": 0.0,
+                            "cooldown": 0.0,
+                            "initialized": true
+                        }
+                    },
+                    "role": 2,
+                    "home": {
+                        "x": 42.0,
+                        "y": 0.0,
+                        "z": 41.0
+                    },
+                    "retreat": {
+                        "x": 17.0,
+                        "y": 0.0,
+                        "z": 43.0
+                    },
+                    "lastContact": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "observedAt": -100.0,
+                    "nextReport": 74.61005401611328,
+                    "reportDue": -1.0,
+                    "reportObservedAt": 0.0,
+                    "nextShot": 0.0,
+                    "reportPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "withdrawing": false,
+                    "gun": 5,
+                    "dressings": 1,
+                    "dressingsUsed": 0,
+                    "aidTarget": "",
+                    "aidProgress": 0.0,
+                    "aidHealth": 0.0
+                }
+            ]
+        },
+        "pistolWeapon": {
+            "kind": 2,
+            "magazine": 0,
+            "reloadRemaining": 0.0,
+            "cooldown": 0.0,
+            "initialized": true
+        },
+        "shotgunWeapon": {
+            "kind": 3,
+            "magazine": 0,
+            "reloadRemaining": 0.0,
+            "cooldown": 0.0,
+            "initialized": true
+        },
+        "smgWeapon": {
+            "kind": 4,
+            "magazine": 8,
+            "reloadRemaining": 0.0,
+            "cooldown": 0.0,
+            "initialized": true
+        },
+        "shotgunAmmo": 0,
+        "smgAmmo": 38,
+        "equippedWeapon": 1,
+        "rifleAmmo": 0,
+        "rifleWeapon": {
+            "kind": 5,
+            "magazine": 0,
+            "reloadRemaining": 0.0,
+            "cooldown": 0.0,
+            "initialized": true
+        },
+        "projectiles": [],
+        "refuge": false,
+        "reserveMedicine": false,
+        "tallyPetted": false,
+        "neriStoryHeard": false,
+        "refusedPatients": 0,
+        "clinicContributions": 0
+    },
+    "completed": 0,
+    "cash": 120,
+    "arrests": 0,
+    "perks": 0,
+    "accepted": false,
+    "satchel": false,
+    "cargoRuns": 0,
+    "cargoEarnings": 0
+}

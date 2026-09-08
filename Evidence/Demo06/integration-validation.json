@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "reviewedAssemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+  "assemblySha256": "0F599165F989EFB88B610219CF5E31CE9DF617A486FC7DE26FE800A4A521AE29",
+  "presentationOnly": true,
+  "integrationSourceSha256": "40C2B76F98B84D192B0AD86654B05523B784814B05F2080205920443E6261B6C",
+  "replacementSpecSha256": "9F9343CCF17C6169B327754F1D1536BACE4DDF5D610E3CCFD879088A4E65320D",
+  "reviewedUiSourceSha256": "7275201BDA27048EA9177DF0C09D77AC8090E4623A977340AD6FA452251E98CF",
+  "affectedRoutes": [
+    "crew",
+    "police",
+    "legacy"
+  ],
+  "method": "Original A full eight-route validation and four independent original reviews are retained. B has three display-expression changes and fresh full Crew, Police and Legacy routes; five unaffected routes are not claimed rerun on B. The generated source scene hash differs, but complete player comparison proves all compiled scenes/assets unchanged; only the identified DLL and build-guid-only boot differ.",
+  "generatedSceneSourceException": "Assets/Scenes/OldPort.unity",
+  "reviewedPlayerFilesSha256": "025258E37FDA8BE8F168E9174D4AD63B0B781EA87BD7E8918F89BC2F37AA89D2",
+  "integratedPlayerFilesSha256": "AD91F67CC3A0C8ECE74F7FE0AEAE991EE4CB5CFAB55458E2A38E67CFDC1CDEE6",
+  "reviewedBootSha256": "72F13A674774406869E2B3D5CEAE4CFADB4B3C0B179BCC17EDBA86C2C81CAC17",
+  "integratedBootSha256": "FA3AB9BDEBB11A5B969AE31C070B01EA1A4DF96C960675A4E94CEEE931D86EAA"
+}

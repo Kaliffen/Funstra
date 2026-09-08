@@ -1,4 +1,67 @@
-# Pressure and Escape — v0.4.2 validation
+# Nobody Gets Home Alone — v0.6.0 release integration
+
+Release assembly B: **0F599165F989EFB88B610219CF5E31CE9DF617A486FC7DE26FE800A4A521AE29**. Original reviewed assembly A is recorded in the dated full validation below. [Single dossier](../Docs/funstra-review-dossier-demo06.html) · [Machine summary](Demo06/validation-summary.json) · [Source/display proof](Demo06/integration-validation.json) · [Exact raw source snapshot](Demo06/integration-source-files.zip).
+
+B corrects only the title footer, idle police marker and Mara attribution. Full Crew **141/17**, Police **35/4** and Legacy **90/10** passed: **266 assertions,31 captures**, serialized13:07:14–13:12:43UTC on8September. The build passed2,377 editor assertions with zero errors/warnings. [Batch](Demo06/integration-batch.json), [editor receipt](Demo06/integration-editor-checks.txt), [Marcus replay](../reviewer-agents/marcus-webb/demo06-replay.md), [Priya replay](../reviewer-agents/priya-raman/demo06-replay.md) and [CD rendered inspection](Demo06/cd-visual-inspection.md) retain the actual method.
+
+The four independent original A reviews each ran141 assertions and inspected17 captures. Game now: Dag5.4, Priya5.4, Marcus5.7, Nell5.3. Original Slice ranges remain provisional8.5–9.8,8.7–10.0,8.7–9.8,8.3–9.6 respectively; Evidence89% each. Later delivery does not rewrite those judgments. Missing useful practice, sustained relationships and ordinary earned-income crew coverage remain explicit, with follow-up issues42,43 and30.
+
+All145 player files were compared between A and B: only the proven DLL and build-GUID-only boot configuration differ. Compiled scenes and assets are byte-identical. Of226 source inputs,224 match A; the other two are the exact three-expression UI correction and Unity-generated scene identifiers. Original scene YAML equality is not claimed. A retains the full eight-route evidence below; five unaffected routes were not rerun on B. This is not eight-route B acceptance.
+
+The byte-preserving archive is177810627 bytes, SHA-256 `462F4D42B90242ED735A95FBCA21597E1976D15F5A8C116BD7F30362B7C29A48`. All496 extracted files match; the portable player passed a fresh141-assertion/17-capture full Crew route. [Package receipt](Demo06/package-verification.json) · [Portable receipt](Demo06/portable-verification.json). Public delivery verification remains pending at this checkpoint. Owner gameplay/art acceptance and lower-spec hardware verification remain separate. Casualties and abandonment are allowed; current incapacitation and emergency total-wipe recovery are not irreversible death.
+
+---
+# Nobody Gets Home Alone — local v0.6.0 validation
+
+Candidate: `Build/NobodyGetsHomeAlone/Funstra.exe`. Gameplay assembly SHA256 **3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3**. [Manual](../NOBODY-GETS-HOME-ALONE.md) · [Machine-readable summary](Demo06/validation-summary.json) · [Frozen source manifest](Demo06/candidate-source.json) · [Sanitized editor checks](Demo06/editor-checks.txt).
+
+**2,377 editor assertions and 701 runtime assertions pass across eight final routes; 72 rendered captures.** These are assertion counts, including generated spatial cases, not scenario counts. The fourteenth export reports zero errors and warnings. All 226 frozen source-file hashes still match. Every final identity names this assembly; fresh PASS files, PNG headers and complete player logs were checked. No listed runtime exception or warning/error patterns were found. The [batch record](Demo06/final-batch.json) shows one muted player at a time, 12:24:55–12:39:50 UTC on 8 September 2026.
+
+| Route | PASS assertions | Captures | Evidence |
+|---|---:|---:|---|
+| Crew | 141 | 17 | [Result](Demo06/crew-final/crew-runtime-result.txt) |
+| Approach | 113 | 8 | [Result](Demo06/approach-final/crew-runtime-result.txt) |
+| Pressure | 43 | 7 | [Result](Demo06/pressure-final/pressure-runtime-result.txt) |
+| Arms | 108 | 15 | [Result](Demo06/arms-final/arms-runtime-result.txt) |
+| Residents | 28 | 7 | [Result](Demo06/residents-final/residents-runtime-result.txt) |
+| Streets | 143 | 4 | [Result](Demo06/streets-final/streets-runtime-result.txt) |
+| Police | 35 | 4 | [Result](Demo06/police-final/police-runtime-result.txt) |
+| Legacy | 90 | 10 | [Result](Demo06/legacy-final/runtime-result.txt) |
+
+Core verifies selection, finite gun/round custody, in-flight ownership, timed aid, actual controlled carrying and clinic admission, persistent abandonment, paid release and the twelve-second finite-gasket repair. It combines controller journeys with explicitly staged money, recruitment, wounds, transactions and paused or accelerated fixtures. Successful timed aid and normal-Update self-aid through bleeding are present. The separate live post-retreat treatment was **interrupted** after 2.744 simulation seconds by a new recorded 30-damage rifle hit: health 68.94213→37.15852 including bleeding, two dressings retained, no healing or practice, idle aid state. This is verified interruption, not completed treatment.
+
+Both unseen branches physically return the same component and retain it through reload. The full-crew assault also **returned the component** in this run: protagonist 41.54 HP, Neri 100, Rell 100, with 38 SMG, 11 pistol and 15 rifle rounds remaining respectively. The [combat receipt](Demo06/approach-final/crew-combat-outcome.json) retains raw positions and actual custody. Reload comparison allows only an uncarried protagonist's existing upward resume clearance, 0–0.1201 world units; all other state and coordinates match exactly. Costly withdrawal or total defeat would be legitimate mission outcomes if their consequences persist; a technical PASS must not turn mission loss into completion. The current model uses incapacitation and abandonment plus existing emergency recovery, not separate irreversible death.
+
+The [pressure profile](Demo06/pressure-final/pressure-profile.json) measures 2,203 rendered frames over 76 samples ending at 75.014 seconds: RTX 4090 / i9-14900KF, 1280×720, 30 FPS cap; p50 **33.334 ms**, p95 **33.602 ms**, maximum **138.108 ms**; reported allocated memory 113,754,082 bytes. Three base officers and six rifle reinforcements arrive through two real trucks; all nine fire and reload. **The 75-second load fixture uses 10,000 player HP and disables arrest.** Separate exposure/escape encounters use ordinary 100 HP, normal arrest and finite 18-round starting kits. The final escape ends pursuit at 100 HP without needing treatment. This is not a minimum-spec or human input-feel verdict.
+
+Crew core, approach and `-WithCrew` pressure enable the crew layer. Arms, Residents, Streets, Police and Legacy retain their original smoke-mode contracts with crew disabled; their regression passes do not establish new crew integration. Read each route's METHOD/COVERAGE text for frozen AI, staged positions and accelerated checks.
+
+The [CD visual inspection](Demo06/cd-visual-inspection.md) records selected exported stills and their limits, including the final candidate. It supports specific readability observations; it does not prove continuous animation, a complete visual walkthrough or human acceptance. **Independent panel review is in progress; packaging and publication remain pending.** Published v0.4.2 and earlier local players remain unchanged. Add actual review, portable-package and publication receipts after those steps finish.
+
+---
+
+# The Price of a Gun â€” local v0.5.0 validation
+
+Candidate: `Build/PriceOfAGun/Funstra.exe`. Gameplay assembly SHA256 **B1F9C4DDEC4004268248415C6EB1BE4FACA6562C6A3D744A78452131FEA5C8D0**. [Playable route](../THE-PRICE-OF-A-GUN.md) Â· [Machine-readable results](Demo05/validation-summary.json) Â· [Issue #28](https://github.com/Kaliffen/Funstra/issues/28).
+
+**2,294 editor checks and 376 core runtime checks pass; 33 rendered captures.** Windows export reports zero errors and warnings. All four routes below tested the same assembly, one muted player at a time.
+
+| Route | Checks | Captures | Evidence |
+|---|---:|---:|---|
+| Arms | 108 | 15 | [Result](Demo05/final/arms/arms-runtime-result.txt) |
+| Streets | 143 | 4 | [Result](Demo05/final/streets/streets-runtime-result.txt) |
+| Police | 35 | 4 | [Result](Demo05/final/police/police-runtime-result.txt) |
+| Legacy | 90 | 10 | [Result](Demo05/final/legacy/runtime-result.txt) |
+
+The new route walks the real controller from an unarmed start to Sella, Neri and back. Purchase/theft alternatives, shooting, possession and casualties are explicit fixtures using production actions. Supply checks step the real courier and pedestrian navigation in accelerated .05-second increments while the clinic calendar is held; separate calendar steps demonstrate the shortage after diversion. The route verifies three finite consignments, obstruction, departure, mid-transit reload, round and medicine custody, SMG reload/in-flight persistence, and production arrest confiscation. Inspected screenshots include the dealer, title/debug button, map labels, reload display, courier and empty clinic.
+
+The first courier run found departure blocked beside Neri; the fix permits moving away from existing close contact. The failing run remains in `Demo05/arms-first` and is superseded by the matching final evidence above. Save migration uses an explicit arms schema to keep imported equipment distinct from newly unarmed or confiscated inventory.
+
+Hardware: i9-14900KF / RTX 4090, 1280Ã—720, 30 FPS cap. This is guided runtime and rendered evidence, not a new full-pressure hardware profile or human input-feel verdict. Independent panel review, publication and owner acceptance remain separate. The previously published v0.4.2 assembly is unchanged. All 145 player files match the portable ZIP byte for byte. The extracted copy also passed the full 108-check Arms route with 15 captures. [Package receipt](Demo05/package-verification.json) · [Portable result](Demo05/portable/arms-runtime-result.txt).
+
+---
+
+# Pressure and Escape â€” v0.4.2 validation
 
 
 
@@ -32,7 +95,7 @@ The 75-second [pressure profile](PressureEscape/pressure-final/pressure-profile.
 
 
 
-Measured on RTX 4090 / i9-14900KF at 1280×720, 30 FPS cap: 2,250 sampled frames, p50 **33.334 ms**, p95 **33.338 ms**, max **40.640 ms**, endpoint allocated memory **111,609,067 bytes**, one Funstra process. These are unscaled frame deltas including scheduling/frame cap, not isolated CPU/GPU timings or proof of minimum hardware support. The [escape profile](PressureEscape/pressure-final/escape-profile.json) records the ordinary-health final search. Human input feel, enjoyment and general difficulty remain owner judgments.
+Measured on RTX 4090 / i9-14900KF at 1280Ã—720, 30 FPS cap: 2,250 sampled frames, p50 **33.334 ms**, p95 **33.338 ms**, max **40.640 ms**, endpoint allocated memory **111,609,067 bytes**, one Funstra process. These are unscaled frame deltas including scheduling/frame cap, not isolated CPU/GPU timings or proof of minimum hardware support. The [escape profile](PressureEscape/pressure-final/escape-profile.json) records the ordinary-health final search. Human input feel, enjoyment and general difficulty remain owner judgments.
 
 
 
@@ -62,7 +125,7 @@ Published as [v0.4.2](https://github.com/Kaliffen/Funstra/releases/tag/v0.4.2) f
 
 
 
-# Demo 04 development-candidate validation — Streets Worth Fighting For
+# Demo 04 development-candidate validation â€” Streets Worth Fighting For
 
 
 
@@ -102,7 +165,7 @@ This Unity build succeeded with **zero errors and zero warnings** (`build-result
 
 
 
-Runtime snapshot (serialized visible runs at 1280×720, 30 FPS cap):
+Runtime snapshot (serialized visible runs at 1280Ã—720, 30 FPS cap):
 
 
 
@@ -136,11 +199,11 @@ All eight routes have passing reports and captures newer than their test start, 
 
 
 
-Foundation 1–4 are isolated prepared levels using production controller movement, weapons, timed projectiles and squad rules. Fixture placement, disposable equipment and explicit actor injuries are identified in results; these are guided scenarios, not exploratory input. Foundation 1 measures real controller displacement while sprint remains held near exhaustion: `Foundation/level-1/F01-sprint-recovery.csv` records each step's stamina and horizontal speed. The current result reports exactly two speed transitions, a 197-frame recovery walk and a 15-frame resumed run segment at 30 Hz. The player walks until the full stamina bar recovers, then resumes sustained sprint. Human handling approval remains separate.
+Foundation 1â€“4 are isolated prepared levels using production controller movement, weapons, timed projectiles and squad rules. Fixture placement, disposable equipment and explicit actor injuries are identified in results; these are guided scenarios, not exploratory input. Foundation 1 measures real controller displacement while sprint remains held near exhaustion: `Foundation/level-1/F01-sprint-recovery.csv` records each step's stamina and horizontal speed. The current result reports exactly two speed transitions, a 197-frame recovery walk and a 15-frame resumed run segment at 30 Hz. The player walks until the full stamina bar recovers, then resumes sustained sprint. Human handling approval remains separate.
 
 
 
-Environment travels through the expanded normal district, enters the south clinic doorway, reaches Neri and the connected medicine store, exits east, and visits the church forecourt, market/quay, workshop and residential streets. It freezes district AI and removes the yard squad for the architectural walkthrough. Nine staged views and a 24-frame `E-motion-00`–`23` sequence support inspection of movement, ground surfaces and cutaways; confirm their current identity before using them. Ground-face geometry assertions cannot alone rule out visible flicker.
+Environment travels through the expanded normal district, enters the south clinic doorway, reaches Neri and the connected medicine store, exits east, and visits the church forecourt, market/quay, workshop and residential streets. It freezes district AI and removes the yard squad for the architectural walkthrough. Nine staged views and a 24-frame `E-motion-00`â€“`23` sequence support inspection of movement, ground surfaces and cutaways; confirm their current identity before using them. Ground-face geometry assertions cannot alone rule out visible flicker.
 
 
 
@@ -204,7 +267,7 @@ Normal play uses `streets-progress.json`; older save files import without overwr
 
 
 
-## Police response increment — 8 September 2026
+## Police response increment â€” 8 September 2026
 
 
 

@@ -1,0 +1,11 @@
+{
+  "archive": "~\\repos\\Funstra\\Releases\\Funstra-nobody-gets-home-alone-0.6.0-windows.zip",
+  "assemblySha256": "0F599165F989EFB88B610219CF5E31CE9DF617A486FC7DE26FE800A4A521AE29",
+  "reviewedAssemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+  "uiIntegration": true,
+  "coverage": "Assembly A has eight full routes and four independent reviews. Packaged assembly B differs only by three proven presentation expressions; B has full Crew, Police and Legacy integration runs and Marcus/Priya rendered review addenda. Five unaffected routes were not rerun on B. Generated OldPort editor scene source has a different hash; no original YAML equality is claimed. All 145 A/B player files were verified: compiled scene, assets and engine files are identical; only the proved assembly and build-guid differ. The other 224 source hashes are unchanged.",
+  "archiveSha256": "462F4D42B90242ED735A95FBCA21597E1976D15F5A8C116BD7F30362B7C29A48",
+  "bytes": 177810627,
+  "verifiedAt": "2026-09-08T13:24:59.4385011Z",
+  "method": "All packaged player files compared with source by SHA256; no rebuild or publication. Logs excluded from player payload."
+}

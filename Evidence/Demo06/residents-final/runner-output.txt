@@ -1,0 +1,29 @@
+PASS
+PASS: Isolated resident campaign and forced mute
+PASS: MILA has a persistent persona and no invented weapon
+PASS: ELIAS has a persistent persona and no invented weapon
+PASS: RUTH has a persistent persona and no invented weapon
+PASS: JONAS has a persistent persona and no invented weapon
+PASS: ADA has a persistent persona and no invented weapon
+PASS: BRUNO has a persistent persona and no invented weapon
+PASS: LENA has a persistent persona and no invented weapon
+PASS: OMAR has a persistent persona and no invented weapon
+PASS: Eight existing residents gain named conduct; no added crowd
+PASS: Resident leaves routine pause and moves in normal Update
+PASS: Helper can actually see the prepared attacker and neighbor
+PASS: Self-preserving neighbor sees the same incident
+PASS: Hearing a shot causes shelter seeking without identity
+PASS: Actual shared combat hit leaves personally witnessed casualty memory
+PASS: Self-preserving observer chooses safety over returning to help
+PASS: Careful helper intends to return for the same neighbor
+PASS: Threatened helper physically leaves the incident using shared navigation
+PASS: Helper does not spend a dressing during perceived danger
+PASS: Helper returns after quiet and spends exactly one personal dressing
+PASS: Aid changes the actual wounded neighbor's health and bleeding
+PASS: Self-preserving observer did not perform the helper's action
+PASS: Repeated need cannot conjure a second personal dressing
+PASS: Memory and consumed dressing survive actual save/reload
+PASS: Remembered player aid survives save/reload
+PASS: Remembered help changes later approach behavior
+PASS: Distant unobserved violence grants no player identity
+PASS: Resident state remains valid alongside medicine, weapons and police

@@ -1,0 +1,19 @@
+PASS: Demo06 presentation integration export editor validation
+Assembly SHA256: 0F599165F989EFB88B610219CF5E31CE9DF617A486FC7DE26FE800A4A521AE29
+Built at: 09/08/2026 12:58:52
+METHOD: Sanitized assertion results; full licensing/environment editor log is not copied. Counts are assertions, not gameplay scenarios.
+TOTAL EDITOR ASSERTIONS: 2377
+Combat squad: 39; Combat: 36; Crew opposition: 31; Dock operation: 23
+arms-rules-result.txt | 2026-09-08T12:58:49.3634023Z | PASS: 70 acquisition, custody, supply and migration checks
+clinic-rules-result.txt | 2026-09-08T12:58:49.3024401Z | PASS: 72 clinic route, collision and cutaway assertions
+district-rules-result.txt | 2026-09-08T12:58:48.8165963Z | PASS: 37 district simulation, conservation, recovery and migration assertions
+police-rules-result.txt | 2026-09-08T12:58:49.3279493Z | PASS: 22 police knowledge, dispatch and persistence checks
+refuge-rules-result.txt | 2026-09-08T12:58:48.8241791Z | PASS: 33 refuge, dialogue, schedule and prop route assertions
+resident-rules-result.txt | 2026-09-08T12:58:49.3654120Z | PASS: 29 resident identity, perception, finite aid and persistence checks
+rules-result.txt | 2026-09-08T12:58:48.7943231Z | PASS: 75 rule, persistence and navigation checks
+spatial-rules-result.txt | 2026-09-08T12:58:49.2589707Z | PASS: 1910 spatial route, gate and sight assertions
+Succeeded
+Errors: 0
+Warnings: 0
+Bytes: 93090720
+Duration: 00:00:03.4538396

@@ -1,0 +1,17 @@
+FAIL
+PASS: Isolated resident campaign and forced mute
+PASS: MILA has a persistent persona and no invented weapon
+PASS: ELIAS has a persistent persona and no invented weapon
+PASS: RUTH has a persistent persona and no invented weapon
+PASS: JONAS has a persistent persona and no invented weapon
+PASS: ADA has a persistent persona and no invented weapon
+PASS: BRUNO has a persistent persona and no invented weapon
+PASS: LENA has a persistent persona and no invented weapon
+PASS: OMAR has a persistent persona and no invented weapon
+PASS: Eight existing residents gain named conduct; no added crowd
+PASS: Resident leaves routine pause and moves in normal Update
+PASS: Helper can actually see the prepared attacker and neighbor
+System.Exception: Self-preserving neighbor sees the same incident
+  at Funstra.FunstraGame.Check (System.Boolean value, System.String message) [0x00003] in <325e88da29094c98a405284d61f0f818>:0 
+  at Funstra.FunstraGame+<ResidentsSteps>d__425.MoveNext () [0x00423] in <325e88da29094c98a405284d61f0f818>:0 
+  at Funstra.FunstraGame+<SmokeRun>d__435.MoveNext () [0x001d1] in <325e88da29094c98a405284d61f0f818>:0 

@@ -27,12 +27,29 @@ namespace Funstra
             if(Path.Count==0)passing=false;
             if(game.DistrictEnabled&&Record!=null&&Record.health<=0)
             { Body.localScale=new Vector3(1.7f,.22f,1);SeesPlayer=Pursuing=passing=false;return; }
+            if(!Police&&game.ResidentsEnabled&&Record!=null&&Record.resident!=null&&Record.resident.version==1)
+            {game.StepResident(this,dt);return;}
             var nav = game.City.Nav;
-            float distance = Vector3.Distance(Position, game.Player.position);
-            var delta = game.Player.position - Position;
+            Vector3 contactPosition=game.Player.position;
+            bool crewVisible=false;
+            if(Police&&game.CrewEnabled)
+            {
+                float best=20;
+                foreach(var candidate in game.LivingCrewPositions)
+                {
+                    bool protagonist=(candidate-game.Player.position).sqrMagnitude<.0001f;
+                    if(protagonist&&game.Hidden)continue;
+                    var offset=candidate-Position;float length=offset.magnitude;
+                    if(length<best&&(Pursuing||length<3||Vector3.Dot(Body.forward,offset.normalized)>.12f)&&nav.Sight(Position,candidate))
+                    {best=length;contactPosition=candidate;crewVisible=true;}
+                }
+            }
+            float distance = Vector3.Distance(Position, contactPosition);
+            var delta = contactPosition - Position;
             float range = game.Sneaking ? (game.State.HasPerk(0) ? 7 : 9) : 14;
             bool inCone = distance < 3 || Vector3.Dot(Body.forward, delta.normalized) > .12f;
-            SeesPlayer = !game.Hidden && distance < (Pursuing ? 19 : range) && (Pursuing || inCone) && nav.Sight(Position, game.Player.position);
+            SeesPlayer = !game.Hidden && distance < (Pursuing ? 19 : range) && (Pursuing || inCone) && nav.Sight(Position, contactPosition);
+            if(Police&&game.CrewEnabled)SeesPlayer=crewVisible;
             if (Police)
             {
                 if(Record!=null)game.StepActorWeapon(Record,dt);FireDelay=Mathf.Max(0,FireDelay-dt);
@@ -40,7 +57,7 @@ namespace Funstra
                 if (SeesPlayer && suspicious)
                 {
                     Suspicion += dt * (game.Heat > 0 ? 4 : 1.25f);
-                    if (Suspicion >= 1) { Pursuing = true; LastSeen = game.Player.position; game.ReportSight(LastSeen); }
+                    if (Suspicion >= 1) { Pursuing = true; LastSeen = contactPosition; game.ReportSight(LastSeen); }
                 }
                 else Suspicion = Mathf.Max(0, Suspicion - dt*.5f);
                 if (game.Heat <= 0&&!game.Police.Searching) Pursuing = false;
@@ -56,7 +73,7 @@ namespace Funstra
                 Pursuing = true;
                 bool identified=game.Heat>0;
                 Vector3 report=game.Police.Searching?game.Police.lastKnown:game.LastSeen;
-                target = identified&&SeesPlayer ? game.Player.position : report;
+                target = identified&&SeesPlayer ? contactPosition : report;
                 LastSeen=target;
                 if (!SeesPlayer && Vector3.Distance(Position, target) < 2)
                 {
@@ -69,33 +86,34 @@ namespace Funstra
             else
             {
                 target = Route[Stop];
-                if(game.DistrictEnabled&&Record!=null&&Record.order=="Flee"&&Vector3.Distance(Position,game.Player.position)<12)
+                if(game.DistrictEnabled&&Record!=null&&Record.order=="Flee"&&Vector3.Distance(Position,contactPosition)<12)
                 {
-                    var escape=Position+(Position-game.Player.position).normalized*10;
+                    var escape=Position+(Position-contactPosition).normalized*10;
                     if(nav.Walkable(escape))target=escape;
                 }
                 if (Vector3.Distance(Position,target) < 1) { Stop = (Stop+1)%Route.Length; target = Route[Stop]; }
             }
             bool armedContact=Police&&game.Police.identifiedGunman&&SeesPlayer&&Record!=null&&Record.health>0&&Record.ammo>0;
-            bool withdrawing=armedContact&&distance<4;
+            bool exhaustedRetreat=game.CrewEnabled&&Police&&Record!=null&&(Record.ammo==0||Record.health<30)&&(game.Heat>0||game.Police.Searching);
+            bool withdrawing=exhaustedRetreat||armedContact&&distance<(Record.combat.kind==5?7:4);
             if(withdrawing)
             {
                 // Preserve room to use the pistol if an advancing player or another
                 // officer has forced this shooter inside its useful firing distance.
-                Vector3 away=Position-game.Player.position;away.y=0;
+                Vector3 away=Position-(SeesPlayer?contactPosition:LastSeen);away.y=0;
                 if(away.sqrMagnitude<.01f)away=-Body.forward;
                 Vector3 standOff=Position+away.normalized*3;
                 if(nav.ClearWalk(Position,standOff))
                 {target=standOff;Path.Clear();Path.Add(target);Repath=.45f;passing=false;}
-                else if(!passing)passing=TryPolicePass(game,game.Player.position,out passingPoint);
+                else if(!passing)passing=TryPolicePass(game,contactPosition,out passingPoint);
             }
-            bool firing=armedContact&&distance<17&&distance>3;
-            bool clearShot=firing&&!withdrawing&&PoliceShotClear(game);
+            bool firing=!exhaustedRetreat&&armedContact&&distance<(Record.combat.kind==5?25:17)&&distance>(Record.combat.kind==5?5:3);
+            bool clearShot=firing&&!withdrawing&&PoliceShotClear(game,contactPosition);
             if(clearShot)passing=false;
             else if(firing&&!withdrawing&&!passing)
-                passing=TryPolicePass(game,game.Player.position,out passingPoint);
+                passing=TryPolicePass(game,contactPosition,out passingPoint);
             if(clearShot&&FireDelay<=0)
-            {if(game.FireActorAt(Record,Body,game.Player.position,2))FireDelay=1.45f+(Phase%3)*.13f;}
+            {if(game.FireActorAt(Record,Body,contactPosition,Record.combat.kind))FireDelay=1.45f+(Phase%3)*.13f;}
             Repath -= dt;
             if(Repath <= 0)
             {
@@ -156,12 +174,12 @@ namespace Funstra
             }
             point=Position;return false;
         }
-        bool PoliceShotClear(FunstraGame game)
+        bool PoliceShotClear(FunstraGame game,Vector3 target)
         {
-            Vector3 origin=Position+Vector3.up*1.1f,end=game.Player.position+Vector3.up*1.1f;
+            Vector3 origin=Position+Vector3.up*1.1f,end=target+Vector3.up*1.1f;
             foreach(var other in game.Agents)if(other!=this&&other.Record!=null&&other.Record.health>0)
                 if(ProjectileMath.MovingSphere(origin,end,other.Position+Vector3.up*1.1f,other.Position+Vector3.up*1.1f,.65f,out _))return false;
-            foreach(var other in new[]{game.District.neri,game.District.guard,game.District.collector})if(other.health>0)
+            foreach(var other in new[]{game.District.neri,game.District.guard,game.District.collector})if(other.health>0&&Vector3.Distance(other.position,target)>.1f)
                 if(ProjectileMath.MovingSphere(origin,end,other.position+Vector3.up*1.1f,other.position+Vector3.up*1.1f,.65f,out _))return false;
             return true;
         }

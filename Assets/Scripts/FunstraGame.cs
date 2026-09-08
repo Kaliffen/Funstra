@@ -19,18 +19,22 @@ namespace Funstra
         public bool Sneaking { get; private set; }
         public bool Hidden { get; private set; }
         public bool Stealing { get; private set; }
-        public bool Active => screen == ScreenMode.Play;
+        public bool Active => screen == ScreenMode.Play && !DockDialogOpen;
         public float Stamina = 100;
         public bool Smoke;
-        enum ScreenMode { Title, Play, Pause, Talk, Perk, Ending, ConfirmRestart, Safehouse, Intro, Clinic, Collector, Journal, Tactics, Recovery, MedicineSale, Refuge, Conversation }
+        enum ScreenMode { Title, Play, Pause, Talk, Perk, Ending, ConfirmRestart, Safehouse, Intro, Clinic, Collector, Journal, Tactics, Recovery, MedicineSale, Refuge, Conversation, Dealer, Supply }
         ScreenMode screen;
         CharacterController controller;
         Transform figure;
         GameObject playerRing;
         float theftProgress, arrestProgress, playerPhase, lastSight, toastTime, stepTime, cameraSize = 17;
         string toast = "", prompt = "";
+        string arrestCrewId="player";
         bool muteTests;
         bool mute, showMap, sprinting, sprintExhausted;
+        // Optional in all builds. Session-only: survives level reloads, never enters campaign saves.
+        static bool debugFastRunning;
+        bool DebugFastRunning => debugFastRunning;
         readonly List<float> buildingRevealUntil = new List<float>();
         string savePath;
         AudioSource audioSource;
@@ -47,6 +51,10 @@ namespace Funstra
             muteTests=Array.IndexOf(Environment.GetCommandLineArgs(),"--mute-tests")>=0;mute=muteTests;
             if(muteTests)AudioListener.volume=0;
             pressureTest=Array.IndexOf(Environment.GetCommandLineArgs(),"--pressure-test")>=0;
+            armsTest=Array.IndexOf(Environment.GetCommandLineArgs(),"--arms-test")>=0;
+            residentsTest=Array.IndexOf(Environment.GetCommandLineArgs(),"--residents-test")>=0;
+            crewTest=Array.IndexOf(Environment.GetCommandLineArgs(),"--crew-test")>=0||Array.IndexOf(Environment.GetCommandLineArgs(),"--crew-opposition")>=0||Array.IndexOf(Environment.GetCommandLineArgs(),"--crew-approach")>=0;
+            crewPressure=Array.IndexOf(Environment.GetCommandLineArgs(),"--crew-pressure")>=0;
             policeTest=pressureTest||Array.IndexOf(Environment.GetCommandLineArgs(),"--police-test")>=0;
             Application.targetFrameRate = 60; QualitySettings.vSyncCount = 1;
             if(Array.IndexOf(Environment.GetCommandLineArgs(),"--30fps")>=0) { Application.targetFrameRate=30;QualitySettings.vSyncCount=0; }
@@ -56,10 +64,14 @@ namespace Funstra
             bandageTest = streetsTest||environmentTest||Array.IndexOf(Environment.GetCommandLineArgs(), "--bandage-test") >= 0;
             bandageVisual = Array.IndexOf(Environment.GetCommandLineArgs(), "--bandage-visual") >= 0;
             captureScreens = visualCheck || Array.IndexOf(Environment.GetCommandLineArgs(), "--capture-screens") >= 0;
-            Smoke = policeTest || visualCheck || bandageTest || bandageVisual || Array.IndexOf(Environment.GetCommandLineArgs(), "--smoke-test") >= 0;
+            Smoke = crewTest || residentsTest || armsTest || policeTest || visualCheck || bandageTest || bandageVisual || Array.IndexOf(Environment.GetCommandLineArgs(), "--smoke-test") >= 0;
             captureScreens |= bandageVisual;
             savePath = Path.Combine(Application.persistentDataPath, bandageTest||bandageVisual?"bandage-smoke.json":Smoke ? "smoke-save.json" : "lights-progress.json");
-            if(!Smoke)savePath=Path.Combine(Application.persistentDataPath,"streets-progress.json");
+            if(!Smoke)savePath=Path.Combine(Application.persistentDataPath,"arms-progress.json");
+            if(armsTest)savePath=Path.Combine(Application.persistentDataPath,"arms-smoke.json");
+            if(residentsTest)savePath=Path.Combine(Application.persistentDataPath,"residents-smoke.json");
+            if(crewTest)savePath=Path.Combine(Application.persistentDataPath,"crew-smoke.json");
+            else if(!Smoke)savePath=Path.Combine(Application.persistentDataPath,"crew-progress.json");
             City = new CityArt(); if(FoundationMode)City.BuildTestLevel(foundationLevel);else {City.Build();BuildCargoArt();}
             SetupLighting();
             var player = new GameObject("Player"); Player = player.transform; Player.position = Jobs.Home + Vector3.up*.15f;
@@ -80,10 +92,11 @@ namespace Funstra
         void SetupLighting()
         {
             RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Trilight;
-            RenderSettings.ambientSkyColor = CityArt.Hex("687D9A"); RenderSettings.ambientEquatorColor = CityArt.Hex("4F6078"); RenderSettings.ambientGroundColor = CityArt.Hex("303648");
-            RenderSettings.fog = true; RenderSettings.fogColor = CityArt.Hex("53637C"); RenderSettings.fogMode = FogMode.Linear; RenderSettings.fogStartDistance = 75; RenderSettings.fogEndDistance = 180;
-            var sun = new GameObject("Late evening sun").AddComponent<Light>(); sun.type = LightType.Directional; sun.color = CityArt.Hex("FFD0A0"); sun.intensity = .95f;
-            sun.transform.rotation = Quaternion.Euler(32,-35,0); sun.shadows = LightShadows.Soft; sun.shadowStrength = .82f;
+            // Cold open-sky fill retains faces and walkable streets inside the deep building shadows.
+            RenderSettings.ambientSkyColor = CityArt.Hex("71838D"); RenderSettings.ambientEquatorColor = CityArt.Hex("45525B"); RenderSettings.ambientGroundColor = CityArt.Hex("293238");
+            RenderSettings.fog = true; RenderSettings.fogColor = CityArt.Hex("404F56"); RenderSettings.fogMode = FogMode.Linear; RenderSettings.fogStartDistance = 88; RenderSettings.fogEndDistance = 190;
+            var sun = new GameObject("Harbor night / raking cold light").AddComponent<Light>(); sun.type = LightType.Directional; sun.color = CityArt.Hex("D6E3E5"); sun.intensity = 1.08f;
+            sun.transform.rotation = Quaternion.Euler(29,-48,0); sun.shadows = LightShadows.Soft; sun.shadowStrength = .92f;
             QualitySettings.shadowDistance = 100; QualitySettings.shadows = ShadowQuality.All; QualitySettings.shadowResolution = ShadowResolution.High; QualitySettings.antiAliasing = 4; QualitySettings.pixelLightCount = 4;
         }
         void SpawnAgents()
@@ -107,6 +120,7 @@ namespace Funstra
         void Update()
         {
             if(FoundationMode) { UpdateFoundation();return; }
+            CrewInput();
             if(Input.GetKeyDown(KeyCode.F2))compactHUD=!compactHUD;
             if (Input.GetKeyDown(KeyCode.F11)) Screen.fullScreen = !Screen.fullScreen;
             if (!muteTests && Input.GetKeyDown(KeyCode.M)) mute = !mute;
@@ -114,14 +128,15 @@ namespace Funstra
             if(DistrictEnabled&&Input.GetKeyDown(KeyCode.F5)&&screen!=ScreenMode.Title) { Save();Notify("Saved here, including wounds, witnesses, crew and carried goods."); }
             if (Input.GetKeyDown(KeyCode.Escape))
             {
+                if(DockDialogOpen){CloseDockDialog();return;}
                 if(screen == ScreenMode.Play) { Save();screen = ScreenMode.Pause; }
-                else if(screen != ScreenMode.Title && screen != ScreenMode.Perk && screen != ScreenMode.Ending && screen != ScreenMode.ConfirmRestart) screen = ScreenMode.Play;
+                else if(screen != ScreenMode.Title && screen != ScreenMode.Perk && screen != ScreenMode.Ending && screen != ScreenMode.ConfirmRestart) ResumeCrewPlay();
                 else if(screen == ScreenMode.ConfirmRestart) screen = ScreenMode.Title;
             }
             if(DistrictEnabled&&Input.GetKeyDown(KeyCode.Space))
             {
                 if(screen==ScreenMode.Play) { Save();screen=ScreenMode.Tactics; }
-                else if(screen==ScreenMode.Tactics)screen=ScreenMode.Play;
+                else if(screen==ScreenMode.Tactics)ResumeCrewPlay();
             }
             if(DistrictEnabled&&Input.GetKeyDown(KeyCode.J))
             { if(screen==ScreenMode.Play) { Save();screen=ScreenMode.Journal; }else if(screen==ScreenMode.Journal)screen=ScreenMode.Play; }
@@ -137,6 +152,7 @@ namespace Funstra
             City.RefreshProps();City.StepTraffic(this,dt);
             UpdatePlayer(dt);
             if(DistrictEnabled) { UpdateDistrict(dt);if(!Active)return; UpdateYard(dt); }
+            if(!Smoke||armsTest||residentsTest||crewTest||crewPressure)StepArms(dt);
             StepPoliceResponse(dt);
             bool seen = false;
             foreach(var a in Agents) { if(!smokeFreezeAgents)a.Step(this,dt); if(a.Police && a.SeesPlayer && a.Pursuing) seen = true; }
@@ -147,7 +163,16 @@ namespace Funstra
                 if(Heat == 0) Notify(DistrictEnabled?"Immediate pursuit has ended. Recorded incidents remain.":"Heat cleared. Mara will buy the goods.");
             }
             bool nearOfficer = false;
-            foreach(var a in Agents) if(Heat>0 && a.Police && a.Pursuing && a.SeesPlayer && Vector3.Distance(a.Position,Player.position)<1.65f) nearOfficer = true;
+            if(CrewEnabled)
+            {
+                var arrestCandidates=new List<string>();
+                foreach(string id in new[]{"player","neri","rell"})if(IsCrewId(id)&&CrewAlive(id))
+                    foreach(var a in Agents)if(Heat>0&&a.Police&&a.Pursuing&&a.SeesPlayer&&Vector3.Distance(a.Position,CrewPosition(id))<1.65f&&City.Nav.Sight(a.Position,CrewPosition(id)))
+                    {arrestCandidates.Add(id);break;}
+                string candidate=ChooseCrewArrestCandidate(arrestCandidates,arrestCrewId);
+                if(candidate!=""){if(arrestCrewId!=candidate)arrestProgress=0;arrestCrewId=candidate;nearOfficer=true;}
+            }
+            else foreach(var a in Agents) if(Heat>0 && a.Police && a.Pursuing && a.SeesPlayer && Vector3.Distance(a.Position,Player.position)<1.65f) nearOfficer = true;
             arrestProgress = Mathf.Clamp01(arrestProgress + (nearOfficer ? dt*.85f : -dt*1.5f));
             if(arrestProgress >= 1 && !pressureDurabilityFixture) Busted();
             UpdateInteraction(dt);
@@ -160,6 +185,7 @@ namespace Funstra
         }
         void UpdatePlayer(float dt)
         {
+            if(UpdateControlledCrew(dt))return;
             Vector3 movement;
             if(autoMove.HasValue) movement = Vector3.ClampMagnitude(autoMove.Value-Player.position,1);
             else
@@ -172,12 +198,14 @@ namespace Funstra
             movement.y=0;
             Sneaking = Input.GetKey(KeyCode.LeftControl)||Input.GetKey(KeyCode.C);
             float capacity = State.HasPerk(1) ? 135 : 100;
+            if(DebugFastRunning) { Stamina=capacity;sprintExhausted=false; }
             // Exhaustion must not alternate run/walk speed every other frame at two stamina.
             if(Stamina<=2)sprintExhausted=true;
             if(Stamina>=capacity)sprintExhausted=false;
             sprinting = !sprintExhausted && !Sneaking && movement.sqrMagnitude>.01f && (Input.GetKey(KeyCode.LeftShift)||autoMove.HasValue) && Stamina>2;
-            Stamina = Mathf.Clamp(Stamina + dt*(sprinting ? -19 : 15),0,capacity);
+            Stamina = DebugFastRunning ? capacity : Mathf.Clamp(Stamina + dt*(sprinting ? -19 : 15),0,capacity);
             float speed = Sneaking ? (State.HasPerk(0)?3.1f:2.3f) : sprinting ? (State.HasPerk(1)?8.4f:7) : 4.2f;
+            if(DebugFastRunning&&sprinting)speed*=3;
             speed *= Cargo.SpeedMultiplier;
             if(DistrictEnabled) speed *= (District.health<40?.8f:1)*(District.Carrying?.9f:1);
             controller.Move((movement*speed+Vector3.down*8)*dt);
@@ -194,6 +222,9 @@ namespace Funstra
         {
             prompt=""; Stealing=false;
             bool pressed=Input.GetKeyDown(KeyCode.E), held=Input.GetKey(KeyCode.E)||autoInteract;
+            if(CrewEnabled&&UpdateDockInteraction(dt,pressed,held))return;
+            if(CrewEnabled&&ControlledCrewId!="player"){prompt="K / CREW: orders, supplies and rescue";return;}
+            if(UpdateArmsInteraction(pressed)) {theftProgress=0;ResetCargoInteraction();return;}
             if(UpdateMedicalInteraction(dt,pressed,held)) { theftProgress=0;ResetCargoInteraction();return; }
             if(UpdateCargoInteraction(dt,held)) { theftProgress=0; return; }
             if(Vector3.Distance(Player.position,Jobs.Mara)<3.2f)
@@ -232,8 +263,12 @@ namespace Funstra
         { bool newlyWanted=Heat<=0;Heat=12; LastSeen=position; lastSight=Elapsed;if(newlyWanted)Sound(alertSound); Notify(message); }
         void Busted()
         {
+            if(CrewEnabled&&arrestCrewId!="player"){BustedCrew(arrestCrewId);return;}
+            if(CrewEnabled&&District.crew.For("player").carrying!=""&&!DropCrew("player"))return;
+            if(DockEnabled&&District.dock.componentOwner=="player")District.dock.componentOwner="yard";
             if(DistrictEnabled&&District.Carrying) { District.shipmentOwner=District.clock>=DistrictState.SaleTime?"buyer":"collector";District.released=false;District.Record("confiscated","police","Police returned the medical shipment to its owner. It remains recoverable."); }
             State.Arrest(); Cargo.Lose(); RefreshCargoArt(); ResetCargoInteraction(); Heat=arrestProgress=theftProgress=0; Stealing=false;
+            if(District.arms!=null){District.ConfiscateArms();InitializeCombat();}
             Teleport(Jobs.Home); ResetPolice(); Save(); Notify("Busted. Goods confiscated; up to $40 fined. The job is still available."); Sound(alertSound);
         }
         void ResetPolice(bool clearResponse=true)
@@ -253,7 +288,10 @@ namespace Funstra
         }
         void StartRun(bool resume)
         {
-            State=resume?LoadCurrentRun()??new RunState():new RunState();
+            var prior=resume?LoadCurrentRun():null;
+            State=prior??new RunState();
+            if(!Smoke||armsTest||residentsTest||crewTest||crewPressure)District.InitializeArms(prior==null);
+            if(CrewEnabled){District.InitializeCrew();District.InitializeCrewArms();}
             City.SetServiceGate(District.yardGateClosed,null);
             Cargo.Lose(); RefreshCargoArt(); ResetCargoInteraction();
             Heat=Elapsed=theftProgress=arrestProgress=0; Stamina=100; Hidden=Stealing=false; Teleport(Jobs.Home); ResetPolice(false);
@@ -269,9 +307,11 @@ namespace Funstra
                 ResetDistrictRuntime();
                 InitializeYard();
                 InitializePoliceResponse();
+                InitializeArmsRuntime();
+                InitializeCrewRuntime();
                 if(!District.introSeen)screen=ScreenMode.Intro;
             }
-            Notify(DistrictEnabled?"Neri's clinic is marked cyan. TAB map / J history / L switches tracked story.":State.accepted?"Your job is waiting. Check the amber marker.":"Meet Mara at the mint circle. Press E to talk.");
+            Notify(District.arms!=null?"Sella trades in Market Court. A delivery favor earns a first gun. 1 conceals weapons / TAB map.":DistrictEnabled?"Neri's clinic is marked cyan. TAB map / J history / L switches tracked story.":State.accepted?"Your job is waiting. Check the amber marker.":"Meet Mara at the mint circle. Press E to talk.");
             if(!resume) Save();
         }
         void Save() { if(FoundationMode)return; DistrictCheckpoint();if(!State.Save(savePath)) Notify("Progress could not be saved. This run can still continue."); }
@@ -279,27 +319,27 @@ namespace Funstra
         {
             if(File.Exists(savePath))return RunState.Load(savePath);
             if(Smoke)return null;
-            return RunState.Load(Path.Combine(Application.persistentDataPath,"lights-progress.json"))??RunState.Load(Path.Combine(Application.persistentDataPath,"district-progress.json"))??RunState.Load(Path.Combine(Application.persistentDataPath,"progress.json"));
+            return RunState.Load(Path.Combine(Application.persistentDataPath,"arms-progress.json"))??RunState.Load(Path.Combine(Application.persistentDataPath,"streets-progress.json"))??RunState.Load(Path.Combine(Application.persistentDataPath,"lights-progress.json"))??RunState.Load(Path.Combine(Application.persistentDataPath,"district-progress.json"))??RunState.Load(Path.Combine(Application.persistentDataPath,"progress.json"));
         }
         void Notify(string message) { toast=message; toastTime=6; }
-        void SnapCamera() { if(!View)return; cameraVelocity=Vector3.zero;View.transform.position=Player.position+cameraOffset; View.transform.LookAt(Player.position+Vector3.up); }
+        void SnapCamera() { if(!View)return; cameraVelocity=Vector3.zero;View.transform.position=ControlledPosition+cameraOffset; View.transform.LookAt(ControlledPosition+Vector3.up); }
         void LateUpdate()
         {
             if(!View)return;
-            Vector3 focus = Player.position;
+            Vector3 focus = ControlledPosition;
             if(screen==ScreenMode.Title || screen==ScreenMode.ConfirmRestart) focus=new Vector3(3,0,-15);
             Vector3 desired=focus+cameraOffset;
             View.transform.position=Vector3.SmoothDamp(View.transform.position,desired,ref cameraVelocity,.16f);
             View.transform.rotation=Quaternion.LookRotation((focus+Vector3.up)-desired);
             View.orthographicSize=Mathf.Lerp(View.orthographicSize,screen==ScreenMode.Title?29:cameraSize,Time.unscaledDeltaTime*5);
             // Cut away a building only when it actually obscures the player's upper body.
-            var ray=new Ray(View.transform.position,(Player.position+Vector3.up-View.transform.position).normalized);
-            float length=Vector3.Distance(View.transform.position,Player.position+Vector3.up);
+            var ray=new Ray(View.transform.position,(focus+Vector3.up-View.transform.position).normalized);
+            float length=Vector3.Distance(View.transform.position,focus+Vector3.up);
             while(buildingRevealUntil.Count<City.Buildings.Count)buildingRevealUntil.Add(0);
             for(int i=0;i<City.Buildings.Count;i++)
             {
                 bool cut=screen!=ScreenMode.Title && City.Buildings[i].IntersectRay(ray,out float distance) && distance<length-1;
-                if(DistrictEnabled&&Vector3.Distance(Player.position,DistrictState.Clinic)<6)
+                if(DistrictEnabled&&Vector3.Distance(ControlledPosition,DistrictState.Clinic)<6)
                 {
                     Vector3 focusPoint=TallyPosition+Vector3.up*.4f;
                     var clinicRay=new Ray(View.transform.position,(focusPoint-View.transform.position).normalized);

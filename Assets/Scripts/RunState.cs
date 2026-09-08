@@ -65,7 +65,9 @@ namespace Funstra
                 var state = JsonUtility.FromJson<RunState>(File.ReadAllText(path));
                 if (state == null || (state.version != 1 && state.version != 2) || state.completed < 0 || state.completed > 3 || state.cash < 0 || state.arrests < 0 || state.perks < 0 || state.perks > 7 || state.PerkCount > Mathf.Min(state.completed, 2) || state.cargoRuns < 0 || state.cargoEarnings < 0) return null;
                 if(state.version==1) { state.district=new DistrictState();state.version=2; }
-                if(state.district==null||!state.district.Valid())return null;
+                if(state.district==null)return null;
+                state.district.InitializeArms(false);
+                if(!state.district.Valid())return null;
                 state.carrying = false;
                 return state;
             }

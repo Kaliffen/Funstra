@@ -1,6 +1,6 @@
 {
   "title": "Funstra",
-  "tagline": "An isometric sandbox crime RPG about surviving a damaged port city. Pressure and Escape develops the nine-officer pursuit: watch your ammunition, break contact and find a way home.",
+  "tagline": "An isometric sandbox crime RPG about surviving a damaged port city. Nobody Gets Home Alone gives you three people to equip and direct, with real losses when an operation goes wrong.",
   "stamp": "Open source · Playable prototype",
   "repo": "Kaliffen/Funstra",
   "engine": "Unity 6000.4.0f1",
@@ -8,18 +8,25 @@
   "license": "MIT",
   "honesty": {
     "heading": "Be clear about what this is",
-    "lede": "Funstra is a development project that publishes its work as playable builds. It is not a finished game, it is not for sale, and it is not trying to look further along than it is.",
+    "lede": "Funstra is a free playable prototype. Demo06, Nobody Gets Home Alone, adds a crew, one contested dock operation and physical rescue. Four guided reviewer agents scored the game as it exists today at 5.3–5.7/10: the systems work, but sustained life, relationships and breadth remain thin.",
     "is": [
-      "A <strong>playable prototype</strong>. Each demo is a real Windows executable you can run for an hour, not a trailer or a wishlist page.",
+      "A <strong>playable Windows prototype</strong>. Published demos are complete executable packages; extract the whole archive before starting Funstra.exe.",
+      "<strong>Demo06: three people with separate lives.</strong> Control the protagonist, Neri or Rell without exchanging their wounds, positions or equipment. Give orders, transfer a real gun and its rounds, use timed field aid, and physically carry a downed partner to the clinic. Rescues and explicit abandonment leave persistent memories.",
+      "<strong>One contested pump component.</strong> Pay Vale, steal through either yard approach or equip a crew to fight the same ordinary-health watch. Return the component to Rell. Repairing his auxiliary pump with the workshop's finite gasket offers a nonviolent partnership before the operation.",
+      "<strong>Rifles and finite opposition.</strong> The yard watch communicates sightings, can spend dressings on nearby casualties and can withdraw. Rifle reinforcements reuse the existing two police trucks and nine-officer ceiling. Pistol, shotgun and SMG handling, Sella's finite shop, Tomas's physical supply deliveries, cargo and clinic services remain part of the district.",
+      "<strong>Controls:</strong> WASD moves, Shift sprints, Ctrl/C sneaks, mouse aims and left mouse fires. F1/F3/F4 selects protagonist/Neri/Rell; K opens crew orders, transfers and rescue. Space pauses, E interacts, Tab opens the map and F5 saves.",
+      "<strong>Equipment controls:</strong> 1 holsters; 2/3/4/5 selects the protagonist's pistol/shotgun/SMG/rifle or draws a companion's single carried gun. R reloads and B begins timed self-aid. The Demo06 manual explains carrying, clinic admission and the session-only debug running toggle.",
       "<strong>Free to play, with MIT-licensed game code.</strong> Asset provenance and sound licenses are recorded in the repository credits.",
       "<strong>Built by AI agents</strong> against a written vision, design and world bible, with every build validated by an automated harness before it ships.",
       "<strong>A stylized Old Port</strong> with authored streets, an enterable clinic, owner-supplied architectural prototypes and credited CC0 sound recordings. No external services are required to play.",
       "<strong>Honest about its reviews.</strong> Four reviewer agents inspect guided runs of the actual build, screenshots, logs, the manual and source. Their verdicts are published unedited, with the limits of that method stated."
     ],
     "isNot": [
-      "A finished sandbox campaign. This increment has <strong>nine police maximum, pistols and two response trucks</strong>; rifle squads and the 30-plus soldier/grenade tier remain planned.",
+      "A finished sandbox campaign. Demo06 is bounded to <strong>three controllable people, one contested component, Vale and two guards, and nine police maximum</strong>. Army scale, grenades and 30-plus soldiers remain future work.",
+      "One universal interaction system yet. Existing trade, cargo, clinic and home services use the protagonist. Selected companions use the new dock, crew and rescue systems; F1 returns control for older services.",
+      "A guarantee that everyone comes home. Operations can fail and people can be abandoned. This build has <strong>incapacitation and persistent abandonment, with existing total-wipe recovery</strong>; irreversible death is not implemented yet.",
       "A commercial release. There is no store page, no price, no roadmap you have paid for.",
-      "A human difficulty or minimum-spec certification. Guided evidence separates an extended-durability stress fixture from ordinary-health prepared exposure and escape; the method and remaining limits accompany the results.",
+      "A human difficulty or minimum-spec certification. Guided runs disclose prepared equipment, money, wounds, recruitment, frozen actors and scripted controller travel. Extended-durability pressure measurements are separate from ordinary-health exposure and escape. The original full eight-route candidate and four independent guided reviews are preserved; the release corrects three display expressions, with fresh Crew, Police and Legacy checks plus rendered reviewer addenda.",
       "A live world. Nothing simulates while the application is closed, and the economy is small on purpose.",
       "Stable across versions. Saves may carry forward, but a demo can and does change underneath you."
     ]
@@ -28,45 +35,53 @@
     {
       "who": "Marcus Webb",
       "lens": "Technical state, value",
-      "score": 8,
+      "gameNow": 5.7,
+      "sliceDelivery": "8.7–9.8 provisional",
+      "evidence": 89,
       "accent": "marcus"
     },
     {
       "who": "Dag Møller",
       "lens": "Systems rigor",
-      "score": 8,
+      "gameNow": 5.4,
+      "sliceDelivery": "8.5–9.8 provisional",
+      "evidence": 89,
       "accent": "dag"
     },
     {
       "who": "Priya Raman",
       "lens": "Emotional, thematic",
-      "score": 8,
+      "gameNow": 5.4,
+      "sliceDelivery": "8.7–10.0 provisional",
+      "evidence": 89,
       "accent": "priya"
     },
     {
       "who": "Nell Okafor",
-      "lens": "Is this a nice hour",
-      "score": 8,
+      "lens": "Is this a worthwhile hour",
+      "gameNow": 5.3,
+      "sliceDelivery": "8.3–9.6 provisional",
+      "evidence": 89,
       "accent": "nell"
     }
   ],
-  "panelNote": "Four independent reviewer agents each ran the full guided Pressure route in the same build and inspected nine fresh captures, complete logs and profiles. All scored this increment 8/10. These are guided build judgments; human gameplay acceptance remains separate.",
+  "panelNote": "Original Demo06 protocol-v2 verdicts, unchanged after integration. Each reviewer ran a fresh guided Crew route and inspected all 17 captures and logs; the eight shared routes provide separate supporting evidence. Game now penalizes missing depth, while Slice delivery measures the promised increment. Provisional slice bounds include delivery work that was pending at review and a remaining ordinary crew livelihood coverage gap. Later display fixes and publication do not silently raise original scores. This is a new baseline, not comparable to earlier 8/10 ratings; human acceptance remains separate.",
   "shots": [
     {
-      "file": "PressureEscape/pressure-final/E02-paused-contact-ammunition.png",
-      "caption": "Tactical pause with weapon, magazine and reserve visible in a prepared police encounter"
+      "file": "Demo06/integration-crew/C00-title.png",
+      "caption": "Release build: Nobody Gets Home Alone. A bounded crew prototype in a damaged port city."
     },
     {
-      "file": "PressureEscape/pressure-final/E03-actual-defeat-recovery.png",
-      "caption": "Recovery after exposed defeat reports the actual losses from that encounter"
+      "file": "Demo06/integration-crew/C05b-physical-carry.png",
+      "caption": "Guided rescue fixture: a survivor physically carries a downed partner through the clinic doorway."
     },
     {
-      "file": "PressureEscape/pressure-final/E04-search-map-ammunition.png",
-      "caption": "Change streets and break contact; inspect the map while keeping ammunition visible"
+      "file": "Demo06/integration-crew/C07-remembered-abandonment.png",
+      "caption": "Guided abandonment fixture: the body remains where it was left, and the person remembers."
     },
     {
-      "file": "PressureEscape/pressure-final/E06-homeward-return.png",
-      "caption": "The guided escape route ends with a return to the clinic"
+      "file": "Demo06/approach-final/AP-full-crew-combat-outcome.png",
+      "caption": "Original reviewed build: an actual full-crew yard attempt returns the finite component with wounds and spent ammunition. This attempt succeeded; success and survival are not guaranteed."
     }
   ],
   "pipeline": [
@@ -109,7 +124,7 @@
       "href": "https://github.com/Kaliffen/Funstra/blob/main/VISION.md"
     },
     {
-      "label": "Six-release plan",
+      "label": "Development plan",
       "href": "https://github.com/Kaliffen/Funstra/blob/main/DESIGN.md"
     },
     {
@@ -117,7 +132,11 @@
       "href": "https://github.com/Kaliffen/Funstra/blob/main/WORLD.md"
     },
     {
-      "label": "Demo guide",
+      "label": "Play manual",
+      "href": "https://github.com/Kaliffen/Funstra/blob/main/NOBODY-GETS-HOME-ALONE.md"
+    },
+    {
+      "label": "Earlier v0.4.2 guide",
       "href": "https://github.com/Kaliffen/Funstra/blob/main/PRESSURE-AND-ESCAPE.md"
     },
     {
@@ -125,10 +144,15 @@
       "href": "https://github.com/Kaliffen/Funstra/blob/main/Evidence/VALIDATION.md"
     }
   ],
-  "panelBuild": "Pressure and Escape (v0.4.2)",
-  "panelSummary": "Four independent guided reviews · 8/10 from each reviewer",
-  "dossierFile": "funstra-review-dossier-pressure-escape.html",
+  "panelBuild": "Nobody Gets Home Alone (v0.6.0)",
+  "panelSummary": "Four independent guided reviews · Game now 5.3–5.7/10",
+  "dossierFile": "funstra-review-dossier-demo06.html",
   "previousDossiers": [
+    {
+      "file": "funstra-review-dossier-pressure-escape.html",
+      "output": "dossier-pressure-escape.html",
+      "label": "Pressure and Escape dossier — v0.4.2"
+    },
     {
       "file": "funstra-review-dossier-police-response.html",
       "output": "dossier-police-response.html",
@@ -145,5 +169,5 @@
       "label": "Demo 02 dossier — original 4/10 to 7/10 verdicts"
     }
   ],
-  "releaseVersion": "v0.4.2"
+  "releaseVersion": "v0.6.0"
 }

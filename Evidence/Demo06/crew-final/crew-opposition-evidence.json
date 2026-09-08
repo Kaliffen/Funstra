@@ -1,0 +1,2430 @@
+{
+    "method": "Guided exported-player fixtures, not human input. Starting positions, finite ammunition and guard casualty/report setup are explicitly staged. Live Update advances rifle officers, projectiles, ordinary 100 HP damage, controller retreat, moving firing lanes and guard field aid. No durability, arrest or ammunition-refill override. Four-family trigger/reload checks are staged production API actions. This bounded route does not claim the nine-officer stress/deployment coverage of the separate Police/Pressure suites.",
+    "handling": [
+        {
+            "name": "PISTOL",
+            "kind": 2,
+            "initialAmmo": 8,
+            "remainingAmmo": 7,
+            "pellets": 1,
+            "magazine": 5,
+            "speed": 48.0,
+            "cycle": 0.46000000834465029,
+            "reload": 1.5
+        },
+        {
+            "name": "SHOTGUN",
+            "kind": 3,
+            "initialAmmo": 4,
+            "remainingAmmo": 3,
+            "pellets": 7,
+            "magazine": 1,
+            "speed": 40.000003814697269,
+            "cycle": 1.0499999523162842,
+            "reload": 2.299999952316284
+        },
+        {
+            "name": "SMG",
+            "kind": 4,
+            "initialAmmo": 20,
+            "remainingAmmo": 19,
+            "pellets": 1,
+            "magazine": 17,
+            "speed": 55.0,
+            "cycle": 0.10999999940395355,
+            "reload": 2.0
+        },
+        {
+            "name": "RIFLE",
+            "kind": 5,
+            "initialAmmo": 7,
+            "remainingAmmo": 6,
+            "pellets": 1,
+            "magazine": 4,
+            "speed": 85.99999237060547,
+            "cycle": 0.800000011920929,
+            "reload": 2.700000047683716
+        }
+    ],
+    "samples": [
+        {
+            "stage": "four-family staged handling",
+            "screen": "Pause",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "",
+            "crewOrder": "Hold",
+            "time": 9.051292419433594,
+            "health": 100.0,
+            "stamina": 100.0,
+            "heat": 42.16623306274414,
+            "arrest": 0.0,
+            "realtime": 95.45858764648438,
+            "aidRemaining": 0.0,
+            "aidOriginDistance": 30.870718002319337,
+            "bleeding": false,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 28.0,
+                "y": 0.034999899566173556,
+                "z": -13.0
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": -60.0,
+                        "y": 0.0,
+                        "z": 47.0
+                    },
+                    "ammo": 18,
+                    "magazine": 0,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -57.0,
+                        "y": 0.0,
+                        "z": 47.0
+                    },
+                    "ammo": 18,
+                    "magazine": 0,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -50.0,
+                        "y": 0.0,
+                        "z": 52.0
+                    },
+                    "ammo": 18,
+                    "magazine": 0,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / starting three-round kit",
+            "screen": "Pause",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "",
+            "crewOrder": "Hold",
+            "time": 0.0,
+            "health": 100.0,
+            "stamina": 100.0,
+            "heat": 45.0,
+            "arrest": 0.0,
+            "realtime": 95.49422454833985,
+            "aidRemaining": 0.0,
+            "aidOriginDistance": 30.87093162536621,
+            "bleeding": false,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 28.0,
+                "y": 0.11999999731779099,
+                "z": -13.0
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 16.0,
+                        "y": 0.0,
+                        "z": -13.0
+                    },
+                    "ammo": 3,
+                    "magazine": 3,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -57.0,
+                        "y": 0.0,
+                        "z": 47.0
+                    },
+                    "ammo": 18,
+                    "magazine": 0,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -50.0,
+                        "y": 0.0,
+                        "z": 52.0
+                    },
+                    "ammo": 18,
+                    "magazine": 0,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / wounded after 0.8 second hesitation",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "",
+            "crewOrder": "Hold",
+            "time": 1.7733086347579957,
+            "health": 69.4782943725586,
+            "stamina": 100.0,
+            "heat": 45.0,
+            "arrest": 0.0,
+            "realtime": 97.23965454101563,
+            "aidRemaining": 0.0,
+            "aidOriginDistance": 30.870718002319337,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 28.0,
+                "y": 0.034999899566173556,
+                "z": -13.0
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 16.0,
+                        "y": 0.0,
+                        "z": -13.0
+                    },
+                    "ammo": 2,
+                    "magazine": 2,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": true,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -51.84072494506836,
+                        "y": 0.0,
+                        "z": 41.76857376098633
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -43.46815872192383,
+                        "y": 0.0,
+                        "z": 49.45695114135742
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / controller to nearest real cover",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "",
+            "crewOrder": "Hold",
+            "time": 1.7733086347579957,
+            "health": 69.4782943725586,
+            "stamina": 100.0,
+            "heat": 45.0,
+            "arrest": 0.0,
+            "realtime": 97.71089172363281,
+            "aidRemaining": 0.0,
+            "aidOriginDistance": 30.870718002319337,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 28.0,
+                "y": 0.034999899566173556,
+                "z": -13.0
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 16.0,
+                        "y": 0.0,
+                        "z": -13.0
+                    },
+                    "ammo": 2,
+                    "magazine": 2,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": true,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -51.84072494506836,
+                        "y": 0.0,
+                        "z": 41.76857376098633
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -43.46815872192383,
+                        "y": 0.0,
+                        "z": 49.45695114135742
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / controller to nearest real cover",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "",
+            "crewOrder": "Hold",
+            "time": 2.024284839630127,
+            "health": 69.3151626586914,
+            "stamina": 95.23146057128906,
+            "heat": 45.0,
+            "arrest": 0.0,
+            "realtime": 97.91439056396485,
+            "aidRemaining": 0.0,
+            "aidOriginDistance": 32.52615737915039,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 29.242237091064454,
+                "y": 0.035000018775463107,
+                "z": -14.242237091064454
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 16.0,
+                        "y": 0.0,
+                        "z": -13.0
+                    },
+                    "ammo": 2,
+                    "magazine": 2,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": true,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -51.053470611572269,
+                        "y": 0.0,
+                        "z": 41.012176513671878
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -42.6932258605957,
+                        "y": 0.0,
+                        "z": 48.68793487548828
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / controller to nearest real cover",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "",
+            "crewOrder": "Hold",
+            "time": 2.2911529541015627,
+            "health": 69.14169311523438,
+            "stamina": 90.16097259521485,
+            "heat": 45.0,
+            "arrest": 0.0,
+            "realtime": 98.1813735961914,
+            "aidRemaining": 0.0,
+            "aidOriginDistance": 34.297401428222659,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 30.563072204589845,
+                "y": 0.03499995917081833,
+                "z": -15.563072204589844
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 16.0,
+                        "y": 0.0,
+                        "z": -13.0
+                    },
+                    "ammo": 2,
+                    "magazine": 2,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": true,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -50.216365814208987,
+                        "y": 0.0,
+                        "z": 40.207889556884769
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -42.0698356628418,
+                        "y": 0.0,
+                        "z": 47.92959976196289
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / controller to nearest real cover",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "",
+            "crewOrder": "Hold",
+            "time": 2.564692258834839,
+            "health": 68.9638900756836,
+            "stamina": 84.96373748779297,
+            "heat": 44.75979232788086,
+            "arrest": 0.0,
+            "realtime": 98.45445251464844,
+            "aidRemaining": 0.0,
+            "aidOriginDistance": 35.883174896240237,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 31.73944091796875,
+                "y": 0.03499995917081833,
+                "z": -16.73944091796875
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 16.934585571289064,
+                        "y": 0.0,
+                        "z": -12.532707214355469
+                    },
+                    "ammo": 2,
+                    "magazine": 2,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -49.37218475341797,
+                        "y": 0.0,
+                        "z": 39.36933898925781
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -42.02679443359375,
+                        "y": 0.0,
+                        "z": 46.74048614501953
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / controller to nearest real cover / arrived",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "",
+            "crewOrder": "Hold",
+            "time": 2.598172664642334,
+            "health": 68.94213104248047,
+            "stamina": 85.4659423828125,
+            "heat": 44.72631072998047,
+            "arrest": 0.0,
+            "realtime": 98.48775482177735,
+            "aidRemaining": 0.0,
+            "aidOriginDistance": 35.883174896240237,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 31.73944091796875,
+                "y": 0.03499995917081833,
+                "z": -16.73944091796875
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 17.064849853515626,
+                        "y": 0.0,
+                        "z": -12.467575073242188
+                    },
+                    "ammo": 2,
+                    "magazine": 2,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -49.26909637451172,
+                        "y": 0.0,
+                        "z": 39.26646423339844
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -42.02152633666992,
+                        "y": 0.0,
+                        "z": 46.594940185546878
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "player",
+            "crewOrder": "Hold",
+            "time": 2.598172664642334,
+            "health": 68.94213104248047,
+            "stamina": 85.4659423828125,
+            "heat": 44.72631072998047,
+            "arrest": 0.0,
+            "realtime": 98.50141143798828,
+            "aidRemaining": 3.0,
+            "aidOriginDistance": 0.0,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 31.73944091796875,
+                "y": 0.03499995917081833,
+                "z": -16.73944091796875
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 17.064849853515626,
+                        "y": 0.0,
+                        "z": -12.467575073242188
+                    },
+                    "ammo": 2,
+                    "magazine": 2,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -49.26909637451172,
+                        "y": 0.0,
+                        "z": 39.26646423339844
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -42.02152633666992,
+                        "y": 0.0,
+                        "z": 46.594940185546878
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "player",
+            "crewOrder": "Hold",
+            "time": 2.8716213703155519,
+            "health": 68.76438903808594,
+            "stamina": 89.56766510009766,
+            "heat": 44.45286178588867,
+            "arrest": 0.0,
+            "realtime": 98.76119995117188,
+            "aidRemaining": 2.7265512943267824,
+            "aidOriginDistance": 0.0,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 31.73944091796875,
+                "y": 0.03499995917081833,
+                "z": -16.73944091796875
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 18.16228675842285,
+                        "y": 0.0,
+                        "z": -12.066869735717774
+                    },
+                    "ammo": 2,
+                    "magazine": 2,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -48.42729568481445,
+                        "y": 0.0,
+                        "z": 38.42605972290039
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -41.673316955566409,
+                        "y": 0.0,
+                        "z": 45.68565368652344
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "player",
+            "crewOrder": "Hold",
+            "time": 3.1384730339050295,
+            "health": 68.59093475341797,
+            "stamina": 93.57044219970703,
+            "heat": 44.18600845336914,
+            "arrest": 0.0,
+            "realtime": 99.02803039550781,
+            "aidRemaining": 2.4596996307373049,
+            "aidOriginDistance": 5.960464477539063e-8,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 31.73944091796875,
+                "y": 0.034999899566173556,
+                "z": -16.73944091796875
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 19.322324752807618,
+                        "y": 0.0,
+                        "z": -12.024659156799317
+                    },
+                    "ammo": 2,
+                    "magazine": 2,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -47.60627365112305,
+                        "y": 0.0,
+                        "z": 37.6054573059082
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -40.855525970458987,
+                        "y": 0.0,
+                        "z": 44.8618278503418
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "player",
+            "crewOrder": "Hold",
+            "time": 3.4102931022644045,
+            "health": 68.41425323486328,
+            "stamina": 97.64775085449219,
+            "heat": 43.914188385009769,
+            "arrest": 0.0,
+            "realtime": 99.30033874511719,
+            "aidRemaining": 2.1878795623779299,
+            "aidOriginDistance": 5.960464477539063e-8,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 31.73944091796875,
+                "y": 0.034999899566173556,
+                "z": -16.73944091796875
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 20.504356384277345,
+                        "y": 0.0,
+                        "z": -12.002542495727539
+                    },
+                    "ammo": 2,
+                    "magazine": 2,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -46.76996994018555,
+                        "y": 0.0,
+                        "z": 36.76957702636719
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -40.0212287902832,
+                        "y": 0.0,
+                        "z": 44.02394485473633
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "player",
+            "crewOrder": "Hold",
+            "time": 3.6883697509765627,
+            "health": 68.2334976196289,
+            "stamina": 100.0,
+            "heat": 45.0,
+            "arrest": 0.0,
+            "realtime": 99.57750701904297,
+            "aidRemaining": 1.909802794456482,
+            "aidOriginDistance": 5.960464477539063e-8,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 31.73944091796875,
+                "y": 0.034999899566173556,
+                "z": -16.73944091796875
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 21.374374389648439,
+                        "y": 0.0,
+                        "z": -12.001063346862793
+                    },
+                    "ammo": 1,
+                    "magazine": 1,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": true,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -46.05207061767578,
+                        "y": 0.0,
+                        "z": 36.05204391479492
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -39.166465759277347,
+                        "y": 0.0,
+                        "z": 43.168033599853519
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "player",
+            "crewOrder": "Hold",
+            "time": 3.958491086959839,
+            "health": 68.05792236328125,
+            "stamina": 100.0,
+            "heat": 45.0,
+            "arrest": 0.0,
+            "realtime": 99.8481674194336,
+            "aidRemaining": 1.6396816968917847,
+            "aidOriginDistance": 5.960464477539063e-8,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 31.73944091796875,
+                "y": 0.034999899566173556,
+                "z": -16.73944091796875
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 21.374374389648439,
+                        "y": 0.0,
+                        "z": -12.001063346862793
+                    },
+                    "ammo": 1,
+                    "magazine": 1,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": true,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -45.22119140625,
+                        "y": 0.0,
+                        "z": 35.2211799621582
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -38.33586883544922,
+                        "y": 0.0,
+                        "z": 42.33689498901367
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "player",
+            "crewOrder": "Hold",
+            "time": 4.225161075592041,
+            "health": 67.88458251953125,
+            "stamina": 100.0,
+            "heat": 45.0,
+            "arrest": 0.0,
+            "realtime": 100.11505889892578,
+            "aidRemaining": 1.3730121850967408,
+            "aidOriginDistance": 5.960464477539063e-8,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 31.73944091796875,
+                "y": 0.034999899566173556,
+                "z": -16.73944091796875
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 21.374374389648439,
+                        "y": 0.0,
+                        "z": -12.001063346862793
+                    },
+                    "ammo": 1,
+                    "magazine": 1,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": true,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -44.400936126708987,
+                        "y": 0.0,
+                        "z": 34.40093231201172
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -37.51580047607422,
+                        "y": 0.0,
+                        "z": 41.51646423339844
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "player",
+            "crewOrder": "Hold",
+            "time": 4.491830825805664,
+            "health": 67.71124267578125,
+            "stamina": 100.0,
+            "heat": 45.0,
+            "arrest": 0.0,
+            "realtime": 100.38125610351563,
+            "aidRemaining": 1.1063430309295655,
+            "aidOriginDistance": 5.960464477539063e-8,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 31.73944091796875,
+                "y": 0.034999899566173556,
+                "z": -16.73944091796875
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 21.374374389648439,
+                        "y": 0.0,
+                        "z": -12.001063346862793
+                    },
+                    "ammo": 1,
+                    "magazine": 1,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": true,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -43.5806770324707,
+                        "y": 0.0,
+                        "z": 33.58067321777344
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -36.69572448730469,
+                        "y": 0.0,
+                        "z": 40.69602966308594
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "player",
+            "crewOrder": "Hold",
+            "time": 4.75849723815918,
+            "health": 67.53790283203125,
+            "stamina": 100.0,
+            "heat": 45.0,
+            "arrest": 0.0,
+            "realtime": 100.6475601196289,
+            "aidRemaining": 0.839676022529602,
+            "aidOriginDistance": 5.960464477539063e-8,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 31.73944091796875,
+                "y": 0.034999899566173556,
+                "z": -16.73944091796875
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 21.374374389648439,
+                        "y": 0.0,
+                        "z": -12.001063346862793
+                    },
+                    "ammo": 1,
+                    "magazine": 1,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": true,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -42.76042938232422,
+                        "y": 0.0,
+                        "z": 32.76042938232422
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -35.790897369384769,
+                        "y": 0.0,
+                        "z": 40.069461822509769
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "player",
+            "crewOrder": "Hold",
+            "time": 5.025252819061279,
+            "health": 67.36450958251953,
+            "stamina": 100.0,
+            "heat": 45.0,
+            "arrest": 0.0,
+            "realtime": 100.91544342041016,
+            "aidRemaining": 0.5729205012321472,
+            "aidOriginDistance": 5.960464477539063e-8,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 31.73944091796875,
+                "y": 0.034999899566173556,
+                "z": -16.73944091796875
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 21.374374389648439,
+                        "y": 0.0,
+                        "z": -12.001063346862793
+                    },
+                    "ammo": 1,
+                    "magazine": 1,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": true,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -41.93991470336914,
+                        "y": 0.0,
+                        "z": 31.939912796020509
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -34.63138198852539,
+                        "y": 0.0,
+                        "z": 40.02449417114258
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "player",
+            "crewOrder": "Hold",
+            "time": 5.275486946105957,
+            "health": 67.20185852050781,
+            "stamina": 100.0,
+            "heat": 45.0,
+            "arrest": 0.0,
+            "realtime": 101.18637084960938,
+            "aidRemaining": 0.3226870000362396,
+            "aidOriginDistance": 5.960464477539063e-8,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 31.73944091796875,
+                "y": 0.034999899566173556,
+                "z": -16.73944091796875
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 21.04468536376953,
+                        "y": 0.0,
+                        "z": -11.850347518920899
+                    },
+                    "ammo": 0,
+                    "magazine": 0,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": true,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -41.17021179199219,
+                        "y": 0.0,
+                        "z": 31.170215606689454
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -33.543304443359378,
+                        "y": 0.0,
+                        "z": 40.00151443481445
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / final self-aid state",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "",
+            "crewOrder": "Hold",
+            "time": 5.342159748077393,
+            "health": 37.15852355957031,
+            "stamina": 100.0,
+            "heat": 45.0,
+            "arrest": 0.0,
+            "realtime": 101.25403594970703,
+            "aidRemaining": 0.0,
+            "aidOriginDistance": 5.960464477539063e-8,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 31.73944091796875,
+                "y": 0.034999899566173556,
+                "z": -16.73944091796875
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 20.780914306640626,
+                        "y": 0.0,
+                        "z": -11.729765892028809
+                    },
+                    "ammo": 0,
+                    "magazine": 0,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": true,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -40.96513366699219,
+                        "y": 0.0,
+                        "z": 30.96513557434082
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -33.25328063964844,
+                        "y": 0.0,
+                        "z": 40.0012321472168
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / around the corner",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "",
+            "crewOrder": "Hold",
+            "time": 5.342159748077393,
+            "health": 37.15852355957031,
+            "stamina": 100.0,
+            "heat": 45.0,
+            "arrest": 0.0,
+            "realtime": 101.25613403320313,
+            "aidRemaining": 0.0,
+            "aidOriginDistance": 5.960464477539063e-8,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 31.73944091796875,
+                "y": 0.034999899566173556,
+                "z": -16.73944091796875
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 20.780914306640626,
+                        "y": 0.0,
+                        "z": -11.729765892028809
+                    },
+                    "ammo": 0,
+                    "magazine": 0,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": true,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -40.96513366699219,
+                        "y": 0.0,
+                        "z": 30.96513557434082
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -33.25328063964844,
+                        "y": 0.0,
+                        "z": 40.0012321472168
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "depleted officer / player approach",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "",
+            "crewOrder": "Hold",
+            "time": 1.8110134601593018,
+            "health": 100.0,
+            "stamina": 100.0,
+            "heat": 45.0,
+            "arrest": 0.0,
+            "realtime": 103.0648193359375,
+            "aidRemaining": 0.0,
+            "aidOriginDistance": 27.572206497192384,
+            "bleeding": false,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 24.315126419067384,
+                "y": 0.034999899566173556,
+                "z": -13.0
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 12.122088432312012,
+                        "y": 0.0,
+                        "z": -13.0
+                    },
+                    "ammo": 0,
+                    "magazine": 0,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": true,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -51.70893478393555,
+                        "y": 0.0,
+                        "z": 41.64912796020508
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -43.35407638549805,
+                        "y": 0.0,
+                        "z": 49.346092224121097
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "moving lane / initial blocked formation",
+            "screen": "Pause",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "",
+            "crewOrder": "Hold",
+            "time": 0.0,
+            "health": 100.0,
+            "stamina": 100.0,
+            "heat": 45.0,
+            "arrest": 0.0,
+            "realtime": 103.09126281738281,
+            "aidRemaining": 0.0,
+            "aidOriginDistance": 34.73131561279297,
+            "bleeding": false,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 32.0,
+                "y": 0.11999999731779099,
+                "z": -13.5
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 18.0,
+                        "y": 0.0,
+                        "z": -13.0
+                    },
+                    "ammo": 1,
+                    "magazine": 1,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": 23.0,
+                        "y": 0.0,
+                        "z": -13.0
+                    },
+                    "ammo": 1,
+                    "magazine": 1,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -50.0,
+                        "y": 0.0,
+                        "z": 52.0
+                    },
+                    "ammo": 18,
+                    "magazine": 0,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "moving lane / live outcome",
+            "screen": "Play",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "",
+            "crewOrder": "Hold",
+            "time": 0.9735862016677856,
+            "health": 39.956634521484378,
+            "stamina": 100.0,
+            "heat": 45.0,
+            "arrest": 0.0,
+            "realtime": 104.05493927001953,
+            "aidRemaining": 0.0,
+            "aidOriginDistance": 34.73112869262695,
+            "bleeding": true,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 32.0,
+                "y": 0.034999899566173556,
+                "z": -13.5
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 17.319433212280275,
+                        "y": 0.0,
+                        "z": -11.600512504577637
+                    },
+                    "ammo": 0,
+                    "magazine": 0,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": true,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": 22.24686622619629,
+                        "y": 0.0,
+                        "z": -12.958159446716309
+                    },
+                    "ammo": 0,
+                    "magazine": 0,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": true,
+                    "pursuing": true
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -45.95098876953125,
+                        "y": 0.0,
+                        "z": 51.89887237548828
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": true
+                }
+            ]
+        },
+        {
+            "stage": "guard aid / staged leader casualty and queued report",
+            "screen": "Pause",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "",
+            "crewOrder": "Hold",
+            "time": 0.0,
+            "health": 100.0,
+            "stamina": 100.0,
+            "heat": 0.0,
+            "arrest": 0.0,
+            "realtime": 104.30504608154297,
+            "aidRemaining": 0.0,
+            "aidOriginDistance": 56.08042907714844,
+            "bleeding": false,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 36.0,
+                "y": 0.11999999731779099,
+                "z": -43.0
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": -60.0,
+                        "y": 0.0,
+                        "z": 47.0
+                    },
+                    "ammo": 18,
+                    "magazine": 0,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": false
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -57.0,
+                        "y": 0.0,
+                        "z": 47.0
+                    },
+                    "ammo": 18,
+                    "magazine": 0,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": false
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -50.0,
+                        "y": 0.0,
+                        "z": 52.0
+                    },
+                    "ammo": 18,
+                    "magazine": 0,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": false
+                },
+                {
+                    "id": "yard-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": 28.0,
+                        "y": 0.0,
+                        "z": -13.0
+                    },
+                    "ammo": 18,
+                    "magazine": 5,
+                    "dressings": 1,
+                    "used": 0,
+                    "health": 0.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": false
+                },
+                {
+                    "id": "yard-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": 29.5,
+                        "y": 0.0,
+                        "z": -13.0
+                    },
+                    "ammo": 18,
+                    "magazine": 2,
+                    "dressings": 1,
+                    "used": 0,
+                    "health": 80.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": false
+                },
+                {
+                    "id": "yard-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": 14.0,
+                        "y": 0.0,
+                        "z": -13.0
+                    },
+                    "ammo": 18,
+                    "magazine": 5,
+                    "dressings": 1,
+                    "used": 0,
+                    "health": 80.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": false
+                }
+            ]
+        },
+        {
+            "stage": "guard aid / finite completed recovery",
+            "screen": "Tactics",
+            "selected": "player",
+            "recovery": "",
+            "aidPatient": "",
+            "crewOrder": "Hold",
+            "time": 3.0168159008026125,
+            "health": 100.0,
+            "stamina": 100.0,
+            "heat": 0.0,
+            "arrest": 0.0,
+            "realtime": 107.27980041503906,
+            "aidRemaining": 0.0,
+            "aidOriginDistance": 39.82479476928711,
+            "bleeding": false,
+            "aidSight": true,
+            "bandages": 2,
+            "player": {
+                "x": 35.0,
+                "y": 0.11999999731779099,
+                "z": -19.0
+            },
+            "actors": [
+                {
+                    "id": "citizen-0",
+                    "order": "Hold",
+                    "position": {
+                        "x": -60.0,
+                        "y": 0.0,
+                        "z": 47.0
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": false
+                },
+                {
+                    "id": "citizen-1",
+                    "order": "Hold",
+                    "position": {
+                        "x": -57.0,
+                        "y": 0.0,
+                        "z": 47.0
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": false
+                },
+                {
+                    "id": "citizen-2",
+                    "order": "Hold",
+                    "position": {
+                        "x": -50.0,
+                        "y": 0.0,
+                        "z": 52.85513687133789
+                    },
+                    "ammo": 18,
+                    "magazine": 6,
+                    "dressings": 0,
+                    "used": 0,
+                    "health": 100.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": false
+                },
+                {
+                    "id": "yard-0",
+                    "order": "Incapacitated",
+                    "position": {
+                        "x": 28.0,
+                        "y": 0.0,
+                        "z": -13.0
+                    },
+                    "ammo": 18,
+                    "magazine": 5,
+                    "dressings": 1,
+                    "used": 0,
+                    "health": 25.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": false
+                },
+                {
+                    "id": "yard-1",
+                    "order": "Dressing VALE / WATCH",
+                    "position": {
+                        "x": 29.5,
+                        "y": 0.0,
+                        "z": -13.0
+                    },
+                    "ammo": 18,
+                    "magazine": 2,
+                    "dressings": 0,
+                    "used": 1,
+                    "health": 80.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": false
+                },
+                {
+                    "id": "yard-2",
+                    "order": "Return to post",
+                    "position": {
+                        "x": 14.0,
+                        "y": 0.0,
+                        "z": -13.0
+                    },
+                    "ammo": 18,
+                    "magazine": 5,
+                    "dressings": 1,
+                    "used": 0,
+                    "health": 80.0,
+                    "aid": 0.0,
+                    "seesCrew": false,
+                    "pursuing": false
+                }
+            ]
+        }
+    ],
+    "receipts": [
+        {
+            "stage": "four-family staged handling",
+            "hits": []
+        },
+        {
+            "stage": "delayed retreat / wounded after 0.8 second hesitation",
+            "hits": [
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9706847071647644
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / controller to nearest real cover",
+            "hits": [
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9706847071647644
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / controller to nearest real cover",
+            "hits": [
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9706847071647644
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / controller to nearest real cover",
+            "hits": [
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9706847071647644
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / controller to nearest real cover",
+            "hits": [
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9706847071647644
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / controller to nearest real cover / arrived",
+            "hits": [
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9706847071647644
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "hits": [
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9706847071647644
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "hits": [
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9706847071647644
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "hits": [
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9706847071647644
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "hits": [
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9706847071647644
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "hits": [
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9706847071647644
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "hits": [
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9706847071647644
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "hits": [
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9706847071647644
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "hits": [
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9706847071647644
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "hits": [
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9706847071647644
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "hits": [
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9706847071647644
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / timed self-aid",
+            "hits": [
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9706847071647644
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / final self-aid state",
+            "hits": [
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9706847071647644
+                },
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 5.342159748077393
+                }
+            ]
+        },
+        {
+            "stage": "delayed retreat / around the corner",
+            "hits": [
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9706847071647644
+                },
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 5.342159748077393
+                }
+            ]
+        },
+        {
+            "stage": "depleted officer / player approach",
+            "hits": []
+        },
+        {
+            "stage": "moving lane / live outcome",
+            "hits": [
+                {
+                    "owner": "citizen-1",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9068756103515625
+                },
+                {
+                    "owner": "citizen-0",
+                    "victim": "player",
+                    "kind": 5,
+                    "damage": 30.0,
+                    "time": 0.9735862016677856
+                }
+            ]
+        },
+        {
+            "stage": "guard aid / finite completed recovery",
+            "hits": []
+        }
+    ]
+}

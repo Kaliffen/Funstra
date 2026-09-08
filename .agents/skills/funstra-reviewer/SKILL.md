@@ -20,6 +20,8 @@ Read applicable repo instructions, the [persona index](../../../reviewer-agents/
 
 Use their existing voices and standards without prescribing scores or manufacturing disagreement. Their fictional biographies do not establish real hardware, elapsed play time or experiences in this run.
 
+For every future full review, read and apply [evaluation protocol v2](../../../reviewer-agents/README.md#evaluation-protocol-v2--8-september-2026). The headline is **Game now /10, Slice delivery /10, Evidence %**. Use the profile's fixed category weights, anchored capability scores, explicit outcome deductions and shared caps. No default 7, target 8 or persona score floor. Freeze the release's weighted outcome ledger before testing; include accepted fixes and integration gates, not just the convenient harness assertions. The same panel uses the same outcome weights while reaching its own judgments independently.
+
 Respect the requested stage: an expectations conference does not start tests; a single-reviewer assignment does not launch the whole panel; a review request does not authorize game fixes or publication. Use the release/review ticket as the checkpoint, finding an existing issue before creating one. Record the assigned build, reviewer, phase, evidence locations and next action so another turn can resume.
 
 ## Identify and demonstrate the build
@@ -46,6 +48,8 @@ Maintain a small evidence ledger, with each material finding linked to a run/log
 
 Passing automation does not prove human difficulty, long-term economy, enjoyable input feel or minimum-spec performance. Record measured hardware and timings only when actually observed. A frame cap is not a different hardware test. Quote only dialogue actually present in inspected evidence and distinguish source-only dialogue from dialogue rendered on the route.
 
+Review the present game's quality and completeness as well as the assigned slice. Missing agency, thin people, shallow consequences or an exhausted activity loop must appear as concrete weighted deficits in Game now; calling them prototype limitations or future work does not restore those points. Uncommitted roadmap ideas are not individual missing-scope penalties. Slice delivery separately deducts for undelivered commitments. Treat unverified behavior as an evidence gap, with provisional score bounds where material, rather than inventing success or failure. Use enough current-build evidence to support the whole-game categories; a narrow successful route cannot silently stand for the rest of the game.
+
 For an important uncertainty, replay the smallest existing route that can resolve it. If no route covers it, record a coverage gap or request a narrowly scoped demo hook through the CD/ticket. Do not alter the game's rules to make a review pass. A failed run can support a technical failure finding; a screenshot-only or source-only assessment remains partial if no valid guided run is available. Stop repeated identical failures without new evidence and report the concrete blocker. Missing exploratory control alone is never a blocker for this workflow.
 
 ## File the verdict and continuity
@@ -56,11 +60,12 @@ A full review contains:
 
 - Persona, demo/build identity, date, and method: **guided scripted build review**.
 - The routes actually run, inspected evidence, supporting source/manual checks, and material coverage limits.
-- A readable review in the persona's voice, concrete strengths and concerns, and a justified score using the profile's convention. Scope the score to this demo; do not force a target range or invent long-term experience to justify it.
+- A readable review in the persona's voice, with Game now and Slice delivery ratings kept separate. Include the v2 category ledger (weights, scores, contributions and deficits), committed-outcome ledger (weights, attainment and lost points), evidence coverage, raw/final scores and any binding caps or provisional ranges. Cite evidence for material credit and deductions. Do not infer an 8 from a clean run.
+- The three largest present-game shortcomings and their player impact, not merely the next feature wishes. Give the progress delta on comparable v2 categories/outcomes; the first v2 review establishes a new baseline without converting historical scores.
 - Actionable findings with evidence, reproduction conditions where known, player impact, and a distinction between confirmed bugs, suspected issues, coverage gaps and taste.
 - A concise verdict, what changed since the previous review, and what would merit replay. Nell's comfort judgment and Marcus's actual hardware limits belong here when relevant.
 
-Write a build-specific meeting-memory record with expectations, what was actually learned, unresolved concerns, score changes and the next review's questions. These are versioned project notes, not hidden personal memory. Link the full review and evidence from the review/release ticket. Completion means the guided review and records are delivered, not that the game passed or the user accepted the demo.
+Write a build-specific meeting-memory record with expectations, what was actually learned, unresolved concerns, both ratings, evidence coverage, the largest deductions and the next review's questions. Preserve the rubric version and any comparable progress delta. These are versioned project notes, not hidden personal memory. Link the full review and evidence from the review/release ticket. Completion means the guided review and records are delivered, not that the game passed or the user accepted the demo.
 
 ## Run the conference
 
@@ -68,7 +73,7 @@ The user is the organizer. Use the established conversational format: named spea
 
 **Before the demo:** personas know the announced concept and their recorded previous experiences. Let them express hopes, skepticism and questions in player language. Do not leak new source findings or technical opinions about code they have not reviewed into this scene. Expectations are not verdicts.
 
-**After the guided passes:** each presents its actual verdict and evidence-backed impressions. Let them respond and disagree naturally. Translate implementation details into what they mean to a player; keep commands and raw evidence in the linked reviews. A request for an off-script explanation gets a factual explanation of the harness method, then the conference resumes at its existing stage.
+**After the guided passes:** each presents both ratings, its main numerical deductions and evidence-backed impressions. Make the missing game and the delivered slice equally clear. Let them respond and disagree naturally. Translate implementation details into what they mean to a player; keep commands and raw evidence in the linked reviews. A request for an off-script explanation gets a factual explanation of the harness method, then the conference resumes at its existing stage.
 
 Before concluding, surface whether an unresolved claim warrants another targeted run. Keep revisions attached to the correct build. Consolidate the panel's agreements, disagreements, bugs, coverage limits and suggested improvements for the CD, linking the unedited reviews. Use local repo artifacts for dossiers unless publication is requested. The CD chooses which creative feedback to integrate; reviewers do not rewrite their scores to match that decision. Publishing and human acceptance belong to the wider release loop.
 
@@ -78,7 +83,7 @@ Before concluding, surface whether an unresolved claim warrants another targeted
 
 Use the existing case-file format in [Demo 03's dossier](../../../Docs/funstra-review-dossier-demo03.html). Save one versioned file per demo under `Docs/` (for example `funstra-review-dossier-demo03.html`); preserve Demo 02's original `funstra-review-dossier.html` and all previous demo files. Label each dossier with its demo/build identity and review date. Follow the existing editorial design and keep it readable when opened locally.
 
-Include the four attributed scores and verdicts, faithful summaries linked to full unedited reviews, concrete strengths and concerns, conference agreements and disagreements, evidence links and coverage limits. Keep confirmed bugs, suspected issues and creative suggestions distinct. Include a CD disposition section with accepted/deferred/declined feedback and ticket links; leave decisions pending until the CD actually makes them. Preserve review-build identity when later fixes or replays target a different candidate.
+Include each reviewer's attributed Game now and Slice delivery ratings, Evidence %, material deductions/caps and verdict, with faithful summaries linked to full unedited reviews. Include concrete strengths and concerns, conference agreements and disagreements, evidence links and coverage limits. Do not collapse the two ratings into a single favorable number. Keep confirmed bugs, suspected issues and creative suggestions distinct. Include a CD disposition section with accepted/deferred/declined feedback and ticket links; leave decisions pending until the CD actually makes them. Preserve review-build identity when later fixes or replays target a different candidate. Existing dossiers keep their original score semantics; any later v2 addendum is labelled separately.
 
 Open the finished HTML in a browser and inspect its rendered layout, navigation and evidence/review links before handing it over. Provide a clickable local file link and attach it to the release/review ticket. The site configuration selects the current demo dossier for publication as `dossier.html`; the CD's authorized publication stage must verify the published dossier matches the intended review cycle. Creating a local dossier does not itself publish it.
 

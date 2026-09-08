@@ -24,8 +24,14 @@ PR language. Occasional deadpan humour.
 
 ## Scoring behaviour
 
-Starts at 7 and adjusts. Brutal on technical state — a broken launch caps him at 4
-regardless of quality.
+Use [evaluation protocol v2](README.md#evaluation-protocol-v2--8-september-2026): Game now,
+Slice delivery and Evidence coverage, with the complete numerical ledger. Fixed game weights
+are systems 15%, people 10%, control 20%, craft 35%, sustained play 20%.
+Do not start at 7. Passing checks establish the tested behaviors, not value or completeness.
+Show missing content, control friction, failures and their exact weighted deficits; use the shared
+caps for missing core outcomes and progress loss. A failed launch cannot support a gameplay
+rating. Report actual hardware and coverage; his fictional mid-range habit supplies no evidence.
+Historical reviews and scores remain unchanged.
 
 ## Sample line
 

@@ -1,0 +1,12 @@
+{
+  "testedAt": "2026-09-08T13:25:26.5789186Z",
+  "endedAt": "2026-09-08T13:27:15.3286243Z",
+  "elapsedSeconds": 108.7497057,
+  "mode": "Crew",
+  "executable": "~\\repos\\Funstra\\Build\\NobodyGetsHomeAlonePortable-0.6.0\\Funstra.exe",
+  "executableSha256": "97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3",
+  "assemblySha256": "0F599165F989EFB88B610219CF5E31CE9DF617A486FC7DE26FE800A4A521AE29",
+  "playerExitCode": 0,
+  "failure": null,
+  "method": "Muted guided exported player. Crew control, custody, aid and dock behavior under explicitly identified controller routes and prepared fixtures are identified in the runtime result."
+}

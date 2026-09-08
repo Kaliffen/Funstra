@@ -1,0 +1,172 @@
+{
+    "missionOutcome": "component-returned",
+    "method": "One live finite-equipment attempt. Incapacitated actors stay at recorded positions unless production emergency recovery occurred. Abandoned flags are actual saved game flags; an unrecovered actor can be left behind without a clinic abandonment command. Mission loss is permitted. No new casualty fixtures or permadeath mechanism. Player ammunition arrays list pistol, shotgun, SMG, rifle totals including magazines. Both snapshots retain raw positions. Reload comparison allows only uncarried protagonist upward Y clearance from 0 to 0.1201 world units for existing Teleport resume placement; all other fields and coordinates remain exact. A protagonist carried by another actor receives no clearance tolerance.",
+    "componentReturned": true,
+    "reloadVerified": true,
+    "totalDefeat": false,
+    "incapacitatedDuringCombat": [],
+    "beforeReload": {
+        "selected": "player",
+        "componentOwner": "rell-workshop",
+        "acquisition": "fight",
+        "recoverySummary": "",
+        "componentReturned": true,
+        "playerOwnedMask": 16,
+        "playerAmmo": [
+            0,
+            0,
+            38,
+            0
+        ],
+        "playerMagazines": [
+            0,
+            0,
+            8,
+            0
+        ],
+        "actors": [
+            {
+                "id": "player",
+                "order": "Hold",
+                "carrying": "",
+                "memory": "PLAYER stayed and used a dressing on me.",
+                "position": {
+                    "x": 60.690704345703128,
+                    "y": 0.03499995917081833,
+                    "z": 18.46839714050293
+                },
+                "health": 41.53655242919922,
+                "bleeding": false,
+                "abandoned": false,
+                "armed": false,
+                "holstered": true,
+                "bandages": 1,
+                "weapon": 1,
+                "ammo": 0,
+                "magazine": 0
+            },
+            {
+                "id": "neri",
+                "order": "Follow",
+                "carrying": "",
+                "memory": "",
+                "position": {
+                    "x": 56.02656173706055,
+                    "y": 0.0,
+                    "z": 18.165468215942384
+                },
+                "health": 100.0,
+                "bleeding": false,
+                "abandoned": false,
+                "armed": true,
+                "holstered": true,
+                "bandages": 3,
+                "weapon": 2,
+                "ammo": 11,
+                "magazine": 5
+            },
+            {
+                "id": "rell",
+                "order": "Move",
+                "carrying": "",
+                "memory": "Prepared full-crew approach fixture; recruitment staged.",
+                "position": {
+                    "x": 57.32426834106445,
+                    "y": 0.0,
+                    "z": 18.717641830444337
+                },
+                "health": 100.0,
+                "bleeding": false,
+                "abandoned": false,
+                "armed": true,
+                "holstered": true,
+                "bandages": 1,
+                "weapon": 5,
+                "ammo": 15,
+                "magazine": 5
+            }
+        ]
+    },
+    "afterReload": {
+        "selected": "player",
+        "componentOwner": "rell-workshop",
+        "acquisition": "fight",
+        "recoverySummary": "",
+        "componentReturned": true,
+        "playerOwnedMask": 16,
+        "playerAmmo": [
+            0,
+            0,
+            38,
+            0
+        ],
+        "playerMagazines": [
+            0,
+            0,
+            8,
+            0
+        ],
+        "actors": [
+            {
+                "id": "player",
+                "order": "Hold",
+                "carrying": "",
+                "memory": "PLAYER stayed and used a dressing on me.",
+                "position": {
+                    "x": 60.690704345703128,
+                    "y": 0.15499995648860932,
+                    "z": 18.46839714050293
+                },
+                "health": 41.53655242919922,
+                "bleeding": false,
+                "abandoned": false,
+                "armed": false,
+                "holstered": true,
+                "bandages": 1,
+                "weapon": 1,
+                "ammo": 0,
+                "magazine": 0
+            },
+            {
+                "id": "neri",
+                "order": "Follow",
+                "carrying": "",
+                "memory": "",
+                "position": {
+                    "x": 56.02656173706055,
+                    "y": 0.0,
+                    "z": 18.165468215942384
+                },
+                "health": 100.0,
+                "bleeding": false,
+                "abandoned": false,
+                "armed": true,
+                "holstered": true,
+                "bandages": 3,
+                "weapon": 2,
+                "ammo": 11,
+                "magazine": 5
+            },
+            {
+                "id": "rell",
+                "order": "Move",
+                "carrying": "",
+                "memory": "Prepared full-crew approach fixture; recruitment staged.",
+                "position": {
+                    "x": 57.32426834106445,
+                    "y": 0.0,
+                    "z": 18.717641830444337
+                },
+                "health": 100.0,
+                "bleeding": false,
+                "abandoned": false,
+                "armed": true,
+                "holstered": true,
+                "bandages": 1,
+                "weapon": 5,
+                "ammo": 15,
+                "magazine": 5
+            }
+        ]
+    }
+}

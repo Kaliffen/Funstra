@@ -1,0 +1,66 @@
+[
+  {
+    "route": "crew",
+    "startedAt": "2026-09-08T12:24:55.5592292Z",
+    "endedAt": "2026-09-08T12:26:44.2292518Z",
+    "status": "PASS",
+    "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+    "error": null
+  },
+  {
+    "route": "approach",
+    "startedAt": "2026-09-08T12:26:44.2315285Z",
+    "endedAt": "2026-09-08T12:30:26.2511086Z",
+    "status": "PASS",
+    "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+    "error": null
+  },
+  {
+    "route": "pressure",
+    "startedAt": "2026-09-08T12:30:26.2530711Z",
+    "endedAt": "2026-09-08T12:32:47.3419576Z",
+    "status": "PASS",
+    "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+    "error": null
+  },
+  {
+    "route": "arms",
+    "startedAt": "2026-09-08T12:32:47.3445600Z",
+    "endedAt": "2026-09-08T12:33:29.7283746Z",
+    "status": "PASS",
+    "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+    "error": null
+  },
+  {
+    "route": "residents",
+    "startedAt": "2026-09-08T12:33:29.7318577Z",
+    "endedAt": "2026-09-08T12:33:50.5570071Z",
+    "status": "PASS",
+    "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+    "error": null
+  },
+  {
+    "route": "streets",
+    "startedAt": "2026-09-08T12:33:50.5584041Z",
+    "endedAt": "2026-09-08T12:36:10.7254612Z",
+    "status": "PASS",
+    "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+    "error": null
+  },
+  {
+    "route": "police",
+    "startedAt": "2026-09-08T12:36:10.7279094Z",
+    "endedAt": "2026-09-08T12:36:18.3742007Z",
+    "status": "PASS",
+    "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+    "error": null
+  },
+  {
+    "route": "legacy",
+    "startedAt": "2026-09-08T12:36:18.3758639Z",
+    "endedAt": "2026-09-08T12:39:50.5290093Z",
+    "status": "PASS",
+    "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+    "error": null
+  }
+]

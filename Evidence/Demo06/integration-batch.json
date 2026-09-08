@@ -1,0 +1,26 @@
+[
+  {
+    "route": "crew",
+    "startedAt": "2026-09-08T13:07:14.9639407Z",
+    "endedAt": "2026-09-08T13:09:03.7057331Z",
+    "status": "PASS",
+    "assemblySha256": "0F599165F989EFB88B610219CF5E31CE9DF617A486FC7DE26FE800A4A521AE29",
+    "error": null
+  },
+  {
+    "route": "police",
+    "startedAt": "2026-09-08T13:09:03.7091965Z",
+    "endedAt": "2026-09-08T13:09:11.3713126Z",
+    "status": "PASS",
+    "assemblySha256": "0F599165F989EFB88B610219CF5E31CE9DF617A486FC7DE26FE800A4A521AE29",
+    "error": null
+  },
+  {
+    "route": "legacy",
+    "startedAt": "2026-09-08T13:09:11.3748014Z",
+    "endedAt": "2026-09-08T13:12:43.9713342Z",
+    "status": "PASS",
+    "assemblySha256": "0F599165F989EFB88B610219CF5E31CE9DF617A486FC7DE26FE800A4A521AE29",
+    "error": null
+  }
+]

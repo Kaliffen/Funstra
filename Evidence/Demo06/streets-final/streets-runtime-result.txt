@@ -1,0 +1,152 @@
+PASS
+PASS: Streets runner uses isolated save and normal Old Port simulation
+PASS: All scenario locations are walkable
+PASS: Navigable route to (-27.00, 0.00, -12.00)
+PASS: Controller arrived beside interaction at (-27.00, 0.00, -12.00)
+PASS: Actual interaction opens Neri conversation
+PASS: Navigable route to (-26.00, 0.00, 11.00)
+PASS: Controller arrived beside interaction at (-26.00, 0.00, 11.00)
+PASS: Actual interaction opens collector terms
+PASS: Peaceful release pays collector
+PASS: Navigable route to (-28.00, 0.00, 3.00)
+PASS: Controller arrived beside interaction at (-28.00, 0.00, 4.00)
+PASS: Actual paid hold collects medicine without hostility
+PASS: Collected stock disappears from world rendering
+PASS: Navigable route to (-27.00, 0.00, -12.00)
+PASS: Controller arrived beside interaction at (-27.00, 0.00, -12.00)
+PASS: Clinic stock and trust unlock Neri partnership
+PASS: Navigable route to (-11.00, 0.00, -48.00)
+PASS: Controller arrived beside interaction at (-11.00, 0.00, -48.00)
+PASS: Companion navigates streets to follow player
+PASS: Nearby companion autonomously stabilizes bleeding with finite supplies
+PASS: Hold order stops companion movement
+PASS: Tactical pause stops world transactions and wounds
+PASS: Reload preserves companion, orders, stock and player position
+PASS: New save format preserves loose cargo across session endings
+PASS: Companion near home does not block cargo extraction
+PASS: Moving during extraction resets the hold without losing cargo
+PASS: Becoming wanted cancels an in-progress extraction
+PASS: Interrupted extraction can be retried and pays exactly once
+PASS: Pistol trigger spends a round without instant damage
+PASS: Traveling pistol round wounds target and records witnessed offense
+PASS: Guard trigger also has no instant damage
+PASS: Guard projectile travels through clear sight and causes bleeding
+PASS: Firing toward a building spends a physical round
+PASS: Building stops the traveling round before the guard
+PASS: Guard cannot shoot player through a building
+PASS: Melee fixture places guard and companion on clear walkable ground
+PASS: Empty-magazine guard strikes nearby visible companion rather than distant player
+PASS: Visible companion remains a valid melee target while player is out of sight
+PASS: Medicine case separates two walkable positions within melee range
+PASS: Guard cannot strike nearby companion through physical medicine case
+PASS: Clearing immediate heat preserves collector memory
+PASS: Bandage stops bleeding without fully healing wounds
+PASS: Actual defeat produces recovery screen, debt and recoverable shipment
+PASS: Defeat returns player to a usable bed
+PASS: Penniless post-sale recovery remains available
+PASS: Actual E interaction stabilizes downed companion
+PASS: Complete runtime outcome sequence conserves all medicine
+PASS: Actual unobserved hold creates missing stock without identifying thief
+PASS: Reload retains stolen medicine and distinct witness knowledge
+PASS: Shared melee rules let residents be harmed and call police
+PASS: Resident wounds and reaction survive reload
+PASS: Live confrontation uses the clear route beside physical medicine cover
+PASS: Live gunfight wounds player and incapacitates guard without scripted damage
+PASS: Three actual pistol shots spend three rounds
+PASS: Navigable route to (-28.00, 0.00, 3.00)
+PASS: Controller arrived beside interaction at (-28.00, 0.00, 4.00)
+PASS: Violence creates access to the same medicine and a lasting identified offense
+PASS: Reload preserves combat outcome, carried medicine and grievance
+PASS: Final scenario save remains valid
+PASS: Recycling bin blocks navigation at (-37.50, 0.00, -26.00)
+PASS: Embedded saved/spawn position resolves outside bin
+PASS: Recycling bin blocks navigation at (28.00, 0.00, -16.00)
+PASS: Embedded saved/spawn position resolves outside bin
+PASS: Recycling bin blocks navigation at (-28.00, 0.00, 10.00)
+PASS: Embedded saved/spawn position resolves outside bin
+PASS: Recycling bin blocks navigation at (29.00, 0.00, 10.00)
+PASS: Embedded saved/spawn position resolves outside bin
+PASS: Recycling bin blocks navigation at (-28.00, 0.00, 36.00)
+PASS: Embedded saved/spawn position resolves outside bin
+PASS: Recycling bin blocks navigation at (32.00, 0.00, 36.00)
+PASS: Embedded saved/spawn position resolves outside bin
+PASS: Real player controller cannot enter or step onto recycling bin
+PASS: Refuge opens from an earned partnership
+PASS: Purchased refuge changes the rendered street
+PASS: Refuge gives practical recovery without adding debt
+PASS: Exported player reload retains room, care policy and cat relationship
+PASS: Traffic car 0 completes sustained routes without intersection deadlock: 455.3188m at (3.00, 0.00, -14.30)
+PASS: Traffic car 1 completes sustained routes without intersection deadlock: 451.2494m at (-3.00, 0.00, 1.13)
+PASS: Traffic car 2 completes sustained routes without intersection deadlock: 455.9298m at (-6.65, 0.00, -40.00)
+PASS: Traffic car 3 completes sustained routes without intersection deadlock: 439.1183m at (31.10, 0.00, 12.00)
+PASS: Car brakes before pedestrian and preserves physical clearance
+PASS: Car resumes after pedestrian clears lane
+PASS: Moving car updates both route obstacle and physical collider
+PASS: Tactical/menu pause also freezes traffic
+PASS: Live companion routes around solid recycling bin without clipping
+PASS: Cat interaction records familiarity
+PASS: Traffic regression runs only in an isolated smoke save
+PASS: Traffic regression requires enabled campaign district simulation
+PASS: Traffic regression uses the four actual Old Port cars
+PASS: Actual Update traffic approaches then yields to player occupying its lane
+PASS: World clock progresses while actual Update traffic waits
+PASS: Pause freezes both waiting traffic and district time
+PASS: Three accelerated minutes preserve district elapsed time during traffic blockage
+PASS: Clinic transactions continue and medicine stays conserved while a road is blocked
+PASS: Sustained waiting car keeps matching physical and navigation obstruction
+PASS: Waiting physical collider and navigation footprint share position
+PASS: Car resumes normal travel after sustained blocker leaves without reset
+PASS: Traffic recovery preserves valid district transactions and inventory
+PASS: Resumed car collider follows updated navigation footprint
+PASS: Isolated save retains elapsed district outcome after traffic obstruction
+METHOD: route uses actual Update/controller/traffic/citizens; yard squad suspended for traversal. Later weapon/persistence probes use paused explicit fixtures.
+PASS: Navigable route to (-17.00, 0.00, -35.00)
+PASS: Controller arrived beside interaction at (-17.00, 0.00, -35.00)
+PASS: Navigable route to (-7.00, 0.00, -13.00)
+PASS: Controller arrived beside interaction at (-7.00, 0.00, -13.00)
+PASS: Navigable route to (8.00, 0.00, 13.00)
+PASS: Controller arrived beside interaction at (8.00, 0.00, 13.00)
+PASS: Navigable route to (8.00, 0.00, 39.00)
+PASS: Controller arrived beside interaction at (8.00, 0.00, 39.00)
+PASS: Navigable route to (30.50, 0.00, 39.00)
+PASS: Controller arrived beside interaction at (30.00, 0.00, 39.00)
+PASS: Public quay approach reaches yard while service gate remains closed
+PASS: Navigable route to (8.00, 0.00, 39.00)
+PASS: Controller arrived beside interaction at (8.00, 0.00, 39.00)
+PASS: Navigable route to (8.00, 0.00, 13.00)
+PASS: Controller arrived beside interaction at (8.00, 0.00, 13.00)
+PASS: Navigable route to (30.00, 0.00, 23.00)
+PASS: Controller arrived beside interaction at (30.00, 0.00, 23.00)
+PASS: Closed normal-campaign gate prevents direct service passage
+PASS: Normal-campaign service gate can be opened safely
+PASS: Navigable route to (30.00, 0.00, 37.00)
+PASS: Controller arrived beside interaction at (30.00, 0.00, 37.00)
+PASS: Production controller traverses open service approach into actual yard
+PASS: Normal campaign binds its three persistent yard guards
+PASS: Quay fixture has actual clear sight to persistent yard guard
+PASS: Campaign pistol spends ammo and creates a traveling projectile before damage
+PASS: Campaign in-flight bullet exists before save
+PASS: Campaign reload preserves in-flight projectile position/count
+PASS: Reload preserves player and yard guard magazines without free refills
+PASS: Reload restores open physical gate and persisted gate state
+PASS: Reloaded campaign bullet arrives once and spends itself
+PASS: Second reload does not repeat damage, pay a reward or farm ammunition
+PASS: Campaign shotgun launches separately simulated pellets
+PASS: Shotgun produces a distinct multi-pellet hit on same actual quay sightline
+PASS: Clear campaign gate closes after route
+PASS: Final reload preserves yard casualties/ammo and closed gate without respawning rewards
+PASS: Integrated yard campaign state remains valid after weapon and gate round trips
+YARD LIVE: elapsed=0.00 shots=0 projectiles=0 playerHP=100.00 order=Hold directSight=False geometricSight=True contactAge=0.00 guardAmmo=18 magazine=6 player=(13.00, 0.12, 39.00) guard=(21.00, 0.00, 39.00)
+YARD LIVE: elapsed=0.51 shots=1 projectiles=1 playerHP=100.00 order=Cover approach directSight=True geometricSight=True contactAge=0.00 guardAmmo=17 magazine=5 player=(13.00, 0.03, 39.00) guard=(21.00, 0.00, 39.00)
+YARD LIVE: elapsed=1.04 shots=1 projectiles=1 playerHP=100.00 order=Cover approach directSight=True geometricSight=True contactAge=0.00 guardAmmo=17 magazine=5 player=(13.00, 0.03, 39.00) guard=(21.00, 0.00, 39.00)
+YARD LIVE: elapsed=1.54 shots=1 projectiles=0 playerHP=100.00 order=Cover approach directSight=True geometricSight=True contactAge=0.00 guardAmmo=17 magazine=5 player=(13.00, 0.03, 39.00) guard=(21.00, 0.00, 39.00)
+YARD LIVE: elapsed=2.05 shots=2 projectiles=1 playerHP=100.00 order=Cover approach directSight=True geometricSight=True contactAge=0.00 guardAmmo=16 magazine=4 player=(13.00, 0.03, 39.00) guard=(21.00, 0.00, 39.00)
+YARD LIVE: elapsed=2.58 shots=2 projectiles=0 playerHP=100.00 order=Cover approach directSight=True geometricSight=True contactAge=0.00 guardAmmo=16 magazine=4 player=(13.00, 0.03, 39.00) guard=(21.00, 0.00, 39.00)
+YARD LIVE: elapsed=3.11 shots=3 projectiles=1 playerHP=100.00 order=Cover approach directSight=True geometricSight=True contactAge=0.00 guardAmmo=15 magazine=3 player=(13.00, 0.03, 39.00) guard=(21.00, 0.00, 39.00)
+PASS: Live normal-yard watchman actually fires during bounded acquisition window
+PASS: Live normal-yard enemy Update fires traveling shots that wound player under actual frame timing
+PASS: Navigable route to (8.00, 0.00, 39.00)
+PASS: Controller arrived beside interaction at (8.00, 0.00, 39.00)
+PASS: Navigable route to (8.00, 0.00, 13.00)
+PASS: Controller arrived beside interaction at (8.00, 0.00, 13.00)
+PASS: Controller can withdraw from live yard onto the public route

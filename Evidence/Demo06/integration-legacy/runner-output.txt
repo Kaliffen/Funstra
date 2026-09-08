@@ -1,0 +1,91 @@
+PASS
+PASS: Agent starts on walkable street: Patrol officer
+PASS: Agent starts on walkable street: Patrol officer
+PASS: Agent starts on walkable street: Patrol officer
+PASS: Agent starts on walkable street: Resident
+PASS: Agent starts on walkable street: Resident
+PASS: Agent starts on walkable street: Resident
+PASS: Agent starts on walkable street: Resident
+PASS: Agent starts on walkable street: Resident
+PASS: Agent starts on walkable street: Resident
+PASS: Agent starts on walkable street: Resident
+PASS: Agent starts on walkable street: Resident
+PASS: Navigable route to (-17.00, 0.00, -35.00)
+PASS: Controller arrived beside interaction at (-17.00, 0.00, -35.00)
+PASS: Mara dialogue opens in interaction range
+PASS: Navigable route to (32.00, 0.00, -13.50)
+PASS: Controller arrived beside interaction at (32.00, 0.00, -12.00)
+PASS: Actual hold interaction acquired job 1
+PASS: Navigable route to (-17.00, 0.00, -35.00)
+PASS: Controller arrived beside interaction at (-17.00, 0.00, -35.00)
+PASS: Delivery advances job 1
+PASS: Delivery offers upgrade
+PASS: Permanent perk selected
+PASS: First actual Mara delivery advances standing to RUNNER
+PASS: Navigable route to (-31.00, 0.00, 13.00)
+PASS: Controller arrived beside interaction at (-31.00, 0.00, 14.00)
+PASS: Actual hold interaction acquired job 2
+PASS: Navigable route to (-17.00, 0.00, -35.00)
+PASS: Controller arrived beside interaction at (-17.00, 0.00, -35.00)
+PASS: Delivery advances job 2
+PASS: Delivery offers upgrade
+PASS: Permanent perk selected
+PASS: Navigable route to (28.00, 0.00, 39.00)
+PASS: Controller arrived beside interaction at (29.00, 0.00, 39.00)
+PASS: Actual hold interaction acquired job 3
+PASS: Depot theft always triggers alarm
+PASS: Wanted player cannot deliver goods
+PASS: Navigable route to (-17.00, 0.00, -35.00)
+PASS: Controller arrived beside interaction at (-17.00, 0.00, -35.00)
+PASS: Delivery advances job 3
+PASS: Three jobs reach ending with $740
+PASS: Completed run persists and reloads
+PASS: Completed campaign continues into free roam
+PASS: New cargo run starts with empty six-slot bag
+PASS: Navigable route to (40.00, 0.00, -12.50)
+PASS: Controller arrived beside interaction at (40.00, 0.00, -11.00)
+PASS: Actual hold interaction collected cargo site 0
+PASS: Navigable route to (-40.50, 0.00, 15.00)
+PASS: Controller arrived beside interaction at (-39.00, 0.00, 15.00)
+PASS: Actual hold interaction collected cargo site 1
+PASS: Two cargo sites add $170 and five weight to bag
+PASS: Loaded cargo reduces movement speed
+PASS: Cargo capacity refuses oversized pickup without changing bag
+PASS: Navigable route to (-11.00, 0.00, -48.00)
+PASS: Controller arrived beside interaction at (-11.00, 0.00, -48.00)
+PASS: Actual extraction banks cargo once and clears bag
+PASS: Banked cargo and successful run persist
+PASS: Cool player opens safehouse management
+PASS: Satchel purchase costs $180 and expands bag to nine
+PASS: Purchased satchel cannot charge player again
+PASS: Navigable route to (39.00, 0.00, 36.50)
+PASS: Controller arrived beside interaction at (39.00, 0.00, 38.00)
+PASS: Actual hold interaction collected cargo site 2
+PASS: Alarmed cargo pickup creates heat
+PASS: Heat blocks safehouse extraction
+PASS: Heat blocks opening safehouse
+PASS: Extraction requires a sustained hold
+PASS: Releasing interaction resets extraction without banking
+PASS: Second extraction banks alarmed cargo after heat clears
+PASS: Reload preserves satchel and secured cash but clears loose cargo
+PASS: Completed and reloaded Mara arc retains CONNECTED standing in free roam
+PASS: Officer sees and pursues wanted player
+PASS: Building interrupts officer line of sight
+PASS: Unseen player does not update search location
+PASS: Unseen heat expires
+PASS: Arrest check begins with loose cargo
+PASS: Arrest fines cash, removes goods and preserves retryable job
+PASS: Actual arrest confiscates loose cargo
+PASS: Arrest returns player to safehouse
+PASS: Pause freezes simulation
+PASS: Town agent walks its route: Patrol officer
+PASS: Town agent walks its route: Patrol officer
+PASS: Town agent walks its route: Patrol officer
+PASS: Town agent walks its route: Resident
+PASS: Town agent walks its route: Resident
+PASS: Town agent walks its route: Resident
+PASS: Town agent walks its route: Resident
+PASS: Town agent walks its route: Resident
+PASS: Town agent walks its route: Resident
+PASS: Town agent walks its route: Resident
+PASS: Town agent walks its route: Resident

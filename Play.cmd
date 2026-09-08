@@ -1,2 +1,2 @@
 @echo off
-start "Funstra Pressure and Escape" "%~dp0Build\PressureEscape\Funstra.exe"
+start "Funstra / Nobody Gets Home Alone" "%~dp0Build\NobodyGetsHomeAlone\Funstra.exe"

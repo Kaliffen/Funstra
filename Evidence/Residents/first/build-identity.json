@@ -1,0 +1,12 @@
+{
+  "testedAt": "2026-09-08T09:51:51.9942106Z",
+  "endedAt": "2026-09-08T09:52:04.9510916Z",
+  "elapsedSeconds": 12.956881,
+  "mode": "Residents",
+  "executable": "~\\repos\\Funstra\\Build\\OldPortUnderPressure\\Funstra.exe",
+  "executableSha256": "97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3",
+  "assemblySha256": "B9E9332138CE2E8FB3B1EBDA1349DCBF29DED664EE2EC0E63E03AA9EDC2770EA",
+  "playerExitCode": 1,
+  "failure": "Resident player validation failed.",
+  "method": "Muted guided exported player. Real resident behavior under explicitly staged local incidents are identified in the runtime result."
+}

@@ -1,0 +1,13 @@
+METHOD: actual rendered Update route, clinic-market-public quay-service gate; yard AI suspended for traversal, normal citizens/traffic/district active. Unscaled frame deltas include scheduling and frame caps; these are not isolated CPU/GPU timings.
+GPU: NVIDIA GeForce RTX 4090
+CPU: Intel(R) Core(TM) i9-14900KF
+Resolution: 1280x720
+Frame cap: 30; vSync: 0
+Samples: 1618
+p50 ms: 33.334
+p95 ms: 33.341
+max ms: 48.629
+Unity allocated memory bytes (endpoint): 113482063
+Actors: 18; cars: 4
+Funstra processes observed: 1
+LIMIT: only this available machine. Other running game processes may compete for CPU/GPU; no minimum-spec or isolated benchmark claim. No Demo03 matched baseline comparison in this report.

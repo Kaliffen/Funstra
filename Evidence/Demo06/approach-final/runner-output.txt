@@ -1,0 +1,127 @@
+PASS
+METHOD: Muted exported normal campaign. Live yard, citizens, police, traffic and crew movement. No hidden flags, relocated guards, health boosts, ammunition refill or deleted opponents. Solo and Neri approaches use actual selected controller behind initial south-facing watch. Full crew uses explicitly staged recruitment and $800, finite store purchases/transfers, movement orders, Engage and guided protagonist trigger calls; equipment remains finite. Menu pauses are ordinary tactical pause. No human play claim.
+PASS: Independent crew-approach runner is enabled and muted
+PASS: Fresh live yard has three ordinary guards and ordinary protagonist health
+METHOD: unseen approach follows x=-8 west of Vale's 28m rifle sight radius, then crosses behind the watch at z=48. z=46 arrival tolerance could enter the yard with remembered central-street contact; z=50 intersects the north garage. No contacts or sight flags are reset. Every-frame first sight/contact transitions and nearby quarter-second samples record facing and actual controller waypoint.
+PASS: Crew route exists for player to (-8.00, 0.00, 12.00)
+PASS: Actual selected controller arrived: player at (-8.00, 0.00, 12.00)
+PASS: Crew route exists for player to (-8.00, 0.00, 48.00)
+PASS: Actual selected controller arrived: player at (-8.00, 0.00, 48.00)
+PASS: Crew route exists for player to (30.00, 0.00, 48.00)
+PASS: Actual selected controller arrived: player at (30.00, 0.00, 48.00)
+PASS: Crew route exists for player to (30.00, 0.00, 43.00)
+PASS: Actual selected controller arrived: player at (30.00, 0.00, 43.00)
+PASS: North loading bay provides a real unseen pickup position for solo
+PASS: Actual held pickup gives sole component to player
+PASS: Unpaid solo pickup remains unobserved through actual hold duration
+PASS: Crew route exists for player to (30.00, 0.00, 48.00)
+PASS: Actual selected controller arrived: player at (30.00, 0.00, 48.00)
+PASS: Crew route exists for player to (-8.00, 0.00, 48.00)
+PASS: Actual selected controller arrived: player at (-8.00, 0.00, 48.00)
+PASS: Crew route exists for player to (-8.00, 0.00, 12.00)
+PASS: Actual selected controller arrived: player at (-8.00, 0.00, 12.00)
+PASS: Crew route exists for player to (52.00, 0.00, 12.00)
+PASS: Actual selected controller arrived: player at (52.00, 0.00, 12.00)
+PASS: Crew route exists for player to (61.00, 0.00, 18.50)
+PASS: Actual selected controller arrived: player at (61.00, 0.00, 18.50)
+PASS: Unobserved solo extraction provokes no yard gunfire or collector injury
+PASS: Unseen solo controller returns the same component to live Rell
+PASS: Unseen solo outcome persists without component respawn
+PASS: Fresh live yard has three ordinary guards and ordinary protagonist health
+METHOD: unseen approach follows x=-8 west of Vale's 28m rifle sight radius, then crosses behind the watch at z=48. z=46 arrival tolerance could enter the yard with remembered central-street contact; z=50 intersects the north garage. No contacts or sight flags are reset. Every-frame first sight/contact transitions and nearby quarter-second samples record facing and actual controller waypoint.
+METHOD: Neri pair recruitment is explicitly staged through finite medicine TakeShipment/Donate/Recruit APIs; Neri's actual controller collects while protagonist holds on the outer street. No medicine retrieval journey is claimed.
+PASS: Neri pair fixture earns existing partnership through finite donation
+PASS: Neri receives actual west-spine movement order outside rifle range
+PASS: Crew route exists for player to (-8.00, 0.00, 12.00)
+PASS: Actual selected controller arrived: player at (-8.00, 0.00, 12.00)
+PASS: Crew route exists for player to (-8.00, 0.00, 48.00)
+PASS: Actual selected controller arrived: player at (-8.00, 0.00, 48.00)
+PASS: Crew route exists for player to (-8.00, 0.00, 45.00)
+PASS: Actual selected controller arrived: player at (-8.00, 0.00, 45.00)
+PASS: Crew route exists for player to (-12.00, 0.00, 45.00)
+PASS: Actual selected controller arrived: player at (-12.00, 0.00, 45.00)
+PASS: Neri takes actual control while protagonist holds north street
+PASS: Crew route exists for neri to (30.00, 0.00, 48.00)
+PASS: Actual selected controller arrived: neri at (30.00, 0.00, 48.00)
+PASS: Crew route exists for neri to (30.00, 0.00, 43.00)
+PASS: Actual selected controller arrived: neri at (30.00, 0.00, 43.00)
+PASS: North loading bay provides a real unseen pickup position for neri-pair
+PASS: Actual held pickup gives sole component to neri
+PASS: Unpaid neri-pair pickup remains unobserved through actual hold duration
+PASS: Crew route exists for neri to (30.00, 0.00, 48.00)
+PASS: Actual selected controller arrived: neri at (30.00, 0.00, 48.00)
+PASS: Crew route exists for neri to (-8.00, 0.00, 48.00)
+PASS: Actual selected controller arrived: neri at (-8.00, 0.00, 48.00)
+PASS: Crew route exists for neri to (-8.00, 0.00, 12.00)
+PASS: Actual selected controller arrived: neri at (-8.00, 0.00, 12.00)
+PASS: Crew route exists for neri to (52.00, 0.00, 12.00)
+PASS: Actual selected controller arrived: neri at (52.00, 0.00, 12.00)
+PASS: Crew route exists for neri to (61.00, 0.00, 18.50)
+PASS: Actual selected controller arrived: neri at (61.00, 0.00, 18.50)
+PASS: Unobserved neri-pair extraction provokes no yard gunfire or collector injury
+PASS: Neri's completed controller journey did not move the held protagonist
+PASS: Unseen neri-pair controller returns the same component to live Rell
+PASS: Unseen neri-pair outcome persists without component respawn
+PASS: Fresh live yard has three ordinary guards and ordinary protagonist health
+METHOD: full crew fixture grants recruitment only and $800 purchasing money. Neri's existing pistol18 remains; Rell receives a purchased rifle20 through physical handoff; protagonist buys SMG48. Initial magazines use paused production reload steps as equipment preparation. All actors retain ordinary fresh health. Travel, assembly, firing, losses, field aid and final component custody use live production behavior; no opponent is removed or its AI disabled.
+PASS: Full-crew fixture recruits Neri via finite clinic donation
+METHOD: AP-rifle-dealer opens the real four-row dealer UI as an explicitly staged screen fixture before purchases; it does not claim controller travel to Sella.
+PASS: Finite dealer sells one rifle for Rell
+PASS: Finite dealer sells rifle packet 1
+PASS: Finite dealer sells rifle packet 2
+PASS: Finite dealer sells rifle packet 3
+PASS: Finite dealer sells rifle packet 4
+PASS: Rifle begins production magazine load
+PASS: Finite dealer sells one SMG for protagonist
+PASS: Finite dealer sells SMG packet 1
+PASS: Finite dealer sells SMG packet 2
+PASS: Finite dealer sells SMG packet 3
+PASS: Finite dealer sells SMG packet 4
+PASS: SMG begins production magazine load
+PASS: Crew route exists for player to (61.00, 0.00, 18.50)
+PASS: Actual selected controller arrived: player at (61.00, 0.00, 18.50)
+PASS: Reached handoff transfers purchased rifle and twenty rounds to Rell
+PASS: Crew route exists for player to (52.00, 0.00, 12.00)
+PASS: Actual selected controller arrived: player at (52.00, 0.00, 12.00)
+PASS: Crew route exists for player to (-8.00, 0.00, 12.00)
+PASS: Actual selected controller arrived: player at (-8.00, 0.00, 12.00)
+PASS: Crew route exists for player to (-8.00, 0.00, 48.00)
+PASS: Actual selected controller arrived: player at (-8.00, 0.00, 48.00)
+METHOD: full crew regroups outside the yard, waits eight simulation seconds in normal Update for observed contact to age naturally, then crosses behind the watch. Orders finish at z47 so arrival tolerance does not trigger trespass. Rell passes north of Neri's held position. Protagonist physically takes separate left firing lane(18,49); guided trigger rejects friendly bodies throughout the possible SMG spread/recoil corridor.
+PASS: Outer regroup allows actual yard sighting memory to expire without clearing it
+PASS: Crew route exists for player to (30.00, 0.00, 48.00)
+PASS: Actual selected controller arrived: player at (30.00, 0.00, 48.00)
+PASS: Crew receives separated north approach lanes through real Move orders
+PASS: Crew route exists for player to (30.00, 0.00, 49.00)
+PASS: Actual selected controller arrived: player at (30.00, 0.00, 49.00)
+PASS: Crew route exists for player to (18.00, 0.00, 49.00)
+PASS: Actual selected controller arrived: player at (18.00, 0.00, 49.00)
+PASS: Protagonist reached independent left firing lane with clear geometry past both partners
+PASS: Both armed partners receive actual coordinated Engage orders
+PASS: All three crew members actually spent their own finite ammunition in coordinated fight
+PASS: Owner/victim receipts prove protagonist and partner projectiles hit actual yard opponents
+OUTCOME: Protagonist friendly crew hit receipts = 0; actual collision consequences retained.
+PASS: Actual projectile hits establish hostile yard outcome
+METHOD: combat has no perfect-survival requirement. After the bounded yard attack, attempt the actual held pickup and continue east with living Follow partners. No standing response loop waits for every projectile to disappear. A downed controller is replaced by a real living crew member; bodies, wounds and component custody remain where play left them. Nearby component handoff uses the actual interaction only. An unresolved operation or total defeat is recorded as mission loss, not completion. Total wipe invokes existing emergency recovery, not permadeath.
+PASS: Crew route exists for player to (30.00, 0.00, 49.00)
+PASS: Actual selected controller arrived: player at (30.00, 0.00, 49.00)
+PASS: Crew route exists for player to (30.00, 0.00, 43.00)
+PASS: Actual selected controller arrived: player at (30.00, 0.00, 43.00)
+PASS: East withdrawal waypoint is physically navigable: (44.00, 0.00, 42.00)
+PASS: Crew route exists for player to (44.00, 0.00, 42.00)
+PASS: Actual selected controller arrived: player at (44.00, 0.00, 42.00)
+PASS: East withdrawal waypoint is physically navigable: (52.00, 0.00, 40.00)
+PASS: Crew route exists for player to (52.00, 0.00, 40.00)
+PASS: Actual selected controller arrived: player at (52.00, 0.00, 40.00)
+PASS: East withdrawal waypoint is physically navigable: (52.00, 0.00, 20.00)
+PASS: Crew route exists for player to (52.00, 0.00, 20.00)
+PASS: Actual selected controller arrived: player at (52.00, 0.00, 20.00)
+PASS: Crew route exists for player to (61.00, 0.00, 18.50)
+PASS: Actual selected controller arrived: player at (61.00, 0.00, 18.50)
+PASS: Full-crew combat outcome reached a real terminal location or emergency recovery
+OUTCOME: Full-crew combat outcome component-returned; componentReturned=True; custody=rell-workshop
+OUTCOME: player health=41.53655 bleeding=False at=(60.69, 0.03, 18.47) ammo=0 magazine=0 abandoned=False
+OUTCOME: neri health=100 bleeding=False at=(56.03, 0.00, 18.17) ammo=11 magazine=5 abandoned=False
+OUTCOME: rell health=100 bleeding=False at=(57.32, 0.00, 18.72) ammo=15 magazine=5 abandoned=False
+PASS: Full-crew combat outcome preserves integrated finite-state invariants
+PASS: Full-crew combat outcome reload verified: identities, custody, wounds and remaining ammunition

@@ -1,0 +1,93 @@
+FAIL
+PASS: Arms route uses isolated normal campaign and forced mute
+METHOD: fresh unarmed start; production controller visits Sella, collects clinic receipt and returns. Menu transactions call the same actions after reaching the interaction. Yard squad is suspended during this acquisition route; citizens, traffic and other normal Update systems run.
+PASS: New arms campaign starts unarmed with no inherited ammunition
+PASS: Unowned SMG cannot be selected or fired
+PASS: Dealer cannot be opened from outside interaction range
+PASS: Navigable route to (-35.00, 0.00, -27.00)
+PASS: Controller arrived beside interaction at (-35.00, 0.00, -27.00)
+PASS: Controller reaches Sella and opens the arms dealer
+PASS: Dealer favor begins once without accepting a Mara job
+PASS: Favor cannot pay out before its receipt is collected
+PASS: Navigable route to (-27.00, 0.00, -12.00)
+PASS: Controller arrived beside interaction at (-27.00, 0.00, -12.00)
+PASS: Controller reaches clinic and collects the actual favor receipt
+PASS: Collecting the receipt does not grant a remote weapon reward
+PASS: Navigable route to (-35.00, 0.00, -27.00)
+PASS: Controller arrived beside interaction at (-35.00, 0.00, -27.00)
+PASS: Controller returns to Sella to redeem the receipt
+PASS: Returned receipt grants the dealer's stocked pistol and six rounds
+PASS: Favor transfers a real gun and ammunition from dealer custody
+PASS: Repeated favor redemption cannot duplicate goods
+PASS: Pistol acquisition earns dealer trust without any Mara job progression
+PASS: Acquired pistol, remaining ammunition and completed favor survive reload
+PASS: Favor campaign remains valid after controller acquisition and reload
+METHOD: alternate purchase/theft and SMG tests use fresh paused fixtures, explicit cash, staged firing position and production transactions/combat steps. These are alternatives to the controller favor route, not organically earned shopping money or human aiming.
+PASS: SMG purchase moves one stocked gun and cash without inventing included rounds
+PASS: Owned SMG cannot be purchased and charged twice
+PASS: Two finite SMG ammunition packs can be purchased separately
+PASS: Ammunition and dealer receipts match the actual purchase transactions
+PASS: Purchased SMG and remaining dealer stock can be inspected in the real menu
+PASS: Purchased loose SMG ammunition requires a real first reload
+PASS: SMG loads its real finite magazine from purchased rounds
+PASS: SMG burst emits finite projectile 1
+PASS: SMG first shot exists in flight before any explicit combat step
+PASS: Save/reload preserves SMG ownership, spent round, partial magazine and in-flight projectile
+PASS: SMG burst emits finite projectile 2
+PASS: SMG burst emits finite projectile 3
+PASS: SMG burst emits finite projectile 4
+PASS: SMG burst emits finite projectile 5
+PASS: SMG burst emits finite projectile 6
+PASS: SMG burst emits finite projectile 7
+PASS: SMG burst emits finite projectile 8
+PASS: SMG burst emits finite projectile 9
+PASS: SMG burst emits finite projectile 10
+PASS: SMG burst emits finite projectile 11
+PASS: SMG burst emits finite projectile 12
+PASS: SMG burst emits finite projectile 13
+PASS: SMG burst emits finite projectile 14
+PASS: SMG burst emits finite projectile 15
+PASS: SMG burst emits finite projectile 16
+PASS: SMG burst emits finite projectile 17
+PASS: SMG burst emits finite projectile 18
+PASS: SMG burst accounts for every round and stops at its magazine capacity
+PASS: Empty SMG magazine cannot spend reserve without a reload
+PASS: SMG begins a timed reload from finite reserve
+PASS: Mid-reload save restores SMG progress without extra reserve
+PASS: Completed reload transfers remaining reserve into magazine without creating rounds
+PASS: Reloaded SMG spends its remaining finite round
+PASS: Reloaded SMG spends its remaining finite round
+PASS: Reloaded SMG spends its remaining finite round
+PASS: Reloaded SMG spends its remaining finite round
+PASS: Reloaded SMG spends its remaining finite round
+PASS: Reloaded SMG spends its remaining finite round
+PASS: Exhausted SMG cannot fire, reload or refill its exhausted finite supply
+PASS: SMG campaign remains valid after exhaustion and save/reload
+PASS: Unwitnessed theft fixture transfers one real shotgun
+PASS: Unwitnessed theft does not invent dealer identification
+PASS: Witnessed theft fixture transfers one real shotgun
+PASS: Identified theft changes dealer relationship and closes subsequent trade
+PASS: Dealer recognition and the stolen weapon survive reload
+METHOD: possession sightlines use a paused player/patrol placement and the production observation hook; downed-actor recovery directly stages a casualty with five actual rounds. No human stealth or combat victory is claimed by these fixtures.
+PASS: Possession fixture owns its SMG through a real purchase
+PASS: Possession fixture provides a real unobstructed patrol sightline
+PASS: Concealed owned gun with fists selected does not trigger visible-possession pursuit
+PASS: Openly carried illegal gun causes observed pursuit without inventing witnessed shooting or truck escalation
+PASS: Downed officer's pistol and five remaining rounds transfer once from actual custody
+PASS: Repeated recovery cannot clone a downed actor's weapon inventory
+PASS: Confiscation records the remaining rounds and returns the player to fists
+PASS: Reload preserves confiscated inventory rather than granting the old starting weapons
+METHOD: supply fixture accelerates production StepArms and street-person Step in .05-second increments, eight steps per rendered frame while paused. Controller movement clears a directly staged player obstruction. Arrival captures temporarily reposition the paused player/camera beside the courier and restore it before stepping. This proves physical navigation/custody under those explicit steps, not real-time pacing or an unstaged crowd. Clinic calendar is held during deliveries; separate scheduled treatment steps inspect a later diversion shortage.
+PASS: First finite depot manifest can enter transit without remotely increasing destination stock
+PASS: Dispatch retains arms and medicine in transit until the physical courier arrives
+PASS: Courier has a physical next navigation point for obstruction setup
+PASS: Player physically blocks courier without remote delivery or person pushing
+PASS: Navigable route to (-45.00, 0.00, -45.00)
+PASS: Controller arrived beside interaction at (-45.00, 0.00, -45.00)
+PASS: Courier resumes production movement after controller moves the player aside
+PASS: Mid-transit save/reload restores courier position, route stage and both finite loads
+PASS: Consignment 1 reaches Sella physically before ammunition leaves transit
+PASS: Consignment 1 reaches clinic physically before medicine leaves transit
+System.Exception: Physical supply cycle 1 did not complete: COURIER WAITING / PATH BLOCKED courier=(-26.40, 0.00, -12.19) next=(-26.00, 0.00, -12.00)
+  at Funstra.FunstraGame+<ArmsSupplyCycle>d__41.MoveNext () [0x000d4] in <2c4e8ec7d995491b9a6dac9b1f3684f2>:0 
+  at Funstra.FunstraGame+<SmokeRun>d__416.MoveNext () [0x001af] in <2c4e8ec7d995491b9a6dac9b1f3684f2>:0 

@@ -1,0 +1,355 @@
+{
+    "method": "Guided controller acquisition; explicit purchase, theft, combat, possession and recovery fixtures; accelerated production courier steps on real navigation. Not human play.",
+    "cpu": "Intel(R) Core(TM) i9-14900KF",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "width": 1280,
+    "height": 720,
+    "frameCap": 30,
+    "snapshots": [
+        {
+            "label": "controller-favor-complete",
+            "armsJson": "{\"ownedMask\":4,\"dealerMoney\":0,\"dealerTrust\":1,\"favorStage\":2,\"supplyCycle\":1,\"importedMedicine\":2,\"divertedMedicine\":0,\"dealerStolen\":false,\"dealerHostile\":false,\"goodwillRewarded\":false,\"armsInTransit\":true,\"medicineInTransit\":true,\"favorReceipt\":true,\"gunStock\":[0,0,1,1,1],\"ammoStock\":[0,0,30,8,48],\"sourceAmmo\":[0,0,24,4,48],\"sourceMedicine\":4,\"spent\":[0,0,0,0,0],\"confiscated\":[0,0,0,0,0],\"recovered\":[0,0,0,0,0]}",
+            "supplyStatus": "AMMUNITION TO SELLA",
+            "cash": 0,
+            "health": 100,
+            "clinicStock": 2,
+            "totalMedicine": 14,
+            "weapon": 2,
+            "ammo": 6,
+            "magazine": 0,
+            "supplyStage": 1,
+            "player": {
+                "x": -34.7259635925293,
+                "y": 0.15499995648860932,
+                "z": -26.9060001373291
+            },
+            "courier": {
+                "x": -31.30201530456543,
+                "y": 0.0,
+                "z": -32.18387985229492
+            }
+        },
+        {
+            "label": "smg-purchase-fire-reload-exhaustion",
+            "armsJson": "{\"ownedMask\":16,\"dealerMoney\":300,\"dealerTrust\":0,\"favorStage\":0,\"supplyCycle\":0,\"importedMedicine\":0,\"divertedMedicine\":0,\"dealerStolen\":false,\"dealerHostile\":false,\"goodwillRewarded\":false,\"armsInTransit\":false,\"medicineInTransit\":false,\"favorReceipt\":false,\"gunStock\":[0,0,2,1,0],\"ammoStock\":[0,0,36,8,24],\"sourceAmmo\":[0,0,36,6,72],\"sourceMedicine\":6,\"spent\":[0,0,0,0,24],\"confiscated\":[0,0,0,0,0],\"recovered\":[0,0,0,0,0]}",
+            "supplyStatus": "NEXT CONSIGNMENT IN 8s",
+            "cash": 700,
+            "health": 100,
+            "clinicStock": 2,
+            "totalMedicine": 12,
+            "weapon": 4,
+            "ammo": 0,
+            "magazine": 0,
+            "supplyStage": 0,
+            "player": {
+                "x": -45.0,
+                "y": 0.35999998450279238,
+                "z": -45.0
+            },
+            "courier": {
+                "x": -39.0,
+                "y": 0.0,
+                "z": -48.0
+            }
+        },
+        {
+            "label": "unwitnessed-theft",
+            "armsJson": "{\"ownedMask\":8,\"dealerMoney\":0,\"dealerTrust\":0,\"favorStage\":0,\"supplyCycle\":0,\"importedMedicine\":0,\"divertedMedicine\":0,\"dealerStolen\":true,\"dealerHostile\":false,\"goodwillRewarded\":false,\"armsInTransit\":false,\"medicineInTransit\":false,\"favorReceipt\":false,\"gunStock\":[0,0,2,0,1],\"ammoStock\":[0,0,36,8,48],\"sourceAmmo\":[0,0,36,6,72],\"sourceMedicine\":6,\"spent\":[0,0,0,0,0],\"confiscated\":[0,0,0,0,0],\"recovered\":[0,0,0,0,0]}",
+            "supplyStatus": "NEXT CONSIGNMENT IN 8s",
+            "cash": 0,
+            "health": 100,
+            "clinicStock": 2,
+            "totalMedicine": 12,
+            "weapon": 1,
+            "ammo": 0,
+            "magazine": 0,
+            "supplyStage": 0,
+            "player": {
+                "x": -11.0,
+                "y": 0.11999999731779099,
+                "z": -48.0
+            },
+            "courier": {
+                "x": -39.0,
+                "y": 0.0,
+                "z": -48.0
+            }
+        },
+        {
+            "label": "witnessed-theft",
+            "armsJson": "{\"ownedMask\":8,\"dealerMoney\":0,\"dealerTrust\":-2,\"favorStage\":0,\"supplyCycle\":0,\"importedMedicine\":0,\"divertedMedicine\":0,\"dealerStolen\":true,\"dealerHostile\":true,\"goodwillRewarded\":false,\"armsInTransit\":false,\"medicineInTransit\":false,\"favorReceipt\":false,\"gunStock\":[0,0,2,0,1],\"ammoStock\":[0,0,36,8,48],\"sourceAmmo\":[0,0,36,6,72],\"sourceMedicine\":6,\"spent\":[0,0,0,0,0],\"confiscated\":[0,0,0,0,0],\"recovered\":[0,0,0,0,0]}",
+            "supplyStatus": "NEXT CONSIGNMENT IN 8s",
+            "cash": 1000,
+            "health": 100,
+            "clinicStock": 2,
+            "totalMedicine": 12,
+            "weapon": 1,
+            "ammo": 0,
+            "magazine": 0,
+            "supplyStage": 0,
+            "player": {
+                "x": -35.0,
+                "y": 0.23999999463558198,
+                "z": -27.0
+            },
+            "courier": {
+                "x": -39.0,
+                "y": 0.0,
+                "z": -48.0
+            }
+        },
+        {
+            "label": "open-versus-concealed-possession",
+            "armsJson": "{\"ownedMask\":16,\"dealerMoney\":240,\"dealerTrust\":0,\"favorStage\":0,\"supplyCycle\":0,\"importedMedicine\":0,\"divertedMedicine\":0,\"dealerStolen\":false,\"dealerHostile\":false,\"goodwillRewarded\":false,\"armsInTransit\":false,\"medicineInTransit\":false,\"favorReceipt\":false,\"gunStock\":[0,0,2,1,0],\"ammoStock\":[0,0,36,8,48],\"sourceAmmo\":[0,0,36,6,72],\"sourceMedicine\":6,\"spent\":[0,0,0,0,0],\"confiscated\":[0,0,0,0,0],\"recovered\":[0,0,0,0,0]}",
+            "supplyStatus": "NEXT CONSIGNMENT IN 8s",
+            "cash": 760,
+            "health": 100,
+            "clinicStock": 2,
+            "totalMedicine": 12,
+            "weapon": 4,
+            "ammo": 0,
+            "magazine": 0,
+            "supplyStage": 0,
+            "player": {
+                "x": 20.0,
+                "y": 0.11999999731779099,
+                "z": -13.0
+            },
+            "courier": {
+                "x": -39.0,
+                "y": 0.0,
+                "z": -48.0
+            }
+        },
+        {
+            "label": "recovered-then-confiscated",
+            "armsJson": "{\"ownedMask\":0,\"dealerMoney\":0,\"dealerTrust\":0,\"favorStage\":0,\"supplyCycle\":0,\"importedMedicine\":0,\"divertedMedicine\":0,\"dealerStolen\":false,\"dealerHostile\":false,\"goodwillRewarded\":false,\"armsInTransit\":false,\"medicineInTransit\":false,\"favorReceipt\":false,\"gunStock\":[0,0,2,1,1],\"ammoStock\":[0,0,36,8,48],\"sourceAmmo\":[0,0,36,6,72],\"sourceMedicine\":6,\"spent\":[0,0,0,0,0],\"confiscated\":[0,0,5,0,0],\"recovered\":[0,0,5,0,0]}",
+            "supplyStatus": "NEXT CONSIGNMENT IN 8s",
+            "cash": 0,
+            "health": 100,
+            "clinicStock": 2,
+            "totalMedicine": 12,
+            "weapon": 1,
+            "ammo": 0,
+            "magazine": 0,
+            "supplyStage": 0,
+            "player": {
+                "x": -11.0,
+                "y": 0.23999999463558198,
+                "z": -48.0
+            },
+            "courier": {
+                "x": -39.0,
+                "y": 0.0,
+                "z": -48.0
+            }
+        },
+        {
+            "label": "cycle-1-dealer-arrival",
+            "armsJson": "{\"ownedMask\":0,\"dealerMoney\":0,\"dealerTrust\":0,\"favorStage\":0,\"supplyCycle\":1,\"importedMedicine\":2,\"divertedMedicine\":0,\"dealerStolen\":false,\"dealerHostile\":false,\"goodwillRewarded\":false,\"armsInTransit\":false,\"medicineInTransit\":true,\"favorReceipt\":false,\"gunStock\":[0,0,2,1,1],\"ammoStock\":[0,0,48,10,72],\"sourceAmmo\":[0,0,24,4,48],\"sourceMedicine\":4,\"spent\":[0,0,0,0,0],\"confiscated\":[0,0,0,0,0],\"recovered\":[0,0,0,0,0]}",
+            "supplyStatus": "MEDICINE TO NERI",
+            "cash": 0,
+            "health": 100,
+            "clinicStock": 2,
+            "totalMedicine": 14,
+            "weapon": 1,
+            "ammo": 0,
+            "magazine": 0,
+            "supplyStage": 2,
+            "player": {
+                "x": -44.68026351928711,
+                "y": 0.15499989688396455,
+                "z": -45.18410873413086
+            },
+            "courier": {
+                "x": -32.81057357788086,
+                "y": 0.0,
+                "z": -27.61324119567871
+            }
+        },
+        {
+            "label": "cycle-1-clinic-arrival",
+            "armsJson": "{\"ownedMask\":0,\"dealerMoney\":0,\"dealerTrust\":1,\"favorStage\":0,\"supplyCycle\":1,\"importedMedicine\":2,\"divertedMedicine\":0,\"dealerStolen\":false,\"dealerHostile\":false,\"goodwillRewarded\":true,\"armsInTransit\":false,\"medicineInTransit\":false,\"favorReceipt\":false,\"gunStock\":[0,0,2,1,1],\"ammoStock\":[0,0,48,10,72],\"sourceAmmo\":[0,0,24,4,48],\"sourceMedicine\":4,\"spent\":[0,0,0,0,0],\"confiscated\":[0,0,0,0,0],\"recovered\":[0,0,0,0,0]}",
+            "supplyStatus": "COURIER RETURNING",
+            "cash": 0,
+            "health": 100,
+            "clinicStock": 4,
+            "totalMedicine": 14,
+            "weapon": 1,
+            "ammo": 0,
+            "magazine": 0,
+            "supplyStage": 3,
+            "player": {
+                "x": -44.68026351928711,
+                "y": 0.2749998867511749,
+                "z": -45.18410873413086
+            },
+            "courier": {
+                "x": -26.40003776550293,
+                "y": 0.0,
+                "z": -12.192049980163575
+            }
+        },
+        {
+            "label": "cycle-2-dealer-arrival",
+            "armsJson": "{\"ownedMask\":0,\"dealerMoney\":0,\"dealerTrust\":1,\"favorStage\":0,\"supplyCycle\":2,\"importedMedicine\":4,\"divertedMedicine\":0,\"dealerStolen\":false,\"dealerHostile\":false,\"goodwillRewarded\":true,\"armsInTransit\":false,\"medicineInTransit\":true,\"favorReceipt\":false,\"gunStock\":[0,0,2,1,1],\"ammoStock\":[0,0,60,12,96],\"sourceAmmo\":[0,0,12,2,24],\"sourceMedicine\":2,\"spent\":[0,0,0,0,0],\"confiscated\":[0,0,0,0,0],\"recovered\":[0,0,0,0,0]}",
+            "supplyStatus": "MEDICINE TO NERI",
+            "cash": 0,
+            "health": 100,
+            "clinicStock": 4,
+            "totalMedicine": 16,
+            "weapon": 1,
+            "ammo": 0,
+            "magazine": 0,
+            "supplyStage": 2,
+            "player": {
+                "x": -44.68026351928711,
+                "y": 0.3949998915195465,
+                "z": -45.18410873413086
+            },
+            "courier": {
+                "x": -32.851131439208987,
+                "y": 0.0,
+                "z": -27.566621780395509
+            }
+        },
+        {
+            "label": "cycle-2-clinic-arrival",
+            "armsJson": "{\"ownedMask\":0,\"dealerMoney\":0,\"dealerTrust\":1,\"favorStage\":0,\"supplyCycle\":2,\"importedMedicine\":4,\"divertedMedicine\":0,\"dealerStolen\":false,\"dealerHostile\":false,\"goodwillRewarded\":true,\"armsInTransit\":false,\"medicineInTransit\":false,\"favorReceipt\":false,\"gunStock\":[0,0,2,1,1],\"ammoStock\":[0,0,60,12,96],\"sourceAmmo\":[0,0,12,2,24],\"sourceMedicine\":2,\"spent\":[0,0,0,0,0],\"confiscated\":[0,0,0,0,0],\"recovered\":[0,0,0,0,0]}",
+            "supplyStatus": "COURIER RETURNING",
+            "cash": 0,
+            "health": 100,
+            "clinicStock": 6,
+            "totalMedicine": 16,
+            "weapon": 1,
+            "ammo": 0,
+            "magazine": 0,
+            "supplyStage": 3,
+            "player": {
+                "x": -44.68026351928711,
+                "y": 0.3949998915195465,
+                "z": -45.18410873413086
+            },
+            "courier": {
+                "x": -26.399654388427736,
+                "y": 0.0,
+                "z": -12.192618370056153
+            }
+        },
+        {
+            "label": "cycle-3-dealer-arrival",
+            "armsJson": "{\"ownedMask\":0,\"dealerMoney\":0,\"dealerTrust\":1,\"favorStage\":0,\"supplyCycle\":3,\"importedMedicine\":6,\"divertedMedicine\":0,\"dealerStolen\":false,\"dealerHostile\":false,\"goodwillRewarded\":true,\"armsInTransit\":false,\"medicineInTransit\":true,\"favorReceipt\":false,\"gunStock\":[0,0,2,1,1],\"ammoStock\":[0,0,72,14,120],\"sourceAmmo\":[0,0,0,0,0],\"sourceMedicine\":0,\"spent\":[0,0,0,0,0],\"confiscated\":[0,0,0,0,0],\"recovered\":[0,0,0,0,0]}",
+            "supplyStatus": "MEDICINE TO NERI",
+            "cash": 0,
+            "health": 100,
+            "clinicStock": 6,
+            "totalMedicine": 18,
+            "weapon": 1,
+            "ammo": 0,
+            "magazine": 0,
+            "supplyStage": 2,
+            "player": {
+                "x": -44.68026351928711,
+                "y": 0.3949998915195465,
+                "z": -45.18410873413086
+            },
+            "courier": {
+                "x": -32.851131439208987,
+                "y": 0.0,
+                "z": -27.566621780395509
+            }
+        },
+        {
+            "label": "cycle-3-clinic-arrival",
+            "armsJson": "{\"ownedMask\":0,\"dealerMoney\":0,\"dealerTrust\":1,\"favorStage\":0,\"supplyCycle\":3,\"importedMedicine\":6,\"divertedMedicine\":0,\"dealerStolen\":false,\"dealerHostile\":false,\"goodwillRewarded\":true,\"armsInTransit\":false,\"medicineInTransit\":false,\"favorReceipt\":false,\"gunStock\":[0,0,2,1,1],\"ammoStock\":[0,0,72,14,120],\"sourceAmmo\":[0,0,0,0,0],\"sourceMedicine\":0,\"spent\":[0,0,0,0,0],\"confiscated\":[0,0,0,0,0],\"recovered\":[0,0,0,0,0]}",
+            "supplyStatus": "COURIER RETURNING",
+            "cash": 0,
+            "health": 100,
+            "clinicStock": 8,
+            "totalMedicine": 18,
+            "weapon": 1,
+            "ammo": 0,
+            "magazine": 0,
+            "supplyStage": 3,
+            "player": {
+                "x": -44.68026351928711,
+                "y": 0.3949998915195465,
+                "z": -45.18410873413086
+            },
+            "courier": {
+                "x": -26.399654388427736,
+                "y": 0.0,
+                "z": -12.192618370056153
+            }
+        },
+        {
+            "label": "three-physical-supply-cycles",
+            "armsJson": "{\"ownedMask\":0,\"dealerMoney\":0,\"dealerTrust\":1,\"favorStage\":0,\"supplyCycle\":3,\"importedMedicine\":6,\"divertedMedicine\":0,\"dealerStolen\":false,\"dealerHostile\":false,\"goodwillRewarded\":true,\"armsInTransit\":false,\"medicineInTransit\":false,\"favorReceipt\":false,\"gunStock\":[0,0,2,1,1],\"ammoStock\":[0,0,72,14,120],\"sourceAmmo\":[0,0,0,0,0],\"sourceMedicine\":0,\"spent\":[0,0,0,0,0],\"confiscated\":[0,0,0,0,0],\"recovered\":[0,0,0,0,0]}",
+            "supplyStatus": "DEPOT EMPTY / 3 CONSIGNMENTS SENT",
+            "cash": 0,
+            "health": 100,
+            "clinicStock": 8,
+            "totalMedicine": 18,
+            "weapon": 1,
+            "ammo": 0,
+            "magazine": 0,
+            "supplyStage": 0,
+            "player": {
+                "x": -44.68026351928711,
+                "y": 0.3949998915195465,
+                "z": -45.18410873413086
+            },
+            "courier": {
+                "x": -38.695289611816409,
+                "y": 0.0,
+                "z": -47.50778579711914
+            }
+        },
+        {
+            "label": "diverted-supply-shortage",
+            "armsJson": "{\"ownedMask\":0,\"dealerMoney\":0,\"dealerTrust\":-2,\"favorStage\":0,\"supplyCycle\":1,\"importedMedicine\":2,\"divertedMedicine\":2,\"dealerStolen\":true,\"dealerHostile\":true,\"goodwillRewarded\":false,\"armsInTransit\":false,\"medicineInTransit\":false,\"favorReceipt\":false,\"gunStock\":[0,0,2,1,1],\"ammoStock\":[0,0,36,8,48],\"sourceAmmo\":[0,0,24,4,48],\"sourceMedicine\":4,\"spent\":[0,0,0,0,0],\"confiscated\":[0,0,0,0,0],\"recovered\":[0,0,0,0,0]}",
+            "supplyStatus": "AMMUNITION TO SELLA",
+            "cash": 0,
+            "health": 100,
+            "clinicStock": 0,
+            "totalMedicine": 14,
+            "weapon": 1,
+            "ammo": 12,
+            "magazine": 0,
+            "supplyStage": 1,
+            "player": {
+                "x": -27.0,
+                "y": 0.11999999731779099,
+                "z": -12.0
+            },
+            "courier": {
+                "x": -39.0,
+                "y": 0.0,
+                "z": -48.0
+            }
+        },
+        {
+            "label": "downed-courier-cargo",
+            "armsJson": "{\"ownedMask\":0,\"dealerMoney\":0,\"dealerTrust\":0,\"favorStage\":0,\"supplyCycle\":1,\"importedMedicine\":2,\"divertedMedicine\":2,\"dealerStolen\":true,\"dealerHostile\":false,\"goodwillRewarded\":false,\"armsInTransit\":false,\"medicineInTransit\":false,\"favorReceipt\":false,\"gunStock\":[0,0,2,1,1],\"ammoStock\":[0,0,36,8,48],\"sourceAmmo\":[0,0,24,4,48],\"sourceMedicine\":4,\"spent\":[0,0,0,0,0],\"confiscated\":[0,0,0,0,0],\"recovered\":[0,0,0,0,0]}",
+            "supplyStatus": "TOMAS DOWN / DELIVERY STOPPED",
+            "cash": 0,
+            "health": 100,
+            "clinicStock": 2,
+            "totalMedicine": 14,
+            "weapon": 1,
+            "ammo": 12,
+            "magazine": 0,
+            "supplyStage": 1,
+            "player": {
+                "x": -37.0,
+                "y": 0.11999999731779099,
+                "z": -48.0
+            },
+            "courier": {
+                "x": -39.0,
+                "y": 0.0,
+                "z": -48.0
+            }
+        }
+    ]
+}

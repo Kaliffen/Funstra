@@ -229,7 +229,7 @@ function renderPage(list) {
     .map(
       (p) => `      <div class="score-tile" style="--tile-accent:var(--accent-${esc(p.accent)})">
         <div class="who">${esc(p.who)}</div>
-        <div class="score num">${esc(p.score)}<sup>/10</sup></div>
+        ${p.gameNow === undefined ? `<div class="score num">${esc(p.score)}<sup>/10</sup></div>` : `<div class="lens">Game now</div><div class="score num">${esc(p.gameNow)}<sup>/10</sup></div><div class="lens">Slice delivery <strong>${esc(p.sliceDelivery)}/10</strong><br>Evidence <strong>${esc(p.evidence)}%</strong></div>`}
         <div class="lens">${esc(p.lens)}</div>
       </div>`
     )

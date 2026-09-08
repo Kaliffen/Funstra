@@ -1,0 +1,147 @@
+Mono path[0] = '~/repos/Funstra/Build/NobodyGetsHomeAlone/Funstra_Data/Managed'
+Mono config path = '~/repos/Funstra/Build/NobodyGetsHomeAlone/MonoBleedingEdge/etc'
+CodeReloadManager initialized
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Initialize engine version: 6000.4.0f1 (8cf496087c8f)
+[Subsystems] Discovering subsystems at path ~/repos/Funstra/Build/NobodyGetsHomeAlone/Funstra_Data/UnitySubsystems
+[D3D12 Device Filter] Vendor Name: NVIDIA
+[D3D12 Device Filter] Device Name: NVIDIA GeForce RTX 4090
+[D3D12 Device Filter] Driver Version: 32.0.15.9597
+[D3D12 Device Filter] Feature Level: 12.2
+[D3D12 Device Filter] Graphics Memory: 24138 MB
+[D3D12 Device Filter] Processor Count: 32
+[D3D12 Device Filter] Device Type: Discrete
+GfxDevice: creating device client; kGfxThreadingModeClientWorkerJobs
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4090 (ID=0x2684)
+    Vendor:   NVIDIA
+    VRAM:     24138 MB
+    Driver:   32.0.15.9597
+Begin MonoManager ReloadAssembly
+- Finished resetting the current domain, in  0.001 seconds
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+<RI> Initializing input.
+<RI> Input initialized.
+UnloadTime: 0.364300 ms
+CHECK: Arms route uses isolated normal campaign and forced mute
+CHECK: New arms campaign starts unarmed with no inherited ammunition
+CHECK: Unowned SMG cannot be selected or fired
+CHECK: Dealer cannot be opened from outside interaction range
+CHECK: Navigable route to (-35.00, 0.00, -27.00)
+CHECK: Controller arrived beside interaction at (-35.00, 0.00, -27.00)
+CHECK: Controller reaches Sella and opens the arms dealer
+CHECK: Dealer favor begins once without accepting a Mara job
+CHECK: Favor cannot pay out before its receipt is collected
+CHECK: Navigable route to (-27.00, 0.00, -12.00)
+CHECK: Controller arrived beside interaction at (-27.00, 0.00, -12.00)
+CHECK: Controller reaches clinic and collects the actual favor receipt
+CHECK: Collecting the receipt does not grant a remote weapon reward
+CHECK: Navigable route to (-35.00, 0.00, -27.00)
+CHECK: Controller arrived beside interaction at (-35.00, 0.00, -27.00)
+CHECK: Controller returns to Sella to redeem the receipt
+CHECK: Returned receipt grants the dealer's stocked pistol and six rounds
+CHECK: Favor transfers a real gun and ammunition from dealer custody
+CHECK: Repeated favor redemption cannot duplicate goods
+CHECK: Pistol acquisition earns dealer trust without any Mara job progression
+CHECK: Acquired pistol, remaining ammunition and completed favor survive reload
+CHECK: Favor campaign remains valid after controller acquisition and reload
+CHECK: SMG purchase moves one stocked gun and cash without inventing included rounds
+CHECK: Owned SMG cannot be purchased and charged twice
+CHECK: Two finite SMG ammunition packs can be purchased separately
+CHECK: Ammunition and dealer receipts match the actual purchase transactions
+CHECK: Purchased SMG and remaining dealer stock can be inspected in the real menu
+CHECK: Purchased loose SMG ammunition requires a real first reload
+CHECK: SMG loads its real finite magazine from purchased rounds
+CHECK: SMG burst emits finite projectile 1
+CHECK: SMG first shot exists in flight before any explicit combat step
+CHECK: Save/reload preserves SMG ownership, spent round, partial magazine and in-flight projectile
+CHECK: SMG burst emits finite projectile 2
+CHECK: SMG burst emits finite projectile 3
+CHECK: SMG burst emits finite projectile 4
+CHECK: SMG burst emits finite projectile 5
+CHECK: SMG burst emits finite projectile 6
+CHECK: SMG burst emits finite projectile 7
+CHECK: SMG burst emits finite projectile 8
+CHECK: SMG burst emits finite projectile 9
+CHECK: SMG burst emits finite projectile 10
+CHECK: SMG burst emits finite projectile 11
+CHECK: SMG burst emits finite projectile 12
+CHECK: SMG burst emits finite projectile 13
+CHECK: SMG burst emits finite projectile 14
+CHECK: SMG burst emits finite projectile 15
+CHECK: SMG burst emits finite projectile 16
+CHECK: SMG burst emits finite projectile 17
+CHECK: SMG burst emits finite projectile 18
+CHECK: SMG burst accounts for every round and stops at its magazine capacity
+CHECK: Empty SMG magazine cannot spend reserve without a reload
+CHECK: SMG begins a timed reload from finite reserve
+CHECK: Mid-reload save restores SMG progress without extra reserve
+CHECK: Completed reload transfers remaining reserve into magazine without creating rounds
+CHECK: Reloaded SMG spends its remaining finite round
+CHECK: Reloaded SMG spends its remaining finite round
+CHECK: Reloaded SMG spends its remaining finite round
+CHECK: Reloaded SMG spends its remaining finite round
+CHECK: Reloaded SMG spends its remaining finite round
+CHECK: Reloaded SMG spends its remaining finite round
+CHECK: Exhausted SMG cannot fire, reload or refill its exhausted finite supply
+CHECK: SMG campaign remains valid after exhaustion and save/reload
+CHECK: Unwitnessed theft fixture transfers one real shotgun
+CHECK: Unwitnessed theft does not invent dealer identification
+CHECK: Witnessed theft fixture transfers one real shotgun
+CHECK: Identified theft changes dealer relationship and closes subsequent trade
+CHECK: Dealer recognition and the stolen weapon survive reload
+CHECK: Possession fixture owns its SMG through a real purchase
+CHECK: Possession fixture provides a real unobstructed patrol sightline
+CHECK: Concealed owned gun with fists selected does not trigger visible-possession pursuit
+CHECK: Openly carried illegal gun causes observed pursuit without inventing witnessed shooting or truck escalation
+CHECK: Downed officer's pistol and five remaining rounds transfer once from actual custody
+CHECK: Repeated recovery cannot clone a downed actor's weapon inventory
+CHECK: Production arrest invokes weapon confiscation and ordinary recovery
+CHECK: Confiscation records the remaining rounds and returns the player to fists
+CHECK: Reload preserves confiscated inventory rather than granting the old starting weapons
+CHECK: First finite depot manifest can enter transit without remotely increasing destination stock
+CHECK: Dispatch retains arms and medicine in transit until the physical courier arrives
+CHECK: Courier has a physical next navigation point for obstruction setup
+CHECK: Player physically blocks courier without remote delivery or person pushing
+CHECK: Navigable route to (-45.00, 0.00, -45.00)
+CHECK: Controller arrived beside interaction at (-45.00, 0.00, -45.00)
+CHECK: Courier resumes production movement after controller moves the player aside
+CHECK: Mid-transit save/reload restores courier position, route stage and both finite loads
+CHECK: Consignment 1 reaches Sella physically before ammunition leaves transit
+CHECK: Consignment 1 reaches clinic physically before medicine leaves transit
+CHECK: Consignment 1 delivers both loads and returns its real courier to the depot
+CHECK: Consignment 2 reaches Sella physically before ammunition leaves transit
+CHECK: Consignment 2 reaches clinic physically before medicine leaves transit
+CHECK: Consignment 2 delivers both loads and returns its real courier to the depot
+CHECK: Consignment 3 reaches Sella physically before ammunition leaves transit
+CHECK: Consignment 3 reaches clinic physically before medicine leaves transit
+CHECK: Consignment 3 delivers both loads and returns its real courier to the depot
+CHECK: Three physical clinic deliveries add exactly six imported doses to the conserved district total
+CHECK: Three physical deliveries conserve the finite source for weapon kind 2
+CHECK: Three physical deliveries conserve the finite source for weapon kind 3
+CHECK: Three physical deliveries conserve the finite source for weapon kind 4
+CHECK: Exhausted three-manifest depot refuses a fourth dispatch
+CHECK: Empty depot stays exhausted through further elapsed production steps
+CHECK: Diversion fixture starts a real finite manifest in transit
+CHECK: Nearby player interaction diverts the courier's actual consignment
+CHECK: Diverted ammunition and medicine enter player custody while dealer and clinic receive none
+CHECK: A consignment cannot be diverted twice
+CHECK: Reload preserves the diverted goods in player custody
+CHECK: With diverted doses withheld, scheduled treatments empty the clinic and expose its actual shortage
+CHECK: Diversion and shortage preserve the medicine ledger
+CHECK: Downed courier's dropped goods remain inspectable without requiring a healing bandage
+CHECK: Downed unwitnessing courier cannot report a theft and cargo transfers once
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+CodeReloadManager destroyed

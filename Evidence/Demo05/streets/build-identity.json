@@ -1,0 +1,7 @@
+{
+  "testedAt": "2026-09-08T08:58:02.9044456Z",
+  "mode": "Streets",
+  "executable": "Build/PriceOfAGun/Funstra.exe",
+  "assemblySha256": "B4317ED98C24B9F2C32307DBA3A496696616DA3D2BF4E24DA7691DAFB76D39B7",
+  "method": "Guided exported player; direct setups and controller travel identified in result."
+}

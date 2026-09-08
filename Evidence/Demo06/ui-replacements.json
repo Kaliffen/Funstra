@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "sourcePath": "Assets/Scripts/FunstraUI.cs",
+  "reviewedSourceSha256": "7275201BDA27048EA9177DF0C09D77AC8090E4623A977340AD6FA452251E98CF",
+  "integratedSourceSha256": "83FC3AF7E7EC4DCDE0F620C961D01722E6B3B01CBDE688C28B505BBAD2F7BC01",
+  "replacements": [
+    {
+      "id": "actor-marker",
+      "occurrences": 1,
+      "old": "\"â€¢\"",
+      "new": "\"\\u2022\""
+    },
+    {
+      "id": "mara-attribution",
+      "occurrences": 1,
+      "old": "\"â€” Mara\"",
+      "new": "\"\\u2014 Mara\""
+    },
+    {
+      "id": "title-footer",
+      "occurrences": 1,
+      "old": "Application.version==\"0.5.0\"?\"0.5.0 / LOCAL DEMO CANDIDATE\"",
+      "new": "Application.version==\"0.6.0\"?\"0.6.0 / NOBODY GETS HOME ALONE\":Application.version==\"0.5.0\"?\"0.5.0 / LOCAL DEMO CANDIDATE\""
+    }
+  ]
+}

@@ -20,3 +20,8 @@
 *.zip       binary
 *.dll       binary
 *.exe       binary
+
+# Demo06 frozen evidence and original verdicts use byte-level SHA-256 receipts.
+# Preserve their actual bytes instead of applying repository text normalization.
+/Evidence/Demo06/** -text
+/reviewer-agents/*/demo06*.md -text

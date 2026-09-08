@@ -14,6 +14,7 @@ namespace Funstra
     [Serializable] public sealed class PoliceResponse
     {
         public bool identifiedGunman;
+        public int crewVersion;
         public int harm;
         public float searchRemaining, contactRemaining;
         public Vector3 lastKnown;
@@ -27,17 +28,27 @@ namespace Funstra
         static bool Point(Vector3 v)=>Finite(v.x)&&Finite(v.y)&&Finite(v.z)&&Mathf.Abs(v.x)<=80&&Mathf.Abs(v.z)<=80;
         public bool Valid()
         {
-            if(harm<0||harm>100||!Finite(searchRemaining)||searchRemaining<0||searchRemaining>45.01f||!Finite(contactRemaining)||contactRemaining<0||contactRemaining>ContactLifetime||contactRemaining>searchRemaining||contactRemaining>0&&!identifiedGunman||!Point(lastKnown)||trucks==null||trucks.Length!=2||officers==null||officers.Count>6)return false;
+            if(crewVersion<0||crewVersion>1||harm<0||harm>100||!Finite(searchRemaining)||searchRemaining<0||searchRemaining>45.01f||!Finite(contactRemaining)||contactRemaining<0||contactRemaining>ContactLifetime||contactRemaining>searchRemaining||contactRemaining>0&&!identifiedGunman||!Point(lastKnown)||trucks==null||trucks.Length!=2||officers==null||officers.Count>6)return false;
             int delivered=0;var ids=new HashSet<string>();
             for(int i=0;i<2;i++)
             {
                 var t=trucks[i];if(t==null||t.deployed<0||t.deployed>3||!Finite(t.delay)||t.delay<0||!Finite(t.blockedTime)||t.blockedTime<0||!Point(t.position)||!Point(t.destination)||t.arrived&&!t.entered||t.entered&&!t.requested||t.deployed>0&&!t.arrived)return false;
                 delivered+=t.deployed;
             }
-            foreach(var a in officers)if(a==null||string.IsNullOrEmpty(a.id)||!a.id.StartsWith("response-")||!ids.Add(a.id)||!Point(a.position)||!Finite(a.health)||a.health<0||a.health>100||a.ammo<0||a.ammo>18||a.combat==null||!a.combat.Valid(a.ammo)||a.combat.kind!=2)return false;
+            foreach(var a in officers)if(a==null||string.IsNullOrEmpty(a.id)||!a.id.StartsWith("response-")||!ids.Add(a.id)||!Point(a.position)||!Finite(a.health)||a.health<0||a.health>100||a.ammo<0||a.ammo>18||a.combat==null||!a.combat.Valid(a.ammo)||(a.combat.kind!=2&&a.combat.kind!=5))return false;
             for(int i=0;i<2;i++)for(int slot=0;slot<trucks[i].deployed;slot++)
                 if(!ids.Contains("response-"+i+"-"+slot))return false;
             return delivered==officers.Count;
+        }
+        public void InitializeCrewResponse()
+        {
+            if(crewVersion!=0)return;
+            crewVersion=1;
+            foreach(var officer in officers)
+            {
+                if(officer.combat==null)officer.combat=new WeaponState();
+                officer.combat.Initialize(officer.ammo,5);
+            }
         }
         public void Noise(Vector3 point)
         { if(identifiedGunman)return;lastKnown=point;searchRemaining=12;observer="gunshot heard"; }
@@ -77,17 +88,18 @@ namespace Funstra
             foreach(var a in Agents)if(a.Police&&a.Record!=null&&a.Record.health>0){a.Pursuing=true;a.LastSeen=point;a.Repath=0;}
             if(first){Sound(alertSound);Notify("Armed attacker reported. All police share the last sighting. Break sight and leave the area.");}
         }
-        string ViolenceWitness(DistrictActor victim=null)
+        string ViolenceWitness(DistrictActor victim=null,Vector3? attackPosition=null)
         {
+            Vector3 source=attackPosition??Player.position;
             // A struck, surviving victim can turn toward the attack and identify a nearby
             // assailant across clear sight. A wall still prevents identification.
-            if(victim!=null&&victim.health>0&&Vector3.Distance(victim.position,Player.position)<19&&City.Nav.Sight(victim.position,Player.position))return victim.id;
+            if(victim!=null&&victim.health>0&&Vector3.Distance(victim.position,source)<19&&City.Nav.Sight(victim.position,source))return victim.id;
             // Re-evaluate at the event, rather than trusting a previous frame's perception.
             foreach(var a in Agents)
-                if(a.Record!=null&&ActorSees(a.Record,a.Body,Player.position,19))return a.Record.id;
-            if(ActorSees(District.guard,guardBody,Player.position,16))return District.guard.id;
-            if(ActorSees(District.collector,collectorBody,Player.position,14))return District.collector.id;
-            if(ActorSees(District.neri,neriBody,Player.position,14))return District.neri.id;
+                if(a.Record!=null&&ActorSees(a.Record,a.Body,source,19))return a.Record.id;
+            if(ActorSees(District.guard,guardBody,source,16))return District.guard.id;
+            if(ActorSees(District.collector,collectorBody,source,14))return District.collector.id;
+            if((!CrewEnabled||!District.recruited)&&ActorSees(District.neri,neriBody,source,14))return District.neri.id;
             return null;
         }
         public void ClearPoliceRuntime()
@@ -105,16 +117,19 @@ namespace Funstra
         public void InitializePoliceResponse()
         {
             ClearPoliceRuntime();if(!DistrictEnabled||FoundationMode)return;
+            if(CrewEnabled)Police.InitializeCrewResponse();
             for(int i=0;i<2;i++)if(Police.trucks[i].entered)CreatePoliceTruck(i);
             foreach(var record in Police.officers)CreateResponseOfficer(record);
             City.RefreshProps();CacheCombatObstacles();
         }
         void CreateResponseOfficer(DistrictActor record)
         {
+            record.weaponRecoverable=!record.looted;
             if(Agents.Exists(a=>a.Record==record))return;
             var a=new TownAgent{Police=true,Reinforcement=true,Record=record,Route=new[]{record.position,record.position+Vector3.forward*3},Phase=Agents.Count*.73f};
             a.Body=City.Human(record.name,record.position,CityArt.Hex("577FC4"),true);
-            City.Box("Police pistol",new Vector3(.4f,.95f,.3f),new Vector3(.12f,.15f,.45f),CityArt.Hex("303848"),a.Body);
+            bool rifle=record.combat!=null&&record.combat.kind==5;
+            City.Box(rifle?"Police rifle":"Police pistol",new Vector3(.4f,.95f,.3f),new Vector3(.12f,.15f,rifle?1.1f:.45f),CityArt.Hex("303848"),a.Body);
             PoseActor(a.Body,record);Agents.Add(a);
         }
         void CreatePoliceTruck(int index)
@@ -144,6 +159,7 @@ namespace Funstra
                 if(gap.Intersects(obstacle))return false;
             }
             if(gap.Contains(new Vector3(Player.position.x,1,Player.position.z)))return false;
+            if(CrewEnabled)foreach(var pointInCrew in LivingCrewPositions)if(gap.Contains(new Vector3(pointInCrew.x,1,pointInCrew.z)))return false;
             foreach(var a in Agents)if(gap.Contains(new Vector3(a.Position.x,1,a.Position.z)))return false;
             foreach(var a in new[]{District.neri,District.guard,District.collector})if(gap.Contains(new Vector3(a.position.x,1,a.position.z)))return false;
             return true;
@@ -151,6 +167,7 @@ namespace Funstra
         bool OfficerExitClear(Vector3 point)
         {
             if(!City.Nav.Walkable(point)||Vector3.Distance(point,Player.position)<1.2f)return false;
+            if(CrewEnabled)foreach(var crewPoint in LivingCrewPositions)if(Vector3.Distance(point,crewPoint)<1.2f)return false;
             foreach(var a in Agents)if(Vector3.Distance(point,a.Position)<1.2f)return false;
             foreach(var a in new[]{District.neri,District.guard,District.collector})if(Vector3.Distance(point,a.position)<1.2f)return false;
             return true;
@@ -187,7 +204,7 @@ namespace Funstra
                         exit=d.position+new Vector3(i==0?-2.1f:2.1f,0,(d.deployed-1)*1.4f);
                         if(!OfficerExitClear(exit))continue;
                     }
-                    var record=new DistrictActor("response-"+i+"-"+d.deployed,"RESPONSE OFFICER "+(i*3+d.deployed+1),exit){ammo=18};
+                    var record=new DistrictActor("response-"+i+"-"+d.deployed,"RESPONSE OFFICER "+(i*3+d.deployed+1),exit){ammo=18,combat=new WeaponState{kind=CrewEnabled?5:2}};
                     Police.officers.Add(record);d.deployed++;CreateResponseOfficer(record);
                 }
             }

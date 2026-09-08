@@ -1,0 +1,916 @@
+{
+  "version": "0.6.0",
+  "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+  "executableSha256": "97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3",
+  "builtAt": "2026-09-08T12:24:39.7964270Z",
+  "buildLog": "Evidence/demo06-build-fourteenth.log",
+  "sourceBaseCommit": "bd522de8cfcc4bfbc86584ca28e3df1bf671ce3a",
+  "sourceWasDirty": true,
+  "method": "Fourteenth candidate: guided assault permits actual mission loss; bounded raw reload-placement exception; live post-retreat aid verifies either finite completion or actual hit interruption without free healing or resource loss. Production behavior unchanged from eleventh. Exact source hashes at validation freeze.",
+  "files": [
+    {
+      "path": "Assets/Editor.meta",
+      "sha256": "EC5339AA4C166F17ABCDECD78E324FE6033033A8C4DC38C4DC503C1B6DB0D8E3"
+    },
+    {
+      "path": "Assets/Editor/ArmsRules.cs",
+      "sha256": "BEA8FC47CCE1E250DF52C43FF1EAC0B4E7386C4D48FCA6CA226B0C4EF2B6ADAB"
+    },
+    {
+      "path": "Assets/Editor/ArmsRules.cs.meta",
+      "sha256": "CF9C2BCA3E75DA30AC58C834AD34B15D1295DB3F60704637B829B2D7CCC2A5C3"
+    },
+    {
+      "path": "Assets/Editor/ClinicRules.cs",
+      "sha256": "D5734C468699A4EE201EFF63EF6E2D2F0A6A641955BD1AA088BF296943679C90"
+    },
+    {
+      "path": "Assets/Editor/ClinicRules.cs.meta",
+      "sha256": "0436DABB003239DA8F3A153E88845781B35A6BBD0AF416261FB85FEEEE955B20"
+    },
+    {
+      "path": "Assets/Editor/CombatRules.cs",
+      "sha256": "BD8DEA1A5E0DD537C592EA4699B06AB749EC8A23A7F6E06647DA1A25E2E32C05"
+    },
+    {
+      "path": "Assets/Editor/CombatRules.cs.meta",
+      "sha256": "76C61DC7567529C43DBD1AD669BC8C48D00A3F6208A4C802AC75AC928F7E3E74"
+    },
+    {
+      "path": "Assets/Editor/CrewOppositionRules.cs",
+      "sha256": "47173B4314464164A3045AC8F3855B7562A2F6E0DB6A0620314F7B1FBAC22ECB"
+    },
+    {
+      "path": "Assets/Editor/CrewOppositionRules.cs.meta",
+      "sha256": "7A5B2B35AD6993B288F4A0F8B289D88A24B47D293A7022C6F6B153E50B35712A"
+    },
+    {
+      "path": "Assets/Editor/DistrictRules.cs",
+      "sha256": "864B8A9856492C3CB5751606FFC12E91847E1742F2D01AD84590686539910AA6"
+    },
+    {
+      "path": "Assets/Editor/DistrictRules.cs.meta",
+      "sha256": "A51B8AA021E696FAECCDEF0681C6C726AEAACCFDC66CB94916F4C86A6CF59637"
+    },
+    {
+      "path": "Assets/Editor/DockOperationRules.cs",
+      "sha256": "942A28E93E9723F762B5C197D67909FF0F17F5CDEC86B80E73CA973B4367A467"
+    },
+    {
+      "path": "Assets/Editor/DockOperationRules.cs.meta",
+      "sha256": "9EEFC0EDA1FBBAF16760667A81C952A0AA4D78464897010110B9FB2868927948"
+    },
+    {
+      "path": "Assets/Editor/FunstraBuild.cs",
+      "sha256": "A6F7BEF289577FAE6CE86BBBA1949767F6566C4193CFE5E1E8251F3AC1382465"
+    },
+    {
+      "path": "Assets/Editor/FunstraBuild.cs.meta",
+      "sha256": "48D4759BD1BED563C35E5C48EBAE3950A5484652D744E35A948F96C97F67D685"
+    },
+    {
+      "path": "Assets/Editor/PoliceRules.cs",
+      "sha256": "13B5CF453E793BE80B02652F067BC6BDE8E045279EFF0F13743BEAC6BD77320E"
+    },
+    {
+      "path": "Assets/Editor/PoliceRules.cs.meta",
+      "sha256": "E99B8178BA82FD606CB4F134847E8DDF0B056925C18B0CE1DCDC2D45CD52D3EE"
+    },
+    {
+      "path": "Assets/Editor/RefugeRules.cs",
+      "sha256": "192F3BF358FAAA0E2EE0A0666BDEF82C994B491496D1B875197F3A2CF5693336"
+    },
+    {
+      "path": "Assets/Editor/RefugeRules.cs.meta",
+      "sha256": "C69D44ACDACC32E6204E6E1A0F2077182A7F69BEB36A0F8AF2A2173EAEE2D0EC"
+    },
+    {
+      "path": "Assets/Editor/ResidentRules.cs",
+      "sha256": "051C4090B0449F47E4AF254D9A0B9C776049255272E1F7AA1AC3C8CC33B3AAAC"
+    },
+    {
+      "path": "Assets/Editor/ResidentRules.cs.meta",
+      "sha256": "DE43F25940631707361B2437FE6E27352E6165D24745403B7DC065DA98B6CC08"
+    },
+    {
+      "path": "Assets/Editor/SpatialRules.cs",
+      "sha256": "483395702D3B426F874D599687D081616505180A367396392BBF4140007E5269"
+    },
+    {
+      "path": "Assets/Editor/SpatialRules.cs.meta",
+      "sha256": "C7FA07FF668517724E314BB78A7467AAC5A0D3610A1175BE50A4611FF84E46D2"
+    },
+    {
+      "path": "Assets/Resources.meta",
+      "sha256": "C9E0767B689A791B685772EE50018D6078AD1953CD89B605238BA023E5A7E954"
+    },
+    {
+      "path": "Assets/Resources/Architecture.meta",
+      "sha256": "619F6E6E8F2A497E45ED8D1981DF5BB353BB0DEBE85BB4120FC62CECAB0BBDE7"
+    },
+    {
+      "path": "Assets/Resources/Architecture/Brick_LoftBlock.bytes",
+      "sha256": "BBCF8FFA8307D5728C8744F36203C95E19C64E1775A028164DFBEF3DC3F0DFA7"
+    },
+    {
+      "path": "Assets/Resources/Architecture/Brick_LoftBlock.bytes.meta",
+      "sha256": "9D764FDACBDEA3EA2A494C9AFF1A915ADD79910EFA17B75B9130C79F9E172D36"
+    },
+    {
+      "path": "Assets/Resources/Architecture/Fab_Church.bytes",
+      "sha256": "3D4AE2D712F993B4728F262CF8031E0970DBC18AF8EEA82979E48FFA28B2D9E2"
+    },
+    {
+      "path": "Assets/Resources/Architecture/Fab_Church.bytes.meta",
+      "sha256": "015361125299086FB40815802E72D5CA47E8C4F21249432BC5DCAC3DBD50094C"
+    },
+    {
+      "path": "Assets/Resources/Architecture/Fab_RetailBlock.bytes",
+      "sha256": "BD09BD7D1E09437B2E111AC868EF9F6345159F6B37E3D70E0D89AF2A7B3FE9A9"
+    },
+    {
+      "path": "Assets/Resources/Architecture/Fab_RetailBlock.bytes.meta",
+      "sha256": "50AB0FBF77F1FF0182DC35428A049C2B010413FA48BCA58DAACC769BC47E25CC"
+    },
+    {
+      "path": "Assets/Resources/Architecture/Fab_RowhouseTerrace.bytes",
+      "sha256": "8D636D9477985CE5C0629560759F1D398F90984F202F266831DA1F729EFCFB98"
+    },
+    {
+      "path": "Assets/Resources/Architecture/Fab_RowhouseTerrace.bytes.meta",
+      "sha256": "3A153A20881EB336A020DC067C4E2B34A0E88EB7669BBA902E552D57CB1BBF34"
+    },
+    {
+      "path": "Assets/Resources/Architecture/Garage_ParkingDeck.bytes",
+      "sha256": "93F94F714B2108A0F549C83820375809CA3AD68AF9FDE8EE85D92B928329EEB5"
+    },
+    {
+      "path": "Assets/Resources/Architecture/Garage_ParkingDeck.bytes.meta",
+      "sha256": "B08CFEC7D6D84D18056BD63B2DCCEC3E78271E59FD4A8048F6057EC3B6786610"
+    },
+    {
+      "path": "Assets/Resources/Architecture/Market_Hall.bytes",
+      "sha256": "91B6E3A6D41349F4DD267C2D8CFB1228983F560927677F9D1FAD77099AC08E26"
+    },
+    {
+      "path": "Assets/Resources/Architecture/Market_Hall.bytes.meta",
+      "sha256": "733A748D0653FA215AE4DDD3EC589B27983D0B1497F5EFF9A3BC574ACF2D4D3D"
+    },
+    {
+      "path": "Assets/Resources/Architecture/PortArchitecture.shader",
+      "sha256": "9BB651B24559A85B40BD4BB19866F347CB017771D8381C090EBE0C9D4C786E46"
+    },
+    {
+      "path": "Assets/Resources/Architecture/PortArchitecture.shader.meta",
+      "sha256": "B24A4F0ED8B877D8213B61054391E5CCBAA311D2439707E147C36BF2BA7DFDC8"
+    },
+    {
+      "path": "Assets/Resources/Architecture/PortSurface.shader",
+      "sha256": "C4F78C1EECBD9D9403703CFD024836826420EA0EF3DCCD6C36EEA4F58916B392"
+    },
+    {
+      "path": "Assets/Resources/Architecture/PortSurface.shader.meta",
+      "sha256": "D5CA55A0112614734CB95DBA42F8153CEE374CED961D45974FC8911D393E306D"
+    },
+    {
+      "path": "Assets/Resources/Architecture/provenance.json",
+      "sha256": "B56644F76CBBA571EB46468BEE0BDDA73873F1167869388C2796B970FD76FEB9"
+    },
+    {
+      "path": "Assets/Resources/Architecture/provenance.json.meta",
+      "sha256": "6CB737B9C808A6FFA49FC43657DEF02890823334B7B39F4739DCD79B910B6CB6"
+    },
+    {
+      "path": "Assets/Resources/Architecture/README.md",
+      "sha256": "33363045B59C4BD641EF9B3E555801EA5FC79E3B293E0E8972D3B5E07AA1BCF7"
+    },
+    {
+      "path": "Assets/Resources/Architecture/README.md.meta",
+      "sha256": "7C179283A87719EEB10A0D4A053493A72FE09DF4854F9F669F22D920C9934F93"
+    },
+    {
+      "path": "Assets/Resources/Audio.meta",
+      "sha256": "3782D530103027A8E8EB8532ED3B1ECE2640798A6E34A5BB32F148744952F40A"
+    },
+    {
+      "path": "Assets/Resources/Audio/alert.wav",
+      "sha256": "B30A4B72EE6DD8076C97964C5BC44ECB179336AAAD0B9616E1E13D0A8AF50AFF"
+    },
+    {
+      "path": "Assets/Resources/Audio/alert.wav.meta",
+      "sha256": "6FF6AD385F41BE2F81BC7BBC57ACF1B5AFB061C07AA12534A3D39E0EFE746309"
+    },
+    {
+      "path": "Assets/Resources/Audio/cash.wav",
+      "sha256": "252644B68237C74340E4A9CE16D1E99210C128A725C2594DC3C86E5B6451C962"
+    },
+    {
+      "path": "Assets/Resources/Audio/cash.wav.meta",
+      "sha256": "D20052DCA87057A30A5C6AFF1EA223D4C1EB3EAB9064157FFC2719A095C2D55F"
+    },
+    {
+      "path": "Assets/Resources/Audio/CREDITS.md",
+      "sha256": "BA0D8627DFDE960D771CCD56967F537639B5739FEF8F96BC3921F9C8D3679F75"
+    },
+    {
+      "path": "Assets/Resources/Audio/CREDITS.md.meta",
+      "sha256": "8F88D4053F98CB5810D5355962DFF3D17A3B7529A40A9D954B1F4A853A3466CD"
+    },
+    {
+      "path": "Assets/Resources/Audio/impact-body.wav",
+      "sha256": "7145EB05108ADD4361600755771375A3BD6E235332110EF7FF3602488F9E78DF"
+    },
+    {
+      "path": "Assets/Resources/Audio/impact-body.wav.meta",
+      "sha256": "01A0FAF05D65BA096D3F0F8371E105264FF7FA3595D0FF4E84CED0206E295129"
+    },
+    {
+      "path": "Assets/Resources/Audio/impact-cover.wav",
+      "sha256": "8B2617C5C67C9509594EDEC4B8868FA9ADA01EB04558AE86EE3FC3147545DA21"
+    },
+    {
+      "path": "Assets/Resources/Audio/impact-cover.wav.meta",
+      "sha256": "65F0BFAB09C2FBB8751AFC475FD4F3DAD56430FF35E7E07AB639E4772A3305C1"
+    },
+    {
+      "path": "Assets/Resources/Audio/Kenney-Impact-License.txt",
+      "sha256": "B49AA9C56B04528B95913DE13E506A0F7C5E807B9925DB9BFEF86AF1F91120DB"
+    },
+    {
+      "path": "Assets/Resources/Audio/Kenney-Impact-License.txt.meta",
+      "sha256": "C02FD334CDF663900545A337D1BD55611DBF73F1F61EDCFA3D41E9A10B66B0F5"
+    },
+    {
+      "path": "Assets/Resources/Audio/Kenney-Interface-License.txt",
+      "sha256": "F7966C773BBED0ECA6A9C75081C44A178B38EAE112724DBB5FDFBD4192D118A9"
+    },
+    {
+      "path": "Assets/Resources/Audio/Kenney-Interface-License.txt.meta",
+      "sha256": "5AC0080463C72D8D01D57A2AD0AF0ACFB6FF34B14FBDC15D076B7A6D6E3B5EBB"
+    },
+    {
+      "path": "Assets/Resources/Audio/pickup.wav",
+      "sha256": "2BDA89B489F8DEFB8B290A1550515E558F3EC9FBE787C0200FE6F5974343EBC8"
+    },
+    {
+      "path": "Assets/Resources/Audio/pickup.wav.meta",
+      "sha256": "E3C06E8DBECE8B24968D5F9C2E16548053717DD332B8E0ED35300245D635AF05"
+    },
+    {
+      "path": "Assets/Resources/Audio/pistol.wav",
+      "sha256": "9B987023CE4469547ACF57F3551347858EF0F41FE70E522AEA66C8D3250FCF87"
+    },
+    {
+      "path": "Assets/Resources/Audio/pistol.wav.meta",
+      "sha256": "71179FAB07D18C0D2DF3E241226A3B894D23A7AA0B7273A7422545B4B2DC16AB"
+    },
+    {
+      "path": "Assets/Resources/Audio/provenance.json",
+      "sha256": "902764EBA09968C39D420C4B386DF114F0369CE8DB3831866075E62DBDE5C826"
+    },
+    {
+      "path": "Assets/Resources/Audio/provenance.json.meta",
+      "sha256": "1F63A6B6703B85BAD8EF154BF91C82796E7663970E35323B6C4BB1B8BBD0CB79"
+    },
+    {
+      "path": "Assets/Resources/Audio/reload-finish.wav",
+      "sha256": "D04FC82D9C7C497DFD50A1ED818BA82E2FEBB0354C7015007CEB1A6AFBDFEBAD"
+    },
+    {
+      "path": "Assets/Resources/Audio/reload-finish.wav.meta",
+      "sha256": "8A9C733E25EF46D7445E2A19C685BEB4082545096808AFA968AC0F59E884DD38"
+    },
+    {
+      "path": "Assets/Resources/Audio/reload-start.wav",
+      "sha256": "8DF64DA3988CE6E237FE1C4D5FBED0204621BF60ED005F0D3975531C0BCE3526"
+    },
+    {
+      "path": "Assets/Resources/Audio/reload-start.wav.meta",
+      "sha256": "36464498360126EE4C86D21D2F690151BB616F5A2CE778911F347F80B31FC18D"
+    },
+    {
+      "path": "Assets/Resources/Audio/shotgun-action.wav",
+      "sha256": "A377E1CE3675EB0028B04DE05CAC2643A66753D13510EF561C36E15DC55A5F61"
+    },
+    {
+      "path": "Assets/Resources/Audio/shotgun-action.wav.meta",
+      "sha256": "84DA838CD06CA630A7F6D8974AE10903E417A27D02447EACC878B22AB9C73866"
+    },
+    {
+      "path": "Assets/Resources/Audio/shotgun.wav",
+      "sha256": "90E064F0EB9DE73C0263E474520CC01946F46E932661EF02B7EF26E975F1069C"
+    },
+    {
+      "path": "Assets/Resources/Audio/shotgun.wav.meta",
+      "sha256": "98D5065AEB0754EAB978DC14D23D2A2FA3704D7BB19049AAA97457FA9086DB1B"
+    },
+    {
+      "path": "Assets/Resources/Audio/step-01.wav",
+      "sha256": "A9123DEF6FFA04C58FE43DCF1BD1E1A01364C3ECF727B0C7A7CC8C6B8958DDE5"
+    },
+    {
+      "path": "Assets/Resources/Audio/step-01.wav.meta",
+      "sha256": "201EDEF789EA4AA8A6BC1B4DAB03C1C064CCA866DA5C731212C53FC2B487AE3D"
+    },
+    {
+      "path": "Assets/Resources/Audio/step-02.wav",
+      "sha256": "452446B32D2333C961EA2BCCE2BE0D86BCFEF191DC9B693FFE06F007487876E6"
+    },
+    {
+      "path": "Assets/Resources/Audio/step-02.wav.meta",
+      "sha256": "5D2B5D3B5E7E40840885015F43E43EF27462BC1087DEFF50294E52F6F8960B4A"
+    },
+    {
+      "path": "Assets/Resources/Audio/step-03.wav",
+      "sha256": "ECC174DC1A4DECB12452E6ED78D4255F5FC82B3D070B29B40C58D86B57BB71F9"
+    },
+    {
+      "path": "Assets/Resources/Audio/step-03.wav.meta",
+      "sha256": "1142B14B18D36F2D95495F97E4F320E1CFFE31F5091B49E4119F9ED1A5F7C430"
+    },
+    {
+      "path": "Assets/Resources/Audio/step-04.wav",
+      "sha256": "97C520EEFC30041FF2DC08999C2D27F5D726D0F6E8DDB2D9A63F04114FF8728C"
+    },
+    {
+      "path": "Assets/Resources/Audio/step-04.wav.meta",
+      "sha256": "E2822624B04F85020B4BBCE617585288C2953849A8AFC3FB7AE0B50CBBB863C6"
+    },
+    {
+      "path": "Assets/Resources/Rendering.meta",
+      "sha256": "60AFA00451CC769E50C371225B0B303C7CF9E3232FE8F66F1B8304C952898ECE"
+    },
+    {
+      "path": "Assets/Resources/Rendering/Emission.mat",
+      "sha256": "07A81E434E9615DE5C1AB3ACE6D03D867D06B053CC10F041D68FA470E219E0BA"
+    },
+    {
+      "path": "Assets/Resources/Rendering/Emission.mat.meta",
+      "sha256": "6794BDC3A99331BF535ACED39B5DF7011C522B2FE04838622D3C1A338CFD4EC3"
+    },
+    {
+      "path": "Assets/Resources/Rendering/Marker.mat",
+      "sha256": "F003535E467895AFB3AA5851E1A179B4531517D8221D6DA0D34C807F09E51FCF"
+    },
+    {
+      "path": "Assets/Resources/Rendering/Marker.mat.meta",
+      "sha256": "03EC9823A25BE2E14B07D30E0ACCE7B10555DDC2ECF43A998F38274B87F51BA0"
+    },
+    {
+      "path": "Assets/Resources/Rendering/Surface.mat",
+      "sha256": "F6713E9D6939FCEBC94492DCD952569376D50FD34890944A2D9ABB29F2787672"
+    },
+    {
+      "path": "Assets/Resources/Rendering/Surface.mat.meta",
+      "sha256": "71E4F83C0019AF925B11B570E11398A4C61AD240E44101C83403272651DAF7DB"
+    },
+    {
+      "path": "Assets/Scenes.meta",
+      "sha256": "8CE5D949DEB4643BFF602C088C2DB928E5C61CB38C59FAB49EC66861B01F855A"
+    },
+    {
+      "path": "Assets/Scenes/OldPort.unity",
+      "sha256": "3A6B8DDC1DD06CF596638B11524C6B704BB44198718B9DCF00BEC37CCFEACCAD"
+    },
+    {
+      "path": "Assets/Scenes/OldPort.unity.meta",
+      "sha256": "27F491AA2510070DC8C61318BFCB54C9DA837C998D8E6C0332A965BC1FC26B9E"
+    },
+    {
+      "path": "Assets/Scripts.meta",
+      "sha256": "FD5FEEE744EFEA6D09113F64AA1DD5C8133FBC79229EE6FAF2AD12A6F09A3663"
+    },
+    {
+      "path": "Assets/Scripts/ArmsState.cs",
+      "sha256": "F88D7BB36094E42D63B3920D1899A385E5F176B58D7B0FB9277D01A18B975327"
+    },
+    {
+      "path": "Assets/Scripts/ArmsState.cs.meta",
+      "sha256": "D86179A3B18FA066EA28E026B320727A951DE3C9F3096D2FA80187A57EEC188E"
+    },
+    {
+      "path": "Assets/Scripts/CargoRun.cs",
+      "sha256": "DC6A4DF26E1BFB93B6C8030B551F0A08FF42BFDC0B2CD510825D31DF2783569D"
+    },
+    {
+      "path": "Assets/Scripts/CargoRun.cs.meta",
+      "sha256": "F7776276C6D1BE1930F911CC75155F4B00333425962E8C798F4C434F29496C49"
+    },
+    {
+      "path": "Assets/Scripts/CityArchitecture.cs",
+      "sha256": "277DD059CA57A8FCC65CD911E4AEA05174E62CF85D8AF849D2671D5C380FA763"
+    },
+    {
+      "path": "Assets/Scripts/CityArchitecture.cs.meta",
+      "sha256": "84F03E46B80CD84C0BD12F0070B2673EB0975BEA15B520852C3DB3EF1514DE66"
+    },
+    {
+      "path": "Assets/Scripts/CityArt.cs",
+      "sha256": "C2C97AF7D72DB6777B8238913159CC3A634E64E29F41DF3AB46917E281B46C25"
+    },
+    {
+      "path": "Assets/Scripts/CityArt.cs.meta",
+      "sha256": "FFD5FA368E90339C8214640953DD82B949DC2C2471475274286A6C1BC63FDF2F"
+    },
+    {
+      "path": "Assets/Scripts/CityClinic.cs",
+      "sha256": "6E22C7B1BD1EB26B39CEE167432E0F71A911FC0BE34D0511C3DF462C1CE578FA"
+    },
+    {
+      "path": "Assets/Scripts/CityClinic.cs.meta",
+      "sha256": "741546839B27439466C7EB84F127B9F67185375C0C475A640C8659031C9D2511"
+    },
+    {
+      "path": "Assets/Scripts/CityNavigation.cs",
+      "sha256": "E53A6870EF00B51A72EC5896AB6F47D55D9BB30F5FFE59F086E368D140508121"
+    },
+    {
+      "path": "Assets/Scripts/CityNavigation.cs.meta",
+      "sha256": "E7E4593D21BE69135AEDDB50C1E0AA6D171D960B5AB8E662B76CDEA02E20B446"
+    },
+    {
+      "path": "Assets/Scripts/CitySpatial.cs",
+      "sha256": "B0095B88B1CD2E44CF8844141BD151619D173823585B1876A74521C6747403A2"
+    },
+    {
+      "path": "Assets/Scripts/CitySpatial.cs.meta",
+      "sha256": "0552E9EDFCA00B43F634C06095A7C20BD9453999FDEBF85B892BEA88DEF876FB"
+    },
+    {
+      "path": "Assets/Scripts/CityTraffic.cs",
+      "sha256": "0991F2CB661DE34AC0688C7B31311F9B978C8F5DAA7EC6F5EB2943D91B6EE9C1"
+    },
+    {
+      "path": "Assets/Scripts/CityTraffic.cs.meta",
+      "sha256": "287F092801D567A9E4CAC333DE4FBCBECA3A67B1D6352279AD8F0519DD53C27D"
+    },
+    {
+      "path": "Assets/Scripts/CombatHitEvidence.cs",
+      "sha256": "D9B6DBE041BD9CFD827DFE814CDB1F7A2AA47CADCA39563582B7024DA28EF1AE"
+    },
+    {
+      "path": "Assets/Scripts/CombatHitEvidence.cs.meta",
+      "sha256": "A9F118882DC4365CBCEF0861FCD5EA03814C33D65C0BF97BF77B7F70161C53CA"
+    },
+    {
+      "path": "Assets/Scripts/CombatSquad.cs",
+      "sha256": "7EECB77C3B15691D0665C184230F83747D4FD2F6BAB86A9101DF85BAD66C702A"
+    },
+    {
+      "path": "Assets/Scripts/CombatSquad.cs.meta",
+      "sha256": "18B4258AB69F4CB23026AB4827795A65FE4A6842296FDF3E2AB60EEB3CC16936"
+    },
+    {
+      "path": "Assets/Scripts/CombatSquadRules.cs",
+      "sha256": "E8DBE5B5914A51E003DF2285EE45FD00EE9CD452AB5C7DB812919F2AD4DD5EC0"
+    },
+    {
+      "path": "Assets/Scripts/CombatSquadRules.cs.meta",
+      "sha256": "93AC2C2CE9B5FB9CF501C9BF3011DE3419CF8D59781452099D76AC8C58C18125"
+    },
+    {
+      "path": "Assets/Scripts/CrewEquipment.cs",
+      "sha256": "36DCA87EEC317887E4B0F8210146FAF33CC175EC5885877FAA5114F19D8B2374"
+    },
+    {
+      "path": "Assets/Scripts/CrewEquipment.cs.meta",
+      "sha256": "CAC0DB65A3688E9870913F3A17B3C84823C1570DC9BD9875A41E4D3771BA74C7"
+    },
+    {
+      "path": "Assets/Scripts/CrewState.cs",
+      "sha256": "273938519D307743BCE25BDF269CB048535A2BD8CD408215F508454404325782"
+    },
+    {
+      "path": "Assets/Scripts/CrewState.cs.meta",
+      "sha256": "7EC77BA57EEB9C0B9A06CBD32770DB9B2C3E1E46AFA5687B1303E0FDFC7A1EF7"
+    },
+    {
+      "path": "Assets/Scripts/CrewUITests.cs",
+      "sha256": "760FC698C6825106BF7B8EFC7C37EB7A56B8E6344F9893CABE916686D200C441"
+    },
+    {
+      "path": "Assets/Scripts/CrewUITests.cs.meta",
+      "sha256": "9F6DEE10351ACB11B93511AEC79E339B276D3AB1E35A22ABCA6FC1894F0622AA"
+    },
+    {
+      "path": "Assets/Scripts/DistrictState.cs",
+      "sha256": "DDA0EB2F0A08FFD4EEFDCDECFC2C65C96FD592468F9B9653D362AAA6C952FFDB"
+    },
+    {
+      "path": "Assets/Scripts/DistrictState.cs.meta",
+      "sha256": "5EDDFF5678647136734F40DE3EE32DB35D4A39EBEBFE65801226B6C4F0CDFA3D"
+    },
+    {
+      "path": "Assets/Scripts/DockOperationState.cs",
+      "sha256": "99EFC7B4C20CD77917062830025CC788CD7882933CFBF05AA291E5BE46EF4735"
+    },
+    {
+      "path": "Assets/Scripts/DockOperationState.cs.meta",
+      "sha256": "89D9859D7BF6FC0807A5D50AA2AEFC5054E0F024047329ABB0FA7AC41C0828F8"
+    },
+    {
+      "path": "Assets/Scripts/FunstraArms.cs",
+      "sha256": "80FCE263A8FDB6F781DA779BCF91A0CEF6F65B7F33E52BA8FF3D49BD1037772D"
+    },
+    {
+      "path": "Assets/Scripts/FunstraArms.cs.meta",
+      "sha256": "1C75790186D133168E5B7819201712316F30F6B47A00F51D8E1B4B64C6C55F28"
+    },
+    {
+      "path": "Assets/Scripts/FunstraArmsTests.cs",
+      "sha256": "54A15C7B14CFF86EF47E12BAAD5399DD66AF407F901CCBEED710CE43EC662851"
+    },
+    {
+      "path": "Assets/Scripts/FunstraArmsTests.cs.meta",
+      "sha256": "FA7956DF837BF21EEACC5CD5CF736BD424A3A033102F0335242619D4160EEA8C"
+    },
+    {
+      "path": "Assets/Scripts/FunstraArmsUI.cs",
+      "sha256": "ECB4A94475AD9C074B7841BD2EDBE19B9E5554281ED7C3022AC3E7347457DE55"
+    },
+    {
+      "path": "Assets/Scripts/FunstraArmsUI.cs.meta",
+      "sha256": "A1A9E1EAFAFBE1021C8607F9F467E0D1E95815D923D1E1E28DDA2DDF5A400F56"
+    },
+    {
+      "path": "Assets/Scripts/FunstraAudio.cs",
+      "sha256": "8E2E778B93D452956DD8994CA56BE25984C357D3EDEEDF35E6E91D6C182D92EB"
+    },
+    {
+      "path": "Assets/Scripts/FunstraAudio.cs.meta",
+      "sha256": "B221EA352C78FAA47C44E4244BCD4F215EE0D004804214F4A07987F63ED55B55"
+    },
+    {
+      "path": "Assets/Scripts/FunstraCargo.cs",
+      "sha256": "0F994F824BBD3FB113FE0A26A9E1F8AFA2E80227EA48233CE832B5C3E1DBF604"
+    },
+    {
+      "path": "Assets/Scripts/FunstraCargo.cs.meta",
+      "sha256": "01D426B309D0C16CB73AE082ADDAE33F8E3A4D64CA5EE7A4123436C5FAABFA1D"
+    },
+    {
+      "path": "Assets/Scripts/FunstraCombat.cs",
+      "sha256": "ACCE9D2045872E2AAA341B302428447DD375FFF246893403A48E1C305B397B88"
+    },
+    {
+      "path": "Assets/Scripts/FunstraCombat.cs.meta",
+      "sha256": "31C7F890B2D42F20EE8D6F616BB8E0292CA59B1431EBB85E53D6840A29D650B4"
+    },
+    {
+      "path": "Assets/Scripts/FunstraCompactUI.cs",
+      "sha256": "FB05022131584B0E1FF3EA080078887F5079DAD5E59638203BC76C5AE1559202"
+    },
+    {
+      "path": "Assets/Scripts/FunstraCompactUI.cs.meta",
+      "sha256": "2288798A613AD77E0BCC4F953532576A16A5DD393DF60D51F0FA5B73AC7B21F6"
+    },
+    {
+      "path": "Assets/Scripts/FunstraCrew.cs",
+      "sha256": "DF4A0F59D1D274A767B3BE6FB19D444465F4CC718562555B4307A7E5B6732F61"
+    },
+    {
+      "path": "Assets/Scripts/FunstraCrew.cs.meta",
+      "sha256": "DD5391FF3759BD587B85A0527812B2F1265F016BB862E9C56904A276B7842E0B"
+    },
+    {
+      "path": "Assets/Scripts/FunstraCrewApproachTests.cs",
+      "sha256": "F04A1109C11841E4678F96E42C22189E056E62E71AA00E859EB20F8B089DBB8E"
+    },
+    {
+      "path": "Assets/Scripts/FunstraCrewApproachTests.cs.meta",
+      "sha256": "09BCACD57BA60F2D402451F03457094354EE12437D7E3994659F801D89ACCCA5"
+    },
+    {
+      "path": "Assets/Scripts/FunstraCrewOppositionTests.cs",
+      "sha256": "2DE239F877BB7A880DF562A40156196DE8535A5F82A09E4F30689B9CABB26DCD"
+    },
+    {
+      "path": "Assets/Scripts/FunstraCrewOppositionTests.cs.meta",
+      "sha256": "620DB0A736C55A60E6013700D5E4A9C813537F9D0569DAAFC9187CCAABD72CE0"
+    },
+    {
+      "path": "Assets/Scripts/FunstraCrewTests.cs",
+      "sha256": "8AAA6984B72437FFFF47C34CF83A4BE2A5F4679AB8CFD7CA1398E0DD1383096A"
+    },
+    {
+      "path": "Assets/Scripts/FunstraCrewTests.cs.meta",
+      "sha256": "CF40134BEF91F481A1E8FDF35A37633E5F1625C7C1A51A69469655306DFACF16"
+    },
+    {
+      "path": "Assets/Scripts/FunstraCrewUI.cs",
+      "sha256": "EDDB81F881265E09DBFF4E4C920F61FDE90672527E43DBDA01E538A128FCD837"
+    },
+    {
+      "path": "Assets/Scripts/FunstraCrewUI.cs.meta",
+      "sha256": "32C1FB353038C0682232ECFD5CAC1475BBE4E89AF00365FFC50637D2BD9A3053"
+    },
+    {
+      "path": "Assets/Scripts/FunstraDistrict.cs",
+      "sha256": "6193CF62DDA91952C446C54816C15DCA9D54306DCFF5F12B62A47143504EB048"
+    },
+    {
+      "path": "Assets/Scripts/FunstraDistrict.cs.meta",
+      "sha256": "666053584624414926A0BBEDB40226CC055249001DA3DB7EDB1E820D5F651A1C"
+    },
+    {
+      "path": "Assets/Scripts/FunstraDistrictTests.cs",
+      "sha256": "4BF4D7ED0E72B8336EA028654EDDAD90FC50CB2B46F43C12925515B307CCBD21"
+    },
+    {
+      "path": "Assets/Scripts/FunstraDistrictTests.cs.meta",
+      "sha256": "06C1ED791968EEB4D7F6A61D9781CFE5E8A12D6AF97025C21E6E8E7DD27E341D"
+    },
+    {
+      "path": "Assets/Scripts/FunstraDistrictUI.cs",
+      "sha256": "041A15719203CBBD0A667336D5EAEEE340A2A6284A3628B77DD0F569E53D0029"
+    },
+    {
+      "path": "Assets/Scripts/FunstraDistrictUI.cs.meta",
+      "sha256": "915C6CA43A09C562C47ACDE3D49D472FA804E77ED58C4626B237F67C2B0607E6"
+    },
+    {
+      "path": "Assets/Scripts/FunstraDockOperation.cs",
+      "sha256": "1A4B8BD4A64448051E057095CE40BC143790C82E07C05130856B5ECAD5B38158"
+    },
+    {
+      "path": "Assets/Scripts/FunstraDockOperation.cs.meta",
+      "sha256": "64D3B2D209C18BFE1B81B0940FB90A4F4791A30A622B947ACA60ADA91D6AD60F"
+    },
+    {
+      "path": "Assets/Scripts/FunstraEnvironmentTests.cs",
+      "sha256": "EEA935512E42DFF08FE29D544EB8FB9FD6DAA57E8FDE613FBA7AEF7F5A50F2BF"
+    },
+    {
+      "path": "Assets/Scripts/FunstraEnvironmentTests.cs.meta",
+      "sha256": "77A8F78386AD9D87CA4348DFFEBBBB561F153CAA2493FFA1EE4BBC3D6FD0E05F"
+    },
+    {
+      "path": "Assets/Scripts/FunstraFoundation.cs",
+      "sha256": "D703E53BEA4B1E55648BF00CFDA3DF1139A5BD1FBFAD6BD5AF711E248E64B1D2"
+    },
+    {
+      "path": "Assets/Scripts/FunstraFoundation.cs.meta",
+      "sha256": "3AB21FFAFA4A79E52EADBFD891508807A77116EDD435F3429756B636BA631AD0"
+    },
+    {
+      "path": "Assets/Scripts/FunstraFoundationTests.cs",
+      "sha256": "B5D285E12E5292746D4376845D22329E2951F27FDDF040E3D1AA6A662B4E9B9C"
+    },
+    {
+      "path": "Assets/Scripts/FunstraFoundationTests.cs.meta",
+      "sha256": "2E193E6F89A4DE06D683F2FE634BBED2E2984A1A18D8D2B6065A3AAFF723B146"
+    },
+    {
+      "path": "Assets/Scripts/FunstraGame.cs",
+      "sha256": "F1B657B29D3ED89B15ADA695A055C8232268A912463AE07E42CF212F0FDEEA1A"
+    },
+    {
+      "path": "Assets/Scripts/FunstraGame.cs.meta",
+      "sha256": "55747B6432AD2AAE989846AD90952D14EAEDD70C90F2CFB8D8AB36647EECA718"
+    },
+    {
+      "path": "Assets/Scripts/FunstraPolice.cs",
+      "sha256": "6B2ADDC9246CFBBF325AEE604D7380A9D6A4624109060DF83E0B603CFCFF476A"
+    },
+    {
+      "path": "Assets/Scripts/FunstraPolice.cs.meta",
+      "sha256": "E6575364BCF69BE2D2DB97692C6207CAF6FA7026A061CAFC0F716A20C7A2E79E"
+    },
+    {
+      "path": "Assets/Scripts/FunstraPoliceTests.cs",
+      "sha256": "0E6F703196A2D0C385C9AEC53451C64D54AE2FE4DA1BE9E9C759A97493DFF9CF"
+    },
+    {
+      "path": "Assets/Scripts/FunstraPoliceTests.cs.meta",
+      "sha256": "E9AD956599C4E437FE05AA918340629363643426CD95D354B998A55A17FDF332"
+    },
+    {
+      "path": "Assets/Scripts/FunstraPressureCrowdingTests.cs",
+      "sha256": "078A66DD1DF3F7157F6F94B87BDE7E35EAD800032CC0CEB6E065767CB2EFC2EF"
+    },
+    {
+      "path": "Assets/Scripts/FunstraPressureCrowdingTests.cs.meta",
+      "sha256": "22081AC59A1052A04647DE20BBD01ED5E18C6080BFE4318D7BF59D55416CBD50"
+    },
+    {
+      "path": "Assets/Scripts/FunstraPressureTests.cs",
+      "sha256": "9D947CAA8BDAF08E01C1055422FB7141258D7E0FEEC1F7322D081E8EDC436D4A"
+    },
+    {
+      "path": "Assets/Scripts/FunstraPressureTests.cs.meta",
+      "sha256": "F0CA260353B0249BDC7EA92488D3C737A178D369D0FF795DE5F43C81AA6487DB"
+    },
+    {
+      "path": "Assets/Scripts/FunstraRefuge.cs",
+      "sha256": "F6EDB3D6B5A2057F0C69154C01DB8BE8F5DBA22FF5C32E676B439AA7B9344F1E"
+    },
+    {
+      "path": "Assets/Scripts/FunstraRefuge.cs.meta",
+      "sha256": "17FED351FB6F50336DC68093E1A4C5702680255E09A45F9E57A36AB9EA48DD62"
+    },
+    {
+      "path": "Assets/Scripts/FunstraRefugeTests.cs",
+      "sha256": "D55D6A0B0AE537849FF577203B16D7C17CBB54F262E6AFF5FC13CEB9290187AF"
+    },
+    {
+      "path": "Assets/Scripts/FunstraRefugeTests.cs.meta",
+      "sha256": "864793E125DFAE0B0F510F6ED4A9F27060A294D6B8A3D11D3304303A033EF906"
+    },
+    {
+      "path": "Assets/Scripts/FunstraResidents.cs",
+      "sha256": "4D7779B3444D17A8789CD088B0681544D59A26F4FF8A4354335F7D5506B8B443"
+    },
+    {
+      "path": "Assets/Scripts/FunstraResidents.cs.meta",
+      "sha256": "E70B8D39FB86D6CB938289F5588E0A375284B2E5A96FF9914FCD803044D58E23"
+    },
+    {
+      "path": "Assets/Scripts/FunstraResidentsTests.cs",
+      "sha256": "B2D051DB0FC82D0FF0F94BE76B6029BCEE47865000C64466D3F2B89341AF1839"
+    },
+    {
+      "path": "Assets/Scripts/FunstraResidentsTests.cs.meta",
+      "sha256": "2EBDB9C4928892E291B8BFBE3C0FE2055B7BC2E8AFF9C52AA8B4B2B19898EEC9"
+    },
+    {
+      "path": "Assets/Scripts/FunstraResidentsUI.cs",
+      "sha256": "CFAC7319FB19DFB159F3A3BDD23F8E4FF6A1474D4D33AD98AD20F71F32FD9866"
+    },
+    {
+      "path": "Assets/Scripts/FunstraResidentsUI.cs.meta",
+      "sha256": "4E65B297FA1C9B32D8045E7FA7BE893F7CAA9E632B70A496A6BBCE4C89869136"
+    },
+    {
+      "path": "Assets/Scripts/FunstraSmoke.cs",
+      "sha256": "EDE12076AA2D0A960C1FF6EACE1B9E323461E7FF9A233200C02DDA06511E9928"
+    },
+    {
+      "path": "Assets/Scripts/FunstraSmoke.cs.meta",
+      "sha256": "5A384911428CA919ED4E7288272B053662F307B7E44127A0357A02BE3328A727"
+    },
+    {
+      "path": "Assets/Scripts/FunstraStreetsTests.cs",
+      "sha256": "9BCB12B0F3D5A37D839047A17DAB99E57DCC85460950671545C651F5465A4D1E"
+    },
+    {
+      "path": "Assets/Scripts/FunstraStreetsTests.cs.meta",
+      "sha256": "2EEA5B53DFB325F896C3E0847DA15457F3BD5FD25461A467726F22B3AA98E442"
+    },
+    {
+      "path": "Assets/Scripts/FunstraTrafficFoundationTests.cs",
+      "sha256": "E12BE2D35C27E2A04E547C627F400DF239E9A5C71EC188B9A619800C3039E222"
+    },
+    {
+      "path": "Assets/Scripts/FunstraTrafficFoundationTests.cs.meta",
+      "sha256": "6148663D7FAC0717593205A5C46EB3B89B7BE8822C2A679CA961F2B39C2065C3"
+    },
+    {
+      "path": "Assets/Scripts/FunstraUI.cs",
+      "sha256": "7275201BDA27048EA9177DF0C09D77AC8090E4623A977340AD6FA452251E98CF"
+    },
+    {
+      "path": "Assets/Scripts/FunstraUI.cs.meta",
+      "sha256": "0D11C6D5CAA52351628CFAB6C5541AD6E566B9C0362A199189C5393EA9F22716"
+    },
+    {
+      "path": "Assets/Scripts/FunstraYard.cs",
+      "sha256": "EA4194F8BAA2B536AC061463C9C25868E3A8D82DFDEFCB70A6D99A179D5FBB20"
+    },
+    {
+      "path": "Assets/Scripts/FunstraYard.cs.meta",
+      "sha256": "9E7BF84244899A698DDC2C7E66A6CA4F5E9C1DAB0FA74E22F32DBF96A8B8F1FD"
+    },
+    {
+      "path": "Assets/Scripts/ProjectileCombat.cs",
+      "sha256": "3AE3C456BD9852271AA02D5CCFFDA7D0D2E7AA3772DEFEB4B298D8A5AA4F401F"
+    },
+    {
+      "path": "Assets/Scripts/ProjectileCombat.cs.meta",
+      "sha256": "D07A62D308AB5A57D4170A3302F18EDEDE4E1604C23D44C7F0DFAB00C91DE847"
+    },
+    {
+      "path": "Assets/Scripts/RefugeState.cs",
+      "sha256": "27BE44349F49F91EC59335A54E4806E65893181CDC140B6A1EB888F35685AC36"
+    },
+    {
+      "path": "Assets/Scripts/RefugeState.cs.meta",
+      "sha256": "943EFF15F6FCD9306DC86088FE88DF3322F662DB4C2075D2F387C498684BDE03"
+    },
+    {
+      "path": "Assets/Scripts/ResidentPersona.cs",
+      "sha256": "DF95FA6945C7EF38F8A9AFF3504A3D1D78272B6530756176D98B7228F8D6491D"
+    },
+    {
+      "path": "Assets/Scripts/ResidentPersona.cs.meta",
+      "sha256": "7B85EC3B406CED78AE2D3C9F92C72CC4A4CCFCDE5C25253C5528FEAA6D8D3D57"
+    },
+    {
+      "path": "Assets/Scripts/RunState.cs",
+      "sha256": "359CAF03C9F9F72309E53E3C0296DA9421F30A658471E31A80BB4DD0CB547478"
+    },
+    {
+      "path": "Assets/Scripts/RunState.cs.meta",
+      "sha256": "D1E493F460E5A1C4B3639CA4CCC3C1DAE9095234D263290F915924DA8385622C"
+    },
+    {
+      "path": "Assets/Scripts/TownAgent.cs",
+      "sha256": "662F99BE32AE00CD51088363E497106AA1AE2E4D24E6C38EEADA30A5CA8539F5"
+    },
+    {
+      "path": "Assets/Scripts/TownAgent.cs.meta",
+      "sha256": "5A6280DADB8ECB123CC659001B27B19ADA364E3ACEB6F46ED42EF20FE8E8F603"
+    },
+    {
+      "path": "Packages/manifest.json",
+      "sha256": "291FE0AB3139E5A054CCDBE4B37506406067F2365993B627B5CDA4564BF42AF7"
+    },
+    {
+      "path": "Packages/packages-lock.json",
+      "sha256": "A5417030653FECA94FD2BC0C6FAAB6CF31D5DCE1DCF59F042CBCCEE2B87032EC"
+    },
+    {
+      "path": "ProjectSettings/AudioManager.asset",
+      "sha256": "9543C41DBFC7D3951217C4DD9481ED026EB8E529B85ECF4463969A0FEA747729"
+    },
+    {
+      "path": "ProjectSettings/ClusterInputManager.asset",
+      "sha256": "40E65DD214BF254955D2C8829CA8CE2130FD3510485560CE012E9A1DDD93E623"
+    },
+    {
+      "path": "ProjectSettings/DynamicsManager.asset",
+      "sha256": "CB2AAED73306E32DF3E8200C74FA0EFDA690D3C6F68DFF45DFEEEB5739128A1D"
+    },
+    {
+      "path": "ProjectSettings/EditorBuildSettings.asset",
+      "sha256": "1942C088DDFEEEF348FDF12390E2A2D6DA51056E197458D67969D44E7B2CBBD3"
+    },
+    {
+      "path": "ProjectSettings/EditorSettings.asset",
+      "sha256": "4FB4ED8F1E8758A52BCF5978B120BC54C640CA4B58EE879BA6C8518ABC918FE5"
+    },
+    {
+      "path": "ProjectSettings/GraphicsSettings.asset",
+      "sha256": "72C16E187F9D88C212DA1DDEE71196C43B4E2870E7B92E456B61D1A9B8650B1D"
+    },
+    {
+      "path": "ProjectSettings/InputManager.asset",
+      "sha256": "D0F454DDB880912ABCAE92E3E12957A7446786BA89E24937E019FF3BBC0D4300"
+    },
+    {
+      "path": "ProjectSettings/MemorySettings.asset",
+      "sha256": "CB2E41EDD7F5A64298D68DD4AB768E8908E33A00F26E5EE53638E4D4251C358E"
+    },
+    {
+      "path": "ProjectSettings/MultiplayerManager.asset",
+      "sha256": "CE4075D7A7DD8AC7FFE55DE2427692C63F90DAE398208BD80CEC0F27CBE09F4B"
+    },
+    {
+      "path": "ProjectSettings/NavMeshAreas.asset",
+      "sha256": "7EBBF8F53B8033104E1878B95CA07A28D0954092D81C220F14196A42F651E658"
+    },
+    {
+      "path": "ProjectSettings/Physics2DSettings.asset",
+      "sha256": "1CFC0C8FBCEEC604FD7CD2A06C04FF05DDDEE6335B75C92B0F5715AD80BA9490"
+    },
+    {
+      "path": "ProjectSettings/PresetManager.asset",
+      "sha256": "29C125923FE6E29F90190D4FCE1C82D660E7051546E2C9D02908D18C9CF2436C"
+    },
+    {
+      "path": "ProjectSettings/ProjectSettings.asset",
+      "sha256": "72313F71563967D0C88E61E8AF2765DEC3C7CDA09FA60FFF65862BBF4805012C"
+    },
+    {
+      "path": "ProjectSettings/ProjectVersion.txt",
+      "sha256": "8468D7ADD4C1613C42224053CB9C889688CCF141875F44065A40E6D133BC3EA7"
+    },
+    {
+      "path": "ProjectSettings/QualitySettings.asset",
+      "sha256": "F1F893B1BE47AD2442F58338DD7C860DC1986BB317E2F5BB31084454FFABBF4C"
+    },
+    {
+      "path": "ProjectSettings/SceneTemplateSettings.json",
+      "sha256": "BB9098B3BFCDE78D93E264B96F7B77B5430E64E8C57A7AAD7F5A5D9C3945E16A"
+    },
+    {
+      "path": "ProjectSettings/TagManager.asset",
+      "sha256": "996628FDC904025B83606BBFBDA4FE08C0BBE916475146110E77CDC2F22C2013"
+    },
+    {
+      "path": "ProjectSettings/TimeManager.asset",
+      "sha256": "3396F52FDC16D445024E01D7A2D99DB6F0A37569D1D73C0302E9FFB857D90287"
+    },
+    {
+      "path": "ProjectSettings/UnityConnectSettings.asset",
+      "sha256": "11251DAE0356B6F43DD2C67BB511F6B7ECDA4E5DE425186BBA3297E6F3DC1C6F"
+    },
+    {
+      "path": "ProjectSettings/VersionControlSettings.asset",
+      "sha256": "E199CDFA6A8F2BF33CFD47E549198F13E3EB2A5099E908FDB4E0F14D939CCC6B"
+    },
+    {
+      "path": "ProjectSettings/VFXManager.asset",
+      "sha256": "2973A6AF930E142F62CDE00076BEDA8A3CC3A66D9BFCDE7A58BA7D4BE2251C26"
+    }
+  ]
+}

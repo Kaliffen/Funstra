@@ -13,7 +13,9 @@ namespace Funstra
         { kind=k;name=n;magazine=mag;pellets=count;damage=hit;speed=velocity;range=reach;interval=cycle;reload=load;spread=cone; }
         public static readonly WeaponSpec Pistol=new WeaponSpec(2,"PISTOL",6,1,28,48,36,.46f,1.5f,0);
         public static readonly WeaponSpec Shotgun=new WeaponSpec(3,"SHOTGUN",2,7,12,40,24,1.05f,2.3f,8);
-        public static WeaponSpec For(int kind) => kind==3?Shotgun:Pistol;
+        public static readonly WeaponSpec SMG=new WeaponSpec(4,"SMG",18,1,15,55,32,.11f,2,2);
+        public static readonly WeaponSpec Rifle=new WeaponSpec(5,"RIFLE",5,1,30,86,40,.8f,2.7f,.35f);
+        public static WeaponSpec For(int kind) => kind==5?Rifle:kind==4?SMG:kind==3?Shotgun:Pistol;
     }
     [Serializable] public sealed class WeaponState
     {
@@ -33,7 +35,7 @@ namespace Funstra
         }
         public bool Fire(ref int total)
         { if(cooldown>0||reloadRemaining>0||magazine<=0||total<=0)return false;total--;magazine--;cooldown=WeaponSpec.For(kind).interval;return true; }
-        public bool Valid(int total) => total>=0&&magazine>=0&&magazine<=Mathf.Min(total,WeaponSpec.For(kind).magazine)&&ProjectileMath.Finite(reloadRemaining)&&reloadRemaining>=0&&reloadRemaining<=3&&ProjectileMath.Finite(cooldown)&&cooldown>=0&&cooldown<=2&&(kind==2||kind==3);
+        public bool Valid(int total) => total>=0&&magazine>=0&&magazine<=Mathf.Min(total,WeaponSpec.For(kind).magazine)&&ProjectileMath.Finite(reloadRemaining)&&reloadRemaining>=0&&reloadRemaining<=3&&ProjectileMath.Finite(cooldown)&&cooldown>=0&&cooldown<=2&&(kind==2||kind==3||kind==4||kind==5);
     }
     [Serializable] public sealed class CombatProjectile
     {
@@ -43,24 +45,28 @@ namespace Funstra
         public float remaining,damage;
         public string owner;
         public int kind;
-        public bool Valid() => ProjectileMath.Finite(position)&&ProjectileMath.Finite(velocity)&&velocity.sqrMagnitude>1&&velocity.sqrMagnitude<=10000&&ProjectileMath.Finite(remaining)&&remaining>0&&remaining<=40&&ProjectileMath.Finite(damage)&&damage>0&&damage<=30&&!string.IsNullOrEmpty(owner)&&(kind==2||kind==3);
+        public bool Valid() => ProjectileMath.Finite(position)&&ProjectileMath.Finite(velocity)&&velocity.sqrMagnitude>1&&velocity.sqrMagnitude<=10000&&ProjectileMath.Finite(remaining)&&remaining>0&&remaining<=40&&ProjectileMath.Finite(damage)&&damage>0&&damage<=30&&!string.IsNullOrEmpty(owner)&&(kind==2||kind==3||kind==4||kind==5);
     }
     public sealed partial class DistrictState
     {
         public CombatSquadState squad=new CombatSquadState();
-        public WeaponState pistolWeapon=new WeaponState(),shotgunWeapon=new WeaponState{kind=3};
-        public int shotgunAmmo=8,equippedWeapon=2;
+        public WeaponState pistolWeapon=new WeaponState(),shotgunWeapon=new WeaponState{kind=3},smgWeapon=new WeaponState{kind=4};
+        public int shotgunAmmo=8,smgAmmo,equippedWeapon=2;
+        public int rifleAmmo;
+        public WeaponState rifleWeapon=new WeaponState{kind=5};
         public List<CombatProjectile> projectiles=new List<CombatProjectile>();
         public void InitializeWeapons()
         {
-            if(pistolWeapon==null)pistolWeapon=new WeaponState();if(shotgunWeapon==null)shotgunWeapon=new WeaponState{kind=3};
-            pistolWeapon.Initialize(ammo,2);shotgunWeapon.Initialize(shotgunAmmo,3);
+            if(pistolWeapon==null)pistolWeapon=new WeaponState();if(shotgunWeapon==null)shotgunWeapon=new WeaponState{kind=3};if(smgWeapon==null)smgWeapon=new WeaponState{kind=4};
+            pistolWeapon.Initialize(ammo,2);shotgunWeapon.Initialize(shotgunAmmo,3);smgWeapon.Initialize(smgAmmo,4);
+            if(rifleWeapon==null)rifleWeapon=new WeaponState{kind=5};rifleWeapon.Initialize(rifleAmmo,5);
             if(projectiles==null)projectiles=new List<CombatProjectile>();
         }
         public bool CombatValid()
         {
-            if(shotgunAmmo<0||equippedWeapon<1||equippedWeapon>3||squad!=null&&!squad.Valid())return false;
-            if(pistolWeapon!=null&&!pistolWeapon.Valid(ammo)||shotgunWeapon!=null&&!shotgunWeapon.Valid(shotgunAmmo))return false;
+            if(shotgunAmmo<0||smgAmmo<0||rifleAmmo<0||equippedWeapon<1||equippedWeapon>5||squad!=null&&!squad.Valid())return false;
+            if(rifleWeapon!=null&&!rifleWeapon.Valid(rifleAmmo))return false;
+            if(pistolWeapon!=null&&!pistolWeapon.Valid(ammo)||shotgunWeapon!=null&&!shotgunWeapon.Valid(shotgunAmmo)||smgWeapon!=null&&!smgWeapon.Valid(smgAmmo))return false;
             if(projectiles!=null) {if(projectiles.Count>128)return false;foreach(var p in projectiles)if(p==null||!p.Valid())return false;}
             return true;
         }

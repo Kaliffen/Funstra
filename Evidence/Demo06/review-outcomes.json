@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 2,
+  "demo": "Demo06",
+  "title": "Nobody Gets Home Alone",
+  "version": "0.6.0",
+  "releaseIssue": "https://github.com/Kaliffen/Funstra/issues/29",
+  "bridgeIssue": "https://github.com/Kaliffen/Funstra/issues/41",
+  "brief": "Evidence/demo06-plan.md",
+  "protocol": "reviewer-agents/README.md#evaluation-protocol-v2--8-september-2026",
+  "status": "Frozen shared outcome weights for final acceptance and independent panel; attainment is not assigned.",
+  "frozenOn": "2026-09-08",
+  "freezeBasis": "Transcribed from the existing owner-authorized brief. Earlier engineering runs predate this ledger and are diagnostic evidence, not a retrospectively frozen review. Do not change weights after seeing final review results; append any owner-authorized scope amendment with its basis.",
+  "candidateIdentitySource": "Each final/reviewer build-identity.json and Evidence/Demo06/validation-summary.json; no candidate hash is asserted by this ledger.",
+  "totalWeight": 40,
+  "scoring": {
+    "attainment": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "evidence": [
+      0,
+      0.5,
+      1
+    ],
+    "sliceFormula": "10 * sum(weight * attainment) / 40",
+    "lostPointsFormula": "10 * weight * (1 - attainment) / 40",
+    "evidenceFormula": "100 * sum(weight * evidence) / 40",
+    "coreFailureCap": 5,
+    "centralOutcomeUnavailableCap": 3,
+    "unrecoverableProgressLossGameAndSliceCap": 3,
+    "uncertainty": "Unverified is not absent. Report justified provisional score bounds; inspect shared same-build evidence before giving credit. No preset score or favorable floor.",
+    "historicalComparison": "New baseline; historical scores not comparable.",
+    "integrationTiming": "At independent review, publication and full panel integration can be pending. Mark those portions unresolved; later CD delivery evidence/addenda do not rewrite an original review."
+  },
+  "outcomes": [
+    {
+      "id": "crew",
+      "title": "Three stable selectable people",
+      "weight": 5,
+      "tier": "core",
+      "commitment": "Protagonist, Neri and Rell retain their own health, position, inventory, magazine/reload, orders and memories across selection and reload, including ownership of an in-flight shot.",
+      "expectedEvidenceFolders": [
+        "crew-final"
+      ]
+    },
+    {
+      "id": "operation",
+      "title": "One finite component and three viable approaches",
+      "weight": 5,
+      "tier": "core",
+      "commitment": "Solo, Neri and full-crew approaches support theft through public quay or service gate, $90 release and crew fighting against the same yard; return resolves Rell's stake and earns persistent partnership.",
+      "expectedEvidenceFolders": [
+        "crew-final",
+        "approach-final"
+      ]
+    },
+    {
+      "id": "rescue",
+      "title": "Bring one another home or remember abandonment",
+      "weight": 5,
+      "tier": "core",
+      "commitment": "Timed finite aid, interrupted actions, physical carry/drop through obstruction, continuation after protagonist downing, clinic return and explicit abandonment remain coherent through reload and total defeat.",
+      "expectedEvidenceFolders": [
+        "crew-final"
+      ]
+    },
+    {
+      "id": "opposition",
+      "title": "People and position make the yard dangerous",
+      "weight": 5,
+      "tier": "core",
+      "commitment": "Vale and two ordinary-health guards use shared projectile weapons and delayed sightings; leader/report loss changes coordination, finite aid costs resources, withdrawal and blocked routes do not reveal concealed positions.",
+      "expectedEvidenceFolders": [
+        "crew-final",
+        "approach-final"
+      ]
+    },
+    {
+      "id": "pressure",
+      "title": "Finite rifle response preserves shared pursuit",
+      "weight": 5,
+      "tier": "core",
+      "commitment": "Distinct rifle handling and the existing two finite police truck deliveries/nine-officer ceiling remain coherent; ordinary-health delayed retreat, depleted officers and moving lanes show projectile owner/victim evidence.",
+      "expectedEvidenceFolders": [
+        "crew-final",
+        "police-final",
+        "pressure-final"
+      ]
+    },
+    {
+      "id": "learning",
+      "title": "Partnership and practice come from completed work",
+      "weight": 3,
+      "tier": "supporting",
+      "commitment": "Rell can join through completed auxiliary repair with its real last gasket; Neri retains clinic recruitment. Consequential completed medical/mechanical actions award practice once and leave readable results.",
+      "expectedEvidenceFolders": [
+        "crew-final",
+        "approach-final"
+      ]
+    },
+    {
+      "id": "custody",
+      "title": "Existing livelihood and supply remain playable",
+      "weight": 3,
+      "tier": "supporting",
+      "commitment": "Dealer, finite courier consignments, money/medicine custody, legacy jobs/cargo and session-only debug speed remain coherent with the crew and its separate equipment; regressions exercise the same candidate.",
+      "expectedEvidenceFolders": [
+        "arms-final",
+        "streets-final",
+        "legacy-final"
+      ]
+    },
+    {
+      "id": "bridge41",
+      "title": "Resident identity and darker presentation bridge",
+      "weight": 3,
+      "tier": "supporting",
+      "commitment": "Accepted #41 conduct/art work shows named residents' perceived danger, individual priorities, finite aid and remembered encounters in readable darker street, clinic and yard views.",
+      "expectedEvidenceFolders": [
+        "residents-final",
+        "crew-final"
+      ]
+    },
+    {
+      "id": "integration",
+      "title": "Reviewed corrected release reaches its users",
+      "weight": 3,
+      "tier": "supporting",
+      "commitment": "Exact-candidate muted runtime routes and rendered inspection are followed by four independent guided reviews, preserved records, one inspected dossier, defect integration/replays, byte-preserving package and matching source/release/site/retention verification. Owner acceptance stays separate.",
+      "expectedEvidenceFolders": [
+        "crew-final",
+        "approach-final",
+        "arms-final",
+        "residents-final",
+        "streets-final",
+        "police-final",
+        "pressure-final",
+        "legacy-final",
+        "review-dag",
+        "review-priya",
+        "review-marcus",
+        "review-nell"
+      ]
+    },
+    {
+      "id": "rubric",
+      "title": "Evidence-based numerical review is delivered",
+      "weight": 3,
+      "tier": "supporting",
+      "commitment": "Each critic applies protocol v2 with fixed weighted Game now categories, this shared Slice delivery ledger, explicit attainment/deductions/caps, Evidence coverage, three largest present-game shortcomings and a new v2 baseline; the dossier preserves the separate measures and original verdicts.",
+      "expectedEvidenceFolders": [
+        "review-dag",
+        "review-priya",
+        "review-marcus",
+        "review-nell"
+      ]
+    }
+  ],
+  "amendments": [
+    {
+      "date": "2026-09-08",
+      "authority": "Product owner, current conversation",
+      "quote": "yes, also this is hard core world, if people die, so be it, even if not rescued. not a kiddie game.",
+      "change": "Remove the added harness requirement that all three survive or that every assault finish successfully. Actual casualties, voluntary withdrawal, abandonment and defeat are valid outcomes. Verify state, finite custody, survivor control and persistence, and report mission outcome separately from technical validation. Successful paid/stealth routes and available rescue remain required evidence. No difficulty nerf, forced rescue or permanent-death implementation is inferred.",
+      "weights": "Unchanged total40; same ten outcomes. Reviewers judge delivered capabilities and unresolved claims honestly."
+    }
+  ]
+}

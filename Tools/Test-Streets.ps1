@@ -1,4 +1,4 @@
-param([ValidateSet('Streets','Legacy','Visual','Environment','Police','Pressure')][string]$Mode='Streets',[switch]$Visible,[switch]$ThirtyFPS,[string]$EvidenceRoot,[string]$PlayerPath,[string]$ReplaySnapshot)
+param([ValidateSet('Streets','Legacy','Visual','Environment','Police','Pressure')][string]$Mode='Streets',[switch]$Visible,[switch]$ThirtyFPS,[string]$EvidenceRoot,[string]$PlayerPath,[string]$ReplaySnapshot,[switch]$WithCrew)
 $ErrorActionPreference='Stop'
 $project=Split-Path -Parent $PSScriptRoot
 if(-not $PlayerPath){$PlayerPath=Join-Path $project $(if($Mode -eq 'Pressure'){'Build\PressureEscape\Funstra.exe'}elseif($Mode -eq 'Police'){'Build\PoliceResponse\Funstra.exe'}else{'Build\StreetsWorthFightingFor\Funstra.exe'})}
@@ -10,6 +10,7 @@ $name=if($Mode -eq 'Pressure'){'pressure-runtime-result.txt'}elseif($Mode -eq 'P
 $arguments=@($flag,'--mute-tests','--capture-screens','--evidence',('"'+$EvidenceRoot+'"'),'-screen-width','1280','-screen-height','720','-screen-fullscreen','0','-logFile',('"'+(Join-Path $EvidenceRoot 'player.log')+'"'))
 if($ReplaySnapshot){if($Mode -ne 'Pressure'){throw 'ReplaySnapshot requires Pressure mode'};$arguments+=@('--pressure-replay',('"'+[IO.Path]::GetFullPath($ReplaySnapshot)+'"'))}
 if($ThirtyFPS){$arguments+='--30fps'}
+if($WithCrew){if($Mode -ne 'Pressure'){throw 'WithCrew requires Pressure mode'};$arguments+='--crew-pressure'}
 $style=if($Visible){'Normal'}else{'Hidden'}
 $lock=New-Object System.Threading.Mutex($false,'Local\FunstraFoundationValidation')
 $owned=$false

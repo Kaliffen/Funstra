@@ -58,7 +58,7 @@ namespace Funstra
             if(FoundationMode) { DrawFoundation();return; }
             if(screen==ScreenMode.Title||screen==ScreenMode.ConfirmRestart) { DrawTitle(); if(screen==ScreenMode.ConfirmRestart) DrawRestart(); return; }
             DrawHUD();
-            if(DistrictEnabled) {DrawCombatOverlay();DrawYardStatus();}
+            if(DistrictEnabled) {if(!CrewEnabled||ControlledCrewId=="player")DrawCombatOverlay();DrawYardStatus();if(!crewPanel)DrawResidentStatus();}
             switch(screen)
             {
                 case ScreenMode.Talk: DrawTalk(); break;
@@ -68,11 +68,12 @@ namespace Funstra
                 case ScreenMode.Safehouse: DrawSafehouse(); break;
             }
             if(DistrictEnabled)DrawDistrictScreen();
+            DrawCrewUI();DrawDockOperationUI();
         }
         void DrawTitle()
         {
             Rect(0,0,615,H,new Color(ink.r,ink.g,ink.b,.97f)); Rect(615,0,3,H,CityArt.Mint);
-            Text(Application.version=="0.4.2"?"PRESSURE AND ESCAPE / PLAYABLE SLICE":Application.version=="0.4.1"?"POLICE RESPONSE / PLAYABLE SLICE":"STREETS WORTH FIGHTING FOR / DEMO 04",62,66,500,40,16,CityArt.Mint,FontStyle.Bold);
+            Text(Application.version=="0.6.0"?"NOBODY GETS HOME ALONE / DEMO 06":Application.version=="0.5.1"?"OLD PORT UNDER PRESSURE":Application.version=="0.5.0"?"THE PRICE OF A GUN / DEMO 05":Application.version=="0.4.2"?"PRESSURE AND ESCAPE / PLAYABLE SLICE":Application.version=="0.4.1"?"POLICE RESPONSE / PLAYABLE SLICE":"STREETS WORTH FIGHTING FOR / DEMO 04",62,66,500,40,16,CityArt.Mint,FontStyle.Bold);
             Text("FUNSTRA",54,145,540,115,86,paper,FontStyle.Bold);
             Rect(62,280,65,4,CityArt.Mint);
             Text("One person.\nA city of debts.\nA place to keep.",62,318,475,185,42,paper,FontStyle.Bold);
@@ -84,13 +85,16 @@ namespace Funstra
                 if(Button("START A NEW NIGHT",62,716,488,52))screen=ScreenMode.ConfirmRestart;
             }
             else if(Button("ENTER OLD PORT",62,654,488,66,true))StartRun(false);
-            Text(Application.version=="0.4.2"?"0.4.2     /     PRESSURE AND ESCAPE":Application.version=="0.4.1"?"0.4.1     /     POLICE RESPONSE CANDIDATE":"DEMO 04     /     FOUNDATION CANDIDATE",62,822,430,30,14,quiet);
+            Text(Application.version=="0.6.0"?"0.6.0 / NOBODY GETS HOME ALONE":Application.version=="0.5.0"?"0.5.0 / LOCAL DEMO CANDIDATE":Application.version=="0.4.2"?"0.4.2     /     PRESSURE AND ESCAPE":Application.version=="0.4.1"?"0.4.1     /     POLICE RESPONSE CANDIDATE":"DEMO 04     /     FOUNDATION CANDIDATE",62,822,430,30,14,quiet);
             if(Button("QUIT",450,810,100,44))Application.Quit();
             Panel(1146,60,390,109); Dot(1180,97,5,CityArt.Mint);
             Text("OLD PORT, FUNSTRA",1200,82,300,30,20,paper,FontStyle.Bold);
             Text("21:40  /  BUSINESS AFTER HOURS",1171,125,335,25,14,quiet);
             Text("SURVIVE THE CITY.   CHOOSE YOUR PEOPLE.   BUILD YOUR POWER.",710,805,800,44,17,paper,FontStyle.Bold,TextAnchor.MiddleCenter);
             DrawFoundationSelector();
+            Panel(1050,674,486,105);
+            if(Button("DEBUG FAST RUN / "+(debugFastRunning?"ON":"OFF"),1074,690,438,45,debugFastRunning))debugFastRunning=!debugFastRunning;
+            Text("SHIFT: 3x sprint + unlimited stamina. This session only.",1074,746,438,25,14,quiet);
         }
         void DrawHUD()
         {
@@ -161,6 +165,13 @@ namespace Funstra
             var top=MapPoint(new Vector3(b.min.x,0,b.max.z),r);var bottom=MapPoint(new Vector3(b.max.x,0,b.min.z),r);
             Rect(top.x,top.y,bottom.x-top.x,bottom.y-top.y,c);
         }
+        void MapLeader(Vector2 point,Vector2 labelPoint,Color color,int lane)
+        {
+            float elbow=labelPoint.x+(point.x<labelPoint.x?-1:1)*(12+lane*7);
+            Rect(Mathf.Min(point.x,elbow),point.y,Mathf.Abs(point.x-elbow),1,color);
+            Rect(elbow,Mathf.Min(point.y,labelPoint.y),1,Mathf.Abs(point.y-labelPoint.y),color);
+            Rect(Mathf.Min(elbow,labelPoint.x),labelPoint.y,Mathf.Abs(elbow-labelPoint.x),1,color);
+        }
         void DrawMap(Rect outer,bool expanded)
         {
             Panel(outer.x,outer.y,outer.width,outer.height);
@@ -182,7 +193,8 @@ namespace Funstra
                 if(expanded)
                 {
                     var cargoSite=CargoRun.Sites[i];
-                    float labelX=Mathf.Clamp(site.x+10,r.x+8,r.xMax-170),labelY=site.y+11;
+                    float labelX=r.x+12,labelY=r.y+45+i*67;
+                    MapLeader(site,new Vector2(labelX+165,labelY+12),CityArt.Hex("C5A7ED"),i);
                     Rect(labelX-5,labelY-2,170,43,ink);
                     Text(cargoSite.name.ToUpperInvariant(),labelX,labelY,160,20,12,CityArt.Hex("C5A7ED"),FontStyle.Bold);
                     Text("$"+cargoSite.value+"  /  "+cargoSite.weight+" LOAD"+(cargoSite.alarm?"  /  ALARM":""),labelX,labelY+20,160,20,11,paper);
@@ -192,6 +204,12 @@ namespace Funstra
             foreach(var a in Agents) if(a.Police) { var p=MapPoint(a.Position,r);Dot(p.x,p.y,expanded?6:3,Heat>0?CityArt.Red:CityArt.Blue); }
             var player=MapPoint(Player.position,r);Dot(player.x,player.y,expanded?9:5,paper);Dot(player.x,player.y,expanded?4:2,ink);
             DistrictMap(r,expanded);
+            if(DockEnabled)
+            {
+                foreach(string id in new[]{"neri","rell"})
+                {var dot=MapPoint(CrewPosition(id),r);Dot(dot.x,dot.y,expanded?7:4,ControlledCrewId==id?paper:medical);if(expanded)Text(id.ToUpper(),Mathf.Min(dot.x+10,r.xMax-75),dot.y-23,75,23,12,medical,FontStyle.Bold);}
+                if(District.dock.componentOwner=="yard"){var dot=MapPoint(DockOperationState.ComponentPost,r);Dot(dot.x,dot.y,7,CityArt.Amber);if(expanded)Text("PUMP",dot.x-24,dot.y-25,80,22,12,CityArt.Amber,FontStyle.Bold);}
+            }
             Text("N",r.x+r.width-18,r.y+1,20,20,13,paper,FontStyle.Bold);
             if(expanded) Text("CYAN clinic / medicine   LILAC cargo   MINT home   BLUE police   TAB close",outer.x+22,outer.y+outer.height-27,outer.width-44,25,13,quiet);
         }
@@ -218,19 +236,29 @@ namespace Funstra
                 name=District.Carrying||District.shipmentUnits==0||!District.metNeri?"NERI":"MEDICINE";
                 if(District.recruited) { target=DistrictState.Clinic;name="CLINIC"; }
             }
+            if(ArmsEnabled&&trackDistrict&&(District.arms.favorStage<2&&!District.arms.Owns(2)||District.arms.favorStage==1))
+            {target=District.arms.favorStage==1&&!District.arms.favorReceipt?ArmsFavorPosition:ArmsDealerPosition;name=target==ArmsFavorPosition?"NERI / PAPERS":"SELLA";}
+            if(DockEnabled&&trackDistrict)
+            {
+                bool carryingPerson=District.crew.For(ControlledCrewId).carrying!="";
+                if(carryingPerson||District.dock.stakeResolved){target=DistrictState.Clinic;name="CLINIC";}
+                else if(District.dock.repairAccepted&&!District.dock.auxiliaryRepaired){target=DockOperationState.RepairPost;name="REPAIR PUMP";}
+                else if(District.dock.componentOwner!="yard"||!District.dock.metRell&&!District.dock.released&&!District.dock.auxiliaryRepaired){target=DockOperationState.Workshop;name="RELL";}
+                else {target=DockOperationState.ComponentPost;name="IMPOUNDED PUMP";}
+            }
             var p=View.WorldToScreenPoint(target+Vector3.up*4.5f);float x=p.x/Screen.width*W,y=(1-p.y/Screen.height)*H;
             bool off=p.z<0||x<460||x>1170||y<120||y>712;
             x=Mathf.Clamp(x,475,1135); y=Mathf.Clamp(y,133,713);
             if(off)y=700;
             if(!DistrictEnabled||TargetActor==null)
-            { Panel(x-104,y-19,208,46); Text((off?"TO ":"")+name+" / "+Mathf.RoundToInt(Vector3.Distance(Player.position,target))+"m",x-95,y-10,190,30,14,headingHome?CityArt.Mint:CityArt.Amber,FontStyle.Bold,TextAnchor.MiddleCenter); }
+            { Panel(x-104,y-19,208,46); Text((off?"TO ":"")+name+" / "+Mathf.RoundToInt(Vector3.Distance(ControlledPosition,target))+"m",x-95,y-10,190,30,14,headingHome?CityArt.Mint:CityArt.Amber,FontStyle.Bold,TextAnchor.MiddleCenter); }
             foreach(var a in Agents)
             {
                 if(!a.Police||Vector3.Distance(a.Position,Player.position)>25)continue;
                 var sp=View.WorldToScreenPoint(a.Position+Vector3.up*2.9f);
                 if(sp.z<0)continue;
                 float ax=sp.x/Screen.width*W,ay=(1-sp.y/Screen.height)*H;
-                Dot(ax,ay,12,ink); Text(a.Pursuing?"!":"•",ax-10,ay-14,20,28,21,a.Pursuing?CityArt.Red:CityArt.Blue,FontStyle.Bold,TextAnchor.MiddleCenter);
+                Dot(ax,ay,12,ink); Text(a.Pursuing?"!":"\u2022",ax-10,ay-14,20,28,21,a.Pursuing?CityArt.Red:CityArt.Blue,FontStyle.Bold,TextAnchor.MiddleCenter);
                 if(a.Suspicion>0&&!a.Pursuing)Rect(ax-19,ay+18,38*Mathf.Clamp01(a.Suspicion),3,CityArt.Amber);
             }
         }
@@ -279,7 +307,7 @@ namespace Funstra
             Text("A NAME IN OLD PORT",408,191,785,75,47,paper,FontStyle.Bold);
             Text("DEBT SETTLED. NIGHT SURVIVED.",410,286,780,35,17,CityArt.Mint,FontStyle.Bold);
             Text("\"We're square. And if you ever need work...\nyou know where to find me.\"",410,362,776,94,29,paper);
-            Text("— Mara",412,470,700,38,20,quiet);
+            Text("\u2014 Mara",412,470,700,38,20,quiet);
             Text("3 JOBS COMPLETE       $"+State.cash+" CASH       "+State.arrests+" ARREST"+(State.arrests==1?"":"S"),410,549,788,48,20,CityArt.Amber,FontStyle.Bold);
             if(Button("KEEP WORKING THE PORT",410,636,463,61,true))ContinueFreeroam();
             if(Button("MAIN MENU",892,636,297,61))screen=ScreenMode.Title;

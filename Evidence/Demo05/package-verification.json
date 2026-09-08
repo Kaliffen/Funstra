@@ -1,0 +1,26 @@
+{
+  "archive": "~\\repos\\Funstra\\Releases\\Funstra-the-price-of-a-gun-0.5.0-windows.zip",
+  "assemblySha256": "B1F9C4DDEC4004268248415C6EB1BE4FACA6562C6A3D744A78452131FEA5C8D0",
+  "archiveSha256": "F4A0EE457D845828342A9ECACD3BD3A4C8B3BBAF05A9298A6C5A1D1F40086C5A",
+  "bytes": 35290361,
+  "verifiedAt": "2026-09-08T09:13:40.3760540Z",
+  "method": "All player files compared byte for byte through SHA256; no rebuild and no publication.",
+  "portableVerification": {
+    "result": "PASS",
+    "checks": 108,
+    "captures": 15,
+    "identity": {
+      "testedAt": "2026-09-08T09:14:05.1086810Z",
+      "endedAt": "2026-09-08T09:14:48.1093966Z",
+      "elapsedSeconds": 43.0007156,
+      "mode": "Arms",
+      "executable": "~\\repos\\Funstra\\Releases\\Verify-PriceOfAGun-0.5.0\\Funstra.exe",
+      "executableSha256": "97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3",
+      "assemblySha256": "B1F9C4DDEC4004268248415C6EB1BE4FACA6562C6A3D744A78452131FEA5C8D0",
+      "playerExitCode": 0,
+      "failure": null,
+      "method": "Muted guided exported player. Controller acquisition and explicitly stepped supply/combat fixtures are identified in the runtime result."
+    },
+    "playerFilesCompared": 145
+  }
+}

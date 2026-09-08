@@ -1,0 +1,88 @@
+{
+  "title": "The Price of a Gun",
+  "version": "0.5.0",
+  "phase": "Validated local demo candidate; no panel or publication",
+  "verifiedAt": "2026-09-08T09:13:37.349757+00:00",
+  "assemblySha256": "B1F9C4DDEC4004268248415C6EB1BE4FACA6562C6A3D744A78452131FEA5C8D0",
+  "executableSha256": "97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3",
+  "editorChecks": 2294,
+  "buildErrors": 0,
+  "buildWarnings": 0,
+  "runtimeChecks": 376,
+  "captures": 33,
+  "routes": [
+    {
+      "route": "arms",
+      "checks": 108,
+      "captures": 15,
+      "result": "Evidence/Demo05/final/arms/arms-runtime-result.txt",
+      "identity": {
+        "testedAt": "2026-09-08T09:05:19.4804730Z",
+        "endedAt": "2026-09-08T09:06:02.1947469Z",
+        "elapsedSeconds": 42.7142739,
+        "mode": "Arms",
+        "executable": "~\\repos\\Funstra\\Build\\PriceOfAGun\\Funstra.exe",
+        "executableSha256": "97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3",
+        "assemblySha256": "B1F9C4DDEC4004268248415C6EB1BE4FACA6562C6A3D744A78452131FEA5C8D0",
+        "playerExitCode": 0,
+        "failure": null,
+        "method": "Muted guided exported player. Controller acquisition and explicitly stepped supply/combat fixtures are identified in the runtime result."
+      }
+    },
+    {
+      "route": "streets",
+      "checks": 143,
+      "captures": 4,
+      "result": "Evidence/Demo05/final/streets/streets-runtime-result.txt",
+      "identity": {
+        "testedAt": "2026-09-08T09:06:02.2416359Z",
+        "mode": "Streets",
+        "executable": "Build/PriceOfAGun/Funstra.exe",
+        "assemblySha256": "B1F9C4DDEC4004268248415C6EB1BE4FACA6562C6A3D744A78452131FEA5C8D0",
+        "method": "Guided exported player; direct setups and controller travel identified in result."
+      }
+    },
+    {
+      "route": "police",
+      "checks": 35,
+      "captures": 4,
+      "result": "Evidence/Demo05/final/police/police-runtime-result.txt",
+      "identity": {
+        "testedAt": "2026-09-08T09:08:23.6475274Z",
+        "mode": "Police",
+        "executable": "Build/PriceOfAGun/Funstra.exe",
+        "assemblySha256": "B1F9C4DDEC4004268248415C6EB1BE4FACA6562C6A3D744A78452131FEA5C8D0",
+        "method": "Guided exported player; direct setups and controller travel identified in result."
+      }
+    },
+    {
+      "route": "legacy",
+      "checks": 90,
+      "captures": 10,
+      "result": "Evidence/Demo05/final/legacy/runtime-result.txt",
+      "identity": {
+        "testedAt": "2026-09-08T09:08:31.4375501Z",
+        "mode": "Legacy",
+        "executable": "Build/PriceOfAGun/Funstra.exe",
+        "assemblySha256": "B1F9C4DDEC4004268248415C6EB1BE4FACA6562C6A3D744A78452131FEA5C8D0",
+        "method": "Guided exported player; direct setups and controller travel identified in result."
+      }
+    }
+  ],
+  "visualInspection": [
+    "Title and debug toggle",
+    "Dealer stock, price and favor screens",
+    "Clinic receipt and shortage",
+    "SMG ammunition and interrupted reload",
+    "Separated map labels and connecting lines",
+    "Blocked courier and physical arrivals"
+  ],
+  "method": "Muted exported Windows players, serialized. Controller acquisition and travel; explicit transaction/combat/possession fixtures; accelerated .05-second courier steps. Not human input acceptance or minimum-hardware proof.",
+  "hardware": {
+    "cpu": "Intel Core i9-14900KF",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "resolution": "1280x720",
+    "frameCap": 30
+  },
+  "preservedPublishedAssemblySha256": "BD9CA29F2787A9F2546E10CA88650142DF7E80D0E8D22743C7B88AB9F99BB776"
+}

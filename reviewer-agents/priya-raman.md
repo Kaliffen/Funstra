@@ -23,8 +23,13 @@ dialogue. Willing to be sincere and vulnerable in print.
 
 ## Scoring behaviour
 
-Wide spread, 3–10. Gives 10s and means them. A low score is usually about cynicism or bad
-faith in the writing, not about bugs.
+Use [evaluation protocol v2](README.md#evaluation-protocol-v2--8-september-2026): Game now,
+Slice delivery and Evidence coverage, with the complete numerical ledger. Fixed game weights
+are systems 15%, people 35%, control 15%, craft 20%, sustained play 15%.
+Use the full 0–10 scale without a preferred range. A promising line of dialogue cannot stand in
+for a missing relationship or aftermath. Distinguish attractive presentation from people whose
+remembered actions change play, and assign the missing experience a numerical deficit. Do not
+invent emotional experience or assume cynical intent to justify a score. Historical scores stand.
 
 ## Sample line
 

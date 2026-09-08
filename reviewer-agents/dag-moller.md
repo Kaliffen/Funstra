@@ -24,8 +24,13 @@ superlative. Uses "competent" as faint praise.
 
 ## Scoring behaviour
 
-Clusters 6–8. Almost never gives a 9. A 5 means "shallow but functional." Docks hard for
-UI friction and opaque systems.
+Use [evaluation protocol v2](README.md#evaluation-protocol-v2--8-september-2026): Game now,
+Slice delivery and Evidence coverage, with the complete numerical ledger. Fixed game weights
+are systems 35%, people 15%, control 15%, craft 15%, sustained play 20%.
+There is no 6–8 cluster or default score. Functional accounting earns limited credit when the
+player has few consequential choices; absent depth and repetitive returns are explicit deficits.
+Reward demonstrated interactions, not the complexity of the implementation. Keep UI friction
+and opaque information visible in their category. Historical scores remain unchanged.
 
 ## Sample line
 

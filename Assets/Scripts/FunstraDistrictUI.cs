@@ -19,7 +19,7 @@ namespace Funstra
             Text(CombatWeaponName,233,353,160,25,15,CityArt.Amber,FontStyle.Bold,TextAnchor.UpperRight);
             Rect(50,391,344,6,CityArt.Hex("344754"));Rect(50,391,344*District.health/100,6,District.bleeding?CityArt.Red:medical);
             Text("BANDAGES "+District.bandages+"   /   "+(Cargo.Weight>=5?"HEAVY: SPEED -20%":"DEBT $"+District.debt),50,410,345,26,15,Cargo.Weight>=5?CityArt.Amber:quiet);
-            Text("Mouse aim   LMB fire / melee\n1 fists   2 pistol   3 shotgun   R reload",50,450,345,55,15,paper);
+            Text("Mouse aim   LMB fire / melee\n1 conceal   2 pistol   3 shotgun   4 SMG / R reload",50,450,345,55,15,paper);
             Text(District.identified?"IVO KNOWS YOUR FACE / $60 restitution":"NO IDENTIFIED OFFENSE WITH IVO",50,516,345,26,12,District.identified?CityArt.Red:quiet,FontStyle.Bold);
             Panel(28,567,389,170);
             Text(District.recruited?"NERI / "+District.neri.order.ToUpperInvariant():"A PLACE BESIDE YOU",50,583,345,26,14,medical,FontStyle.Bold);
@@ -55,10 +55,16 @@ namespace Funstra
                 var p=MapPoint(positions[i],r);Dot(p.x,p.y,expanded?7:4,i==2?CityArt.Amber:medical);
                 if(expanded&&i!=3)
                 {
-                    float x=p.x<r.center.x?r.x+240:r.x+80,y=p.y-12;
-                    Rect(Mathf.Min(p.x+8,x),p.y,Mathf.Abs(x-p.x-8),1,medical);
+                    float x=r.xMax-183,y=r.y+105+i*38;
+                    MapLeader(p,new Vector2(x,y+12),medical,i);
                     Rect(x,y,165,25,ink);Text(names[i],x+6,y+4,155,23,11,medical,FontStyle.Bold);
                 }
+            }
+            if(ArmsEnabled)
+            {
+                var p=MapPoint(ArmsDealerPosition,r);Dot(p.x,p.y,expanded?7:4,CityArt.Amber);
+                if(expanded){float x=r.xMax-183,y=r.y+240;Rect(x,y,175,27,ink);Text("SELLA / MARKET COURT",x+6,y+4,165,24,12,CityArt.Amber,FontStyle.Bold);MapLeader(p,new Vector2(x,y+12),CityArt.Amber,3);}
+                var c=MapPoint(SupplyPosition,r);Dot(c.x,c.y,expanded?6:3,medical);
             }
         }
         void DistrictAction(string title,bool allowed,float x,float y,float width,Action action)
@@ -81,8 +87,10 @@ namespace Funstra
                 case ScreenMode.Intro:
                     DistrictPanel("OLD PORT / THE SALT YEARS NEVER ENDED","KEEP THE LIGHTS ON","The city rebuilt itself on emergency credit. Now debt buys people's homes, work and bodies. You lost your work permit. Mara bought you one more night.");
                     Text("Neri's clinic needs medicine held by a collector. You can pay, steal, fight, or leave it alone. Nobody is waiting for you to accept a quest.",395,409,805,90,22,paper);
-                    Text("You carry a pistol, 12 rounds and 2 bandages. You are vulnerable.\nSPACE pauses tactics. TAB maps the district. J records what changes.\nMara's jobs and purple cargo can earn money for a peaceful approach.",395,521,805,94,19,quiet);
+                    Text(District.arms!=null?"You start with two bandages. Sella in Market Court offers a pistol for a delivery favor. Civilian guns are illegal: 1 conceals, drawn guns can alert police.\nSPACE pauses / TAB map / J history. Practice guns in the title test levels.":"You carry a pistol, 12 rounds and 2 bandages. You are vulnerable.\nSPACE pauses tactics. TAB maps the district. J records what changes.\nMara's jobs and purple cargo can earn money for a peaceful approach.",395,521,805,94,19,quiet);
                     DistrictAction("STEP INTO OLD PORT",true,395,680,805,()=>{District.introSeen=true;screen=ScreenMode.Play;Notify("Find Neri inside MUTUAL CLINIC. TAB opens your map.");});break;
+                case ScreenMode.Dealer: DrawArmsDealer();break;
+                case ScreenMode.Supply: DrawArmsSupply();break;
                 case ScreenMode.Refuge: DrawRefuge();break;
                 case ScreenMode.Conversation: DrawConversation();break;
                 case ScreenMode.Clinic: DrawClinic();break;
@@ -92,7 +100,7 @@ namespace Funstra
                     Panel(458,108,693,89);Rect(458,108,4,89,medical);
                     Text("TACTICAL PAUSE / TIME IS STOPPED",478,122,650,28,18,medical,FontStyle.Bold);
                     Text("RMB select. Scroll inspect. Resume to attack. Buildings block shots.",478,158,650,30,16,paper);
-                    if(District.recruited)
+                    if(District.recruited&&!CrewEnabled)
                     {
                         Panel(1190,280,382,318);
                         Text("CREW ORDERS",1210,300,340,30,22,medical,FontStyle.Bold);
@@ -101,7 +109,7 @@ namespace Funstra
                         for(int i=0;i<4;i++) { string order=orders[i];DistrictAction(order.ToUpperInvariant(),true,1208+i%2*177,390+i/2*60,163,()=>OrderNeri(order)); }
                         DistrictAction("RESUME / SPACE",true,1208,530,340,()=>screen=ScreenMode.Play);
                     }
-                    else DistrictAction("RESUME / SPACE",true,1208,280,340,()=>screen=ScreenMode.Play);
+                    else if(!crewPanel)DistrictAction("RESUME / SPACE",true,1208,280,340,ResumeCrewPlay);
                     break;
                 case ScreenMode.Recovery:
                     DistrictPanel("DEFEAT / YOUR STORY CONTINUES","STILL BREATHING",District.RecoverySummary);
@@ -142,7 +150,7 @@ namespace Funstra
         void DrawJournal()
         {
             DistrictPanel("YOUR HISTORY / KNOWN EVENTS","THE CITY KEEPS GOING","Clinic: "+District.ClinicStatus+". Medicine owner: "+District.shipmentOwner+".\n"+ShipmentSchedule+". Time pauses while you read.");
-            Text("YOU → PARTNERSHIP → CREW → A FOOTHOLD",395,408,805,29,19,medical,FontStyle.Bold);
+            Text("YOU â†’ PARTNERSHIP â†’ CREW â†’ A FOOTHOLD",395,408,805,29,19,medical,FontStyle.Bold);
             Text(District.recruited?District.refuge?"Shared refuge: free recovery, a clinic fund and responsibility for the shelf.":"First partnership: Neri trusts you. Ask about the spare room: $120.":"First ambition: earn someone who will help you survive. Help Neri's clinic.",395,447,805,47,18,paper);
             journalScroll=GUI.BeginScrollView(new Rect(395,509,805,144),journalScroll,new Rect(0,0,775,Mathf.Max(140,District.incidents.Count*58)));
             for(int i=0;i<District.incidents.Count;i++) { var incident=District.incidents[District.incidents.Count-1-i];Text("#"+(District.incidents.Count-i)+"  "+ClockAt(incident.time)+"  /  "+incident.text,5,i*58,750,55,17,quiet); }
@@ -155,7 +163,8 @@ namespace Funstra
             DistrictPanel("HOME / SHELTER, NOT IMMUNITY","A BED TO COME BACK TO","Bank loose cargo by standing in the home circle and holding E. Medical stock is a separate choice: Neri or Mara. Use this desk to prepare for an operation.");
             Text("CASH $"+State.cash+"   /   DEBT $"+District.debt+"   /   CARGO $"+Cargo.Value+"\nHEALTH "+Mathf.CeilToInt(District.health)+"   BANDAGES "+District.bandages+"   PISTOL ROUNDS "+District.ammo,395,411,805,67,19,medical,FontStyle.Bold);
             DistrictAction("BANDAGE / $12",State.cash>=12,395,510,255,()=>{State.cash-=12;District.marketMoney+=12;District.bandages++;});
-            DistrictAction("6 ROUNDS / $24",State.cash>=24,670,510,255,()=>{State.cash-=24;District.marketMoney+=24;District.ammo+=6;});
+            if(District.arms==null)DistrictAction("6 ROUNDS / $24",State.cash>=24,670,510,255,()=>{State.cash-=24;District.marketMoney+=24;District.ammo+=6;});
+            else Text("AMMO: SELLA / MARKET COURT",670,521,255,40,16,CityArt.Amber);
             DistrictAction("REST / $40 CREDIT",District.health<80||District.bleeding,945,510,255,()=>District.RestOnCredit());
             DistrictAction("SATCHEL / $180",!State.satchel&&State.cash>=180,395,575,395,()=>BuyCargoSatchel());
             DistrictAction("PAY DEBT / $"+District.debt,District.debt>0&&State.cash>=District.debt,806,575,395,()=>{State.cash-=District.debt;District.marketMoney+=District.debt;District.debt=0;District.Record("debt","player","Your emergency-care debt is paid.");});
@@ -164,7 +173,7 @@ namespace Funstra
         void DrawDistrictPause()
         {
             DistrictPanel("PAUSED / "+Application.version,"A MOMENT TO BREATHE","The world pauses here. F5 saves where you stand, including wounds, carried goods and crew. Autosave runs every ten seconds. Quitting also saves.");
-            Text("WASD / arrows   Move       SHIFT sprint       CTRL sneak\nMouse aim / LMB fire   1 fists   2 pistol   3 shotgun   R reload\nSPACE tactical pause   G follow   H hold   SHIFT+R retreat   T aid\nE interact / hold to take   F home supplies   TAB map\nJ history   L track story   P pet Tally   F at clinic: refuge",395,410,805,170,20,paper);
+            Text(CrewEnabled?"WASD move / SHIFT sprint / CTRL sneak\nF1 protagonist / F3 Neri / F4 Rell / K crew & rescue\nMouse aim / LMB fire / 1 fists / 2 pistol / 3 shotgun / 4 SMG / 5 rifle\nR reload / B timed self-aid / SPACE tactical pause\nE interact / hold to work / G follow / H hold / T aid addressed partner\nTAB map / J history / F5 save / F2 HUD details":"WASD / arrows   Move       SHIFT sprint       CTRL sneak\nMouse aim / LMB fire   1 conceal   2 pistol   3 shotgun   4 SMG / R reload\nSPACE tactical pause   G follow   H hold   SHIFT+R retreat   T aid\nE interact / hold to take   F home supplies   TAB map\nJ history   L track story   P pet Tally   F at clinic: refuge",395,410,805,170,20,paper);
             DistrictAction("RESUME",true,395,605,395,()=>screen=ScreenMode.Play);
             DistrictAction("SOUND / "+(mute?"OFF":"ON"),true,806,605,395,()=>mute=!mute);
             DistrictAction("SAVE & MAIN MENU",true,395,680,395,()=>{Save();screen=ScreenMode.Title;});

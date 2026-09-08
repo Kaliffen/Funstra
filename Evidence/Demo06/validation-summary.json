@@ -1,0 +1,589 @@
+{
+  "schemaVersion": 1,
+  "title": "Nobody Gets Home Alone",
+  "version": "0.6.0",
+  "phase": "Reviewed, integrated and portable-tested; source publication and live release/site verification pending",
+  "verifiedAt": "2026-09-08T14:43:48.543132+02:00",
+  "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+  "executableSha256": "97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3",
+  "builtAt": "2026-09-08T12:24:39.796427Z",
+  "candidateSource": "Evidence/Demo06/candidate-source.json",
+  "sourceFreeze": {
+    "filesVerified": 226,
+    "mismatches": 0,
+    "sourceBaseCommit": "bd522de8cfcc4bfbc86584ca28e3df1bf671ce3a",
+    "sourceWasDirty": true
+  },
+  "editorChecks": 2377,
+  "editorEvidence": "Evidence/Demo06/editor-checks.txt",
+  "editorBreakdown": {
+    "general": 75,
+    "district": 37,
+    "refuge": 33,
+    "spatial": 1910,
+    "clinic": 72,
+    "combatSquad": 39,
+    "combat": 36,
+    "police": 22,
+    "arms": 70,
+    "resident": 29,
+    "crewOpposition": 31,
+    "dockOperation": 23
+  },
+  "buildErrors": 0,
+  "buildWarnings": 0,
+  "runtimeChecks": 701,
+  "captures": 72,
+  "countMethod": "Exact PASS: result lines are assertions, not gameplay scenario counts. Captures count fresh nonempty PNGs; PNG headers checked. Editor spatial assertions include generated route cases.",
+  "batch": {
+    "evidence": "Evidence/Demo06/final-batch.json",
+    "serialized": true,
+    "muted": true,
+    "routes": 8,
+    "startedAt": "2026-09-08T12:24:55.5592292Z",
+    "endedAt": "2026-09-08T12:39:50.5290093Z",
+    "method": "One existing exported player at a time, runner order recorded with nonoverlapping timestamps. Hash remains fixed. No rebuild during routes."
+  },
+  "routes": [
+    {
+      "route": "crew",
+      "status": "PASS",
+      "checks": 141,
+      "captures": 17,
+      "captureDimensions": [
+        [
+          1280,
+          720
+        ]
+      ],
+      "crewEnabled": true,
+      "result": "Evidence/Demo06/crew-final/crew-runtime-result.txt",
+      "resultSha256": "704188B58027E72794BF2C3F876EA478D22E8F017EB7926984065F02B8E9D0BF",
+      "playerLog": "Evidence/Demo06/crew-final/player.log",
+      "playerLogSha256": "E4FC8C824B8F88A9A8EEE7787CD4A2C94B254F4E2EAE49876AC2B89B82EE610A",
+      "runtimeLogErrorWarningMatches": 0,
+      "identity": {
+        "testedAt": "2026-09-08T12:24:55.58967Z",
+        "endedAt": "2026-09-08T12:26:44.2196729Z",
+        "elapsedSeconds": 108.6300029,
+        "mode": "Crew",
+        "executable": "~\\repos\\Funstra\\Build\\NobodyGetsHomeAlone\\Funstra.exe",
+        "executableSha256": "97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3",
+        "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+        "playerExitCode": 0,
+        "failure": null,
+        "method": "Muted guided exported player. Crew control, custody, aid and dock behavior under explicitly identified controller routes and prepared fixtures are identified in the runtime result."
+      },
+      "batchStartedAt": "2026-09-08T12:24:55.5592292Z",
+      "batchEndedAt": "2026-09-08T12:26:44.2292518Z",
+      "methodLines": [
+        "METHOD: crowding regression preserves the ninth-run pair's relative positions/grid alignment, translated four metres west to avoid the fresh traffic car. Original failure traffic positions were not recorded, so this is a controlled connector/crowding fixture, not an exact scene replay. Shared StepCrew advances at 1/30s while town movement and calendar are held; no collision/walkability override. A separate actual StepTraffic fixture requires braking for Rell alone.",
+        "METHOD: crew UI regression checks call shared pointer guards, resume actions and arrest selection directly; no synthetic desktop input or human input-feel claim.",
+        "METHOD: solo paid route uses production controller, live yard, finite $100 cash fixture, actual held pickup, and reached menu-equivalent payment. Citizens and companion movement held; traffic/calendar continue. No earned-income or human-play claim.",
+        "METHOD: identity/rescue fixtures stage locations and wounds while paused. Neri is recruited via the actual finite shipment donation/trust APIs, without claiming controller medicine acquisition. Equipment is bought with explicit $500 fixture cash. Aid uses accelerated .05-second production steps; carry uses actual selected-controller movement around the clinic wall.",
+        "METHOD: self-aid regression then runs 3.5 seconds of normal Update with actual ongoing Neri bleeding; damage interruption above uses a production combat hit, not bleed attrition.",
+        "METHOD: total-wipe regression explicitly downs the recovered protagonist, lifts them using real carry API, then downs the carrier and invokes production defeat. This is a failure-state fixture, not a claimed combat encounter.",
+        "METHOD: separate fresh solo nonviolent preparation route; real controller reaches Rell and his auxiliary pump, then actual autoInteract holds E for twelve real simulation seconds. Accepting work uses the same dialogue state action. No repair completion or recruitment state is injected.",
+        "METHOD: Guided exported-player fixtures, not human input. Starting positions, finite ammunition and guard casualty/report setup are explicitly staged. Live Update advances rifle officers, projectiles, ordinary 100 HP damage, controller retreat, moving firing lanes and guard field aid. No durability, arrest or ammunition-refill override. Four-family trigger/reload checks are staged production API actions. This bounded route does not claim the nine-officer stress/deployment coverage of the separate Police/Pressure suites.",
+        "COVERAGE: bounded live rifle pressure, delayed ordinary-health controller retreat, depleted movement, moving-lane owner/victim receipts, four staged gun families and live guard report/aid. Full nine-officer dispatch/stress remains separate Police/Pressure evidence."
+      ]
+    },
+    {
+      "route": "approach",
+      "status": "PASS",
+      "checks": 113,
+      "captures": 8,
+      "captureDimensions": [
+        [
+          1280,
+          720
+        ]
+      ],
+      "crewEnabled": true,
+      "result": "Evidence/Demo06/approach-final/crew-runtime-result.txt",
+      "resultSha256": "8FACEC33B6DE0749D5CC230CCB13848E3F3A71B6A4AE6F7998B3C4EFBE099B04",
+      "playerLog": "Evidence/Demo06/approach-final/player.log",
+      "playerLogSha256": "8C8FED8CE216FAE79E701027F4CB20AAE1A660D174BC278FE5BF3D708FA59057",
+      "runtimeLogErrorWarningMatches": 0,
+      "identity": {
+        "testedAt": "2026-09-08T12:26:44.2407053Z",
+        "endedAt": "2026-09-08T12:30:26.2491875Z",
+        "elapsedSeconds": 222.0084822,
+        "mode": "Crew",
+        "executable": "~\\repos\\Funstra\\Build\\NobodyGetsHomeAlone\\Funstra.exe",
+        "executableSha256": "97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3",
+        "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+        "playerExitCode": 0,
+        "failure": null,
+        "method": "Muted guided exported player. Crew control, custody, aid and dock behavior under explicitly identified controller routes and prepared fixtures are identified in the runtime result."
+      },
+      "batchStartedAt": "2026-09-08T12:26:44.2315285Z",
+      "batchEndedAt": "2026-09-08T12:30:26.2511086Z",
+      "methodLines": [
+        "METHOD: Muted exported normal campaign. Live yard, citizens, police, traffic and crew movement. No hidden flags, relocated guards, health boosts, ammunition refill or deleted opponents. Solo and Neri approaches use actual selected controller behind initial south-facing watch. Full crew uses explicitly staged recruitment and $800, finite store purchases/transfers, movement orders, Engage and guided protagonist trigger calls; equipment remains finite. Menu pauses are ordinary tactical pause. No human play claim.",
+        "METHOD: unseen approach follows x=-8 west of Vale's 28m rifle sight radius, then crosses behind the watch at z=48. z=46 arrival tolerance could enter the yard with remembered central-street contact; z=50 intersects the north garage. No contacts or sight flags are reset. Every-frame first sight/contact transitions and nearby quarter-second samples record facing and actual controller waypoint.",
+        "METHOD: unseen approach follows x=-8 west of Vale's 28m rifle sight radius, then crosses behind the watch at z=48. z=46 arrival tolerance could enter the yard with remembered central-street contact; z=50 intersects the north garage. No contacts or sight flags are reset. Every-frame first sight/contact transitions and nearby quarter-second samples record facing and actual controller waypoint.",
+        "METHOD: Neri pair recruitment is explicitly staged through finite medicine TakeShipment/Donate/Recruit APIs; Neri's actual controller collects while protagonist holds on the outer street. No medicine retrieval journey is claimed.",
+        "METHOD: full crew fixture grants recruitment only and $800 purchasing money. Neri's existing pistol18 remains; Rell receives a purchased rifle20 through physical handoff; protagonist buys SMG48. Initial magazines use paused production reload steps as equipment preparation. All actors retain ordinary fresh health. Travel, assembly, firing, losses, field aid and final component custody use live production behavior; no opponent is removed or its AI disabled.",
+        "METHOD: AP-rifle-dealer opens the real four-row dealer UI as an explicitly staged screen fixture before purchases; it does not claim controller travel to Sella.",
+        "METHOD: full crew regroups outside the yard, waits eight simulation seconds in normal Update for observed contact to age naturally, then crosses behind the watch. Orders finish at z47 so arrival tolerance does not trigger trespass. Rell passes north of Neri's held position. Protagonist physically takes separate left firing lane(18,49); guided trigger rejects friendly bodies throughout the possible SMG spread/recoil corridor.",
+        "METHOD: combat has no perfect-survival requirement. After the bounded yard attack, attempt the actual held pickup and continue east with living Follow partners. No standing response loop waits for every projectile to disappear. A downed controller is replaced by a real living crew member; bodies, wounds and component custody remain where play left them. Nearby component handoff uses the actual interaction only. An unresolved operation or total defeat is recorded as mission loss, not completion. Total wipe invokes existing emergency recovery, not permadeath."
+      ]
+    },
+    {
+      "route": "pressure",
+      "status": "PASS",
+      "checks": 43,
+      "captures": 7,
+      "captureDimensions": [
+        [
+          1280,
+          720
+        ]
+      ],
+      "crewEnabled": true,
+      "result": "Evidence/Demo06/pressure-final/pressure-runtime-result.txt",
+      "resultSha256": "F2AFB72FBEBBD6E7519ADC5AB84138EF33B00B7CE1AE8958C760CCCB2E75391D",
+      "playerLog": "Evidence/Demo06/pressure-final/player.log",
+      "playerLogSha256": "A681C59E84F8B3BD06B0EE840AADE6FF242CA40F77A6701C5485063C4B4211E7",
+      "runtimeLogErrorWarningMatches": 0,
+      "identity": {
+        "testedAt": "2026-09-08T12:30:26.2815293Z",
+        "mode": "Pressure",
+        "executable": "~\\repos\\Funstra\\Build\\NobodyGetsHomeAlone\\Funstra.exe",
+        "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+        "method": "Guided exported player; direct setups and controller travel identified in result."
+      },
+      "batchStartedAt": "2026-09-08T12:30:26.2530711Z",
+      "batchEndedAt": "2026-09-08T12:32:47.3419576Z",
+      "methodLines": [
+        "METHOD: extended durability stress, then separate ordinary-health exposure and controller escape; no human input/feel claim. Production Update advances all combat and arrivals.",
+        "METHOD: crew-pressure uses the production rifle response: three base patrols plus six rifle reinforcements delivered by the existing two trucks. The triggering player kit is one pistol/twelve rounds. Exposure/escape reset each delivered officer to ordinary health and eighteen finite rounds while retaining weapon kind. No ammunition is supplied during an encounter.",
+        "COVERAGE: legacy crowded-door/empty-officer-advance appendix remains in the non-crew Pressure route. Crew exhaustion intentionally withdraws; its separate guided opposition route measures depleted withdrawal and moving rifle lanes.",
+        "METHOD: laden recovery presentation starts from an explicitly prepared casualty and real carried loss transactions; this is not a second combat defeat."
+      ]
+    },
+    {
+      "route": "arms",
+      "status": "PASS",
+      "checks": 108,
+      "captures": 15,
+      "captureDimensions": [
+        [
+          1280,
+          720
+        ]
+      ],
+      "crewEnabled": false,
+      "result": "Evidence/Demo06/arms-final/arms-runtime-result.txt",
+      "resultSha256": "BD9713867CDCFAF9C4D61A24E1BD876247370D922B71D9A72BE0C8A8ED806A12",
+      "playerLog": "Evidence/Demo06/arms-final/player.log",
+      "playerLogSha256": "03992D0445BA641E3A82FF6E9A3039D3DB2C6F5E2451949AF30445FE03FD888E",
+      "runtimeLogErrorWarningMatches": 0,
+      "identity": {
+        "testedAt": "2026-09-08T12:32:47.3759187Z",
+        "endedAt": "2026-09-08T12:33:29.7204286Z",
+        "elapsedSeconds": 42.3445099,
+        "mode": "Arms",
+        "executable": "~\\repos\\Funstra\\Build\\NobodyGetsHomeAlone\\Funstra.exe",
+        "executableSha256": "97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3",
+        "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+        "playerExitCode": 0,
+        "failure": null,
+        "method": "Muted guided exported player. Controller acquisition and explicitly stepped supply/combat fixtures are identified in the runtime result."
+      },
+      "batchStartedAt": "2026-09-08T12:32:47.34456Z",
+      "batchEndedAt": "2026-09-08T12:33:29.7283746Z",
+      "methodLines": [
+        "METHOD: fresh unarmed start; production controller visits Sella, collects clinic receipt and returns. Menu transactions call the same actions after reaching the interaction. Yard squad is suspended during this acquisition route; citizens, traffic and other normal Update systems run.",
+        "METHOD: alternate purchase/theft and SMG tests use fresh paused fixtures, explicit cash, staged firing position and production transactions/combat steps. These are alternatives to the controller favor route, not organically earned shopping money or human aiming.",
+        "METHOD: possession sightlines use a paused player/patrol placement and the production observation hook; downed-actor recovery directly stages a casualty with five actual rounds. No human stealth or combat victory is claimed by these fixtures.",
+        "METHOD: supply fixture accelerates production StepArms and street-person Step in .05-second increments, eight steps per rendered frame while paused. Controller movement clears a directly staged player obstruction. Arrival captures temporarily reposition the paused player/camera beside the courier and restore it before stepping. This proves physical navigation/custody under those explicit steps, not real-time pacing or an unstaged crowd. Clinic calendar is held during deliveries; separate scheduled treatment steps inspect a later diversion shortage."
+      ]
+    },
+    {
+      "route": "residents",
+      "status": "PASS",
+      "checks": 28,
+      "captures": 7,
+      "captureDimensions": [
+        [
+          1280,
+          720
+        ]
+      ],
+      "crewEnabled": false,
+      "result": "Evidence/Demo06/residents-final/residents-runtime-result.txt",
+      "resultSha256": "F1DBDE4E1C596F8E318EE75BE7C45077CA77B7C7155BF8A43257FDA4F78FC70E",
+      "playerLog": "Evidence/Demo06/residents-final/player.log",
+      "playerLogSha256": "07CF43193FF7F64652F288C2735902E2B37C2AB2253A98E3478FAA615E0BA414",
+      "runtimeLogErrorWarningMatches": 0,
+      "identity": {
+        "testedAt": "2026-09-08T12:33:29.7594677Z",
+        "endedAt": "2026-09-08T12:33:50.555685Z",
+        "elapsedSeconds": 20.7962173,
+        "mode": "Residents",
+        "executable": "~\\repos\\Funstra\\Build\\NobodyGetsHomeAlone\\Funstra.exe",
+        "executableSha256": "97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3",
+        "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+        "playerExitCode": 0,
+        "failure": null,
+        "method": "Muted guided exported player. Real resident behavior under explicitly staged local incidents are identified in the runtime result."
+      },
+      "batchStartedAt": "2026-09-08T12:33:29.7318577Z",
+      "batchEndedAt": "2026-09-08T12:33:50.5570071Z",
+      "methodLines": []
+    },
+    {
+      "route": "streets",
+      "status": "PASS",
+      "checks": 143,
+      "captures": 4,
+      "captureDimensions": [
+        [
+          1280,
+          720
+        ]
+      ],
+      "crewEnabled": false,
+      "result": "Evidence/Demo06/streets-final/streets-runtime-result.txt",
+      "resultSha256": "F0AE20ECF329EA2FEA52CFEE13F2F8D07CA618BDF181E31307043C814E583B77",
+      "playerLog": "Evidence/Demo06/streets-final/player.log",
+      "playerLogSha256": "34035A627967C073DBE11087D9DB76540F63D62595E783C1246EF1D0F8F1FDC7",
+      "runtimeLogErrorWarningMatches": 0,
+      "identity": {
+        "testedAt": "2026-09-08T12:33:50.5650672Z",
+        "mode": "Streets",
+        "executable": "~\\repos\\Funstra\\Build\\NobodyGetsHomeAlone\\Funstra.exe",
+        "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+        "method": "Guided exported player; direct setups and controller travel identified in result."
+      },
+      "batchStartedAt": "2026-09-08T12:33:50.5584041Z",
+      "batchEndedAt": "2026-09-08T12:36:10.7254612Z",
+      "methodLines": [
+        "METHOD: route uses actual Update/controller/traffic/citizens; yard squad suspended for traversal. Later weapon/persistence probes use paused explicit fixtures."
+      ]
+    },
+    {
+      "route": "police",
+      "status": "PASS",
+      "checks": 35,
+      "captures": 4,
+      "captureDimensions": [
+        [
+          1280,
+          720
+        ]
+      ],
+      "crewEnabled": false,
+      "result": "Evidence/Demo06/police-final/police-runtime-result.txt",
+      "resultSha256": "DD56702073464BAD27FA37AF7C58DD7AB1590016E75D76A1A796B9D2EA88ECC5",
+      "playerLog": "Evidence/Demo06/police-final/player.log",
+      "playerLogSha256": "261E1310C21A05B6079EBBAD075ADF0CD04A87E9B80A8AE30198643416F8C3E9",
+      "runtimeLogErrorWarningMatches": 0,
+      "identity": {
+        "testedAt": "2026-09-08T12:36:10.735797Z",
+        "mode": "Police",
+        "executable": "~\\repos\\Funstra\\Build\\NobodyGetsHomeAlone\\Funstra.exe",
+        "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+        "method": "Guided exported player; direct setups and controller travel identified in result."
+      },
+      "batchStartedAt": "2026-09-08T12:36:10.7279094Z",
+      "batchEndedAt": "2026-09-08T12:36:18.3742007Z",
+      "methodLines": [
+        "METHOD: controlled reports and explicit simulation steps test dispatch, knowledge and persistence. Final firefight uses actual Update/AI/projectiles. No human free-play claim."
+      ]
+    },
+    {
+      "route": "legacy",
+      "status": "PASS",
+      "checks": 90,
+      "captures": 10,
+      "captureDimensions": [
+        [
+          1280,
+          720
+        ]
+      ],
+      "crewEnabled": false,
+      "result": "Evidence/Demo06/legacy-final/runtime-result.txt",
+      "resultSha256": "0AD780BCBBDDA0FDE63B727504843269B4597DD9986B7446CF2E0B324E15507E",
+      "playerLog": "Evidence/Demo06/legacy-final/player.log",
+      "playerLogSha256": "4C7180AD3ACEA20D85F5D662C2C00357BC67A2D8EA5E86E8A961FAB3F0BDBB29",
+      "runtimeLogErrorWarningMatches": 0,
+      "identity": {
+        "testedAt": "2026-09-08T12:36:18.3823084Z",
+        "mode": "Legacy",
+        "executable": "~\\repos\\Funstra\\Build\\NobodyGetsHomeAlone\\Funstra.exe",
+        "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+        "method": "Guided exported player; direct setups and controller travel identified in result."
+      },
+      "batchStartedAt": "2026-09-08T12:36:18.3758639Z",
+      "batchEndedAt": "2026-09-08T12:39:50.5290093Z",
+      "methodLines": []
+    }
+  ],
+  "combatOutcome": {
+    "evidence": "Evidence/Demo06/approach-final/crew-combat-outcome.json",
+    "missionOutcome": "component-returned",
+    "componentReturned": true,
+    "componentOwner": "rell-workshop",
+    "reloadVerified": true,
+    "totalDefeat": false,
+    "incapacitatedDuringCombat": [],
+    "actors": [
+      {
+        "id": "player",
+        "order": "Hold",
+        "carrying": "",
+        "memory": "PLAYER stayed and used a dressing on me.",
+        "position": {
+          "x": 60.690704345703125,
+          "y": 0.03499995917081833,
+          "z": 18.46839714050293
+        },
+        "health": 41.53655242919922,
+        "bleeding": false,
+        "abandoned": false,
+        "armed": false,
+        "holstered": true,
+        "bandages": 1,
+        "weapon": 1,
+        "ammo": 0,
+        "magazine": 0
+      },
+      {
+        "id": "neri",
+        "order": "Follow",
+        "carrying": "",
+        "memory": "",
+        "position": {
+          "x": 56.02656173706055,
+          "y": 0.0,
+          "z": 18.165468215942383
+        },
+        "health": 100.0,
+        "bleeding": false,
+        "abandoned": false,
+        "armed": true,
+        "holstered": true,
+        "bandages": 3,
+        "weapon": 2,
+        "ammo": 11,
+        "magazine": 5
+      },
+      {
+        "id": "rell",
+        "order": "Move",
+        "carrying": "",
+        "memory": "Prepared full-crew approach fixture; recruitment staged.",
+        "position": {
+          "x": 57.32426834106445,
+          "y": 0.0,
+          "z": 18.717641830444336
+        },
+        "health": 100.0,
+        "bleeding": false,
+        "abandoned": false,
+        "armed": true,
+        "holstered": true,
+        "bandages": 1,
+        "weapon": 5,
+        "ammo": 15,
+        "magazine": 5
+      }
+    ],
+    "playerAmmoByKind": {
+      "pistol": 0,
+      "shotgun": 0,
+      "smg": 38,
+      "rifle": 0
+    },
+    "rawPlayerResumeYDelta": 0.11999999731779099,
+    "reloadComparison": "Raw coordinates remain in receipt. Only an uncarried protagonist upward Y delta from 0 through 0.1201 world units is allowed for existing Teleport resume clearance. All other serialized state, X/Z, companion coordinates and carried-player placement are exact.",
+    "acceptance": "This actual run returned the component with all three alive. Recognized costly withdrawal or total-defeat emergency recovery could also validate mechanics, provided mission loss is explicitly recorded and persistent consequences verify. A technical PASS is not a promise of mission victory."
+  },
+  "aidEvidence": {
+    "coreCompleted": "Core route verifies finite completed timed aid, successful normal-Update self-aid during bleeding, actual carry and clinic admission. Other wounded/carry/abandonment scenes are explicit fixtures.",
+    "postRetreatActual": "Direct rifle hit interrupted aid after 2.744 simulation seconds. Health68.94213 became37.15852, including30 new projectile damage and bleed attrition; two dressings retained, no practice/healing granted, patient empty and remaining time zero.",
+    "pressureActual": "Final ordinary-health escape reached shelter and ended pursuit at100 HP without requiring aid. This pressure run does not add successful treatment evidence.",
+    "method": "Late interrupted treatment is validated only with actual hit evidence or pressure renewed-contact cancellation, idle aid and no resource loss/free healing. Watchdog expiry without production completion/interruption fails."
+  },
+  "pressure": {
+    "evidence": "Evidence/Demo06/pressure-final/pressure-profile.json",
+    "method": "Rendered normal Update/AI/projectiles/traffic. A witnessed projectile attack triggers dispatch; resident movement is frozen only during that setup exchange. Extended load fixture uses 10000 player HP and disables arrest only; no enemy refills. Separate escape/defeat use 100 HP and normal arrest. Initial positions are fixtures, not human play.",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "cpu": "Intel(R) Core(TM) i9-14900KF",
+    "width": 1280,
+    "height": 720,
+    "frameCap": 30,
+    "frames": 2203,
+    "processes": 1,
+    "p50": 33.334197998046875,
+    "p95": 33.601600646972656,
+    "max": 138.10789489746094,
+    "allocatedBytes": 113754082,
+    "sampleCount": 76,
+    "sampleStartSeconds": 0.03333592414855957,
+    "sampleEndSeconds": 75.01399993896484,
+    "timingUnits": "milliseconds",
+    "roster": "Three base officers plus six rifle reinforcements physically delivered by two trucks. Nine distinct shooters/reloaders observed; five rifle reinforcement owners have actual player-hit receipts.",
+    "limits": "75-second load fixture uses10000 player HP and disables arrest. It is not an ordinary-health survival result. Separate exposure/escape use100 HP, normal arrest and eighteen finite starting rounds per delivered officer; no in-encounter refill. Not a minimum-spec benchmark, frame pacing guarantee or human input-feel verdict."
+  },
+  "visualInspection": {
+    "evidence": "Evidence/Demo06/cd-visual-inspection.md",
+    "scope": "CD inspected selected actual exported stills, including final-candidate crew/carry/clinic/abandonment/workshop/combat/recovery/resident frames. This is limited readability/presentation evidence, not continuous animation, whole-route visual acceptance or human gameplay."
+  },
+  "limitations": [
+    "Crew core, full approach and WithCrew pressure enable the crew layer. Arms, Residents, Streets, Police and Legacy retain their original smoke-mode contracts with crew disabled; their PASS does not establish crew integration.",
+    "Paid/controller routes and unseen approaches coexist with explicitly staged money, recruitment, wounds, equipment, transactions and some frozen or accelerated subsystems. Read per-route METHOD/COVERAGE lines.",
+    "Successful solo theft, Neri theft, paid release, finite repair, ordinary live combat and persistent costly outcomes are distinct claims. Prepared casualty/rescue/abandonment fixtures are not unstaged combat casualties.",
+    "Zero health models incapacitation and persistent abandonment; existing total-defeat emergency recovery remains. Separate irreversible death is not implemented.",
+    "The 701 assertions and72 captures are guided runtime evidence, not701 scenarios or human play acceptance. Earlier failed candidate evidence remains retained and is superseded only for matching final checks."
+  ],
+  "publication": {
+    "panel": "in progress",
+    "package": "pending",
+    "publication": "pending",
+    "publishedVersionUnchanged": "0.4.2",
+    "humanAcceptance": "separate; not claimed",
+    "addendumNeeded": "After panel/package/publication, update phase and publication fields with actual reviewer outcomes, package/extracted-player verification and published URLs/hashes; do not retroactively describe these as complete."
+  },
+  "integration": {
+    "assemblySha256": "0F599165F989EFB88B610219CF5E31CE9DF617A486FC7DE26FE800A4A521AE29",
+    "builtAt": "2026-09-08T12:58:52.4412147Z",
+    "source": "Evidence/Demo06/integration-source.json",
+    "proof": "Evidence/Demo06/integration-validation.json",
+    "routes": [
+      {
+        "route": "crew",
+        "status": "PASS",
+        "checks": 141,
+        "captures": 17,
+        "identity": {
+          "testedAt": "2026-09-08T13:07:14.9948061Z",
+          "endedAt": "2026-09-08T13:09:03.6961654Z",
+          "elapsedSeconds": 108.7013593,
+          "mode": "Crew",
+          "executable": "~\\repos\\Funstra\\Build\\NobodyGetsHomeAlone\\Funstra.exe",
+          "executableSha256": "97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3",
+          "assemblySha256": "0F599165F989EFB88B610219CF5E31CE9DF617A486FC7DE26FE800A4A521AE29",
+          "playerExitCode": 0,
+          "failure": null,
+          "method": "Muted guided exported player. Crew control, custody, aid and dock behavior under explicitly identified controller routes and prepared fixtures are identified in the runtime result."
+        },
+        "result": "Evidence/Demo06/integration-crew/crew-runtime-result.txt",
+        "resultSha256": "48D18B395F898F1B457DE083A2EC5D2EB889CE7DBE752DFCCBF87DF60321F7F1",
+        "playerLog": "Evidence/Demo06/integration-crew/player.log",
+        "playerLogSha256": "9BA9B53E3B74D344608E583825A11A4F72FDA6BEB30900A55304E92E9D7F5930",
+        "runtimeExceptionMatches": 0
+      },
+      {
+        "route": "police",
+        "status": "PASS",
+        "checks": 35,
+        "captures": 4,
+        "identity": {
+          "testedAt": "2026-09-08T13:09:03.7313251Z",
+          "mode": "Police",
+          "executable": "~\\repos\\Funstra\\Build\\NobodyGetsHomeAlone\\Funstra.exe",
+          "assemblySha256": "0F599165F989EFB88B610219CF5E31CE9DF617A486FC7DE26FE800A4A521AE29",
+          "method": "Guided exported player; direct setups and controller travel identified in result."
+        },
+        "result": "Evidence/Demo06/integration-police/police-runtime-result.txt",
+        "resultSha256": "DD56702073464BAD27FA37AF7C58DD7AB1590016E75D76A1A796B9D2EA88ECC5",
+        "playerLog": "Evidence/Demo06/integration-police/player.log",
+        "playerLogSha256": "622624124FA7CDDCC6ED69B0CE5C1C882336E05AD64F64A8FA759D599E744559",
+        "runtimeExceptionMatches": 0
+      },
+      {
+        "route": "legacy",
+        "status": "PASS",
+        "checks": 90,
+        "captures": 10,
+        "identity": {
+          "testedAt": "2026-09-08T13:09:11.3857355Z",
+          "mode": "Legacy",
+          "executable": "~\\repos\\Funstra\\Build\\NobodyGetsHomeAlone\\Funstra.exe",
+          "assemblySha256": "0F599165F989EFB88B610219CF5E31CE9DF617A486FC7DE26FE800A4A521AE29",
+          "method": "Guided exported player; direct setups and controller travel identified in result."
+        },
+        "result": "Evidence/Demo06/integration-legacy/runtime-result.txt",
+        "resultSha256": "0AD780BCBBDDA0FDE63B727504843269B4597DD9986B7446CF2E0B324E15507E",
+        "playerLog": "Evidence/Demo06/integration-legacy/player.log",
+        "playerLogSha256": "2FF785B8BCDE07864E41563B5B00EC9DBAA6A9D89174B3C74922C5F5A60FD614",
+        "runtimeExceptionMatches": 0
+      }
+    ],
+    "checks": 266.0,
+    "captures": 31.0,
+    "method": "Original A results remain above. B full Crew, Police and Legacy only; five other routes not rerun on B. Gameplay sources and compiled scenes/assets match under the exact three-expression display proof."
+  },
+  "originalPanel": [
+    {
+      "sliceUpper": 9.8,
+      "gameNow": 5.4,
+      "reviewer": "Dag Moller",
+      "evidence": 89,
+      "sliceLower": 8.5,
+      "review": "reviewer-agents/dag-moller/demo06.md"
+    },
+    {
+      "sliceUpper": 10,
+      "gameNow": 5.4,
+      "reviewer": "Priya Raman",
+      "evidence": 89,
+      "sliceLower": 8.7,
+      "review": "reviewer-agents/priya-raman/demo06.md"
+    },
+    {
+      "sliceUpper": 9.8,
+      "gameNow": 5.7,
+      "reviewer": "Marcus Webb",
+      "evidence": 89,
+      "sliceLower": 8.7,
+      "review": "reviewer-agents/marcus-webb/demo06.md"
+    },
+    {
+      "sliceUpper": 9.6,
+      "gameNow": 5.3,
+      "reviewer": "Nell Okafor",
+      "evidence": 89,
+      "sliceLower": 8.3,
+      "review": "reviewer-agents/nell-okafor/demo06.md"
+    }
+  ],
+  "package": {
+    "archive": "~\\repos\\Funstra\\Releases\\Funstra-nobody-gets-home-alone-0.6.0-windows.zip",
+    "assemblySha256": "0F599165F989EFB88B610219CF5E31CE9DF617A486FC7DE26FE800A4A521AE29",
+    "reviewedAssemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
+    "uiIntegration": true,
+    "coverage": "Assembly A has eight full routes and four independent reviews. Packaged assembly B differs only by three proven presentation expressions; B has full Crew, Police and Legacy integration runs and Marcus/Priya rendered review addenda. Five unaffected routes were not rerun on B. Generated OldPort editor scene source has a different hash; no original YAML equality is claimed. All 145 A/B player files were verified: compiled scene, assets and engine files are identical; only the proved assembly and build-guid differ. The other 224 source hashes are unchanged.",
+    "archiveSha256": "462F4D42B90242ED735A95FBCA21597E1976D15F5A8C116BD7F30362B7C29A48",
+    "bytes": 177810627,
+    "verifiedAt": "2026-09-08T13:24:59.4385011Z",
+    "method": "All packaged player files compared with source by SHA256; no rebuild or publication. Logs excluded from player payload."
+  },
+  "portable": {
+    "archiveSha256": "462F4D42B90242ED735A95FBCA21597E1976D15F5A8C116BD7F30362B7C29A48",
+    "assemblySha256": "0F599165F989EFB88B610219CF5E31CE9DF617A486FC7DE26FE800A4A521AE29",
+    "extractedPath": "~\\repos\\Funstra\\Build\\NobodyGetsHomeAlonePortable-0.6.0",
+    "filesCompared": 496,
+    "fileMismatches": 0,
+    "verifiedAt": "2026-09-08T13:25:26.3674092Z",
+    "runtime": "PASS: full guided Crew route,141 assertions and17 captures",
+    "identity": {
+      "testedAt": "2026-09-08T13:25:26.5789186Z",
+      "endedAt": "2026-09-08T13:27:15.3286243Z",
+      "elapsedSeconds": 108.7497057,
+      "mode": "Crew",
+      "executable": "~\\repos\\Funstra\\Build\\NobodyGetsHomeAlonePortable-0.6.0\\Funstra.exe",
+      "executableSha256": "97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3",
+      "assemblySha256": "0F599165F989EFB88B610219CF5E31CE9DF617A486FC7DE26FE800A4A521AE29",
+      "playerExitCode": 0,
+      "failure": null,
+      "method": "Muted guided exported player. Crew control, custody, aid and dock behavior under explicitly identified controller routes and prepared fixtures are identified in the runtime result."
+    },
+    "result": "Evidence/Demo06/portable-crew/crew-runtime-result.txt"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "route": "crew",
+  "startedAt": "2026-09-08T12:19:03.6299953Z",
+  "endedAt": "2026-09-08T12:20:45.8998769Z",
+  "status": "FAIL",
+  "assemblySha256": "442A8FD11DD93105429BF8ADFCEE5225F79369D89159D071807433AAA4CAA73D",
+  "error": "Crew player validation failed."
+}
