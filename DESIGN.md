@@ -7,7 +7,7 @@ Creative direction approved by the owner, 8 September 2026; revised to prioritiz
 
 Preserve the warm, stylized isometric art. Rebuild Old Port as a place with useful spaces, owners, entrances, work and competing routes. Expand it in connected, distinct pieces. The player should learn a street, exploit its opportunities, depend on its people and eventually decide what it becomes.
 
-The published executable is Police Response 0.4.1, following the owner-approved Demo04. It includes the finite medical dispute, a support companion, clinic interiors, reactive dialogue, ambient traffic, legacy jobs/cargo and a bounded nine-officer response with two reinforcement trucks. It does not have a renewable physical supply chain, controllable squads or faction planning. Published evidence remains in [Evidence/VALIDATION.md](Evidence/VALIDATION.md); published play instructions are in [POLICE-RESPONSE.md](POLICE-RESPONSE.md). Pressure and Escape 0.4.2 is the active iteration under [#40](https://github.com/Kaliffen/Funstra/issues/40), focused on collective police pressure, readable pursuit and an understandable escape/recovery loop. No future capability below is claimed for the published build.
+The published executable is Pressure and Escape 0.4.2, following Police Response and the owner-approved Demo04. It includes the finite medical dispute, a support companion, clinic interiors, reactive dialogue, ambient traffic, legacy jobs/cargo and a bounded nine-officer response with two reinforcement trucks. Collective pistol fire, readable CONTACT/SEARCH and ammunition, early escape and contextual recovery are implemented and reviewed. It does not have a renewable physical supply chain, controllable squads or faction planning. Published evidence is in [Evidence/VALIDATION.md](Evidence/VALIDATION.md); play instructions are in [PRESSURE-AND-ESCAPE.md](PRESSURE-AND-ESCAPE.md). [#40](https://github.com/Kaliffen/Funstra/issues/40) records the completed release cycle and separate pending human acceptance. No future capability below is claimed for the published build.
 
 ## What the feedback changes
 
@@ -45,7 +45,7 @@ The escalation is cumulative:
 - **Demo08:** sustained extreme violence can bring Compact army trucks and **at least 30 soldiers simultaneously at maximum pressure** (initial bounded target: 32), with rifles and physical grenades. Coordinating squads cover, flank and force movement; the player should be overwhelmed by sustained exposure. Grenades have visible travel, fuse warnings, cover/obstruction and shared damage rules. Deployment, firing, navigation and frame time must be verified at full strength. No infinite personnel spawning or tracking a concealed player through walls.
 - **Demo09:** integrate the full escalation with witnesses, investigations, relationships and post-defeat recovery. Escaping immediate pursuit does not erase provable violence.
 
-These are approved design targets, not claims of implemented army, rifles or grenades. The four guided Police Response reviews and publication are complete; human acceptance of each new iteration remains separate.
+These are approved design targets, not claims of implemented army, rifles or grenades. The four guided Pressure and Escape reviews (each 8/10), CD integration and verified publication are complete; human acceptance of each new iteration remains separate.
 
 | Release | Player outcome | Ticket |
 |---|---|---|

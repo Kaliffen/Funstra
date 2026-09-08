@@ -33,7 +33,7 @@ The Pressure route deliberately separates two kinds of evidence. A 75-second ext
 
 ## Candidate and review status
 
-The identified review candidate is v0.4.2, gameplay assembly SHA256 `BD9CA29F2787A9F2546E10CA88650142DF7E80D0E8D22743C7B88AB9F99BB776`. Core validation passes on this build: 2,213 editor checks and 309 runtime checks (Pressure 41, Police 35, Streets 143, Legacy 90). All four independent guided reviews are complete, each 8/10. Results and CD dispositions are in [validation-summary.json](Evidence/PressureEscape/validation-summary.json) and the [review dossier](Docs/funstra-review-dossier-pressure-escape.html). The exact reviewed assembly is the release target; human acceptance remains separate.
+The identified review candidate is v0.4.2, gameplay assembly SHA256 `BD9CA29F2787A9F2546E10CA88650142DF7E80D0E8D22743C7B88AB9F99BB776`. Core validation passes on this build: 2,213 editor checks and 309 runtime checks (Pressure 41, Police 35, Streets 143, Legacy 90). All four independent guided reviews are complete, each 8/10. Results and CD dispositions are in [validation-summary.json](Evidence/PressureEscape/validation-summary.json) and the [review dossier](Docs/funstra-review-dossier-pressure-escape.html). The exact reviewed assembly is published as [v0.4.2](https://github.com/Kaliffen/Funstra/releases/tag/v0.4.2); the public archive hash, website and dossier were verified. Human acceptance remains separate.
 
 The packaging target is `Releases/Funstra-pressure-escape-0.4.2-windows.zip`. `Tools/Package-PressureEscape.ps1 -ExpectedAssemblySha256 <tested-hash> -ValidateOnly` checks the existing player, four core routes, sustained profile, four reviewer records and dossier before packaging. Packaging does not rebuild or publish the player.
 

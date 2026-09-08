@@ -1,5 +1,5 @@
 {
-  "phase": "reviewed archive and portable route verified; publication pending",
+  "phase": "published and independently verified; cycle complete",
   "version": "0.4.2",
   "checkedAt": "2026-09-08T08:03:27.646358+00:00",
   "assemblySha256": "BD9CA29F2787A9F2546E10CA88650142DF7E80D0E8D22743C7B88AB9F99BB776",
@@ -126,5 +126,7 @@
   "dossier": "Docs/funstra-review-dossier-pressure-escape.html",
   "humanAcceptance": "pending separately",
   "postPanelGameplayChanges": false,
-  "packageVerification": "Evidence/PressureEscape/package-verification.json"
+  "packageVerification": "Evidence/PressureEscape/package-verification.json",
+  "publicationVerification": "Evidence/PressureEscape/publication-verification.json",
+  "releaseSourceCommit": "53328a9de7012f17e9c3636ef2ebdaa1608ab48a"
 }

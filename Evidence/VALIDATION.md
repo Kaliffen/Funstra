@@ -50,6 +50,8 @@ The published v0.4.1 build remains unchanged. Rifles, 32 soldiers and grenades a
 
 The extracted release archive also passed its own full muted Pressure route: 41 checks, nine captures, clean shutdown. Every packaged player file matches the reviewed build byte-for-byte. [Package verification](PressureEscape/package-verification.json) records ZIP size/hash and the portable receipt. The ZIP embeds the pre-publication evidence snapshot; later verification records accompany it in the repository.
 
+Published as [v0.4.2](https://github.com/Kaliffen/Funstra/releases/tag/v0.4.2) from source commit `53328a9de7012f17e9c3636ef2ebdaa1608ab48a`. [Public verification](PressureEscape/publication-verification.json) confirms the independently downloaded ZIP hash, current website/dossier, four retained releases and 45 current-page links returning HTTP 200. Site and Release check workflows succeeded. No game process remained. Human gameplay acceptance is still separate.
+
 <!-- CURRENT-VALIDATION-END -->
 
 

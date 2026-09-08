@@ -2,7 +2,7 @@
 
 An isometric sandbox crime RPG about surviving a damaged port city and becoming someone it depends on.
 
-**Pressure and Escape, v0.4.2.** Windows x64, Unity 6000.4.0f1. Four guided reviews complete, each 8/10; 2,213 editor and 309 core runtime checks pass.
+**Published: Pressure and Escape, v0.4.2.** Windows x64, Unity 6000.4.0f1. Four guided reviews complete, each 8/10; 2,213 editor and 309 core runtime checks pass.
 
 ## Play
 
