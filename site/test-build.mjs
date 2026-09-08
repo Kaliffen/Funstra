@@ -23,6 +23,7 @@ try {
   put('Tools/release-policy.mjs', readFileSync(join(sourceSite, '../Tools/release-policy.mjs')));
   put('site/.cache/releases.json', '[]');
   const content = JSON.parse(readFileSync(join(sourceSite, 'content/site.json'), 'utf8'));
+  delete content.releaseVersion; // Empty-release fixture has no advertised production version.
   content.dossierFile = 'current.html';
   content.previousDossiers = [{ file: 'previous.html', output: 'dossier-previous.html', label: 'Previous' }];
   content.shots = [{ file: 'nested/receipt.png', caption: 'Nested screenshot' }];
@@ -43,6 +44,13 @@ try {
   assert.deepEqual(readFileSync(join(fixture, 'site/dist/shots/nested/receipt.png')), readFileSync(join(fixture, 'Evidence/nested/receipt.png')));
   result = run('verify.mjs');
   assert.equal(result.status, 0, result.stderr);
+  content.releaseVersion = 'v99.0.0';
+  put('site/content/site.json', JSON.stringify(content));
+  result = run('verify.mjs');
+  assert.notEqual(result.status, 0, 'An older download must not pass beside new release metadata');
+  assert.match(result.stderr, /Download must match/);
+  delete content.releaseVersion;
+  put('site/content/site.json', JSON.stringify(content));
   put('Docs/current.html', '<a href="../../outside.txt">Escape</a>');
   result = run('build.mjs');
   assert.notEqual(result.status, 0);

@@ -139,5 +139,6 @@
       "output": "dossier-demo02.html",
       "label": "Demo 02 dossier — original 4/10 to 7/10 verdicts"
     }
-  ]
+  ],
+  "releaseVersion": "v0.4.1"
 }

@@ -1,0 +1,15 @@
+{
+  "version": "0.4.1",
+  "sourceCommit": "5eeb50b340c91ff11679f28e54e2fa41276ac641",
+  "githubRelease": "https://github.com/Kaliffen/Funstra/releases/tag/v0.4.1",
+  "publishedArchiveSha256": "6D51E3803E9FBC7C7E76134A94D02922B3390B4BA1B2DB7FCCBE18F40B3122FB",
+  "archiveDownloadedAndMatched": true,
+  "retainedTags": [
+    "v0.4.1",
+    "v0.3.0",
+    "v0.2.0"
+  ],
+  "releaseCheck": 34195969600,
+  "firstSiteRun": 34195969499,
+  "checkpoint": "GitHub release and archive verified. First site workflow generated3releases but public Pages still served previous2release deployment; enforce advertised version and redeploy from this publication checkpoint. Public verification remains pending."
+}

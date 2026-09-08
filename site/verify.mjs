@@ -6,6 +6,8 @@ import { retainedReleases } from '../Tools/release-policy.mjs';
 
 const list = JSON.parse(readFileSync(new URL('./dist/releases.json', import.meta.url), 'utf8'));
 const html = readFileSync(new URL('./dist/index.html', import.meta.url), 'utf8');
+const content = JSON.parse(readFileSync(new URL('./content/site.json', import.meta.url), 'utf8'));
+if (content.releaseVersion) assert.equal(list[0]?.tag, content.releaseVersion, 'Download must match the release described by the screenshots and reviews');
 const escape = value => value.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
 assert.deepEqual(list, retainedReleases(list), 'Published site must contain only the newest five demos in order');
 if (list.length > 1) {
