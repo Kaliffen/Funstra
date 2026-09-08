@@ -1,4 +1,4 @@
-Part of #26. Owner approved revised direction on 8 September 2026. Implementation and playable acceptance remain pending. Depends on Demo 05.
+Part of #26. Owner approved revised direction on 8 September 2026. Demo06 v0.6.0 is published and technically verified; product-owner gameplay and visual acceptance remain separate. Depends on Demo05.
 
 Canonical roadmap, spatial and combat contracts: [DESIGN.md](https://github.com/Kaliffen/Funstra/blob/main/DESIGN.md). This revision supersedes the earlier service-first scope; existing completion history remains intact.
 
@@ -21,11 +21,11 @@ Three controllable people, one authored dangerous site and boss, four gun famili
 If character switching/rescue is unstable, reduce encounter complexity until player plus Neri works. Prove one integrated operation before deepening every subsystem.
 
 ## Release checkpoint
-- [ ] Implementation issues scoped before work
-- [ ] Identified exported candidate; relevant regressions and rendered checks
-- [ ] Four actual-build guided reviews and one consolidated dossier
-- [ ] CD disposition and affected-route replays
-- [ ] Tested build published; GH/site latest-five retention and links verified
+- [x] Implementation issues scoped before work
+- [x] Identified exported candidate; relevant regressions and rendered checks
+- [x] Four actual-build guided reviews and one consolidated dossier
+- [x] CD disposition and affected-route replays
+- [x] Tested build published; GH/site latest-five retention and links verified
 - [ ] Product owner acceptance recorded separately
 
 
@@ -85,3 +85,9 @@ Assembly A `3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3`: a
 Confirmed presentation corrections are limited to three expressions: idle police bullet, Mara attribution dash and Demo06 title footer. Preserve A's original full evidence and scores. A later B export must prove all other226 source files unchanged and the exact three approved UI replacements, then pass full Crew/Police/Legacy and Marcus/Priya rendered addenda. Five unaffected routes remain labelled A evidence, never B reruns. The strict package option records this scope and checks exact player bytes.
 
 Future depth/clarity work is tracked in #42 and #43; relationship aftermath and subsequent operations belong with #30. No new depth systems are being slipped into the current UI correction. One consolidated dossier, package/extracted check, pushed source, published archive/site and latest-five verification remain pending.
+
+## Published release — 8 September 2026
+
+Demo06 v0.6.0 is published from source commit `13389848e3d9da55ba8398e0dbe591f611386777`. The public 177,810,627-byte archive matches the tested local archive by SHA-256: `462F4D42B90242ED735A95FBCA21597E1976D15F5A8C116BD7F30362B7C29A48`. Release check and Pages deployment passed. The live homepage, Demo06 dossier, download and exact retained list `v0.6.0, v0.4.2, v0.4.1, v0.3.0, v0.2.0` were verified. There was no sixth release to delete.
+
+Four original reviewer scores remain unchanged: Game now 5.3–5.7/10; Slice delivery 8.3–10.0 provisional; Evidence 89% each. B presentation corrections and portable/public delivery are later receipts, not silent score upgrades. #42, #43 and #30 retain the deeper progression, crew-livelihood and relationship work. Product-owner gameplay and visual acceptance remain separate and open.

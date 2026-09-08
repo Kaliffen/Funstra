@@ -1,0 +1,17 @@
+{
+  "version": "0.6.0",
+  "sourceCommit": "13389848e3d9da55ba8398e0dbe591f611386777",
+  "releaseUrl": "https://github.com/Kaliffen/Funstra/releases/tag/v0.6.0",
+  "assetUrl": "https://github.com/Kaliffen/Funstra/releases/download/v0.6.0/Funstra-nobody-gets-home-alone-0.6.0-windows.zip",
+  "assetName": "Funstra-nobody-gets-home-alone-0.6.0-windows.zip",
+  "assetBytes": 177810627,
+  "archiveSha256": "462F4D42B90242ED735A95FBCA21597E1976D15F5A8C116BD7F30362B7C29A48",
+  "downloadedArchiveSha256": "462F4D42B90242ED735A95FBCA21597E1976D15F5A8C116BD7F30362B7C29A48",
+  "releaseCheck": {"status": "success", "url": "https://github.com/Kaliffen/Funstra/actions/runs/34240186342"},
+  "siteDeployment": {"status": "success", "url": "https://github.com/Kaliffen/Funstra/actions/runs/34240186359"},
+  "website": "https://kaliffen.github.io/Funstra/",
+  "dossier": "https://kaliffen.github.io/Funstra/dossier.html",
+  "retainedReleaseTags": ["v0.6.0", "v0.4.2", "v0.4.1", "v0.3.0", "v0.2.0"],
+  "verifiedAt": "2026-09-08T14:47:24.4213975Z",
+  "method": "GitHub release metadata and workflows were checked after publication. The public archive was freshly downloaded and matched the local tested archive by full SHA-256. The live homepage, dossier, download link, previous-version navigation and exact five-release order were fetched and inspected. There was no sixth release to delete."
+}

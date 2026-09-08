@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "title": "Nobody Gets Home Alone",
   "version": "0.6.0",
-  "phase": "Reviewed, integrated and portable-tested; source publication and live release/site verification pending",
+  "phase": "Published and verified; product-owner gameplay and visual acceptance remain separate",
   "verifiedAt": "2026-09-08T14:43:48.543132+02:00",
   "assemblySha256": "3A3C13ED20B5E957CE62F53D8611702FB8D0080CD575C5FF76FAA0F2625985C3",
   "executableSha256": "97845574417B7FC4DB70BFBAA4D3F941EAB8628DF2BCC9424DBA328D3A6549C3",
@@ -585,5 +585,19 @@
       "method": "Muted guided exported player. Crew control, custody, aid and dock behavior under explicitly identified controller routes and prepared fixtures are identified in the runtime result."
     },
     "result": "Evidence/Demo06/portable-crew/crew-runtime-result.txt"
+  },
+  "publication": {
+    "status": "PASS",
+    "sourceCommit": "13389848e3d9da55ba8398e0dbe591f611386777",
+    "release": "https://github.com/Kaliffen/Funstra/releases/tag/v0.6.0",
+    "website": "https://kaliffen.github.io/Funstra/",
+    "dossier": "https://kaliffen.github.io/Funstra/dossier.html",
+    "archiveSha256": "462F4D42B90242ED735A95FBCA21597E1976D15F5A8C116BD7F30362B7C29A48",
+    "downloadedArchiveMatched": true,
+    "releaseCheck": "https://github.com/Kaliffen/Funstra/actions/runs/34240186342",
+    "siteDeployment": "https://github.com/Kaliffen/Funstra/actions/runs/34240186359",
+    "retainedReleaseTags": ["v0.6.0", "v0.4.2", "v0.4.1", "v0.3.0", "v0.2.0"],
+    "verifiedAt": "2026-09-08T14:47:24.4213975Z",
+    "humanAcceptance": "separate and unclaimed"
   }
 }

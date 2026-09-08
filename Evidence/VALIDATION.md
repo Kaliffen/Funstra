@@ -8,7 +8,7 @@ The four independent original A reviews each ran141 assertions and inspected17 c
 
 All145 player files were compared between A and B: only the proven DLL and build-GUID-only boot configuration differ. Compiled scenes and assets are byte-identical. Of226 source inputs,224 match A; the other two are the exact three-expression UI correction and Unity-generated scene identifiers. Original scene YAML equality is not claimed. A retains the full eight-route evidence below; five unaffected routes were not rerun on B. This is not eight-route B acceptance.
 
-The byte-preserving archive is177810627 bytes, SHA-256 `462F4D42B90242ED735A95FBCA21597E1976D15F5A8C116BD7F30362B7C29A48`. All496 extracted files match; the portable player passed a fresh141-assertion/17-capture full Crew route. [Package receipt](Demo06/package-verification.json) · [Portable receipt](Demo06/portable-verification.json). Public delivery verification remains pending at this checkpoint. Owner gameplay/art acceptance and lower-spec hardware verification remain separate. Casualties and abandonment are allowed; current incapacitation and emergency total-wipe recovery are not irreversible death.
+The byte-preserving archive is 177,810,627 bytes, SHA-256 `462F4D42B90242ED735A95FBCA21597E1976D15F5A8C116BD7F30362B7C29A48`. All 496 extracted files match; the portable player passed a fresh 141-assertion/17-capture full Crew route. [Package receipt](Demo06/package-verification.json) · [Portable receipt](Demo06/portable-verification.json) · [Publication receipt](Demo06/publication-verification.json). The source commit, GitHub release, freshly downloaded archive, release check, Pages deployment, live homepage, dossier and exact five-release list were verified. Owner gameplay/art acceptance and lower-spec hardware verification remain separate. Casualties and abandonment are allowed; current incapacitation and emergency total-wipe recovery are not irreversible death.
 
 ---
 # Nobody Gets Home Alone — local v0.6.0 validation
@@ -36,7 +36,7 @@ The [pressure profile](Demo06/pressure-final/pressure-profile.json) measures 2,2
 
 Crew core, approach and `-WithCrew` pressure enable the crew layer. Arms, Residents, Streets, Police and Legacy retain their original smoke-mode contracts with crew disabled; their regression passes do not establish new crew integration. Read each route's METHOD/COVERAGE text for frozen AI, staged positions and accelerated checks.
 
-The [CD visual inspection](Demo06/cd-visual-inspection.md) records selected exported stills and their limits, including the final candidate. It supports specific readability observations; it does not prove continuous animation, a complete visual walkthrough or human acceptance. **Independent panel review is in progress; packaging and publication remain pending.** Published v0.4.2 and earlier local players remain unchanged. Add actual review, portable-package and publication receipts after those steps finish.
+The [CD visual inspection](Demo06/cd-visual-inspection.md) records selected exported stills and their limits, including the final candidate. It supports specific readability observations; it does not prove continuous animation, a complete visual walkthrough or human acceptance. **Four original reviews, the integrated build, portable archive and public release are complete.** Earlier local players and review records remain preserved.
 
 ---
 
